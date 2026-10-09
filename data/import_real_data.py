@@ -3,6 +3,8 @@ Turns the team's filled-in template (one easy sheet) into the CSV files the
 database loads. This is the bridge between "teammates typing into a
 spreadsheet" and the six-table schema, so nobody has to deal with ids.
 
+Add --skip-problems to import only the rows that pass and list the rest.
+
 Usage (from the project root):
     python3 data/import_real_data.py data/template/EzClass_Data_Template.xlsx
     python3 data/import_real_data.py my_rows.csv          # a CSV also works
@@ -93,6 +95,14 @@ def norm_time(value):
     return f"{h:02d}:{m:02d}"
 
 
+def strip_float(value):
+    """Excel sometimes hands us 101.0 or 2.0 for numbers typed in a text column."""
+    v = value.strip()
+    if v.replace(".", "", 1).isdigit() and "." in v and float(v) == int(float(v)):
+        return str(int(float(v)))
+    return v
+
+
 def clean_number(value):
     """'3.0' -> '3'"""
     try:
@@ -114,13 +124,20 @@ def validate(rows):
             continue
 
         r["subject"] = r["subject"].upper().replace(" ", "")
-        r["catalog_num"] = r["catalog_num"].upper().replace(" ", "")
+        r["catalog_num"] = strip_float(r["catalog_num"]).upper().replace(" ", "")
         r["days"] = r["days"].replace(" ", "")
         r["units"] = clean_number(r["units"])
         r["start_time"] = norm_time(r["start_time"])
         r["end_time"] = norm_time(r["end_time"])
         r["capacity"] = clean_number(r["capacity"]) if r.get("capacity") else ""
-        r["section_number"] = r["section_number"].zfill(2) if r["section_number"].isdigit() else r["section_number"]
+        r["section_number"] = strip_float(r["section_number"])
+        if r["section_number"].isdigit():
+            r["section_number"] = r["section_number"].zfill(2)
+        # a building with no room (or the reverse) gets "TBA" for the missing half
+        if r.get("building") and not r.get("room_number"):
+            r["room_number"] = "TBA"
+        elif r.get("room_number") and not r.get("building"):
+            r["building"] = "TBA"
 
         if r["units"] is None:
             problems.append("units must be a whole number")
@@ -134,8 +151,6 @@ def validate(rows):
             problems.append("capacity must be a whole number or blank")
         if bool(r["professor_first"]) != bool(r["professor_last"]):
             problems.append("give both professor_first and professor_last, or leave both blank")
-        if bool(r["building"]) != bool(r["room_number"]):
-            problems.append("give both building and room_number, or leave both blank")
 
         if problems:
             errors.append((r["_row"], "; ".join(problems)))
@@ -143,13 +158,15 @@ def validate(rows):
             good.append(r)
 
     # same course + section + term twice is almost certainly a typo
-    seen = {}
+    seen, unique = {}, []
     for r in good:
         key = (r["term"], r["subject"], r["catalog_num"], r["section_number"])
         if key in seen:
             errors.append((r["_row"], f"duplicate of row {seen[key]} ({key[1]} {key[2]} sec {key[3]})"))
+            continue
         seen[key] = r["_row"]
-    return good, errors
+        unique.append(r)
+    return unique, errors
 
 
 def build_tables(rows):
@@ -193,16 +210,24 @@ def write(path, fields, rows):
 
 
 def main():
-    if len(sys.argv) != 2:
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    skip = "--skip-problems" in sys.argv
+    if len(args) != 1:
         sys.exit(__doc__)
-    rows = read_rows(sys.argv[1])
+    rows = read_rows(args[0])
     good, errors = validate(rows)
     print(f"Read {len(rows)} rows: {len(good)} ok, {len(errors)} with problems.")
     if errors:
-        print("\nFix these rows in the sheet (row numbers match the sheet), then run again:")
+        if skip:
+            print("\nSkipping these rows (they are NOT imported):")
+        else:
+            print("\nFix these rows in the sheet (row numbers match the sheet), then run again.")
+            print("Or add --skip-problems to import only the good rows.")
         for row, msg in sorted(errors):
             print(f"  row {row}: {msg}")
-        sys.exit(1)
+        if not skip:
+            sys.exit(1)
+        print(f"\nImporting the {len(good)} good rows.")
 
     professors, rooms, courses, sections = build_tables(good)
     os.makedirs(OUT_DIR, exist_ok=True)
