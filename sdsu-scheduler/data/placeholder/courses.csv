@@ -1,0 +1,25 @@
+course_id,subject,catalog_num,title,units,description
+1,CS,102,Intro to Programming,3,Placeholder description for CS 102: Intro to Programming.
+2,CS,155,Data Structures,3,Placeholder description for CS 155: Data Structures.
+3,CS,204,Operating Systems,3,Placeholder description for CS 204: Operating Systems.
+4,CS,259,Database Theory and Implementation,3,Placeholder description for CS 259: Database Theory and Implementation.
+5,CS,308,Networks and Distributed Systems,3,Placeholder description for CS 308: Networks and Distributed Systems.
+6,CS,352,Intro to AI,4,Placeholder description for CS 352: Intro to AI.
+7,CS,406,Wireless Networks,3,Placeholder description for CS 406: Wireless Networks.
+8,CS,458,Adv Programming Languages,3,Placeholder description for CS 458: Adv Programming Languages.
+9,CS,505,Software Engineering,3,Placeholder description for CS 505: Software Engineering.
+10,CS,553,Computer Architecture,3,Placeholder description for CS 553: Computer Architecture.
+11,MATH,105,Calculus I,4,Placeholder description for MATH 105: Calculus I.
+12,MATH,154,Calculus II,3,Placeholder description for MATH 154: Calculus II.
+13,MATH,203,Discrete Mathematics,3,Placeholder description for MATH 203: Discrete Mathematics.
+14,MATH,253,Linear Algebra,4,Placeholder description for MATH 253: Linear Algebra.
+15,MATH,306,Probability and Statistics,4,Placeholder description for MATH 306: Probability and Statistics.
+16,PHYS,102,Physics for Engineers I,3,Placeholder description for PHYS 102: Physics for Engineers I.
+17,PHYS,152,Physics for Engineers II,3,Placeholder description for PHYS 152: Physics for Engineers II.
+18,PHYS,208,Modern Physics,3,Placeholder description for PHYS 208: Modern Physics.
+19,ENGL,109,Rhetoric and Writing,4,Placeholder description for ENGL 109: Rhetoric and Writing.
+20,ENGL,159,American Literature,4,Placeholder description for ENGL 159: American Literature.
+21,ENGL,205,Technical Writing,3,Placeholder description for ENGL 205: Technical Writing.
+22,HIST,102,World History I,4,Placeholder description for HIST 102: World History I.
+23,HIST,151,U.S. History,3,Placeholder description for HIST 151: U.S. History.
+24,HIST,201,History of Science,3,Placeholder description for HIST 201: History of Science.

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDSU Class Scheduler</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>SDSU Class Scheduler</h1>
+    <p class="subtitle">Search sections, then build a schedule and check for conflicts.</p>
+  </header>
+
+  <main>
+    <section class="filters">
+      <h2>Search</h2>
+      <div class="filter-row">
+        <label>
+          Subject
+          <select id="subject-filter">
+            <option value="">All</option>
+          </select>
+        </label>
+        <label>
+          Day
+          <select id="day-filter">
+            <option value="">Any</option>
+            <option value="M">Monday</option>
+            <option value="T">Tuesday</option>
+            <option value="W">Wednesday</option>
+            <option value="Th">Thursday</option>
+            <option value="F">Friday</option>
+          </select>
+        </label>
+        <label>
+          Professor
+          <input type="text" id="professor-filter" placeholder="e.g. Nguyen">
+        </label>
+        <label>
+          Keyword
+          <input type="text" id="keyword-filter" placeholder="course title or number">
+        </label>
+        <button id="search-btn">Search</button>
+      </div>
+    </section>
+
+    <section class="results">
+      <h2>Sections</h2>
+      <table id="results-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Course</th>
+            <th>Title</th>
+            <th>Sec</th>
+            <th>Professor</th>
+            <th>Days</th>
+            <th>Time</th>
+            <th>Room</th>
+          </tr>
+        </thead>
+        <tbody id="results-body">
+          <!-- filled by js/app.js -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="schedule">
+      <h2>My Schedule</h2>
+      <ul id="schedule-list">
+        <li class="empty-state">No sections selected yet.</li>
+      </ul>
+      <button id="check-conflicts-btn">Check for Conflicts</button>
+      <div id="conflict-result"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

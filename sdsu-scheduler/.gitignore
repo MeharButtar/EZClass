@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+backend/sql/scheduler.db
+.env
+.DS_Store
+node_modules/

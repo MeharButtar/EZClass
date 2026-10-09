@@ -1,0 +1,16 @@
+professor_id,first_name,last_name,email,department
+1,Quinn,Garcia,quinn.garcia@sdsu.edu,CS
+2,Reese,Kim,reese.kim@sdsu.edu,MATH
+3,Taylor,Smith,taylor.smith@sdsu.edu,CS
+4,Quinn,Wilson,quinn.wilson@sdsu.edu,HIST
+5,Jordan,Martinez,jordan.martinez@sdsu.edu,ENGL
+6,Alex,Nguyen,alex.nguyen@sdsu.edu,CS
+7,Taylor,Patel,taylor.patel@sdsu.edu,HIST
+8,Avery,Nguyen,avery.nguyen@sdsu.edu,HIST
+9,Taylor,Wilson,taylor.wilson@sdsu.edu,HIST
+10,Riley,Patel,riley.patel@sdsu.edu,ENGL
+11,Avery,Kim,avery.kim@sdsu.edu,CS
+12,Sam,Wilson,sam.wilson@sdsu.edu,ENGL
+13,Casey,Kim,casey.kim@sdsu.edu,MATH
+14,Taylor,Johnson,taylor.johnson@sdsu.edu,CS
+15,Jordan,Lopez,jordan.lopez@sdsu.edu,CS
