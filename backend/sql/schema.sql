@@ -2,6 +2,8 @@
 -- Written to run on SQLite for local dev; syntax is portable to MySQL with
 -- minor tweaks (see notes at the bottom).
 
+DROP TABLE IF EXISTS course_ge;
+DROP TABLE IF EXISTS ge_areas;
 DROP TABLE IF EXISTS enrollments;
 DROP TABLE IF EXISTS sections;
 DROP TABLE IF EXISTS courses;
@@ -35,6 +37,33 @@ CREATE TABLE courses (
     units        INTEGER NOT NULL,
     description  TEXT,
     UNIQUE (subject, catalog_num)
+);
+
+-- General Education areas (1A, 1B, 3A ... plus the upper-division Explorations).
+CREATE TABLE ge_areas (
+    area_code  TEXT PRIMARY KEY,      -- e.g. '3A', 'E3'
+    name       TEXT NOT NULL,         -- e.g. 'Arts'
+    grp        TEXT NOT NULL,         -- heading it shows under
+    sort_order INTEGER NOT NULL
+);
+
+-- Which course counts for which GE area. A course can count for more than one
+-- area, so this is a many-to-many link between courses and ge_areas.
+-- It is keyed by subject + catalog number (not course_id) on purpose: the GE
+-- list covers every course SDSU approves, including ones we have no sections
+-- for yet. Built by data/ge/parse_ge_guide.py from the catalog's GE page.
+CREATE TABLE course_ge (
+    course_ge_id        INTEGER PRIMARY KEY AUTOINCREMENT,
+    subject             TEXT NOT NULL,
+    catalog_num         TEXT NOT NULL,
+    title               TEXT,
+    units               TEXT,
+    area_code           TEXT NOT NULL,
+    cultural_diversity  INTEGER NOT NULL DEFAULT 0,   -- the * tag
+    ethnic_studies_grad INTEGER NOT NULL DEFAULT 0,   -- also meets the Ethnic Studies graduation requirement
+    american_inst       INTEGER NOT NULL DEFAULT 0,   -- [AI] also meets American Institutions
+    FOREIGN KEY (area_code) REFERENCES ge_areas(area_code),
+    UNIQUE (subject, catalog_num, area_code)
 );
 
 CREATE TABLE sections (
@@ -74,6 +103,8 @@ CREATE TABLE enrollments (
 CREATE INDEX idx_courses_subject ON courses(subject);
 CREATE INDEX idx_sections_course ON sections(course_id);
 CREATE INDEX idx_sections_professor ON sections(professor_id);
+CREATE INDEX idx_course_ge_course ON course_ge(subject, catalog_num);
+CREATE INDEX idx_course_ge_area ON course_ge(area_code);
 
 -- ---------------------------------------------------------------------
 -- MySQL notes (for when the team moves this into Workbench):

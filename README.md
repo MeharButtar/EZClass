@@ -71,6 +71,19 @@ This overwrites the CSVs with a fresh (but reproducible, seeded) batch.
 Edit the constants at the top of the script (subjects, names, counts) if
 you want a different mix.
 
+## GE Scheduler
+
+The site has a home page, a Search view, and a GE Scheduler view, with a cart on
+the right that stays put across views. The GE Scheduler filters classes by GE
+area (1A, 1B, 1C, 2, 3A, 3B, 4, 5A to 5C, 6, and the upper-division Explorations)
+and by the cultural diversity, Ethnic Studies and American Institutions tags.
+
+- GE data lives in `data/ge/`. `ge_courses.csv` was built from the SDSU catalog's
+  General Education page with `python3 data/ge/parse_ge_guide.py <saved page.txt>`.
+- `python3 backend/models/db.py data/cleaned` loads your classes AND the GE tables.
+- A class only shows up under a GE area if its subject and course number are in
+  `ge_courses.csv`, so there is nothing extra to fill in when adding classes.
+
 ## Adding real data (the easy way)
 
 1. Open `data/template/EzClass_Data_Template.xlsx` and read the Instructions sheet.

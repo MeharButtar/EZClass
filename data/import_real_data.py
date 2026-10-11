@@ -130,6 +130,7 @@ def validate(rows):
         r["start_time"] = norm_time(r["start_time"])
         r["end_time"] = norm_time(r["end_time"])
         r["capacity"] = clean_number(r["capacity"]) if r.get("capacity") else ""
+        r["room_number"] = strip_float(r.get("room_number", ""))   # Excel gives 22.0 for room 22
         r["section_number"] = strip_float(r["section_number"])
         if r["section_number"].isdigit():
             r["section_number"] = r["section_number"].zfill(2)

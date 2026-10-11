@@ -16,6 +16,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 DB_PATH = os.path.join(BASE_DIR, "backend", "sql", "scheduler.db")
 SCHEMA_PATH = os.path.join(BASE_DIR, "backend", "sql", "schema.sql")
 PLACEHOLDER_DIR = os.path.join(BASE_DIR, "data", "placeholder")
+GE_DIR = os.path.join(BASE_DIR, "data", "ge")
 
 
 def get_connection():
@@ -71,6 +72,24 @@ def load_csvs(data_dir=PLACEHOLDER_DIR):
     conn.close()
 
 
+def load_ge(ge_dir=GE_DIR):
+    """
+    Loads the General Education tables: ge_areas.csv (the list of areas) and
+    ge_courses.csv (which course counts for which area) into ge_areas and
+    course_ge. Same GE data no matter which class data you loaded.
+    """
+    conn = get_connection()
+    print(f"Loading GE data from {ge_dir}")
+    for csv_name, table in [("ge_areas.csv", "ge_areas"), ("ge_courses.csv", "course_ge")]:
+        csv_path = os.path.join(ge_dir, csv_name)
+        if os.path.exists(csv_path):
+            load_csv_into_table(conn, csv_path, table)
+        else:
+            print(f"  {table}: {csv_path} not found, skipping")
+    conn.commit()
+    conn.close()
+
+
 if __name__ == "__main__":
     import sys
     # python3 backend/models/db.py            -> placeholder data
@@ -78,4 +97,5 @@ if __name__ == "__main__":
     data_dir = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else PLACEHOLDER_DIR
     init_schema()
     load_csvs(data_dir)
+    load_ge()
     print("\nDatabase ready.")

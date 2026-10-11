@@ -1,0 +1,751 @@
+subject,catalog_num,title,units,area_code,cultural_diversity,ethnic_studies_grad,american_inst
+AAS,150,Writing Composition and Rhetoric,3,1A,0,0,0
+AFRAS,120,Composition,3,1A,0,0,0
+AMIND,120,Written Communication,3,1A,0,0,0
+CCS,111B,Written Communication,3,1A,0,0,0
+ECL,100,Rhetoric of Written Argument,3,1A,0,0,0
+RWS,100,Rhetoric of Written Argument,3,1A,0,0,0
+LING,100B,English Composition for Multilingual Students II,3,1A,0,0,0
+RWS,105B,Rhetoric of Written Argument Stretch II,3,1A,0,0,0
+AFRAS,200,Intermediate Expository Writing and Research Fundamentals,3,1B,0,0,0
+AMIND,225,Expository Writing and Research,3,1B,0,0,0
+CCS,200,Intermediate Expository Research and Writing,3,1B,0,0,0
+ECL,200,Rhetoric of Written Arguments in Context,3,1B,0,0,0
+RWS,200,Rhetoric of Written Arguments in Context,3,1B,0,0,0
+LING,200,Advanced Composition for Multilingual Students,3,1B,0,0,0
+PHIL,200,Critical Thinking and Composition,3,1B,0,0,0
+RWS,220,Rhetoric of Written Arguments and the Tutoring of Writing,3,1B,0,0,0
+AAS,152,Oral Communications and Public Speaking,3,1C,0,0,0
+AFRAS,140,Oral Communication,3,1C,0,0,0
+CCS,111A,Oral Communication,3,1C,0,0,0
+COMM,103,Oral Communication,3,1C,0,0,0
+BIOL,215,Biostatistics,3,2,0,0,0
+CS,100,Computer Science Principles,3,2,0,0,0
+ECON,201,Statistical Methods,3,2,0,0,0
+GENS,147,Data Literacy: Human Choices Behind the Numbers,3,2,0,0,0
+GEOG,104,Geographic Information Science and Spatial Reasoning,3,2,0,0,0
+LING,270,Elementary Statistics for Language Studies,3,2,0,0,0
+MATH,110,Mathematics for Life,3,2,0,0,0
+MATH,118,Topics in Mathematics,3,2,0,0,0
+MATH,120,Calculus for Business Analysis,3,2,0,0,0
+MATH,124,Calculus for the Life Sciences,4,2,0,0,0
+MATH,140,College Algebra,3,2,0,0,0
+MATH,141,Precalculus,4,2,0,0,0
+MATH,150,Calculus I,4,2,0,0,0
+MATH,151,Calculus II,4,2,0,0,0
+MATH,210,Number Systems in Elementary Mathematics,3,2,0,0,0
+MATH,211,Geometry in Elementary Mathematics,3,2,0,0,0
+MATH,245,Discrete Mathematics,3,2,0,0,0
+MATH,252,Calculus III,4,2,0,0,0
+MATH,254,Introduction to Linear Algebra,3,2,0,0,0
+PH,250,Infections and Epidemics,3,2,0,0,0
+PHIL,120,Introduction to Logic,3,2,0,0,0
+POLS,201,Statistics and Politics,3,2,0,0,0
+PSY,280,Statistical Methods in Psychology,4,2,0,0,0
+SOC,201,Elementary Social Statistics,3,2,0,0,0
+STAT,119,Elementary Statistics for Business,3,2,0,0,0
+STAT,200,Introduction to Data Science with R,3,2,0,0,0
+STAT,250,Statistical Principles and Practices,3,2,0,0,0
+AAS,263,Asian American Film and Media,3,3A,0,0,0
+AAS,270,Ethnocommunications: Creating Community Media,3,3A,0,1,0
+ART,133,Modern Making,3,3A,0,0,0
+ART,157,Introduction to Art,3,3A,0,0,0
+ART,215,Visual Odyssey through Comics and Sequential Media,3,3A,0,0,0
+ART,258,Introduction to Art History I,3,3A,0,0,0
+ART,259,Introduction to Art History II,3,3A,0,0,0
+BRAZ,233,Latin American Documentary Practices,3,3A,0,0,0
+DANCE,101,Dance Influencers,3,3A,0,0,0
+DANCE,181,Introduction to Dance,3,3A,0,0,0
+DANCE,281,"Dance, Popular Culture, and Identity",3,3A,0,0,0
+ECL,156,Artificial Intelligence and Human Creativity,3,3A,0,0,0
+ECL,157,Comics and History,3,3A,0,0,0
+HIST,157,Comics and History,3,3A,0,0,0
+ECL,158,Introduction to Horror Aesthetics,3,3A,0,0,0
+ECL,159,Introduction to Children’s Literature Aesthetics,3,3A,0,0,0
+HIST,135,Film as the Past,3,3A,0,0,0
+JMS,210,Digital Literacy,3,3A,0,0,0
+MUSIC,151,Introduction to Music,3,3A,0,0,0
+TFM,160,Cinema as Art,3,3A,0,0,0
+TFM,235,The Art of Creating Emotion in Movies,3,3A,0,0,0
+TFM,265,Cinema in Africa,3,3A,0,0,0
+TFM,267,Independent Cinema,3,3A,0,0,0
+TFM,270,Introduction to Filmmaking,3,3A,0,0,0
+THEA,100,The Art of Theatre,3,3A,0,0,0
+THEA,120,Heritage of Storytelling,3,3A,0,0,0
+THEA,205,American Musical on Stage and Screen,3,3A,0,0,0
+AAS,122,"War, Empire, and the Asian American Experience",3,3B,0,1,0
+AAS,208,Asian Americans and Popular Culture,3,3B,0,0,0
+AFRAS,240,Africana Intellectual Thought,3,3B,0,1,0
+AFRAS,260,Africana Literary Study,3,3B,0,1,0
+AMIND,210,Indigenous Women and the Arts,3,3B,0,1,0
+ANTH,111,"Anthropology of the Night: Sleep, Dreams, and Demons",3,3B,0,0,0
+ARAB,101,Elementary Arabic I,4,3B,0,0,0
+ARAB,102,Elementary Arabic II,4,3B,0,0,0
+ARAB,201,Intermediate Arabic I,4,3B,0,0,0
+ARAB,202,Intermediate Arabic II,4,3B,0,0,0
+ASIAN,101,Asian Thought and Cultures,3,3B,0,0,0
+ASIAN,110,Elementary Conversational Chinese,3,3B,0,0,0
+CHIN,100,Elementary Conversational Chinese,3,3B,0,0,0
+ASL,101,American Sign Language I,4,3B,0,0,0
+ASL,102,American Sign Language II,4,3B,0,0,0
+ASL,201,American Sign Language III,4,3B,0,0,0
+BRAZ,222,"Art, Sport, and Culture in Contemporary Brazil",3,3B,0,0,0
+CHIN,101,Elementary Chinese I,5,3B,0,0,0
+CHIN,102,Elementary Chinese II,5,3B,0,0,0
+CHIN,201,Intermediate Chinese I,5,3B,0,0,0
+CHIN,202,Intermediate Chinese II,5,3B,0,0,0
+CLASS,101G,Ancient Greek I,5,3B,0,0,0
+CLASS,101L,Latin I,5,3B,0,0,0
+CLASS,120,Latin and Greek for the Professional World,3,3B,0,0,0
+CLASS,140,Introduction to Classics,3,3B,0,0,0
+CLASS,202G,Ancient Greek II,5,3B,0,0,0
+CLASS,202L,Latin II,5,3B,0,0,0
+CONE,101,Construction and Culture,3,3B,0,0,0
+ECL,220,The Art of Literature,3,3B,0,0,0
+ECL,240,Introduction to Children’s Literature,3,3B,0,0,0
+ECL,270,Introduction to Comparative Literature,3,3B,0,0,0
+ECL,280,Introduction to Creative Writing,3,3B,0,0,0
+EUROP,101,Introduction to European Studies,3,3B,0,0,0
+EUROP,160,European Reflections on Science and Technology,3,3B,0,0,0
+FILIP,101,Elementary Filipino I,4,3B,0,0,0
+FILIP,102,Elementary Filipino II,4,3B,0,0,0
+FILIP,201,Intermediate Filipino,4,3B,0,0,0
+FRENC,100A,Elementary French I,5,3B,0,0,0
+FRENC,100B,Elementary French II,5,3B,0,0,0
+FRENC,201,Readings in French,3,3B,0,0,0
+FRENC,210,French Grammar,3,3B,0,0,0
+FRENC,221,Speaking and Writing French,4,3B,0,0,0
+GERMN,100A,First Course in German,5,3B,0,0,0
+GERMN,100B,Second Course in German,5,3B,0,0,0
+GERMN,202,Readings in German,3,3B,0,0,0
+GERMN,205A,Third Course in German,4,3B,0,0,0
+GERMN,205B,Fourth Course in German,4,3B,0,0,0
+HEBRW,101,Elementary Hebrew I,4,3B,0,0,0
+HEBRW,102,Elementary Hebrew II,4,3B,0,0,0
+HEBRW,201,Intermediate Hebrew,4,3B,0,0,0
+HIST,100,World History,3,3B,0,0,0
+HIST,101,World History,3,3B,0,0,0
+HIST,102,World History Through Science and Technology,3,3B,0,0,0
+HIST,106,Western Civilization Since the Sixteenth Century,3,3B,0,0,0
+HUM,101,Introduction to Humanities,3,3B,0,0,0
+HUM,102,Global Humanities,3,3B,0,0,0
+HUM,103,Introduction to Public Humanities,3,3B,0,0,0
+HUM,130,The Jewish Heritage,3,3B,0,0,0
+JS,130,The Jewish Heritage,3,3B,0,0,0
+HUM,140,World Mythology,3,3B,0,0,0
+HUM,201,The Body: Human Organisms and Human Meaning,3,3B,0,0,0
+RELS,201,The Body: Human Organisms and Human Meaning,3,3B,0,0,0
+HUM,250,Avenging the Universe: An Introduction to Environmental Humanities and Comics,3,3B,0,0,0
+ITAL,100A,Elementary Italian I,5,3B,0,0,0
+ITAL,100B,Elementary Italian II,5,3B,0,0,0
+ITAL,201,Reading and Speaking Italian,3,3B,0,0,0
+ITAL,211,Intermediate Italian I,4,3B,0,0,0
+ITAL,212,Intermediate Italian II,4,3B,0,0,0
+JAPAN,111,Elementary Japanese I,5,3B,0,0,0
+JAPAN,112,Elementary Japanese II,5,3B,0,0,0
+JAPAN,211,Intermediate Japanese I,5,3B,0,0,0
+JAPAN,212,Intermediate Japanese II,5,3B,0,0,0
+KOR,101,Elementary Korean I,5,3B,0,0,0
+KOR,102,Elementary Korean II,5,3B,0,0,0
+KOR,201,Intermediate Korean I,5,3B,0,0,0
+KOR,202,Intermediate Korean II,5,3B,0,0,0
+LATAM,110,Elementary Mixtec I,4,3B,0,0,0
+LATAM,111,Elementary Mixtec II,4,3B,0,0,0
+LATAM,120,Elementary Zapotec I,4,3B,0,0,0
+LATAM,130,Elementary Nahuatl I,4,3B,0,0,0
+LATAM,131,Elementary Nahuatl II,4,3B,0,0,0
+LATAM,210,Intermediate Mixtec I,4,3B,0,0,0
+LATAM,230,Intermediate Nahuatl I,4,3B,0,0,0
+PERS,101,Elementary Modern Persian I,4,3B,0,0,0
+PERS,102,Elementary Modern Persian II,4,3B,0,0,0
+PERS,201,Intermediate Persian I,4,3B,0,0,0
+PHIL,100,Introduction to Philosophy: Global Philosophies,3,3B,0,0,0
+PHIL,101,Introduction to Philosophy: Ethics,3,3B,0,0,0
+PHIL,102,Introduction to Philosophy: Knowledge and Reality,3,3B,0,0,0
+PHIL,140,Technology and Human Nature,3,3B,0,0,0
+PORT,101,Elementary Portuguese I,5,3B,0,0,0
+PORT,102,Elementary Portuguese II,5,3B,0,0,0
+PORT,110,Beginner Portuguese for Spanish Speakers,3,3B,0,0,0
+PORT,203,Intermediate Portuguese I,3,3B,0,0,0
+PORT,204,Intermediate Portuguese II,3,3B,0,0,0
+PORT,205,"Intermediate Portuguese for Business, Health, and Legal Purposes",3,3B,0,0,0
+PORT,250,Women’s Literature in the Portuguese-speaking World,3,3B,0,0,0
+RELS,100,Exploring the Bible,3,3B,0,0,0
+RELS,101,World Religions,3,3B,0,0,0
+RELS,103,American Religious Diversity,3,3B,0,0,0
+RUSSN,100A,Beginning Russian 1,5,3B,0,0,0
+RUSSN,100B,Beginning Russian 2,5,3B,0,0,0
+RUSSN,110,Slavic Legends and Tales,3,3B,0,0,0
+RUSSN,200A,Intermediate Russian 1,5,3B,0,0,0
+RUSSN,200B,Intermediate Russian 2,5,3B,0,0,0
+RUSSN,250,Russian Culture in a Digital World,3,3B,0,0,0
+RWS,250,Rhetoric in Everyday Life,3,3B,0,0,0
+SPAN,101,Introduction to Spanish I,4,3B,0,0,0
+SPAN,102,Introduction to Spanish II,4,3B,0,0,0
+SPAN,181,Introduction to Spanish for Heritage Language Learners I,3,3B,0,0,0
+SPAN,201,Intermediate Spanish I,4,3B,0,0,0
+SPAN,202,Intermediate Spanish II,4,3B,0,0,0
+SPAN,211,Intermediate Conversation and Reading,3,3B,0,0,0
+SPAN,212,Intermediate Conversation and Writing,3,3B,0,0,0
+SPAN,250,Women’s Literature in the Hispanic World,3,3B,0,0,0
+SPAN,281,Intermediate Spanish for Heritage Language Learners I,3,3B,0,0,0
+SPAN,282,Intermediate Spanish for Heritage Language Learners II,3,3B,0,0,0
+WGSS,102,Introduction to WGSS: Key Concepts,3,3B,0,0,0
+AAS,261,Eating Asian America,3,4,0,0,0
+AAS,268,Asian Americans and Mental Health,3,4,0,0,0
+AFRAS,101,Introduction to Africana Studies: Social and Behavioral Sciences,3,4,0,1,0
+ANTH,102,Introduction to Socio-Cultural Anthropology,3,4,0,0,0
+ANTH,103,Introduction to Archaeology and World Prehistory,3,4,0,0,0
+ASIAN,100,State and Society in the Asia Pacific,3,4,0,0,0
+CCS,220,Language in the Borderlands,3,4,0,0,0
+CFD,135,Principles of Family Development,3,4,0,0,0
+CFD,170,Child and Adolescent Development from a Cultural Perspective,3,4,0,0,0
+TE,170,Child and Adolescent Development from a Cultural Perspective,3,4,0,0,0
+CFD,270,Human Development Across the Lifespan,3,4,0,0,0
+CINTS,101,Introduction to Comparative International Studies,3,4,0,0,0
+COMM,245,Interpersonal Communication,3,4,0,0,0
+CSP,150,"Adversity, Resilience, and the Science of Well-Being",3,4,0,0,0
+CSP,240,Career Development and Life Design,3,4,0,0,0
+ECON,101,Principles of Economics,3,4,0,0,0
+ECON,102,Principles of Economics,3,4,0,0,0
+FIN,250,Financial Literacy,3,4,0,0,0
+GENS,280,Introduction to Civic Engagement,3,4,0,0,0
+GENS,290,Introduction to Undergraduate Research,3,4,0,0,0
+GEOG,102,"People, Places, and Environments",3,4,0,0,0
+GEOG,106,World Regional Geography,3,4,0,0,0
+GEOG,170,Sustainable Places and Practices,3,4,0,0,0
+GERO,101,Introduction to Human Aging,3,4,0,0,0
+HIST,109,American History to Reconstruction,3,4,0,0,1
+HIST,110,American History Since the Civil War,3,4,0,0,1
+ITAL,120,Italian Food Culture,3,4,0,0,0
+JMS,200,Introduction to Contemporary Media,3,4,0,0,0
+JMS,250,Introduction to Intersectional Representation in the Media,3,4,0,0,0
+LATAM,101,Introduction to Latin American Studies,3,4,0,0,0
+LEAD,205,Exploring Leadership,3,4,0,0,0
+LGBT,101,Introduction to LGBTQ+ Studies,3,4,0,0,0
+LING,101,Introduction to Language,3,4,0,0,0
+MGT,160,Entrepreneurial Approaches to Problem Identification in Soci,3,4,0,0,0
+POLS,101,Introduction to American Politics in Global Perspective,3,4,0,0,1
+POLS,102,Introduction to American and California Government and Politics,3,4,0,0,1
+POLS,103,Introduction to Comparative Politics,3,4,0,0,0
+POLS,104,Introduction to Global Politics,3,4,0,0,0
+PSFA,280,Adaptation to U.S. Academic Culture,3,4,0,0,0
+PSY,101,Introductory Psychology,3,4,0,0,0
+RTM,102,Wellness and Recreation for Life Through Surfing,3,4,0,0,0
+RTM,200,"Recreation, Travel, and Self-Awareness",3,4,0,0,0
+SLHS,106,"Introduction to Speech, Language, and Hearing Sciences",3,4,0,0,0
+SLHS,150,Sign Languages and Deaf Culture,3,4,0,0,0
+SLHS,222,Communication as a Human Right,3,4,0,0,0
+SOC,101,Introductory Sociology: The Study of Society,3,4,0,0,0
+SOC,102,Introduction to Social Problems,3,4,0,0,0
+WGSS,101,Introduction to WGSS: Social Structures and Movements,3,4,0,0,0
+WGSS,103,Women and Global Justice,3,4,0,0,0
+ASTR,101,Principles of Astronomy,3,5A,0,0,0
+ASTR,201,Astronomy for Science Majors,3,5A,0,0,0
+CHEM,100,Preparation for General Chemistry,4,5A,0,0,0
+CHEM,102,"Introduction to General, Organic, and Biological Chemistry",5,5A,0,0,0
+CHEM,103,Introduction to General Chemistry with Laboratory,4,5A,0,0,0
+ENGR,250,Introduction to Renewable Energy,3,5A,0,0,0
+ENVS,100,Environmental Sciences,3,5A,0,0,0
+SUSTN,100,Environmental Sciences,3,5A,0,0,0
+GEOG,101,Earth’s Physical Environment,3,5A,0,0,0
+GEOG,103,Weather and Climate,3,5A,0,0,0
+GEOL,100,Planet Earth,3,5A,0,0,0
+GEOL,104,Earth Science,3,5A,0,0,0
+NSCI,100,Physical Science,3,5A,0,0,0
+OCEAN,100,The Ocean Planet,4,5A,0,0,0
+RTM,103,Surfing and Science,3,5A,0,0,0
+ANTH,101,Human Biocultural Origins,3,5B,0,0,0
+BIOL,100,General Biology,3,5B,0,0,0
+BIOL,101,World of Animals,3,5B,0,0,0
+CHEM,162,Saving Our Planet with Sustainable Biochemistry,3,5B,0,0,0
+ASTR,109,Astronomy Laboratory,1,5C,0,0,0
+BIOL,100L,General Biology Laboratory,1,5C,0,0,0
+BIOL,101L,World of Animals Laboratory,1,5C,0,0,0
+CHEM,100,Preparation for General Chemistry,4,5C,0,0,0
+CHEM,102,"Introduction to General, Organic, and Biological Chemistry",5,5C,0,0,0
+CHEM,103,Introduction to General Chemistry with Laboratory,4,5C,0,0,0
+GEOG,101L,Earth’s Physical Environment Laboratory,1,5C,0,0,0
+GEOL,101,Dynamics of the Earth Laboratory,1,5C,0,0,0
+OCEAN,100,The Ocean Planet,4,5C,0,0,0
+AAS,100,Asian American History,3,6,0,0,1
+AAS,101,"Politics, Power, and Asian America",3,6,0,0,1
+AAS,103,Introduction to Filipino American Studies,3,6,0,0,0
+AAS,422,Asian American Experiences,3,6,0,0,0
+HIST,422,Asian American Experiences,3,6,0,0,0
+AAS,460,Contemporary Issues in Filipino-American Communities,3,6,0,0,0
+FILIP,460,Contemporary Issues in Filipino-American Communities,3,6,0,0,0
+AFRAS,170A,Afro-American History to 1865,3,6,0,0,1
+AFRAS,170B,Afro-American History from 1865 to Present,3,6,0,0,1
+AFRAS,331,The Black Family,3,6,0,0,0
+AFRAS,332,Black Women: Myth and Reality,3,6,0,0,0
+AFRAS,351,Black Religions and Spirituality,3,6,0,0,0
+AFRAS,422,Modern Civil Rights Movement,3,6,0,0,0
+AFRAS,423,Black Nationalism,3,6,0,0,0
+AFRAS,476,History and Culture of Hip Hop,3,6,0,0,0
+AMIND,110,American Indian Heritage,3,6,0,0,0
+AMIND,140,U.S. History from an American Indian Perspective to 1870,3,6,0,0,1
+AMIND,141,U.S. History from an American Indian Perspective Since 1870,3,6,0,0,1
+AMIND,370,Tribal Gaming: Cultural and Political Context,3,6,0,0,0
+HTM,370,Tribal Gaming: Cultural and Political Context,3,6,0,0,0
+AMIND,435,Indians through Film and Television,3,6,0,0,0
+CCS,100,Chicana and Chicano Heritage,3,6,0,0,0
+CCS,110,Introduction to Chicana and Chicano Studies,3,6,0,0,0
+CCS,120A,Chicana/os and American Government and Politics,3,6,0,0,1
+CCS,120B,Chicana/os and California Government and Politics,3,6,0,0,1
+CCS,141A,U.S. History from a Chicana/o Perspective to 1865,3,6,0,0,1
+CCS,141B,U.S. History from a Chicana/o Perspective 1865-present,3,6,0,0,1
+CCS,141C,"History of U.S. Interventions in Central America, 1821-present",3,6,0,0,0
+CCS,150,Critical Issues in Chicana Studies,3,6,0,0,0
+CCS,235,Comics and Race,3,6,0,0,0
+CCS,306,Mexican Immigration,3,6,0,0,0
+CCS,340A,"Gender, Sex, and Politics in Colonial Mexico",3,6,0,0,0
+CCS,340B,Chicana Women’s History: 1848-Present,3,6,0,0,0
+ANTH,331,"Pestilence, People, and War: A Bioarchaeological Perspective",3,E2/5,0,0,0
+ANTH,355,Exploring Primate Behavior,3,E2/5,0,0,0
+ANTH,360,From the Grave: Modern Forensic Anthropology,3,E2/5,1,0,0
+ANTH,402,Dynamics of Human Biocultural Diversity: The Transformational Partnership of Nature and Nurture,3,E2/5,1,0,0
+ASTR,303,A Walk Through the Stellar Graveyard,3,E2/5,0,0,0
+ASTR,305,The Dark Mysteries of the Universe,3,E2/5,0,0,0
+ASTR,310,Astrobiology and the Search for Extraterrestrial Life,3,E2/5,0,0,0
+BIOL,307,Biology of Sex,3,E2/5,0,0,0
+BIOL,315,Ecology and Human Impacts on the Environment,3,E2/5,0,0,0
+BIOL,317,World of Dinosaurs,3,E2/5,0,0,0
+BIOL,324,Life in the Sea,3,E2/5,0,0,0
+BIOL,327,Conservation of Wildlife,3,E2/5,0,0,0
+BIOL,335,The Human Body,3,E2/5,0,0,0
+BIOL,336,Principles of Human Physiology,3,E2/5,0,0,0
+CHEM,300,Forensic Science,3,E2/5,0,0,0
+CHEM,308,Chemistry as a Unifying Science,3,E2/5,0,0,0
+CHEM,362,Confronting Cancer,3,E2/5,0,0,0
+CS,301,Computers and Society,3,E2/5,0,0,0
+ENS,331,"Exercise and Nutrition for Health, Fitness, and Performance",3,E2/5,0,0,0
+ENVE,320,Designing Solutions for Environmental Problems,3,E2/5,0,0,0
+ENVS,301,Energy and the Environment,3,E2/5,0,0,0
+ENVS,302,Climate Change Solutions,3,E2/5,0,0,0
+FN,313,Contemporary Nutrition,3,E2/5,0,0,0
+GENS,340,Confronting HIV/AIDS,3,E2/5,0,0,0
+GEOG,303,Severe Weather,3,E2/5,0,0,0
+GEOL,301,Geology of National Parks and Monuments,3,E2/5,0,0,0
+GEOL,303,Natural Disasters,3,E2/5,0,0,0
+GEOL,305,Water and the Environment,3,E2/5,0,0,0
+LING,353,Language Across the Lifespan,3,E2/5,0,0,0
+MATH,303,History of Mathematics,3,E2/5,1,0,0
+NURS,350,Women’s Health Across the Lifespan,3,E2/5,0,0,0
+OCEAN,320,Oceans of Change,3,E2/5,0,0,0
+POLS,490,"Truth, Lies, and Politics",3,E2/5,0,0,0
+WGSS,382,"Gender, Science, and Technology",3,E2/5,1,0,0
+AAS,326,Asian Americans and Business,3,E3,1,0,0
+AAS,420,Storytelling Techniques in Asian America,3,E3,1,0,0
+AAS,428,Medical Humanities and Asian Americans,3,E3,1,0,0
+AFRAS,302,Literature and Film of Black Brazil,3,E3,1,0,0
+BRAZ,302,Literature and Film of Black Brazil,3,E3,1,0,0
+AFRAS,333,Black Women’s History,3,E3,1,0,0
+AFRAS,365A,African American Literature to 1900,3,E3,1,0,0
+ECL,365A,African American Literature to 1900,3,E3,1,0,0
+AFRAS,365B,African American Literature After 1900,3,E3,1,0,0
+ECL,365B,African American Literature After 1900,3,E3,1,0,0
+AFRAS,385,African American Music,3,E3,0,1,0
+AFRAS,465,Africa in Literature and Film,3,E3,1,0,0
+FRENC,465,Africa in Literature and Film,3,E3,1,0,0
+AFRAS,466,Afrofuturism,3,E3,0,1,0
+AFRAS,470,Comparative History: Afro-American and African Heritage,3,E3,0,1,0
+AFRAS,472,African Enslavement,3,E3,0,1,0
+AFRAS,475,Super Black: The Politics of Representation in Comics,3,E3,1,0,0
+AMIND,300,American Indian Oral Tradition,3,E3,0,1,0
+AMIND,430,American Indian Poetry and Fiction,3,E3,0,1,0
+AMIND,440,American Indian History,3,E3,0,1,0
+AMIND,470,American Indian Worldviews and Cosmologies (B),3,E3,1,0,0
+RELS,470,American Indian Worldviews and Cosmologies (B),3,E3,1,0,0
+ANTH,349,Roots of Civilizations: Why Our Past Matters for Our Future,3,E3,1,0,0
+ANTH,422,Music and Culture,3,E3,1,0,0
+ANTH,424,The Supernatural in Cross-Cultural Perspective (C),3,E3,1,0,0
+RELS,424,The Supernatural in Cross-Cultural Perspective (C),3,E3,1,0,0
+ARAB,301,Advanced Arabic I,4,E3,0,0,0
+ARAB,302,Advanced Arabic II,4,E3,0,0,0
+ARAB,330,Arabic Culture,3,E3,1,0,0
+ARAB,350,Advanced Conversational Arabic,4,E3,1,0,0
+ARAB,360,Advanced Arabic Grammar,3,E3,0,0,0
+ARAB,361,Advanced Arabic Grammar II,3,E3,0,0,0
+ART,357,World Art in Contemporary Life,3,E3,0,0,0
+ASIAN,315,Yoga: Theory and Practice,3,E3,1,0,0
+RELS,315,Yoga: Theory and Practice,3,E3,1,0,0
+ASIAN,321,Korean Civilization,3,E3,1,0,0
+KOR,321,Korean Civilization,3,E3,1,0,0
+ASIAN,351,Chinese Philosophy,3,E3,1,0,0
+PHIL,351,Chinese Philosophy,3,E3,1,0,0
+ASIAN,328,Islam,3,E3,1,0,0
+RELS,328,Islam,3,E3,1,0,0
+ASIAN,421,Asian History since 1600,3,E3,1,0,0
+HIST,421,Asian History since 1600,3,E3,1,0,0
+ASIAN,430,Contemporary Korean Culture Through Media,3,E3,1,0,0
+KOR,430,Contemporary Korean Culture Through Media,3,E3,1,0,0
+ASIAN,450,"Filipino Food, Rituals, and Traditions",3,E3,1,0,0
+FILIP,450,"Filipino Food, Rituals, and Traditions",3,E3,1,0,0
+ASIAN,458,Asian Traditions,3,E3,1,0,0
+RELS,458,Asian Traditions,3,E3,1,0,0
+ASIAN,490,Study Abroad in Asian Studies,3,E3,1,0,0
+ASL,301,American Sign Language IV,4,E3,1,0,0
+ASL,322,American Sign Language Literature,3,E3,0,0,0
+BRAZ,333,The Amazon is the Center of the World,3,E3,1,0,0
+BRAZ,433,"Creative Interventions in South American Streets: Activism, Art, and the City",3,E3,1,0,0
+BRAZ,455,Sport in Brazilian Society,3,E3,1,0,0
+CCS,310,Mexican and Chicano Music,3,E3,1,0,0
+LATAM,310,Mexican and Chicano Music,3,E3,1,0,0
+CCS,335,Chicana and Chicano Literature,3,E3,1,0,0
+ECL,335,Chicana and Chicano Literature,3,E3,1,0,0
+CCS,350A,Chicana and Chicano History,3,E3,1,0,0
+CCS,350B,Chicana and Chicano History,3,E3,1,0,0
+CCS,375,US/Mexico Border History,3,E3,1,0,0
+CCS,376,Chicana and Chicano Culture and Thought,3,E3,1,0,0
+CCS,380,US/Mexico Borderlands Folklore,3,E3,1,0,0
+LATAM,380,US/Mexico Borderlands Folklore,3,E3,1,0,0
+CCS,400,Mexican Images in Film,3,E3,1,0,0
+LATAM,400,Mexican Images in Film,3,E3,1,0,0
+CCS,450,Chicano and Latino Theatre,3,E3,0,1,0
+CHIN,301,Advanced Chinese I,3,E3,0,0,0
+CHIN,302,Advanced Chinese II,3,E3,0,0,0
+CINTS,330,Transnational Youth Cultures,3,E3,1,0,0
+CLASS,303G,Reading Greek Prose,3,E3,0,0,0
+CLASS,303L,Reading Latin Prose,3,E3,0,0,0
+CLASS,304G,Reading Greek Poetry,3,E3,0,0,0
+CLASS,304L,Reading Latin Poetry,3,E3,0,0,0
+CLASS,310,Greek and Roman Myth and Legend,3,E3,0,0,0
+CLASS,320,Epic and the Novel,3,E3,0,0,0
+CLASS,330,"Comedy, Tragedy, Actors, and Audiences",3,E3,0,0,0
+CLASS,333,Hell,3,E3,0,0,0
+CLASS,340,"Gods, Gladiators, and Empire",3,E3,0,0,0
+CLASS,350,Classics and Cinema,3,E3,0,0,0
+CLASS,360,"Sex, Gender, and the Erotic in the Ancient World",3,E3,1,0,0
+DANCE,382,Dance in World Cultures,3,E3,1,0,0
+DANCE,383,K-pop Dance,3,E3,0,0,0
+ECL,301,The Psychological Novel,3,E3,0,0,0
+ECL,305,Literature and Environment,3,E3,0,0,0
+ECL,401,Childhood’s Literature,3,E3,0,0,0
+ECL,409,Science Fiction,3,E3,0,0,0
+ECL,440,African Literature,3,E3,1,0,0
+ECL,450,LGBT Literature and Culture,3,E3,1,0,0
+ECL,470,Folk Literature,3,E3,1,0,0
+ECL,494,Modern Fiction of the United States,3,E3,0,0,0
+EUROP,301,Contemporary Europe,3,E3,0,0,0
+EUROP,424,European Cinema,3,E3,0,0,0
+EUROP,430,Muslim Experience in Europe,3,E3,0,0,0
+EUROP,435,Culture and Identity in Post-Communist Europe,3,E3,0,0,0
+EUROP,440,Human Trafficking in Europe,3,E3,0,0,0
+EUROP,465,Race and Identity in Europe,3,E3,1,0,0
+FRENC,301,Advanced Grammar and Composition,3,E3,0,0,0
+FRENC,302,Advanced Grammar and Translation,3,E3,0,0,0
+FRENC,305A,Survey of French Literature,3,E3,0,0,0
+FRENC,305B,Survey of French Literature,3,E3,0,0,0
+FRENC,421,French Civilization,3,E3,0,0,0
+FRENC,422,Contemporary France,3,E3,0,0,0
+FRENC,424,French Cinema and Theory,3,E3,1,0,0
+GENS,450,Life and Culture Semester Abroad,3,E3,0,0,0
+GERMN,300,Zeitgeist and Popular Culture,3,E3,0,0,0
+GERMN,301,Grammar and Composition,3,E3,0,0,0
+HIST,405,Amazons and Wonder Woman,3,E3,1,0,0
+HIST,406,History of Sexuality,3,E3,1,0,0
+HIST,407,Early Modern Europe,3,E3,0,0,0
+HIST,408,Modern Europe,3,E3,0,0,0
+HIST,415,Pre-Contact and Colonial Latin America,3,E3,1,0,0
+LATAM,415,Pre-Contact and Colonial Latin America,3,E3,1,0,0
+HIST,416,Modern Latin America,3,E3,1,0,0
+HIST,420,Asian History to 1600,3,E3,1,0,0
+HIST,425,The Vietnam War,3,E3,1,0,0
+HIST,436,Modern Jewish History in Feature Films,3,E3,1,0,0
+HIST,440,The Holocaust and Western Civilization,3,E3,0,0,0
+HIST,441,Unnatural Disasters: History of Current Environmental Problems,3,E3,0,0,0
+HIST,442,People from our Past,3,E3,0,0,0
+HIST,457,Graphic History,3,E3,0,0,0
+HIST,473,Middle Eastern History from the Advent of Islam to 1500,3,E3,1,0,0
+HIST,474,The Middle East Since 1500,3,E3,1,0,0
+HIST,488,Modern Jewish History,3,E3,1,0,0
+HUM,322,LGBT History and Culture,3,E3,1,0,0
+LGBT,322,LGBT History and Culture,3,E3,1,0,0
+HUM,331,Eugenics,3,E3,1,0,0
+HUM,343,Urban Humanities,3,E3,0,0,0
+HUM,360,Animal Humanities,3,E3,0,0,0
+HUM,370,American Culture,3,E3,0,0,0
+HUM,403,Happiness: Spiritual and Rational Foundations,3,E3,0,0,0
+RELS,403,Happiness: Spiritual and Rational Foundations,3,E3,0,0,0
+HUM,404,"Religion, Medicine, and Health",3,E3,0,0,0
+RELS,404,"Religion, Medicine, and Health",3,E3,0,0,0
+HUM,406,Renaissance and Self,3,E3,0,0,0
+HUM,407,Rationalists and Romantics,3,E3,0,0,0
+HUM,408,The Modern,3,E3,0,0,0
+HUM,409,The Future,3,E3,0,0,0
+HUM,410,Studies in Popular Culture,3,E3,0,0,0
+HUM,411,Understanding Evil,3,E3,1,0,0
+RELS,411,Understanding Evil,3,E3,1,0,0
+HUM,412,The Human Side of Science and Technology,3,E3,0,0,0
+HUM,413,Theory in the Humanities,3,E3,1,0,0
+HUM,430,Health Justice and the Humanities,3,E3,0,0,0
+ITAL,301,Advanced Oral and Written Composition,3,E3,0,0,0
+ITAL,305A,Italian Literature,3,E3,0,0,0
+ITAL,305B,Italian Literature,3,E3,0,0,0
+ITAL,421,Italian Culture and Society,3,E3,0,0,0
+ITAL,424,Italian Cinema,3,E3,0,0,0
+ITAL,425,Italian Cultures of Migration,3,E3,1,0,0
+ITAL,426,Italian American Culture,3,E3,1,0,0
+JAPAN,311,Third Year Japanese I,3,E3,0,0,0
+JAPAN,312,Third Year Japanese II,3,E3,0,0,0
+JAPAN,321,Advanced Japanese Discourse,3,E3,0,0,0
+JAPAN,322,Advanced Conversation Through Media,3,E3,0,0,0
+JAPAN,332,Narratives of Japanese Popular Culture,3,E3,1,0,0
+JMS,450,Media and Culture,3,E3,1,0,0
+KOR,301,Third Year Korean I,3,E3,0,0,0
+KOR,302,Third Year Korean II,3,E3,0,0,0
+KOR,311,Advanced Korean Conversation,3,E3,0,0,0
+LATAM,306,Portuguese and Brazilian Cinema and Culture,3,E3,0,0,0
+PORT,306,Portuguese and Brazilian Cinema and Culture,3,E3,0,0,0
+LATAM,307,Brazilian Music and Culture,3,E3,1,0,0
+PORT,307,Brazilian Music and Culture,3,E3,1,0,0
+LATAM,370,History of Mexico: From Independence to Early Twentieth Century,3,E3,1,0,0
+LATAM,420,Latin America through Film,3,E3,1,0,0
+LATAM,450,Study Abroad in Latin American Studies,3,E3,1,0,0
+LGBT,333,Trans/Gender Studies,3,E3,1,0,0
+MUSIC,345,Music Cultures of the World,3,E3,1,0,0
+MUSIC,351,Music and Culture,3,E3,0,0,0
+PHIL,310,Philosophy and Human Nature,3,E3,0,0,0
+PHIL,312,Women and Philosophy,3,E3,1,0,0
+PHIL,315,Philosophy and Literature,3,E3,0,0,0
+PHIL,328,"Philosophy, Racism, and Justice",3,E3,1,0,0
+PHIL,329,Social Ethics,3,E3,0,0,0
+PHIL,330,Biomedical Ethics,3,E3,0,0,0
+PHIL,332,Environmental Ethics,3,E3,0,0,0
+SUSTN,332,Environmental Ethics,3,E3,0,0,0
+PHIL,333,Ethics-Food,3,E3,0,0,0
+PHIL,335,Philosophy of Business Ethics,3,E3,0,0,0
+PHIL,336,Philosophy and the Internet,3,E3,0,0,0
+PHIL,337,Ethics and Artificial Intelligence,3,E3,0,0,0
+PHIL,338,AI and the Public Good,3,E3,0,0,0
+PHIL,339,Philosophy and Video Games,3,E3,0,0,0
+PHIL,340,Morality of War and Peace,3,E3,0,0,0
+PHIL,341,Logic and the Law,3,E3,0,0,0
+PHIL,342,Morality and the Law,3,E3,0,0,0
+PHIL,344,Global Justice,3,E3,0,0,0
+PHIL,353,Buddhist Philosophy,3,E3,1,0,0
+PORT,443,Contemporary Luso-Brazilian Civilization,3,E3,0,0,0
+PSFA,320,Creativity and Communication in the Arts,3,E3,0,0,0
+RELS,301,Hebrew Bible,3,E3,0,0,0
+RELS,305,The New Testament,3,E3,0,0,0
+RELS,310,The Qur’an,3,E3,1,0,0
+RELS,320,Judaism,3,E3,0,0,0
+RELS,325,Christianity,3,E3,0,0,0
+RELS,330,"Religious Encounters: Christianity, Islam, and Judaism",3,E3,1,0,0
+RELS,337,Asian Religions in America,3,E3,1,0,0
+RELS,338,Buddhism,3,E3,1,0,0
+RELS,339,Religions of India,3,E3,1,0,0
+RELS,341,Japanese Religions Through Anime,3,E3,1,0,0
+RELS,345,Religions of East Asia,3,E3,1,0,0
+RELS,356,Hip Hop and Religion,3,E3,0,0,0
+RELS,363,Religion and the Sciences,3,E3,0,0,0
+RELS,364,Religion and Film,3,E3,0,0,0
+RELS,365,Religion and Comics,3,E3,0,0,0
+RELS,367,Religion and Sports,3,E3,0,0,0
+RELS,373,Women and the Bible,3,E3,1,0,0
+RELS,376,Spirituality and Sustainability,3,E3,0,0,0
+RELS,379,Religious Violence and Nonviolence,3,E3,0,0,0
+RELS,380,"Atheism, Humanism, and Secularism",3,E3,0,0,0
+RELS,382,California Religion and Spirituality,3,E3,1,0,0
+RELS,395,"New Age, Neopagan, and New Religious Movements",3,E3,0,0,0
+RELS,405,Faith and Hope,3,E3,0,0,0
+RELS,406,"God, Gold, and Glory: Religion and Colonial Encounter in the Americas",3,E3,1,0,0
+RUSSN,300,"Russian Culture, Identity, and Society",3,E3,0,0,0
+RUSSN,301,Advanced Grammar and Composition,3,E3,0,0,0
+RUSSN,305A,Heroes and Villains: Russian Literature of the Nineteenth Century,3,E3,0,0,0
+RUSSN,305B,Russian Literature of the Twentieth Century,3,E3,0,0,0
+RUSSN,310,Russian and East European Cinema,3,E3,0,0,0
+RUSSN,430,Russian Civilization,3,E3,0,0,0
+RUSSN,435,Russian and East European Jewish Culture,3,E3,1,0,0
+RWS,413,The Rhetoric of Comics,3,E3,0,0,0
+SPAN,340,Spanish Civilization,3,E3,0,0,0
+SPAN,341,Spanish American Civilization,3,E3,0,0,0
+SPAN,342,Mexican Civilization,3,E3,1,0,0
+SPAN,461,Spanish in the United States,3,E3,1,0,0
+TFM,363,International Cinema,3,E3,0,0,0
+TFM,430,History of Television,3,E3,0,0,0
+THEA,427,African American Theatre and Performance,3,E3,1,0,0
+THEA,460A,History of the Theatre,3,E3,0,0,0
+THEA,460B,History of the Theatre,3,E3,0,0,0
+THEA,465,Theatre of Diversity,3,E3,1,0,0
+WGSS,336,Women of Color in the United States,3,E3,1,0,0
+WGSS,340,History of Women and Sexuality in Modern Europe,3,E3,1,0,0
+WGSS,352,Women in Literature,3,E3,1,0,0
+WGSS,355,Feminist Approaches to Popular Culture,3,E3,0,0,0
+WGSS,360,Women’s Sexuality and the Body,3,E3,1,0,0
+AAS,301,"Gender, Sexuality, and Asian Americans",3,E4,0,0,0
+AAS,313,Asian American Communities,3,E4,0,0,0
+AAS,323,Korean American Experiences,3,E4,0,1,0
+AAS,380,Asian American Issues in the News,3,E4,1,0,0
+AAS,486,Leadership and Asian Americans,3,E4,1,0,0
+AAS,488,Applying Asian American Studies,3,E4,0,0,0
+AFRAS,300,"Afro-Brazilian Community, Culture, and Identity",3,E4,1,0,0
+AFRAS,320,Political Economy of African Diaspora,3,E4,1,0,0
+AFRAS,321,Black Political Participation in America,3,E4,1,0,0
+AFRAS,322,African American Political Thought,3,E4,1,0,0
+AFRAS,323,History and Culture of Haiti,3,E4,1,0,0
+AFRAS,335,Africana Presence in Latin America,3,E4,1,0,0
+AFRAS,341,Cultural Patterns and African American Identity,3,E4,1,0,0
+AFRAS,350,Africana Digital Humanities,3,E4,0,1,0
+AFRAS,380,African Americans and the US Justice System,3,E4,1,0,0
+AFRAS,421,Black Urban Experience,3,E4,1,0,0
+AFRAS,455,"Africana Class, Gender, and Sexualities",3,E4,1,0,0
+AFRAS,473,Women in Africa,3,E4,1,0,0
+AMIND,320,American Indians in Contemporary Society,3,E4,0,1,0
+AMIND,350,American Indian Environmental Management,3,E4,1,0,0
+AMIND,420,Indian Peoples of California,3,E4,0,1,0
+AMIND,451,American Indian Identity,3,E4,0,1,0
+ANTH,451,American Indian Identity,3,E4,0,1,0
+AMIND,460,American Indian Languages,3,E4,0,1,0
+ANTH,460,American Indian Languages,3,E4,0,1,0
+LING,460,American Indian Languages,3,E4,0,1,0
+AMIND,480,Issues in American Indian Education,3,E4,0,1,0
+ANTH,333,"Race, Ethnicity, and Identity in the Americas",3,E4,0,0,0
+LATAM,333,"Race, Ethnicity, and Identity in the Americas",3,E4,0,0,0
+ANTH,348,Historical Archaeology,3,E4,0,0,0
+ANTH,350,Exploring Cultural Diversity Around the World,3,E4,1,0,0
+ANTH,353,Sustainability and Culture,3,E4,1,0,0
+SUSTN,353,Sustainability and Culture,3,E4,1,0,0
+ANTH,365,Pets and Plates: Archaeology of Domestic Animals,3,E4,0,0,0
+ANTH,404,Evolution of Human Behavior,3,E4,1,0,0
+ANTH,410,Culture and Communicative Pathways,3,E4,0,0,0
+ANTH,439,Cultural Comparisons Through Film,3,E4,1,0,0
+ANTH,440,Mesoamerican Civilization Before the Europeans,3,E4,1,0,0
+ANTH,442,Cultures of South America,3,E4,1,0,0
+ASIAN,300,Asia’s Global Future,3,E4,0,0,0
+ASIAN,320,Asian Environmental Issues,3,E4,1,0,0
+ASIAN,353,Language and Social Interaction in China,3,E4,0,0,0
+CHIN,353,Language and Social Interaction in China,3,E4,0,0,0
+ASIAN,429,Gender and Sexuality in Korea,3,E4,1,0,0
+KOR,429,Gender and Sexuality in Korea,3,E4,1,0,0
+SOC,429,Gender and Sexuality in Korea,3,E4,1,0,0
+ASL,311,Deaf Cultural Studies,3,E4,1,0,0
+BRAZ,325,Brazilian Democracy and Society,3,E4,1,0,0
+CCS,301,Political Economy of the Chicano People,3,E4,1,0,0
+CCS,303,Chicana and Chicano Community Studies,3,E4,1,0,0
+CCS,320,Chicana and Chicano Lifestyles,3,E4,1,0,0
+CCS,325,Latinx Foodways,3,E4,0,0,0
+CCS,345,Postcolonial Masculinities,3,E4,0,0,0
+CCS,355,The United States-Mexico International Border,3,E4,1,0,0
+CCS,360,Football and Fútbol: Indigenous and Chicanx Engagement in Sport,3,E4,0,0,0
+CFD,354,"Parenting: Context, Research, and Application",3,E4,0,0,0
+CFD,437,Violence in Relationships,3,E4,0,0,0
+CINTS,301,Comparative Border Studies,3,E4,0,0,0
+CINTS,435,Global Activism and Social Change,3,E4,1,0,0
+COMM,321,Introduction to Health Communication,3,E4,0,0,0
+COMM,371,Intercultural Communication,3,E4,1,0,0
+CSP,300,Stress Management and Life Planning,3,E4,0,0,0
+CSP,420,The Influence of Media on Counseling and Wellbeing,3,E4,1,0,0
+ECON,330,Comparative Economic Systems,3,E4,0,0,0
+ECON,464,Economic Problems of Latin America,3,E4,1,0,0
+ED,350,Education in American Society,3,E4,0,0,0
+ED,484,Valuing Human Diversity,3,E4,1,0,0
+ENS,318,"Sport, Games, and Culture",3,E4,0,0,0
+ENS,330,Exercise and Wellness Across the Lifespan,3,E4,0,0,0
+EUROP,320,Food Culture in Europe,3,E4,1,0,0
+GENS,420,Disability and Society,3,E4,1,0,0
+GENS,455,Social and/or Behavioral Science Study Abroad,3,E4,0,0,0
+GENS,480,Engaged Citizenship and Social Responsibility,3,E4,1,0,0
+GEOG,312,Culture Worlds,3,E4,1,0,0
+GEOG,320,California,3,E4,0,0,0
+GEOG,321,United States,3,E4,0,0,0
+GEOG,324,Latin America,3,E4,1,0,0
+GEOG,336,Europe,3,E4,0,0,0
+GEOG,341,Feeding the World,3,E4,1,0,0
+GEOG,342,"Food, Place, and Culture",3,E4,1,0,0
+GEOG,354,Geography of Cities,3,E4,0,0,0
+GEOG,370,Conservation Science and Policy,3,E4,0,0,0
+GERO,360,Diversity and Aging,3,E4,1,0,0
+GERO,370,Images of Aging in Contemporary Society,3,E4,1,0,0
+HHS,350,Applied International Health and Human Services,3,E4,1,0,0
+HHS,352,International and Global Health and Human Services in San Diego County,3,E4,1,0,0
+HIST,404,History of Human Rights,3,E4,1,0,0
+HIST,410,United States History for Teachers,3,E4,0,0,1
+HIST,413,United States History For Teachers for Liberal Studies Majors,3,E4,0,0,1
+HIST,445,California History,3,E4,0,0,1
+HONOR,413,Interdisciplinary Perspectives on Social Problems,3,E4,1,0,0
+HTM,381,Cross-Cultural Interpretations of Gambling Addiction,3,E4,1,0,0
+ISCOR,300,Global Systems,3,E4,1,0,0
+ISCOR,301,Conflict and Conflict Resolution,3,E4,1,0,0
+ISCOR,310,"Our Global Future: Environment, Climate, and the Prospects of Survival",3,E4,0,0,0
+ISCOR,320,International Security in the Nuclear Age,3,E4,0,0,0
+ISCOR,324,Politics of Global Resistance and Solidarity,3,E4,0,0,0
+LATAM,325,Political Economy of Brazil,3,E4,1,0,0
+LATAM,350,Globalization and the Americas,3,E4,0,0,0
+LATAM,355,The United States-Mexico International Border,3,E4,1,0,0
+LATAM,425,"Illness, Health, and Healing in Latin America",3,E4,0,0,0
+LATAM,430,Immigration and Border Politics,3,E4,1,0,0
+POLS,430,Immigration and Border Politics,3,E4,1,0,0
+LCS,300,"Language, Culture, and Society",3,E4,1,0,0
+LGBT,321,LGBT Identities in the Modern World,3,E4,1,0,0
+LGBT,350,Queer of Color Studies,3,E4,1,0,0
+LING,332,"Body Talk: Language, Bodily Behavior, and Social Interaction",3,E4,0,0,0
+LING,333,How to Spot a Liar,3,E4,0,0,0
+LING,350,Language and Politics,3,E4,0,0,0
+LING,351,Why Do We Talk Like That? Dialect variation in English,3,E4,0,0,0
+LING,354,Language and Computers,3,E4,0,0,0
+LING,420,Linguistics and English,3,E4,0,0,0
+LING,452,Language Acquisition,3,E4,0,0,0
+LING,453,Heritage Language Acquisition,3,E4,1,0,0
+LING,454,Second Language Acquisition,3,E4,0,0,0
+NURS,351,Exploring Healthcare in America,3,E4,0,0,0
+PH,330,Plagues Through the Ages,3,E4,0,0,0
+PH,353,Human Sexuality and Disease,3,E4,0,0,0
+PH,362,Global Health,3,E4,1,0,0
+POLS,301A,Ancient Political Thought,3,E4,0,0,0
+POLS,301B,Early Modern Political Thought,3,E4,0,0,0
+POLS,302,Modern Political Thought,3,E4,0,0,0
+POLS,305,American Political Thought,3,E4,0,0,1
+POLS,320,The U.S. Constitution,3,E4,0,0,1
+POLS,321,State Politics,3,E4,0,0,1
+POLS,334,Politics of the Environment,3,E4,1,0,0
+SUSTN,334,Politics of the Environment,3,E4,1,0,0
+POLS,336,Gender and Public Policy,3,E4,1,0,0
+POLS,345,U.S. Constitutional Law: Powers and Constraints,3,E4,0,0,1
+POLS,347,U.S. Constitutional Law: Rights and Liberties,3,E4,0,0,1
+POLS,353,Islam and Politics,3,E4,1,0,0
+POLS,356,European Politics,3,E4,0,0,0
+POLS,359,Government and Politics in Russia and Eurasia,3,E4,0,0,0
+POLS,361,Governments and Politics of the Developing Areas,3,E4,1,0,0
+POLS,362,Governments and Politics of East Asia,3,E4,1,0,0
+POLS,363,Governments and Politics of the Middle East,3,E4,1,0,0
+POLS,365,Chinese Politics,3,E4,1,0,0
+POLS,370,Political Violence,3,E4,0,0,0
+POLS,422,Urban Politics,3,E4,0,0,1
+POLS,435,Power and Poverty in the United States,3,E4,0,0,0
+PSY,340,Social Psychology,3,E4,0,0,0
+PSY,344,Psychology and Culture,3,E4,0,0,0
+PSY,351,Psychology of Personality,3,E4,0,0,0
+RELS,343,Sociology of Religion,3,E4,0,0,0
+SOC,338,Sociology of Religion,3,E4,0,0,0
+RELS,368,Religion and Social Justice,3,E4,0,0,0
+RELS,390A,Religion and Revolution,3,E4,0,0,1
+RELS,390B,Religion and Revolution,3,E4,0,0,1
+RTM,304,Leisure and Tourism,3,E4,0,0,0
+RTM,305,Wilderness and the Leisure Experience,3,E4,0,0,0
+RTM,404,Cross-Cultural Perspectives of Tourism,3,E4,1,0,0
+SOC,320,Sex and Gender in Contemporary Society,3,E4,1,0,0
+SOC,330,Cultural and Historical Origins of Surfing,3,E4,0,0,0
+SOC,335,Sociology of Popular Culture,3,E4,0,0,0
+SOC,350,Population and Contemporary Issues,3,E4,0,0,0
+SOC,352,Global Social Problems,3,E4,0,0,0
+SOC,355,Sociology of Race and Ethnicity,3,E4,1,0,0
+SOC,410,"Social Psychology: Mind, Self, and Society",3,E4,0,0,0
+SOC,421,American Families,3,E4,0,0,0
+SOC,430,Social Organization,3,E4,0,0,0
+SOC,436,Sociology of Health and Illness,3,E4,0,0,0
+SOC,450,Social Change,3,E4,0,0,0
+SOC,460,Technology and Society,3,E4,0,0,0
+SPAN,462,Language Variation in the Spanish-Speaking World,3,E4,1,0,0
+STS,301,Concepts and Ideas in Science and Technology Studies,3,E4,0,0,0
+SWORK,350,Cultural Pluralism,3,E4,1,0,0
+SWORK,360,Perspectives on Human Behavior and the Social Environment,3,E4,0,0,0
+TE,472,Ethnic Identity Development in Education,3,E4,1,0,0
+WGSS,310,Global Cultures and Women’s Lives,3,E4,1,0,0
+WGSS,325,Psychology of Women,3,E4,1,0,0
+WGSS,341A,Gender and US History,3,E4,0,0,1
+WGSS,341B,Gender and US History,3,E4,0,0,1
+WGSS,370,"Women, Law, and Policy",3,E4,1,0,0
+WGSS,375,"Sex, Power, and Politics",3,E4,1,0,0
+WGSS,385,"Precarious Work: Gender, Labor, and Inequality",3,E4,1,0,0

@@ -1,0 +1,15 @@
+area_code,name,grp,sort_order
+1A,English Composition,Area 1. English Communication,1
+1B,Critical Thinking,Area 1. English Communication,2
+1C,Oral Communication,Area 1. English Communication,3
+2,Mathematical Concepts and Quantitative Reasoning,Area 2. Math and Quantitative Reasoning,4
+3A,Arts,Area 3. Arts and Humanities,5
+3B,Humanities,Area 3. Arts and Humanities,6
+4,Social and Behavioral Sciences,Area 4. Social and Behavioral Sciences,7
+5A,Physical Science,Area 5. Physical and Biological Sciences,8
+5B,Biological Science,Area 5. Physical and Biological Sciences,9
+5C,Laboratory,Area 5. Physical and Biological Sciences,10
+6,Ethnic Studies,Area 6. Ethnic Studies,11
+E2/5,Explorations: Math/Quantitative Reasoning or Physical/Biological Sciences,Explorations of Human Experience,12
+E3,Explorations: Arts and Humanities,Explorations of Human Experience,13
+E4,Explorations: Social and Behavioral Sciences,Explorations of Human Experience,14
