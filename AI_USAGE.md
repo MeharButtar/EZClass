@@ -1,38 +1,50 @@
-# AI Usage Disclosure (CS 514 Final Project, Phase 1 Draft)
+# AI Usage Disclosure (CS 514 Final Project, Phase 1)
 
 This follows the course AI policy: say where AI was used, how the team modified
 or extended it, and be ready to explain and defend every part.
 
+## Summary
+
+We used Claude (Anthropic) on this project. Mehar Buttar directed that work.
+Claude wrote first drafts of the code, the technical document, and the
+presentation, working from Mehar's requirements and feedback. Mehar used those
+drafts as a first base, changed and extended the code as needed, tested it, wrote
+the final presentation and scripts, and has reviewed all of the code and can
+explain how it works. The class data was
+gathered and cleaned by the team, not by AI.
+
 ## Where AI (Claude) was used
 
-| Part | AI role |
-| --- | --- |
-| backend/sql/schema.sql | Drafted the six-table schema from Mehar's requirements |
-| data/placeholder/generate_placeholder_data.py | Wrote the placeholder data generator |
-| backend/models/db.py | Wrote the SQLite connection and CSV loader |
-| backend/models/conflicts.py | Wrote day-pattern parsing and time-overlap logic |
-| backend/routes/*.py, backend/app.py | Wrote the Flask search and conflict-check routes |
-| frontend/ (HTML, CSS, JS) | Wrote the search page, schedule list, and professor links |
-| README.md, this file, the slides, the technical PDF | Drafted for the team to edit |
+| Part | What Claude did | What Mehar did |
+| --- | --- | --- |
+| backend/sql/schema.sql | Drafted the eight-table schema, including the GE tables | Gave the requirements, chose the design, reviewed and adjusted it |
+| backend/models/conflicts.py | Drafted the day-pattern parsing and time-overlap logic | Reviewed, tested, and adjusted it |
+| backend/models/db.py | Drafted the SQLite connection and CSV loader | Reviewed and adjusted it |
+| backend/routes/*.py, backend/app.py | Drafted the Flask search, GE, and conflict-check routes | Reviewed, tested, and adjusted them |
+| data/import_real_data.py | Drafted the Excel-to-CSV importer | Reviewed and used it to load the real data |
+| data/ge/parse_ge_guide.py | Drafted the GE list parser | Reviewed it and checked the output against the catalog |
+| frontend/ (HTML, CSS, JS) | Drafted the pages, the GE area picker, the cart, and the combined filters | Directed the layout and behavior (GE area groups, filters that apply together) and tested it in the browser |
+| Debugging | Helped find and fix bugs (for example, the 1B button showing every GE class) | Reported the problems and checked the fixes |
+| data/placeholder/generate_placeholder_data.py | Wrote the placeholder data generator | Used it for early testing |
+| README.md, this file, the technical document, the slides, the presentation script | Drafted them | Revised them and made the final versions |
 
-AI also helped plan the project scope, stack, and team task split.
+Claude also helped plan the project scope, the stack, and the team task split.
 
 ## What the team changed or added
 
-Fill this in with work you actually did, one line each, with your name and the
-file. Examples of what counts: new SQL queries, real data you entered, new
-filters, CSS changes, tests you wrote, indexes you added with before/after timings.
-
-| Name | File(s) | What I did |
-| --- | --- | --- |
-| Mehar Buttar | [fill in] | [fill in] |
-| [Name] | [fill in] | [fill in] |
-| [Name] | [fill in] | [fill in] |
-| [Name] | [fill in] | [fill in] |
-| [Name] | [fill in] | [fill in] |
-| [Name] | [fill in] | [fill in] |
+| Name | What they did |
+| --- | --- |
+| Mehar Buttar | Led the project. Code, technical document, and the final presentation and scripts, built from Claude's first drafts and revised by Mehar. Reviewed and tested the code |
+| Matthew Chung | Gathered and cleaned the class data |
+| Malaika Malik | Finished the team site that Mehar started (with Michelle) |
+| Michelle Khaliqi | Finished the team site that Mehar started (with Malaika) |
+| Sharifullah Sharifi | Drafted early presentation scripts (Mehar wrote the final versions) |
+| Noor Hamdard | Drafted early presentation scripts (Mehar wrote the final versions) |
 
 ## What we verified ourselves
 
-[List what you ran and checked, for example: ran the app locally, selected the
-four overlapping placeholder sections and confirmed two conflicts are reported.]
+- Ran the app locally and used the Search page, the GE Scheduler, and the cart in the browser.
+- Loaded the real data: 559 sections from 145 courses.
+- Checked the GE filters against counts we could confirm: 425 GE sections total, 78 in area 1B, and 65 in 1B on Wednesdays.
+- Checked that the area filter and the day filter apply together.
+- Checked the conflict check on overlapping classes, back-to-back classes (not a conflict), and the same time on different days (not a conflict).
