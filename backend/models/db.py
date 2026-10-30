@@ -12,10 +12,17 @@ import csv
 import os
 import sqlite3
 
+try:
+    import fcntl   # Linux/macOS only; on Windows we just skip the lock
+except ImportError:
+    fcntl = None
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-DB_PATH = os.path.join(BASE_DIR, "backend", "sql", "scheduler.db")
+# EZCLASS_DB_PATH lets a host (or the tests) put the database somewhere else
+DB_PATH = os.path.abspath(os.environ.get("EZCLASS_DB_PATH") or os.path.join(BASE_DIR, "backend", "sql", "scheduler.db"))
 SCHEMA_PATH = os.path.join(BASE_DIR, "backend", "sql", "schema.sql")
 PLACEHOLDER_DIR = os.path.join(BASE_DIR, "data", "placeholder")
+CLEANED_DIR = os.path.join(BASE_DIR, "data", "cleaned")
 GE_DIR = os.path.join(BASE_DIR, "data", "ge")
 
 
@@ -90,12 +97,60 @@ def load_ge(ge_dir=GE_DIR):
     conn.close()
 
 
+def database_has_data():
+    """True if the database file exists and has at least one section."""
+    if not os.path.exists(DB_PATH):
+        return False
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        try:
+            return conn.execute("SELECT COUNT(*) FROM sections").fetchone()[0] > 0
+        finally:
+            conn.close()
+    except sqlite3.Error:
+        return False   # no sections table yet, or not a database at all
+
+
+def build_database(data_dir):
+    """Wipes and reloads everything: schema, class CSVs from data_dir, GE data."""
+    init_schema()
+    load_csvs(data_dir)
+    load_ge()
+
+
+def ensure_database():
+    """
+    Builds the database on first start (fresh clone, fresh container) so the
+    app works without a manual db.py step. Never touches a database that
+    already has sections in it. Uses data/cleaned if it exists, otherwise
+    data/placeholder.
+
+    Several gunicorn workers import the app at the same moment, so the build
+    happens under a file lock and we check again once we hold it: the first
+    worker builds, the others wait and then see the data is there.
+    """
+    if database_has_data():
+        return
+    os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+    with open(DB_PATH + ".lock", "w") as lock:
+        if fcntl:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+        try:
+            if database_has_data():
+                return
+            data_dir = CLEANED_DIR if os.path.isdir(CLEANED_DIR) else PLACEHOLDER_DIR
+            print(f"No class data in {DB_PATH}, building it from {data_dir}")
+            build_database(data_dir)
+        finally:
+            if fcntl:
+                fcntl.flock(lock, fcntl.LOCK_UN)
+
+
 if __name__ == "__main__":
     import sys
     # python3 backend/models/db.py            -> placeholder data
     # python3 backend/models/db.py data/cleaned -> real data from the template
+    # python -m backend.models.db data/cleaned   -> same thing, as a module (Dockerfile)
     data_dir = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else PLACEHOLDER_DIR
-    init_schema()
-    load_csvs(data_dir)
-    load_ge()
+    build_database(data_dir)
     print("\nDatabase ready.")

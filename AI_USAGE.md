@@ -24,6 +24,7 @@ gathered and cleaned by the team, not by AI.
 | data/import_real_data.py | Drafted the Excel-to-CSV importer | Reviewed and used it to load the real data |
 | data/ge/parse_ge_guide.py | Drafted the GE list parser | Reviewed it and checked the output against the catalog |
 | frontend/ (HTML, CSS, JS) | Drafted the pages, the GE area picker, the cart, and the combined filters | Directed the layout and behavior (GE area groups, filters that apply together) and tested it in the browser |
+| Deployment and visit tracking (Dockerfile, app settings, backend/routes/analytics.py, frontend/js/track.js, tests/test_smoke.py) | Drafted the Docker setup, production settings and security headers, the anonymous visit counting on both ends, and the smoke tests | Set the requirements and privacy rules, directs the work, and reviews and tests it |
 | Debugging | Helped find and fix bugs (for example, the 1B button showing every GE class) | Reported the problems and checked the fixes |
 | data/placeholder/generate_placeholder_data.py | Wrote the placeholder data generator | Used it for early testing |
 | README.md, this file, the technical document, the slides, the presentation script | Drafted them | Revised them and made the final versions |
