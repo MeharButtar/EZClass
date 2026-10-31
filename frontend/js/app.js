@@ -4,7 +4,6 @@
 
 const CART_KEY = "ezclass_cart_v1";
 const VIEWS = ["home", "search", "ge"];
-document.title = "EzClass (GE build 3)";
 
 const state = {
   cart: new Map(),          // section_id -> section object
