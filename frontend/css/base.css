@@ -608,6 +608,7 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 .conflict-box { padding: var(--sp-3); border-radius: var(--r-md); font-size: var(--fs-sm); background: var(--surface-2); }
 .conflict-box.ok { background: var(--accent-soft); color: var(--accent-strong); font-weight: 650; }
 .conflict-box.bad { background: var(--danger-soft); color: var(--danger); }
+.conflict-box + .btn { margin-top: var(--sp-3); }
 .conflict-box ul { margin: var(--sp-2) 0 0; padding-left: 1.1rem; }
 .plan-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-2); }
 .plan-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--sp-1) var(--sp-3); align-items: center; padding: var(--sp-3); border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); }

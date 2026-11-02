@@ -12,11 +12,13 @@ import { clear, dayStrip, el, openDialog } from "./ui.js";
 
 const COLORS = 8;   // --sub-0 ... --sub-7 in base.css
 
-// The same subject always gets the same color, on every page.
-export function colorIndex(subject) {
-  let h = 0;
-  for (const ch of String(subject)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-  return h % COLORS;
+// Subjects get colors in the order they first appear in the plan, so two
+// subjects in one plan never share a color (up to eight). Every page draws the
+// same plan, so a subject's color is the same everywhere. A ghost from a new
+// subject gets the next free color.
+function colorIndex(subject, order) {
+  const i = order.indexOf(subject);
+  return (i < 0 ? order.length : i) % COLORS;
 }
 
 // Splits one day's blocks into side-by-side lanes where they overlap.
@@ -90,6 +92,7 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
 
   function render() {
     const timed = sections.filter(isTimed);
+    const order = [...new Set(sections.map((s) => s.subject))];
     const ghostTimed = ghost && isTimed(ghost) && !sections.some((s) => s.id === ghost.id) ? ghost : null;
     const all = ghostTimed ? [...timed, ghostTimed] : timed;
 
@@ -118,7 +121,7 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
         const time = formatRange(s.startMin, s.endMin);
         col.append(el("button", {
           type: "button",
-          class: `cal-blk sub-${colorIndex(s.subject)}${clash ? " clash" : ""}`,
+          class: `cal-blk sub-${colorIndex(s.subject, order)}${clash ? " clash" : ""}`,
           style: { top: pct(s.startMin), height: height(s.startMin, s.endMin), left: `${lane * width}%`, width: `${width}%` },
           "aria-label": `${s.code} section ${s.sectionNumber}, ${DAY_NAMES[d]} ${time}${s.room ? `, ${s.room}` : ""}${clash ? ", overlaps another class" : ""}. Details`,
           dataset: { sectionId: s.id },
@@ -131,7 +134,7 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
       if (ghostTimed && ghostTimed.dayList.includes(d)) {
         const clash = today.some((o) => overlaps(ghostTimed, o));
         col.append(el("div", {
-          class: `cal-ghost sub-${colorIndex(ghostTimed.subject)}${clash ? " clash" : ""}`,
+          class: `cal-ghost sub-${colorIndex(ghostTimed.subject, order)}${clash ? " clash" : ""}`,
           style: { top: pct(ghostTimed.startMin), height: height(ghostTimed.startMin, ghostTimed.endMin) },
           "aria-hidden": "true",
         },

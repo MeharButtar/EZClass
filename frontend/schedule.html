@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Schedule · EzClass</title>
+<meta name="description" content="Your week, your three plans, and a conflict check across the whole plan.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/base.css">
+<script type="module" src="js/pages/schedule.js"></script>
+<script type="module" src="js/track.js"></script>
+</head>
+<body data-page="schedule">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main" class="page">
+    <div class="page-head">
+      <div>
+        <h1>My Schedule</h1>
+        <p id="schedule-sub">Keep up to three plans. Everything you add on My Major, GE or Search goes into the plan that's open here.</p>
+      </div>
+    </div>
+
+    <div class="plan-tabs">
+      <div class="plan-tabs" id="plan-tabs" role="tablist" aria-label="Plans"></div>
+      <button type="button" class="chip" id="new-plan">+ New plan</button>
+    </div>
+    <div class="plan-actions" id="plan-actions"></div>
+
+    <div id="plan-panel" role="tabpanel">
+      <div class="schedule-grid">
+        <div>
+          <div id="week"></div>
+          <div class="stats-strip" id="stats" aria-label="Week at a glance"></div>
+          <p class="tight" id="walks"></p>
+        </div>
+        <div class="side-panel">
+          <section class="card">
+            <h2>Conflict check</h2>
+            <div class="conflict-box" id="conflict-result" aria-live="polite"></div>
+            <button type="button" class="btn btn-sm" id="check-btn">Check again</button>
+          </section>
+          <section class="card">
+            <h2 id="list-title">Classes in this plan</h2>
+            <div id="plan-list"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>
