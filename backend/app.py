@@ -24,6 +24,7 @@ from flask import Flask, send_from_directory
 
 from backend.models.db import ensure_database, get_connection
 from backend.routes.analytics import analytics_bp
+from backend.routes.majors import majors_bp
 from backend.routes.sections import sections_bp
 from backend.routes.schedule import schedule_bp
 
@@ -37,6 +38,7 @@ app = Flask(__name__, static_folder=FRONTEND_DIR, static_url_path="")
 app.register_blueprint(sections_bp)
 app.register_blueprint(schedule_bp)
 app.register_blueprint(analytics_bp)
+app.register_blueprint(majors_bp)
 
 # The frontend has no inline scripts and loads nothing from other sites, so a
 # strict policy costs nothing. Inline styles stay allowed so style="" attributes

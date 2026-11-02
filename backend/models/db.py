@@ -24,6 +24,7 @@ SCHEMA_PATH = os.path.join(BASE_DIR, "backend", "sql", "schema.sql")
 PLACEHOLDER_DIR = os.path.join(BASE_DIR, "data", "placeholder")
 CLEANED_DIR = os.path.join(BASE_DIR, "data", "cleaned")
 GE_DIR = os.path.join(BASE_DIR, "data", "ge")
+MAJORS_DIR = os.path.join(BASE_DIR, "data", "majors")
 
 
 def get_connection():
@@ -36,24 +37,34 @@ def get_connection():
 def init_schema():
     """(Re)creates all tables from schema.sql. Wipes existing data."""
     conn = get_connection()
-    with open(SCHEMA_PATH, "r") as f:
+    with open(SCHEMA_PATH, "r", encoding="utf-8") as f:
         conn.executescript(f.read())
     conn.commit()
     conn.close()
     print(f"Schema created at {DB_PATH}")
 
 
+def normalize_subject(subject):
+    """'POL S' -> 'POLS', 'b a' -> 'BA'. Subject codes are compared in this form everywhere."""
+    return "".join(str(subject or "").split()).upper()
+
+
 def load_csv_into_table(conn, csv_path, table_name):
-    with open(csv_path, "r", newline="") as f:
+    with open(csv_path, "r", newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         rows = list(reader)
         if not rows:
             print(f"  {table_name}: no rows in {csv_path}, skipping")
             return
-        columns = rows[0].keys()
+        columns = list(rows[0].keys())
         placeholders = ", ".join(["?"] * len(columns))
         col_list = ", ".join(columns)
         sql = f"INSERT INTO {table_name} ({col_list}) VALUES ({placeholders})"
+        # Subject codes may arrive with spaces ("POL S"); store them the way the
+        # majors data writes them ("POLS") so subject + catalog_num matches.
+        if "subject" in columns:
+            for row in rows:
+                row["subject"] = normalize_subject(row["subject"])
         # blank cells become NULL (e.g. a section with no professor yet)
         conn.executemany(sql, [tuple(None if v == "" else v for v in row.values()) for row in rows])
         print(f"  {table_name}: loaded {len(rows)} rows")
@@ -97,6 +108,83 @@ def load_ge(ge_dir=GE_DIR):
     conn.close()
 
 
+def majors_schema():
+    """Just the majors tables from schema.sql (the block between the majors markers)."""
+    with open(SCHEMA_PATH, "r", encoding="utf-8") as f:
+        text = f.read()
+    return text.split("-- majors:begin", 1)[1].split("-- majors:end", 1)[0]
+
+
+def _int_or_none(value):
+    value = (value or "").strip()
+    return int(value) if value.isdigit() else None
+
+
+def load_majors(majors_dir=MAJORS_DIR):
+    """
+    Loads majors.csv and major_requirements.csv into the majors tables.
+    Subject codes are normalized ("B A" -> "BA", and each code in an open rule's
+    "ACCTG|BA" list). A required course with no sections in our data still
+    loads; it just shows as not offered. A missing folder is not an error.
+    """
+    majors_csv = os.path.join(majors_dir, "majors.csv")
+    reqs_csv = os.path.join(majors_dir, "major_requirements.csv")
+    if not os.path.exists(majors_csv):
+        print(f"  majors: {majors_csv} not found, skipping")
+        return
+    conn = get_connection()
+    conn.executescript(majors_schema())
+    # only ever called on a full rebuild or when majors is empty, so this clears
+    # nothing but a half-finished earlier load
+    conn.execute("DELETE FROM major_requirements")
+    conn.execute("DELETE FROM majors")
+    with open(majors_csv, newline="", encoding="utf-8") as f:
+        majors = [r for r in csv.DictReader(f) if (r.get("major_id") or "").strip()]
+    conn.executemany(
+        "INSERT INTO majors (major_id, name, degree, college, catalog_year, status) VALUES (?, ?, ?, ?, ?, ?)",
+        [(m["major_id"].strip(), m["name"].strip(), m.get("degree") or None, m.get("college") or None,
+          m.get("catalog_year") or None, (m.get("status") or "live").strip()) for m in majors],
+    )
+    print(f"  majors: loaded {len(majors)} rows")
+
+    known = {m["major_id"].strip() for m in majors}
+    rows = []
+    if os.path.exists(reqs_csv):
+        with open(reqs_csv, newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                if (r.get("major_id") or "").strip() not in known:
+                    print(f"  major_requirements: skipping row for unknown major {r.get('major_id')!r}")
+                    continue
+                subject = "|".join(normalize_subject(s) for s in (r.get("subject") or "").split("|") if s.strip())
+                rows.append((
+                    r["major_id"].strip(), r["section"].strip(), r["group_label"].strip(), r["rule"].strip().lower(),
+                    _int_or_none(r.get("pick_n")), (r.get("pick_units") or "").strip() or None,
+                    subject or None, (r.get("catalog_num") or "").strip().upper() or None,
+                    _int_or_none(r.get("num_min")), _int_or_none(r.get("num_max")),
+                    (r.get("title") or "").strip() or None, (r.get("units") or "").strip() or None,
+                    (r.get("note") or "").strip() or None,
+                ))
+    conn.executemany(
+        """INSERT INTO major_requirements (major_id, section, group_label, rule, pick_n, pick_units,
+           subject, catalog_num, num_min, num_max, title, units, note)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", rows)
+    print(f"  major_requirements: loaded {len(rows)} rows")
+    conn.commit()
+    conn.close()
+
+
+def majors_loaded():
+    """True if the majors table exists and has rows."""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        try:
+            return conn.execute("SELECT COUNT(*) FROM majors").fetchone()[0] > 0
+        finally:
+            conn.close()
+    except sqlite3.Error:
+        return False
+
+
 def database_has_data():
     """True if the database file exists and has at least one section."""
     if not os.path.exists(DB_PATH):
@@ -116,20 +204,22 @@ def build_database(data_dir):
     init_schema()
     load_csvs(data_dir)
     load_ge()
+    load_majors()
 
 
 def ensure_database():
     """
     Builds the database on first start (fresh clone, fresh container) so the
-    app works without a manual db.py step. Never touches a database that
+    app works without a manual db.py step. Never wipes a database that
     already has sections in it. Uses data/cleaned if it exists, otherwise
-    data/placeholder.
+    data/placeholder. A database built before majors existed gets just the
+    majors tables added.
 
     Several gunicorn workers import the app at the same moment, so the build
     happens under a file lock and we check again once we hold it: the first
     worker builds, the others wait and then see the data is there.
     """
-    if database_has_data():
+    if database_has_data() and (majors_loaded() or not os.path.isdir(MAJORS_DIR)):
         return
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
     with open(DB_PATH + ".lock", "w") as lock:
@@ -137,6 +227,9 @@ def ensure_database():
             fcntl.flock(lock, fcntl.LOCK_EX)
         try:
             if database_has_data():
+                if not majors_loaded() and os.path.isdir(MAJORS_DIR):
+                    print(f"Adding majors to {DB_PATH}")
+                    load_majors()
                 return
             data_dir = CLEANED_DIR if os.path.isdir(CLEANED_DIR) else PLACEHOLDER_DIR
             print(f"No class data in {DB_PATH}, building it from {data_dir}")

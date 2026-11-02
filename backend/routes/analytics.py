@@ -33,8 +33,11 @@ analytics_bp = Blueprint("analytics", __name__)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DEFAULT_DB_PATH = os.path.join(BASE_DIR, "backend", "sql", "analytics.db")
 
-ALLOWED_EVENTS = {"page_view", "search", "ge_search", "cart_add", "cart_remove", "cart_clear", "conflict_check"}
-ALLOWED_PROPS = ("view", "subject", "day", "areas", "results", "has_prof", "has_kw", "cart_size", "conflict_free")
+# cart_* events mean add to / remove from / clear the active plan (names kept from v1)
+ALLOWED_EVENTS = {"page_view", "search", "ge_search", "cart_add", "cart_remove", "cart_clear", "conflict_check",
+                  "major_select", "plan_create"}
+ALLOWED_PROPS = ("view", "subject", "day", "areas", "results", "has_prof", "has_kw", "cart_size", "conflict_free",
+                 "major")
 ID_PATTERN = re.compile(r"^[A-Za-z0-9-]{8,64}$")
 MAX_BODY_BYTES = 2048
 MAX_PROP_CHARS = 40
@@ -253,6 +256,9 @@ def stats():
             "conflict_free": conflict_rows.get("1", 0),     # JSON true comes back as 1
             "conflicts_found": conflict_rows.get("0", 0),
         },
+        "majors": counts("""
+            SELECT json_extract(props, '$.major'), COUNT(*) FROM events
+            WHERE event = 'major_select' AND ts >= ? GROUP BY 1 ORDER BY 2 DESC""", since),
         "devices": counts("""
             SELECT device, COUNT(DISTINCT visitor_id) FROM events
             WHERE ts >= ? GROUP BY device""", since),

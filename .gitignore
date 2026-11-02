@@ -6,3 +6,4 @@ backend/sql/scheduler.db
 node_modules/
 analytics.db*
 *.lock
+reference/

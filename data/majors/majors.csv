@@ -1,0 +1,8 @@
+major_id,name,degree,college,catalog_year,status
+cs_bs,Computer Science,B.S.,,2026-2027,live
+psych_ba,Psychology,B.A.,,2026-2027,live
+ba_general_bs,"Business Administration, Emphasis in General Business",B.S.,Fowler College of Business,2026-2027,live
+ba_marketing_bs,"Business Administration, Emphasis in Marketing",B.S.,Fowler College of Business,2026-2027,coming_soon
+crim_justice,Criminal Justice,B.S.,,2026-2027,live
+kin_prept,"Kinesiology, Emphasis in Prephysical Therapy",B.S.,,2026-2027,live
+me_bs,Mechanical Engineering,,,2026-2027,coming_soon
