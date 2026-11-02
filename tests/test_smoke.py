@@ -87,7 +87,20 @@ class CoreTests(AppTestCase):
             html = res.get_data(as_text=True)
         self.assertIn("EzClass", html)
         self.assertIn('src="js/track.js"', html)
-        self.assertIn('id="track-optout"', html)
+
+    def test_every_page_loads_with_shared_header_and_tracking(self):
+        # the footer (with the #track-optout link) is built by nav.js, which each page module imports
+        for page in ("index", "major", "ge", "search", "schedule"):
+            with self.client.get(f"/{page}.html") as res:
+                self.assertEqual(res.status_code, 200, page)
+                html = res.get_data(as_text=True)
+            self.assertIn('id="site-header"', html, page)
+            self.assertIn('id="site-footer"', html, page)
+            self.assertIn('<script type="module" src="js/track.js">', html, page)
+            self.assertNotIn("<script>", html, page)          # CSP: no inline scripts
+            self.assertNotIn("onclick", html, page)
+        with self.client.get("/js/nav.js") as res:
+            self.assertIn('id: "track-optout"', res.get_data(as_text=True))
 
     def test_health_reports_broken_database(self):
         with mock.patch.object(app_module, "get_connection", side_effect=sqlite3.OperationalError("gone")):
