@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GE Scheduler · EzClass</title>
+<meta name="description" content="Every General Education class this term, one block per GE area.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/base.css">
+<script type="module" src="js/pages/ge.js"></script>
+<script type="module" src="js/track.js"></script>
+</head>
+<body data-page="ge">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main" class="page">
+    <div class="workspace">
+      <div class="workspace-main">
+        <div class="page-head">
+          <div>
+            <h1>GE Scheduler</h1>
+            <p id="ge-sub">Every General Education class, one block per GE area. Areas your major already covers are marked.</p>
+          </div>
+        </div>
+
+        <nav class="area-strip" id="area-strip" aria-label="Jump to a GE area"></nav>
+
+        <form class="filters" id="ge-filters">
+          <label class="field">Day
+            <select class="select" id="ge-day">
+              <option value="">Any day</option>
+              <option value="M">Monday</option>
+              <option value="T">Tuesday</option>
+              <option value="W">Wednesday</option>
+              <option value="Th">Thursday</option>
+              <option value="F">Friday</option>
+            </select>
+          </label>
+          <label class="check"><input type="checkbox" id="ge-cd"> Cultural diversity</label>
+          <label class="check"><input type="checkbox" id="ge-es"> Also counts for Ethnic Studies</label>
+          <label class="check"><input type="checkbox" id="ge-ai"> Also counts for American Institutions</label>
+        </form>
+
+        <div class="results-bar">
+          <p class="muted small" id="ge-count" aria-live="polite"></p>
+          <div>
+            <button type="button" class="btn btn-sm btn-ghost" id="ge-expand">Open all areas</button>
+            <button type="button" class="btn btn-sm btn-ghost" id="ge-collapse">Close all</button>
+          </div>
+        </div>
+
+        <div id="ge-root"></div>
+      </div>
+      <aside class="dock" id="dock"></aside>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>

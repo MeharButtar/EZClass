@@ -158,3 +158,11 @@ export function announce(region, text) {
 export function plural(n, word, many = `${word}s`) {
   return `${n} ${n === 1 ? word : many}`;
 }
+
+// Tells listeners (track.js) that something happened, the same way store.js
+// reports plan changes. detail holds only safe values: never typed text.
+export function signal(type, detail = {}) {
+  try {
+    document.dispatchEvent(new CustomEvent("ezclass:action", { detail: { type, ...detail } }));
+  } catch (e) { /* never let a listener break the page */ }
+}

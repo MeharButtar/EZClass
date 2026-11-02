@@ -359,6 +359,7 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
   border: 1px solid var(--border); border-radius: var(--r-lg);
 }
 .filters .actions { display: flex; gap: var(--sp-2); }
+.area-strip + .filters { margin-top: var(--sp-4); }
 
 .card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg);
