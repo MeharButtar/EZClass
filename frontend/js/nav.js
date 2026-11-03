@@ -12,10 +12,10 @@ import { el, toast } from "./ui.js";
 const page = document.body.dataset.page || "home";
 
 const LINKS = [
-  { page: "major", href: "major.html", label: "My Major", short: "Major", icon: "M" },
-  { page: "ge", href: "ge.html", label: "GE", short: "GE", icon: "G" },
-  { page: "search", href: "search.html", label: "Search", short: "Search", icon: "S" },
-  { page: "schedule", href: "schedule.html", label: "My Schedule", short: "Schedule", icon: "W" },
+  { page: "major", href: "major.html", label: "My Major", short: "Major" },
+  { page: "ge", href: "ge.html", label: "GE", short: "GE" },
+  { page: "search", href: "search.html", label: "Search", short: "Search" },
+  { page: "schedule", href: "schedule.html", label: "My Schedule", short: "Schedule" },
 ];
 
 // ---------- theme ----------
@@ -50,8 +50,8 @@ function themeButton() {
 
 // ---------- header ----------
 
-const logo = () => el("a", { class: "logo", href: "index.html" },
-  el("span", { class: "logo-mark", "aria-hidden": "true" }), CONFIG.productName);
+const logo = () => el("a", { class: "logo", href: "index.html", "aria-label": `${CONFIG.productName} home` },
+  el("span", { class: "logo-mark", "aria-hidden": "true" }), el("span", { class: "logo-text" }, CONFIG.productName));
 
 function homeHeader() {
   return el("div", { class: "topbar-inner" },
@@ -71,8 +71,7 @@ function appHeader() {
     el("nav", { class: "mainnav", "aria-label": "Scheduler" },
       LINKS.map((l) => el("a", {
         href: l.href, class: "navlink", "aria-current": l.page === page ? "page" : null,
-      }, el("span", { class: "nav-icon", "aria-hidden": "true" }, l.icon), el("span", { class: "nav-long" }, l.label),
-         el("span", { class: "nav-short" }, l.short)))),
+      }, el("span", { class: "nav-long" }, l.label), el("span", { class: "nav-short" }, l.short)))),
     el("div", { class: "topbar-tools" }, majorChip, planChip, themeButton()));
 }
 

@@ -176,8 +176,9 @@ button, input, select { font: inherit; color: inherit; }
 /* header */
 .topbar {
   position: sticky; top: 0; z-index: 30;
-  background: color-mix(in srgb, var(--surface) 92%, transparent);
-  backdrop-filter: saturate(1.4) blur(8px);
+  /* solid, no backdrop-filter: a filter would make the header the containing
+     block for the phone tab bar (position: fixed) and pin it to the top */
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
 }
 .topbar-inner {
@@ -206,7 +207,7 @@ button, input, select { font: inherit; color: inherit; }
 }
 .navlink:hover { color: var(--text) !important; background: var(--surface-2); }
 .navlink[aria-current="page"] { color: var(--accent-strong) !important; background: var(--accent-soft); }
-.nav-icon, .nav-short { display: none; }
+.nav-short { display: none; }
 .homenav { margin-left: auto; display: flex; align-items: center; gap: var(--sp-2); }
 .topbar-tools { margin-left: auto; display: flex; align-items: center; gap: var(--sp-2); min-width: 0; }
 
@@ -280,7 +281,9 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
   .nav-long { display: none; }
   .nav-short { display: inline; }
   .topbar-inner { gap: var(--sp-2); padding: 0 var(--sp-3); }
-  .chip-major .chip-text { max-width: 9rem; }
+  .topbar-tools { flex: 1; justify-content: flex-end; }
+  .chip-major { min-width: 0; flex-shrink: 1; overflow: hidden; }
+  .chip-major .chip-text { max-width: none; min-width: 0; }
   main.page { padding: var(--sp-4) var(--sp-4) var(--sp-6); }
   h1 { font-size: var(--fs-xl); }
 }
@@ -456,6 +459,7 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 .add-btn:hover { background: var(--accent-soft); }
 .add-btn[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
 @media (max-width: 479.98px) {
+  .logo-text { display: none; }
   .sec-row { grid-template-columns: minmax(0, 1fr) auto; }
   .sec-when { grid-column: 1 / -1; grid-auto-flow: column; justify-content: start; align-items: center; gap: var(--sp-3); }
   .add-btn { min-width: 4.75rem; }
