@@ -118,6 +118,9 @@ def clean_number(value):
     return str(int(f)) if f == int(f) else None
 
 
+NOT_A_PROFESSOR = {"to be announced", "to be", "tba", "tbd", "staff", "instructor", "tba tba", "staff staff"}
+
+
 def validate(rows):
     errors, good = [], []
     for r in rows:
@@ -156,6 +159,10 @@ def validate(rows):
             problems.append("end_time must be after start_time")
         if r.get("capacity") is None:
             problems.append("capacity must be a whole number or blank")
+        # "To be Announced" / "TBA" / "Staff" typed as a name means no professor yet
+        full_name = f"{r.get('professor_first') or ''} {r.get('professor_last') or ''}".strip().lower()
+        if full_name in NOT_A_PROFESSOR:
+            r["professor_first"] = r["professor_last"] = ""
         if bool(r["professor_first"]) != bool(r["professor_last"]):
             problems.append("give both professor_first and professor_last, or leave both blank")
 

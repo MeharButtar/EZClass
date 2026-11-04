@@ -2,6 +2,10 @@
 // school by editing this one file (plus the data/ CSVs). Nothing else in the
 // frontend should spell out the school, the term, or the catalog year.
 
+// The school's id on RateMyProfessors (877 = San Diego State University),
+// from ratemyprofessors.com/school/877.
+const RATEMYPROFESSORS_SCHOOL_ID = 877;
+
 export const CONFIG = Object.freeze({
   productName: "EzClass",
   schoolName: "San Diego State University",
@@ -20,8 +24,10 @@ export const CONFIG = Object.freeze({
   maxSectionsPerPlan: 60,
 
   // Professor names link to a RateMyProfessors search (a plain search link that
-  // opens in a new tab; nothing is fetched or scraped).
+  // opens in a new tab; nothing is fetched or scraped). The search is limited to
+  // the school and uses the last name, so it lists everyone at the school with
+  // that last name, including profiles under a nickname ("Patty" for "Patricia").
   professorSite: "RateMyProfessors",
-  professorUrl: (name) =>
-    `https://www.ratemyprofessors.com/search/professors?q=${encodeURIComponent(`${name} San Diego State University`)}`,
+  professorUrl: (lastName) =>
+    `https://www.ratemyprofessors.com/search/professors/${RATEMYPROFESSORS_SCHOOL_ID}?q=${encodeURIComponent(lastName)}`,
 });

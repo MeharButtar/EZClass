@@ -110,7 +110,7 @@ function renderList(sections, state) {
       el("strong", {}, `${s.code} · Sec ${s.sectionNumber}`),
       el("div", { class: "small" }, s.title),
       el("div", { class: "muted small" }, `${formatRange(s.startMin, s.endMin) || "No set time"} · ${s.room || "Room TBA"} · `,
-        professorLink(s.professor)),
+        professorLink(s.professor, s.professorLast)),
       dayStrip(s.dayList)),
     el("button", {
       type: "button", class: "btn btn-sm btn-danger", "aria-label": `Remove ${sectionLabel(s)} from ${plan.name}`,

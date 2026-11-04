@@ -242,6 +242,17 @@ class SectionFilterTests(AppTestCase):
         picked = self.client.get("/api/sections?ids=1,2,999999").get_json()
         self.assertEqual(sorted(s["section_id"] for s in picked), [1, 2])
 
+    def test_professor_last_name_for_ratemyprofessors(self):
+        sections = self.client.get("/api/sections?professor=Kraft").get_json()
+        self.assertTrue(sections)
+        for s in sections:
+            self.assertTrue(s["professor_name"].endswith(s["professor_last"]))
+            self.assertEqual(s["professor_last"], "Kraft")
+        # multi-word last names come through whole
+        geer = self.client.get("/api/sections?professor=Van%20Der%20Geer").get_json()
+        if geer:
+            self.assertEqual(geer[0]["professor_last"], "Van Der Geer")
+
     def test_bad_id_lists(self):
         for query in ("ids=abc", "ids=1,x", "ids=", "course_id=1;2", "ids=" + ",".join(["1"] * 201)):
             res = self.client.get(f"/api/sections?{query}")

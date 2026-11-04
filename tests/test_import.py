@@ -37,6 +37,25 @@ def save(out_dir, rows, known=None, highest=0):
     return {(r["subject"], r["catalog_num"], r["section_number"]): s["section_id"] for r, s in zip(rows, sections)}
 
 
+def raw_row(first, last, n=2):
+    """A row as read from the sheet, before validate()."""
+    return {"_row": n, "term": "Spring 2027", "subject": "CS", "catalog_num": "150", "course_title": "Intro",
+            "units": "3", "section_number": "1", "days": "MW", "start_time": "09:00", "end_time": "10:15",
+            "professor_first": first, "professor_last": last, "building": "P", "room_number": "144", "capacity": "40"}
+
+
+class ProfessorNameTests(unittest.TestCase):
+    def test_placeholder_names_mean_no_professor(self):
+        for first, last in (("To be", "Announced"), ("TBA", ""), ("Staff", ""), ("tba", "tba")):
+            good, errors = importer.validate([raw_row(first, last)])
+            self.assertEqual(errors, [], (first, last))
+            self.assertEqual((good[0]["professor_first"], good[0]["professor_last"]), ("", ""), (first, last))
+
+    def test_real_names_are_kept(self):
+        good, errors = importer.validate([raw_row("Patricia", "Kraft")])
+        self.assertEqual((good[0]["professor_first"], good[0]["professor_last"]), ("Patricia", "Kraft"))
+
+
 class StableIdTests(unittest.TestCase):
     def test_first_import_numbers_from_one(self):
         with tempfile.TemporaryDirectory() as out:

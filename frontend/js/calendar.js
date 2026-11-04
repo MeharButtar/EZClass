@@ -70,7 +70,7 @@ export function showSectionCard(section) {
         el("dt", {}, "Days"), el("dd", {}, dayStrip(section.dayList)),
         el("dt", {}, "Time"), el("dd", {}, formatRange(section.startMin, section.endMin) || "No set time"),
         el("dt", {}, "Room"), el("dd", {}, section.room || "TBA"),
-        el("dt", {}, "Professor"), el("dd", {}, professorLink(section.professor, "TBA")),
+        el("dt", {}, "Professor"), el("dd", {}, professorLink(section.professor, section.professorLast, "TBA")),
         el("dt", {}, "Units"), el("dd", {}, String(section.units || "–"))),
       el("div", { class: "dialog-actions" },
         el("button", { type: "button", class: "btn", on: { click: () => dialog.close() } }, "Close"),

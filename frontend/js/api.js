@@ -34,8 +34,13 @@ function cached(url) {
 
 // ---------- sections ----------
 
+// Placeholder "professors" some data rows carry instead of a blank.
+const NOT_A_PROFESSOR = /^(to be announced|tba|tbd|staff|instructor)$/i;
+
 // One shape for a section everywhere in the frontend.
 export function normalizeSection(raw) {
+  const professor = (raw.professor_name || "").trim();
+  const hasProfessor = professor && !NOT_A_PROFESSOR.test(professor);
   const dayList = parseDays(raw.days);
   return {
     id: raw.section_id,
@@ -46,7 +51,8 @@ export function normalizeSection(raw) {
     title: raw.course_title || "",
     units: Number.parseFloat(raw.units) || 0,
     sectionNumber: raw.section_number || "",
-    professor: raw.professor_name || "",
+    professor: hasProfessor ? professor : "",
+    professorLast: hasProfessor ? (raw.professor_last || "").trim() : "",
     days: raw.days || "",
     dayList,
     start: raw.start_time || "",

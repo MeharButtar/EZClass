@@ -169,11 +169,12 @@ export function signal(type, detail = {}) {
 }
 
 // A professor's name linking to a RateMyProfessors search in a new tab, or
-// "Professor TBA" when the section has no professor yet.
-export function professorLink(name, missing = "Professor TBA") {
+// "Professor TBA" when the section has no professor yet. Searches by last
+// name at the school; falls back to the full name if the last name is missing.
+export function professorLink(name, lastName, missing = "Professor TBA") {
   if (!name) return el("span", {}, missing);
   return el("a", {
-    class: "prof-link", href: CONFIG.professorUrl(name), target: "_blank", rel: "noopener",
-    "aria-label": `${name} on ${CONFIG.professorSite} (opens in a new tab)`,
+    class: "prof-link", href: CONFIG.professorUrl(lastName || name), target: "_blank", rel: "noopener",
+    "aria-label": `${name}: look up on ${CONFIG.professorSite} (opens in a new tab)`,
   }, name);
 }

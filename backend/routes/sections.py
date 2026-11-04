@@ -30,6 +30,7 @@ def section_to_dict(row):
         "units": row["units"],
         "section_number": row["section_number"],
         "professor_name": row["professor_name"],
+        "professor_last": row["professor_last"],   # for the RateMyProfessors link (multi-word last names)
         "days": row["days"],
         "start_time": row["start_time"],
         "end_time": row["end_time"],
@@ -49,7 +50,7 @@ BASE_QUERY = """
         s.section_id, s.course_id, s.section_number, s.days,
         s.start_time, s.end_time, s.capacity,
         c.subject, c.catalog_num, c.title, c.units,
-        (p.first_name || ' ' || p.last_name) AS professor_name,
+        (p.first_name || ' ' || p.last_name) AS professor_name, p.last_name AS professor_last,
         r.building, r.room_number,
         (SELECT GROUP_CONCAT(g.area_code, ',') FROM course_ge g
           WHERE g.subject = c.subject AND g.catalog_num = c.catalog_num) AS ge_areas,

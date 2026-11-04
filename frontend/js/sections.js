@@ -29,7 +29,7 @@ export function geBadges(areas = [], { cd = false, es = false, ai = false } = {}
 
 // "Nguyen · AH 2140 · 40 seats", with the professor's name linked to RateMyProfessors
 function sectionMeta(s) {
-  const parts = [professorLink(s.professor), s.room || "Room TBA", s.capacity ? `${s.capacity} seats` : null].filter(Boolean);
+  const parts = [professorLink(s.professor, s.professorLast), s.room || "Room TBA", s.capacity ? `${s.capacity} seats` : null].filter(Boolean);
   return parts.flatMap((part, i) => (i ? [" · ", part] : [part]));
 }
 
