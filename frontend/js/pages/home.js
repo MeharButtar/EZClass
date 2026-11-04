@@ -14,6 +14,7 @@ if (OLD_VIEWS[location.hash]) {
   location.replace(OLD_VIEWS[location.hash]);
 }
 
-$("#hero-lead").textContent = `Pick your major and see every class it requires, with the ${CONFIG.termName} sections ready to add.`;
+$("#hero-lead").textContent = `Pick your major and see every class you need, already matched to the ${CONFIG.termName} sections. Build a week with no time conflicts in a few minutes.`;
+for (const span of document.querySelectorAll("[data-term]")) span.textContent = CONFIG.termName;
 $("#cta-text").textContent = `Ready to plan ${CONFIG.termName}?`;
 initHero($("#hero-art"), $("#hero-status"), $("#hero-replay"));
