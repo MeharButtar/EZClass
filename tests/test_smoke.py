@@ -36,6 +36,7 @@ os.environ.pop("ANALYTICS_ENABLED", None)
 with contextlib.redirect_stdout(io.StringIO()):   # the loader prints a line per table
     from backend import app as app_module
 from backend.models import db
+from backend.routes import analytics
 from backend.models.conflicts import find_conflicts
 
 EXPECTED_CSP = (
@@ -262,11 +263,16 @@ class AnalyticsTests(AppTestCase):
         self.assertEqual(columns, ["id", "ts", "event", "visitor_id", "session_id", "device", "props"])
 
     def test_rate_limit_per_visitor(self):
+        # The limit counts per clock minute. Pin the clock so the 121 requests
+        # can't straddle a minute boundary (which resets the count and made
+        # this test fail now and then).
         vid = "visitor-flood"
-        codes = [self.event(vid, "cart_add").status_code for _ in range(121)]
+        with mock.patch.object(analytics.time, "time", return_value=1_800_000_000.0):
+            codes = [self.event(vid, "cart_add").status_code for _ in range(121)]
+            other = self.event("visitor-other", "cart_add").status_code
         self.assertEqual(codes[:120], [204] * 120)
         self.assertEqual(codes[120], 429)
-        self.assertEqual(self.event("visitor-other", "cart_add").status_code, 204)
+        self.assertEqual(other, 204)
 
     def test_stats_need_token(self):
         self.event("visitor-stats", "conflict_check", {"conflict_free": True})
