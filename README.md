@@ -179,6 +179,17 @@ and start the app). Keep `status` as `coming_soon` until the rows are checked.
 4. Load it: `python3 backend/models/db.py data/cleaned`
 5. Start the app as usual. To go back to placeholder data, run `python3 backend/models/db.py`.
 
+Section ids stay the same from one import to the next: a section that is still
+in the sheet (same subject, course number, section and term) keeps the id it
+had in the last `data/cleaned/sections.csv`, even if its row moved. This
+matters because students' saved plans remember sections by id. Always import
+on top of the current `data/cleaned/` files (don't delete them first). If a
+section is removed from the sheet, it is dropped from students' plans with a
+short notice the next time they open the site.
+
+Rows with blank days or times (online or TBA sections) are rejected for now,
+so those classes don't show up yet.
+
 ## Moving to real data later (manual version)
 
 1. Download the SDSU public class schedule export (Excel) for the term.

@@ -210,6 +210,18 @@ export function removeSection(id, label = "class") {
   }, `Removed ${label}`, { type: "cart_remove", cartSize: activePlan().sectionIds.length - 1 });
 }
 
+// Sections that are no longer in the class data (removed in a data update) are
+// dropped from every plan. Not undoable: undoing would only bring back ids
+// that point at nothing.
+export function forgetSections(ids) {
+  const gone = new Set(ids);
+  if (!state.plans.some((p) => p.sectionIds.some((id) => gone.has(id)))) return false;
+  commit((s) => {
+    for (const plan of s.plans) plan.sectionIds = plan.sectionIds.filter((id) => !gone.has(id));
+  }, null);
+  return true;
+}
+
 export function toggleSection(id, label) {
   if (isInPlan(id)) { removeSection(id, label); return false; }
   return addSection(id, label);
