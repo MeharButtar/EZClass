@@ -15,7 +15,7 @@ import {
   renamePlan, subscribe, switchPlan, undo,
 } from "../store.js";
 import { DAY_SHORT, describeOverlap, formatRange } from "../time.js";
-import { $, announce, clear, confirmDialog, dayStrip, el, emptyBox, plural, promptDialog, signal } from "../ui.js";
+import { $, announce, clear, confirmDialog, dayStrip, el, emptyBox, plural, professorLink, promptDialog, signal } from "../ui.js";
 
 const tabs = $("#plan-tabs");
 const actions = $("#plan-actions");
@@ -109,7 +109,8 @@ function renderList(sections, state) {
     el("div", {},
       el("strong", {}, `${s.code} · Sec ${s.sectionNumber}`),
       el("div", { class: "small" }, s.title),
-      el("div", { class: "muted small" }, [formatRange(s.startMin, s.endMin) || "No set time", s.room || "Room TBA", s.professor || "Professor TBA"].join(" · ")),
+      el("div", { class: "muted small" }, `${formatRange(s.startMin, s.endMin) || "No set time"} · ${s.room || "Room TBA"} · `,
+        professorLink(s.professor)),
       dayStrip(s.dayList)),
     el("button", {
       type: "button", class: "btn btn-sm btn-danger", "aria-label": `Remove ${sectionLabel(s)} from ${plan.name}`,

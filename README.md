@@ -17,6 +17,10 @@ up to three plans (A, B, C). Everything they pick stays in their own browser.
   jump between them, a day filter and the CD / ES / AI tags. Areas that a course
   from your major already covers are marked "Covered by your major".
 - **Search** (`search.html`): subject, day, professor and keyword search.
+- Professor names everywhere link to a RateMyProfessors search (new tab), and
+  section rows show their GE areas and the CD / ES / AI tags. A cart saved by
+  the first version comes back as Plan A, and old `/#ge` and `/#search` links
+  open the new pages.
 - **My Schedule** (`schedule.html`): plan tabs (A, B, C) with rename, duplicate,
   delete and undo, the full-size week, a stats strip (units, hours, days on
   campus, gaps, tight walks between buildings) and the conflict check.

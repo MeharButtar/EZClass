@@ -2,6 +2,7 @@
 // day strip, toasts, dialogs, and loading / empty / error boxes.
 // Prefer el() and textContent. innerHTML is only ever used with esc().
 
+import { CONFIG } from "./config.js";
 import { DAYS, DAY_NAMES } from "./time.js";
 
 export function esc(value) {
@@ -165,4 +166,14 @@ export function signal(type, detail = {}) {
   try {
     document.dispatchEvent(new CustomEvent("ezclass:action", { detail: { type, ...detail } }));
   } catch (e) { /* never let a listener break the page */ }
+}
+
+// A professor's name linking to a RateMyProfessors search in a new tab, or
+// "Professor TBA" when the section has no professor yet.
+export function professorLink(name, missing = "Professor TBA") {
+  if (!name) return el("span", {}, missing);
+  return el("a", {
+    class: "prof-link", href: CONFIG.professorUrl(name), target: "_blank", rel: "noopener",
+    "aria-label": `${name} on ${CONFIG.professorSite} (opens in a new tab)`,
+  }, name);
 }

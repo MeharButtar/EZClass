@@ -84,13 +84,14 @@ const EVENTS = {
   plan_create: (d) => ({ cart_size: num(d.cartSize) }),
   major_select: (d) => ({ major: str(d.major) }),
   search: (d) => ({ subject: str(d.subject), day: str(d.day), has_prof: Boolean(d.hasProf), has_kw: Boolean(d.hasKw), results: num(d.results) }),
-  ge_search: (d) => ({ areas: str(d.areas), day: str(d.day), results: num(d.results) }),
+  ge_search: (d) => ({ areas: str(d.areas), day: str(d.day), has_prof: Boolean(d.hasProf), has_kw: Boolean(d.hasKw), results: num(d.results) }),
   conflict_check: (d) => ({ conflict_free: Boolean(d.conflictFree), cart_size: num(d.cartSize) }),
 };
 
 try {
   const view = document.body?.dataset.page;
-  send("page_view", { view: VIEWS.includes(view) ? view : "home" });
+  // a page that is only forwarding an old link isn't a visit; the page it opens counts
+  if (!document.documentElement.dataset.leaving) send("page_view", { view: VIEWS.includes(view) ? view : "home" });
 
   document.addEventListener("ezclass:action", (e) => {
     try {

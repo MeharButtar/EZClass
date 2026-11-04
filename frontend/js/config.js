@@ -18,4 +18,10 @@ export const CONFIG = Object.freeze({
 
   // Most sections a plan can hold. Matches the server's conflict check limit.
   maxSectionsPerPlan: 60,
+
+  // Professor names link to a RateMyProfessors search (a plain search link that
+  // opens in a new tab; nothing is fetched or scraped).
+  professorSite: "RateMyProfessors",
+  professorUrl: (name) =>
+    `https://www.ratemyprofessors.com/search/professors?q=${encodeURIComponent(`${name} San Diego State University`)}`,
 });

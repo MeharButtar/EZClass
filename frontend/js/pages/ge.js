@@ -20,6 +20,8 @@ const strip = $("#area-strip");
 const countLine = $("#ge-count");
 const daySelect = $("#ge-day");
 const tagBoxes = { cd: $("#ge-cd"), es: $("#ge-es"), ai: $("#ge-ai") };
+const profInput = $("#ge-professor");
+const keywordInput = $("#ge-keyword");
 $("#ge-sub").textContent = `Every General Education class with ${CONFIG.termName} sections, one block per GE area. Areas your major already covers are marked.`;
 
 mountDock($("#dock"));
@@ -34,9 +36,15 @@ const blocks = new Map();    // area code -> { box, body, head parts, open, cove
 
 // ---------- filtering ----------
 
+// Professor and keyword work like the server's search: a case-insensitive
+// "contains" on the professor's name, and on the course title or number.
 function passes(s) {
   const day = daySelect.value;
   if (day && !s.dayList.includes(day)) return false;
+  const prof = profInput.value.trim().toLowerCase();
+  if (prof && !s.professor.toLowerCase().includes(prof)) return false;
+  const q = keywordInput.value.trim().toLowerCase();
+  if (q && !s.title.toLowerCase().includes(q) && !s.catalog.toLowerCase().includes(q)) return false;
   if (tagBoxes.cd.checked && !s.cd) return false;
   if (tagBoxes.es.checked && !s.es) return false;
   if (tagBoxes.ai.checked && !s.ai) return false;
@@ -195,17 +203,29 @@ function updateCoverage(initial = false) {
   }
 }
 
+let appliedFilters = "";   // the filters last applied, so Enter + change don't run (and count) twice
+
 function applyFilters() {
+  const now = JSON.stringify([daySelect.value, profInput.value.trim(), keywordInput.value.trim(),
+    tagBoxes.cd.checked, tagBoxes.es.checked, tagBoxes.ai.checked]);
+  if (now === appliedFilters) return;
+  appliedFilters = now;
   const total = updateCounts();
   for (const [code, block] of blocks) {
     block.filled = false;
     if (block.open) fillBlock(code);
   }
-  signal("ge_search", { areas: "ALL", day: daySelect.value, results: total });
+  signal("ge_search", { areas: "ALL", day: daySelect.value, results: total,
+                       hasProf: Boolean(profInput.value.trim()), hasKw: Boolean(keywordInput.value.trim()) });
 }
 
+// Selects and checkboxes apply right away; the professor and keyword boxes on
+// Enter or when you leave the box (both fire "change").
 $("#ge-filters").addEventListener("change", applyFilters);
 $("#ge-filters").addEventListener("submit", (e) => e.preventDefault());
+for (const input of [profInput, keywordInput]) {
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); applyFilters(); } });
+}
 $("#ge-expand").addEventListener("click", () => { for (const code of blocks.keys()) setOpen(code, true); });
 $("#ge-collapse").addEventListener("click", () => { for (const code of blocks.keys()) setOpen(code, false); });
 

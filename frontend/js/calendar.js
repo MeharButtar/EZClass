@@ -8,7 +8,7 @@
 import { CONFIG } from "./config.js";
 import { removeSection } from "./store.js";
 import { DAYS, DAY_NAMES, DAY_SHORT, formatRange, formatTime, isTimed, overlaps } from "./time.js";
-import { clear, dayStrip, el, openDialog } from "./ui.js";
+import { clear, dayStrip, el, openDialog, professorLink } from "./ui.js";
 
 const COLORS = 8;   // --sub-0 ... --sub-7 in base.css
 
@@ -70,7 +70,7 @@ export function showSectionCard(section) {
         el("dt", {}, "Days"), el("dd", {}, dayStrip(section.dayList)),
         el("dt", {}, "Time"), el("dd", {}, formatRange(section.startMin, section.endMin) || "No set time"),
         el("dt", {}, "Room"), el("dd", {}, section.room || "TBA"),
-        el("dt", {}, "Professor"), el("dd", {}, section.professor || "TBA"),
+        el("dt", {}, "Professor"), el("dd", {}, professorLink(section.professor, "TBA")),
         el("dt", {}, "Units"), el("dd", {}, String(section.units || "–"))),
       el("div", { class: "dialog-actions" },
         el("button", { type: "button", class: "btn", on: { click: () => dialog.close() } }, "Close"),

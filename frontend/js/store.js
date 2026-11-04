@@ -86,9 +86,31 @@ function validate(raw) {
   return state;
 }
 
+// The first version saved its cart as a list of section objects under this key.
+// A returning visitor with no v2 state gets that cart back as Plan A.
+const V1_CART_KEY = "ezclass_cart_v1";
+
+function fromV1Cart() {
+  try {
+    const old = JSON.parse(readValue(V1_CART_KEY) || "null");
+    if (!Array.isArray(old)) return null;
+    const ids = old.map((s) => s && s.section_id).filter(isId);
+    return ids.length ? validate({ plans: [{ name: PLAN_NAMES[0], sectionIds: ids }] }) : null;
+  } catch (e) {
+    return null;
+  }
+}
+
 function load() {
   try {
     const text = readValue(KEY);
+    if (!text) {
+      const carried = fromV1Cart();
+      if (carried) {
+        writeValue(KEY, JSON.stringify(carried));
+        return carried;
+      }
+    }
     return validate(text ? JSON.parse(text) : null);
   } catch (e) {
     return blankState();

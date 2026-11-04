@@ -344,6 +344,7 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
   color: var(--text-muted); font-size: var(--fs-xs); font-weight: 600; white-space: nowrap;
 }
 .pill-accent, .pill-ge { background: var(--accent-soft); color: var(--accent-strong); }
+.pill-tag { background: var(--surface); color: var(--text-muted); box-shadow: inset 0 0 0 1px var(--border-strong); }
 .pill-done { background: var(--accent); color: var(--on-accent); }
 .pill-warn { background: var(--danger-soft); color: var(--danger); }
 
@@ -451,6 +452,9 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 .sec-title { font-size: var(--fs-sm); }
 .sec-meta { color: var(--text-muted); font-size: var(--fs-xs); overflow-wrap: anywhere; }
 .sec-clash { color: var(--danger); font-size: var(--fs-xs); font-weight: 650; }
+.sec-tags { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin-top: var(--sp-1); }
+.prof-link { color: inherit !important; text-decoration: underline; text-decoration-color: var(--border-strong); }
+.prof-link:hover { color: var(--accent-strong) !important; text-decoration-color: currentColor; }
 .add-btn {
   min-height: 2.25rem; min-width: 5.5rem; padding: 0 var(--sp-3); border-radius: var(--r-pill);
   border: 1px solid var(--accent); background: var(--surface); color: var(--accent-strong);

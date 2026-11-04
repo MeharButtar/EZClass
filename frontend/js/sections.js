@@ -13,9 +13,25 @@ import { CONFIG } from "./config.js";
 import { watchPlan } from "./plan.js";
 import { activePlan, isCompleted, isInPlan, toggleCompleted, toggleSection } from "./store.js";
 import { formatRange, overlaps } from "./time.js";
-import { $$, dayStrip, el, plural } from "./ui.js";
+import { $$, dayStrip, el, plural, professorLink } from "./ui.js";
 
 export const sectionLabel = (s) => `${s.code} (Sec ${s.sectionNumber})`;
+
+// GE area pills plus the three GE tags (same wording as v1's results table).
+export function geBadges(areas = [], { cd = false, es = false, ai = false } = {}) {
+  return [
+    ...areas.map((a) => el("span", { class: "pill pill-ge", title: `Counts for GE area ${a}` }, `GE ${a}`)),
+    cd ? el("span", { class: "pill pill-tag", title: "Cultural diversity" }, "CD") : null,
+    es ? el("span", { class: "pill pill-tag", title: "Counts for the Ethnic Studies graduation requirement" }, "ES") : null,
+    ai ? el("span", { class: "pill pill-tag", title: "Counts for American Institutions" }, "AI") : null,
+  ];
+}
+
+// "Nguyen · AH 2140 · 40 seats", with the professor's name linked to RateMyProfessors
+function sectionMeta(s) {
+  const parts = [professorLink(s.professor), s.room || "Room TBA", s.capacity ? `${s.capacity} seats` : null].filter(Boolean);
+  return parts.flatMap((part, i) => (i ? [" · ", part] : [part]));
+}
 
 const noHover = window.matchMedia("(hover: none)");
 let armed = null;   // touch: the section whose Add button was tapped once
@@ -42,13 +58,14 @@ function addButton(s) {
 export function sectionRow(s, { showCourse = false } = {}) {
   rowSections.set(s.id, s);
   const time = formatRange(s.startMin, s.endMin) || "No set time";
-  const meta = [s.professor || "Professor TBA", s.room || "Room TBA", s.capacity ? `${s.capacity} seats` : null].filter(Boolean);
   const row = el("li", { class: "sec-row", dataset: { sectionId: s.id } },
     el("div", { class: "sec-when" }, dayStrip(s.dayList), el("span", { class: "sec-time" }, time)),
     el("div", { class: "sec-info" },
       el("span", { class: "sec-name" }, showCourse ? `${s.code} · Sec ${s.sectionNumber}` : `Section ${s.sectionNumber}`),
       showCourse && s.title ? el("span", { class: "sec-title" }, s.title) : null,
-      el("span", { class: "sec-meta" }, meta.join(" · ")),
+      el("span", { class: "sec-meta" }, sectionMeta(s)),
+      showCourse && (s.geAreas.length || s.cd || s.es || s.ai)
+        ? el("span", { class: "sec-tags" }, geBadges(s.geAreas, s)) : null,
       el("span", { class: "sec-clash", hidden: true })),
     addButton(s));
   row.addEventListener("mouseenter", () => { if (!noHover.matches) setGhost(s); });
@@ -107,7 +124,7 @@ export function courseCard(course, sections = [], { takenToggle = false, expande
 
   const tags = el("div", { class: "course-tags" },
     course.units ? el("span", { class: "pill" }, unitsText(course.units)) : null,
-    (course.ge_areas || []).map((a) => el("span", { class: "pill pill-ge", title: `Also counts for GE area ${a}` }, `GE ${a}`)),
+    geBadges(course.ge_areas || [], sections[0] || {}),
     el("span", { class: "pill pill-state", hidden: true }));
 
   const titleBits = [el("span", { class: "course-code" }, course.code), el("span", { class: "course-title" }, course.title || "")];
