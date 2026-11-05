@@ -1,9 +1,11 @@
 // The student's choices: major, up to three plans of sections, courses already
-// taken, and busy times. This is the only file that touches localStorage.
+// taken, busy times, and the RateMyProfessors scores they looked up. This is
+// the only file that touches localStorage.
 //
 // Shape (one key, "ezclass.state.v2"):
 //   { majorId, plans: [{ name, sectionIds }], activePlan, completedCourses: ["CS 150"],
-//     busy: [{ id, label, days, start, end }], updatedAt }
+//     busy: [{ id, label, days, start, end }],
+//     profRatings: { "Patricia Kraft": { rating: 4.2, difficulty: 3.1 } }, updatedAt }
 //
 // The "cart" is the active plan. Every change can be undone once. Pages read
 // with getState() and react with subscribe(). Each action also fires an
@@ -50,11 +52,27 @@ export function removeValue(key) {
 // ---------- shape checks ----------
 
 const COURSE_CODE = /^[A-Z]{1,8} [0-9]{1,4}[A-Z]{0,2}$/;
+const MAX_RATINGS = 200;
+
+// RateMyProfessors scores run 1 to 5. One decimal, like the site shows them.
+const score = (v) => {
+  const n = typeof v === "string" ? Number.parseFloat(v.replace(",", ".")) : v;
+  return Number.isFinite(n) && n >= 1 && n <= 5 ? Math.round(n * 10) / 10 : null;
+};
+
+// { rating, difficulty? } with valid scores, or null. The rating is required.
+function cleanRating(value) {
+  if (!value || typeof value !== "object") return null;
+  const rating = score(value.rating);
+  if (rating === null) return null;
+  const difficulty = score(value.difficulty);
+  return difficulty === null ? { rating } : { rating, difficulty };
+}
 const isId = (v) => Number.isInteger(v) && v > 0;
 
 function blankState() {
   return { majorId: null, plans: [{ name: PLAN_NAMES[0], sectionIds: [] }], activePlan: 0,
-           completedCourses: [], busy: [], updatedAt: 0 };
+           completedCourses: [], busy: [], profRatings: {}, updatedAt: 0 };
 }
 
 // Keeps whatever is the right shape and drops the rest, so a damaged or
@@ -81,6 +99,12 @@ function validate(raw) {
       && typeof b.days === "string" && /^\d{2}:\d{2}$/.test(b.start) && /^\d{2}:\d{2}$/.test(b.end))
       .slice(0, 20)
       .map((b) => ({ id: b.id.slice(0, 20), label: String(b.label || "Busy").slice(0, 30), days: b.days.slice(0, 10), start: b.start, end: b.end }));
+  }
+  if (raw.profRatings && typeof raw.profRatings === "object" && !Array.isArray(raw.profRatings)) {
+    for (const [name, value] of Object.entries(raw.profRatings).slice(0, MAX_RATINGS)) {
+      const clean = cleanRating(value);
+      if (typeof name === "string" && name.trim() && name.length <= 80 && clean) state.profRatings[name.trim()] = clean;
+    }
   }
   if (Number.isFinite(raw.updatedAt)) state.updatedAt = raw.updatedAt;
   return state;
@@ -275,6 +299,28 @@ export function deletePlan(index = state.activePlan) {
 export function switchPlan(index) {
   if (index === state.activePlan || !state.plans[index]) return;
   commit((s) => { s.activePlan = index; }, `Switched to ${state.plans[index].name}`);
+}
+
+// ---------- RateMyProfessors scores the student saved ----------
+// Kept per professor (by the name the schedule shows), so one score covers
+// every section that professor teaches. They never leave the browser.
+
+export function getProfRating(name) {
+  return (name && state.profRatings[name]) || null;
+}
+
+// Returns false if the rating isn't a number from 1 to 5.
+export function setProfRating(name, rating, difficulty) {
+  const clean = cleanRating({ rating, difficulty });
+  if (!name || !clean) return false;
+  if (!state.profRatings[name] && Object.keys(state.profRatings).length >= MAX_RATINGS) return false;
+  commit((s) => { s.profRatings[name] = clean; }, `Saved ${clean.rating} for ${name}`);
+  return true;
+}
+
+export function clearProfRating(name) {
+  if (!state.profRatings[name]) return;
+  commit((s) => { delete s.profRatings[name]; }, `Removed the score for ${name}`);
 }
 
 // ---------- major and completed courses ----------

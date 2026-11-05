@@ -466,6 +466,14 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 .sec-tags { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin-top: var(--sp-1); }
 .prof-link { color: inherit !important; text-decoration: underline; text-decoration-color: var(--border-strong); }
 .prof-link:hover { color: var(--accent-strong) !important; text-decoration-color: currentColor; }
+.rating-badge {
+  display: inline-flex; align-items: center; padding: 0 0.45rem; border-radius: var(--r-pill);
+  background: var(--warn-soft); color: var(--text); font-size: var(--fs-xs); font-weight: 700; white-space: nowrap;
+}
+.rating-diff { font-weight: 500; color: var(--text-muted); }
+.rating-control { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2); margin-top: var(--sp-1); }
+.rating-fields { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+.field-error { color: var(--danger); font-size: var(--fs-sm); font-weight: 600; }
 .add-btn {
   min-height: 2.25rem; min-width: 5.5rem; padding: 0 var(--sp-3); border-radius: var(--r-pill);
   border: 1px solid var(--accent); background: var(--surface); color: var(--accent-strong);

@@ -8,6 +8,7 @@ import { cachedSection, checkConflicts } from "../api.js";
 import { mountCalendar } from "../calendar.js";
 import { CONFIG } from "../config.js";
 import { watchPlan } from "../plan.js";
+import { ratingControl } from "../ratings.js";
 import { sectionLabel } from "../sections.js";
 import { formatDuration, weekStats } from "../stats.js";
 import {
@@ -111,6 +112,7 @@ function renderList(sections, state) {
       el("div", { class: "small" }, s.title),
       el("div", { class: "muted small" }, `${formatRange(s.startMin, s.endMin) || "No set time"} · ${s.room || "Room TBA"} · `,
         professorLink(s.professor, s.professorLast)),
+      ratingControl(s),
       dayStrip(s.dayList)),
     el("button", {
       type: "button", class: "btn btn-sm btn-danger", "aria-label": `Remove ${sectionLabel(s)} from ${plan.name}`,

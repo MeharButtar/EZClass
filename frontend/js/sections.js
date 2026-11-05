@@ -9,6 +9,7 @@
 // that would overlap something already in the plan say so.
 
 import { setGhost } from "./calendar.js";
+import { ratingBadge } from "./ratings.js";
 import { CONFIG } from "./config.js";
 import { watchPlan } from "./plan.js";
 import { activePlan, isCompleted, isInPlan, toggleCompleted, toggleSection } from "./store.js";
@@ -63,7 +64,7 @@ export function sectionRow(s, { showCourse = false } = {}) {
     el("div", { class: "sec-info" },
       el("span", { class: "sec-name" }, showCourse ? `${s.code} · Sec ${s.sectionNumber}` : `Section ${s.sectionNumber}`),
       showCourse && s.title ? el("span", { class: "sec-title" }, s.title) : null,
-      el("span", { class: "sec-meta" }, sectionMeta(s)),
+      el("span", { class: "sec-meta" }, sectionMeta(s), el("span", { class: "sec-rating" })),
       showCourse && (s.geAreas.length || s.cd || s.es || s.ai)
         ? el("span", { class: "sec-tags" }, geBadges(s.geAreas, s)) : null,
       el("span", { class: "sec-clash", hidden: true })),
@@ -93,6 +94,11 @@ function syncRow(row) {
     ? `Remove ${s.code} section ${s.sectionNumber} from ${planName}`
     : `Add ${s.code} section ${s.sectionNumber} to ${planName}`);
   row.classList.toggle("is-added", added);
+
+  // a score the student saved for this professor (entered from their plan)
+  const ratingSlot = row.querySelector(".sec-rating");
+  const badge = ratingBadge(s.professor);
+  ratingSlot.replaceChildren(...(badge ? [" ", badge] : []));
 
   const clash = added ? null : planSections.find((p) => overlaps(p, s));
   const note = row.querySelector(".sec-clash");

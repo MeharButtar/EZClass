@@ -6,6 +6,7 @@
 // Sections without a set day and time are listed under the grid instead.
 
 import { CONFIG } from "./config.js";
+import { ratingControl } from "./ratings.js";
 import { removeSection } from "./store.js";
 import { DAYS, DAY_NAMES, DAY_SHORT, formatRange, formatTime, isTimed, overlaps } from "./time.js";
 import { clear, dayStrip, el, openDialog, professorLink } from "./ui.js";
@@ -71,6 +72,8 @@ export function showSectionCard(section) {
         el("dt", {}, "Time"), el("dd", {}, formatRange(section.startMin, section.endMin) || "No set time"),
         el("dt", {}, "Room"), el("dd", {}, section.room || "TBA"),
         el("dt", {}, "Professor"), el("dd", {}, professorLink(section.professor, section.professorLast, "TBA")),
+        section.professor ? el("dt", {}, "Your score") : null,
+        section.professor ? el("dd", {}, ratingControl(section, { beforeOpen: () => dialog.close() })) : null,
         el("dt", {}, "Units"), el("dd", {}, String(section.units || "–"))),
       el("div", { class: "dialog-actions" },
         el("button", { type: "button", class: "btn", on: { click: () => dialog.close() } }, "Close"),
