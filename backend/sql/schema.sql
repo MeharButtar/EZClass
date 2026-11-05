@@ -2,6 +2,8 @@
 -- Written to run on SQLite for local dev; syntax is portable to MySQL with
 -- minor tweaks (see notes at the bottom).
 
+DROP TABLE IF EXISTS major_requirements;
+DROP TABLE IF EXISTS majors;
 DROP TABLE IF EXISTS course_ge;
 DROP TABLE IF EXISTS ge_areas;
 DROP TABLE IF EXISTS enrollments;
@@ -99,6 +101,43 @@ CREATE TABLE enrollments (
     FOREIGN KEY (section_id) REFERENCES sections(section_id),
     UNIQUE (student_id, section_id)
 );
+
+-- majors:begin
+-- Majors and what each one requires, loaded from data/majors/*.csv. "IF NOT
+-- EXISTS" so db.py can add just this block to an older database that already
+-- has class data (see ensure_database), without dropping anything.
+CREATE TABLE IF NOT EXISTS majors (
+    major_id     TEXT PRIMARY KEY,    -- e.g. 'cs_bs', used in URLs
+    name         TEXT NOT NULL,
+    degree       TEXT,                -- e.g. 'B.S.'
+    college      TEXT,                -- not shown anywhere (partly unverified)
+    catalog_year TEXT,
+    status       TEXT NOT NULL DEFAULT 'live'   -- 'live' or 'coming_soon'
+);
+
+-- One row per course in a requirement group, or one row per "open" rule.
+-- Matched to courses by subject + catalog_num (never by course_id): many
+-- required courses have no sections in our data yet and must still show.
+CREATE TABLE IF NOT EXISTS major_requirements (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,   -- keeps the CSV order
+    major_id    TEXT NOT NULL,
+    section     TEXT NOT NULL,        -- 'Preparation for the Major', 'Major', ...
+    group_label TEXT NOT NULL,        -- 'Required', 'Statistics (pick 1)', ...
+    rule        TEXT NOT NULL,        -- required | choose | pool | open
+    pick_n      INTEGER,              -- choose: how many courses; open: how many courses (optional)
+    pick_units  TEXT,                 -- pool/open: units needed, can be a range like '14-15'
+    subject     TEXT,                 -- normalized ('POLS'); open rules may list 'ACCTG|BA|FIN'
+    catalog_num TEXT,                 -- text on purpose: '150L', '437A'
+    num_min     INTEGER,              -- open rules: lowest catalog number
+    num_max     INTEGER,              -- open rules: highest catalog number
+    title       TEXT,
+    units       TEXT,                 -- text: can be '1-4'
+    note        TEXT,
+    FOREIGN KEY (major_id) REFERENCES majors(major_id)
+);
+CREATE INDEX IF NOT EXISTS idx_major_requirements_major ON major_requirements(major_id);
+CREATE INDEX IF NOT EXISTS idx_major_requirements_course ON major_requirements(subject, catalog_num);
+-- majors:end
 
 CREATE INDEX idx_courses_subject ON courses(subject);
 CREATE INDEX idx_sections_course ON sections(course_id);

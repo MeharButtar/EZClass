@@ -4,3 +4,6 @@ backend/sql/scheduler.db
 .env
 .DS_Store
 node_modules/
+analytics.db*
+*.lock
+reference/

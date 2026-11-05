@@ -1,0 +1,15 @@
+.git
+.gitignore
+**/__pycache__
+**/*.pyc
+*.db
+**/*.db
+*.db-*
+**/*.lock
+data/raw
+tests
+.env
+.env.*
+*.md
+.dockerignore
+Dockerfile

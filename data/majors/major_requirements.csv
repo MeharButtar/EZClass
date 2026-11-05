@@ -1,0 +1,180 @@
+major_id,section,group_label,rule,pick_n,pick_units,subject,catalog_num,num_min,num_max,title,units,note
+cs_bs,Preparation for the Major,Required,required,,,CS,150,,,Introductory Computer Programming,3,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,CS,150L,,,Introductory Computer Programming Laboratory,1,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,CS,160,,,Intermediate Computer Programming,3,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,CS,160L,,,Intermediate Computer Programming Laboratory,1,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,CS,210,,,Data Structures,3,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,CS,240,,,Computer Organization,3,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,CS,250,,,Introduction to Software Systems,3,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,MATH,150,,,Calculus I,4,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,MATH,151,,,Calculus II,4,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,MATH,245,,,Discrete Mathematics,3,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,MATH,254,,,Introduction to Linear Algebra,3,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,PHYS,195,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,Principles of Physics Laboratory,1,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,PHYS,196,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,Principles of Physics Laboratory,1,"Grade of C or better, no Cr/NC"
+cs_bs,Preparation for the Major,Required,required,,,STAT,250,,,Statistical Principles and Practices,3,"Grade of C or better, no Cr/NC"
+cs_bs,Major,Required upper division,required,,,CS,370,,,Computer Architecture,3,
+cs_bs,Major,Required upper division,required,,,CS,450,,,Introduction to Artificial Intelligence,3,
+cs_bs,Major,Required upper division,required,,,CS,460,,,Algorithms,3,
+cs_bs,Major,Required upper division,required,,,CS,480,,,Operating Systems,3,
+cs_bs,Major,Required upper division,required,,,CS,420,,,Advanced Programming Languages,3,
+cs_bs,Major,Required upper division,required,,,STAT,550,,,Applied Probability,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CS,470,,,UNIX System Administration,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CS,521,,,Internet of Things - Software and Systems,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CS,530,,,Systems Programming,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CS,532,,,Software Engineering,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CS,545,,,Introduction to Web Application Development,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CS,562,,,Automata Theory,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CS,572,,,Microprocessor Architecture,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CS,574,,,Computer Security,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CS,576,,,Computer Networks and Distributed Systems,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CS,578,,,Wireless Networks,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CY,302,,,Fundamentals of Digital Security and Privacy,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CY,531,,,Software Security,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CY,533,,,Wireless Security,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CY,534,,,Blockchain and Decentralized Cybersecurity,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CY,542,,,Data Privacy,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CY,569,,,Applied Cybersecurity Management,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",A. Computer Systems,pool,,18,CY,575,,,Advanced Data Network Security and Privacy,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",B. Intelligent Systems,pool,,18,CS,549,,,Machine Learning,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",B. Intelligent Systems,pool,,18,CS,553,,,Neural Networks,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",B. Intelligent Systems,pool,,18,CS,556,,,Robotics,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",B. Intelligent Systems,pool,,18,CS,559,,,Computer Vision,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",B. Intelligent Systems,pool,,18,CS,561,,,Deep Learning for Natural Language Processing,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",B. Intelligent Systems,pool,,18,CS,583,,,3D Game Programming,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",B. Intelligent Systems,pool,,18,CY,541,,,AI in Cybersecurity,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",C. Data Sciences,pool,,18,CS,503,,,Scientific Database Techniques,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",C. Data Sciences,pool,,18,CS,514,,,Database Theory and Implementation,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",C. Data Sciences,pool,,18,CS,558,,,Computer Simulation,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",C. Data Sciences,pool,,18,CS,577,,,Principles and Techniques of Data Science,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",C. Data Sciences,pool,,18,CS,581,,,Computational Linguistics,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",C. Data Sciences,pool,,18,CS,582,,,Introduction to Speech Processing,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",D. Special Courses (max 6 units),pool,,18,CS,496,,,Experimental Topics,1-4,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",D. Special Courses (max 6 units),pool,,18,CS,497,,,Undergraduate Research Seminar,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",D. Special Courses (max 6 units),pool,,18,CS,498,,,Undergraduate Honors Thesis,3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",D. Special Courses (max 6 units),pool,,18,CS,499,,,Special Study,1-3,
+cs_bs,"Upper Division Major Electives (18 units total, max 6 units from Area D)",D. Special Courses (max 6 units),pool,,18,CS,596,,,Advanced Topics in Computer Science,1-4,
+psych_ba,Preparation for the Major,Required,required,,,PSY,101,,,Introductory Psychology,3,"Impacted program: C or better in PSY 101, 211, 230, 260, 280 and Credit in PSY 201 to be admitted"
+psych_ba,Preparation for the Major,Required,required,,,PSY,201,,,Academic and Career Opportunities in Psychology,1,"Impacted program: C or better in PSY 101, 211, 230, 260, 280 and Credit in PSY 201 to be admitted"
+psych_ba,Preparation for the Major,Required,required,,,PSY,211,,,Introduction to Cognitive Psychology,3,"Impacted program: C or better in PSY 101, 211, 230, 260, 280 and Credit in PSY 201 to be admitted"
+psych_ba,Preparation for the Major,Required,required,,,PSY,230,,,Developmental Psychology,3,"Impacted program: C or better in PSY 101, 211, 230, 260, 280 and Credit in PSY 201 to be admitted"
+psych_ba,Preparation for the Major,Required,required,,,PSY,260,,,Introduction to Physiological Psychology,3,"Impacted program: C or better in PSY 101, 211, 230, 260, 280 and Credit in PSY 201 to be admitted"
+psych_ba,Preparation for the Major,Required,required,,,PSY,280,,,Statistical Methods in Psychology,4,"A stats course from another department (CIV E 160, ECON 201, LING 270, POL S 201, SOC 201, STAT 119 or STAT 250) plus PSY 281 can replace PSY 280"
+psych_ba,Major,"Methods (take 301 or 410, or both)",choose,1,,PSY,301,,,Introduction to Research Methods in Psychology,4,Need at least a B in PSY 280 or equivalent to enroll
+psych_ba,Major,"Methods (take 301 or 410, or both)",choose,1,,PSY,410,,,Advanced Research Methods Laboratory,5,Need at least a B in PSY 280 or equivalent to enroll
+psych_ba,Major,Breadth: Group I (pick 1),choose,1,,PSY,340,,,Social Psychology,3,
+psych_ba,Major,Breadth: Group I (pick 1),choose,1,,PSY,344,,,Psychology and Culture,3,
+psych_ba,Major,Breadth: Group II (pick 1),choose,1,,PSY,319,,,Industrial and Organizational Psychology,3,
+psych_ba,Major,Breadth: Group II (pick 1),choose,1,,PSY,351,,,Psychology of Personality,3,
+psych_ba,Major,Breadth: Group II (pick 1),choose,1,,PSY,370,,,Psychological Testing and Measurement,3,
+psych_ba,Major,Breadth: Group III (pick 1),choose,1,,PSY,331,,,Psychology of Infant and Child Development,3,
+psych_ba,Major,Breadth: Group III (pick 1),choose,1,,PSY,332,,,Psychology of Adolescent and Early Adult Development,3,
+psych_ba,Major,Breadth: Group III (pick 1),choose,1,,PSY,333,,,Developmental Psychopathology,3,
+psych_ba,Major,Breadth: Group III (pick 1),choose,1,,PSY,350,,,Psychopathology,3,
+psych_ba,Major,Breadth: Group III (pick 1),choose,1,,PSY,407,,,Health Psychology,3,
+psych_ba,Major,Breadth: Group IV (pick 1),choose,1,,PSY,360,,,Behavioral Neuroscience,3,
+psych_ba,Major,Breadth: Group IV (pick 1),choose,1,,PSY,361,,,Neuropsychology,3,
+psych_ba,Major,Breadth: Group IV (pick 1),choose,1,,PSY,362,,,Cognitive Neuroscience,3,
+psych_ba,Major,Breadth: Group IV (pick 1),choose,1,,PSY,380,,,Intermediate Cognitive Psychology,3,
+psych_ba,Major,Breadth: Group IV (pick 1),choose,1,,PSY,388,,,Sensation and Perception,3,
+psych_ba,Upper Division Major Electives,Any 300-500 level Psychology course,open,,14-15,PSY,,300,599,,,14-15 units; total of 31 upper division PSY units for the major
+ba_general_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_general_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_general_bs,Preparation for the Major,Required,required,,,ECON,101,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_general_bs,Preparation for the Major,Required,required,,,ECON,102,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_general_bs,Preparation for the Major,Required,required,,,FIN,240,,,Legal Environment of Business,3,Or an approved business law course
+ba_general_bs,Preparation for the Major,Required,required,,,MIS,180,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
+ba_general_bs,Preparation for the Major,Required,required,,,MATH,120,,,Calculus for Business Analysis,3,Or an approved calculus course or approved 3-unit finite math course
+ba_general_bs,Preparation for the Major,Required,required,,,RWS,290,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
+ba_general_bs,Preparation for the Major,"Statistics (pick 1, not both)",choose,1,,STAT,119,,,Elementary Statistics for Business,3,
+ba_general_bs,Preparation for the Major,"Statistics (pick 1, not both)",choose,1,,ECON,201,,,Statistical Methods,3,
+ba_general_bs,Major,Required upper division,required,,,BA,300,,,Ethical Decision Making in Business,1,
+ba_general_bs,Major,Required upper division,required,,,BA,305,,,Career and Professional Readiness,1,
+ba_general_bs,Major,Required upper division,required,,,BA,310,,,Foundations of Business in a Global Environment,1,
+ba_general_bs,Major,Required upper division,required,,,BA,323,,,Fundamentals of Finance,3,
+ba_general_bs,Major,Required upper division,required,,,BA,350,,,Management and Organizational Behavior,3,
+ba_general_bs,Major,Required upper division,required,,,BA,360,,,Introduction to Operations and Supply Chain Management,3,
+ba_general_bs,Major,Required upper division,required,,,BA,370,,,Marketing,3,
+ba_general_bs,Major,Business Administration (pick 1),choose,1,,BA,404,,,Small Business Consulting,3,
+ba_general_bs,Major,Business Administration (pick 1),choose,1,,MGT,405,,,Strategic Management,3,
+ba_general_bs,Major,Accounting (pick 1),choose,1,,ACCTG,325,,,Intermediate Managerial and Tax Accounting,3,
+ba_general_bs,Major,Accounting (pick 1),choose,1,,ACCTG,326,,,Intermediate Financial Accounting,3,
+ba_general_bs,Major,Finance (pick 1),choose,1,,FIN,321,,,Managerial Economics,3,
+ba_general_bs,Major,Finance (pick 1),choose,1,,FIN,326,,,Financial Institutions Management,3,
+ba_general_bs,Major,Finance (pick 1),choose,1,,FIN,327,,,Investments,3,
+ba_general_bs,Major,Finance (pick 1),choose,1,,FIN,328,,,Entrepreneurial Finance,3,
+ba_general_bs,Major,Finance (pick 1),choose,1,,FIN,329,,,International Business Finance,3,
+ba_general_bs,Major,Finance (pick 1),choose,1,,FIN,331,,,Real Estate Principles,3,
+ba_general_bs,Major,Management (pick 1),choose,1,,MGT,352,,,Human Resource Management,3,
+ba_general_bs,Major,Management (pick 1),choose,1,,MGT,357,,,Multinational Business and Comparative Management,3,
+ba_general_bs,Major,Management (pick 1),choose,1,,MGT,358,,,Fundamentals of Entrepreneurship,3,
+ba_general_bs,Major,Information Systems (pick 1),choose,1,,MIS,301,,,Statistical Analysis for Business,3,
+ba_general_bs,Major,Information Systems (pick 1),choose,1,,MIS,306,,,Information Systems Analysis and Design,3,
+ba_general_bs,Major,Information Systems (pick 1),choose,1,,MIS,315,,,Business Applications Programming,3,
+ba_general_bs,Major,Information Systems (pick 1),choose,1,,MIS,380,,,Data Management Systems,3,
+ba_general_bs,Major,Marketing (pick 1),choose,1,,MKTG,371,,,Consumer Behavior,4,
+ba_general_bs,Major,Marketing (pick 1),choose,1,,MKTG,372,,,Retail Marketing Methods,4,
+ba_general_bs,Major,Marketing (pick 1),choose,1,,MKTG,373,,,Integrated Marketing Communications,4,
+ba_general_bs,Major,Marketing (pick 1),choose,1,,MKTG,376,,,Global Marketing Strategy,4,
+ba_general_bs,Major,Marketing (pick 1),choose,1,,MKTG,377,,,Selling Strategy and Practices,4,
+ba_general_bs,Upper Division Major Electives,400-500 level Fowler College of Business courses,open,,6-7,ACCTG|BA|FIN|MGT|MIS|MKTG,,400,599,,,"6-7 units. Subject list is our best guess, verify in the catalog"
+crim_justice,Preparation for the Major,Required,required,,,POLS,102,,,Introduction to American and California Government and Politics,3,"Grade of C or better, no Cr/NC. Impacted program"
+crim_justice,Preparation for the Major,Required,required,,,SOC,101,,,Introductory Sociology: The Study of Society,3,"Grade of C or better, no Cr/NC. Impacted program"
+crim_justice,Preparation for the Major,Required,required,,,SOC,102,,,Introduction to Social Problems,3,"Grade of C or better, no Cr/NC. Impacted program"
+crim_justice,Preparation for the Major,Elementary statistics (pick 1),choose,1,,SOC,201,,,Elementary Social Statistics,3,Any 3-unit elementary statistics course; these are the catalog examples
+crim_justice,Preparation for the Major,Elementary statistics (pick 1),choose,1,,STAT,119,,,Elementary Statistics for Business,3,Any 3-unit elementary statistics course; these are the catalog examples
+crim_justice,Preparation for the Major,Elementary statistics (pick 1),choose,1,,STAT,250,,,Statistical Principles and Practices,3,Any 3-unit elementary statistics course; these are the catalog examples
+crim_justice,Major,Required upper division,required,,,CJ,300,,,"Crime, Law, and Justice",3,
+crim_justice,Major,Required upper division,required,,,CJ,301,,,Law in Society,3,
+crim_justice,Major,Required upper division,required,,,CJ,302,,,Crime and Behavior,3,
+crim_justice,Major,Required upper division,required,,,CJ,303,,,Criminal Justice and Social Control,3,
+crim_justice,Major,Required upper division,required,,,CJ,540,,,"Applied Planning, Research, and Program Evaluation in Criminal Justice",3,
+crim_justice,Major,Race and justice (pick 1),choose,1,,CJ,304,,,"Race, Equity, and the Criminal Justice System",3,
+crim_justice,Major,Race and justice (pick 1),choose,1,,AFRAS,380,,,African Americans and the US Justice System,3,
+crim_justice,Major,Practicum (pick 1),choose,1,,CJ,431,,,Field Study in Local Corrections,3,
+crim_justice,Major,Practicum (pick 1),choose,1,,CJ,497,,,Investigation and Report,3,
+crim_justice,Major,Practicum (pick 1),choose,1,,CJ,498,,,Internship in Criminal Justice,3,
+crim_justice,Major,Practicum (pick 1),choose,1,,CJ,543,,,Community Resources in Criminal Justice,3,
+crim_justice,Major,Practicum (pick 1),choose,1,,PUB,550,,,Study Abroad in Public Affairs and Service,3,
+crim_justice,Major,Practicum (pick 1),choose,1,,ISCOR,450,,,Study Abroad in International Security and Conflict Resolution,3,
+crim_justice,Upper Division Electives,Criminal justice specific electives,open,,6,CJ,,300,599,,,"At least 6 units of CJ-specific upper division courses, part of 9 additional upper division units. The approved list is in the department advising guide, not the catalog"
+crim_justice,Upper Division Electives,Public administration electives (pick 2),open,2,6,PA,,300,599,,,"Two upper division 3-unit public administration electives. Subject code PA is our best guess, verify"
+kin_prept,Preparation for the Major,Required,required,,,ENS,200,,,Introduction to Exercise and Nutritional Sciences,3,C or better required
+kin_prept,Preparation for the Major,Required,required,,,ENS,265,,,Care and Prevention of Athletic and Recreational Injuries,2,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,BIOL,203,,,Principles of Cell and Molecular Biology,3,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,BIOL,203L,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,BIOL,211,,,Fundamentals of Microbiology,2,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,BIOL,211L,,,Fundamentals of Microbiology Laboratory,2,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,BIOL,212,,,Human Anatomy,4,C or better required
+kin_prept,Preparation for the Major,Required,required,,,CHEM,200,,,General Chemistry,5,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,CHEM,201,,,General Chemistry,5,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,COMM,103,,,Oral Communication,3,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,FN,201,,,Fundamentals of Nutrition,3,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,PHYS,180A,,,Fundamentals of Physics,3,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,PHYS,180B,,,Fundamentals of Physics,3,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,PHYS,182A,,,Physical Measurements Laboratory,1,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,PHYS,182B,,,Physical Measurements Laboratory,1,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,PSY,101,,,Introductory Psychology,3,No Cr/NC
+kin_prept,Preparation for the Major,Required,required,,,SOC,101,,,Introductory Sociology: The Study of Society,3,No Cr/NC
+kin_prept,Preparation for the Major,Statistics (pick 1),choose,1,,BIOL,215,,,Biostatistics,3,
+kin_prept,Preparation for the Major,Statistics (pick 1),choose,1,,ECON,201,,,Statistical Methods,3,
+kin_prept,Preparation for the Major,Statistics (pick 1),choose,1,,PSY,280,,,Statistical Methods in Psychology,4,
+kin_prept,Preparation for the Major,Statistics (pick 1),choose,1,,SOC,201,,,Elementary Social Statistics,3,
+kin_prept,Preparation for the Major,Statistics (pick 1),choose,1,,STAT,119,,,Elementary Statistics for Business,3,
+kin_prept,Major,Required upper division,required,,,ENS,303,,,Applied Kinesiology,3,
+kin_prept,Major,Required upper division,required,,,ENS,304,,,Physiology of Exercise,3,
+kin_prept,Major,Required upper division,required,,,ENS,304L,,,Exercise Physiology Laboratory,1,
+kin_prept,Major,Required upper division,required,,,ENS,305,,,Measurement and Evaluation in Kinesiology,3,
+kin_prept,Major,Required upper division,required,,,ENS,306,,,Biomechanics of Human Movement,3,
+kin_prept,Major,Required upper division,required,,,ENS,307,,,Neuroscience of Movement,3,
+kin_prept,Major,Required upper division,required,,,ENS,332,,,Pathophysiology and Exercise Programming of Disease Populations I,3,
+kin_prept,Major,Required upper division,required,,,ENS,333,,,Pathophysiology and Exercise Programming of Disease Populations II,2,
+kin_prept,Major,Required upper division,required,,,ENS,434,,,Promoting Physical Activity and Healthy Eating,3,
+kin_prept,Major,Required upper division,required,,,ENS,438,,,Psychosocial Aspects of Disease and Injury Rehabilitation,3,
+kin_prept,Major,Required upper division,required,,,BIOL,336,,,Principles of Human Physiology,3,C or better required. Also counts for GE area IV.A
+kin_prept,Major,Required upper division,required,,,BIOL,436,,,Human Physiology Laboratory,2,
+kin_prept,Major,Required upper division,required,,,PSY,350,,,Psychopathology,3,
+kin_prept,Major,"Clinic (pick 1, not both)",choose,1,,ENS,437A,,,Adaptive Fitness Clinic,1,
+kin_prept,Major,"Clinic (pick 1, not both)",choose,1,,ENS,437B,,,Community Rehabilitation Laboratory,1,

@@ -9,6 +9,16 @@ from backend.models.db import get_connection
 
 sections_bp = Blueprint("sections", __name__)
 
+MAX_ID_LIST = 200
+
+
+def id_list(value):
+    """'1,2,3' -> [1, 2, 3]. None if anything isn't a plain number or the list is too long."""
+    parts = [p.strip() for p in value.split(",") if p.strip()]
+    if not parts or len(parts) > MAX_ID_LIST or not all(p.isdigit() and len(p) <= 9 for p in parts):
+        return None
+    return [int(p) for p in parts]
+
 
 def section_to_dict(row):
     return {
@@ -20,6 +30,7 @@ def section_to_dict(row):
         "units": row["units"],
         "section_number": row["section_number"],
         "professor_name": row["professor_name"],
+        "professor_last": row["professor_last"],   # for the RateMyProfessors link (multi-word last names)
         "days": row["days"],
         "start_time": row["start_time"],
         "end_time": row["end_time"],
@@ -39,7 +50,7 @@ BASE_QUERY = """
         s.section_id, s.course_id, s.section_number, s.days,
         s.start_time, s.end_time, s.capacity,
         c.subject, c.catalog_num, c.title, c.units,
-        (p.first_name || ' ' || p.last_name) AS professor_name,
+        (p.first_name || ' ' || p.last_name) AS professor_name, p.last_name AS professor_last,
         r.building, r.room_number,
         (SELECT GROUP_CONCAT(g.area_code, ',') FROM course_ge g
           WHERE g.subject = c.subject AND g.catalog_num = c.catalog_num) AS ge_areas,
@@ -72,11 +83,24 @@ def search_sections():
                    ANY of the areas listed.
       cultural_diversity / ethnic_studies / american_inst -> set to 1 to only
                    show courses with that GE tag
+      course_id -> one or more course ids, comma separated (all sections of
+                   the courses a major needs, in one request)
+      ids       -> one or more section ids, comma separated (the student's plan)
+    course_id and ids take at most 200 numbers each; anything else is a 400.
     """
-    conn = get_connection()
     query = BASE_QUERY
     conditions = []
     params = []
+
+    for arg, column in (("course_id", "s.course_id"), ("ids", "s.section_id")):
+        value = request.args.get(arg)
+        if value is None:
+            continue
+        numbers = id_list(value)
+        if numbers is None:
+            return jsonify({"error": f"{arg} must be up to {MAX_ID_LIST} comma separated numbers"}), 400
+        conditions.append(f"{column} IN ({','.join('?' * len(numbers))})")
+        params.extend(numbers)
 
     subject = request.args.get("subject")
     if subject:
@@ -122,6 +146,7 @@ def search_sections():
         query += " WHERE " + " AND ".join(conditions)
     query += " ORDER BY c.subject, c.catalog_num, s.section_number"
 
+    conn = get_connection()
     rows = conn.execute(query, params).fetchall()
     conn.close()
 

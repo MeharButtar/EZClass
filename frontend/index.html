@@ -3,154 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EzClass | SDSU Class Scheduler</title>
+<title>EzClass · Plan your semester around your major</title>
+<meta name="description" content="Pick your major, see every class it requires with this term's sections, and build a week with no overlaps.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/base.css">
+<script type="module" src="js/pages/home.js"></script>
+<script type="module" src="js/track.js"></script>
 </head>
-<body>
-  <header>
-    <a class="brand" href="#home">EzClass</a>
-    <nav id="nav">
-      <a href="#home" data-view="home">Home</a>
-      <a href="#search" data-view="search">Search</a>
-      <a href="#ge" data-view="ge">GE Scheduler</a>
-      <span class="nav-soon" title="Coming soon">Major Prep</span>
-      <span class="nav-soon" title="Coming soon">Prereqs</span>
-    </nav>
-  </header>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
 
-  <div class="layout">
-    <main>
-
-      <!-- ===================== HOME ===================== -->
-      <section id="view-home" class="view">
-        <h1>Plan your SDSU schedule</h1>
-        <p class="lead">Pick a way to find classes, add them to your cart on the right, then check for time conflicts.</p>
-        <div class="cards">
-          <a class="card" href="#search">
-            <h3>Search all classes</h3>
-            <p>Search by subject, day, professor or keyword.</p>
-          </a>
-          <a class="card" href="#ge">
-            <h3>GE Scheduler</h3>
-            <p>See every General Education class and filter by area, like 3A Arts or 5C Lab.</p>
-          </a>
-          <div class="card card-soon">
-            <h3>Major Prep <span class="pill">coming soon</span></h3>
-            <p>The classes your major needs first.</p>
-          </div>
-          <div class="card card-soon">
-            <h3>Prereqs <span class="pill">coming soon</span></h3>
-            <p>What to take before a class.</p>
-          </div>
+  <main id="main" class="page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">Your whole major, one week, no overlaps.</h1>
+        <p class="hero-lead" id="hero-lead">Pick your major and see every class you need, already matched to this term's sections. Build a week with no time conflicts in a few minutes.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="major.html">Start planning</a>
+          <a class="btn" href="ge.html">Browse GE classes</a>
         </div>
-      </section>
-
-      <!-- ===================== SEARCH ===================== -->
-      <section id="view-search" class="view" hidden>
-        <div class="panel">
-          <h2>Search</h2>
-          <div class="filter-row">
-            <label>
-              Subject
-              <select id="subject-filter"><option value="">All</option></select>
-            </label>
-            <label>
-              Day
-              <select id="day-filter">
-                <option value="">Any</option>
-                <option value="M">Monday</option>
-                <option value="T">Tuesday</option>
-                <option value="W">Wednesday</option>
-                <option value="Th">Thursday</option>
-                <option value="F">Friday</option>
-              </select>
-            </label>
-            <label>
-              Professor
-              <input type="text" id="professor-filter" placeholder="e.g. Nguyen">
-            </label>
-            <label>
-              Keyword
-              <input type="text" id="keyword-filter" placeholder="course title or number">
-            </label>
-            <button id="search-btn">Search</button>
-          </div>
+      </div>
+      <div>
+        <div class="hero-art" id="hero-art"></div>
+        <div class="hero-caption">
+          <span id="hero-status" aria-hidden="true"></span>
+          <button type="button" class="linkbtn" id="hero-replay">Replay</button>
         </div>
-        <div class="panel">
-          <h2>Sections <span class="count" id="search-count"></span></h2>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr><th></th><th>Course</th><th>Title</th><th>Sec</th><th>Professor</th><th>Days</th><th>Time</th><th>Room</th><th>GE</th></tr>
-              </thead>
-              <tbody id="results-body"></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ===================== GE SCHEDULER ===================== -->
-      <section id="view-ge" class="view" hidden>
-        <div class="panel">
-          <h2>GE Scheduler</h2>
-          <p class="hint">Pick one or more GE areas. A class shows up if it counts for any area you pick.</p>
-          <div id="ge-chips"></div>
+    <section class="home-section" aria-labelledby="how-title">
+      <h2 class="section-title" id="how-title">How it works</h2>
+      <ol class="features steps">
+        <li class="card feature">
+          <span class="feature-num" aria-hidden="true">1</span>
+          <h3>Pick your major</h3>
+          <p>Choose it once from the list. You instantly see every class it requires: prep courses, major courses, pick-one choices and electives, with the <span data-term>this term's</span> sections under each class.</p>
+        </li>
+        <li class="card feature">
+          <span class="feature-num" aria-hidden="true">2</span>
+          <h3>Add sections</h3>
+          <p>Point at (or tap) a section to preview it on your week. If it clashes with something you already added, it turns red before you add it. Tap <strong>+ Add</strong> when it fits.</p>
+        </li>
+        <li class="card feature">
+          <span class="feature-num" aria-hidden="true">3</span>
+          <h3>Fill in your GEs</h3>
+          <p>Open the GE page. Each GE area has its own list, and areas your major classes already cover are marked, so you don't take a class you don't need.</p>
+        </li>
+        <li class="card feature">
+          <span class="feature-num" aria-hidden="true">4</span>
+          <h3>Check and compare</h3>
+          <p>My Schedule shows your full week, runs a conflict check, and keeps up to three plans (A, B and C) so you have a backup when a class fills up.</p>
+        </li>
+      </ol>
+    </section>
 
-          <div class="filter-row ge-extras">
-            <label class="check"><input type="checkbox" id="ge-cd"> Cultural diversity (*)</label>
-            <label class="check"><input type="checkbox" id="ge-es"> Also counts for Ethnic Studies grad requirement</label>
-            <label class="check"><input type="checkbox" id="ge-ai"> Also counts for American Institutions</label>
-          </div>
+    <section class="home-section why" aria-labelledby="why-title">
+      <h2 class="section-title" id="why-title">Why it's easier</h2>
+      <ul class="why-list">
+        <li><strong>Everything for your major on one page.</strong> No more jumping between the catalog and the class schedule to work out what you still need.</li>
+        <li><strong>Check professors before you pick.</strong> Every professor's name links to a RateMyProfessors search in a new tab, so you can look up their reviews without losing your plan.</li>
+        <li><strong>Conflicts caught as you go.</strong> Overlaps show up in red while you plan, not when registration opens.</li>
+        <li><strong>Mark what you've already taken.</strong> Tick "I took this" and your progress for each requirement updates.</li>
+        <li><strong>No account, no sign-up.</strong> Your plans stay in your own browser.</li>
+        <li><strong>Made for your phone too.</strong> Plan between classes; your week opens as a sheet at the bottom of the screen.</li>
+      </ul>
+    </section>
 
-          <div class="filter-row">
-            <label>
-              Day
-              <select id="ge-day">
-                <option value="">Any</option>
-                <option value="M">Monday</option>
-                <option value="T">Tuesday</option>
-                <option value="W">Wednesday</option>
-                <option value="Th">Thursday</option>
-                <option value="F">Friday</option>
-              </select>
-            </label>
-            <label>
-              Professor
-              <input type="text" id="ge-professor" placeholder="e.g. Nguyen">
-            </label>
-            <label>
-              Keyword
-              <input type="text" id="ge-keyword" placeholder="course title or number">
-            </label>
-            <button id="ge-search-btn">Search</button>
-          </div>
-        </div>
-        <div class="panel">
-          <h2>GE classes <span class="count" id="ge-count"></span></h2>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr><th></th><th>Course</th><th>Title</th><th>Sec</th><th>Professor</th><th>Days</th><th>Time</th><th>Room</th><th>GE</th></tr>
-              </thead>
-              <tbody id="ge-results-body"></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+    <section class="cta">
+      <p id="cta-text">Ready to plan your semester?</p>
+      <a class="btn btn-primary" href="major.html">Start planning</a>
+    </section>
+  </main>
 
-    </main>
-
-    <!-- ===================== CART (always visible) ===================== -->
-    <aside id="cart" class="panel">
-      <h2>My Cart <span class="count" id="cart-count"></span></h2>
-      <ul id="schedule-list"></ul>
-      <button id="check-conflicts-btn">Check for Conflicts</button>
-      <button id="clear-cart-btn" class="secondary">Clear cart</button>
-      <div id="conflict-result"></div>
-    </aside>
-  </div>
-
-  <script src="js/app.js"></script>
+  <footer id="site-footer"></footer>
 </body>
 </html>

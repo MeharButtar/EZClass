@@ -13,11 +13,22 @@ It checks every row, prints any problems with the row number, and only
 writes files if everything is valid. Output goes to data/cleaned/:
     professors.csv, rooms.csv, courses.csv, sections.csv
 
+plus data_info.json, which records today's date so the site can show
+"Class data last updated ...". (Fixing the CSVs by hand? Change that date too.)
+
 Then load them with:
     python3 backend/models/db.py data/cleaned
+
+Section ids stay the same between imports. Students' saved plans remember
+sections by id, so a section that is still in the sheet (same subject, course
+number, section and term) keeps the id it had in the last data/cleaned/
+sections.csv, wherever its row moved to. New sections get new ids, and the
+id of a removed section is never handed to a different class.
 """
 
 import csv
+import datetime
+import json
 import os
 import sys
 
@@ -112,6 +123,9 @@ def clean_number(value):
     return str(int(f)) if f == int(f) else None
 
 
+NOT_A_PROFESSOR = {"to be announced", "to be", "tba", "tbd", "staff", "instructor", "tba tba", "staff staff"}
+
+
 def validate(rows):
     errors, good = [], []
     for r in rows:
@@ -150,6 +164,10 @@ def validate(rows):
             problems.append("end_time must be after start_time")
         if r.get("capacity") is None:
             problems.append("capacity must be a whole number or blank")
+        # "To be Announced" / "TBA" / "Staff" typed as a name means no professor yet
+        full_name = f"{r.get('professor_first') or ''} {r.get('professor_last') or ''}".strip().lower()
+        if full_name in NOT_A_PROFESSOR:
+            r["professor_first"] = r["professor_last"] = ""
         if bool(r["professor_first"]) != bool(r["professor_last"]):
             problems.append("give both professor_first and professor_last, or leave both blank")
 
@@ -170,7 +188,38 @@ def validate(rows):
     return unique, errors
 
 
-def build_tables(rows):
+def section_key(subject, catalog_num, section_number, term):
+    """What makes a section the same section from one import to the next."""
+    return ("".join(str(subject).split()).upper(), str(catalog_num).strip().upper(),
+            str(section_number).strip(), str(term).strip())
+
+
+def previous_section_ids(out_dir=OUT_DIR):
+    """
+    section key -> section_id from the last import, plus the highest id ever
+    used. Empty on the first import.
+    """
+    courses_csv = os.path.join(out_dir, "courses.csv")
+    sections_csv = os.path.join(out_dir, "sections.csv")
+    if not (os.path.exists(courses_csv) and os.path.exists(sections_csv)):
+        return {}, 0
+    with open(courses_csv, newline="", encoding="utf-8") as f:
+        courses = {r["course_id"]: (r["subject"], r["catalog_num"]) for r in csv.DictReader(f)}
+    known, highest = {}, 0
+    with open(sections_csv, newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            sid = int(r["section_id"])
+            highest = max(highest, sid)
+            if r["course_id"] in courses:
+                subject, catalog = courses[r["course_id"]]
+                known[section_key(subject, catalog, r["section_number"], r["term"])] = sid
+    return known, highest
+
+
+def build_tables(rows, known_ids=None, highest_id=0):
+    """known_ids / highest_id come from previous_section_ids(), to keep section ids stable."""
+    known_ids = known_ids or {}
+    next_id = highest_id
     professors, rooms, courses, sections = {}, {}, {}, []
     for r in rows:
         prof_id = room_id = ""
@@ -187,8 +236,12 @@ def build_tables(rows):
         ckey = (r["subject"], r["catalog_num"])
         if ckey not in courses:
             courses[ckey] = (len(courses) + 1, r["course_title"], r["units"])
+        sid = known_ids.get(section_key(r["subject"], r["catalog_num"], r["section_number"], r["term"]))
+        if sid is None:
+            next_id += 1
+            sid = next_id
         sections.append({
-            "section_id": len(sections) + 1,
+            "section_id": sid,
             "course_id": courses[ckey][0],
             "professor_id": prof_id,
             "room_id": room_id,
@@ -230,7 +283,10 @@ def main():
             sys.exit(1)
         print(f"\nImporting the {len(good)} good rows.")
 
-    professors, rooms, courses, sections = build_tables(good)
+    known_ids, highest_id = previous_section_ids()
+    professors, rooms, courses, sections = build_tables(good, known_ids, highest_id)
+    kept = sum(1 for s in sections if s["section_id"] <= highest_id)
+    print(f"Section ids: {kept} kept from the last import, {len(sections) - kept} new.")
     os.makedirs(OUT_DIR, exist_ok=True)
     write(os.path.join(OUT_DIR, "professors.csv"),
           ["professor_id", "first_name", "last_name", "email", "department"],
@@ -247,6 +303,9 @@ def main():
     write(os.path.join(OUT_DIR, "sections.csv"),
           ["section_id", "course_id", "professor_id", "room_id", "section_number",
            "term", "days", "start_time", "end_time", "capacity"], sections)
+    with open(os.path.join(OUT_DIR, "data_info.json"), "w", encoding="utf-8", newline="\n") as f:
+        json.dump({"updated": datetime.date.today().isoformat()}, f)
+        f.write("\n")
     print("\nNext: python3 backend/models/db.py data/cleaned")
 
 

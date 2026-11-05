@@ -1,0 +1,3 @@
+-r requirements.txt
+# only needed for data/import_real_data.py (reads the Excel template)
+openpyxl>=3.1
