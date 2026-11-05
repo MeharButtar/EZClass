@@ -13,6 +13,9 @@ It checks every row, prints any problems with the row number, and only
 writes files if everything is valid. Output goes to data/cleaned/:
     professors.csv, rooms.csv, courses.csv, sections.csv
 
+plus data_info.json, which records today's date so the site can show
+"Class data last updated ...". (Fixing the CSVs by hand? Change that date too.)
+
 Then load them with:
     python3 backend/models/db.py data/cleaned
 
@@ -24,6 +27,8 @@ id of a removed section is never handed to a different class.
 """
 
 import csv
+import datetime
+import json
 import os
 import sys
 
@@ -298,6 +303,9 @@ def main():
     write(os.path.join(OUT_DIR, "sections.csv"),
           ["section_id", "course_id", "professor_id", "room_id", "section_number",
            "term", "days", "start_time", "end_time", "capacity"], sections)
+    with open(os.path.join(OUT_DIR, "data_info.json"), "w", encoding="utf-8", newline="\n") as f:
+        json.dump({"updated": datetime.date.today().isoformat()}, f)
+        f.write("\n")
     print("\nNext: python3 backend/models/db.py data/cleaned")
 
 

@@ -13,6 +13,8 @@ instead, see the Dockerfile. Settings come from environment variables,
 see .env.example.
 """
 
+import datetime
+import json
 import os
 import sys
 
@@ -22,7 +24,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from flask import Flask, send_from_directory
 
-from backend.models.db import ensure_database, get_connection
+from backend.models.db import CLEANED_DIR, ensure_database, get_connection
 from backend.routes.analytics import analytics_bp
 from backend.routes.majors import majors_bp
 from backend.routes.sections import sections_bp
@@ -77,6 +79,23 @@ def health():
     except Exception:
         return {"status": "error"}, 503
     return {"status": "ok"}
+
+
+# The importer writes the day it ran into data/cleaned/data_info.json, so the
+# site can say how current the class data is. Missing or odd file -> null.
+DATA_INFO_PATH = os.path.join(CLEANED_DIR, "data_info.json")
+
+
+@app.route("/api/info")
+def info():
+    updated = None
+    try:
+        with open(DATA_INFO_PATH, encoding="utf-8") as f:
+            value = json.load(f).get("updated")
+        updated = datetime.date.fromisoformat(value).isoformat()
+    except (OSError, ValueError, TypeError, AttributeError):
+        pass
+    return {"data_updated": updated}
 
 
 if __name__ == "__main__":

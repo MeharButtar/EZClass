@@ -32,6 +32,27 @@ function cached(url) {
   return memo.get(url);
 }
 
+// ---------- data info ----------
+
+// { data_updated: "2026-11-04" | null }, the day the class data was imported.
+export const getDataInfo = () => cached("/api/info");
+
+// "Nov 4, 2026" (parsed as a local date, so it doesn't slip a day west of UTC).
+export function formatDataDate(iso) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+  if (!m) return null;
+  return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]))
+    .toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
+// Fills `node` with "Class data last updated Nov 4, 2026." once it's known.
+export function showDataDate(node, before = "", after = "") {
+  getDataInfo().then((info) => {
+    const date = formatDataDate(info.data_updated);
+    if (date) node.textContent = `${before}Class data last updated ${date}.${after}`;
+  }).catch(() => { /* leave it out */ });
+}
+
 // ---------- sections ----------
 
 // Placeholder "professors" some data rows carry instead of a blank.

@@ -103,6 +103,18 @@ class CoreTests(AppTestCase):
         with self.client.get("/js/nav.js") as res:
             self.assertIn('id: "track-optout"', res.get_data(as_text=True))
 
+    def test_info_reports_when_class_data_was_updated(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "data_info.json")
+            with mock.patch.object(app_module, "DATA_INFO_PATH", path):
+                self.assertEqual(self.client.get("/api/info").get_json(), {"data_updated": None})   # no file
+                for content, expected in (('{"updated": "2026-11-04"}', "2026-11-04"),
+                                          ('{"updated": "<b>soon</b>"}', None),
+                                          ('{"updated": 5}', None), ('[1]', None), ("not json", None)):
+                    with open(path, "w", encoding="utf-8") as f:
+                        f.write(content)
+                    self.assertEqual(self.client.get("/api/info").get_json(), {"data_updated": expected}, content)
+
     def test_health_reports_broken_database(self):
         with mock.patch.object(app_module, "get_connection", side_effect=sqlite3.OperationalError("gone")):
             res = self.client.get("/api/health")

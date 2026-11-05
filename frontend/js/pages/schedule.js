@@ -3,8 +3,8 @@
 // with remove buttons. The conflict check runs by itself whenever the plan
 // changes; "Check again" asks the server again.
 
-import "../nav.js";
-import { cachedSection, checkConflicts } from "../api.js";
+import { reportLink } from "../nav.js";
+import { cachedSection, checkConflicts, showDataDate } from "../api.js";
 import { mountCalendar } from "../calendar.js";
 import { CONFIG } from "../config.js";
 import { watchPlan } from "../plan.js";
@@ -26,6 +26,18 @@ const checkButton = $("#check-btn");
 const newPlan = $("#new-plan");
 newPlan.addEventListener("click", createPlan);
 $("#schedule-sub").textContent = `Your ${CONFIG.termName} week. Keep up to three plans; everything you add on My Major, GE or Search goes into the plan that's open here.`;
+
+// Before you register: our copy of the schedule can be out of date.
+const registerNote = $("#register-note");
+const noteDate = el("span");
+const noteReport = reportLink("Tell us");
+registerNote.append(...[
+  el("strong", {}, "Before you register: "),
+  `confirm every class in ${CONFIG.registrationSite}. Times, rooms and professors can change.`,
+  noteDate,
+  noteReport && " Something wrong here? ", noteReport, noteReport && ".",
+].filter(Boolean));
+showDataDate(noteDate, " ");
 
 const calendar = mountCalendar($("#week"), { variant: "full", emptyText: "No classes in this plan yet." });
 

@@ -16,6 +16,14 @@ export const CONFIG = Object.freeze({
   // The footer line. Keep it: we are not the school and must never look like it.
   disclaimer: "EzClass is a student project, not affiliated with SDSU.",
 
+  // Where students actually register. The site tells them to confirm every
+  // class there, since our data is a copy that can go out of date.
+  registrationSite: "WebPortal",
+
+  // A "Report a problem" link (a Google Form works well) shown in the footer
+  // and on My Schedule. Leave it "" to hide the link.
+  reportProblemUrl: "",
+
   // Hours the week calendar always shows (it grows if a class starts earlier or ends later).
   calendarStartHour: 8,
   calendarEndHour: 18,

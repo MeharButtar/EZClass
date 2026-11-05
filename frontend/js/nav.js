@@ -3,7 +3,7 @@
 // and handles the light/dark switch. Each page's HTML has an empty
 // <header id="site-header"> and <footer id="site-footer"> and body[data-page].
 
-import { getMajors } from "./api.js";
+import { getMajors, showDataDate } from "./api.js";
 import { CONFIG } from "./config.js";
 import { majorLabel, openMajorPrompt } from "./majorPrompt.js";
 import { getState, isPersistent, readValue, subscribe, undo, writeValue } from "./store.js";
@@ -101,11 +101,21 @@ function updatePlanChip(state) {
 
 // ---------- footer ----------
 
+// "Report a problem" link, or null when config.js has no URL for it.
+export function reportLink(text = "Report a problem") {
+  if (!CONFIG.reportProblemUrl) return null;
+  return el("a", { href: CONFIG.reportProblemUrl, target: "_blank", rel: "noopener noreferrer" }, text);
+}
+
 function footer() {
+  const updated = el("span", { "data-updated": "" });
+  showDataDate(updated, " ");
+  const report = reportLink("Report a wrong time or other problem");
   return el("div", { class: "footer-inner" },
     el("p", {},
-      `${CONFIG.disclaimer} Class times are for ${CONFIG.termName} and can change, so check ${CONFIG.schoolShort}'s class schedule before you register. `,
-      "Your plans are kept in this browser only."),
+      `${CONFIG.disclaimer} Class times are for ${CONFIG.termName} and can change, so confirm every class in ${CONFIG.registrationSite} before you register.`,
+      updated, " Your plans are kept in this browser only.",
+      report ? " " : null, report),
     el("p", {},
       "We count visits anonymously (pages viewed, majors picked, searches, plan changes and conflict checks), with no names, IP addresses or cookies. ",
       el("a", { href: "#", id: "track-optout" }, "Turn off counting")));

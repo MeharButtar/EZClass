@@ -4,11 +4,16 @@ import to the next, because students' saved plans remember sections by id.
 """
 
 import contextlib
+import csv
+import datetime
 import importlib.util
 import io
+import json
 import os
+import sys
 import tempfile
 import unittest
+from unittest import mock
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 spec = importlib.util.spec_from_file_location("import_real_data", os.path.join(ROOT, "data", "import_real_data.py"))
@@ -90,6 +95,23 @@ class StableIdTests(unittest.TestCase):
     def test_key_ignores_spaces_and_case_in_subject(self):
         self.assertEqual(importer.section_key("POL S", "102", "01", "Spring 2027"),
                          importer.section_key("pols", " 102 ", "01", "Spring 2027"))
+
+
+
+class DataDateTests(unittest.TestCase):
+    def test_import_records_todays_date_for_the_site(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            sheet = os.path.join(tmp, "rows.csv")
+            fields = [k for k in raw_row("Patricia", "Kraft") if k != "_row"]
+            with open(sheet, "w", newline="", encoding="utf-8") as f:
+                w = csv.DictWriter(f, fieldnames=fields)
+                w.writeheader()
+                w.writerow({k: v for k, v in raw_row("Patricia", "Kraft").items() if k != "_row"})
+            out = os.path.join(tmp, "cleaned")
+            with mock.patch.object(importer, "OUT_DIR", out),                  mock.patch.object(importer, "previous_section_ids", return_value=({}, 0)),                  mock.patch.object(sys, "argv", ["import_real_data.py", sheet]),                  contextlib.redirect_stdout(io.StringIO()):
+                importer.main()
+            with open(os.path.join(out, "data_info.json"), encoding="utf-8") as f:
+                self.assertEqual(json.load(f), {"updated": datetime.date.today().isoformat()})
 
 
 if __name__ == "__main__":

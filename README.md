@@ -77,7 +77,7 @@ sdsu-scheduler/
 │   ├── index.html, major.html, ge.html, search.html, schedule.html
 │   ├── css/base.css              # design tokens (light/dark) and all components
 │   └── js/
-│       ├── config.js             # school name, term, catalog year: the only school-specific file
+│       ├── config.js             # school name, term, catalog year, report link: the only school-specific file
 │       ├── store.js              # plans, major, taken courses (the only code using localStorage)
 │       ├── api.js, plan.js       # fetch helpers; the active plan as section objects
 │       ├── nav.js                # the shared header and footer
@@ -183,6 +183,11 @@ and start the app). Keep `status` as `coming_soon` until the rows are checked.
 4. Load it: `python3 backend/models/db.py data/cleaned`
 5. Start the app as usual. To go back to placeholder data, run `python3 backend/models/db.py`.
 
+The importer also writes `data/cleaned/data_info.json` with today's date. The
+site shows it in the footer and on My Schedule ("Class data last updated Nov 4,
+2026"), so commit it with the CSVs. If you change the CSVs some other way, update
+the date in that file by hand (format `YYYY-MM-DD`). `GET /api/info` returns it.
+
 Section ids stay the same from one import to the next: a section that is still
 in the sheet (same subject, course number, section and term) keeps the id it
 had in the last `data/cleaned/sections.csv`, even if its row moved. This
@@ -277,9 +282,25 @@ keep the numbers. The class data is not affected: it's baked into the image.
 
 To keep counts across deploys, move to a paid instance, add a **Disk** with
 mount path `/data`, and set `ANALYTICS_DB_PATH=/data/analytics.db`, or later move the counts to an
-external database. If
+external database. Put **only** the analytics file on the disk: leave
+`EZCLASS_DB_PATH` unset. The app never overwrites a class database that already
+has classes in it, so a class database on the disk would keep the first import
+forever and ignore every later data update. Left alone, it's rebuilt from the
+CSVs in the repo on each deploy. (A service with a disk can't do zero-downtime
+deploys, so the site is down for a minute or so while each deploy goes out.) If
 `/api/event` then returns 503 and the logs say "could not save analytics
 event", the disk isn't writable by the image's non-root user (uid 1000).
+
+### Before you share it with students
+
+- Make a form for problem reports (a Google Form with "what's wrong" and "which
+  class" is enough) and paste its link into `reportProblemUrl` in
+  `frontend/js/config.js`. The footer and My Schedule then show a "Report a
+  problem" link; while it's empty the link is hidden.
+- Check `termName` and `catalogYear` in `config.js` match the data.
+- Import the latest data so the "last updated" date is current.
+- The site tells students to confirm every class in `registrationSite`
+  (WebPortal) before registering; keep that.
 
 ### Reading the visit stats
 
