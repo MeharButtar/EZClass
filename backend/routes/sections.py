@@ -1,5 +1,18 @@
 """
 Routes for searching/filtering course sections.
+
+A section can meet more than once (lecture + lab, or a timed part and an
+online part) and can have more than one instructor. Every section comes
+back with:
+  meetings     -> [{day, start, end, building, room, online}] in the sheet's order
+  instructors  -> [{name, first, last}], each person once
+  online_only  -> true when it has meetings and none has a set day and time
+  no_schedule  -> true when no meetings are entered yet ("Time not listed yet")
+  section_title -> the section's own title (special topics), else null
+The older flat fields (days, start_time, end_time, building, room_number,
+professor_name, capacity) are still there, filled from the first timed
+meeting and the first instructor (all null for a section with no schedule).
+Sections no longer in the sheet (active = 0) never come back.
 """
 
 from flask import Blueprint, jsonify, request
@@ -20,7 +33,62 @@ def id_list(value):
     return [int(p) for p in parts]
 
 
-def section_to_dict(row):
+def hhmm(minutes):
+    return None if minutes is None else f"{minutes // 60:02d}:{minutes % 60:02d}"
+
+
+def _in_chunks(conn, sql, ids):
+    """Runs sql (with one {marks} slot) for the ids, a few hundred at a time (SQLite caps parameters)."""
+    rows = []
+    for i in range(0, len(ids), 500):
+        part = ids[i:i + 500]
+        rows += conn.execute(sql.format(marks=",".join("?" * len(part))), part).fetchall()
+    return rows
+
+
+def meetings_by_section(conn, section_ids):
+    """section_id -> its meetings (dicts with day_code, start_min, end_min, building, room, is_online)."""
+    out = {}
+    for r in _in_chunks(conn, """
+            SELECT section_id, idx, day_code, start_min, end_min, building, room, is_online
+            FROM section_meetings WHERE section_id IN ({marks}) ORDER BY section_id, idx""", list(section_ids)):
+        out.setdefault(r["section_id"], []).append(dict(r))
+    return out
+
+
+def instructors_by_section(conn, section_ids):
+    """section_id -> [{name, first, last}] in the sheet's order."""
+    out = {}
+    for r in _in_chunks(conn, """
+            SELECT i.section_id, p.first_name, p.last_name
+            FROM section_instructors i JOIN professors p ON p.professor_id = i.professor_id
+            WHERE i.section_id IN ({marks}) ORDER BY i.section_id, i.idx""", list(section_ids)):
+        out.setdefault(r["section_id"], []).append(
+            {"name": f"{r['first_name']} {r['last_name']}", "first": r["first_name"], "last": r["last_name"]})
+    return out
+
+
+def meeting_to_dict(m):
+    online = bool(m["is_online"])
+    return {
+        "day": "" if online else (m["day_code"] or ""),
+        "start": None if online else hhmm(m["start_min"]),
+        "end": None if online else hhmm(m["end_min"]),
+        "building": m["building"] or "",
+        "room": m["room"] or "",
+        "online": online,
+    }
+
+
+def is_timed(m):
+    return not m["online"] and bool(m["day"]) and m["start"] is not None and m["end"] is not None
+
+
+def section_to_dict(row, meetings, instructors):
+    meetings = [meeting_to_dict(m) for m in meetings]
+    first_timed = next((m for m in meetings if is_timed(m)), None)
+    first = instructors[0] if instructors else None
+    no_schedule = not meetings
     return {
         "section_id": row["section_id"],
         "course_id": row["course_id"],
@@ -29,14 +97,23 @@ def section_to_dict(row):
         "course_title": row["title"],
         "units": row["units"],
         "section_number": row["section_number"],
-        "professor_name": row["professor_name"],
-        "professor_last": row["professor_last"],   # for the RateMyProfessors link (multi-word last names)
-        "days": row["days"],
-        "start_time": row["start_time"],
-        "end_time": row["end_time"],
-        "building": row["building"],
-        "room_number": row["room_number"],
-        "capacity": row["capacity"],
+        "section_title": row["section_title"] or None,
+        "term": row["term"],
+        "meetings": meetings,
+        "instructors": instructors,
+        "online_only": not no_schedule and first_timed is None,
+        "no_schedule": no_schedule,
+        "seats_text": row["seats_text"] or "",
+        "seats_total": row["seats_total"],
+        # the older one-meeting fields, from the first timed meeting and the first instructor
+        "professor_name": first["name"] if first else None,
+        "professor_last": first["last"] if first else None,   # for the RateMyProfessors link
+        "days": first_timed["day"] if first_timed else (None if no_schedule else ""),
+        "start_time": first_timed["start"] if first_timed else None,
+        "end_time": first_timed["end"] if first_timed else None,
+        "building": first_timed["building"] if first_timed else (meetings[0]["building"] if meetings else None),
+        "room_number": first_timed["room"] if first_timed else (None if no_schedule else ""),
+        "capacity": row["seats_total"],
         # GE info: list of area codes like ["3A"], plus the three tags
         "ge_areas": row["ge_areas"].split(",") if row["ge_areas"] else [],
         "cultural_diversity": bool(row["cultural_diversity"]),
@@ -45,13 +122,17 @@ def section_to_dict(row):
     }
 
 
+def sections_to_dicts(conn, rows):
+    ids = [r["section_id"] for r in rows]
+    meetings = meetings_by_section(conn, ids)
+    people = instructors_by_section(conn, ids)
+    return [section_to_dict(r, meetings.get(r["section_id"], []), people.get(r["section_id"], [])) for r in rows]
+
+
 BASE_QUERY = """
     SELECT
-        s.section_id, s.course_id, s.section_number, s.days,
-        s.start_time, s.end_time, s.capacity,
+        s.section_id, s.course_id, s.section_number, s.term, s.seats_text, s.seats_total, s.section_title,
         c.subject, c.catalog_num, c.title, c.units,
-        (p.first_name || ' ' || p.last_name) AS professor_name, p.last_name AS professor_last,
-        r.building, r.room_number,
         (SELECT GROUP_CONCAT(g.area_code, ',') FROM course_ge g
           WHERE g.subject = c.subject AND g.catalog_num = c.catalog_num) AS ge_areas,
         (SELECT MAX(g.cultural_diversity) FROM course_ge g
@@ -62,8 +143,7 @@ BASE_QUERY = """
           WHERE g.subject = c.subject AND g.catalog_num = c.catalog_num) AS american_inst
     FROM sections s
     JOIN courses c ON s.course_id = c.course_id
-    LEFT JOIN professors p ON s.professor_id = p.professor_id
-    LEFT JOIN rooms r ON s.room_id = r.room_id
+    WHERE s.active = 1
 """
 
 
@@ -74,9 +154,9 @@ def search_sections():
 
     Query params (all optional):
       subject   -> exact match, e.g. ?subject=CS
-      professor -> partial match on professor name
-      day       -> a single day letter/token that must appear in the
-                   section's day pattern, e.g. ?day=M
+      professor -> partial match on any instructor's name
+      day       -> a single day letter/token that some timed meeting must
+                   fall on, e.g. ?day=M (online-only sections never match)
       q         -> free-text search across course title and catalog number
       ge        -> GE area codes, comma separated, e.g. ?ge=3A,3B. Use ge=ALL
                    for any GE area. A section matches if its course counts for
@@ -109,7 +189,8 @@ def search_sections():
 
     professor = request.args.get("professor")
     if professor:
-        conditions.append("professor_name LIKE ?")
+        conditions.append("EXISTS (SELECT 1 FROM section_instructors i JOIN professors p ON p.professor_id = i.professor_id "
+                          "WHERE i.section_id = s.section_id AND (p.first_name || ' ' || p.last_name) LIKE ?)")
         params.append(f"%{professor}%")
 
     day = request.args.get("day")   # filtered below with parse_days, not LIKE
@@ -143,11 +224,12 @@ def search_sections():
                               f"AND g.{column} = 1)")
 
     if conditions:
-        query += " WHERE " + " AND ".join(conditions)
+        query += " AND " + " AND ".join(conditions)
     query += " ORDER BY c.subject, c.catalog_num, s.section_number"
 
     conn = get_connection()
     rows = conn.execute(query, params).fetchall()
+    result = sections_to_dicts(conn, rows)
     conn.close()
 
     if day:
@@ -155,25 +237,29 @@ def search_sections():
         # the conflict check uses instead of a text LIKE.
         wanted = DAY_TOKENS.get(day)
         if wanted:
-            rows = [r for r in rows if wanted in parse_days(r["days"])]
-    return jsonify([section_to_dict(r) for r in rows])
+            result = [s for s in result if any(is_timed(m) and wanted in parse_days(m["day"]) for m in s["meetings"])]
+    return jsonify(result)
 
 
 @sections_bp.route("/api/sections/<int:section_id>", methods=["GET"])
 def get_section(section_id):
     conn = get_connection()
-    row = conn.execute(BASE_QUERY + " WHERE s.section_id = ?", (section_id,)).fetchone()
+    rows = conn.execute(BASE_QUERY + " AND s.section_id = ?", (section_id,)).fetchall()
+    result = sections_to_dicts(conn, rows)
     conn.close()
-    if row is None:
+    if not result:
         return jsonify({"error": "section not found"}), 404
-    return jsonify(section_to_dict(row))
+    return jsonify(result[0])
 
 
 @sections_bp.route("/api/subjects", methods=["GET"])
 def list_subjects():
-    """Returns the distinct list of subjects, for populating a filter dropdown."""
+    """The subjects that have sections this term, for the Search filter dropdown."""
     conn = get_connection()
-    rows = conn.execute("SELECT DISTINCT subject FROM courses ORDER BY subject").fetchall()
+    rows = conn.execute("""
+        SELECT DISTINCT c.subject FROM courses c
+        WHERE EXISTS (SELECT 1 FROM sections s WHERE s.course_id = c.course_id AND s.active = 1)
+        ORDER BY c.subject""").fetchall()
     conn.close()
     return jsonify([r["subject"] for r in rows])
 
@@ -192,7 +278,7 @@ def list_ge_areas():
         FROM ge_areas a
         LEFT JOIN course_ge g ON g.area_code = a.area_code
         LEFT JOIN courses c ON c.subject = g.subject AND c.catalog_num = g.catalog_num
-        LEFT JOIN sections s ON s.course_id = c.course_id
+        LEFT JOIN sections s ON s.course_id = c.course_id AND s.active = 1
         GROUP BY a.area_code, a.name, a.grp, a.sort_order
         ORDER BY a.sort_order
     """).fetchall()
@@ -200,7 +286,7 @@ def list_ge_areas():
         SELECT COUNT(DISTINCT s.section_id)
         FROM sections s
         JOIN courses c ON c.course_id = s.course_id
-        WHERE EXISTS (SELECT 1 FROM course_ge g
+        WHERE s.active = 1 AND EXISTS (SELECT 1 FROM course_ge g
                       WHERE g.subject = c.subject AND g.catalog_num = c.catalog_num)
     """).fetchone()[0]
     conn.close()

@@ -3,7 +3,7 @@
 // Prefer el() and textContent. innerHTML is only ever used with esc().
 
 import { CONFIG } from "./config.js";
-import { DAYS, DAY_NAMES } from "./time.js";
+import { DAYS, DAY_NAMES, WEEKEND, formatRange, isTimedMeeting } from "./time.js";
 
 export function esc(value) {
   return String(value ?? "").replace(/[&<>"']/g, (ch) => (
@@ -45,10 +45,46 @@ export function clear(node) {
 }
 
 // M T W Th F, with the meeting days filled in. Screen readers get "Meets Monday, Wednesday".
+// Sa / Su only show up for a class that meets then.
 export function dayStrip(dayList) {
   const label = dayList.length ? `Meets ${dayList.map((d) => DAY_NAMES[d]).join(", ")}` : "No set meeting days";
   return el("span", { class: "daystrip", role: "img", "aria-label": label },
-    DAYS.map((d) => el("span", { class: dayList.includes(d) ? "on" : "", "aria-hidden": "true" }, d)));
+    [...DAYS, ...WEEKEND.filter((d) => dayList.includes(d))]
+      .map((d) => el("span", { class: dayList.includes(d) ? "on" : "", "aria-hidden": "true" }, d)));
+}
+
+// One line per meeting: day strip, time and room, or "Online" for a part with
+// no set time. A section that is online only says "Online / no set time", and
+// one whose schedule isn't entered yet says "Time not listed yet".
+export function meetingLines(s) {
+  if (!s.meetings.length) {
+    return el("div", { class: "meets" }, el("div", { class: "meet" }, el("span", { class: "pill pill-online" }, "Time not listed yet")));
+  }
+  const timed = s.meetings.filter(isTimedMeeting);
+  return el("div", { class: "meets" }, s.meetings.map((m) => {
+    if (isTimedMeeting(m)) {
+      return el("div", { class: "meet" }, dayStrip(m.dayList),
+        el("span", { class: "meet-time" }, formatRange(m.startMin, m.endMin)),
+        el("span", { class: "meet-room" }, m.room || "Room TBA"));
+    }
+    return el("div", { class: "meet" },
+      el("span", { class: "pill pill-online" }, timed.length ? "+ online part" : "Online / no set time"));
+  }));
+}
+
+// Every instructor, each linked to RateMyProfessors, or "Professor TBA".
+export function instructorLinks(s, missing = "Professor TBA") {
+  if (!s.instructors.length) return el("span", {}, missing);
+  return el("span", { class: "instructors" },
+    s.instructors.flatMap((p, i) => [i ? ", " : null, professorLink(p.name, p.last)]));
+}
+
+// "40 seats", "25 seats (100 / 25 by part)" or "Seats unknown". A student needs
+// a seat in every part, so the smallest part is the number that counts.
+export function seatsLabel(s) {
+  if (s.seats === null || s.seats === undefined) return "Seats unknown";
+  const count = `${s.seats} ${s.seats === 1 ? "seat" : "seats"}`;
+  return s.seatsText.includes("/") ? `${count} (${s.seatsText} by part)` : count;
 }
 
 // ---------- loading, empty and error boxes ----------

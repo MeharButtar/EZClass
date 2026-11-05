@@ -3,7 +3,7 @@
 // from RateMyProfessors, and the scores are saved in this browser only (store.js).
 //
 // ratingBadge()   read-only "★ 4.2" shown wherever that professor appears
-// ratingControl() badge plus Add / Edit, for sections in the plan
+// ratingControl() badge plus Add / Edit for one instructor, for sections in the plan
 //                 (My Schedule list and the calendar detail card)
 
 import { CONFIG } from "./config.js";
@@ -65,17 +65,25 @@ export function openRatingDialog(name, lastName) {
   return dialog;
 }
 
-// Badge + Edit, or an "Add rating" button. Nothing for a section without a professor.
+// Badge + Edit, or an "Add rating" button, for one instructor ({ name, last }).
+// showName puts the name in front (a section taught by more than one person).
 // beforeOpen runs first (the calendar card closes itself so it can't go stale).
-export function ratingControl(section, { beforeOpen } = {}) {
-  if (!section.professor) return null;
-  const saved = getProfRating(section.professor);
-  const open = () => { beforeOpen?.(); openRatingDialog(section.professor, section.professorLast); };
+export function ratingControl(person, { beforeOpen, showName = false } = {}) {
+  if (!person?.name) return null;
+  const saved = getProfRating(person.name);
+  const open = () => { beforeOpen?.(); openRatingDialog(person.name, person.last); };
   return el("span", { class: "rating-control" },
-    saved ? ratingBadge(section.professor) : null,
+    showName ? el("span", { class: "small" }, `${person.name}:`) : null,
+    saved ? ratingBadge(person.name) : null,
     el("button", {
       type: "button", class: "linkbtn small",
-      "aria-label": `${saved ? "Edit" : "Add"} the ${CONFIG.professorSite} score for ${section.professor}`,
+      "aria-label": `${saved ? "Edit" : "Add"} the ${CONFIG.professorSite} score for ${person.name}`,
       on: { click: open },
     }, saved ? "Edit" : "Add rating"));
+}
+
+// One control per instructor of a section.
+export function ratingControls(section, options = {}) {
+  const many = section.instructors.length > 1;
+  return section.instructors.map((p) => ratingControl(p, { ...options, showName: many }));
 }

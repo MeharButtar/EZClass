@@ -358,6 +358,7 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 .pill-tag { background: var(--surface); color: var(--text-muted); box-shadow: inset 0 0 0 1px var(--border-strong); }
 .pill-done { background: var(--ok); color: var(--on-ok); }
 .pill-warn { background: var(--danger-soft); color: var(--danger); }
+.pill-online { background: var(--surface); color: var(--text); box-shadow: inset 0 0 0 1px var(--border-strong); }
 
 .field { display: grid; gap: var(--sp-1); font-size: var(--fs-sm); font-weight: 600; }
 .input, .select {
@@ -458,6 +459,12 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 .sec-row.is-added { background: var(--accent-soft); border-color: var(--accent); }
 .sec-when { display: grid; gap: var(--sp-1); }
 .sec-time { font-variant-numeric: tabular-nums; font-weight: 650; font-size: var(--fs-sm); }
+/* one line per meeting: day strip, time, room (or the online part) */
+.meets { display: grid; gap: var(--sp-1); }
+.meet { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-2); }
+.meet-time { font-variant-numeric: tabular-nums; font-weight: 650; font-size: var(--fs-sm); }
+.meet-room { color: var(--text-muted); font-size: var(--fs-xs); }
+.sec-group { padding: var(--sp-2) var(--sp-1) 0; font-size: var(--fs-sm); font-weight: 700; color: var(--text-muted); }
 .sec-info { display: grid; min-width: 0; }
 .sec-name { font-weight: 650; font-size: var(--fs-sm); }
 .sec-title { font-size: var(--fs-sm); }
@@ -555,7 +562,7 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 
 /* calendar */
 .cal { --gutter: 2.6rem; font-size: var(--fs-xs); }
-.cal-head, .cal-body { display: grid; grid-template-columns: var(--gutter) repeat(5, minmax(0, 1fr)); }
+.cal-head, .cal-body { display: grid; grid-template-columns: var(--gutter) repeat(var(--days, 5), minmax(0, 1fr)); }
 .cal-dayhead { text-align: center; font-weight: 700; color: var(--text-muted); padding-bottom: var(--sp-1); }
 .cal-dayhead .short { display: none; }
 .cal-body {
@@ -592,20 +599,24 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 .blk-code { font-weight: 750; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .blk-time { font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .blk-room { color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.cal-dock .blk-room { display: none; }
+.blk-online { color: var(--text-muted); font-size: 0.625rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cal-dock .blk-room, .cal-dock .blk-online { display: none; }
 .cal-empty {
   position: absolute; inset: 40% var(--sp-4) auto calc(var(--gutter) + var(--sp-4)); text-align: center;
   color: var(--text-muted); font-size: var(--fs-sm); pointer-events: none;
 }
 .cal-notes { display: grid; gap: var(--sp-1); margin-top: var(--sp-2); }
 .cal-key { display: flex; align-items: center; gap: var(--sp-2); color: var(--text-muted); font-size: var(--fs-xs); }
+.cal-online { font-size: var(--fs-xs); }
+.cal-online-title { font-weight: 700; color: var(--text-muted); }
+.cal-online ul { list-style: none; margin: var(--sp-1) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-3); }
 .key-swatch { width: 1rem; height: 0.75rem; border-radius: 3px; flex: none; border: 1px solid var(--danger);
   background: repeating-linear-gradient(135deg, var(--danger-soft) 0 3px, transparent 3px 6px); }
 @media (max-width: 479.98px) {
   .cal { --gutter: 2.1rem; }
   .cal-dayhead .long { display: none; }
   .cal-dayhead .short { display: inline; }
-  .cal-blk .blk-time, .cal-blk .blk-room { display: none; }
+  .cal-blk .blk-time, .cal-blk .blk-room, .cal-blk .blk-online { display: none; }
   .cal-body { height: 62vh; }
 }
 .sub-0 { --sub-bg: var(--sub-0); --sub-edge: var(--sub-0-edge); }
@@ -639,7 +650,7 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 .conflict-box ul { margin: var(--sp-2) 0 0; padding-left: 1.1rem; }
 .plan-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-2); }
 .plan-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--sp-1) var(--sp-3); align-items: center; padding: var(--sp-3); border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); }
-.plan-item .daystrip { margin-top: var(--sp-1); }
+.plan-item .meets { margin: var(--sp-1) 0; }
 .tight { color: var(--text-muted); font-size: var(--fs-xs); margin-top: var(--sp-2); }
 
 /* home */

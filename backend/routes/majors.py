@@ -32,7 +32,7 @@ def course_lookup(conn):
     rows = conn.execute("""
         SELECT c.course_id, c.subject, c.catalog_num, c.title, c.units,
                COUNT(s.section_id) AS section_count
-        FROM courses c LEFT JOIN sections s ON s.course_id = c.course_id
+        FROM courses c LEFT JOIN sections s ON s.course_id = c.course_id AND s.active = 1
         GROUP BY c.course_id
     """).fetchall()
     return {course_key(r["subject"], r["catalog_num"]): r for r in rows}
@@ -171,7 +171,7 @@ def find_courses():
     sql = f"""
         SELECT c.course_id, c.subject, c.catalog_num, c.title, c.units,
                COUNT(s.section_id) AS section_count
-        FROM courses c LEFT JOIN sections s ON s.course_id = c.course_id
+        FROM courses c LEFT JOIN sections s ON s.course_id = c.course_id AND s.active = 1
         WHERE c.subject IN ({marks}) AND CAST(c.catalog_num AS INTEGER) BETWEEN ? AND ?
         GROUP BY c.course_id
         {"HAVING COUNT(s.section_id) > 0" if only_offered else ""}

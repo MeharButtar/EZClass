@@ -1,20 +1,21 @@
 // Section rows and course cards, shared by My Major, GE and Search.
 //
-// A section row shows the day strip, the time, professor, room and seats, and
-// an Add button. Pointing at a row (mouse hover or keyboard focus) draws the
+// A section row shows one line per meeting (day strip, time, room, or the
+// online part), every professor, the seats, and an Add button. Pointing at a row (mouse hover or keyboard focus) draws the
 // ghost on the calendar. On touch screens there is no hover, so the first tap
 // on Add shows the ghost and the second tap adds.
 //
 // Every Add button on the page is kept in sync with the active plan, and rows
-// that would overlap something already in the plan say so.
+// that would overlap something already in the plan say so. Sections that are
+// online only, or have no time listed yet, come last under "Online / no set time".
 
 import { setGhost } from "./calendar.js";
 import { ratingBadge } from "./ratings.js";
 import { CONFIG } from "./config.js";
 import { watchPlan } from "./plan.js";
 import { activePlan, isCompleted, isInPlan, toggleCompleted, toggleSection } from "./store.js";
-import { formatRange, overlaps } from "./time.js";
-import { $$, dayStrip, el, plural, professorLink } from "./ui.js";
+import { overlaps } from "./time.js";
+import { $$, el, instructorLinks, meetingLines, plural, seatsLabel } from "./ui.js";
 
 export const sectionLabel = (s) => `${s.code} (Sec ${s.sectionNumber})`;
 
@@ -28,10 +29,9 @@ export function geBadges(areas = [], { cd = false, es = false, ai = false } = {}
   ];
 }
 
-// "Nguyen · AH 2140 · 40 seats", with the professor's name linked to RateMyProfessors
+// "Diana Carson, Rachel Cuesta · 40 seats", each name linked to RateMyProfessors
 function sectionMeta(s) {
-  const parts = [professorLink(s.professor, s.professorLast), s.room || "Room TBA", s.capacity ? `${s.capacity} seats` : null].filter(Boolean);
-  return parts.flatMap((part, i) => (i ? [" · ", part] : [part]));
+  return [instructorLinks(s), " · ", seatsLabel(s)];
 }
 
 const noHover = window.matchMedia("(hover: none)");
@@ -58,12 +58,11 @@ function addButton(s) {
 
 export function sectionRow(s, { showCourse = false } = {}) {
   rowSections.set(s.id, s);
-  const time = formatRange(s.startMin, s.endMin) || "No set time";
   const row = el("li", { class: "sec-row", dataset: { sectionId: s.id } },
-    el("div", { class: "sec-when" }, dayStrip(s.dayList), el("span", { class: "sec-time" }, time)),
+    el("div", { class: "sec-when" }, meetingLines(s)),
     el("div", { class: "sec-info" },
       el("span", { class: "sec-name" }, showCourse ? `${s.code} · Sec ${s.sectionNumber}` : `Section ${s.sectionNumber}`),
-      showCourse && s.title ? el("span", { class: "sec-title" }, s.title) : null,
+      (showCourse || s.sectionTitle) && s.title ? el("span", { class: "sec-title" }, s.title) : null,
       el("span", { class: "sec-meta" }, sectionMeta(s), el("span", { class: "sec-rating" })),
       showCourse && (s.geAreas.length || s.cd || s.es || s.ai)
         ? el("span", { class: "sec-tags" }, geBadges(s.geAreas, s)) : null,
@@ -95,10 +94,12 @@ function syncRow(row) {
     : `Add ${s.code} section ${s.sectionNumber} to ${planName}`);
   row.classList.toggle("is-added", added);
 
-  // a score the student saved for this professor (entered from their plan)
+  // scores the student saved for these professors (entered from their plan)
   const ratingSlot = row.querySelector(".sec-rating");
-  const badge = ratingBadge(s.professor);
-  ratingSlot.replaceChildren(...(badge ? [" ", badge] : []));
+  ratingSlot.replaceChildren(...s.instructors.flatMap((p) => {
+    const badge = ratingBadge(p.name);
+    return badge ? [" ", badge] : [];
+  }));
 
   const clash = added ? null : planSections.find((p) => overlaps(p, s));
   const note = row.querySelector(".sec-clash");
@@ -106,6 +107,24 @@ function syncRow(row) {
   note.textContent = clash ? `Overlaps ${clash.code} in ${planName}` : "";
   row.classList.toggle("has-clash", Boolean(clash));
 }
+
+// Rows for a list of sections: timed ones first, then "Online / no set time"
+// (online-only sections and ones whose time isn't listed yet).
+// The heading is a list item so it can sit inside the same list (Search adds rows in chunks).
+export function sectionItems(sections, options = {}) {
+  const timed = sections.filter((s) => !s.untimed);
+  const online = sections.filter((s) => s.untimed);
+  return [
+    ...timed.map((s) => sectionRow(s, options)),
+    online.length ? onlineHeading(online.length) : null,
+    ...online.map((s) => sectionRow(s, options)),
+  ].filter(Boolean);
+}
+
+export const onlineHeading = (n) => el("li", { class: "sec-group" }, `Online / no set time (${n})`);
+
+// Timed sections first, online-only last, each group in its original order.
+export const timedFirst = (sections) => [...sections.filter((s) => !s.untimed), ...sections.filter((s) => s.untimed)];
 
 export function syncRows() {
   for (const row of $$(".sec-row[data-section-id]")) syncRow(row);
@@ -158,7 +177,7 @@ export function courseCard(course, sections = [], { takenToggle = false, expande
   const setOpen = (open) => {
     if (!offered) return;
     if (open && !filled) {
-      body.append(el("ul", { class: "sec-list" }, sections.map((s) => sectionRow(s))));
+      body.append(el("ul", { class: "sec-list" }, sectionItems(sections)));
       filled = true;
     }
     body.hidden = !open;

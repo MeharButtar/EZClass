@@ -31,9 +31,16 @@ up to three plans (A, B, C). Everything they pick stays in their own browser.
 - On My Major, GE and Search the week calendar is docked on the right (a "My
   week" sheet on phones). Pointing at a section draws a dashed preview on it,
   which turns red if it would overlap something already in the plan.
-- Real class data for Spring 2027 (559 sections, 145 courses), GE data (750
-  course links) and five launch majors. Many required courses have no sections
-  yet because data entry is still going; they show as not offered.
+- Real class data for Spring 2027: 2,284 sections of 777 courses in 87
+  subjects, GE data (750 course links) and five launch majors. A section can
+  meet more than once (lecture + lab, or a timed part and an online part) and
+  have more than one professor: each timed meeting gets its own block on the
+  calendar, hybrid sections say "+ online part", and the 411 online-only
+  sections are listed under "Online / no set time" instead of on the grid
+  (they never count as overlapping). 108 sections (the PA and 400-599 business
+  courses) have no days or times entered yet: they show "Time not listed yet"
+  in the same list and can still be added to a plan. Required courses with no
+  sections show as not offered.
 
 ## How to run it
 
@@ -93,9 +100,14 @@ sdsu-scheduler/
 │   ├── ge/                       # GE areas and which course counts for which area
 │   ├── placeholder/              # generate_placeholder_data.py + its output CSVs
 │   ├── raw/                      # put real SDSU downloads here (untouched)
-│   └── cleaned/                  # put reshaped real data here (matches placeholder CSV columns)
+│   ├── import_real_data.py       # workbook -> data/cleaned (see "Adding real data")
+│   ├── import_report.txt         # what the last import did (counts, warnings, skipped rows)
+│   └── cleaned/                  # the class data the app loads, written by the importer
+├── scripts/
+│   └── coverage_report.py        # which required / GE courses have no sections this term
 ├── docs/                         # ER diagram, notes go here
 ├── tests/                        # python3 -m unittest discover -s tests -v
+│   └── fixtures/                 # spring2027_sections.xlsx: the Sections sheet the import tests use
 ├── Dockerfile                    # production image (gunicorn)
 ├── .env.example                  # every setting the app reads
 ├── requirements.txt              # what production needs
@@ -176,12 +188,67 @@ and start the app). Keep `status` as `coming_soon` until the rows are checked.
 
 ## Adding real data (the easy way)
 
-1. Open `data/template/EzClass_Data_Template.xlsx` and read the Instructions sheet.
-2. Fill in the **Sections** sheet, one row per section. No ids needed.
-3. Check it and build the CSVs: `python3 data/import_real_data.py data/template/EzClass_Data_Template.xlsx`
-   (it lists any row with a problem so you can fix it).
-4. Load it: `python3 backend/models/db.py data/cleaned`
+1. Fill in the **Sections** sheet of the team's workbook
+   (`data/template/EzClass_Data_Template_2_CLEANED.xlsx`), one row per section a
+   student picks (columns A to N, data from row 3; row 2 is the gray example).
+   No ids needed. Only the Sections sheet is read. Never remove a row because
+   it looks like its neighbor: identical-looking rows are real sections.
+2. Import it: `python3 data/import_real_data.py data/template/EzClass_Data_Template_2_CLEANED.xlsx`.
+   It prints a report (also saved to `data/import_report.txt`): sections created,
+   updated and unchanged, meetings, online-only and hybrid counts, anything it
+   normalized, warnings with sheet row numbers, and skipped rows. A row whose
+   parts don't line up is skipped and the rest still import; the script then
+   exits with status 1. Fix those rows in the workbook and run it again.
+3. Load it: `python3 backend/models/db.py data/cleaned`
+4. Check what's missing: `python3 scripts/coverage_report.py` lists, for every
+   live major and GE area, the courses with no sections this term.
 5. Start the app as usual. To go back to placeholder data, run `python3 backend/models/db.py`.
+
+The importer never "fixes" a day, time, room or name; it reports anything odd
+so the team can fix the workbook.
+
+**Several meetings, professors or seat numbers in one row.** Parts go in the
+same cell with ` / ` between them:
+
+- **Days, Start Time, End Time, Building, Room Number**: one part per meeting,
+  in the same order as Days, or a single part that applies to every timed
+  meeting. Parts can be empty. `MW / MW`, `13:00 / 12:00`, `13:50 / 12:50`,
+  `LH / GMCS`, `256 / 333` is a lecture in LH 256 and a second meeting in
+  GMCS 333. Days use `M T W Th F Sa Su` with no spaces (`MWF`, `TTh`, `MTWTh`).
+- **ONLINE** in Days is a meeting with no day, time or room (Start and End
+  empty, Building `ONLINE`). `ASYNC`, `ASYNCHRONOUS`, `ARRANGED` and `TBA` are
+  read as ONLINE and listed in the report. `TTh / ONLINE` with times
+  `09:30 / ` is a hybrid section. A section with no timed meeting is online only.
+  A real day and time with Building `ONLINE` is a live online class: it is on
+  the calendar and in the conflict check, with "Online" as the place.
+- **No schedule yet**: Days, Start, End, Building and Room all empty. The
+  section is imported with no meetings and shows "Time not listed yet" (never
+  on the calendar, never a conflict). Type the days and times into the same row
+  later, keeping its Section number, and the next import updates that section.
+  Days empty while Start, End, Building or Room has a value is a mistake: that
+  row is skipped and reported.
+- **Professor First / Last Name**: one part per component (lecture, lab), not
+  per meeting; both columns need the same number of parts. Each person is
+  listed once per section (same name in any capitalization = same person).
+  "TBA", "Staff" and "To be Announced" mean no professor.
+- **Seats**: one number per component, like `180 / 45`. The site shows the
+  smallest (a student needs a seat in every part) and keeps the text. Blank
+  means "Seats unknown". A number over 999 (two numbers typed without the
+  slash) is reported and not used.
+- **Course Title**: one title per course. Special-topics courses (MUSIC 351,
+  listed in `SPECIAL_TOPICS` in the importer) are the exception: each section
+  keeps its own title ("Music and Culture: Hip Hop"), shown on its row, and
+  the course is called by the part they share ("Music and Culture"). Any other
+  course with two titles or two unit values is reported.
+
+The tables: `sections` has one row per section, with `seats_text`,
+`seats_total`, `active` and `section_title`; `section_meetings` one row per meeting
+(`day_code`, `start_min`, `end_min` in minutes after midnight, `building`,
+`room`, `is_online`); `section_instructors` links sections to professors. The
+older one-meeting columns on `sections` (days, start_time, end_time,
+professor_id, room_id, capacity) are still filled from the first timed meeting
+and the first professor. A database built before meetings existed gets the new
+tables on its next start, filled from those columns, without losing anything.
 
 The importer also writes `data/cleaned/data_info.json` with today's date. The
 site shows it in the footer and on My Schedule ("Class data last updated Nov 4,
@@ -192,12 +259,18 @@ Section ids stay the same from one import to the next: a section that is still
 in the sheet (same subject, course number, section and term) keeps the id it
 had in the last `data/cleaned/sections.csv`, even if its row moved. This
 matters because students' saved plans remember sections by id. Always import
-on top of the current `data/cleaned/` files (don't delete them first). If a
-section is removed from the sheet, it is dropped from students' plans with a
-short notice the next time they open the site.
+on top of the current `data/cleaned/` files (don't delete them first).
+Courses, professors and rooms keep their ids too.
 
-Rows with blank days or times (online or TBA sections) are rejected for now,
-so those classes don't show up yet.
+- **New rows go at the bottom with Section left blank.** The importer gives
+  them the next unused number for that course and lists it in the report;
+  type that number into the sheet.
+- **A section that is no longer in the sheet** is kept with `active = 0`: it
+  disappears from the site (and from students' plans, with a short notice),
+  but its id is never given to a different class, and it comes back if the row
+  does. The report lists these under "No longer in the sheet".
+- **Running the importer again on the same file changes nothing** (the report
+  says `unchanged`, and the files and the "last updated" date stay the same).
 
 ## Moving to real data later (manual version)
 

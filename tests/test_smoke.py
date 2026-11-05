@@ -123,8 +123,11 @@ class CoreTests(AppTestCase):
 
     def test_database_built_on_first_start(self):
         self.assertTrue(os.path.exists(CLASS_DB))
-        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections"), 559)
-        self.assertEqual(class_db_count("SELECT COUNT(*) FROM courses"), 145)
+        # Spring 2027: 2,284 sections in the sheet, plus 9 from the earlier import kept as inactive
+        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections WHERE active = 1"), 2284)
+        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections WHERE active = 0"), 9)
+        self.assertEqual(class_db_count("SELECT COUNT(*) FROM section_meetings"), 3203 + 9)   # inactive ones keep theirs
+        self.assertEqual(class_db_count("SELECT COUNT(*) FROM courses"), 779)   # 777 offered + 2 with only inactive sections
 
     def test_existing_database_is_never_wiped(self):
         conn = sqlite3.connect(CLASS_DB)
@@ -143,10 +146,33 @@ class CoreTests(AppTestCase):
     def test_ge_filter_and_areas(self):
         areas = self.client.get("/api/ge-areas").get_json()
         self.assertEqual(len(areas["areas"]), 14)
-        self.assertEqual(areas["total_sections"], 425)
-        self.assertEqual(len(self.client.get("/api/sections?ge=1B").get_json()), 78)
-        self.assertEqual(len(self.client.get("/api/sections?ge=1B,5C").get_json()), 132)
+        self.assertEqual(areas["total_sections"], 1275)
+        self.assertEqual(len(self.client.get("/api/sections?ge=1B").get_json()), 83)
+        self.assertEqual(len(self.client.get("/api/sections?ge=1B,5C").get_json()), 170)
         self.assertEqual(len(self.client.get("/api/sections?ge=1B&day=W").get_json()), 65)
+
+    def test_section_with_no_schedule_yet(self):
+        pa = next(s for s in self.client.get("/api/sections?subject=PA").get_json()
+                  if s["catalog_num"] == "301" and s["section_number"] == "01")
+        self.assertEqual((pa["meetings"], pa["no_schedule"], pa["online_only"], pa["instructors"]), ([], True, False, []))
+        self.assertEqual([pa[k] for k in ("days", "start_time", "end_time", "building", "room_number", "seats_total")], [None] * 6)
+        # a class that meets every weekday all day still doesn't conflict with it
+        busy = next(s for s in self.client.get("/api/sections?subject=CS").get_json() if not s["online_only"] and s["meetings"])
+        res = self.client.post("/api/schedule/check", json={"section_ids": [pa["section_id"], busy["section_id"]]})
+        self.assertTrue(res.get_json()["conflict_free"])
+
+    def test_online_only_and_hybrid_flags(self):
+        sections = self.client.get("/api/sections").get_json()
+        self.assertEqual(len(sections), 2284)
+        self.assertEqual(sum(s["online_only"] for s in sections), 411)
+        self.assertEqual(sum(s["no_schedule"] for s in sections), 108)
+        self.assertEqual(sum(1 for s in sections if not s["online_only"] and any(m["online"] for m in s["meetings"])), 151)
+
+    def test_special_topics_section_titles(self):
+        music = [s for s in self.client.get("/api/sections?subject=MUSIC").get_json() if s["catalog_num"] == "351"]
+        self.assertEqual(len(music), 9)
+        self.assertEqual({s["course_title"] for s in music}, {"Music and Culture"})
+        self.assertIn("Music and Culture: Hip Hop", {s["section_title"] for s in music})
 
     def test_security_headers(self):
         for path in ("/", "/api/health", "/js/app.js", "/api/sections/999999"):
@@ -205,7 +231,7 @@ class ConflictCheckTests(AppTestCase):
             self.assertIn("error", data)
             self.assertEqual(data["conflicts"], [])
             self.assertIs(data["conflict_free"], False)
-        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections"), 559)
+        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections"), 2293)
 
     def test_sixty_ids_is_allowed(self):
         self.assertEqual(self.check({"section_ids": list(range(1, 61))}).status_code, 200)

@@ -42,7 +42,7 @@ function passes(s) {
   const day = daySelect.value;
   if (day && !s.dayList.includes(day)) return false;
   const prof = profInput.value.trim().toLowerCase();
-  if (prof && !s.professor.toLowerCase().includes(prof)) return false;
+  if (prof && !s.instructors.some((p) => p.name.toLowerCase().includes(prof))) return false;
   const q = keywordInput.value.trim().toLowerCase();
   if (q && !s.title.toLowerCase().includes(q) && !s.catalog.toLowerCase().includes(q)) return false;
   if (tagBoxes.cd.checked && !s.cd) return false;
@@ -148,7 +148,7 @@ function fillBlock(code) {
   block.body.append(courses.length
     ? el("div", { class: "course-list" }, courses.map((sections) => {
         const s = sections[0];
-        return courseCard({ code: s.code, title: s.title, units: s.units, ge_areas: s.geAreas }, sections);
+        return courseCard({ code: s.code, title: s.courseTitle, units: s.units, ge_areas: s.geAreas }, sections);
       }))
     : emptyBox("No sections match", "Try another day or turn off a filter."));
   block.filled = true;

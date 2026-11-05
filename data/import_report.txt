@@ -1,0 +1,69 @@
+EzClass import of cleaned2.xlsx
+
+Rows read:                 2284
+Sections imported:         2284  (courses: 777)
+  created:                 0
+  updated:                 0
+  unchanged:               2284
+  no longer in the sheet:  0  (kept, marked inactive)
+  still inactive:          9  (gone before this run too)
+Meetings written:          3203
+Online-only sections:      411
+Hybrid sections:           151  (some meetings online)
+No schedule yet:           108  (no days, times or rooms entered)
+Sections with own title:   9  (special topics: MUSIC 351)
+Instructors created:       0
+Seats with slashes:        244
+Sections with no seats:    269
+Skipped rows:              0
+Files changed:             no, data/cleaned is already up to date
+
+Normalizations applied:
+  seats with slashes (smallest part used): 244 (rows 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 305, 306, 307, 308, 309, 310, 311 ... and 204 more)
+
+Warnings:
+  set day and time but Building ONLINE (live online class?): 29
+    row 32: the meeting: MWF 12:00-12:50
+    row 45: the meeting: TTh 14:00-15:15
+    row 46: the meeting: TTh 12:30-13:45
+    row 53: the meeting: MW 19:00-20:15
+    row 55: the meeting: T 19:00-21:40
+    row 60: the meeting: MW 14:00-15:15
+    row 303: the meeting: Th 12:55-15:35
+    row 597: the meeting: TTh 17:30-18:45
+    row 698: the meeting: TTh 11:00-12:15
+    row 791: meeting 1: M 12:00-13:50
+    row 908: the meeting: W 16:00-18:40
+    row 909: the meeting: T 16:00-18:40
+    row 1402: the meeting: TTh 11:00-12:15
+    row 1526: meeting 1: Th 09:30-10:45
+    row 1527: meeting 1: Th 09:30-10:45
+    row 1528: meeting 1: Th 09:30-12:10
+    row 1529: meeting 1: Th 09:30-10:45
+    row 1824: the meeting: TTh 12:30-13:45
+    row 1830: meeting 2: F 10:00-10:50
+    row 1836: the meeting: W 16:00-18:40
+    row 1887: meeting 2: F 10:00-10:50
+    row 1888: meeting 2: F 11:00-11:50
+    row 2022: the meeting: MW 14:00-15:15
+    row 2038: the meeting: MW 15:30-16:45
+    row 2039: the meeting: TTh 15:30-16:45
+    row 2044: the meeting: MW 14:00-15:15
+    row 2095: meeting 2: W 12:00-13:15
+    row 2121: meeting 1: T 16:00-17:50
+    row 2124: the meeting: TTh 08:00-09:50
+  timed meeting with no building: 8
+    row 564: the meeting: F 13:00-15:40
+    row 860: meeting 1: MW 14:00-14:50
+    row 860: meeting 2: TTh 14:00-14:50
+    row 872: meeting 1: MW 10:00-10:50
+    row 872: meeting 2: TTh 09:30-10:20
+    row 911: the meeting: W 15:30-18:10
+    row 1029: the meeting: TTh 12:30-13:45
+    row 1187: the meeting: TTh 11:00-12:15
+
+Skipped rows (fix them in the sheet, then run again):
+  none
+
+No longer in the sheet (marked inactive; they come back if the row does):
+  none

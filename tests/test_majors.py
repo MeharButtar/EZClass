@@ -101,7 +101,7 @@ class LoaderTests(unittest.TestCase):
             conn.close()
             db.ensure_database()
             self.assertEqual(count(path, "SELECT COUNT(*) FROM majors"), 7)
-            self.assertEqual(count(path, "SELECT COUNT(*) FROM sections"), 559)
+            self.assertEqual(count(path, "SELECT COUNT(*) FROM sections"), 2293)
             self.assertEqual(count(path, "SELECT COUNT(*) FROM students WHERE first_name = 'Keep'"), 1)
             db.ensure_database()   # second start: nothing doubles
             self.assertEqual(count(path, "SELECT COUNT(*) FROM major_requirements"), 179)
@@ -145,8 +145,7 @@ class MajorsApiTests(AppTestCase):
         self.assertTrue(codes["CS 150"]["has_sections"])
         self.assertGreater(codes["CS 150"]["section_count"], 0)
         self.assertIsNotNone(codes["CS 150"]["course_id"])
-        self.assertFalse(codes["PHYS 195"]["has_sections"])              # not in our data, still listed
-        self.assertIsNone(codes["PHYS 195"]["course_id"])
+        self.assertTrue(codes["PHYS 195"]["has_sections"])
         self.assertEqual(codes["STAT 250"]["ge_areas"], ["2"])
         total = sum(len(g["courses"]) for s in tree["sections"] for g in s["groups"])
         self.assertEqual(total, 57)
@@ -182,8 +181,11 @@ class MajorsApiTests(AppTestCase):
         clinic = self.group(tree, "Clinic (pick 1, not both)")
         self.assertEqual([c["code"] for c in clinic["courses"]], ["ENS 437A", "ENS 437B"])
         self.assertEqual(clinic["pick_n"], 1)
-        self.assertFalse(clinic["courses"][0]["has_sections"])
+        self.assertTrue(clinic["courses"][0]["has_sections"])
+        self.assertFalse(clinic["courses"][1]["has_sections"])             # ENS 437B: not offered, still listed
+        self.assertIsNone(clinic["courses"][1]["course_id"])
         codes = {c["code"]: c for c in self.group(tree, "Required")["courses"]}
+        self.assertTrue(codes["BIOL 211L"]["has_sections"])
         self.assertEqual(codes["SOC 101"]["ge_areas"], ["4"])
 
     def test_unknown_and_bad_major_ids(self):
@@ -216,7 +218,7 @@ class CoursesApiTests(AppTestCase):
 
     def test_empty_result(self):
         self.assertEqual(self.courses("subject=ZZZ"), {"courses": [], "truncated": False})
-        self.assertEqual(self.courses("subject=CJ&min=300&max=599&has_sections=1")["courses"], [])
+        self.assertEqual(self.courses("subject=CJ&min=900&max=999&has_sections=1")["courses"], [])
 
     def test_result_cap(self):
         with mock.patch.object(majors_routes, "MAX_COURSES", 2):

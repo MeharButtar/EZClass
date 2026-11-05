@@ -3,13 +3,18 @@
 // "ghost" for whatever section the student is pointing at in a list, so they
 // see where it lands before adding it. Classes that overlap sit side by side in
 // lanes and are striped red; a ghost that would overlap turns red and says so.
-// Sections without a set day and time are listed under the grid instead.
+//
+// A section with several meetings (lecture + lab) gets a block for each
+// meeting on each day. Only timed meetings go on the grid: a hybrid section's
+// blocks say "+ online part", and online-only sections (and ones whose time
+// isn't listed yet) are listed under the grid ("Online / no set time"), never
+// drawn and never in a clash.
 
 import { CONFIG } from "./config.js";
-import { ratingControl } from "./ratings.js";
+import { ratingControls } from "./ratings.js";
 import { removeSection } from "./store.js";
-import { DAYS, DAY_NAMES, DAY_SHORT, formatRange, formatTime, isTimed, overlaps } from "./time.js";
-import { clear, dayStrip, el, openDialog, professorLink } from "./ui.js";
+import { DAY_NAMES, DAY_SHORT, formatRange, formatTime, isTimed, timedMeetings, weekColumns } from "./time.js";
+import { clear, el, instructorLinks, meetingLines, openDialog, seatsLabel } from "./ui.js";
 
 const COLORS = 8;   // --sub-0 ... --sub-7 in base.css
 
@@ -21,6 +26,15 @@ function colorIndex(subject, order) {
   const i = order.indexOf(subject);
   return (i < 0 ? order.length : i) % COLORS;
 }
+
+// One block per timed meeting per day: { s, m, idx, day, startMin, endMin }.
+function blocksOf(sections) {
+  return sections.flatMap((s) => timedMeetings(s).flatMap((m, idx) =>
+    m.dayList.map((day) => ({ s, m, idx, day, startMin: m.startMin, endMin: m.endMin }))));
+}
+
+// Blocks of two different sections that are in class at the same time.
+const blocksClash = (a, b) => a.s.id !== b.s.id && a.startMin < b.endMin && b.startMin < a.endMin;
 
 // Splits one day's blocks into side-by-side lanes where they overlap.
 function layoutDay(blocks) {
@@ -34,7 +48,7 @@ function layoutDay(blocks) {
       let lane = lanes.findIndex((end) => end <= b.startMin);
       if (lane === -1) { lane = lanes.length; lanes.push(0); }
       lanes[lane] = b.endMin;
-      out.push({ s: b, lane });
+      out.push({ b, lane });
     }
     for (const p of out.slice(-cluster.length)) p.lanes = lanes.length;
     cluster = [];
@@ -62,18 +76,18 @@ export function setGhost(section) {
 // ---------- the small card that opens when a block is clicked ----------
 
 export function showSectionCard(section) {
+  const many = section.instructors.length > 1;
   const dialog = openDialog({
     title: `${section.code}, section ${section.sectionNumber}`,
     className: "dialog-small",
     content: [
       section.title ? el("p", { class: "muted" }, section.title) : null,
       el("dl", { class: "facts" },
-        el("dt", {}, "Days"), el("dd", {}, dayStrip(section.dayList)),
-        el("dt", {}, "Time"), el("dd", {}, formatRange(section.startMin, section.endMin) || "No set time"),
-        el("dt", {}, "Room"), el("dd", {}, section.room || "TBA"),
-        el("dt", {}, "Professor"), el("dd", {}, professorLink(section.professor, section.professorLast, "TBA")),
-        section.professor ? el("dt", {}, "Your score") : null,
-        section.professor ? el("dd", {}, ratingControl(section, { beforeOpen: () => dialog.close() })) : null,
+        el("dt", {}, "Meets"), el("dd", {}, meetingLines(section)),
+        el("dt", {}, many ? "Professors" : "Professor"), el("dd", {}, instructorLinks(section, "TBA")),
+        section.instructors.length ? el("dt", {}, many ? "Your scores" : "Your score") : null,
+        section.instructors.length ? el("dd", {}, ratingControls(section, { beforeOpen: () => dialog.close() })) : null,
+        el("dt", {}, "Seats"), el("dd", {}, seatsLabel(section)),
         el("dt", {}, "Units"), el("dd", {}, String(section.units || "–"))),
       el("div", { class: "dialog-actions" },
         el("button", { type: "button", class: "btn", on: { click: () => dialog.close() } }, "Close"),
@@ -94,13 +108,15 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
   container.append(root);
 
   function render() {
-    const timed = sections.filter(isTimed);
     const order = [...new Set(sections.map((s) => s.subject))];
-    const ghostTimed = ghost && isTimed(ghost) && !sections.some((s) => s.id === ghost.id) ? ghost : null;
-    const all = ghostTimed ? [...timed, ghostTimed] : timed;
+    const blocks = blocksOf(sections);
+    const ghostOn = ghost && isTimed(ghost) && !sections.some((s) => s.id === ghost.id);
+    const ghostBlocks = ghostOn ? blocksOf([ghost]) : [];
+    const all = [...blocks, ...ghostBlocks];
+    const days = weekColumns(all.map((b) => [b.day]));
 
-    let first = Math.min(CONFIG.calendarStartHour * 60, ...all.map((s) => s.startMin));
-    let last = Math.max(CONFIG.calendarEndHour * 60, ...all.map((s) => s.endMin));
+    let first = Math.min(CONFIG.calendarStartHour * 60, ...all.map((b) => b.startMin));
+    let last = Math.max(CONFIG.calendarEndHour * 60, ...all.map((b) => b.endMin));
     first = Math.floor(first / 60) * 60;
     last = Math.ceil(last / 60) * 60;
     const span = last - first;
@@ -109,60 +125,73 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
 
     const head = el("div", { class: "cal-head", "aria-hidden": "true" },
       el("span", {}),
-      DAYS.map((d) => el("span", { class: "cal-dayhead" },
+      days.map((d) => el("span", { class: "cal-dayhead" },
         el("span", { class: "long" }, DAY_SHORT[d]), el("span", { class: "short" }, d))));
 
     const gutter = el("div", { class: "cal-gutter", "aria-hidden": "true" });
     for (let m = first + 60; m < last; m += 60) gutter.append(el("span", { style: { top: pct(m) } }, formatTime(m)));
 
-    const cols = DAYS.map((d) => {
-      const today = timed.filter((s) => s.dayList.includes(d));
+    const cols = days.map((d) => {
+      const today = blocks.filter((b) => b.day === d);
       const col = el("div", { class: "cal-col", role: "group", "aria-label": DAY_NAMES[d] });
-      for (const { s, lane, lanes } of layoutDay(today)) {
-        const clash = today.some((o) => overlaps(s, o));
+      for (const { b, lane, lanes } of layoutDay(today)) {
+        const { s, m } = b;
+        const clash = today.some((o) => blocksClash(b, o));
         const width = 100 / lanes;
-        const time = formatRange(s.startMin, s.endMin);
+        const time = formatRange(b.startMin, b.endMin);
         col.append(el("button", {
           type: "button",
           class: `cal-blk sub-${colorIndex(s.subject, order)}${clash ? " clash" : ""}`,
-          style: { top: pct(s.startMin), height: height(s.startMin, s.endMin), left: `${lane * width}%`, width: `${width}%` },
-          "aria-label": `${s.code} section ${s.sectionNumber}, ${DAY_NAMES[d]} ${time}${s.room ? `, ${s.room}` : ""}${clash ? ", overlaps another class" : ""}. Details`,
-          dataset: { sectionId: s.id },
+          style: { top: pct(b.startMin), height: height(b.startMin, b.endMin), left: `${lane * width}%`, width: `${width}%` },
+          "aria-label": `${s.code} section ${s.sectionNumber}, ${DAY_NAMES[d]} ${time}${m.room ? `, ${m.room}` : ""}`
+            + `${s.onlinePart ? ", plus an online part" : ""}${clash ? ", overlaps another class" : ""}. Details`,
+          dataset: { sectionId: s.id, meeting: b.idx },
           on: { click: () => onSelect(s) },
         },
         el("span", { class: "blk-code" }, s.code),
         el("span", { class: "blk-time" }, time),
-        s.room ? el("span", { class: "blk-room" }, s.room) : null));
+        m.room ? el("span", { class: "blk-room" }, m.room) : null,
+        s.onlinePart ? el("span", { class: "blk-online" }, "+ online part") : null));
       }
-      if (ghostTimed && ghostTimed.dayList.includes(d)) {
-        const clash = today.some((o) => overlaps(ghostTimed, o));
+      for (const g of ghostBlocks.filter((b) => b.day === d)) {
+        const clash = today.some((o) => blocksClash(g, o));
         col.append(el("div", {
-          class: `cal-ghost sub-${colorIndex(ghostTimed.subject, order)}${clash ? " clash" : ""}`,
-          style: { top: pct(ghostTimed.startMin), height: height(ghostTimed.startMin, ghostTimed.endMin) },
+          class: `cal-ghost sub-${colorIndex(g.s.subject, order)}${clash ? " clash" : ""}`,
+          style: { top: pct(g.startMin), height: height(g.startMin, g.endMin) },
           "aria-hidden": "true",
         },
-        el("span", { class: "blk-code" }, ghostTimed.code),
-        el("span", { class: "blk-time" }, clash ? "Overlaps" : formatRange(ghostTimed.startMin, ghostTimed.endMin))));
+        el("span", { class: "blk-code" }, g.s.code),
+        el("span", { class: "blk-time" }, clash ? "Overlaps" : formatRange(g.startMin, g.endMin))));
       }
       return col;
     });
 
     const body = el("div", { class: "cal-body" }, gutter, cols);
     body.style.setProperty("--hours", String(span / 60));
-    if (!sections.length && !ghostTimed && emptyText) body.append(el("p", { class: "cal-empty" }, emptyText));
+    body.style.setProperty("--days", String(days.length));
+    head.style.setProperty("--days", String(days.length));
+    if (!sections.length && !ghostBlocks.length && emptyText) body.append(el("p", { class: "cal-empty" }, emptyText));
 
     const notes = el("div", { class: "cal-notes" });
-    if (timed.some((a) => timed.some((b) => overlaps(a, b)))) {
+    if (blocks.some((a) => blocks.some((b) => a.day === b.day && blocksClash(a, b)))) {
       notes.append(el("p", { class: "cal-key" }, el("span", { class: "key-swatch", "aria-hidden": "true" }),
         "Striped red classes overlap another class in this plan."));
     }
     const untimed = sections.filter((s) => !isTimed(s));
     if (untimed.length) {
-      notes.append(el("p", { class: "cal-key" },
-        `Not on the grid (online or no set meeting time): ${untimed.map((s) => s.code).join(", ")}`));
+      notes.append(el("div", { class: "cal-online" },
+        el("p", { class: "cal-online-title" }, "Online / no set time"),
+        el("ul", {}, untimed.map((s) => el("li", {},
+          el("button", {
+            type: "button", class: "linkbtn small",
+            "aria-label": `${s.code} section ${s.sectionNumber}, ${s.noSchedule ? "time not listed yet" : "online with no set time"}. Details`,
+            on: { click: () => onSelect(s) },
+          }, `${s.code} · Sec ${s.sectionNumber}${s.noSchedule ? " (time not listed yet)" : ""}`))))));
     }
     if (ghost && !isTimed(ghost)) {
-      notes.append(el("p", { class: "cal-key" }, `${ghost.code} has no set meeting time, so it won't show on the grid.`));
+      notes.append(el("p", { class: "cal-key" }, ghost.noSchedule
+        ? `${ghost.code} has no time listed yet, so it won't show on the grid.`
+        : `${ghost.code} is online with no set time, so it won't show on the grid.`));
     }
 
     clear(root).append(head, body, notes);

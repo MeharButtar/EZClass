@@ -9,6 +9,7 @@ from flask import Blueprint, jsonify, request
 
 from backend.models.conflicts import find_conflicts
 from backend.models.db import get_connection
+from backend.routes.sections import meetings_by_section
 
 schedule_bp = Blueprint("schedule", __name__)
 
@@ -23,6 +24,7 @@ def bad_request(message):
 def check_schedule():
     """
     Expects JSON body: {"section_ids": [1, 2, 3]}
+    Only timed meetings are compared; online parts never conflict.
     Returns: {"conflicts": [{"section_a": {...}, "section_b": {...}}, ...],
               "conflict_free": true/false}
     An empty "conflicts" list means the schedule is conflict-free.
@@ -50,12 +52,14 @@ def check_schedule():
     conn = get_connection()
     placeholders = ",".join(["?"] * len(section_ids))
     rows = conn.execute(
-        f"SELECT * FROM sections WHERE section_id IN ({placeholders})",
+        f"SELECT * FROM sections WHERE active = 1 AND section_id IN ({placeholders})",
         section_ids,
     ).fetchall()
+    meetings = meetings_by_section(conn, [r["section_id"] for r in rows])
     conn.close()
 
-    sections = [dict(r) for r in rows]
+    # every timed meeting of one section is compared with every timed meeting of the other
+    sections = [dict(r, meetings=meetings.get(r["section_id"], [])) for r in rows]
     conflict_pairs = find_conflicts(sections)
 
     return jsonify({

@@ -8,15 +8,17 @@ import { cachedSection, checkConflicts, showDataDate } from "../api.js";
 import { mountCalendar } from "../calendar.js";
 import { CONFIG } from "../config.js";
 import { watchPlan } from "../plan.js";
-import { ratingControl } from "../ratings.js";
+import { ratingControls } from "../ratings.js";
 import { sectionLabel } from "../sections.js";
 import { formatDuration, weekStats } from "../stats.js";
 import {
   MAX_PLANS, canUndo, clearPlan, createPlan, deletePlan, duplicatePlan, getState, removeSection,
   renamePlan, subscribe, switchPlan, undo,
 } from "../store.js";
-import { DAY_SHORT, describeOverlap, formatRange } from "../time.js";
-import { $, announce, clear, confirmDialog, dayStrip, el, emptyBox, plural, professorLink, promptDialog, signal } from "../ui.js";
+import { DAY_SHORT, describeOverlap } from "../time.js";
+import {
+  $, announce, clear, confirmDialog, el, emptyBox, instructorLinks, meetingLines, plural, promptDialog, seatsLabel, signal,
+} from "../ui.js";
 
 const tabs = $("#plan-tabs");
 const actions = $("#plan-actions");
@@ -104,7 +106,7 @@ function renderStats(sections) {
     cell(String(s.tightWalks.length), "tight walks"));
   $("#walks").textContent = s.tightWalks.length
     ? `Tight walks (${s.tightWalks[0].minutes} minutes or less between buildings): ` + s.tightWalks.map((w) =>
-        `${w.from.code} (${w.from.building}) to ${w.to.code} (${w.to.building}) on ${w.days.map((d) => DAY_SHORT[d]).join("/")}`).join("; ")
+        `${w.from.code} (${w.fromBuilding}) to ${w.to.code} (${w.toBuilding}) on ${w.days.map((d) => DAY_SHORT[d]).join("/")}`).join("; ")
     : "";
 }
 
@@ -122,10 +124,9 @@ function renderList(sections, state) {
     el("div", {},
       el("strong", {}, `${s.code} · Sec ${s.sectionNumber}`),
       el("div", { class: "small" }, s.title),
-      el("div", { class: "muted small" }, `${formatRange(s.startMin, s.endMin) || "No set time"} · ${s.room || "Room TBA"} · `,
-        professorLink(s.professor, s.professorLast)),
-      ratingControl(s),
-      dayStrip(s.dayList)),
+      meetingLines(s),
+      el("div", { class: "muted small" }, instructorLinks(s), ` · ${seatsLabel(s)}`),
+      ratingControls(s)),
     el("button", {
       type: "button", class: "btn btn-sm btn-danger", "aria-label": `Remove ${sectionLabel(s)} from ${plan.name}`,
       on: { click: () => removeSection(s.id, sectionLabel(s)) },

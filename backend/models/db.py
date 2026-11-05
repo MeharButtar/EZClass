@@ -78,7 +78,7 @@ def load_csvs(data_dir=PLACEHOLDER_DIR):
     data is ready, using the same column names as the placeholder CSVs.
     """
     conn = get_connection()
-    order = ["professors", "rooms", "courses", "sections", "students"]
+    order = ["professors", "rooms", "courses", "sections", "section_meetings", "section_instructors", "students"]
     print(f"Loading CSVs from {data_dir}")
     for table in order:
         csv_path = os.path.join(data_dir, f"{table}.csv")
@@ -108,11 +108,85 @@ def load_ge(ge_dir=GE_DIR):
     conn.close()
 
 
-def majors_schema():
-    """Just the majors tables from schema.sql (the block between the majors markers)."""
+def schema_block(name):
+    """One marked block of schema.sql (between "-- name:begin" and "-- name:end")."""
     with open(SCHEMA_PATH, "r", encoding="utf-8") as f:
         text = f.read()
-    return text.split("-- majors:begin", 1)[1].split("-- majors:end", 1)[0]
+    return text.split(f"-- {name}:begin", 1)[1].split(f"-- {name}:end", 1)[0]
+
+
+def majors_schema():
+    """Just the majors tables from schema.sql."""
+    return schema_block("majors")
+
+
+# columns sections gained with section_meetings; older databases get them added
+NEW_SECTION_COLUMNS = [("seats_text", "TEXT"), ("seats_total", "INTEGER"), ("active", "INTEGER NOT NULL DEFAULT 1"),
+                       ("section_title", "TEXT")]
+
+
+def _minutes(text):
+    """'14:30' -> 870, anything else -> None"""
+    try:
+        h, m = str(text).strip().split(":")[:2]
+        return int(h) * 60 + int(m)
+    except (ValueError, AttributeError):
+        return None
+
+
+def sections_need_upgrade():
+    """True if the database predates section_meetings (or is missing a new column)."""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        try:
+            tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type = 'table'")}
+            if not {"section_meetings", "section_instructors"} <= tables:
+                return True
+            columns = {r[1] for r in conn.execute("PRAGMA table_info(sections)")}
+            return not all(name in columns for name, _ in NEW_SECTION_COLUMNS)
+        finally:
+            conn.close()
+    except sqlite3.Error:
+        return False
+
+
+def upgrade_sections():
+    """
+    Brings sections data in the older one-meeting shape up to date, without
+    dropping or changing anything that's there. Safe to run any number of
+    times:
+      - adds section_meetings / section_instructors and the new sections columns
+      - a section with no meetings gets meeting 0 from its days/start/end/room
+      - a section with no instructors gets its professor_id
+      - seats come from capacity where they're missing
+    """
+    conn = get_connection()
+    conn.executescript(schema_block("meetings"))
+    columns = {r[1] for r in conn.execute("PRAGMA table_info(sections)")}
+    for name, decl in NEW_SECTION_COLUMNS:
+        if name not in columns:
+            conn.execute(f"ALTER TABLE sections ADD COLUMN {name} {decl}")
+    conn.execute("""UPDATE sections SET seats_total = capacity, seats_text = CAST(capacity AS TEXT)
+                    WHERE seats_total IS NULL AND (seats_text IS NULL OR seats_text = '') AND capacity IS NOT NULL""")
+    rows = conn.execute("""
+        SELECT s.section_id, s.days, s.start_time, s.end_time, r.building, r.room_number
+        FROM sections s LEFT JOIN rooms r ON r.room_id = s.room_id
+        WHERE s.days IS NOT NULL AND s.days != ''
+          AND NOT EXISTS (SELECT 1 FROM section_meetings m WHERE m.section_id = s.section_id)""").fetchall()
+    conn.executemany(
+        """INSERT INTO section_meetings (section_id, idx, day_code, start_min, end_min, building, room, is_online)
+           VALUES (?, 0, ?, ?, ?, ?, ?, 0)""",
+        [(r["section_id"], r["days"], _minutes(r["start_time"]), _minutes(r["end_time"]), r["building"], r["room_number"])
+         for r in rows])
+    added = conn.execute("""
+        INSERT INTO section_instructors (section_id, professor_id, idx)
+        SELECT s.section_id, s.professor_id, 0 FROM sections s
+        WHERE s.professor_id IS NOT NULL
+          AND NOT EXISTS (SELECT 1 FROM section_instructors i WHERE i.section_id = s.section_id)""").rowcount
+    conn.commit()
+    conn.close()
+    if rows or added:
+        print(f"  upgraded: {len(rows)} sections got meetings, {added} got instructors")
 
 
 def _int_or_none(value):
@@ -203,6 +277,7 @@ def build_database(data_dir):
     """Wipes and reloads everything: schema, class CSVs from data_dir, GE data."""
     init_schema()
     load_csvs(data_dir)
+    upgrade_sections()   # one-meeting CSVs (the placeholder data) get their meetings here
     load_ge()
     load_majors()
 
@@ -219,7 +294,8 @@ def ensure_database():
     happens under a file lock and we check again once we hold it: the first
     worker builds, the others wait and then see the data is there.
     """
-    if database_has_data() and (majors_loaded() or not os.path.isdir(MAJORS_DIR)):
+    if (database_has_data() and (majors_loaded() or not os.path.isdir(MAJORS_DIR))
+            and not sections_need_upgrade()):
         return
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
     with open(DB_PATH + ".lock", "w") as lock:
@@ -230,6 +306,9 @@ def ensure_database():
                 if not majors_loaded() and os.path.isdir(MAJORS_DIR):
                     print(f"Adding majors to {DB_PATH}")
                     load_majors()
+                if sections_need_upgrade():
+                    print(f"Adding section meetings to {DB_PATH}")
+                    upgrade_sections()
                 return
             data_dir = CLEANED_DIR if os.path.isdir(CLEANED_DIR) else PLACEHOLDER_DIR
             print(f"No class data in {DB_PATH}, building it from {data_dir}")

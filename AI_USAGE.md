@@ -47,6 +47,12 @@ Claude also helped plan the project scope, the stack, and the team task split.
 
 - Ran the app locally and used the Search page, the GE Scheduler, and the cart in the browser.
 - Loaded the real data: 559 sections from 145 courses.
+- Rebuilt the importer for the cleaned Spring 2027 workbook (2,284 sections):
+  several meetings, professors and seat numbers per row, online-only and
+  hybrid sections, sections with no schedule entered yet, per-section titles
+  for special topics, inactive sections instead of deletes, a report of every
+  run, and a coverage report of required courses with no sections. The
+  calendar, preview, conflict check and section lists now work per meeting.
 - Checked the GE filters against counts we could confirm: 425 GE sections total, 78 in area 1B, and 65 in 1B on Wednesdays.
 - Checked that the area filter and the day filter apply together.
 - Checked the conflict check on overlapping classes, back-to-back classes (not a conflict), and the same time on different days (not a conflict).

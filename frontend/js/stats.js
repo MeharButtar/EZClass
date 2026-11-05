@@ -1,16 +1,21 @@
 // Numbers about a week of classes, for the strip under the calendar on
 // My Schedule: units, hours in class, days on campus, gaps between classes,
 // and "tight walks" (back to back classes in different buildings).
+// Counted per timed meeting, so a lecture and its lab in different buildings
+// count as a walk too. Online parts take no time on the calendar.
 // Pure functions, no DOM.
 
-import { DAYS, isTimed } from "./time.js";
+import { ALL_DAYS, timedMeetings } from "./time.js";
 
 export const TIGHT_WALK_MINUTES = 15;
 
 export function weekStats(sections) {
-  const timed = sections.filter(isTimed);
-  const byDay = new Map(DAYS.map((d) => [d, []]));
-  for (const s of timed) for (const d of s.dayList) byDay.get(d).push(s);
+  const byDay = new Map(ALL_DAYS.map((d) => [d, []]));
+  for (const s of sections) {
+    timedMeetings(s).forEach((m, idx) => {
+      for (const d of m.dayList) byDay.get(d).push({ s, idx, startMin: m.startMin, endMin: m.endMin, building: m.building });
+    });
+  }
 
   let minutesInClass = 0;
   let longestGap = 0;
@@ -21,20 +26,24 @@ export function weekStats(sections) {
     list.sort((a, b) => a.startMin - b.startMin);
     let busyUntil = null;
     let last = null;
-    for (const s of list) {
-      minutesInClass += s.endMin - s.startMin;
-      if (busyUntil !== null && s.startMin > busyUntil) {
-        totalGap += s.startMin - busyUntil;
-        longestGap = Math.max(longestGap, s.startMin - busyUntil);
+    for (const b of list) {
+      // time already counted (two meetings at once, "one time, two rooms") isn't counted twice
+      minutesInClass += Math.max(0, b.endMin - Math.max(b.startMin, busyUntil ?? b.startMin));
+      if (busyUntil !== null && b.startMin > busyUntil) {
+        totalGap += b.startMin - busyUntil;
+        longestGap = Math.max(longestGap, b.startMin - busyUntil);
       }
-      if (last && s.startMin >= last.endMin && s.startMin - last.endMin <= TIGHT_WALK_MINUTES
-          && last.building && s.building && last.building !== s.building) {
-        const key = `${last.id}-${s.id}`;
-        if (!walks.has(key)) walks.set(key, { from: last, to: s, minutes: s.startMin - last.endMin, days: [] });
+      if (last && b.startMin >= last.endMin && b.startMin - last.endMin <= TIGHT_WALK_MINUTES
+          && last.building && b.building && last.building !== b.building) {
+        const key = `${last.s.id}.${last.idx}-${b.s.id}.${b.idx}`;
+        if (!walks.has(key)) {
+          walks.set(key, { from: last.s, to: b.s, fromBuilding: last.building, toBuilding: b.building,
+                           minutes: b.startMin - last.endMin, days: [] });
+        }
         walks.get(key).days.push(day);
       }
-      if (!last || s.endMin >= last.endMin) last = s;
-      busyUntil = busyUntil === null ? s.endMin : Math.max(busyUntil, s.endMin);
+      if (!last || b.endMin >= last.endMin) last = b;
+      busyUntil = busyUntil === null ? b.endMin : Math.max(busyUntil, b.endMin);
     }
   }
 
@@ -42,7 +51,7 @@ export function weekStats(sections) {
     classes: sections.length,
     units: sections.reduce((n, s) => n + (s.units || 0), 0),
     hoursInClass: minutesInClass / 60,
-    days: DAYS.filter((d) => byDay.get(d).length),
+    days: ALL_DAYS.filter((d) => byDay.get(d).length),
     longestGap,
     totalGap,
     tightWalks: [...walks.values()],

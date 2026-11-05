@@ -8,7 +8,7 @@ import "../nav.js";
 import { getSubjects, searchSections } from "../api.js";
 import { CONFIG } from "../config.js";
 import { mountDock } from "../dock.js";
-import { sectionRow } from "../sections.js";
+import { onlineHeading, sectionRow, timedFirst } from "../sections.js";
 import { $, announce, clear, el, emptyBox, errorBox, loadingBox, plural, signal } from "../ui.js";
 
 const CHUNK = 40;
@@ -26,8 +26,10 @@ async function loadSubjects() {
   } catch (e) { /* the search still works without the list */ }
 }
 
-function renderResults(sections) {
+function renderResults(found) {
   clear(root);
+  const sections = timedFirst(found);
+  const online = sections.filter((s) => s.untimed).length;
   if (!sections.length) {
     root.append(emptyBox("No classes match", "Try fewer filters, or a different spelling of the professor's name."));
     return;
@@ -36,7 +38,10 @@ function renderResults(sections) {
   const more = el("button", { type: "button", class: "btn btn-block" });
   let shown = 0;
   const showMore = () => {
-    list.append(...sections.slice(shown, shown + CHUNK).map((s) => sectionRow(s, { showCourse: true })));
+    for (const s of sections.slice(shown, shown + CHUNK)) {
+      if (s.untimed && !list.querySelector(".sec-group")) list.append(onlineHeading(online));
+      list.append(sectionRow(s, { showCourse: true }));
+    }
     shown = Math.min(shown + CHUNK, sections.length);
     more.hidden = shown >= sections.length;
     more.textContent = `Show ${Math.min(CHUNK, sections.length - shown)} more of ${sections.length - shown}`;

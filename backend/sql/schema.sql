@@ -7,6 +7,8 @@ DROP TABLE IF EXISTS majors;
 DROP TABLE IF EXISTS course_ge;
 DROP TABLE IF EXISTS ge_areas;
 DROP TABLE IF EXISTS enrollments;
+DROP TABLE IF EXISTS section_instructors;
+DROP TABLE IF EXISTS section_meetings;
 DROP TABLE IF EXISTS sections;
 DROP TABLE IF EXISTS courses;
 DROP TABLE IF EXISTS professors;
@@ -24,10 +26,12 @@ CREATE TABLE professors (
     department   TEXT NOT NULL
 );
 
+-- One row per (building, room) a class meets in. ONLINE is not a room. The
+-- room can be blank (a class at another campus, "Southwestern College").
 CREATE TABLE rooms (
     room_id     INTEGER PRIMARY KEY AUTOINCREMENT,
     building    TEXT NOT NULL,
-    room_number TEXT NOT NULL,
+    room_number TEXT,                 -- text: keeps leading zeros ('060')
     capacity    INTEGER
 );
 
@@ -68,17 +72,25 @@ CREATE TABLE course_ge (
     UNIQUE (subject, catalog_num, area_code)
 );
 
+-- One row per section a student picks. When it meets lives in section_meetings
+-- and who teaches it in section_instructors. professor_id, room_id, days,
+-- start_time, end_time and capacity are the older one-meeting columns, kept
+-- filled from the first timed meeting (blank for an online-only section).
 CREATE TABLE sections (
     section_id     INTEGER PRIMARY KEY AUTOINCREMENT,
     course_id      INTEGER NOT NULL,
-    professor_id   INTEGER,
-    room_id        INTEGER,
+    professor_id   INTEGER,           -- first instructor
+    room_id        INTEGER,           -- room of the first timed meeting
     section_number TEXT NOT NULL,     -- e.g. '01', '02'
     term           TEXT NOT NULL,     -- e.g. 'Fall 2026'
-    days           TEXT NOT NULL,     -- e.g. 'MW', 'TTh', 'MWF'
-    start_time     TEXT NOT NULL,     -- 24h 'HH:MM', e.g. '14:00'
-    end_time       TEXT NOT NULL,     -- 24h 'HH:MM'
-    capacity       INTEGER,
+    days           TEXT,              -- e.g. 'MW', 'TTh', 'MWF'
+    start_time     TEXT,              -- 24h 'HH:MM', e.g. '14:00'
+    end_time       TEXT,              -- 24h 'HH:MM'
+    capacity       INTEGER,           -- same as seats_total
+    seats_text     TEXT,              -- as typed: '180 / 45' (seats per component)
+    seats_total    INTEGER,           -- smallest part; NULL = unknown
+    active         INTEGER NOT NULL DEFAULT 1,   -- 0 = no longer in the sheet (id kept, never reused)
+    section_title  TEXT,              -- this section's own title (special topics), else NULL
     FOREIGN KEY (course_id) REFERENCES courses(course_id),
     FOREIGN KEY (professor_id) REFERENCES professors(professor_id),
     FOREIGN KEY (room_id) REFERENCES rooms(room_id)
@@ -101,6 +113,37 @@ CREATE TABLE enrollments (
     FOREIGN KEY (section_id) REFERENCES sections(section_id),
     UNIQUE (student_id, section_id)
 );
+
+-- meetings:begin
+-- When a section meets: one row per meeting (lecture, lab, online part), in
+-- the sheet's order. Online meetings have no day, time or room. A section
+-- whose schedule isn't entered yet has no rows here. "IF NOT
+-- EXISTS" so db.py can add these tables to an older database (see
+-- upgrade_sections), filling them from the one-meeting columns.
+CREATE TABLE IF NOT EXISTS section_meetings (
+    section_id INTEGER NOT NULL,
+    idx        INTEGER NOT NULL,      -- 0, 1, 2 in the sheet's order
+    day_code   TEXT,                  -- 'MW', 'TTh'; NULL when online
+    start_min  INTEGER,               -- minutes after midnight (570 = 9:30); NULL when online
+    end_min    INTEGER,
+    building   TEXT,                  -- 'GMCS', 'ONLINE', 'Southwestern College'
+    room       TEXT,                  -- text: '060'
+    is_online  INTEGER NOT NULL DEFAULT 0,
+    PRIMARY KEY (section_id, idx),
+    FOREIGN KEY (section_id) REFERENCES sections(section_id)
+);
+
+-- Who teaches a section (often more than one person: lecture + lab).
+CREATE TABLE IF NOT EXISTS section_instructors (
+    section_id   INTEGER NOT NULL,
+    professor_id INTEGER NOT NULL,
+    idx          INTEGER NOT NULL DEFAULT 0,   -- order in the sheet
+    PRIMARY KEY (section_id, professor_id),
+    FOREIGN KEY (section_id) REFERENCES sections(section_id),
+    FOREIGN KEY (professor_id) REFERENCES professors(professor_id)
+);
+CREATE INDEX IF NOT EXISTS idx_section_instructors_professor ON section_instructors(professor_id);
+-- meetings:end
 
 -- majors:begin
 -- Majors and what each one requires, loaded from data/majors/*.csv. "IF NOT
