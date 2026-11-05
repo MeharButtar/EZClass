@@ -1,4 +1,4 @@
-EzClass import of cleaned2.xlsx
+EzClass import of EzClass_Data_Template_2_CLEANED.xlsx
 
 Rows read:                 2284
 Sections imported:         2284  (courses: 777)
