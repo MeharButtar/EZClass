@@ -13,6 +13,7 @@ import { setGhost } from "./calendar.js";
 import { ratingBadge } from "./ratings.js";
 import { CONFIG } from "./config.js";
 import { watchPlan } from "./plan.js";
+import { reportUrl } from "./nav.js";
 import { activePlan, isCompleted, isInPlan, toggleCompleted, toggleSection } from "./store.js";
 import { overlaps } from "./time.js";
 import { $$, el, instructorLinks, meetingLines, plural, seatsLabel } from "./ui.js";
@@ -177,7 +178,9 @@ export function courseCard(course, sections = [], { takenToggle = false, expande
   const setOpen = (open) => {
     if (!offered) return;
     if (open && !filled) {
-      body.append(el("ul", { class: "sec-list" }, sectionItems(sections)));
+      body.append(el("ul", { class: "sec-list" }, sectionItems(sections)),
+        el("p", { class: "course-report small" },
+          el("a", { href: reportUrl({ kind: "wrong_info", course: course.code }) }, `Something wrong with ${course.code}? Report it`)));
       filled = true;
     }
     body.hidden = !open;

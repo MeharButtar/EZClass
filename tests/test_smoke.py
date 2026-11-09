@@ -27,9 +27,11 @@ sys.path.insert(0, ROOT)
 TMP = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
 CLASS_DB = os.path.join(TMP.name, "scheduler.db")
 ANALYTICS_DB = os.path.join(TMP.name, "analytics.db")
+FEEDBACK_DB = os.path.join(TMP.name, "feedback.db")
 ADMIN_TOKEN = "test-admin-token"
 os.environ["EZCLASS_DB_PATH"] = CLASS_DB
 os.environ["ANALYTICS_DB_PATH"] = ANALYTICS_DB
+os.environ["FEEDBACK_DB_PATH"] = FEEDBACK_DB
 os.environ["ADMIN_TOKEN"] = ADMIN_TOKEN
 os.environ.pop("ANALYTICS_ENABLED", None)
 
@@ -91,7 +93,7 @@ class CoreTests(AppTestCase):
 
     def test_every_page_loads_with_shared_header_and_tracking(self):
         # the footer (with the #track-optout link) is built by nav.js, which each page module imports
-        for page in ("index", "major", "ge", "search", "schedule"):
+        for page in ("index", "major", "ge", "search", "schedule", "reviews", "support"):
             with self.client.get(f"/{page}.html") as res:
                 self.assertEqual(res.status_code, 200, page)
                 html = res.get_data(as_text=True)

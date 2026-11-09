@@ -32,7 +32,7 @@ $("#schedule-sub").textContent = `Your ${CONFIG.termName} week. Keep up to three
 // Before you register: our copy of the schedule can be out of date.
 const registerNote = $("#register-note");
 const noteDate = el("span");
-const noteReport = reportLink("Tell us");
+const noteReport = reportLink("Tell us", { kind: "wrong_info" });
 registerNote.append(...[
   el("strong", {}, "Before you register: "),
   `confirm every class in ${CONFIG.registrationSite}. Times, rooms and professors can change.`,

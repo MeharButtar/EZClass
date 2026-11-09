@@ -182,6 +182,17 @@ export function findCourses({ subjects, min, max, hasSections = true }) {
   return cached(`/api/courses?${query}`);
 }
 
+export function postJSON(url, body) {
+  return request(url, {
+    method: "POST",
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+}
+
+// Approved reviews, newest first: { average, count, reviews: [{ rating, comment, name, date }] }
+export const getReviews = (offset = 0, limit = 20) => request(`/api/reviews?limit=${limit}&offset=${offset}`, { cache: "no-store" });
+
 export function checkConflicts(sectionIds) {
   return request("/api/schedule/check", {
     method: "POST",

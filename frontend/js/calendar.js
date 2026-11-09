@@ -12,6 +12,7 @@
 
 import { CONFIG } from "./config.js";
 import { ratingControls } from "./ratings.js";
+import { reportUrl } from "./nav.js";
 import { removeSection } from "./store.js";
 import { DAY_NAMES, DAY_SHORT, formatRange, formatTime, isTimed, timedMeetings, weekColumns } from "./time.js";
 import { clear, el, instructorLinks, meetingLines, openDialog, seatsLabel } from "./ui.js";
@@ -89,6 +90,9 @@ export function showSectionCard(section) {
         section.instructors.length ? el("dd", {}, ratingControls(section, { beforeOpen: () => dialog.close() })) : null,
         el("dt", {}, "Seats"), el("dd", {}, seatsLabel(section)),
         el("dt", {}, "Units"), el("dd", {}, String(section.units || "–"))),
+      el("p", { class: "small" }, el("a", {
+        href: reportUrl({ kind: "wrong_info", course: section.code, section: section.sectionNumber }),
+      }, "Report wrong info for this class")),
       el("div", { class: "dialog-actions" },
         el("button", { type: "button", class: "btn", on: { click: () => dialog.close() } }, "Close"),
         el("button", {

@@ -34,10 +34,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 DEFAULT_DB_PATH = os.path.join(BASE_DIR, "backend", "sql", "analytics.db")
 
 # cart_* events mean add to / remove from / clear the active plan (names kept from v1)
+# review_submit / support_submit only say that something was sent (and the support kind), never the text
 ALLOWED_EVENTS = {"page_view", "search", "ge_search", "cart_add", "cart_remove", "cart_clear", "conflict_check",
-                  "major_select", "plan_create"}
+                  "major_select", "plan_create", "review_submit", "support_submit"}
 ALLOWED_PROPS = ("view", "subject", "day", "areas", "results", "has_prof", "has_kw", "cart_size", "conflict_free",
-                 "major")
+                 "major", "kind")
 ID_PATTERN = re.compile(r"^[A-Za-z0-9-]{8,64}$")
 MAX_BODY_BYTES = 2048
 MAX_PROP_CHARS = 40
