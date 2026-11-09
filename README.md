@@ -37,7 +37,8 @@ up to three plans (A, B, C). Everything they pick stays in their own browser.
   support messages" below).
 - **My Schedule** (`schedule.html`): plan tabs (A, B, C) with rename, duplicate,
   delete and undo, the full-size week, a stats strip (units, hours, days on
-  campus, gaps, tight walks between buildings) and the conflict check.
+  campus, gaps) and the conflict check. Two or more sections of one course
+  are allowed (backups); the calendar says so and units count the course once.
 - On My Major, GE and Search the week calendar is docked on the right (a "My
   week" sheet on phones). Pointing at a section draws a dashed preview on it,
   which turns red if it would overlap something already in the plan.

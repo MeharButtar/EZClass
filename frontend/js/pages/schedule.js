@@ -102,26 +102,13 @@ function renderStats(sections) {
     cell(String(s.units), "units"),
     cell(formatDuration(Math.round(s.hoursInClass * 60)), "in class per week"),
     cell(String(s.days.length), s.days.length ? `days on campus (${s.days.map((d) => DAY_SHORT[d]).join(", ")})` : "days on campus"),
-    cell(formatDuration(s.longestGap), "longest gap in a day"),
-    cell(String(s.tightWalks.length), "tight walks"));
-  $("#walks").textContent = s.tightWalks.length
-    ? `Tight walks (${s.tightWalks[0].minutes} minutes or less between buildings): ` + s.tightWalks.map((w) =>
-        `${w.from.code} (${w.fromBuilding}) to ${w.to.code} (${w.toBuilding}) on ${w.days.map((d) => DAY_SHORT[d]).join("/")}`).join("; ")
-    : "";
+    cell(formatDuration(s.longestGap), "longest gap in a day"));
 }
 
-// More than one section of a course in the open plan: allowed (backups), but
-// the student should pick one when registering. Each plan is checked on its own.
-function renderRepeats(sections, state) {
-  const box = $("#repeat-hint");
-  const plan = state.plans[state.activePlan];
-  const repeats = repeatedCourses(sections);
-  box.hidden = repeats.length === 0;
-  $("#stats-note").hidden = repeats.length === 0;
-  clear(box).append(...repeats.map(({ code, sections: list }) => el("p", {},
-    el("strong", {}, "Heads up: "),
-    `you have more than one section of ${code} in ${plan.name} (${list.map((s) => `Sec ${s.sectionNumber}`).join(", ")}). `
-      + `Don't forget to pick just one when you register, unless you're keeping ${list.length === 2 ? "both" : "them"} as backups.`)));
+// More than one section of a course: the calendar itself says so (calendar.js);
+// here the stats get a note that hours count every section and units don't.
+function renderRepeats(sections) {
+  $("#stats-note").hidden = repeatedCourses(sections).length === 0;
 }
 
 function renderList(sections, state) {
@@ -196,7 +183,7 @@ renderActions(getState());
 watchPlan((sections, state, error) => {
   calendar.update(sections);
   renderStats(sections);
-  renderRepeats(sections, state);
+  renderRepeats(sections);
   renderList(sections, state);
   if (error) {
     result.className = "conflict-box bad";
