@@ -228,6 +228,37 @@ button, input, select { font: inherit; color: inherit; }
 .homenav { margin-left: auto; display: flex; align-items: center; gap: var(--sp-2); }
 .topbar-tools { margin-left: auto; display: flex; align-items: center; gap: var(--sp-2); min-width: 0; }
 
+/* Reviews and Support: in the bar on wider screens, in "More" on phones */
+.nav-more { display: none; position: relative; }
+.more-btn { border: 0; background: none; cursor: pointer; font: inherit; font-weight: 550; font-size: var(--fs-sm); }
+.more-btn::after { content: " ▾"; content: " ▾" / ""; font-size: 0.75em; }
+.more-btn[aria-expanded="true"] { color: var(--text) !important; background: var(--surface-2); }
+.more-list {
+  position: absolute; right: 0; top: calc(100% + var(--sp-1)); z-index: 5; min-width: 11rem;
+  list-style: none; margin: 0; padding: var(--sp-1);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); box-shadow: var(--shadow-2);
+}
+.more-list[hidden] { display: none; }
+.more-link {
+  display: flex; align-items: center; min-height: 2.75rem; padding: 0 var(--sp-3); border-radius: var(--r-sm);
+  color: var(--text) !important; text-decoration: none; font-weight: 550; font-size: var(--fs-sm);
+}
+.more-link:hover { background: var(--surface-2); }
+.more-link[aria-current="page"] { color: var(--accent-strong) !important; background: var(--accent-soft); }
+body.more-open .topbar { z-index: 42; }   /* the open menu sits above the "My week" button */
+@media (max-width: 759.98px) {
+  .nav-extra, .mainnav .navlink.nav-extra { display: none; }
+  .nav-more { display: flex; }
+  .more-btn { min-height: 2.75rem; }
+}
+/* small tablets: six links and the chips fit with the short labels and the logo mark only */
+@media (min-width: 760px) and (max-width: 979.98px) {
+  body:not([data-page="home"]) .logo-text { display: none; }
+  .mainnav .nav-long { display: none; }
+  .mainnav .nav-short { display: inline; }
+  .mainnav .navlink { padding: var(--sp-2); }
+}
+
 /* page */
 main.page {
   flex: 1; width: 100%; max-width: var(--page-max); margin: 0 auto;
@@ -295,6 +326,10 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
     border-radius: 0; font-size: var(--fs-sm); padding: 0;
   }
   .mainnav .navlink[aria-current="page"] { background: transparent; box-shadow: inset 0 3px 0 var(--accent); }
+  .mainnav .nav-more { flex: 1; }
+  .mainnav .more-btn { width: 100%; }
+  .mainnav .more-btn.is-current { color: var(--accent-strong) !important; box-shadow: inset 0 3px 0 var(--accent); }
+  .mainnav .more-list { top: auto; bottom: calc(100% + var(--sp-2)); right: var(--sp-2); }
   .nav-long { display: none; }
   .nav-short { display: inline; }
   .topbar-inner { gap: var(--sp-2); padding: 0 var(--sp-3); }

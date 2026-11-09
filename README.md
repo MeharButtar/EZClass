@@ -34,7 +34,8 @@ up to three plans (A, B, C). Everything they pick stays in their own browser.
 - **Reviews** (`reviews.html`) and **Support** (`support.html`): students can
   rate the site and report a wrong class time, a missing class or a bug. No
   accounts; reviews show only after the owner approves them (see "Reviews and
-  support messages" below).
+  support messages" below). Both are in the top bar on every page; on phones
+  they sit under "More" in the bottom tab bar (and in the home page header).
 - **My Schedule** (`schedule.html`): plan tabs (A, B, C) with rename, duplicate,
   delete and undo, the full-size week, a stats strip (units, hours, days on
   campus, gaps) and the conflict check. Two or more sections of one course
