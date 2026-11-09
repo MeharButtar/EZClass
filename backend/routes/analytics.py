@@ -39,6 +39,10 @@ ALLOWED_EVENTS = {"page_view", "search", "ge_search", "cart_add", "cart_remove",
                   "major_select", "plan_create", "review_submit", "support_submit"}
 ALLOWED_PROPS = ("view", "subject", "day", "areas", "results", "has_prof", "has_kw", "cart_size", "conflict_free",
                  "major", "kind")
+# a page_view's "view" and a support_submit's "kind" must be one of these
+# (VIEWS in frontend/js/track.js, KINDS in feedback.py); anything else is dropped
+ALLOWED_VIEWS = {"home", "major", "ge", "search", "schedule", "reviews", "support"}
+ALLOWED_KINDS = {"broken", "wrong_info", "missing_class", "idea", "other"}
 ID_PATTERN = re.compile(r"^[A-Za-z0-9-]{8,64}$")
 MAX_BODY_BYTES = 2048
 MAX_PROP_CHARS = 40
@@ -113,6 +117,10 @@ def clean_props(props):
             cleaned[key] = value
         elif isinstance(value, str):
             cleaned[key] = value[:MAX_PROP_CHARS]
+    if cleaned.get("view") not in ALLOWED_VIEWS:
+        cleaned.pop("view", None)
+    if cleaned.get("kind") not in ALLOWED_KINDS:
+        cleaned.pop("kind", None)
     return cleaned
 
 

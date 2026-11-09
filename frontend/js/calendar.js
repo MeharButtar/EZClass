@@ -11,8 +11,8 @@
 // drawn and never in a clash.
 //
 // A student may add more than one section of a course (backups). That's
-// allowed; the calendar says so in a note under the grid, the blocks of that
-// course get a "2×" badge, and pointing at another section of a course that's
+// allowed; the calendar says so in a note under the grid ("You have 2 sections
+// of SOC 101..."), the blocks of that course get a "2×" badge, and pointing at another section of a course that's
 // already in the plan says it would be a second one.
 
 import { CONFIG } from "./config.js";
@@ -191,8 +191,7 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
     if (repeats.length) {
       const plan = getState().plans[getState().activePlan];
       notes.append(el("div", { class: "cal-repeat" }, repeats.map(({ code, sections: list }) => el("p", {},
-        el("span", { class: "repeat-badge", "aria-hidden": "true" }, `${list.length}×`), " ",
-        el("strong", {}, `${list.length} sections of ${code}`),
+        "You have ", el("strong", {}, `${list.length} sections of ${code}`),
         ` in ${plan?.name || "this plan"} (${list.map((x) => `Sec ${x.sectionNumber}`).join(", ")}). `
           + `Pick just one when you register, unless you're keeping ${list.length === 2 ? "the other as a backup" : "the others as backups"}.`))));
     }

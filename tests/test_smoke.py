@@ -254,6 +254,27 @@ class AnalyticsTests(AppTestCase):
         self.assertEqual(rows[0]["device"], "desktop")
         self.assertEqual(rows[0]["session_id"], "session-1234")
 
+    def test_reviews_and_support_are_counted(self):
+        vid = "visitor-feedback-pages"
+        for view in ("reviews", "support"):
+            self.assertEqual(self.event(vid, props={"view": view}).status_code, 204)
+        self.assertEqual(self.event(vid, "review_submit").status_code, 204)
+        self.assertEqual(self.event(vid, "support_submit", {"kind": "wrong_info"}).status_code, 204)
+        rows = stored_events(vid)
+        self.assertEqual([r["event"] for r in rows], ["page_view", "page_view", "review_submit", "support_submit"])
+        self.assertEqual(json.loads(rows[3]["props"]), {"kind": "wrong_info"})
+        stats = self.client.get("/api/admin/stats?days=1", headers={"Authorization": f"Bearer {ADMIN_TOKEN}"}).get_json()
+        self.assertGreaterEqual(stats["page_views_by_view"].get("reviews", 0), 1)
+        self.assertGreaterEqual(stats["page_views_by_view"].get("support", 0), 1)
+        self.assertGreaterEqual(stats["by_event"].get("review_submit", 0), 1)
+        self.assertGreaterEqual(stats["by_event"].get("support_submit", 0), 1)
+
+    def test_unknown_view_or_kind_is_dropped(self):
+        vid = "visitor-unknown-view"
+        self.assertEqual(self.event(vid, props={"view": "my email is a@b.c"}).status_code, 204)
+        self.assertEqual(self.event(vid, "support_submit", {"kind": "free text here"}).status_code, 204)
+        self.assertEqual([json.loads(r["props"]) for r in stored_events(vid)], [{}, {}])
+
     def test_device_is_only_mobile_or_desktop(self):
         vid = "visitor-mobile"
         ua = "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) Mobile/15E148"
