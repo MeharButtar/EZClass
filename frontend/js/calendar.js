@@ -7,7 +7,7 @@
 // A section with several meetings (lecture + lab) gets a block for each
 // meeting on each day. Only timed meetings go on the grid: a hybrid section's
 // blocks say "+ online part", and online-only sections (and ones whose time
-// isn't listed yet) are listed under the grid ("Online / no set time"), never
+// isn't listed yet) are listed under the grid ("Online or no time listed"), never
 // drawn and never in a clash.
 
 import { CONFIG } from "./config.js";
@@ -147,14 +147,15 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
           type: "button",
           class: `cal-blk sub-${colorIndex(s.subject, order)}${clash ? " clash" : ""}`,
           style: { top: pct(b.startMin), height: height(b.startMin, b.endMin), left: `${lane * width}%`, width: `${width}%` },
-          "aria-label": `${s.code} section ${s.sectionNumber}, ${DAY_NAMES[d]} ${time}${m.room ? `, ${m.room}` : ""}`
-            + `${s.onlinePart ? ", plus an online part" : ""}${clash ? ", overlaps another class" : ""}. Details`,
+          // starts with the words shown on the block (Label in Name), then the rest
+          "aria-label": [s.code, time, m.room, s.onlinePart ? "+ online part" : ""].filter(Boolean).join(" ")
+            + `, section ${s.sectionNumber}, ${DAY_NAMES[d]}${clash ? ", overlaps another class" : ""}. Details`,
           dataset: { sectionId: s.id, meeting: b.idx },
           on: { click: () => onSelect(s) },
         },
-        el("span", { class: "blk-code" }, s.code),
-        el("span", { class: "blk-time" }, time),
-        m.room ? el("span", { class: "blk-room" }, m.room) : null,
+        el("span", { class: "blk-code" }, s.code), " ",
+        el("span", { class: "blk-time" }, time), " ",
+        m.room ? el("span", { class: "blk-room" }, m.room) : null, " ",
         s.onlinePart ? el("span", { class: "blk-online" }, "+ online part") : null));
       }
       for (const g of ghostBlocks.filter((b) => b.day === d)) {
@@ -184,11 +185,11 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
     const untimed = sections.filter((s) => !isTimed(s));
     if (untimed.length) {
       notes.append(el("div", { class: "cal-online" },
-        el("p", { class: "cal-online-title" }, "Online / no set time"),
+        el("p", { class: "cal-online-title" }, "Online or no time listed"),
         el("ul", {}, untimed.map((s) => el("li", {},
           el("button", {
             type: "button", class: "linkbtn small",
-            "aria-label": `${s.code} section ${s.sectionNumber}, ${s.noSchedule ? "time not listed yet" : "online with no set time"}. Details`,
+            "aria-label": `${s.code} · Sec ${s.sectionNumber}${s.noSchedule ? " (time not listed yet)" : ", online with no set time"}. Details`,
             on: { click: () => onSelect(s) },
           }, `${s.code} · Sec ${s.sectionNumber}${s.noSchedule ? " (time not listed yet)" : ""}`))))));
     }

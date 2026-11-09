@@ -5,6 +5,8 @@
 // Typing searches by itself after a short pause; only Enter, the Search button
 // and the dropdowns report to tracking, and only whether the professor or
 // keyword box was used, never what was typed.
+// The filters live in the address (search.html?q=cs%20480&day=M), so a refresh,
+// the Back button and a shared link all bring the same search back.
 
 import "../nav.js";
 import { getSubjects, searchSections } from "../api.js";
@@ -64,9 +66,18 @@ function renderResults(found, params) {
 
 let seq = 0;
 
+// the address follows the filters (replaceState: typing doesn't fill the Back history)
+function rememberInUrl(params) {
+  try {
+    const query = new URLSearchParams(Object.entries(params).filter(([, v]) => v)).toString();
+    history.replaceState(null, "", query ? `?${query}` : location.pathname);
+  } catch (e) { /* the search still works */ }
+}
+
 async function search({ report = true } = {}) {
   const params = Object.fromEntries(Object.entries(fields).map(([k, input]) => [k, input.value.trim()]));
   const mine = ++seq;
+  rememberInUrl(params);
   if (params.q.replace(/[^\p{L}\p{N}]/gu, "").length === 1) {   // one letter or digit: wait for more
     clear(root).append(emptyBox("Keep typing", "At least 2 characters."));
     announce(countLine, "Keep typing, at least 2 characters.");
@@ -103,5 +114,15 @@ form.addEventListener("reset", () => setTimeout(() => search({ report: false }),
 fields.subject.addEventListener("change", () => search());
 fields.day.addEventListener("change", () => search());
 
-loadSubjects();
-search({ report: false });
+// filters from the address (a shared link, a refresh, /search?q=...); a value a
+// dropdown doesn't have is ignored. The first search waits for the subject list.
+const fromUrl = new URLSearchParams(location.search);
+fields.q.value = (fromUrl.get("q") || "").slice(0, 100);
+fields.professor.value = (fromUrl.get("professor") || "").slice(0, 100);
+const pick = (select, value) => { if ([...select.options].some((o) => o.value === value)) select.value = value; };
+pick(fields.day, fromUrl.get("day") || "");
+
+loadSubjects().finally(() => {
+  pick(fields.subject, (fromUrl.get("subject") || "").replace(/[^A-Za-z0-9]/g, "").toUpperCase());
+  search({ report: false });
+});

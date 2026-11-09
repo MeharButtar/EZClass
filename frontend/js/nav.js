@@ -95,8 +95,8 @@ function updatePlanChip(state) {
   const plan = state.plans[state.activePlan];
   const n = plan.sectionIds.length;
   planChip.textContent = "";
-  planChip.append(el("span", { class: "chip-text" }, plan.name), el("span", { class: "count", "data-plan-count": "" }, String(n)));
-  planChip.setAttribute("aria-label", `${plan.name}, ${n} ${n === 1 ? "section" : "sections"}. Open My Schedule`);
+  planChip.append(el("span", { class: "chip-text" }, plan.name), " ", el("span", { class: "count", "data-plan-count": "" }, String(n)));
+  planChip.setAttribute("aria-label", `${plan.name} ${n} ${n === 1 ? "section" : "sections"}, open My Schedule`);
 }
 
 // ---------- footer ----------

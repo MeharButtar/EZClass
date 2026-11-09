@@ -400,6 +400,19 @@ a per-day list, counts per event, page views per page, how often each major was
 picked, the most picked GE areas, conflict check outcomes, and mobile vs desktop. Dates are UTC. Without
 `ADMIN_TOKEN` set, the stats URL returns 404.
 
+### Search engines and links
+
+`/robots.txt` and `/sitemap.xml` are made by the app from the address it's
+served at (set `SITE_URL` to pin it, e.g. once you have your own domain): the
+sitemap lists the home page, My Major, GE, Search, My Schedule, Reviews and
+Support, and robots.txt keeps crawlers out of `/api/`. Short links work too:
+`/search`, `/major`, `/ge`, `/schedule`, `/reviews` and `/support` redirect to
+the pages (keeping `?q=...`), and Search keeps its filters in the address, so
+`/search?q=cs%20480` is a shareable link. Unknown addresses get a friendly
+404 page; unknown `/api/` addresses get a JSON 404. Text and JSON answers are
+gzipped for browsers that accept it (the full section list goes from 1.6 MB
+to under 100 KB).
+
 ### Reviews and support messages
 
 Students can leave a review (`reviews.html`: 1 to 5 stars, an optional comment

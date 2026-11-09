@@ -494,6 +494,8 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 }
 .add-btn:hover { background: var(--accent-soft); }
 .add-btn[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+.add-btn[data-state="add"]::before { content: "+ " / ""; }
+.add-btn[data-state="added"]::before { content: "✓ " / ""; }
 @media (max-width: 479.98px) {
   .logo-text { display: none; }
   .sec-row { grid-template-columns: minmax(0, 1fr) auto; }

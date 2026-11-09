@@ -160,7 +160,8 @@ def search_sections():
       professor -> every typed word starts an instructor's first or last name
                    ("Rapp", "Rapp, Michael", "M Rapp")
       day       -> a single day letter/token that some timed meeting must
-                   fall on, e.g. ?day=M (online-only sections never match)
+                   fall on, e.g. ?day=M (online-only sections never match);
+                   anything else is a 400
       q         -> course code or title words: "CS 480", "cs4", "GEN S 147",
                    "data science" (see backend/search.py). Exact codes come
                    first, then code prefixes, then title matches.
@@ -194,6 +195,8 @@ def search_sections():
         params.append(subject)
 
     day = request.args.get("day")   # filtered below with parse_days, not LIKE
+    if day and day not in DAY_TOKENS:
+        return jsonify({"error": "day must be one of M, T, W, Th, F, Sa, Su"}), 400
 
     conn = get_connection()
     # the typed text is matched in Python (backend/search.py), never put into SQL
