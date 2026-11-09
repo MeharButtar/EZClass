@@ -17,6 +17,13 @@ const LINKS = [
   { page: "search", href: "search.html", label: "Search", short: "Search" },
   { page: "schedule", href: "schedule.html", label: "My Schedule", short: "Schedule" },
 ];
+// In the bar on wider screens; on phones they sit in a "More" menu, because
+// seven tabs don't fit in the bottom bar (or in the home page header).
+const EXTRA_LINKS = [
+  { page: "reviews", href: "reviews.html", label: "Reviews" },
+  { page: "support", href: "support.html", label: "Support" },
+];
+const current = (l) => (l.page === page ? "page" : null);
 
 // ---------- theme ----------
 
@@ -53,11 +60,44 @@ function themeButton() {
 const logo = () => el("a", { class: "logo", href: "index.html", "aria-label": `${CONFIG.productName} home` },
   el("span", { class: "logo-mark", "aria-hidden": "true" }), el("span", { class: "logo-text" }, CONFIG.productName));
 
+// Reviews and Support as plain links (shown on wider screens) ...
+const extraLinks = () => EXTRA_LINKS.map((l) =>
+  el("a", { href: l.href, class: "navlink nav-extra", "aria-current": current(l) }, l.label));
+
+// ... and the same two in a "More" disclosure (shown on phones only, so
+// screen readers never meet both). The button opens and closes it; Escape,
+// choosing a link, tapping elsewhere or tabbing out close it.
+function moreMenu(id) {
+  const holdsCurrent = EXTRA_LINKS.some((l) => l.page === page);
+  const list = el("ul", { class: "more-list", id, hidden: true },
+    EXTRA_LINKS.map((l) => el("li", {}, el("a", { href: l.href, class: "more-link", "aria-current": current(l) }, l.label))));
+  const button = el("button", {
+    type: "button", class: `navlink more-btn${holdsCurrent ? " is-current" : ""}`,
+    "aria-expanded": "false", "aria-controls": id,
+  }, "More");
+  const wrap = el("div", { class: "nav-more" }, button, list);
+  const setOpen = (open) => {
+    list.hidden = !open;
+    button.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("more-open", open);
+  };
+  button.addEventListener("click", () => setOpen(list.hidden));
+  list.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
+  wrap.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !list.hidden) { e.preventDefault(); setOpen(false); button.focus(); }
+  });
+  wrap.addEventListener("focusout", (e) => { if (!wrap.contains(e.relatedTarget)) setOpen(false); });
+  document.addEventListener("pointerdown", (e) => { if (!list.hidden && !wrap.contains(e.target)) setOpen(false); });
+  return wrap;
+}
+
 function homeHeader() {
   return el("div", { class: "topbar-inner" },
     logo(),
     el("nav", { class: "homenav", "aria-label": "Main" },
       el("a", { href: "ge.html", class: "navlink" }, "GE"),
+      extraLinks(),
+      moreMenu("more-home"),
       el("a", { href: "major.html", class: "btn btn-primary btn-sm" }, "Start planning")),
     themeButton());
 }
@@ -69,9 +109,10 @@ function appHeader() {
   return el("div", { class: "topbar-inner" },
     logo(),
     el("nav", { class: "mainnav", "aria-label": "Scheduler" },
-      LINKS.map((l) => el("a", {
-        href: l.href, class: "navlink", "aria-current": l.page === page ? "page" : null,
-      }, el("span", { class: "nav-long" }, l.label), el("span", { class: "nav-short" }, l.short)))),
+      LINKS.map((l) => el("a", { href: l.href, class: "navlink", "aria-current": current(l) },
+        el("span", { class: "nav-long" }, l.label), el("span", { class: "nav-short" }, l.short))),
+      extraLinks(),
+      moreMenu("more-app")),
     el("div", { class: "topbar-tools" }, majorChip, planChip, themeButton()));
 }
 
