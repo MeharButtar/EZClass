@@ -36,6 +36,7 @@
           <div id="week"></div>
           <div class="stats-strip" id="stats" aria-label="Week at a glance"></div>
           <p class="tight" id="walks"></p>
+          <p class="tight small muted" id="stats-note" hidden>Hours count every section in this plan, including backups. Units count each course once.</p>
         </div>
         <div class="side-panel">
           <section class="card">
@@ -43,6 +44,7 @@
             <div class="conflict-box" id="conflict-result" aria-live="polite"></div>
             <button type="button" class="btn btn-sm" id="check-btn">Check again</button>
           </section>
+          <section class="card hint-card" id="repeat-hint" role="status" hidden></section>
           <section class="card">
             <h2 id="list-title">Classes in this plan</h2>
             <div id="plan-list"></div>

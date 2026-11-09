@@ -9,6 +9,24 @@ import { ALL_DAYS, timedMeetings } from "./time.js";
 
 export const TIGHT_WALK_MINUTES = 15;
 
+// A student may add several sections of one course on purpose (backups), so
+// units count each course once. CS 150 and CS 150L are different courses.
+export function planUnits(sections) {
+  const units = new Map();
+  for (const s of sections) if (!units.has(s.code)) units.set(s.code, s.units || 0);
+  return [...units.values()].reduce((n, u) => n + u, 0);
+}
+
+// Courses with more than one section in the plan: [{ code, sections }], in plan order.
+export function repeatedCourses(sections) {
+  const byCode = new Map();
+  for (const s of sections) {
+    if (!byCode.has(s.code)) byCode.set(s.code, []);
+    byCode.get(s.code).push(s);
+  }
+  return [...byCode].filter(([, list]) => list.length > 1).map(([code, list]) => ({ code, sections: list }));
+}
+
 export function weekStats(sections) {
   const byDay = new Map(ALL_DAYS.map((d) => [d, []]));
   for (const s of sections) {
@@ -49,7 +67,7 @@ export function weekStats(sections) {
 
   return {
     classes: sections.length,
-    units: sections.reduce((n, s) => n + (s.units || 0), 0),
+    units: planUnits(sections),
     hoursInClass: minutesInClass / 60,
     days: ALL_DAYS.filter((d) => byDay.get(d).length),
     longestGap,

@@ -648,6 +648,7 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 .conflict-box.bad { background: var(--danger-soft); color: var(--danger); }
 .conflict-box + .btn { margin-top: var(--sp-3); }
 .conflict-box ul { margin: var(--sp-2) 0 0; padding-left: 1.1rem; }
+.hint-card { background: var(--accent-soft); border-color: transparent; display: grid; gap: var(--sp-2); font-size: var(--fs-sm); }
 .plan-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-2); }
 .plan-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--sp-1) var(--sp-3); align-items: center; padding: var(--sp-3); border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); }
 .plan-item .meets { margin: var(--sp-1) 0; }

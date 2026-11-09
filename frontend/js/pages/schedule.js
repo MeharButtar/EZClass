@@ -10,7 +10,7 @@ import { CONFIG } from "../config.js";
 import { watchPlan } from "../plan.js";
 import { ratingControls } from "../ratings.js";
 import { sectionLabel } from "../sections.js";
-import { formatDuration, weekStats } from "../stats.js";
+import { formatDuration, repeatedCourses, weekStats } from "../stats.js";
 import {
   MAX_PLANS, canUndo, clearPlan, createPlan, deletePlan, duplicatePlan, getState, removeSection,
   renamePlan, subscribe, switchPlan, undo,
@@ -110,6 +110,20 @@ function renderStats(sections) {
     : "";
 }
 
+// More than one section of a course in the open plan: allowed (backups), but
+// the student should pick one when registering. Each plan is checked on its own.
+function renderRepeats(sections, state) {
+  const box = $("#repeat-hint");
+  const plan = state.plans[state.activePlan];
+  const repeats = repeatedCourses(sections);
+  box.hidden = repeats.length === 0;
+  $("#stats-note").hidden = repeats.length === 0;
+  clear(box).append(...repeats.map(({ code, sections: list }) => el("p", {},
+    el("strong", {}, "Heads up: "),
+    `you have more than one section of ${code} in ${plan.name} (${list.map((s) => `Sec ${s.sectionNumber}`).join(", ")}). `
+      + `Don't forget to pick just one when you register, unless you're keeping ${list.length === 2 ? "both" : "them"} as backups.`)));
+}
+
 function renderList(sections, state) {
   const box = $("#plan-list");
   const plan = state.plans[state.activePlan];
@@ -182,6 +196,7 @@ renderActions(getState());
 watchPlan((sections, state, error) => {
   calendar.update(sections);
   renderStats(sections);
+  renderRepeats(sections, state);
   renderList(sections, state);
   if (error) {
     result.className = "conflict-box bad";
