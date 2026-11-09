@@ -10,7 +10,7 @@ import { CONFIG } from "../config.js";
 import { watchPlan } from "../plan.js";
 import { ratingControls } from "../ratings.js";
 import { sectionLabel } from "../sections.js";
-import { formatDuration, weekStats } from "../stats.js";
+import { formatDuration, repeatedCourses, weekStats } from "../stats.js";
 import {
   MAX_PLANS, canUndo, clearPlan, createPlan, deletePlan, duplicatePlan, getState, removeSection,
   renamePlan, subscribe, switchPlan, undo,
@@ -32,7 +32,7 @@ $("#schedule-sub").textContent = `Your ${CONFIG.termName} week. Keep up to three
 // Before you register: our copy of the schedule can be out of date.
 const registerNote = $("#register-note");
 const noteDate = el("span");
-const noteReport = reportLink("Tell us");
+const noteReport = reportLink("Tell us", { kind: "wrong_info" });
 registerNote.append(...[
   el("strong", {}, "Before you register: "),
   `confirm every class in ${CONFIG.registrationSite}. Times, rooms and professors can change.`,
@@ -102,12 +102,13 @@ function renderStats(sections) {
     cell(String(s.units), "units"),
     cell(formatDuration(Math.round(s.hoursInClass * 60)), "in class per week"),
     cell(String(s.days.length), s.days.length ? `days on campus (${s.days.map((d) => DAY_SHORT[d]).join(", ")})` : "days on campus"),
-    cell(formatDuration(s.longestGap), "longest gap in a day"),
-    cell(String(s.tightWalks.length), "tight walks"));
-  $("#walks").textContent = s.tightWalks.length
-    ? `Tight walks (${s.tightWalks[0].minutes} minutes or less between buildings): ` + s.tightWalks.map((w) =>
-        `${w.from.code} (${w.fromBuilding}) to ${w.to.code} (${w.toBuilding}) on ${w.days.map((d) => DAY_SHORT[d]).join("/")}`).join("; ")
-    : "";
+    cell(formatDuration(s.longestGap), "longest gap in a day"));
+}
+
+// More than one section of a course: the calendar itself says so (calendar.js);
+// here the stats get a note that hours count every section and units don't.
+function renderRepeats(sections) {
+  $("#stats-note").hidden = repeatedCourses(sections).length === 0;
 }
 
 function renderList(sections, state) {
@@ -182,6 +183,7 @@ renderActions(getState());
 watchPlan((sections, state, error) => {
   calendar.update(sections);
   renderStats(sections);
+  renderRepeats(sections);
   renderList(sections, state);
   if (error) {
     result.className = "conflict-box bad";

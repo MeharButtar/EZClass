@@ -30,21 +30,19 @@ const blockId = (code) => `area-${code.replace(/[^A-Za-z0-9]/g, "-")}`;
 
 let areas = [];              // [{ area_code, name, grp, section_count }]
 let allSections = [];        // every GE section
+let serverMatch = null;      // ids of sections matching the keyword / professor boxes (server search), or null
 let majorCourses = [];       // [{ code, ge_areas }] from the student's major, if any
 let plannedSections = [];
 const blocks = new Map();    // area code -> { box, body, head parts, open, covered }
 
 // ---------- filtering ----------
 
-// Professor and keyword work like the server's search: a case-insensitive
-// "contains" on the professor's name, and on the course title or number.
+// The keyword and professor boxes are matched by the server, the same search
+// as the Search page ("ANTH 102", "anth102", "Rapp, Michael"); the rest here.
 function passes(s) {
   const day = daySelect.value;
   if (day && !s.dayList.includes(day)) return false;
-  const prof = profInput.value.trim().toLowerCase();
-  if (prof && !s.instructors.some((p) => p.name.toLowerCase().includes(prof))) return false;
-  const q = keywordInput.value.trim().toLowerCase();
-  if (q && !s.title.toLowerCase().includes(q) && !s.catalog.toLowerCase().includes(q)) return false;
+  if (serverMatch && !serverMatch.has(s.id)) return false;
   if (tagBoxes.cd.checked && !s.cd) return false;
   if (tagBoxes.es.checked && !s.es) return false;
   if (tagBoxes.ai.checked && !s.ai) return false;
@@ -204,12 +202,29 @@ function updateCoverage(initial = false) {
 }
 
 let appliedFilters = "";   // the filters last applied, so Enter + change don't run (and count) twice
+let matchSeq = 0;
 
-function applyFilters() {
-  const now = JSON.stringify([daySelect.value, profInput.value.trim(), keywordInput.value.trim(),
-    tagBoxes.cd.checked, tagBoxes.es.checked, tagBoxes.ai.checked]);
+async function applyFilters() {
+  const q = keywordInput.value.trim();
+  const professor = profInput.value.trim();
+  const now = JSON.stringify([daySelect.value, professor, q, tagBoxes.cd.checked, tagBoxes.es.checked, tagBoxes.ai.checked]);
   if (now === appliedFilters) return;
   appliedFilters = now;
+  const mine = ++matchSeq;
+  if (q || professor) {
+    try {
+      const found = await searchSections({ ge: "ALL", q, professor });
+      if (mine !== matchSeq) return;   // a newer change is on its way
+      serverMatch = new Set(found.map((s) => s.id));
+    } catch (e) {
+      if (mine !== matchSeq) return;
+      appliedFilters = "";
+      announce(countLine, `Could not search: ${e.message}`);
+      return;
+    }
+  } else {
+    serverMatch = null;
+  }
   const total = updateCounts();
   for (const [code, block] of blocks) {
     block.filled = false;

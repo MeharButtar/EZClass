@@ -27,9 +27,11 @@ sys.path.insert(0, ROOT)
 TMP = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
 CLASS_DB = os.path.join(TMP.name, "scheduler.db")
 ANALYTICS_DB = os.path.join(TMP.name, "analytics.db")
+FEEDBACK_DB = os.path.join(TMP.name, "feedback.db")
 ADMIN_TOKEN = "test-admin-token"
 os.environ["EZCLASS_DB_PATH"] = CLASS_DB
 os.environ["ANALYTICS_DB_PATH"] = ANALYTICS_DB
+os.environ["FEEDBACK_DB_PATH"] = FEEDBACK_DB
 os.environ["ADMIN_TOKEN"] = ADMIN_TOKEN
 os.environ.pop("ANALYTICS_ENABLED", None)
 
@@ -91,7 +93,7 @@ class CoreTests(AppTestCase):
 
     def test_every_page_loads_with_shared_header_and_tracking(self):
         # the footer (with the #track-optout link) is built by nav.js, which each page module imports
-        for page in ("index", "major", "ge", "search", "schedule"):
+        for page in ("index", "major", "ge", "search", "schedule", "reviews", "support"):
             with self.client.get(f"/{page}.html") as res:
                 self.assertEqual(res.status_code, 200, page)
                 html = res.get_data(as_text=True)
@@ -207,11 +209,15 @@ class ConflictCheckTests(AppTestCase):
         self.assertEqual(res.get_json(), {"conflicts": [], "conflict_free": True})
 
     def test_empty_and_non_json(self):
-        for kwargs in ({"json": {"section_ids": []}}, {"json": {}},
-                       {"data": "not json", "content_type": "text/plain"}, {}):
+        for kwargs in ({"json": {"section_ids": []}}, {"json": {}}):
             res = self.client.post("/api/schedule/check", **kwargs)
             self.assertEqual(res.status_code, 200, kwargs)
             self.assertEqual(res.get_json(), {"conflicts": [], "conflict_free": True}, kwargs)
+        # not JSON, or no body at all: a 400, never "conflict free"
+        for kwargs in ({"data": "not json", "content_type": "text/plain"}, {"data": "not json", "content_type": "application/json"}, {}):
+            res = self.client.post("/api/schedule/check", **kwargs)
+            self.assertEqual(res.status_code, 400, kwargs)
+            self.assertIs(res.get_json()["conflict_free"], False)
 
     def test_rejected_inputs(self):
         bad_bodies = [
@@ -247,6 +253,27 @@ class AnalyticsTests(AppTestCase):
         self.assertEqual(json.loads(rows[1]["props"]), {"areas": "1B,5C", "results": 132})
         self.assertEqual(rows[0]["device"], "desktop")
         self.assertEqual(rows[0]["session_id"], "session-1234")
+
+    def test_reviews_and_support_are_counted(self):
+        vid = "visitor-feedback-pages"
+        for view in ("reviews", "support"):
+            self.assertEqual(self.event(vid, props={"view": view}).status_code, 204)
+        self.assertEqual(self.event(vid, "review_submit").status_code, 204)
+        self.assertEqual(self.event(vid, "support_submit", {"kind": "wrong_info"}).status_code, 204)
+        rows = stored_events(vid)
+        self.assertEqual([r["event"] for r in rows], ["page_view", "page_view", "review_submit", "support_submit"])
+        self.assertEqual(json.loads(rows[3]["props"]), {"kind": "wrong_info"})
+        stats = self.client.get("/api/admin/stats?days=1", headers={"Authorization": f"Bearer {ADMIN_TOKEN}"}).get_json()
+        self.assertGreaterEqual(stats["page_views_by_view"].get("reviews", 0), 1)
+        self.assertGreaterEqual(stats["page_views_by_view"].get("support", 0), 1)
+        self.assertGreaterEqual(stats["by_event"].get("review_submit", 0), 1)
+        self.assertGreaterEqual(stats["by_event"].get("support_submit", 0), 1)
+
+    def test_unknown_view_or_kind_is_dropped(self):
+        vid = "visitor-unknown-view"
+        self.assertEqual(self.event(vid, props={"view": "my email is a@b.c"}).status_code, 204)
+        self.assertEqual(self.event(vid, "support_submit", {"kind": "free text here"}).status_code, 204)
+        self.assertEqual([json.loads(r["props"]) for r in stored_events(vid)], [{}, {}])
 
     def test_device_is_only_mobile_or_desktop(self):
         vid = "visitor-mobile"
@@ -348,3 +375,64 @@ class AnalyticsTests(AppTestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SiteTests(AppTestCase):
+    """Clean URLs, the 404 page, gzip, robots.txt / sitemap.xml and the favicon."""
+
+    def test_clean_urls_redirect(self):
+        for page in ("search", "major", "ge", "schedule", "reviews", "support"):
+            res = self.client.get(f"/{page}")
+            self.assertEqual((res.status_code, res.headers["Location"]), (301, f"/{page}.html"), page)
+        res = self.client.get("/search?q=cs%20480&day=M")
+        self.assertEqual(res.headers["Location"], "/search.html?q=cs%20480&day=M")
+        self.assertEqual(self.client.get("/major/").headers["Location"], "/major.html")
+
+    def test_not_found(self):
+        for path in ("/nope", "/a/b/c", "/searchh"):
+            with self.client.get(path) as res:
+                self.assertEqual(res.status_code, 404, path)
+                self.assertIn("We couldn't find that page", res.get_data(as_text=True))
+        for path in ("/api/anything-unknown", "/api/sections/x"):
+            res = self.client.get(path)
+            self.assertEqual((res.status_code, res.get_json()), (404, {"error": "not found"}), path)
+        self.assertEqual(self.client.get("/api/sections/999999").get_json(), {"error": "section not found"})
+
+    def test_gzip_when_asked(self):
+        plain = self.client.get("/api/sections")
+        self.assertNotIn("Content-Encoding", plain.headers)
+        zipped = self.client.get("/api/sections", headers={"Accept-Encoding": "gzip, deflate, br"})
+        self.assertEqual(zipped.headers["Content-Encoding"], "gzip")
+        self.assertIn("Accept-Encoding", zipped.headers["Vary"])
+        import gzip
+        self.assertEqual(gzip.decompress(zipped.data), plain.data)
+        self.assertLess(len(zipped.data), len(plain.data) / 5)
+        with self.client.get("/css/base.css", headers={"Accept-Encoding": "gzip"}) as css:
+            self.assertEqual(css.headers["Content-Encoding"], "gzip")
+        tiny = self.client.get("/api/health", headers={"Accept-Encoding": "gzip"})
+        self.assertNotIn("Content-Encoding", tiny.headers)          # too small to bother
+
+    def test_robots_sitemap_favicon(self):
+        robots = self.client.get("/robots.txt", headers={"X-Forwarded-Proto": "https"}, base_url="http://ezclass.example")
+        text = robots.get_data(as_text=True)
+        self.assertIn("Disallow: /api/", text)
+        self.assertIn("Sitemap: https://ezclass.example/sitemap.xml", text)
+        sitemap = self.client.get("/sitemap.xml", headers={"X-Forwarded-Proto": "https"}, base_url="http://ezclass.example")
+        self.assertEqual(sitemap.mimetype, "application/xml")
+        body = sitemap.get_data(as_text=True)
+        for page in ("", "major.html", "ge.html", "search.html", "schedule.html", "reviews.html", "support.html"):
+            self.assertIn(f"<loc>https://ezclass.example/{page}</loc>", body)
+        self.assertNotIn("/api/", body)
+        with mock.patch.dict(os.environ, {"SITE_URL": "https://www.ezclass.app/"}):
+            self.assertIn("<loc>https://www.ezclass.app/search.html</loc>", self.client.get("/sitemap.xml").get_data(as_text=True))
+        with self.client.get("/favicon.svg") as icon:
+            self.assertEqual((icon.status_code, icon.mimetype), (200, "image/svg+xml"))
+        self.assertEqual(self.client.get("/favicon.ico").headers["Location"], "/favicon.svg")
+        for page in ("index", "major", "ge", "search", "schedule", "reviews", "support"):
+            with self.client.get(f"/{page}.html") as res:
+                self.assertIn('<link rel="icon" href="favicon.svg"', res.get_data(as_text=True), page)
+
+    def test_bad_day_is_a_400(self):
+        for day in ("Q", "Monday", "m", "%"):
+            self.assertEqual(self.client.get(f"/api/sections?day={day}").status_code, 400, day)
+        self.assertEqual(self.client.get("/api/sections?day=Th").status_code, 200)

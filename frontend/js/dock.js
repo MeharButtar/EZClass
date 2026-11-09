@@ -4,6 +4,7 @@
 
 import { mountCalendar } from "./calendar.js";
 import { watchPlan } from "./plan.js";
+import { planUnits } from "./stats.js";
 import { el, plural } from "./ui.js";
 
 export function mountDock(aside) {
@@ -42,7 +43,7 @@ export function mountDock(aside) {
 
   watchPlan((sections, state, error) => {
     const plan = state.plans[state.activePlan];
-    const units = sections.reduce((n, s) => n + s.units, 0);
+    const units = planUnits(sections);   // each course once, backups included only once
     title.textContent = `My week · ${plan.name}`;
     summary.textContent = error ? "Could not load your plan's classes." : sections.length
       ? `${plural(sections.length, "class", "classes")}, ${plural(units, "unit")}`

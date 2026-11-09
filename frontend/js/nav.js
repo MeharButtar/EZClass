@@ -95,29 +95,41 @@ function updatePlanChip(state) {
   const plan = state.plans[state.activePlan];
   const n = plan.sectionIds.length;
   planChip.textContent = "";
-  planChip.append(el("span", { class: "chip-text" }, plan.name), el("span", { class: "count", "data-plan-count": "" }, String(n)));
-  planChip.setAttribute("aria-label", `${plan.name}, ${n} ${n === 1 ? "section" : "sections"}. Open My Schedule`);
+  planChip.append(el("span", { class: "chip-text" }, plan.name), " ", el("span", { class: "count", "data-plan-count": "" }, String(n)));
+  planChip.setAttribute("aria-label", `${plan.name} ${n} ${n === 1 ? "section" : "sections"}, open My Schedule`);
 }
 
 // ---------- footer ----------
 
-// "Report a problem" link, or null when config.js has no URL for it.
-export function reportLink(text = "Report a problem") {
-  if (!CONFIG.reportProblemUrl) return null;
-  return el("a", { href: CONFIG.reportProblemUrl, target: "_blank", rel: "noopener noreferrer" }, text);
+// Where to report a problem: the Support page, filled in for a class when one
+// is given ({ kind: "wrong_info", course: "SOC 101", section: "05" }).
+export function reportUrl(prefill = {}) {
+  if (CONFIG.reportProblemUrl) return CONFIG.reportProblemUrl;
+  const params = new URLSearchParams(Object.entries(prefill).filter(([, v]) => v));
+  const query = params.toString();
+  return `support.html${query ? `?${query}` : ""}`;
+}
+
+// "Report a problem" link (to the Support page unless config.js says otherwise).
+export function reportLink(text = "Report a problem", prefill = {}) {
+  const external = Boolean(CONFIG.reportProblemUrl);
+  return el("a", { href: reportUrl(prefill), ...(external ? { target: "_blank", rel: "noopener noreferrer" } : {}) }, text);
 }
 
 function footer() {
   const updated = el("span", { "data-updated": "" });
   showDataDate(updated, " ");
-  const report = reportLink("Report a wrong time or other problem");
   return el("div", { class: "footer-inner" },
+    el("nav", { class: "footer-links", "aria-label": "More" },
+      el("a", { href: "reviews.html" }, "Reviews"),
+      el("a", { href: "support.html" }, "Support"),
+      reportLink("Report a wrong time or other problem", { kind: "wrong_info" })),
     el("p", {},
       `${CONFIG.disclaimer} Class times are for ${CONFIG.termName} and can change, so confirm every class in ${CONFIG.registrationSite} before you register.`,
-      updated, " Your plans are kept in this browser only.",
-      report ? " " : null, report),
+      updated, " Your plans are kept in this browser only."),
     el("p", {},
-      "We count visits anonymously (pages viewed, majors picked, searches, plan changes and conflict checks), with no names, IP addresses or cookies. ",
+      "We count visits anonymously (pages viewed, majors picked, searches, plan changes and conflict checks), with no names, IP addresses or cookies. "
+      + "The only things we keep are what you choose to send in Reviews or Support. ",
       el("a", { href: "#", id: "track-optout" }, "Turn off counting")));
 }
 

@@ -20,8 +20,8 @@ export const CONFIG = Object.freeze({
   // class there, since our data is a copy that can go out of date.
   registrationSite: "WebPortal",
 
-  // A "Report a problem" link (a Google Form works well) shown in the footer
-  // and on My Schedule. Leave it "" to hide the link.
+  // Where "Report a problem" links go. "" means our own Support page
+  // (support.html); put a full URL here only to send reports somewhere else.
   reportProblemUrl: "",
 
   // Hours the week calendar always shows (it grows if a class starts earlier or ends later).

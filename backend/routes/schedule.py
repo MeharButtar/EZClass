@@ -28,11 +28,12 @@ def check_schedule():
     Returns: {"conflicts": [{"section_a": {...}, "section_b": {...}}, ...],
               "conflict_free": true/false}
     An empty "conflicts" list means the schedule is conflict-free.
-    Anything other than a list of up to 60 whole numbers gets a 400.
+    Anything other than a list of up to 60 whole numbers gets a 400, and so
+    does a missing or non-JSON body ({} is fine: nothing to check).
     """
-    body = request.get_json(silent=True)
+    body = request.get_json(silent=True, force=True)
     if body is None:
-        body = {}   # no body, or not JSON at all: nothing to check
+        return bad_request("body must be JSON, like {\"section_ids\": [1, 2]}")
     if not isinstance(body, dict):
         return bad_request("body must be a JSON object")
 

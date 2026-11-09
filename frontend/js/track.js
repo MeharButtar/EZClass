@@ -17,7 +17,7 @@ const OPTOUT_KEY = "ezclass_optout";
 const VISITOR_KEY = "ezclass_vid";      // same keys as v1, so returning visitors keep their id
 const SESSION_KEY = "ezclass_sid";
 const ID_PATTERN = /^[A-Za-z0-9-]{8,64}$/;
-const VIEWS = ["home", "major", "ge", "search", "schedule"];
+const VIEWS = ["home", "major", "ge", "search", "schedule", "reviews", "support"];
 
 // ---------- ids ----------
 
@@ -86,6 +86,9 @@ const EVENTS = {
   search: (d) => ({ subject: str(d.subject), day: str(d.day), has_prof: Boolean(d.hasProf), has_kw: Boolean(d.hasKw), results: num(d.results) }),
   ge_search: (d) => ({ areas: str(d.areas), day: str(d.day), has_prof: Boolean(d.hasProf), has_kw: Boolean(d.hasKw), results: num(d.results) }),
   conflict_check: (d) => ({ conflict_free: Boolean(d.conflictFree), cart_size: num(d.cartSize) }),
+  // that something was sent, never what (the support kind is one of a fixed list)
+  review_submit: () => ({}),
+  support_submit: (d) => ({ kind: str(d.kind) }),
 };
 
 try {

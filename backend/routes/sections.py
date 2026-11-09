@@ -15,10 +15,13 @@ meeting and the first instructor (all null for a section with no schedule).
 Sections no longer in the sheet (active = 0) never come back.
 """
 
+import re
+
 from flask import Blueprint, jsonify, request
 
 from backend.models.conflicts import DAY_TOKENS, parse_days
-from backend.models.db import get_connection
+from backend.models.db import DB_PATH, get_connection
+from backend.search import get_course_index, match_courses, person_match
 
 sections_bp = Blueprint("sections", __name__)
 
@@ -153,11 +156,15 @@ def search_sections():
     Search/filter sections.
 
     Query params (all optional):
-      subject   -> exact match, e.g. ?subject=CS
-      professor -> partial match on any instructor's name
+      subject   -> exact match, e.g. ?subject=CS ("GEN S" and "gens" work too)
+      professor -> every typed word starts an instructor's first or last name
+                   ("Rapp", "Rapp, Michael", "M Rapp")
       day       -> a single day letter/token that some timed meeting must
-                   fall on, e.g. ?day=M (online-only sections never match)
-      q         -> free-text search across course title and catalog number
+                   fall on, e.g. ?day=M (online-only sections never match);
+                   anything else is a 400
+      q         -> course code or title words: "CS 480", "cs4", "GEN S 147",
+                   "data science" (see backend/search.py). Exact codes come
+                   first, then code prefixes, then title matches.
       ge        -> GE area codes, comma separated, e.g. ?ge=3A,3B. Use ge=ALL
                    for any GE area. A section matches if its course counts for
                    ANY of the areas listed.
@@ -182,24 +189,36 @@ def search_sections():
         conditions.append(f"{column} IN ({','.join('?' * len(numbers))})")
         params.extend(numbers)
 
-    subject = request.args.get("subject")
+    subject = re.sub(r"[^A-Za-z0-9]", "", request.args.get("subject") or "").upper()
     if subject:
         conditions.append("c.subject = ?")
-        params.append(subject.upper())
-
-    professor = request.args.get("professor")
-    if professor:
-        conditions.append("EXISTS (SELECT 1 FROM section_instructors i JOIN professors p ON p.professor_id = i.professor_id "
-                          "WHERE i.section_id = s.section_id AND (p.first_name || ' ' || p.last_name) LIKE ?)")
-        params.append(f"%{professor}%")
+        params.append(subject)
 
     day = request.args.get("day")   # filtered below with parse_days, not LIKE
+    if day and day not in DAY_TOKENS:
+        return jsonify({"error": "day must be one of M, T, W, Th, F, Sa, Su"}), 400
+
+    conn = get_connection()
+    # the typed text is matched in Python (backend/search.py), never put into SQL
+    professor = request.args.get("professor")
+    if professor and professor.strip():
+        people = [r["professor_id"] for r in conn.execute("SELECT professor_id, first_name, last_name FROM professors")
+                  if person_match(r["first_name"], r["last_name"], professor)]
+        if not people:
+            conn.close()
+            return jsonify([])
+        conditions.append("EXISTS (SELECT 1 FROM section_instructors i WHERE i.section_id = s.section_id "
+                          f"AND i.professor_id IN ({','.join('?' * len(people))}))")
+        params.extend(people)
 
     q = request.args.get("q")
-    if q:
-        conditions.append("(c.title LIKE ? OR c.catalog_num LIKE ?)")
-        params.append(f"%{q}%")
-        params.append(f"%{q}%")
+    ranks = match_courses(get_course_index(conn, DB_PATH), q) if q else None
+    if ranks is not None:
+        if not ranks:
+            conn.close()
+            return jsonify([])
+        conditions.append(f"s.course_id IN ({','.join('?' * len(ranks))})")
+        params.extend(ranks)
 
     ge = request.args.get("ge")
     if ge:
@@ -227,8 +246,10 @@ def search_sections():
         query += " AND " + " AND ".join(conditions)
     query += " ORDER BY c.subject, c.catalog_num, s.section_number"
 
-    conn = get_connection()
     rows = conn.execute(query, params).fetchall()
+    if ranks:
+        # exact code first, then code prefixes, then title matches (stable: keeps subject, number, section)
+        rows = sorted(rows, key=lambda r: ranks.get(r["course_id"], 0))
     result = sections_to_dicts(conn, rows)
     conn.close()
 

@@ -16,7 +16,13 @@ up to three plans (A, B, C). Everything they pick stays in their own browser.
 - **GE Scheduler** (`ge.html`): one block per GE area (14), with an area strip to
   jump between them, a day filter and the CD / ES / AI tags. Areas that a course
   from your major already covers are marked "Covered by your major".
-- **Search** (`search.html`): subject, day, professor and keyword search.
+- **Search** (`search.html`): subject, day, professor and keyword search,
+  as you type. The keyword box takes a course code any way it's written
+  (`CS 480`, `cs480`, `GEN S 147`, `BIOL 211L`), the start of one (`CS 4`,
+  `150`), a subject alone (`CS`, never "physiCS"), or the start of title words
+  (`data science`, `hip hop` finds MUSIC 351's own section titles). The
+  professor box takes a name in any order (`Rapp, Michael`, `M Rapp`). The
+  rules live in `backend/search.py` and the GE page uses the same search.
 - For classes in their plan, students can save the RateMyProfessors rating
   (and difficulty) they looked up, on My Schedule or from the calendar card.
   Scores are kept per professor in the browser only, and show next to that
@@ -25,9 +31,14 @@ up to three plans (A, B, C). Everything they pick stays in their own browser.
   section rows show their GE areas and the CD / ES / AI tags. A cart saved by
   the first version comes back as Plan A, and old `/#ge` and `/#search` links
   open the new pages.
+- **Reviews** (`reviews.html`) and **Support** (`support.html`): students can
+  rate the site and report a wrong class time, a missing class or a bug. No
+  accounts; reviews show only after the owner approves them (see "Reviews and
+  support messages" below).
 - **My Schedule** (`schedule.html`): plan tabs (A, B, C) with rename, duplicate,
   delete and undo, the full-size week, a stats strip (units, hours, days on
-  campus, gaps, tight walks between buildings) and the conflict check.
+  campus, gaps) and the conflict check. Two or more sections of one course
+  are allowed (backups); the calendar says so and units count the course once.
 - On My Major, GE and Search the week calendar is docked on the right (a "My
   week" sheet on phones). Pointing at a section draws a dashed preview on it,
   which turns red if it would overlap something already in the plan.
@@ -355,7 +366,9 @@ keep the numbers. The class data is not affected: it's baked into the image.
 
 To keep counts across deploys, move to a paid instance, add a **Disk** with
 mount path `/data`, and set `ANALYTICS_DB_PATH=/data/analytics.db`, or later move the counts to an
-external database. Put **only** the analytics file on the disk: leave
+external database. **Set `FEEDBACK_DB_PATH=/data/feedback.db` too**: reviews and
+support messages live in that file, and without the disk they are wiped on
+every deploy. Put **only** these two files on the disk: leave
 `EZCLASS_DB_PATH` unset. The app never overwrites a class database that already
 has classes in it, so a class database on the disk would keep the first import
 forever and ignore every later data update. Left alone, it's rebuilt from the
@@ -366,10 +379,12 @@ event", the disk isn't writable by the image's non-root user (uid 1000).
 
 ### Before you share it with students
 
-- Make a form for problem reports (a Google Form with "what's wrong" and "which
-  class" is enough) and paste its link into `reportProblemUrl` in
-  `frontend/js/config.js`. The footer and My Schedule then show a "Report a
-  problem" link; while it's empty the link is hidden.
+- Problem reports go to the Support page (`support.html`), linked from the
+  footer, My Schedule, every course card and the calendar's class card (filled
+  in with the course and section). `reportProblemUrl` in
+  `frontend/js/config.js` can point them somewhere else instead.
+- Set `ADMIN_TOKEN` and `FEEDBACK_DB_PATH` on the persistent disk (see above),
+  then check new reviews and messages now and then (next section).
 - Check `termName` and `catalogYear` in `config.js` match the data.
 - Import the latest data so the "last updated" date is current.
 - The site tells students to confirm every class in `registrationSite`
@@ -385,6 +400,48 @@ curl -H "Authorization: Bearer $ADMIN_TOKEN" "https://<your-domain>/api/admin/st
 a per-day list, counts per event, page views per page, how often each major was
 picked, the most picked GE areas, conflict check outcomes, and mobile vs desktop. Dates are UTC. Without
 `ADMIN_TOKEN` set, the stats URL returns 404.
+
+### Search engines and links
+
+`/robots.txt` and `/sitemap.xml` are made by the app from the address it's
+served at (set `SITE_URL` to pin it, e.g. once you have your own domain): the
+sitemap lists the home page, My Major, GE, Search, My Schedule, Reviews and
+Support, and robots.txt keeps crawlers out of `/api/`. Short links work too:
+`/search`, `/major`, `/ge`, `/schedule`, `/reviews` and `/support` redirect to
+the pages (keeping `?q=...`), and Search keeps its filters in the address, so
+`/search?q=cs%20480` is a shareable link. Unknown addresses get a friendly
+404 page; unknown `/api/` addresses get a JSON 404. Text and JSON answers are
+gzipped for browsers that accept it (the full section list goes from 1.6 MB
+to under 100 KB).
+
+### Reviews and support messages
+
+Students can leave a review (`reviews.html`: 1 to 5 stars, an optional comment
+and name) or send a message (`support.html`: something broken, wrong class
+info, a missing class, an idea, with an optional email for a reply). There
+are no accounts; only what they type is kept, with a timestamp, in its own
+SQLite file (`FEEDBACK_DB_PATH`). No IP address or user agent is stored.
+
+Reviews start **pending** and only show on the site after you approve them.
+Nothing is ever pre-filled: with no approved reviews the page says "No reviews
+yet. Be the first."
+
+```bash
+# reviews waiting for a look (status: pending, approved, hidden) or new messages (new, done)
+curl -H "Authorization: Bearer $ADMIN_TOKEN" "https://<your-domain>/api/admin/feedback?status=pending"
+curl -H "Authorization: Bearer $ADMIN_TOKEN" "https://<your-domain>/api/admin/feedback?status=new"
+
+# approve (or hide) review 12, mark message 7 done
+curl -X POST -H "Authorization: Bearer $ADMIN_TOKEN" -H "Content-Type: application/json" \
+  -d '{"status":"approved"}' https://<your-domain>/api/admin/reviews/12
+curl -X POST -H "Authorization: Bearer $ADMIN_TOKEN" -H "Content-Type: application/json" \
+  -d '{"status":"done"}' https://<your-domain>/api/admin/support/7
+```
+
+Like the stats, these return 404 when `ADMIN_TOKEN` isn't set and 401 with a
+wrong token; the token only ever goes in the header. Spam protection: a hidden
+field only bots fill in, a minimum time on the page, links refused in reviews,
+and at most 3 sends per 10 minutes per browser (60 an hour overall).
 
 ### What is tracked (and what isn't)
 

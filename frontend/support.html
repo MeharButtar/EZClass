@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support · EzClass</title>
+<meta name="description" content="Report a wrong class time, a missing class or a bug, or send us an idea.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/base.css">
+<script type="module" src="js/pages/support.js"></script>
+<script type="module" src="js/track.js"></script>
+</head>
+<body data-page="support">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main" class="page page-narrow">
+    <div class="page-head">
+      <div>
+        <h1>Support</h1>
+        <p>Something broken, a class time that's wrong, a class that's missing, or an idea? Tell us here.</p>
+      </div>
+    </div>
+
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title">Send us a message</h2>
+      <p class="form-note">We only keep what you type here. No account needed.</p>
+      <form id="support-form" class="feedback-form" novalidate>
+        <label class="field" for="support-kind">What's it about?</label>
+        <select class="select" id="support-kind" name="kind">
+          <option value="broken">Something is broken</option>
+          <option value="wrong_info">Wrong class info (time, room or professor)</option>
+          <option value="missing_class">A class is missing</option>
+          <option value="idea">An idea</option>
+          <option value="other">Something else</option>
+        </select>
+        <label class="field" for="support-message">Message <span class="req">(required, at least 10 characters)</span></label>
+        <textarea class="input textarea" id="support-message" name="message" rows="6" maxlength="2000" aria-describedby="support-count"></textarea>
+        <p class="char-count" id="support-count"></p>
+        <div class="form-row">
+          <div>
+            <label class="field" for="support-course">Course <span class="opt">(optional)</span></label>
+            <input class="input" type="text" id="support-course" name="course" maxlength="20" placeholder="e.g. SOC 101">
+          </div>
+          <div>
+            <label class="field" for="support-section">Section <span class="opt">(optional)</span></label>
+            <input class="input" type="text" id="support-section" name="section" maxlength="10" placeholder="e.g. 5">
+          </div>
+        </div>
+        <label class="field" for="support-email">Email <span class="opt">(optional)</span></label>
+        <input class="input" type="email" id="support-email" name="email" maxlength="120" autocomplete="email" aria-describedby="email-note">
+        <p class="small muted" id="email-note">Only if you want a reply.</p>
+        <div class="hp" aria-hidden="true">
+          <label for="support-website">Website</label>
+          <input type="text" id="support-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <p class="form-status" id="support-status" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn btn-primary" id="support-send">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>

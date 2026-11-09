@@ -7,13 +7,20 @@
 // A section with several meetings (lecture + lab) gets a block for each
 // meeting on each day. Only timed meetings go on the grid: a hybrid section's
 // blocks say "+ online part", and online-only sections (and ones whose time
-// isn't listed yet) are listed under the grid ("Online / no set time"), never
+// isn't listed yet) are listed under the grid ("Online or no time listed"), never
 // drawn and never in a clash.
+//
+// A student may add more than one section of a course (backups). That's
+// allowed; the calendar says so in a note under the grid ("You have 2 sections
+// of SOC 101..."), the blocks of that course get a "2×" badge, and pointing at another section of a course that's
+// already in the plan says it would be a second one.
 
 import { CONFIG } from "./config.js";
 import { ratingControls } from "./ratings.js";
-import { removeSection } from "./store.js";
+import { reportUrl } from "./nav.js";
+import { getState, removeSection } from "./store.js";
 import { DAY_NAMES, DAY_SHORT, formatRange, formatTime, isTimed, timedMeetings, weekColumns } from "./time.js";
+import { repeatedCourses } from "./stats.js";
 import { clear, el, instructorLinks, meetingLines, openDialog, seatsLabel } from "./ui.js";
 
 const COLORS = 8;   // --sub-0 ... --sub-7 in base.css
@@ -89,6 +96,9 @@ export function showSectionCard(section) {
         section.instructors.length ? el("dd", {}, ratingControls(section, { beforeOpen: () => dialog.close() })) : null,
         el("dt", {}, "Seats"), el("dd", {}, seatsLabel(section)),
         el("dt", {}, "Units"), el("dd", {}, String(section.units || "–"))),
+      el("p", { class: "small" }, el("a", {
+        href: reportUrl({ kind: "wrong_info", course: section.code, section: section.sectionNumber }),
+      }, "Report wrong info for this class")),
       el("div", { class: "dialog-actions" },
         el("button", { type: "button", class: "btn", on: { click: () => dialog.close() } }, "Close"),
         el("button", {
@@ -114,6 +124,8 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
     const ghostBlocks = ghostOn ? blocksOf([ghost]) : [];
     const all = [...blocks, ...ghostBlocks];
     const days = weekColumns(all.map((b) => [b.day]));
+    const repeats = repeatedCourses(sections);
+    const copies = new Map(repeats.map(({ code, sections: list }) => [code, list.length]));
 
     let first = Math.min(CONFIG.calendarStartHour * 60, ...all.map((b) => b.startMin));
     let last = Math.max(CONFIG.calendarEndHour * 60, ...all.map((b) => b.endMin));
@@ -139,18 +151,21 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
         const clash = today.some((o) => blocksClash(b, o));
         const width = 100 / lanes;
         const time = formatRange(b.startMin, b.endMin);
+        const n = copies.get(s.code);
         col.append(el("button", {
           type: "button",
-          class: `cal-blk sub-${colorIndex(s.subject, order)}${clash ? " clash" : ""}`,
+          class: `cal-blk sub-${colorIndex(s.subject, order)}${clash ? " clash" : ""}${n ? " repeat" : ""}`,
           style: { top: pct(b.startMin), height: height(b.startMin, b.endMin), left: `${lane * width}%`, width: `${width}%` },
-          "aria-label": `${s.code} section ${s.sectionNumber}, ${DAY_NAMES[d]} ${time}${m.room ? `, ${m.room}` : ""}`
-            + `${s.onlinePart ? ", plus an online part" : ""}${clash ? ", overlaps another class" : ""}. Details`,
-          dataset: { sectionId: s.id, meeting: b.idx },
+          // starts with the words shown on the block (Label in Name), then the rest
+          "aria-label": [s.code, time, m.room, s.onlinePart ? "+ online part" : ""].filter(Boolean).join(" ")
+            + `, section ${s.sectionNumber}, ${DAY_NAMES[d]}${clash ? ", overlaps another class" : ""}`
+            + `${n ? `, one of ${n} sections of ${s.code} in this plan` : ""}. Details`,
+          dataset: { sectionId: s.id, meeting: b.idx, ...(n ? { repeat: String(n) } : {}) },
           on: { click: () => onSelect(s) },
         },
-        el("span", { class: "blk-code" }, s.code),
-        el("span", { class: "blk-time" }, time),
-        m.room ? el("span", { class: "blk-room" }, m.room) : null,
+        el("span", { class: "blk-code" }, s.code), " ",
+        el("span", { class: "blk-time" }, time), " ",
+        m.room ? el("span", { class: "blk-room" }, m.room) : null, " ",
         s.onlinePart ? el("span", { class: "blk-online" }, "+ online part") : null));
       }
       for (const g of ghostBlocks.filter((b) => b.day === d)) {
@@ -173,6 +188,13 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
     if (!sections.length && !ghostBlocks.length && emptyText) body.append(el("p", { class: "cal-empty" }, emptyText));
 
     const notes = el("div", { class: "cal-notes" });
+    if (repeats.length) {
+      const plan = getState().plans[getState().activePlan];
+      notes.append(el("div", { class: "cal-repeat" }, repeats.map(({ code, sections: list }) => el("p", {},
+        "You have ", el("strong", {}, `${list.length} sections of ${code}`),
+        ` in ${plan?.name || "this plan"} (${list.map((x) => `Sec ${x.sectionNumber}`).join(", ")}). `
+          + `Pick just one when you register, unless you're keeping ${list.length === 2 ? "the other as a backup" : "the others as backups"}.`))));
+    }
     if (blocks.some((a) => blocks.some((b) => a.day === b.day && blocksClash(a, b)))) {
       notes.append(el("p", { class: "cal-key" }, el("span", { class: "key-swatch", "aria-hidden": "true" }),
         "Striped red classes overlap another class in this plan."));
@@ -180,13 +202,18 @@ export function mountCalendar(container, { variant = "dock", emptyText = "", onS
     const untimed = sections.filter((s) => !isTimed(s));
     if (untimed.length) {
       notes.append(el("div", { class: "cal-online" },
-        el("p", { class: "cal-online-title" }, "Online / no set time"),
+        el("p", { class: "cal-online-title" }, "Online or no time listed"),
         el("ul", {}, untimed.map((s) => el("li", {},
           el("button", {
             type: "button", class: "linkbtn small",
-            "aria-label": `${s.code} section ${s.sectionNumber}, ${s.noSchedule ? "time not listed yet" : "online with no set time"}. Details`,
+            "aria-label": `${s.code} · Sec ${s.sectionNumber}${s.noSchedule ? " (time not listed yet)" : ", online with no set time"}. Details`,
             on: { click: () => onSelect(s) },
           }, `${s.code} · Sec ${s.sectionNumber}${s.noSchedule ? " (time not listed yet)" : ""}`))))));
+    }
+    const twin = ghost && !sections.some((s) => s.id === ghost.id) && sections.find((s) => s.code === ghost.code);
+    if (twin) {
+      notes.append(el("p", { class: "cal-key cal-repeat-hint" }, el("span", { class: "repeat-badge", "aria-hidden": "true" }, `${(copies.get(ghost.code) || 1) + 1}×`),
+        `${ghost.code} is already in this plan (Sec ${twin.sectionNumber}). Adding Sec ${ghost.sectionNumber} too is fine as a backup.`));
     }
     if (ghost && !isTimed(ghost)) {
       notes.append(el("p", { class: "cal-key" }, ghost.noSchedule

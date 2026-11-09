@@ -77,7 +77,8 @@ export function ratingControl(person, { beforeOpen, showName = false } = {}) {
     saved ? ratingBadge(person.name) : null,
     el("button", {
       type: "button", class: "linkbtn small",
-      "aria-label": `${saved ? "Edit" : "Add"} the ${CONFIG.professorSite} score for ${person.name}`,
+      "aria-label": saved ? `Edit the ${CONFIG.professorSite} score for ${person.name}`
+        : `Add rating: your ${CONFIG.professorSite} score for ${person.name}`,
       on: { click: open },
     }, saved ? "Edit" : "Add rating"));
 }

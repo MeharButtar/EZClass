@@ -7,12 +7,13 @@
 //
 // Every Add button on the page is kept in sync with the active plan, and rows
 // that would overlap something already in the plan say so. Sections that are
-// online only, or have no time listed yet, come last under "Online / no set time".
+// online only, or have no time listed yet, come last under "Online or no time listed".
 
 import { setGhost } from "./calendar.js";
 import { ratingBadge } from "./ratings.js";
 import { CONFIG } from "./config.js";
 import { watchPlan } from "./plan.js";
+import { reportUrl } from "./nav.js";
 import { activePlan, isCompleted, isInPlan, toggleCompleted, toggleSection } from "./store.js";
 import { overlaps } from "./time.js";
 import { $$, el, instructorLinks, meetingLines, plural, seatsLabel } from "./ui.js";
@@ -88,10 +89,11 @@ function syncRow(row) {
   const button = row.querySelector(".add-btn");
   const planName = activePlan().name;
   button.setAttribute("aria-pressed", String(added));
-  button.textContent = added ? "✓ Added" : armed === id ? "Tap to add" : "+ Add";
-  button.setAttribute("aria-label", added
-    ? `Remove ${s.code} section ${s.sectionNumber} from ${planName}`
-    : `Add ${s.code} section ${s.sectionNumber} to ${planName}`);
+  // the + and the check mark come from CSS, so the words on the button begin its spoken name
+  const word = added ? "Added" : armed === id ? "Tap to add" : "Add";
+  button.textContent = word;
+  button.dataset.state = added ? "added" : armed === id ? "armed" : "add";
+  button.setAttribute("aria-label", `${word} ${s.code} section ${s.sectionNumber} ${added ? "in" : "to"} ${planName}`);
   row.classList.toggle("is-added", added);
 
   // scores the student saved for these professors (entered from their plan)
@@ -108,7 +110,7 @@ function syncRow(row) {
   row.classList.toggle("has-clash", Boolean(clash));
 }
 
-// Rows for a list of sections: timed ones first, then "Online / no set time"
+// Rows for a list of sections: timed ones first, then "Online or no time listed"
 // (online-only sections and ones whose time isn't listed yet).
 // The heading is a list item so it can sit inside the same list (Search adds rows in chunks).
 export function sectionItems(sections, options = {}) {
@@ -121,7 +123,7 @@ export function sectionItems(sections, options = {}) {
   ].filter(Boolean);
 }
 
-export const onlineHeading = (n) => el("li", { class: "sec-group" }, `Online / no set time (${n})`);
+export const onlineHeading = (n) => el("li", { class: "sec-group" }, `Online or no time listed (${n})`);
 
 // Timed sections first, online-only last, each group in its original order.
 export const timedFirst = (sections) => [...sections.filter((s) => !s.untimed), ...sections.filter((s) => s.untimed)];
@@ -177,7 +179,9 @@ export function courseCard(course, sections = [], { takenToggle = false, expande
   const setOpen = (open) => {
     if (!offered) return;
     if (open && !filled) {
-      body.append(el("ul", { class: "sec-list" }, sectionItems(sections)));
+      body.append(el("ul", { class: "sec-list" }, sectionItems(sections)),
+        el("p", { class: "course-report small" },
+          el("a", { href: reportUrl({ kind: "wrong_info", course: course.code }) }, `Something wrong with ${course.code}? Report it`)));
       filled = true;
     }
     body.hidden = !open;

@@ -281,13 +281,29 @@ subscribe((state) => {
   }
 });
 
+// ?major= names a major that's coming soon or doesn't exist: say so and offer
+// the picker, instead of quietly showing the major picked last time.
+function showUnavailable(major) {
+  title.textContent = "My Major";
+  changeButton.hidden = true;
+  clear(root).append(emptyBox(
+    "That major isn't available yet",
+    major ? `${majorLabel(major)} is coming soon. Pick another major to see its classes.`
+      : "We couldn't find that major. Pick yours from the list.",
+    el("button", { type: "button", class: "btn btn-primary", on: { click: openMajorPrompt } }, "Choose your major")));
+  openMajorPrompt();
+}
+
 async function start() {
   // ?major=cs_bs picks that major (only a live one from the list)
   const wanted = new URLSearchParams(location.search).get("major");
   if (wanted && wanted !== currentMajor) {
     try {
-      const major = (await getMajors()).find((m) => m.major_id === wanted && m.status === "live");
-      if (major) { setMajor(major.major_id); return; }   // the subscription loads it
+      const majors = await getMajors();
+      const major = majors.find((m) => m.major_id === wanted);
+      if (major?.status === "live") { setMajor(major.major_id); return; }   // the subscription loads it
+      showUnavailable(major);
+      return;
     } catch (e) { /* fall through to the stored major */ }
   }
   if (currentMajor) load(currentMajor); else showPickPrompt();
