@@ -16,7 +16,13 @@ up to three plans (A, B, C). Everything they pick stays in their own browser.
 - **GE Scheduler** (`ge.html`): one block per GE area (14), with an area strip to
   jump between them, a day filter and the CD / ES / AI tags. Areas that a course
   from your major already covers are marked "Covered by your major".
-- **Search** (`search.html`): subject, day, professor and keyword search.
+- **Search** (`search.html`): subject, day, professor and keyword search,
+  as you type. The keyword box takes a course code any way it's written
+  (`CS 480`, `cs480`, `GEN S 147`, `BIOL 211L`), the start of one (`CS 4`,
+  `150`), a subject alone (`CS`, never "physiCS"), or the start of title words
+  (`data science`, `hip hop` finds MUSIC 351's own section titles). The
+  professor box takes a name in any order (`Rapp, Michael`, `M Rapp`). The
+  rules live in `backend/search.py` and the GE page uses the same search.
 - For classes in their plan, students can save the RateMyProfessors rating
   (and difficulty) they looked up, on My Schedule or from the calendar card.
   Scores are kept per professor in the browser only, and show next to that
