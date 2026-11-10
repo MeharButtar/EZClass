@@ -208,6 +208,7 @@ def split_title(title):
     name = re.sub(r"\s*,\s*(?:-\s*)?,?\s*", ", ", name)
     name = re.sub(r"\s+-\s*$|^\s*-\s+", "", name)
     name = re.sub(r"\s+,", ",", re.sub(r"\s{2,}", " ", name)).strip(" ,-")
+    name = re.sub(r",?\s*with the$", "", name)     # 'Social Science, in Preparation ..., with the B.A.'
     return name, degree, False
 
 
@@ -681,6 +682,24 @@ ID_STOP = {"and", "of", "in", "the", "for", "with", "a", "an", "to", "emphasis",
            "track", "plus"}
 
 
+DEGREE_SLUGS = {"ba", "bs", "bm", "bfa", "ma", "ms", "mba", "phd"}
+# major names that have commas of their own, with the short form SDSU uses
+BASE_NAMES = {
+    "Business Administration": "ba",     # the existing ids: ba_general_bs, ba_marketing_bs
+    "Television, Film and New Media": "tfm",
+    "Lesbian, Gay, Bisexual, Transgender, Queer, and Plus (LGBTQ+) Studies": "lgbtq",
+    "Language, Culture, and Society": "lcs",
+    "Speech, Language, and Hearing Sciences": "slhs",
+}
+# long phrases in a program name, shortened for its id
+ID_PHRASES = [
+    (r"in preparation for the single subject teaching credential.*?(?=,|$)", "credential"),
+    (r"preparation for the single subject teaching credential.*?(?=,|$)", "credential"),
+    (r"second bachelor[’']?s degree", "second"),
+    (r"certificate of the american chemical society", "acs"),
+]
+
+
 def slug_words(text):
     words = re.findall(r"[a-z0-9]+", text.lower().replace("’", "").replace("'", ""))
     return [w for w in words if w not in ID_STOP]
@@ -690,17 +709,30 @@ def degree_slug(degree):
     return re.sub(r"[^a-z]", "", degree.lower())
 
 
-def propose_id(name, degree, full=False):
+def id_parts(name):
+    """'Civil Engineering, ...' -> (base 'Civil Engineering', short 'ce', full 'civil_engineering', rest)."""
+    for base, short in BASE_NAMES.items():
+        if name == base or name.startswith(base + ","):
+            return base, short, short, name[len(base):]
+    base, _, rest = name.partition(",")
+    words = slug_words(base) or ["major"]
+    full = "_".join(words)
+    short = words[0] if len(words) == 1 else "".join(w[0] for w in words)
+    if short in DEGREE_SLUGS:      # 'Brazilian Studies' -> 'bs' would read like a degree
+        short = full
+    return base.strip(), short, full, rest
+
+
+def propose_id(name, degree, full=False, extra=2):
     """'Civil Engineering', 'B.S.' -> 'ce_bs'; 'Business Administration, Emphasis in Accounting' -> 'ba_accounting_bs'.
-    full=True spells the base name out ('civil_engineering_bs'), used when the short one is taken."""
-    parts = [p.strip() for p in name.split(",") if p.strip()]
-    base = slug_words(parts[0]) if parts else ["major"]
-    if full or len(base) == 1:
-        head = "_".join(base[:4])
-    else:
-        head = "".join(w[0] for w in base)
-    extra = [w for p in parts[1:] for w in slug_words(p)][:2]
-    return "_".join([head] + extra + [degree_slug(degree) or "x"])
+    full=True spells the base name out ('civil_engineering_bs'); extra is how many emphasis words to keep."""
+    _, short, full_head, rest = id_parts(name)
+    head = full_head if full else short
+    for pattern, word in ID_PHRASES:
+        rest = re.sub(pattern, f" {word} ", rest, flags=re.I)
+    skip = set(head.split("_")) if head == full_head else set()   # no 'music_music_education'
+    words = [w for w in slug_words(rest) if w not in skip][:extra]
+    return "_".join([head] + words + [degree_slug(degree) or "x"])
 
 
 def read_ids(path=IDS_FILE):
@@ -722,27 +754,46 @@ def assign_ids(programs, ids, log):
     New ids are added to `ids`; collisions are logged. Existing ids are never changed."""
     taken = {r["major_id"]: poid for poid, r in ids.items()}
     taken.update({mid: poid for poid, mid in KNOWN_IDS.items()})
+    new = [p for p in programs if (p.poid or "") not in ids and (p.poid or "") not in KNOWN_IDS]
+
+    # initials shared by different majors (Civil / Computer / Construction Engineering -> 'ce'):
+    # every one of them is spelled out, so no major gets the short form just for coming first
+    bases = collections.defaultdict(set)
+    for name in [r.get("name", "") for r in ids.values()] + [p.name for p in programs]:
+        base, short, _, _ = id_parts(name)
+        bases[short].add(base)
+    proposals = {}
+    for p in new:
+        base, short, _, _ = id_parts(p.name)
+        spelled = len(bases[short]) > 1
+        if spelled:
+            log.append(f"'{short}' would fit {', '.join(sorted(bases[short]))}: {p.name}, {p.degree} is spelled out")
+        proposals[id(p)] = (spelled, propose_id(p.name, p.degree, full=spelled))
+    # the same id for two new programs, or an id already taken: more emphasis words for each of them
+    counts = collections.Counter(mid for _, mid in proposals.values())
+    for p in new:
+        spelled, mid = proposals[id(p)]
+        if counts[mid] > 1 or mid in taken:
+            longer = propose_id(p.name, p.degree, full=spelled, extra=6)
+            if longer != mid:
+                log.append(f"id collision on '{mid}': {p.name}, {p.degree} (poid {p.poid}) gets '{longer}'")
+            proposals[id(p)] = (spelled, longer)
+
     changed = False
     for prog in programs:
         poid = prog.poid or ""
         if poid in ids:
             prog.major_id = ids[poid]["major_id"]
             continue
-        if poid in KNOWN_IDS:
-            mid = KNOWN_IDS[poid]
-        else:
-            mid = propose_id(prog.name, prog.degree)
-            if mid in taken and taken[mid] != poid:
-                first = mid
-                mid = propose_id(prog.name, prog.degree, full=True)
-                n = 2
-                while mid in taken and taken[mid] != poid:
-                    mid = f"{propose_id(prog.name, prog.degree, full=True)}_{n}"
-                    n += 1
-                log.append(f"id collision: '{first}' is already used by poid {taken[first]}; "
-                           f"{prog.name}, {prog.degree} (poid {poid}) gets '{mid}'")
+        mid = KNOWN_IDS[poid] if poid in KNOWN_IDS else proposals[id(prog)][1]
+        if mid in taken and taken[mid] != poid:
+            n = 2
+            while f"{mid}_{n}" in taken:
+                n += 1
+            log.append(f"id collision on '{mid}' (still taken): {prog.name}, {prog.degree} gets '{mid}_{n}'")
+            mid = f"{mid}_{n}"
         if not re.fullmatch(r"[a-z0-9_]+", mid):
-            raise SystemExit(f"bad major_id {mid!r} for {prog.title}")
+            raise SystemExit(f"bad major_id {mid!r} for {prog.name}, {prog.degree}")
         prog.major_id = mid
         taken[mid] = poid
         if poid:
@@ -753,11 +804,21 @@ def assign_ids(programs, ids, log):
 
 # ---------- fetching (polite) ----------
 
+def is_bot_challenge(text):
+    """The AWS WAF 'verify that you're not a robot' page catalog.sdsu.edu sends to scripts."""
+    return "AwsWafIntegration" in text or "awswaf.com" in text or "verify that you're not a robot" in text
+
+
 class Fetcher:
-    def __init__(self, cache_dir=CACHE_DIR):
+    """Downloads catalog pages: robots.txt first, then at most one request per
+    max(SECONDS_BETWEEN_REQUESTS, the robots.txt crawl-delay) seconds (catalog.sdsu.edu
+    asks for 120), every page cached in data/catalog_html/ and reused on reruns."""
+
+    def __init__(self, cache_dir=CACHE_DIR, robots=None):
         self.cache_dir = cache_dir
         self.last = 0.0
-        self.robots = None
+        self.robots = robots
+        self.delay = SECONDS_BETWEEN_REQUESTS
 
     def allowed(self, url):
         if self.robots is None:
@@ -766,22 +827,39 @@ class Fetcher:
                 self.robots.read()
             except urllib.error.URLError as e:
                 raise SystemExit(f"Could not read {SITE}/robots.txt ({e}); not crawling. Use --html-dir with saved pages.")
+            finally:
+                self.last = time.monotonic()      # reading robots.txt counts as a request
+        self.delay = max(SECONDS_BETWEEN_REQUESTS, float(self.robots.crawl_delay(USER_AGENT) or 0))
         return self.robots.can_fetch(USER_AGENT, url)
 
     def get(self, url, cache_name):
         path = os.path.join(self.cache_dir, cache_name)
-        if os.path.exists(path):
+        if os.path.exists(path) and os.path.getsize(path) > 0:
             with open(path, encoding="utf-8") as f:
-                return f.read()
+                text = f.read()
+            if not is_bot_challenge(text):
+                return text
         if not self.allowed(url):
             raise SystemExit(f"robots.txt does not allow {url}; not crawling. Save the pages by hand and use --html-dir.")
-        wait = SECONDS_BETWEEN_REQUESTS - (time.monotonic() - self.last)
+        wait = self.delay - (time.monotonic() - self.last)
         if wait > 0:
+            print(f"  waiting {wait:.0f}s (robots.txt crawl-delay) before {url}", flush=True)
             time.sleep(wait)
-        request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html"})
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
-                text = response.read().decode(response.headers.get_content_charset() or "utf-8", "replace")
+                body = response.read()
+                text = body.decode(response.headers.get_content_charset() or "utf-8", "replace")
+                if is_bot_challenge(text):
+                    raise SystemExit(f"Stopped: {url} answered with a bot check (\"verify that you're not a robot\"), "
+                                     f"so the site does not allow automated access. Not retrying and not caching it. "
+                                     f"Save the pages from a browser and use --html-dir / --listing-html.")
+                if not text.strip():
+                    # never cache an empty page: a rerun would reuse it
+                    headers = "; ".join(f"{k}: {v}" for k, v in response.headers.items() if k.lower() != "set-cookie")
+                    raise SystemExit(f"Stopped: {url} answered {response.status} with an empty page "
+                                     f"(final URL {response.geturl()}; {headers}). Not retrying. "
+                                     f"Use --html-dir / --listing-html with pages saved from a browser.")
         except urllib.error.HTTPError as e:
             if e.code in (403, 429):
                 raise SystemExit(f"Stopped: {url} answered {e.code}. Not retrying. Use --html-dir with saved pages.")
@@ -1115,7 +1193,21 @@ def main(argv=None):
         programs, counts = discover(text)
         write_urls(programs, args.urls_out)
         print(", ".join(f"{k}: {v}" for k, v in counts.items()))
-        print(f"{len(programs)} bachelor's programs written to {args.urls_out}")
+        print(f"{len(programs)} bachelor's programs written to {shown_path(args.urls_out)}")
+        # make every program's major_id now, once; later runs reuse the file and never change an id
+        # (until an id is published, it can still be edited by hand)
+        progs = []
+        for p in programs:
+            prog = Program(p["url"])
+            prog.poid, prog.name, prog.degree = p["poid"], p["name"], p["degree"]
+            progs.append(prog)
+        ids, log = read_ids(args.ids), []
+        before = len(ids)
+        if assign_ids(progs, ids, log):
+            write_ids(ids, args.ids)
+        print(f"major ids: {len(ids) - before} new, {before} already in {shown_path(args.ids)}")
+        for line in log:
+            print("  " + line)
         special = [p["title"] for p in programs if p["special"]]
         print(f"{len(special)} special programs (always on the review list):\n  " + "\n  ".join(special))
         return 0
@@ -1129,7 +1221,13 @@ def main(argv=None):
                     pages.append((path, f.read(), None))
     else:
         fetcher = Fetcher()
-        for url in read_urls(args.urls):
+        urls = read_urls(args.urls)
+        to_fetch = [u for u in urls if not os.path.exists(os.path.join(CACHE_DIR, f"program_{(re.search(r'poid=(\d+)', u) or [0, ''])[1]}.html"))]
+        if to_fetch:
+            fetcher.allowed(to_fetch[0])
+            print(f"{len(to_fetch)} pages to download, one every {fetcher.delay:.0f}s: "
+                  f"about {len(to_fetch) * fetcher.delay / 60:.0f} minutes. Saved pages are reused on reruns.")
+        for url in urls:
             poid = (re.search(r"poid=(\d+)", url) or [None, None])[1]
             if not poid:
                 print(f"skipping {url}: no poid")

@@ -202,6 +202,24 @@ class HelperTests(unittest.TestCase):
         self.assertEqual(importer.propose_id("Business Administration, Emphasis in Accounting", "B.S."),
                          "ba_accounting_bs")
         self.assertEqual(importer.propose_id("History", "B.A."), "history_ba")
+        self.assertEqual(importer.propose_id("Brazilian Studies", "B.A."), "brazilian_studies_ba")   # not 'bs_ba'
+        self.assertEqual(importer.propose_id("Music, Music Education Specialization", "B.M."), "music_education_bm")
+        self.assertEqual(importer.propose_id("Television, Film and New Media, Emphasis in Production", "B.S."),
+                         "tfm_production_bs")
+        self.assertEqual(importer.propose_id("Biology, in Preparation for the Single Subject Teaching Credential "
+                                             "in Science/Biological Sciences", "B.S."), "biology_credential_bs")
+
+    def test_shared_initials_are_spelled_out_whatever_the_order(self):
+        names = ["Civil Engineering", "Computer Engineering", "Construction Engineering", "Aerospace Engineering"]
+        for order in (names, names[::-1]):
+            progs = []
+            for i, name in enumerate(order):
+                p = importer.Program("")
+                p.poid, p.name, p.degree = str(90000 + names.index(name)), name, "B.S."
+                progs.append(p)
+            importer.assign_ids(progs, collections.OrderedDict(), [])
+            self.assertEqual(sorted(p.major_id for p in progs),
+                             ["ae_bs", "civil_engineering_bs", "computer_engineering_bs", "construction_engineering_bs"])
 
     def test_existing_ids_are_reused_and_never_changed(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -215,13 +233,55 @@ class HelperTests(unittest.TestCase):
                 progs.append(p)
             log = []
             importer.assign_ids(progs, importer.read_ids(path), log)
-            self.assertEqual([p.major_id for p in progs], ["civil_bs", "ce_bs", "me_bs"])
-            # a second program whose short id is taken gets the spelled-out one, and the collision is logged
+            # civil_bs is kept as saved; Computer Engineering shares 'ce' with Civil, so it is spelled out
+            self.assertEqual([p.major_id for p in progs], ["civil_bs", "computer_engineering_bs", "me_bs"])
+            self.assertTrue(any("spelled out" in line for line in log))
+            # an id that is already taken is never handed out again
             other = importer.Program("")
-            other.poid, other.name, other.degree = "99999", "Chemical Engineering", "B.S."
-            importer.assign_ids([other], {p.poid: {"poid": p.poid, "major_id": p.major_id} for p in progs}, log)
-            self.assertEqual(other.major_id, "chemical_engineering_bs")
+            other.poid, other.name, other.degree = "99999", "Computer Engineering", "B.S."
+            saved = {p.poid: {"poid": p.poid, "major_id": p.major_id, "name": p.name} for p in progs}
+            importer.assign_ids([other], saved, log)
+            self.assertNotIn(other.major_id, {p.major_id for p in progs})
             self.assertTrue(any("collision" in line for line in log))
+
+
+class FetcherTests(unittest.TestCase):
+    def robots(self, lines):
+        parser = importer.urllib.robotparser.RobotFileParser()
+        parser.parse(lines)
+        return parser
+
+    def test_follows_crawl_delay_and_disallow(self):
+        fetcher = importer.Fetcher(robots=self.robots(
+            ["User-agent: *", "Disallow: /search_advanced.php", "crawl-delay: 120"]))
+        self.assertTrue(fetcher.allowed("https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12130"))
+        self.assertEqual(fetcher.delay, 120)
+        self.assertFalse(fetcher.allowed("https://catalog.sdsu.edu/search_advanced.php?catoid=12"))
+
+    def test_disallowed_page_is_never_requested(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            fetcher = importer.Fetcher(cache_dir=tmp, robots=self.robots(["User-agent: *", "Disallow: /"]))
+            with self.assertRaises(SystemExit) as err:
+                fetcher.get("https://catalog.sdsu.edu/content.php?catoid=12&navoid=1153", "listing.html")
+            self.assertIn("robots.txt does not allow", str(err.exception))
+            self.assertEqual(os.listdir(tmp), [])
+
+    def test_saved_page_is_reused_without_a_request(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with open(os.path.join(tmp, "page.html"), "w", encoding="utf-8") as f:
+                f.write("saved")
+            fetcher = importer.Fetcher(cache_dir=tmp, robots=self.robots(["User-agent: *", "Disallow: /"]))
+            self.assertEqual(fetcher.get("https://catalog.sdsu.edu/x", "page.html"), "saved")
+
+    def test_bot_challenge_page_is_recognized(self):
+        challenge = ('<script src="https://x.token.awswaf.com/challenge.js"></script><script>'
+                     'AwsWafIntegration.getToken()</script><noscript>we need to verify that you\'re not a robot.</noscript>')
+        self.assertTrue(importer.is_bot_challenge(challenge))
+        self.assertFalse(importer.is_bot_challenge(read_fixture("programs_listing.html")))
+        self.assertFalse(importer.is_bot_challenge(read_fixture("me_bs.html")))
+
+    def test_user_agent_is_generic(self):
+        self.assertEqual(importer.USER_AGENT, "EzClass-catalog-reader")
 
 
 class DiscoveryTests(unittest.TestCase):

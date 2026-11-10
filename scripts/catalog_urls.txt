@@ -1,0 +1,190 @@
+# Bachelor's programs in the 2026-2027 SDSU catalog, from https://catalog.sdsu.edu/content.php?catoid=12&navoid=1153
+# name<TAB>degree<TAB>url. Only the URL is read; lines starting with # are skipped.
+Chemistry, and Certificate of the American Chemical Society	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11937
+English and Comparative Literature, in preparation for the Single Subject Teaching Credential in English Language Arts	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12460
+History	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12043
+Latin American Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12096
+Mathematics, In preparation for the Single Subject Teaching Credential	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12491
+Nursing, Second Bachelor’s Degree	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=13958
+Nursing, Registered Nurse	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12494
+Nursing, Registered Nurse, Second Bachelor’s Degree	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=13959
+Public Administration	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12173
+Public Health, Emphasis in Environmental Health	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12545
+Social Science	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12192
+Social Science, in Preparation for the Single Subject Teaching Credential	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12492
+Social Work	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12193
+Spanish	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12200
+American Indian Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11892
+Business Administration, Emphasis in General Business	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11935
+Child Development	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11947
+Civil Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11952
+Communication	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11960
+Criminal Justice	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11974
+Economics	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11981
+Nursing	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12151
+Public Health	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12176
+Sociology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12197
+Aerospace Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11888
+Africana Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11890
+Anthropology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11894
+Art History	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12795
+Art	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11906
+Art, Emphasis in Applied Design	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11900
+Art, Emphasis in Interior Architecture	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11902
+Art, Emphasis in Painting and Printmaking	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11904
+Art, Emphasis in Sculpture	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11905
+Art, Emphasis in Studio Arts	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11899
+Artificial Intelligence and Human Responsibility	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12791
+Asian American Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12645
+Asian Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11910
+Astronomy	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11915
+Astronomy	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11916
+Astronomy, Emphasis in Data Science	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12796
+Biology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11918
+Biology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11919
+Biology, in Preparation for the Single Subject Teaching Credential in Science/Biological Sciences	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11928
+Biology, Emphasis in Cellular and Molecular Biology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11920
+Biology, Emphasis in Ecology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11921
+Biology, Emphasis in Evolutionary Biology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11922
+Biology, Emphasis in Marine Biology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11923
+Biology, Emphasis in Zoology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11924
+Brazilian Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12572
+Business Administration, Emphasis in Accounting	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11880
+Business Administration, Emphasis in Finance	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12008
+Business Administration, Emphasis in Financial Services	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12009
+Business Administration, Emphasis in Information Systems	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12117
+Business Administration, Emphasis in Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12112
+Business Administration, Emphasis in Marketing	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12120
+Business Administration, Emphasis in Real Estate	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12010
+Business Administration, Management, Specialization in Entrepreneurship	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12113
+Business Administration, Management, Specialization in Human Resource Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12114
+Chemistry	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11940
+Chemistry, Emphasis in Preparation for the Single Subject Teaching Credential	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12519
+Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11938
+Chicana and Chicano Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11943
+Child Development, Emphasis in Early Childhood Special Education Integrated Teacher Education (ITEP)	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12547
+Classics	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11953
+Classics, Emphasis in Classical Humanities	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11954
+Classics, Emphasis in Classical Language	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11955
+Classics, Emphasis in Classical Languages with Honors	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11956
+Comparative International Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11965
+Computer Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11968
+Computer Science	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11969
+Construction Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11972
+Construction Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12534
+Dance	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11976
+Dance	B.F.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11975
+Dance, Dance Education Concentration	B.F.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12646
+Economics, Emphasis in International Economics	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11982
+Economics, Emphasis in Public Policy	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11983
+Economics, Specialization in Quantitative Analysis	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11984
+Electrical Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11987
+English and Comparative Literature	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11989
+Environmental Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11997
+Environmental Sciences	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11998
+Foods and Nutrition	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12152
+Geography, Emphasis in Environment, Sustainability, and Policy	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12017
+Geography, Emphasis in General Geography	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12016
+Geography, Emphasis in Geographic Information Science and Technology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12018
+Geography, Emphasis in Geographic Information Science and Technology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12020
+Geography, Emphasis in Human Geography and Global Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12019
+Geography, Emphasis in Water, Climate, and Ecosystems	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12021
+Geological Sciences	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12035
+Geological Sciences, Emphasis in Environmental Geosciences	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12032
+Geological Sciences, Emphasis in General Geology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12029
+Geological Sciences, Emphasis in Geophysics	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12031
+Gerontology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12040
+Health Communication	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11961
+Hospitality and Tourism Management, Emphasis in Hotel Operations and Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12046
+Hospitality and Tourism Management, Emphasis in Meetings and Events Operations and Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12047
+Hospitality and Tourism Management, Emphasis in Restaurant Operations and Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12048
+Hospitality and Tourism Management, Emphasis in Tribal Gaming Operations and Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12049
+Humanities	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12051
+Integrated Design	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=13954
+Interdisciplinary Studies in Three Departments	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12054
+International Business, Emphasis in Arabic - Middle East and North Africa	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12065
+International Business, Emphasis in Asian Languages - Singapore	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12540
+International Business, Emphasis in Chinese - Asia	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12066
+International Business, Emphasis in English - North America	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12067
+International Business, Emphasis in European Languages - North Atlantic	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12618
+International Business, Emphasis in French - North America	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12068
+International Business, Emphasis in French - Western Europe	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12069
+International Business, Emphasis in German - Western Europe	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12070
+International Business, Emphasis in Italian - Western Europe	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12071
+International Business, Emphasis in Japanese - Asia	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12072
+International Business, Emphasis in Korean - Asia	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12073
+International Business, Emphasis in Portuguese - Latin America	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12074
+International Business, Emphasis in Portuguese - Western Europe	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12075
+International Business, Emphasis in Russian - Central Europe	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12076
+International Business, Emphasis in Spanish - Latin America	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12077
+International Business, Emphasis in Spanish - Western Europe	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12078
+International Security and Conflict Resolution, Specialization in Conflict in the Global System	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12080
+International Security and Conflict Resolution, Specialization in Environment in the Global System	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12081
+International Security and Conflict Resolution, Specialization in Justice in the Global System	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12082
+Islamic and Arabic Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11896
+Japanese	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12085
+Journalism	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12089
+Journalism, Emphasis in Advertising	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12090
+Journalism, Emphasis in Media Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12091
+Journalism, Emphasis in Public Relations	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12092
+Kinesiology, Emphasis in Exercise Science Generalist	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12004
+Kinesiology, Emphasis in Fitness Specialist	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12005
+Kinesiology, Emphasis in Prephysical Therapy	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12006
+Language, Culture, and Society	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12520
+Leadership Studies	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12596
+Lesbian, Gay, Bisexual, Transgender, Queer, and Plus (LGBTQ+) Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12101
+Liberal Studies, Emphasis in Education-Generalist	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12104
+Liberal Studies, Emphasis in Elementary Education	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12105
+Linguistics	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12106
+Mathematics	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12128
+Mathematics, Emphasis in Applied Mathematics	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12125
+Mathematics, Emphasis in Computational Science	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12126
+Mathematics, Emphasis in Mathematics Education	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12522
+Mathematics, Emphasis in Science	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12127
+Mechanical Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12130
+Mechanical Engineering, Emphasis in Bioengineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12131
+Microbiology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11926
+Microbiology, Emphasis in Clinical Laboratory Science	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11927
+Modern Jewish Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12088
+Music	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12135
+Music, General Track	B.M.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12142
+Music, Global Composition Specialization	B.M.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12139
+Music, Jazz Studies Specialization	B.M.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12140
+Music, Music Education Specialization	B.M.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12137
+Music, Music Entrepreneurship and Business Track	B.M.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12141
+Music, Music Recording Technology and Audio Design Track	B.M.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12143
+Music, Performance Specialization	B.M.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12138
+Musical Theatre	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12597
+Philosophy	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12154
+Physics	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12156
+Physics, General Physics	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12157
+Physics, Modern Optics	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12158
+Political Science	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12162
+Psychology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12498
+Psychology, Emphasis in Industrial and Organizational Psychology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12168
+Psychology, Emphasis in Neuroscience	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12544
+Public Administration, Emphasis in City Planning	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12174
+Recreation Administration, Emphasis in Outdoor Resource Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12178
+Recreation Administration, Emphasis in Recreation Systems Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12179
+Recreation Administration, Emphasis in Sustainable Tourism Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12180
+Religious Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12182
+Rhetoric and Writing Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12186
+Social Work, Specialization in Community Corrections Case Management	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12194
+Spanish, in preparation for the Single Subject Teaching Credential in Foreign Languages	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12199
+Speech, Language, and Hearing Sciences	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12203
+Statistics	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12204
+Statistics, Emphasis in Actuarial Science	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12205
+Statistics, Emphasis in Data Science	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12206
+Sustainability	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12208
+Television, Film and New Media, Emphasis in Critical Studies	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12218
+Television, Film and New Media, Emphasis in Production	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12219
+Theatre Arts	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12212
+Theatre Arts, Emphasis in Design and Technology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12214
+Theatre Arts, Emphasis in Performance	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12216
+Theatre Arts, Emphasis in Youth Theatre	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12217
+Theatre Arts, General Theatre Arts	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12213
+Urban Studies, Urban Cultures and Societies Specialization	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12056
+Urban Studies, Urban Planning, Design, and Management Specialization	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12057
+Urban Studies, Urban Political Economy and Public Policy Specialization	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12058
+Urban Studies, Urban Sustainability Specialization	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12059
+Women’s and Gender Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12223
