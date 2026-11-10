@@ -1,0 +1,226 @@
+EzClass schedule conversion of SD_CLASS_SCHEDULE_RPT_PUBLIC_204541634.xlsx
+Term: Spring 2027
+
+== The numbers
+Rows read:            8083  (the title line says 8083: matches)
+  rows used:          6910
+  rows skipped:       1173
+    campus GLBL: 506 rows
+    campus IVC: 225 rows
+    same subject, number and section as a lower Class Nbr: 3 rows
+    thesis or individual study: 439 rows
+  check: 6910 + 1173 = 8083 (adds up)
+Sections in the file: 6529  (GLBL 350, IVC 218, SDSU 5961)
+Sections skipped:     1009
+    campus GLBL: 350
+    campus IVC: 218
+    same subject, number and section as a lower Class Nbr: 3
+    thesis or individual study: 438
+Sections written:     5520  (courses 2394, subjects 121)
+  by career:          GRAD 951, UGRD 4569
+  new courses:        1773  (already in EzClass: 621)
+  EzClass courses with no section in this file: 158
+Meetings written:     5224  (timed 4472, online parts 752)
+  no schedule:        679  (shown as 'Time not listed yet')
+People written:       1950  (sections with no instructor: 385)
+Class numbers:        5520 (5520 unique; 4419 with 4 digits, 1101 with 5)
+Instruction modes:    HY 298, OE 21, ON 561, P 4640
+Sessions:             1 5520
+Components:           ACT 599, CPO 63, DIS 32, LAB 633, LEC 960, LED 2026, LLC 261, NNT 100, RTC 26, SEM 289, SUP 434, TAC 97
+Courses with two or more components (e.g. lecture + lab as separate sections): 213
+
+== Every rule applied (count, up to 5 examples)
+  0 units: 76
+      ANTH 799B sec 01 (class 1057); ASIAN 799B sec 01 (class 1084); BDA 799B sec 01 (class 5584); BDA 799C sec 01 (class 5585); ECL 799B sec 01 (class 7921); ... (71 more)
+  ASYN -> online part: 667
+      AAS 101 sec 04 (class 9902); AAS 122 sec 01 (class 8826); AAS 268 sec 01 (class 11132); AFRAS 101 sec 01 (class 4519); AFRAS 101 sec 02 (class 9996); ... (662 more)
+  Facility ONLINE, no time -> online part: 80
+      ASIAN 101 sec 01 (class 5366); ASIAN 101 sec 02 (class 10033); BRAZ 222 sec 01 (class 5885); CLASS 202G sec 01 (class 5369); CLASS 202L sec 01 (class 5370); ... (75 more)
+  OFFCSDSU -> 'Off campus': 121
+      ARP 612 sec 01 (class 11865); ARP 615 sec 01 (class 3391); ARP 645 sec 01 (class 6004); ARP 685B sec 01 (class 1959); ARP 744 sec 04 (class 2475); ... (116 more)
+  all-caps last name title-cased: 1
+      KARNES -> Karnes
+  arranged in an HY section -> online part: 12
+      TE 914E sec 01 (class 8793); TE 924F sec 01 (class 5498); TE 924G sec 01 (class 8850); TE 924I sec 01 (class 11031); BA 640 sec 01 (class 5913); ... (7 more)
+  arranged in an ON section -> online part: 3
+      GENS 455 sec 01 (class 9331); DLE 524 sec 01 (class 8453); DLE 960 sec 02 (class 5488)
+  arranged in an in-person section (no schedule part): 983
+      AFRAS 470 sec 02 (class 9118); AFRAS 499 sec 01 (class 6385); AFRAS 499 sec 10 (class 6649); AMIND 498 sec 01 (class 3743); AMIND 499 sec 01 (class 1025); ... (978 more)
+  building not in rooms.csv yet: 186
+  course with several titles in the export (each section keeps its own): 295
+      ECL 503; ECL 527; ECL 564; MALAS 600A; CSP 730; ... (24 more)
+  current title kept instead of the export's short one: 1136
+      GENS 455: 'Soc &/Beh Sci Study Abroad' -> 'Social and/or Behavioral Science Study Abroad'; AAS 101: 'Politics, Power, Asian America' -> 'Politics, Power, and Asian America'; AAS 122: 'War, Empire, Asian Americans' -> 'War, Empire, and the Asian American Experience'; AAS 152: 'Public Speaking' -> 'Oral Communications and Public Speaking'; AAS 208: 'Pop Culture & Asian America' -> 'Asian Americans and Popular Culture'; ... (351 more)
+  facility code that doesn't split (kept whole as the building): 7
+  half units (kept as they are): 50
+      ACCTG 201 sec 08 (class 3807): 1.5; ACCTG 201 sec 07 (class 3808): 1.5; ACCTG 201 sec 09 (class 3809): 1.5; ACCTG 201 sec 10 (class 3810): 1.5; ACCTG 201 sec 11 (class 10468): 1.5; ... (45 more)
+  hybrid sections (no online part listed): 58
+      CHIN 102 sec 01 (class 5367); FRENC 304 sec 01 (class 11370); TE 405W sec 01 (class 8752); TE 901 sec 24 (class 8846); TE 902 sec 25 (class 8734); ... (53 more)
+  hybrid sections (online parts only): 13
+      FRENC 304 sec 02 (class 11371); SPED 560 sec 01 (class 2723); TE 914E sec 01 (class 8793); TE 924F sec 01 (class 5498); TE 924G sec 01 (class 8850); ... (8 more)
+  hybrid sections with a timed and an online part: 227
+      AFRAS 101 sec 02 (class 9996); AFRAS 140 sec 04 (class 9836); AFRAS 170A sec 02 (class 8313); AFRAS 170B sec 01 (class 5952); AFRAS 170B sec 02 (class 5953); ... (222 more)
+  in-person arranged section -> no schedule (Time not listed yet): 980
+      AFRAS 470 sec 02 (class 9118); AFRAS 499 sec 01 (class 6385); AFRAS 499 sec 10 (class 6649); AMIND 498 sec 01 (class 3743); AMIND 499 sec 01 (class 1025); ... (975 more)
+  instructor initial matches more than one current person (initial used): 26
+  instructor listed on only some meetings (the importer lists each person once per section): 100
+      GEOG 101 sec 01 (class 3866); GEOG 574 sec 01 (class 5892); RWS 305W sec 01 (class 2948); RWS 305W sec 02 (class 2949); RWS 305W sec 03 (class 2950); ... (95 more)
+  instructor matched to a current full name: 2044
+      N Hansen -> Noah Hansen; J Bender -> Joshua Bender; S Suh -> Stephen Suh; E Andres -> Elaine Andres; C Ong -> Christina Ong; ... (569 more)
+  live online: day and time, Facility ONLINE: 139
+      AMIND 200 sec 01 (class 8906): TTh 17:30-18:45; CHIN 102 sec 01 (class 5367): M 12:00-13:50; ARP 744 sec 01 (class 2473): T 19:00-21:40; CSP 604 sec 01 (class 9162): T 15:00-17:40; CSP 605 sec 01 (class 10080): W 10:00-12:40; ... (134 more)
+  new instructor, initial used as the first name: 4043
+      M. Young; P. Paligutan; D. Gomes Da Silva; A. Brown; K. Shabazz; ... (1393 more)
+  no instructor listed: 454
+      AFRAS 140 sec 01 (class 9830); AFRAS 475 sec 01 (class 11638); ASIAN 321 sec 01 (class 4965); ASIAN 421 sec 01 (class 11903); ASIAN 450 sec 01 (class 11109); ... (449 more)
+  no usable meeting -> no schedule: 138
+      ANTH 799A sec 01 (class 1056): empty; ANTH 799B sec 01 (class 1057): empty; ECON 797 sec 01 (class 1214): empty; ECON 798 sec 01 (class 1229): empty; ECON 799A sec 01 (class 1243): empty; ... (133 more)
+  over 6 units: 97
+      GEOG 890 sec 01 (class 2023): 9; GEOG 897 sec 01 (class 2024): 15; GEOG 899 sec 01 (class 2025): 15; POLS 498 sec 01 (class 4201): 12; ARP 745 sec 01 (class 2366): 9; ... (92 more)
+  part dropped next to a timed meeting (arranged): 3
+      GEOG 580 sec 02 (class 11238); GEOG 584 sec 02 (class 3878); MUSIC 351 sec 10 (class 12206)
+  part dropped next to a timed meeting (pattern but no time): 1
+      AE 310 sec 01 (class 6095)
+  pattern but no times (part dropped, not guessed): 1
+      AE 310 sec 01 (class 6095): F ''-''
+  room not in rooms.csv yet: 955
+  seats 0 (placeholder, left blank): 16
+      LATAM 425 sec 01 (class 11636); ENGR 898 sec 01 (class 2593); ENGR 899 sec 01 (class 2263); BA 370 sec 17 (class 11459); NURS 819 sec 01 (class 11188); ... (11 more)
+  seats 500 or more (kept, please glance): 19
+  seats 99 (kept, could be a placeholder): 6
+      AMIND 451 sec 01 (class 3307); ENS 303 sec 01 (class 9522); BIOL 204 sec 01 (class 6345); BIOL 204 sec 02 (class 6346); BIOL 204 sec 03 (class 6347); ... (1 more)
+  sections with two or more meetings: 371
+      AFRAS 101 sec 02 (class 9996); AFRAS 140 sec 04 (class 9836); AFRAS 170A sec 02 (class 8313); AFRAS 170B sec 01 (class 5952); AFRAS 170B sec 02 (class 5953); ... (366 more)
+  subject spaces removed: 879
+      'GEN S' -> GENS; 'I B' -> IB; 'POL S' -> POLS; 'REL S' -> RELS; 'LIB S' -> LIBS; ... (21 more)
+  timed meeting with no room: 21
+      AAS 486 sec 01 (class 11629): F 13:00-15:40 ''; COMPE 492 sec 03 (class 12024): T 16:00-18:40 ''; EE 492 sec 03 (class 12027): T 16:00-18:40 ''; ME 220 sec 06 (class 12185): MWF 10:00-10:50 ''; SLHS 525 sec 01 (class 4188): T 11:00-13:00 ''; ... (16 more)
+  two or more instructors: 553
+      CAL 100 sec 02 (class 10550); CAL 295 sec 01 (class 11829); CAL 495 sec 01 (class 11804); GEOG 700 sec 01 (class 2021); GEOG 700 sec 02 (class 2022); ... (548 more)
+
+Titles:
+  current EzClass title kept: 2007 sections
+  new course, export title: 3218 sections
+  several titles, each section keeps its own: 295 sections
+
+== Needs a look
+
+Thesis and individual study, skipped (by title):
+   153  Special Study
+    48  Research
+    35  Thesis
+    34  Thesis Extension
+    25  Thesis or Project
+    24  Doctoral Dissertation
+    21  Doctoral Research
+    16  Comprehensive Exam
+    14  Doctoral Special Study
+    13  Thesis or Project Exten
+     6  Directed Readings Thea
+     4  Senior Thesis
+     4  Honors Special Study
+     3  Independent Research
+     3  Undergraduate Research
+     2  Thesis or Proj Extension
+     2  Investigation & Report
+     2  Thesis Project Extension
+     2  Undergraduate Thesis
+     2  Undergrad Honors Thesis
+     2  Senior Research
+     1  Comp Exam Extension
+     1  Thesis Research
+     1  Senior Honors Thesis
+     1  Thesis in Iscor
+  and one section each (or two): 
+    Comprehensive Exam Ext (1), Comprehensive Examination (1), Directed Study (1), Doctoral Special Studies (1), Investigation and Report (1)
+    Investigation&Report (1), Pract Thea Prod:Ind Study (1), Project (1), Research Crim Justice (1), Research Latam Studies (1)
+    Research Project (1), Research in City Planning (1), Research/Public Admin (1), Senior Thesis Preparation (1), Supervised Spec in PH (1)
+    Thesis Proj Extension (1), Thesis of Project Extensn (1), Thesis or Proj Ext (1), Thesis or Project Extens (1)
+
+Kept on purpose with no day or time: 1189 sections
+  508 are online with no set time (normal online classes).
+  681 are arranged or not listed (shown as 'Time not listed yet'). Top 40 titles, say yes or no per group:
+    28  Per St Jazz Inst
+    21  DNP Project/Clinical Practice
+    16  Perfrm Stdy: Strings
+    16  Per St Strings
+    14  Adv Per St Jazz Inst
+    11  Internship
+    11  Nurs Acu & Chron I
+    11  Nurs Childbearing Family
+    10  Psych-Mental Health Nurs
+    10  Nursing Care Adult/Gero II
+    10  Community Health Nursing
+    10  Perfrm Stdy: Woodwinds
+    10  Per St Woodwinds
+     9  Pediatric Nursing
+     9  Per St Brass
+     9  Per St Composition
+     9  Orientation Practicum
+     8  Internshp II in Hosp&Tour
+     8  Perfrm Stdy: Voice
+     8  Perfrm Stdy: Brass
+     8  Per St Voice
+     8  Adv Per St Strings
+     7  Prof Exp & Commun Service
+     7  Clinical Practicum
+     6  Perfrm Stdy: Keyboard
+     6  Per St Classic Guitar
+     6  Supervised Teaching
+     5  Doctoral Project Part II
+     5  Diag Pract SLP
+     5  Per St Keyboard
+     5  Adv Per St Woodwinds
+     5  Pract Perform Cast Member
+     5  Acad or Psy Counsel Exper
+     4  Clinical Field Experience
+     4  Seminar
+     4  Applied Pk-12 Resrch/Eval
+     4  Clinical Practice I
+     4  Adv Field Clin Pract
+     4  Clin Interv SLP
+     4  Internship I in Hosp&Tour
+
+Courses that disappear completely because of the thesis filter: 368
+  of those, needed by a major or a GE list (they will show as 'not offered'): 2
+    CS 498: major cs_bs
+    CS 499: major cs_bs
+
+Same subject, number and section with two Class Nbrs (the lowest is kept, the others skipped):
+  GEOL 502 sec 01: class 12138 skipped, 8866 kept
+  GEOL 502 sec 01: class 12192 skipped, 8866 kept
+  GEOL 600 sec 01: class 12141 skipped, 3927 kept
+
+building not in rooms.csv yet (17 different, 186 meetings or sections):
+    39-105, 39-110, AQUAPLEX, ARC, ARTS, ATK, BRC, BSCI, CLP, EIS
+    ESC, LLA, NH, PSYANNX, RACQ, RECF, SU
+
+room not in rooms.csv yet (173 different, 955 meetings or sections):
+    AH 2122, AH 2128, AH 2132, AH 4144, AH 4157, AL 132, AL 266, AL 318, AL 420, AL 422
+    AL 524, AL 566, ARC 131, ARC 135, ARC 138, ARC 162, ARC 163, ARC 203, ARC 232, ARC 236
+    ARTN 104, ARTN 106, ARTN 111, ARTN 122, ARTN 206, ARTN 213, ARTN 215, ARTN 216, ARTN 300, ARTN 301
+    ARTN 304, ARTN 312, ARTN 316, ARTN 402, ARTN 407, ARTN 418, ARTN 501, ARTN 504, ARTN 512A, ARTN 512B
+    ARTN 514, ARTN 517, ARTS 453, ARTS 461, ARTS 473, ARTS 477, ARTS 481, ARTS 568, ARTS 572, ARTS 582
+    ATK 125, BRC 001, BSCI 1102, BSCI 1103, CLP 4104, CLP 4401, COM 106, COM 107, COM 108, COM 153
+    COM 172, COM 209, CSL 222, CSL 226, CSL 228, CSL 422, CSL 424, CSL 425, CSL 427, CSL 501
+    CSL 502, DA 004, DA 005B, DA 008, DA 011B, DA 106, DA 109, DA 218, DA 221, E 101F
+    E 101G, E 101H, E 103, E 103C, E 123, E 132, E 202F, E 207, E 221, E 221C
+    EIS 006, EIS 008, EIS 010, EIS 012, EIS 014, EIS 106, EIS 311, ENS 107, ENS 200, ENS 380
+    ESC 207, GC 2519, GMCS 128, GMCS 201, GMCS 244, GMCS 245, HH 132, HH 204A, HH 212, HT 135
+    HT 214, LH 002, LH 113, LL 406, LL 410, LLA 2203, LLA 76, LSN 101, LSN 235, LSN 324
+    LSN 415, LSN 420, LSS 269, LSS 270, LSS 343, M 020, M 114, M 114C, M 116, M 119
+    M 119A, M 218, M 227, M 228, M 229, M 230, M 231, M 232, M 233, M 250
+    M 255A, M 271, NE 171, NE 272, NE 275, NH 131, NH 229, NH 324, OP 203, P 245
+    P 247, P 334, P 338, PG 1520, PG 174, PG 240, PG 241, PG 620, PS 231, PSFA 416
+    RACQ 106, RECF 103, SH 222D, SH 324, SH 325, SH 331, SHW 237, SLHS 147, SLHS 204, SSE 3301D
+    SSW 2601, SU 160, SU 210P
+
+facility code that doesn't split (kept whole as the building) (4 different, 7 meetings or sections):
+    39-105, 39-110, AQUAPLEX, PSYANNX
+
+instructor initial matches more than one current person (initial used) (5 different, 26 meetings or sections):
+    A Brown: Ajani Brown, Alison Brown, B Shen: Ben Shen, Bo-Wen Shen, J Diego: Jasmin Diego, Jasmine Diego, J Garza: James Garza, Joseph Garza, Y Chen: Yashu Chen, Yea-Wen Chen
+
+seats 500 or more (kept, please glance) (19 different, 19 meetings or sections):
+    AFRAS 170B sec 04 (class 8066): 500, BIOL 203 sec 01 (class 4933): 512, CHEM 200 sec 01 (class 4976): 504, OCEAN 320 sec 01 (class 4155): 580, PHYS 195 sec 01 (class 3871): 512, PHYS 196 sec 01 (class 1429): 500, PSY 101 sec 01 (class 1515): 500, PSY 211 sec 01 (class 4920): 512, PSY 230 sec 01 (class 4861): 500, PSY 260 sec 01 (class 1517): 500
+    PSY 340 sec 01 (class 1518): 500, PSY 350 sec 01 (class 6173): 500, PSY 351 sec 01 (class 1519): 500, PSY 360 sec 01 (class 2818): 512, PSY 365 sec 01 (class 3689): 500, TFM 160 sec 01 (class 5343): 500, TFM 160 sec 02 (class 5344): 500, TFM 160 sec 03 (class 9848): 500, TFM 363 sec 01 (class 3095): 500

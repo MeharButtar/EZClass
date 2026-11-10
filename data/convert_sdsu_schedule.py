@@ -81,7 +81,7 @@ KEEP_STATUS = {"A"}
 SEASONS = {"3": "Spring", "5": "Summer", "7": "Fall"}
 DAY_LETTERS = {"M": "M", "T": "T", "W": "W", "R": "Th", "F": "F", "S": "Sa"}
 NO_DAY_PATTERNS = {"", "ARR", "ASYN"}
-ONLINE_MODES = {"ON", "HY"}        # online, hybrid: an arranged part is an online part
+ONLINE_MODES = {"ON", "HY", "OE"}  # online, hybrid, OE (online, all with Facility ONLINE): an arranged part is online
 ONLINE_FACILITY = "ONLINE"
 OFF_CAMPUS = {"OFFCSDSU": "Off campus"}
 ARRANGED_FACILITY = {"ARRSDSU"}    # room arranged: follows the arranged rule
@@ -110,7 +110,7 @@ _SKIP_TITLE = re.compile(r"""
 _KEEP_TITLE = re.compile(r"""
       intern | practicum | prac\b | clinical | clin\b | field\s*(work|exp|study|placement) | fieldwork
     | student\s*teach | supervised\s*teach | sup\w*\s*teach | community\s*serv
-    | senior\s*proj | (doctoral|dnp)\s*proj | \bper\s*st | perfrm
+    | senior\s*proj | (doctoral|dnp)\s*proj | \bper\s*st | perfrm | clerkship
 """, re.I | re.X)
 
 
@@ -406,8 +406,10 @@ def build_section(nbr, group, term, rooms, people_now, notes):
     units = get("units")
     if re.fullmatch(r"\d+\.0+", units):
         units = units.split(".")[0]
-    if not units.isdigit():
-        notes.add("units not a whole number (the importer will skip the row)", f"{label}: '{units}'")
+    if not re.fullmatch(r"\d+(\.\d+)?", units):
+        notes.add("units not a number (the importer will skip the row)", f"{label}: '{units}'")
+    elif not units.isdigit():
+        notes.add("half units (kept as they are)", f"{label}: {units}")
     elif int(units) == 0:
         notes.add("0 units", label)
     elif int(units) > 6:
@@ -653,16 +655,19 @@ def report_text(c):
     w("")
     w("Thesis and individual study, skipped (by title):")
     by_title = collections.Counter(s["title_export"] for s in c["thesis_skipped"])
-    for title, n in by_title.most_common(30):
+    for title, n in by_title.most_common(25):
         w(f"  {n:4}  {title}")
-    if len(by_title) > 30:
-        w(f"  ... and {len(by_title) - 30} more titles ({sum(n for _, n in by_title.most_common()[30:])} sections)")
+    if len(by_title) > 25:
+        w(f"  and one section each (or two): ")
+        lines.extend(wrap([f"{t} ({n})" for t, n in by_title.most_common()[25:]], per_line=5))
     w("")
-    w("Kept on purpose with no day or time (top 40 titles; say yes or no per group):")
-    kept_titles = collections.Counter(s["title_export"] for s in c["no_time_kept"])
-    for title, n in kept_titles.most_common(40):
+    arranged = [s for s in c["no_time_kept"] if not s["online"]]
+    online_only = [s for s in c["no_time_kept"] if s["online"]]
+    w(f"Kept on purpose with no day or time: {len(c['no_time_kept'])} sections")
+    w(f"  {len(online_only)} are online with no set time (normal online classes).")
+    w(f"  {len(arranged)} are arranged or not listed (shown as 'Time not listed yet'). Top 40 titles, say yes or no per group:")
+    for title, n in collections.Counter(s["title_export"] for s in arranged).most_common(40):
         w(f"  {n:4}  {title}")
-    w(f"  ({len(c['no_time_kept'])} sections with no day or time are kept in all)")
     w("")
     gone_courses = {(s["subject"], s["catalog"]) for s in c["thesis_skipped"]} - courses
     need = needed_courses(c["majors_dir"], c["ge_dir"])
@@ -682,7 +687,7 @@ def report_text(c):
         w("")
     for kind in LONG_LISTS:
         if notes.examples.get(kind):
-            w(f"{kind} ({notes.count[kind]}):")
+            w(f"{kind} ({len(notes.examples[kind])} different, {notes.count[kind]} meetings or sections):")
             lines.extend(wrap(notes.examples[kind]))
             w("")
     return "\n".join(lines).rstrip() + "\n"

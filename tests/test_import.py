@@ -299,6 +299,21 @@ class SectionTitleTests(unittest.TestCase):
             self.assertIn("two titles or unit values for one course: 1", text)
             self.assertEqual(sections[("CS", "150", "02", "Spring 2027")]["section_title"], "Intro to Programming")   # as typed
 
+    def test_topic_titles_that_share_nothing_keep_the_course_title(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            run([rec(3, subject="MUSIC", catalog_num="351", course_title="Music and Culture: Jazz")], tmp)
+            # the official file abbreviates every topic differently
+            rows = [rec(3, subject="MUSIC", catalog_num="351", section_number="1", course_title="Mus&Cult: Hip Hop"),
+                    rec(4, subject="MUSIC", catalog_num="351", section_number="2", course_title="Psychedelic Rock 1960s"),
+                    rec(5, subject="ECL", catalog_num="503", section_number="1", course_title="Topic A"),
+                    rec(6, subject="ECL", catalog_num="503", section_number="2", course_title="Other B")]
+            _, _, sections = run(rows, tmp)
+            titles = {(c["subject"], c["catalog_num"]): c["title"] for c in read_table(tmp, "courses")}
+            self.assertEqual(titles[("MUSIC", "351")], "Music and Culture: Jazz")          # the title it had
+            self.assertEqual(titles[("ECL", "503")], "Topic A")                            # new course: the first
+            self.assertEqual(sections[("MUSIC", "351", "02", "Spring 2027")]["section_title"], "Psychedelic Rock 1960s")
+            self.assertEqual(sections[("ECL", "503", "02", "Spring 2027")]["section_title"], "Other B")
+
     def test_shared_title(self):
         self.assertEqual(importer.shared_title(["Music and Culture: Hip Hop", "Music and Culture: Jazz"]), "Music and Culture")
         self.assertEqual(importer.shared_title(["Music and Cultures", "Music and Culture: Jazz"]), "Music and")
@@ -393,6 +408,23 @@ class ClassNumberTests(unittest.TestCase):
             self.assertEqual(skipped, 0)
             self.assertEqual({s["class_number"] for s in sections.values()}, {""})
             self.assertEqual({s["retired"] for s in sections.values()}, {"0"})
+
+    def test_letter_sections(self):
+        self.assertEqual(parse(section_number="A1")[0]["section_number"], "A1")
+        self.assertEqual(parse(section_number="b0")[0]["section_number"], "B0")
+        self.assertEqual(parse(section_number="7")[0]["section_number"], "07")
+        self.assertIn("like 01 or A1", problem(section_number="A-1"))
+        with tempfile.TemporaryDirectory() as tmp:     # a blank section next to letter ones still gets a number
+            _, skipped, sections = run([rec(3, section_number="A1"), rec(4, section_number="", days="F")], tmp)
+            self.assertEqual(skipped, 0)
+            self.assertIn(("CS", "150", "A1", "Spring 2027"), sections)
+            self.assertIn(("CS", "150", "01", "Spring 2027"), sections)
+
+    def test_half_units(self):
+        self.assertEqual(parse(units="1.5")[0]["units"], "1.5")
+        self.assertEqual(parse(units="2.50")[0]["units"], "2.5")
+        self.assertEqual(parse(units="3")[0]["units"], 3)
+        self.assertIn("like 3 or 1.5", problem(units="1-3"))
 
     def test_class_number_must_be_digits(self):
         self.assertIn("digits only", problem(class_number="58A4"))

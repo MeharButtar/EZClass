@@ -1,66 +1,1143 @@
-EzClass import of EzClass_Data_Template_2_CLEANED.xlsx
+EzClass import of spring2027_sections.csv
 
-Rows read:                 2284
-Sections imported:         2284  (courses: 777)
-  created:                 0
+Rows read:                 5520
+Sections imported:         5520  (courses: 2394)
+  created:                 5520
   updated:                 0
-  unchanged:               2284
+  unchanged:               0
   no longer in the sheet:  0  (kept, marked inactive)
-  still inactive:          9  (gone before this run too)
-Meetings written:          3203
-Online-only sections:      411
-Hybrid sections:           151  (some meetings online)
-No schedule yet:           108  (no days, times or rooms entered)
-Sections with own title:   9  (special topics: MUSIC 351)
-Instructors created:       0
-Seats with slashes:        244
-Sections with no seats:    269
+  still inactive:          0  (gone before this run too)
+Retired now:               2293  (--retire-existing: kept with active = 0, never matched again)
+With a class number:       5520
+Meetings written:          5224
+Online-only sections:      508
+Hybrid sections:           244  (some meetings online)
+No schedule yet:           679  (no days, times or rooms entered)
+Sections with own title:   256  (special topics: MUSIC 351)
+Instructors created:       1376
+Seats with slashes:        0
+Sections with no seats:    5
 Skipped rows:              0
-Files changed:             no, data/cleaned is already up to date
+Files changed:             yes
 
 Normalizations applied:
-  seats with slashes (smallest part used): 244 (rows 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 305, 306, 307, 308, 309, 310, 311 ... and 204 more)
+  none
 
 Warnings:
-  set day and time but Building ONLINE (live online class?): 29
-    row 32: the meeting: MWF 12:00-12:50
-    row 45: the meeting: TTh 14:00-15:15
-    row 46: the meeting: TTh 12:30-13:45
-    row 53: the meeting: MW 19:00-20:15
-    row 55: the meeting: T 19:00-21:40
-    row 60: the meeting: MW 14:00-15:15
-    row 303: the meeting: Th 12:55-15:35
-    row 597: the meeting: TTh 17:30-18:45
-    row 698: the meeting: TTh 11:00-12:15
-    row 791: meeting 1: M 12:00-13:50
-    row 908: the meeting: W 16:00-18:40
-    row 909: the meeting: T 16:00-18:40
-    row 1402: the meeting: TTh 11:00-12:15
-    row 1526: meeting 1: Th 09:30-10:45
-    row 1527: meeting 1: Th 09:30-10:45
-    row 1528: meeting 1: Th 09:30-12:10
-    row 1529: meeting 1: Th 09:30-10:45
-    row 1824: the meeting: TTh 12:30-13:45
-    row 1830: meeting 2: F 10:00-10:50
-    row 1836: the meeting: W 16:00-18:40
-    row 1887: meeting 2: F 10:00-10:50
-    row 1888: meeting 2: F 11:00-11:50
-    row 2022: the meeting: MW 14:00-15:15
-    row 2038: the meeting: MW 15:30-16:45
-    row 2039: the meeting: TTh 15:30-16:45
-    row 2044: the meeting: MW 14:00-15:15
-    row 2095: meeting 2: W 12:00-13:15
-    row 2121: meeting 1: T 16:00-17:50
-    row 2124: the meeting: TTh 08:00-09:50
-  timed meeting with no building: 8
-    row 564: the meeting: F 13:00-15:40
-    row 860: meeting 1: MW 14:00-14:50
-    row 860: meeting 2: TTh 14:00-14:50
-    row 872: meeting 1: MW 10:00-10:50
-    row 872: meeting 2: TTh 09:30-10:20
-    row 911: the meeting: W 15:30-18:10
-    row 1029: the meeting: TTh 12:30-13:45
-    row 1187: the meeting: TTh 11:00-12:15
+  course title or units changed since the last import: 41
+    row 27: ACCTG 201: 'Financial Accounting Fundamentals' 3 -> 'Financial Accounting Fundamentals' 1.5
+    row 230: AMIND 200: 'Written Kumeyaay' 3 -> 'Written Kumeyaay' 4
+    row 231: AMIND 215: 'EY American Indian Mentoring Seminar' 3 -> 'EY American Indian Mentoring Seminar' 1
+    row 253: AMIND 498: 'American Indian Community Service Experience' 3 -> 'American Indian Community Service Experience' 1
+    row 541: ASL 101: 'American Sign Language I' 4 -> 'American Sign Language I' 1
+    row 559: ASL 102: 'American Sign Language II' 4 -> 'American Sign Language II' 1
+    row 569: ASL 201: 'American Sign Language III' 4 -> 'American Sign Language III' 1
+    row 577: ASL 301: 'American Sign Language IV' 4 -> 'American Sign Language IV' 1
+    row 829: BIOL 211: 'Fundamentals of Microbiology' 3 -> 'Fundamentals of Microbiology' 2
+    row 830: BIOL 211L: 'Fundamentals of Microbiology Laboratory' 2 -> 'Fundamentals of Microbiology Laboratory' 1
+    row 848: BIOL 212: 'Human Anatomy' 4 -> 'Human Anatomy' 2
+    row 866: BIOL 215: 'Biostatistics' 4 -> 'Biostatistics' 2
+    row 930: BIOL 436: 'Human Physiology Laboratory' 2 -> 'Human Physiology Laboratory' 1
+    row 1098: CHEM 100: 'Preparation for General Chemistry' 4 -> 'Preparation for General Chemistry' 3
+    row 1109: CHEM 103: 'Introduction to General Chemistry with Laboratory' 5 -> 'Introduction to General Chemistry with Laboratory' 3
+    row 1117: CHEM 200: 'General Chemistry' 5 -> 'General Chemistry' 3
+    row 1166: CHEM 201: 'General Chemistry' 5 -> 'General Chemistry' 3
+    row 1362: COMM 103: 'Oral Communication' 3 -> 'Oral Communication' 1
+    row 1664: CSP 150: 'Adversity, Resilience, and the Science of Well-Being' 3 -> 'Adversity, Resilience, and the Science of Well-Being' 1
+    row 2415: FIN 423: 'Financial Analysis and Management' 3 -> 'Financial Analysis and Management' 4
+    row 2481: GENS 250: 'USEM: Toltecatl Premarc' 1 -> 'Homebase Success Seminar' 4
+    row 2640: HHS 350: 'International Experience' 3 -> 'International Experience' 2
+    row 2827: JMS 210: 'Digital Literacy' 3 -> 'Digital Literacy' 2
+    row 3088: MATH 150: 'Calculus I' 4 -> 'Calculus I' 3
+    row 3101: MATH 151: 'Calculus II' 4 -> 'Calculus II' 3
+    row 3130: MATH 252: 'Calculus III' 4 -> 'Calculus III' 3
+    row 3467: MKTG 470: 'Marketing Research' 3 -> 'Marketing Research' 4
+    row 3470: MKTG 473: 'Sales Management' 3 -> 'Sales Management' 4
+    row 3472: MKTG 476: 'Internet/Interactive Marketing' 3 -> 'Internet/Interactive Marketing' 4
+    row 3474: MKTG 478: 'Marketing and Sales for Social Impact' 3 -> 'Marketing and Sales for Social Impact' 4
+    row 3476: MKTG 480: 'Marketing Analytics' 3 -> 'Marketing Analytics' 4
+    row 3482: MKTG 491: 'Customer Experience Design' 3 -> 'Customer Experience Design' 4
+    row 3483: MKTG 492: 'Advanced Integrated Marketing Communications' 3 -> 'Advanced Integrated Marketing Communications' 4
+    row 3486: MKTG 493: 'Sustainable Marketing Consulting' 3 -> 'Sustainable Marketing Consulting' 4
+    row 3487: MKTG 494: 'Advanced Strategic Marketing' 3 -> 'Advanced Strategic Marketing' 4
+    row 4098: OCEAN 100: 'The Ocean Planet' 4 -> 'The Ocean Planet' 3
+    row 4458: PSY 301: 'Introduction to Research Methods in Psychology' 4 -> 'Introduction to Research Methods in Psychology' 3
+    row 4499: PSY 410: 'Advanced Research Methods Laboratory' 5 -> 'Advanced Research Methods Laboratory' 2
+    row 4941: SOC 101: 'Introductory Sociology: The Study of Society' 3 -> 'Introductory Sociology: The Study of Society' 2
+    row 5126: STAT 250: 'Statistical Principles and Practices' 3 -> 'Statistical Principles and Practices' 2
+    row 5325: TFM 270: 'Introduction to Filmmaking' 3 -> 'Introduction to Filmmaking' 1
+  set day and time but Building ONLINE (live online class?): 139
+    row 117: the meeting: T 19:00-21:40
+    row 230: the meeting: TTh 17:30-18:45
+    row 305: the meeting: T 19:00-21:40
+    row 370: the meeting: TTh 11:00-12:15
+    row 386: meeting 2: W 12:00-14:40
+    row 388: meeting 2: W 15:30-18:10
+    row 411: the meeting: TTh 16:00-18:40
+    row 412: the meeting: F 16:00-16:50
+    row 413: the meeting: F 17:00-17:50
+    row 416: the meeting: TTh 16:00-18:40
+    row 418: the meeting: TTh 19:00-21:40
+    row 436: meeting 2: Th 12:30-15:10
+    row 447: meeting 2: Th 15:30-18:10
+    row 453: the meeting: F 09:00-11:40
+    row 494: the meeting: MWF 10:00-10:50
+    row 717: meeting 1: Th 09:30-10:45
+    row 718: meeting 1: Th 09:30-10:45
+    row 719: meeting 1: Th 09:30-12:10
+    row 720: meeting 1: Th 09:30-10:45
+    row 1253: meeting 1: M 12:00-13:50
+    row 1299: meeting 1: M 14:00-15:15
+    row 1318: the meeting: TTh 12:30-13:45
+    row 1324: meeting 2: F 10:00-10:50
+    row 1330: the meeting: W 16:00-18:40
+    row 1342: the meeting: MW 14:00-15:15
+    row 1463: meeting 2: F 13:00-13:50
+    row 1469: meeting 2: F 08:00-08:50
+    row 1470: meeting 2: F 10:00-10:50
+    row 1472: meeting 2: F 09:00-09:50
+    row 1473: meeting 2: F 12:00-12:50
+    row 1474: meeting 2: F 14:00-14:50
+    row 1475: meeting 2: F 12:00-12:50
+    row 1480: meeting 2: F 11:00-11:50
+    row 1482: meeting 2: F 12:00-12:50
+    row 1483: meeting 2: F 10:00-10:50
+    row 1499: meeting 2: F 12:00-12:50
+    row 1500: meeting 2: F 13:00-13:50
+    row 1502: meeting 2: F 10:00-10:50
+    row 1504: meeting 2: F 09:00-09:50
+    row 1506: meeting 2: F 10:00-10:50
+    row 1513: meeting 2: F 11:00-11:50
+    row 1519: meeting 1: MW 13:00-13:50
+    row 1627: the meeting: MWF 12:00-12:50
+    row 1636: the meeting: TTh 14:00-15:15
+    row 1637: the meeting: TTh 12:30-13:45
+    row 1646: the meeting: T 19:00-21:40
+    row 1651: the meeting: MW 14:00-15:15
+    row 1687: the meeting: T 15:00-17:40
+    row 1688: the meeting: W 10:00-12:40
+    row 1754: the meeting: M 09:00-11:40
+    row 1756: the meeting: M 11:30-14:10
+    row 1808: meeting 1: W 16:00-18:40
+    row 1809: meeting 1: T 16:00-18:40
+    row 1810: meeting 1: W 16:00-18:40
+    row 1811: meeting 1: W 16:00-18:40
+    row 1812: meeting 1: M 16:00-18:40
+    row 1813: meeting 1: M 16:00-18:40
+    row 1818: meeting 1: W 17:00-18:30
+    row 1820: the meeting: M 19:00-21:40
+    row 1828: meeting 1: Th 17:30-20:30
+    row 1994: the meeting: Th 16:00-18:40
+    row 2005: the meeting: M 16:00-18:40
+    row 2014: the meeting: T 16:30-20:30
+    row 2033: the meeting: W 16:00-18:40
+    row 2035: the meeting: W 16:30-20:30
+    row 2047: the meeting: T 16:30-20:30
+    row 2048: the meeting: T 16:30-20:30
+    row 2311: the meeting: MW 15:30-16:45
+    row 2312: the meeting: TTh 15:30-16:45
+    row 2376: the meeting: MW 14:00-15:15
+    row 2409: the meeting: Th 16:00-18:40
+    row 2420: the meeting: TTh 18:00-19:50
+    row 2421: the meeting: M 17:00-20:40
+    row 2427: the meeting: M 16:00-18:40
+    row 2488: the meeting: W 12:00-12:50
+    row 2490: the meeting: F 10:00-10:50
+    row 2494: the meeting: Th 10:00-10:50
+    row 2498: the meeting: M 10:00-10:50
+    row 2499: the meeting: Th 10:00-10:50
+    row 2502: the meeting: M 10:00-10:50
+    row 2517: the meeting: W 16:00-18:40
+    row 2518: the meeting: T 16:00-18:40
+    row 2977: the meeting: T 17:00-17:50
+    row 2978: the meeting: T 18:00-21:40
+    row 2979: the meeting: Th 19:00-21:40
+    row 2980: the meeting: W 16:00-18:40
+    row 3172: the meeting: MW 11:00-12:15
+    row 3359: meeting 2: F 10:00-10:50
+    row 3360: meeting 2: F 11:00-11:50
+    row 3385: meeting 2: W 12:00-13:15
+    row 3454: meeting 1: T 16:00-17:50
+    row 3457: the meeting: TTh 08:00-09:50
+    row 3464: the meeting: MW 16:00-17:15
+    row 3465: the meeting: MW 16:00-17:15
+    row 3476: meeting 1: M 12:00-13:50
+    row 3478: meeting 1: M 10:00-11:50
+    row 3479: meeting 2: W 10:00-11:50
+    row 3480: meeting 2: W 12:00-13:50
+    row 3482: meeting 1: T 14:00-15:50
+    row 4048: the meeting: F 08:00-11:10
+    row 4110: the meeting: T 16:00-18:40
+    row 4120: the meeting: MW 14:00-15:15
+    row 4125: the meeting: T 16:00-18:40
+    row 4217: the meeting: Th 18:00-20:40
+    row 4218: the meeting: Th 18:00-20:40
+    row 4220: the meeting: Th 18:00-20:40
+    row 4413: meeting 2: F 12:00-12:50
+    row 4414: meeting 2: F 10:00-10:50
+    row 4600: the meeting: W 16:00-18:40
+    row 4904: the meeting: Th 08:00-08:50
+    row 5085: the meeting: Th 16:00-18:40
+    row 5086: the meeting: T 19:00-21:40
+    row 5144: meeting 2: W 17:30-18:45
+    row 5239: the meeting: M 16:00-17:00
+    row 5241: meeting 2: W 14:00-15:15
+    row 5248: the meeting: W 16:00-18:40
+    row 5257: meeting 2: T 19:00-20:40
+    row 5258: meeting 1: Th 18:00-18:50
+    row 5260: meeting 1: M 19:00-21:40
+    row 5268: the meeting: Th 16:00-18:40
+    row 5269: meeting 2: W 16:00-18:40
+    row 5271: meeting 1: Th 09:00-11:40
+    row 5277: the meeting: Th 16:00-18:40
+    row 5281: the meeting: Th 13:00-15:40
+    row 5285: meeting 2: T 16:00-18:40
+    row 5287: the meeting: W 16:00-18:40
+    row 5289: the meeting: W 16:00-18:40
+    row 5295: the meeting: W 16:00-18:40
+    row 5299: meeting 2: M 16:00-18:40
+    row 5300: meeting 1: M 16:00-18:40
+    row 5301: the meeting: T 16:00-18:40
+    row 5302: meeting 1: M 19:00-21:40
+    row 5304: meeting 1: Th 16:00-17:40
+    row 5306: the meeting: Th 16:00-17:40
+    row 5310: meeting 2: Th 16:00-17:40
+    row 5318: the meeting: Th 15:30-18:10
+    row 5374: the meeting: Th 09:00-09:50
+    row 5375: the meeting: Th 10:00-12:40
+    row 5427: the meeting: TTh 11:00-12:15
+  timed meeting with no building: 21
+    row 26: the meeting: F 13:00-15:40
+    row 600: the meeting: TTh 12:30-13:45
+    row 940: meeting 1: M 12:00-12:50
+    row 940: meeting 2: W 12:00-12:50
+    row 941: meeting 1: M 13:00-13:50
+    row 941: meeting 2: W 13:00-13:50
+    row 942: meeting 1: M 14:00-14:50
+    row 942: meeting 2: W 14:00-14:50
+    row 943: meeting 1: M 15:00-15:50
+    row 943: meeting 2: W 15:00-15:50
+    row 944: meeting 1: M 12:00-12:50
+    row 945: meeting 1: M 13:00-13:50
+    row 1538: the meeting: F 15:00-15:50
+    row 1564: the meeting: T 16:00-18:40
+    row 2094: the meeting: T 16:00-18:40
+    row 2507: the meeting: W 12:00-12:50
+    row 2520: the meeting: W 15:30-18:10
+    row 3205: the meeting: MWF 10:00-10:50
+    row 4531: the meeting: TTh 13:00-13:50
+    row 4532: the meeting: TTh 14:00-14:50
+    row 4908: the meeting: T 11:00-13:00
+  two titles or unit values for one course: 909
+    row 154: AE 403W: row 153 says 'Aerospace Engineer Senior Proj' 1, this row 'Aerospace Engineer Senior Proj' 2
+    row 156: AE 403W: row 153 says 'Aerospace Engineer Senior Proj' 1, this row 'Aerospace Engineer Senior Proj' 2
+    row 168: AE 600: row 167 says 'Est of Dynamic Systems' 3, this row 'Seminar' 3
+    row 264: ANTH 301: row 263 says 'Prin of Biological Anthro' 2, this row 'Prin of Biological Anthro' 1
+    row 266: ANTH 302: row 265 says 'Principles of Archaelogy' 2, this row 'Principles of Archaelogy' 1
+    row 285: ANTH 505: row 284 says 'Human Osteology' 2, this row 'Human Osteology' 1
+    row 542: ASL 101: row 541 says 'American Sign Language I' 1, this row 'American Sign Language I' 3
+    row 544: ASL 101: row 541 says 'American Sign Language I' 1, this row 'American Sign Language I' 3
+    row 546: ASL 101: row 541 says 'American Sign Language I' 1, this row 'American Sign Language I' 3
+    row 548: ASL 101: row 541 says 'American Sign Language I' 1, this row 'American Sign Language I' 3
+    row 550: ASL 101: row 541 says 'American Sign Language I' 1, this row 'American Sign Language I' 3
+    row 552: ASL 101: row 541 says 'American Sign Language I' 1, this row 'American Sign Language I' 3
+    row 554: ASL 101: row 541 says 'American Sign Language I' 1, this row 'American Sign Language I' 3
+    row 556: ASL 101: row 541 says 'American Sign Language I' 1, this row 'American Sign Language I' 3
+    row 557: ASL 101: row 541 says 'American Sign Language I' 1, this row 'American Sign Language I' 3
+    row 560: ASL 102: row 559 says 'American Sign Language II' 1, this row 'American Sign Language II' 3
+    row 562: ASL 102: row 559 says 'American Sign Language II' 1, this row 'American Sign Language II' 3
+    row 564: ASL 102: row 559 says 'American Sign Language II' 1, this row 'American Sign Language II' 3
+    row 566: ASL 102: row 559 says 'American Sign Language II' 1, this row 'American Sign Language II' 3
+    row 568: ASL 102: row 559 says 'American Sign Language II' 1, this row 'American Sign Language II' 3
+    row 570: ASL 201: row 569 says 'American Sign Language III' 1, this row 'American Sign Language III' 3
+    row 572: ASL 201: row 569 says 'American Sign Language III' 1, this row 'American Sign Language III' 3
+    row 574: ASL 201: row 569 says 'American Sign Language III' 1, this row 'American Sign Language III' 3
+    row 576: ASL 201: row 569 says 'American Sign Language III' 1, this row 'American Sign Language III' 3
+    row 578: ASL 301: row 577 says 'American Sign Language IV' 1, this row 'American Sign Language IV' 3
+    row 616: AUD 720: row 615 says 'Aud Evoked Potentials I' 3, this row 'Aud Evoked Potentials I' 1
+    row 867: BIOL 215: row 866 says 'Biostatistics' 2, this row 'Biostatistics' 1
+    row 868: BIOL 215: row 866 says 'Biostatistics' 2, this row 'Biostatistics' 1
+    row 869: BIOL 215: row 866 says 'Biostatistics' 2, this row 'Biostatistics' 1
+    row 870: BIOL 215: row 866 says 'Biostatistics' 2, this row 'Biostatistics' 1
+    row 871: BIOL 215: row 866 says 'Biostatistics' 2, this row 'Biostatistics' 1
+    row 872: BIOL 215: row 866 says 'Biostatistics' 2, this row 'Biostatistics' 1
+    row 873: BIOL 215: row 866 says 'Biostatistics' 2, this row 'Biostatistics' 1
+    row 874: BIOL 215: row 866 says 'Biostatistics' 2, this row 'Biostatistics' 1
+    row 875: BIOL 215: row 866 says 'Biostatistics' 2, this row 'Biostatistics' 1
+    row 876: BIOL 215: row 866 says 'Biostatistics' 2, this row 'Biostatistics' 1
+    row 897: BIOL 351: row 896 says 'Genetics' 3, this row 'Genetics' 1
+    row 898: BIOL 351: row 896 says 'Genetics' 3, this row 'Genetics' 1
+    row 899: BIOL 351: row 896 says 'Genetics' 3, this row 'Genetics' 1
+    row 900: BIOL 351: row 896 says 'Genetics' 3, this row 'Genetics' 1
+    row 901: BIOL 351: row 896 says 'Genetics' 3, this row 'Genetics' 1
+    row 902: BIOL 351: row 896 says 'Genetics' 3, this row 'Genetics' 1
+    row 903: BIOL 351: row 896 says 'Genetics' 3, this row 'Genetics' 1
+    row 904: BIOL 351: row 896 says 'Genetics' 3, this row 'Genetics' 1
+    row 905: BIOL 351: row 896 says 'Genetics' 3, this row 'Genetics' 1
+    row 906: BIOL 351: row 896 says 'Genetics' 3, this row 'Genetics' 1
+    row 908: BIOL 352: row 907 says 'Evolution' 2, this row 'Evolution' 1
+    row 909: BIOL 352: row 907 says 'Evolution' 2, this row 'Evolution' 1
+    row 910: BIOL 352: row 907 says 'Evolution' 2, this row 'Evolution' 1
+    row 911: BIOL 352: row 907 says 'Evolution' 2, this row 'Evolution' 1
+    row 912: BIOL 352: row 907 says 'Evolution' 2, this row 'Evolution' 1
+    row 913: BIOL 352: row 907 says 'Evolution' 2, this row 'Evolution' 1
+    row 914: BIOL 352: row 907 says 'Evolution' 2, this row 'Evolution' 1
+    row 915: BIOL 352: row 907 says 'Evolution' 2, this row 'Evolution' 1
+    row 950: BIOL 512: row 949 says 'Evol&Ecol Marine Mammals' 2, this row 'Evol&Ecol Marine Mammals' 1
+    row 952: BIOL 517: row 951 says 'Marine Ecology' 2, this row 'Marine Ecology' 1
+    row 954: BIOL 523: row 953 says 'Herpetology' 2, this row 'Herpetology' 1
+    row 955: BIOL 523: row 953 says 'Herpetology' 2, this row 'Herpetology' 1
+    row 959: BIOL 526: row 958 says 'Terrestrial Arthropods' 2, this row 'Terrestrial Arthropods' 1
+    row 963: BIOL 535: row 962 says 'Plant Ecology' 3, this row 'Plant Ecology' 1
+    row 967: BIOL 564: row 966 says 'Cancer Biology' 3, this row 'Cancer Biology' 1
+    row 976: BIOL 600: row 975 says 'Sem:Thesis Proposal' 3, this row 'Seminar' 3
+    row 977: BIOL 600: row 975 says 'Sem:Thesis Proposal' 3, this row 'Seminar' 3
+    row 979: BIOL 606: row 978 says 'Biological Data' 2, this row 'Biological Data' 1
+    row 981: BIOL 668: row 980 says 'Adv Bio Data Analysis' 2, this row 'Adv Bio Data Analysis' 1
+    row 1035: CFD 275: row 1034 says 'Lrng Envr Dev Approp Prct' 2, this row 'Lrng Envr Dev Approp Prct' 1
+    row 1037: CFD 275: row 1034 says 'Lrng Envr Dev Approp Prct' 2, this row 'Lrng Envr Dev Approp Prct' 1
+    row 1052: CFD 378D: row 1051 says 'Lab Dev Lifespan' 1, this row 'Lab Dev Lifespan' 3
+    row 1059: CFD 450: row 1058 says 'Human-Nature Connection' 2, this row 'Human-Nature Connection' 1
+    row 1069: CFD 578: row 1068 says 'Conflict Resolut Lifespan' 3, this row 'Conflict Resolut Lifespan' 1
+    row 1071: CFD 578: row 1068 says 'Conflict Resolut Lifespan' 3, this row 'Conflict Resolut Lifespan' 1
+    row 1073: CFD 578: row 1068 says 'Conflict Resolut Lifespan' 3, this row 'Conflict Resolut Lifespan' 1
+    row 1075: CFD 590: row 1074 says 'Disability Conception to Adult' 3, this row 'Disability Conception to Adult' 1
+    row 1077: CFD 590: row 1074 says 'Disability Conception to Adult' 3, this row 'Disability Conception to Adult' 1
+    row 1099: CHEM 100: row 1098 says 'Preparation for General Chemistry' 3, this row 'Preparation for General Chemistry' 1
+    row 1100: CHEM 100: row 1098 says 'Preparation for General Chemistry' 3, this row 'Preparation for General Chemistry' 1
+    row 1101: CHEM 100: row 1098 says 'Preparation for General Chemistry' 3, this row 'Preparation for General Chemistry' 1
+    row 1102: CHEM 100: row 1098 says 'Preparation for General Chemistry' 3, this row 'Preparation for General Chemistry' 1
+    row 1103: CHEM 100: row 1098 says 'Preparation for General Chemistry' 3, this row 'Preparation for General Chemistry' 1
+    row 1104: CHEM 100: row 1098 says 'Preparation for General Chemistry' 3, this row 'Preparation for General Chemistry' 1
+    row 1105: CHEM 100: row 1098 says 'Preparation for General Chemistry' 3, this row 'Preparation for General Chemistry' 1
+    row 1106: CHEM 100: row 1098 says 'Preparation for General Chemistry' 3, this row 'Preparation for General Chemistry' 1
+    row 1107: CHEM 100: row 1098 says 'Preparation for General Chemistry' 3, this row 'Preparation for General Chemistry' 1
+    row 1108: CHEM 100: row 1098 says 'Preparation for General Chemistry' 3, this row 'Preparation for General Chemistry' 1
+    row 1110: CHEM 103: row 1109 says 'Introduction to General Chemistry with Laboratory' 3, this row 'Introduction to General Chemistry with Laboratory' 1
+    row 1111: CHEM 103: row 1109 says 'Introduction to General Chemistry with Laboratory' 3, this row 'Introduction to General Chemistry with Laboratory' 1
+    row 1112: CHEM 103: row 1109 says 'Introduction to General Chemistry with Laboratory' 3, this row 'Introduction to General Chemistry with Laboratory' 1
+    row 1113: CHEM 103: row 1109 says 'Introduction to General Chemistry with Laboratory' 3, this row 'Introduction to General Chemistry with Laboratory' 1
+    row 1114: CHEM 103: row 1109 says 'Introduction to General Chemistry with Laboratory' 3, this row 'Introduction to General Chemistry with Laboratory' 1
+    row 1119: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1120: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1121: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1122: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1123: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1124: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1125: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1126: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1127: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1128: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1129: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1130: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1131: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1132: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1133: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1134: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1135: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1136: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1137: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1138: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1139: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1140: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1141: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1142: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1143: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1144: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1145: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1146: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1147: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1148: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1149: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1150: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1151: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1152: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1153: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1154: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1155: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1156: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1157: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1158: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1159: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1160: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1161: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1162: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1163: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1164: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1165: CHEM 200: row 1117 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1167: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1168: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1169: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1170: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1171: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1172: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1173: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1174: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1175: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1176: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1177: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1178: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1179: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1180: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1181: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1182: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1183: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1184: CHEM 201: row 1166 says 'General Chemistry' 3, this row 'General Chemistry' 1
+    row 1186: CHEM 202: row 1185 says 'General Chem for Engineer' 3, this row 'General Chem for Engineer' 1
+    row 1187: CHEM 202: row 1185 says 'General Chem for Engineer' 3, this row 'General Chem for Engineer' 1
+    row 1188: CHEM 202: row 1185 says 'General Chem for Engineer' 3, this row 'General Chem for Engineer' 1
+    row 1189: CHEM 202: row 1185 says 'General Chem for Engineer' 3, this row 'General Chem for Engineer' 1
+    row 1190: CHEM 202: row 1185 says 'General Chem for Engineer' 3, this row 'General Chem for Engineer' 1
+    row 1191: CHEM 202: row 1185 says 'General Chem for Engineer' 3, this row 'General Chem for Engineer' 1
+    row 1192: CHEM 202: row 1185 says 'General Chem for Engineer' 3, this row 'General Chem for Engineer' 1
+    row 1193: CHEM 202: row 1185 says 'General Chem for Engineer' 3, this row 'General Chem for Engineer' 1
+    row 1194: CHEM 202: row 1185 says 'General Chem for Engineer' 3, this row 'General Chem for Engineer' 1
+    row 1195: CHEM 202: row 1185 says 'General Chem for Engineer' 3, this row 'General Chem for Engineer' 1
+    row 1213: CHEM 251: row 1212 says 'Analytical Chemistry' 3, this row 'Analytical Chemistry' 2
+    row 1214: CHEM 251: row 1212 says 'Analytical Chemistry' 3, this row 'Analytical Chemistry' 2
+    row 1215: CHEM 251: row 1212 says 'Analytical Chemistry' 3, this row 'Analytical Chemistry' 2
+    row 1219: CHEM 410A: row 1218 says 'Physical Chemistry' 3, this row 'Physical Chemistry' 1
+    row 1220: CHEM 410A: row 1218 says 'Physical Chemistry' 3, this row 'Physical Chemistry' 1
+    row 1244: CHEM 567: row 1243 says 'Biochemistry Laboratory' 1, this row 'Biochemistry Laboratory' 2
+    row 1260: CIVE 121: row 1259 says 'Comp Graphics Built Envir' 2, this row 'Comp Graphics Built Envir' 1
+    row 1261: CIVE 121: row 1259 says 'Comp Graphics Built Envir' 2, this row 'Comp Graphics Built Envir' 1
+    row 1262: CIVE 121: row 1259 says 'Comp Graphics Built Envir' 2, this row 'Comp Graphics Built Envir' 1
+    row 1263: CIVE 121: row 1259 says 'Comp Graphics Built Envir' 2, this row 'Comp Graphics Built Envir' 1
+    row 1264: CIVE 121: row 1259 says 'Comp Graphics Built Envir' 2, this row 'Comp Graphics Built Envir' 1
+    row 1265: CIVE 121: row 1259 says 'Comp Graphics Built Envir' 2, this row 'Comp Graphics Built Envir' 1
+    row 1266: CIVE 121: row 1259 says 'Comp Graphics Built Envir' 2, this row 'Comp Graphics Built Envir' 1
+    row 1269: CIVE 218: row 1268 says 'Survey Civ Eng & Constrct' 2, this row 'Survey Civ Eng & Constrct' 1
+    row 1270: CIVE 218: row 1268 says 'Survey Civ Eng & Constrct' 2, this row 'Survey Civ Eng & Constrct' 1
+    row 1272: CIVE 218: row 1268 says 'Survey Civ Eng & Constrct' 2, this row 'Survey Civ Eng & Constrct' 1
+    row 1273: CIVE 218: row 1268 says 'Survey Civ Eng & Constrct' 2, this row 'Survey Civ Eng & Constrct' 1
+    row 1289: CIVE 444: row 1288 says 'Applied Hydraulics' 2, this row 'Applied Hydraulics' 1
+    row 1291: CIVE 444: row 1288 says 'Applied Hydraulics' 2, this row 'Applied Hydraulics' 1
+    row 1293: CIVE 445: row 1292 says 'Applied Hydrology' 2, this row 'Applied Hydrology' 1
+    row 1304: CIVE 482: row 1303 says 'Highway Engineering' 2, this row 'Highway Engineering' 1
+    row 1306: CIVE 495W: row 1305 says 'Capstone Design Project' 1, this row 'Capstone Design Project' 2
+    row 1308: CIVE 495W: row 1305 says 'Capstone Design Project' 1, this row 'Capstone Design Project' 2
+    row 1311: CIVE 530: row 1310 says 'Open Channel Hydraulics' 2, this row 'Open Channel Hydraulics' 1
+    row 1367: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1368: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1369: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1370: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1371: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1372: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1373: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1374: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1375: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1376: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1377: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1378: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1379: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1380: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1381: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1382: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1383: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1384: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1385: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1386: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1387: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1388: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1389: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1390: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1391: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1392: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1393: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1394: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1395: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1396: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1397: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1398: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1399: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1400: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1401: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1402: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1403: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1404: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1405: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1406: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1407: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1408: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1409: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1410: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1411: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1412: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1413: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1414: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1415: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1416: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1417: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1418: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1419: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1420: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1421: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1422: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1423: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1424: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1425: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1426: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1427: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1428: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1429: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1430: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1431: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1432: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1433: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1434: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1435: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1436: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1437: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1438: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1439: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1440: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1441: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1442: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1443: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1444: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1445: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1446: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1447: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1448: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1449: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1450: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1451: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1452: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1453: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1454: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1455: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1456: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1457: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1458: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1459: COMM 103: row 1362 says 'Oral Communication' 1, this row 'Oral Communication' 2
+    row 1544: COMPE 160: row 1543 says 'Intro to Computer Prog' 2, this row 'Intro to Computer Prog' 1
+    row 1545: COMPE 160: row 1543 says 'Intro to Computer Prog' 2, this row 'Intro to Computer Prog' 1
+    row 1546: COMPE 160: row 1543 says 'Intro to Computer Prog' 2, this row 'Intro to Computer Prog' 1
+    row 1552: COMPE 375: row 1551 says 'Embedded Syst Programming' 2, this row 'Embedded Syst Programming' 1
+    row 1553: COMPE 375: row 1551 says 'Embedded Syst Programming' 2, this row 'Embedded Syst Programming' 1
+    row 1554: COMPE 375: row 1551 says 'Embedded Syst Programming' 2, this row 'Embedded Syst Programming' 1
+    row 1555: COMPE 375: row 1551 says 'Embedded Syst Programming' 2, this row 'Embedded Syst Programming' 1
+    row 1561: COMPE 491W: row 1560 says 'Senior Design Project A' 1, this row 'Senior Design Project A' 2
+    row 1579: CONE 215: row 1578 says 'Virtual Design & Constr' 2, this row 'Virtual Design & Constr' 1
+    row 1583: CONE 280: row 1582 says 'Construction Methods' 1, this row 'Construction Methods' 2
+    row 1588: CONE 401: row 1587 says 'Constr Planning & Sched' 2, this row 'Constr Planning & Sched' 1
+    row 1589: CONE 401: row 1587 says 'Constr Planning & Sched' 2, this row 'Constr Planning & Sched' 1
+    row 1591: CONE 479: row 1590 says 'Construction Materials' 2, this row 'Construction Materials' 1
+    row 1600: CONM 262: row 1599 says 'Soil Mechanics' 2, this row 'Soil Mechanics' 1
+    row 1603: CONM 495W: row 1602 says 'Con Mgmt Capstone Project' 1, this row 'Con Mgmt Capstone Project' 2
+    row 1607: CP 690: row 1606 says 'Sem:Lnd Use Plan Prin&Tec' 2, this row 'Sem:Lnd Use Plan Prin&Tec' 1
+    row 1620: CS 200: row 1619 says 'Introduction to Data Science and Python' 3, this row 'Introduction to Data Science and Python' 1
+    row 1665: CSP 150: row 1664 says 'Adversity, Resilience, and the Science of Well-Being' 1, this row 'Adversity, Resilience, and the Science of Well-Being' 2
+    row 1667: CSP 150: row 1664 says 'Adversity, Resilience, and the Science of Well-Being' 1, this row 'Adversity, Resilience, and the Science of Well-Being' 2
+    row 1669: CSP 150: row 1664 says 'Adversity, Resilience, and the Science of Well-Being' 1, this row 'Adversity, Resilience, and the Science of Well-Being' 2
+    row 1723: CSP 730: row 1719 says 'Fieldwork: CBB' 3, this row 'Fieldwork: School Couns' 6
+    row 1724: CSP 730: row 1719 says 'Fieldwork: CBB' 3, this row 'Fieldwork Couns:Sch Psych' 3
+    row 1725: CSP 730: row 1719 says 'Fieldwork: CBB' 3, this row 'Fieldwork Couns:Sch Psych' 3
+    row 1726: CSP 730: row 1719 says 'Fieldwork: CBB' 3, this row 'Fieldwork: School Couns' 6
+    row 1732: CSP 740: row 1727 says 'Practicum: Counseling' 3, this row 'Practicum: Schools' 3
+    row 1733: CSP 740: row 1727 says 'Practicum: Counseling' 3, this row 'Practicum: Schools' 3
+    row 1734: CSP 740: row 1727 says 'Practicum: Counseling' 3, this row 'Practicum: Schools' 3
+    row 1735: CSP 740: row 1727 says 'Practicum: Counseling' 3, this row 'Practicum: Schools' 3
+    row 1736: CSP 740: row 1727 says 'Practicum: Counseling' 3, this row 'Practicum: Schools' 3
+    row 1752: CSP 780: row 1750 says 'Internship' 3, this row 'Internship' 1
+    row 1772: DANCE 242: row 1771 says 'Ballet Praxis' 2, this row 'Ballet Praxis' 1
+    row 1774: DANCE 243: row 1773 says 'Appl Dnc Tech: W African' 1, this row 'Applied Dnc Techn:Hip Hop' 1
+    row 1775: DANCE 243: row 1773 says 'Appl Dnc Tech: W African' 1, this row 'Whacking' 1
+    row 1776: DANCE 243: row 1773 says 'Appl Dnc Tech: W African' 1, this row 'Appl Dnc Tech: Capoeira' 1
+    row 1777: DANCE 243: row 1773 says 'Appl Dnc Tech: W African' 1, this row 'Whacking' 1
+    row 1781: DANCE 290: row 1780 says 'Body Modalities' 2, this row 'Body Modalities' 1
+    row 1785: DANCE 345: row 1784 says 'Dancemaking Praxis III' 2, this row 'Dancemaking Praxis III' 1
+    row 1795: DANCE 442: row 1794 says 'Dance Techniques Praxis II' 2, this row 'Dance Techniques Praxis II' 1
+    row 1797: DANCE 443: row 1796 says 'Apld. Dnc Tech:Lowfly' 1, this row 'Applied Dance Tech II: Ballet' 1
+    row 1798: DANCE 443: row 1796 says 'Apld. Dnc Tech:Lowfly' 1, this row 'Apld. Dnc Tech:Musical Theatre' 1
+    row 1799: DANCE 443: row 1796 says 'Apld. Dnc Tech:Lowfly' 1, this row 'Applied Dance Tech II: Capoeir' 1
+    row 1837: DPT 782: row 1836 says 'Therapeutic Exercise I' 1, this row 'Therapeutic Exercise I' 2
+    row 1838: DPT 782: row 1836 says 'Therapeutic Exercise I' 1, this row 'Therapeutic Exercise I' 2
+    row 1839: DPT 782: row 1836 says 'Therapeutic Exercise I' 1, this row 'Therapeutic Exercise I' 2
+    row 1850: DPT 836: row 1849 says 'Neurophysiolgic Therap II' 2, this row 'Neurophysiolgic Therap II' 1
+    row 1851: DPT 836: row 1849 says 'Neurophysiolgic Therap II' 2, this row 'Neurophysiolgic Therap II' 1
+    row 1852: DPT 836: row 1849 says 'Neurophysiolgic Therap II' 2, this row 'Neurophysiolgic Therap II' 1
+    row 1853: DPT 836: row 1849 says 'Neurophysiolgic Therap II' 2, this row 'Neurophysiolgic Therap II' 1
+    row 1854: DPT 836: row 1849 says 'Neurophysiolgic Therap II' 2, this row 'Neurophysiolgic Therap II' 1
+    row 1855: DPT 836: row 1849 says 'Neurophysiolgic Therap II' 2, this row 'Neurophysiolgic Therap II' 1
+    row 1858: DPT 880: row 1857 says 'Differential Diagnosis Pt' 2, this row 'Differential Diagnosis Pt' 1
+    row 1859: DPT 880: row 1857 says 'Differential Diagnosis Pt' 2, this row 'Differential Diagnosis Pt' 1
+    row 1904: ECL 503: row 1903 says 'Chicanx Children's Literature' 3, this row 'Intro to Teaching Children's L' 3
+    row 1913: ECL 527: row 1912 says 'Speculative Fiction' 3, this row 'Introduction to Literary Theor' 3
+    row 1919: ECL 564: row 1918 says 'Jewish Fiction and Identity' 3, this row 'World Literatures' 3
+    row 2027: ED 970: row 2024 says 'Tching Event Assessment' 3, this row 'Tching Event Assessment' 2
+    row 2028: ED 970: row 2024 says 'Tching Event Assessment' 3, this row 'Tching Event Assessment' 2
+    row 2030: ED 970: row 2024 says 'Tching Event Assessment' 3, this row 'Tching Event Assessment' 2
+    row 2031: ED 970: row 2024 says 'Tching Event Assessment' 3, this row 'Tching Event Assessment' 2
+    row 2091: EE 491W: row 2090 says 'Senior Design A' 2, this row 'Senior Design A' 1
+    row 2099: EE 502: row 2098 says 'Electronic Devices Rehab' 2, this row 'Electronic Devices Rehab' 1
+    row 2136: ENS 122: row 2130 says 'Sailing' 1, this row 'Kayaking' 1
+    row 2137: ENS 122: row 2130 says 'Sailing' 1, this row 'Kayaking' 1
+    row 2138: ENS 122: row 2130 says 'Sailing' 1, this row 'Kayaking' 1
+    row 2139: ENS 122: row 2130 says 'Sailing' 1, this row 'Stand Up Paddling' 1
+    row 2140: ENS 122: row 2130 says 'Sailing' 1, this row 'Stand Up Paddling' 1
+    row 2141: ENS 122: row 2130 says 'Sailing' 1, this row 'Stand Up Paddling' 1
+    row 2142: ENS 122: row 2130 says 'Sailing' 1, this row 'Stand Up Paddling' 1
+    row 2143: ENS 122: row 2130 says 'Sailing' 1, this row 'Stand Up Paddling' 1
+    row 2144: ENS 122: row 2130 says 'Sailing' 1, this row 'Stnd Up Paddleboard Yoga' 1
+    row 2145: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2146: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2147: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2148: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2149: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2150: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2151: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2152: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2153: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2154: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2155: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2156: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2157: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2158: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2159: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2160: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2161: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2162: ENS 122: row 2130 says 'Sailing' 1, this row 'Surfing' 1
+    row 2163: ENS 122: row 2130 says 'Sailing' 1, this row 'Intermediate Surfing' 1
+    row 2164: ENS 122: row 2130 says 'Sailing' 1, this row 'Intermediate Surfing' 1
+    row 2165: ENS 122: row 2130 says 'Sailing' 1, this row 'Intermediate Surfing' 1
+    row 2166: ENS 122: row 2130 says 'Sailing' 1, this row 'Intermediate Surfing' 1
+    row 2167: ENS 122: row 2130 says 'Sailing' 1, this row 'Intermediate Surfing' 1
+    row 2168: ENS 122: row 2130 says 'Sailing' 1, this row 'Intermediate Surfing' 1
+    row 2169: ENS 122: row 2130 says 'Sailing' 1, this row 'Intermediate Surfing' 1
+    row 2170: ENS 122: row 2130 says 'Sailing' 1, this row 'Intermediate Surfing' 1
+    row 2171: ENS 122: row 2130 says 'Sailing' 1, this row 'Intermediate Surfing' 1
+    row 2172: ENS 122: row 2130 says 'Sailing' 1, this row 'Adv Surfing' 1
+    row 2173: ENS 122: row 2130 says 'Sailing' 1, this row 'Wakeboarding' 1
+    row 2174: ENS 122: row 2130 says 'Sailing' 1, this row 'Wakeboarding' 1
+    row 2175: ENS 122: row 2130 says 'Sailing' 1, this row 'Wakeboarding' 1
+    row 2176: ENS 122: row 2130 says 'Sailing' 1, this row 'Wakeboarding' 1
+    row 2177: ENS 122: row 2130 says 'Sailing' 1, this row 'Wakeboarding &Wakesurfing' 1
+    row 2178: ENS 122: row 2130 says 'Sailing' 1, this row 'Wakeboarding &Wakesurfing' 1
+    row 2179: ENS 122: row 2130 says 'Sailing' 1, this row 'Wakeboarding &Wakesurfing' 1
+    row 2180: ENS 122: row 2130 says 'Sailing' 1, this row 'Wakeboarding &Wakesurfing' 1
+    row 2181: ENS 122: row 2130 says 'Sailing' 1, this row 'Wakeboarding &Wakesurfing' 1
+    row 2182: ENS 122: row 2130 says 'Sailing' 1, this row 'Wakeboarding &Wakesurfing' 1
+    row 2183: ENS 122: row 2130 says 'Sailing' 1, this row 'Windsurfing' 1
+    row 2184: ENS 122: row 2130 says 'Sailing' 1, this row 'Windsurfing' 1
+    row 2185: ENS 122: row 2130 says 'Sailing' 1, this row 'Stnd Up Paddleboard Yoga' 1
+    row 2186: ENS 122: row 2130 says 'Sailing' 1, this row 'Hobie Cat Sailing' 1
+    row 2187: ENS 122: row 2130 says 'Sailing' 1, this row 'Hobie Cat Sailing' 1
+    row 2188: ENS 122: row 2130 says 'Sailing' 1, this row 'Intro to Water Sports' 1
+    row 2189: ENS 122: row 2130 says 'Sailing' 1, this row 'Intro to Water Sports' 1
+    row 2191: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Self Defense for Women' 1
+    row 2192: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Self Defense for Women' 1
+    row 2193: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Self Defense for Women' 1
+    row 2194: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Yoga' 1
+    row 2195: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Yoga' 1
+    row 2196: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Yoga' 1
+    row 2197: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Salsa Dance' 1
+    row 2198: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Mat Pilates' 0
+    row 2199: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Adv Swim Fitness' 1
+    row 2200: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Judo' 1
+    row 2201: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Yoga Inversion' 1
+    row 2202: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Fitness Trng for Women' 1
+    row 2203: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Rstrtv Yoga W/ Breathwork' 1
+    row 2204: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Jiu Jitsu' 1
+    row 2205: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Jiu Jitsu' 1
+    row 2206: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Jiu Jitsu' 1
+    row 2207: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Tae Kwon Do' 1
+    row 2208: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Swing Dance' 1
+    row 2209: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Swim Fitness' 1
+    row 2210: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Indoor Cycling' 1
+    row 2211: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Yoga for Athletic Perform' 1
+    row 2212: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Group Fit Instruct Train' 1
+    row 2213: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Int Jiu Jitsu' 1
+    row 2214: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Self Defense Conditioning' 1
+    row 2215: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Badminton' 1
+    row 2216: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Futsal' 1
+    row 2217: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Boxing Fitness' 1
+    row 2218: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Boxing Fitness' 1
+    row 2219: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Country Western Dance' 1
+    row 2220: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Pickleball' 1
+    row 2221: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Pickleball' 1
+    row 2222: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beg Kickboxing' 1
+    row 2223: ENS 138: row 2190 says 'Intermediate Yoga' 1, this row 'Beginning Hip Hop Dance' 1
+    row 2273: ENS 322: row 2272 says 'Appl Assess Health and Fitness' 2, this row 'Appl Assess Health and Fitness' 1
+    row 2274: ENS 322: row 2272 says 'Appl Assess Health and Fitness' 2, this row 'Appl Assess Health and Fitness' 1
+    row 2275: ENS 322: row 2272 says 'Appl Assess Health and Fitness' 2, this row 'Appl Assess Health and Fitness' 1
+    row 2276: ENS 322: row 2272 says 'Appl Assess Health and Fitness' 2, this row 'Appl Assess Health and Fitness' 1
+    row 2277: ENS 322: row 2272 says 'Appl Assess Health and Fitness' 2, this row 'Appl Assess Health and Fitness' 1
+    row 2288: ENS 340: row 2287 says 'Prog Des for Hlth, Fitn & Perf' 2, this row 'Prog Des for Hlth, Fitn & Perf' 1
+    row 2289: ENS 340: row 2287 says 'Prog Des for Hlth, Fitn & Perf' 2, this row 'Prog Des for Hlth, Fitn & Perf' 1
+    row 2290: ENS 340: row 2287 says 'Prog Des for Hlth, Fitn & Perf' 2, this row 'Prog Des for Hlth, Fitn & Perf' 1
+    row 2291: ENS 340: row 2287 says 'Prog Des for Hlth, Fitn & Perf' 2, this row 'Prog Des for Hlth, Fitn & Perf' 1
+    row 2292: ENS 340: row 2287 says 'Prog Des for Hlth, Fitn & Perf' 2, this row 'Prog Des for Hlth, Fitn & Perf' 1
+    row 2336: ENVE 101: row 2335 says 'Environmental Engr Sem' 2, this row 'Environmental Engr Sem' 1
+    row 2342: ENVE 363: row 2341 says 'Environmental Engr Lab' 2, this row 'Environmental Engr Lab' 1
+    row 2343: ENVE 363: row 2341 says 'Environmental Engr Lab' 2, this row 'Environmental Engr Lab' 1
+    row 2456: FN 604: row 2455 says 'Sustainable Foods' 2, this row 'Sustainable Foods' 1
+    row 2470: FRENC 304: row 2469 says 'Phonetics & Oral Profic' 2, this row 'Phonetics & Oral Profic' 1
+    row 2482: GENS 250: row 2481 says 'USEM: Toltecatl Premarc' 4, this row 'USEM: Guardian Scholars' 1
+    row 2483: GENS 250: row 2481 says 'USEM: Toltecatl Premarc' 4, this row 'USEM: Henrietta Goodwin' 4
+    row 2484: GENS 250: row 2481 says 'USEM: Toltecatl Premarc' 4, this row 'USEM: Toltecatl Premarc' 1
+    row 2485: GENS 250: row 2481 says 'USEM: Toltecatl Premarc' 4, this row 'USEM: Goodwin Year 2' 4
+    row 2508: GENS 350: row 2507 says 'Student Success Seminar - C1' 1, this row 'Trnsfer Student Success: BRC-B' 1
+    row 2509: GENS 350: row 2507 says 'Student Success Seminar - C1' 1, this row 'Price Comm. Schl Sem, Yr 3B' 4
+    row 2510: GENS 350: row 2507 says 'Student Success Seminar - C1' 1, this row 'Transition:Owning Your Transfe' 4
+    row 2511: GENS 350: row 2507 says 'Student Success Seminar - C1' 1, this row 'USEM: Guardian Scholars,Transf' 1
+    row 2512: GENS 350: row 2507 says 'Student Success Seminar - C1' 1, this row 'Appl.Lead:College & Beyond B' 4
+    row 2553: GEOG 380: row 2552 says 'Map Investigation' 2, this row 'Map Investigation' 1
+    row 2558: GEOG 484: row 2557 says 'Geographic Info Systems' 2, this row 'Geographic Info Systems' 1
+    row 2567: GEOG 580: row 2566 says 'Data Management for Gis' 2, this row 'Data Management for Gis' 1
+    row 2570: GEOG 584: row 2569 says 'Geog Info Systems Applic' 2, this row 'Geog Info Systems Applic' 1
+    row 2573: GEOG 590: row 2572 says 'Community Geographic Research' 1, this row 'Community Geographic Research' 2
+    row 2598: GEOL 210: row 2597 says 'GIS Rem. Sens. Ear. Env. Sci.' 2, this row 'GIS Rem. Sens. Ear. Env. Sci.' 1
+    row 2599: GEOL 210: row 2597 says 'GIS Rem. Sens. Ear. Env. Sci.' 2, this row 'GIS Rem. Sens. Ear. Env. Sci.' 1
+    row 2603: GEOL 302: row 2602 says 'Data Anal. Earth Env. Sci. II' 2, this row 'Data Anal. Earth Env. Sci. II' 1
+    row 2607: GEOL 323: row 2606 says 'Mineralogy' 2, this row 'Mineralogy' 1
+    row 2608: GEOL 323: row 2606 says 'Mineralogy' 2, this row 'Mineralogy' 1
+    row 2611: GEOL 336: row 2610 says 'Sedimentology-Lithostrat' 2, this row 'Sedimentology-Lithostrat' 1
+    row 2613: GEOL 407: row 2612 says 'Geophysics' 2, this row 'Geophysics' 1
+    row 2615: GEOL 412: row 2614 says 'Proc & Inquiry Earth Sci' 3, this row 'Proc & Inquiry Earth Sci' 1
+    row 2617: GEOL 502: row 2616 says 'Adv Field Geology: Geophysics' 1, this row 'Adv Field Topics: Struct Geol' 1
+    row 2618: GEOL 502: row 2616 says 'Adv Field Geology: Geophysics' 1, this row 'Adv. Field Topics Bedrock Mapp' 1
+    row 2620: GEOL 514: row 2619 says 'Process Geomorphology' 2, this row 'Process Geomorphology' 1
+    row 2641: HHS 350: row 2640 says 'International Experience' 2, this row 'International Experience' 1
+    row 2710: HONOR 313: row 2709 says 'Sem: Global Food Sect' 3, this row 'Sem: The Sci of Behav Change' 3
+    row 2711: HONOR 313: row 2709 says 'Sem: Global Food Sect' 3, this row 'Sem:Phil Mod Sport & Leis' 3
+    row 2712: HONOR 313: row 2709 says 'Sem: Global Food Sect' 3, this row 'Sem: The Unexpctd Argmnt' 3
+    row 2713: HONOR 313: row 2709 says 'Sem: Global Food Sect' 3, this row 'Sem: Philsphy Here & Now' 3
+    row 2714: HONOR 313: row 2709 says 'Sem: Global Food Sect' 3, this row 'Sem:Econ of Social Issues' 3
+    row 2715: HONOR 313: row 2709 says 'Sem: Global Food Sect' 3, this row 'Sem:What Music Have to Do With' 3
+    row 2716: HONOR 313: row 2709 says 'Sem: Global Food Sect' 3, this row 'Sem: Intuitive Eating' 3
+    row 2717: HONOR 313: row 2709 says 'Sem: Global Food Sect' 3, this row 'Sem: History has Its Eyes on Y' 3
+    row 2718: HONOR 313: row 2709 says 'Sem: Global Food Sect' 3, this row 'Hon: The Compassion Project' 3
+    row 2719: HONOR 313: row 2709 says 'Sem: Global Food Sect' 3, this row 'Sem:Visual Critical Ethnograph' 3
+    row 2720: HONOR 313: row 2709 says 'Sem: Global Food Sect' 3, this row 'Sem: Digital Humanities After' 3
+    row 2722: HONOR 413: row 2721 says 'Interdisciplinary Perspectives on Social Problems' 3, this row 'Hon: Reproductive Justice' 3
+    row 2723: HONOR 413: row 2721 says 'Interdisciplinary Perspectives on Social Problems' 3, this row 'Hon:Prpse,Persp,Human Con' 3
+    row 2724: HONOR 413: row 2721 says 'Interdisciplinary Perspectives on Social Problems' 3, this row 'Hon:The Global Housing Crisis' 3
+    row 2725: HONOR 413: row 2721 says 'Interdisciplinary Perspectives on Social Problems' 3, this row 'HON: Beyond Biology: The Hidde' 3
+    row 2737: HSEC 690: row 2736 says 'Cyber Crime & Infra Sec' 3, this row 'Sem:Intel Ana&Data Fusion' 3
+    row 2738: HSEC 690: row 2736 says 'Cyber Crime & Infra Sec' 3, this row 'Prvt&Cntrg Violent Extrem' 3
+    row 2749: HTM 320: row 2748 says 'Hotel Management' 2, this row 'Hotel Management' 1
+    row 2764: HTM 432: row 2763 says 'Project Management Events' 2, this row 'Project Management Events' 1
+    row 2828: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2829: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2830: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2831: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2832: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2833: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2834: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2835: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2836: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2837: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2838: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2839: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2840: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2841: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2842: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2843: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2844: JMS 210: row 2827 says 'Digital Literacy' 2, this row 'Digital Literacy' 1
+    row 2846: JMS 220: row 2845 says 'Writing for Mass Media' 2, this row 'Writing for Mass Media' 1
+    row 2847: JMS 220: row 2845 says 'Writing for Mass Media' 2, this row 'Writing for Mass Media' 1
+    row 2848: JMS 220: row 2845 says 'Writing for Mass Media' 2, this row 'Writing for Mass Media' 1
+    row 2849: JMS 220: row 2845 says 'Writing for Mass Media' 2, this row 'Writing for Mass Media' 1
+    row 2850: JMS 220: row 2845 says 'Writing for Mass Media' 2, this row 'Writing for Mass Media' 1
+    row 2851: JMS 220: row 2845 says 'Writing for Mass Media' 2, this row 'Writing for Mass Media' 1
+    row 2858: JMS 310W: row 2857 says 'Media Writing & Reporting' 2, this row 'Media Writing & Reporting' 1
+    row 2859: JMS 310W: row 2857 says 'Media Writing & Reporting' 2, this row 'Media Writing & Reporting' 1
+    row 2860: JMS 310W: row 2857 says 'Media Writing & Reporting' 2, this row 'Media Writing & Reporting' 1
+    row 2861: JMS 310W: row 2857 says 'Media Writing & Reporting' 2, this row 'Media Writing & Reporting' 1
+    row 2862: JMS 310W: row 2857 says 'Media Writing & Reporting' 2, this row 'Media Writing & Reporting' 1
+    row 2864: JMS 315: row 2863 says 'Digital Media Principles' 2, this row 'Digital Media Principles' 1
+    row 2865: JMS 315: row 2863 says 'Digital Media Principles' 2, this row 'Digital Media Principles' 1
+    row 2866: JMS 315: row 2863 says 'Digital Media Principles' 2, this row 'Digital Media Principles' 1
+    row 2867: JMS 315: row 2863 says 'Digital Media Principles' 2, this row 'Digital Media Principles' 1
+    row 2868: JMS 315: row 2863 says 'Digital Media Principles' 2, this row 'Digital Media Principles' 1
+    row 2869: JMS 315: row 2863 says 'Digital Media Principles' 2, this row 'Digital Media Principles' 1
+    row 2878: JMS 420: row 2877 says 'Public Affairs News Reporting' 1, this row 'Public Affairs News Reporting' 2
+    row 2880: JMS 420: row 2877 says 'Public Affairs News Reporting' 1, this row 'Public Affairs News Reporting' 2
+    row 2884: JMS 430: row 2883 says 'Digital Journalism' 1, this row 'Digital Journalism' 2
+    row 2886: JMS 430: row 2883 says 'Digital Journalism' 1, this row 'Digital Journalism' 2
+    row 2888: JMS 435: row 2887 says 'Photojournalism' 2, this row 'Photojournalism' 1
+    row 2891: JMS 441: row 2890 says 'Magazine & Feature Writng' 2, this row 'Magazine & Feature Writng' 1
+    row 2893: JMS 445: row 2892 says 'Tlvsn New Report & Produc' 1, this row 'Tlvsn New Report & Produc' 2
+    row 2907: JMS 494: row 2906 says 'Media, Law and Ethics' 2, this row 'Media, Law and Ethics' 1
+    row 2908: JMS 494: row 2906 says 'Media, Law and Ethics' 2, this row 'Media, Law and Ethics' 1
+    row 2909: JMS 494: row 2906 says 'Media, Law and Ethics' 2, this row 'Media, Law and Ethics' 1
+    row 2910: JMS 494: row 2906 says 'Media, Law and Ethics' 2, this row 'Media, Law and Ethics' 1
+    row 2911: JMS 494: row 2906 says 'Media, Law and Ethics' 2, this row 'Media, Law and Ethics' 1
+    row 2920: JMS 529: row 2919 says 'Investigative Journalism' 1, this row 'Investigative Journalism' 2
+    row 2925: JMS 550: row 2924 says 'Multimedia News Laboratory' 1, this row 'Multimedia News Laboratory' 2
+    row 2927: JMS 550: row 2924 says 'Multimedia News Laboratory' 1, this row 'Multimedia News Laboratory' 2
+    row 2929: JMS 550: row 2924 says 'Multimedia News Laboratory' 1, this row 'Multimedia News Laboratory' 2
+    row 2932: JMS 562: row 2931 says 'Advertising Creative' 1, this row 'Advertising Creative' 2
+    row 2934: JMS 562: row 2931 says 'Advertising Creative' 1, this row 'Advertising Creative' 2
+    row 2936: JMS 563: row 2935 says 'Creative Portfolio' 2, this row 'Creative Portfolio' 1
+    row 2938: JMS 563: row 2935 says 'Creative Portfolio' 2, this row 'Creative Portfolio' 1
+    row 2978: LDT 685: row 2977 says 'Performace Technology' 1, this row 'Performace Technology' 2
+    row 3043: MALAS 600A: row 3042 says 'Dangerous Media: Censorship, H' 3, this row 'Wmn Experience Migration' 3
+    row 3044: MALAS 600A: row 3042 says 'Dangerous Media: Censorship, H' 3, this row 'Black Male Experience' 3
+    row 3045: MALAS 600A: row 3042 says 'Dangerous Media: Censorship, H' 3, this row 'Mexican Literature' 3
+    row 3046: MALAS 600A: row 3042 says 'Dangerous Media: Censorship, H' 3, this row 'Span Lit 18-20 Century' 3
+    row 3059: MATH 124: row 3058 says 'Calculus for the Life Sciences' 3, this row 'Calculus for the Life Sciences' 1
+    row 3060: MATH 124: row 3058 says 'Calculus for the Life Sciences' 3, this row 'Calculus for the Life Sciences' 1
+    row 3061: MATH 124: row 3058 says 'Calculus for the Life Sciences' 3, this row 'Calculus for the Life Sciences' 1
+    row 3062: MATH 124: row 3058 says 'Calculus for the Life Sciences' 3, this row 'Calculus for the Life Sciences' 1
+    row 3063: MATH 124: row 3058 says 'Calculus for the Life Sciences' 3, this row 'Calculus for the Life Sciences' 1
+    row 3064: MATH 124: row 3058 says 'Calculus for the Life Sciences' 3, this row 'Calculus for the Life Sciences' 1
+    row 3065: MATH 124: row 3058 says 'Calculus for the Life Sciences' 3, this row 'Calculus for the Life Sciences' 1
+    row 3066: MATH 124: row 3058 says 'Calculus for the Life Sciences' 3, this row 'Calculus for the Life Sciences' 1
+    row 3075: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3076: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3077: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3078: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3079: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3080: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3081: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3082: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3083: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3084: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3085: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3086: MATH 141: row 3071 says 'Precalculus' 3, this row 'Precalculus' 1
+    row 3090: MATH 150: row 3088 says 'Calculus I' 3, this row 'Calculus I' 1
+    row 3091: MATH 150: row 3088 says 'Calculus I' 3, this row 'Calculus I' 1
+    row 3092: MATH 150: row 3088 says 'Calculus I' 3, this row 'Calculus I' 1
+    row 3093: MATH 150: row 3088 says 'Calculus I' 3, this row 'Calculus I' 1
+    row 3094: MATH 150: row 3088 says 'Calculus I' 3, this row 'Calculus I' 1
+    row 3095: MATH 150: row 3088 says 'Calculus I' 3, this row 'Calculus I' 1
+    row 3096: MATH 150: row 3088 says 'Calculus I' 3, this row 'Calculus I' 1
+    row 3097: MATH 150: row 3088 says 'Calculus I' 3, this row 'Calculus I' 1
+    row 3098: MATH 150: row 3088 says 'Calculus I' 3, this row 'Calculus I' 1
+    row 3099: MATH 150: row 3088 says 'Calculus I' 3, this row 'Calculus I' 1
+    row 3104: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3105: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3106: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3107: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3108: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3109: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3110: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3111: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3112: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3113: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3114: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3115: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3116: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3117: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3119: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3120: MATH 151: row 3101 says 'Calculus II' 3, this row 'Calculus II' 1
+    row 3131: MATH 252: row 3130 says 'Calculus III' 3, this row 'Calculus III' 1
+    row 3132: MATH 252: row 3130 says 'Calculus III' 3, this row 'Calculus III' 1
+    row 3134: MATH 252: row 3130 says 'Calculus III' 3, this row 'Calculus III' 1
+    row 3135: MATH 252: row 3130 says 'Calculus III' 3, this row 'Calculus III' 1
+    row 3137: MATH 252: row 3130 says 'Calculus III' 3, this row 'Calculus III' 1
+    row 3138: MATH 252: row 3130 says 'Calculus III' 3, this row 'Calculus III' 1
+    row 3139: MATH 252: row 3130 says 'Calculus III' 3, this row 'Calculus III' 1
+    row 3141: MATH 252: row 3130 says 'Calculus III' 3, this row 'Calculus III' 1
+    row 3142: MATH 252: row 3130 says 'Calculus III' 3, this row 'Calculus III' 1
+    row 3155: MATH 340: row 3154 says 'Programming in Math' 2, this row 'Programming in Math' 1
+    row 3156: MATH 340: row 3154 says 'Programming in Math' 2, this row 'Programming in Math' 1
+    row 3179: MBIO 600: row 3178 says 'Sem: Cell & Molec Biology' 3, this row 'Seminar in Molecular Biol' 3
+    row 3198: ME 202: row 3197 says 'Computer Prog Application' 2, this row 'Computer Prog Application' 1
+    row 3200: ME 202: row 3197 says 'Computer Prog Application' 2, this row 'Computer Prog Application' 1
+    row 3207: ME 230: row 3206 says 'Basics of Mechatronics' 2, this row 'Basics of Mechatronics' 1
+    row 3209: ME 230: row 3206 says 'Basics of Mechatronics' 2, this row 'Basics of Mechatronics' 1
+    row 3211: ME 230: row 3206 says 'Basics of Mechatronics' 2, this row 'Basics of Mechatronics' 1
+    row 3213: ME 230: row 3206 says 'Basics of Mechatronics' 2, this row 'Basics of Mechatronics' 1
+    row 3228: ME 330: row 3227 says 'Mechatronics Laboratory' 2, this row 'Mechatronics Laboratory' 1
+    row 3230: ME 330: row 3227 says 'Mechatronics Laboratory' 2, this row 'Mechatronics Laboratory' 1
+    row 3232: ME 330: row 3227 says 'Mechatronics Laboratory' 2, this row 'Mechatronics Laboratory' 1
+    row 3234: ME 330: row 3227 says 'Mechatronics Laboratory' 2, this row 'Mechatronics Laboratory' 1
+    row 3237: ME 340: row 3235 says 'Intro Manufacturing Eng' 1, this row 'Intro Manufacturing Eng' 2
+    row 3253: ME 490W: row 3252 says 'Eng Design: Senior Project' 1, this row 'Eng Design: Senior Project' 2
+    row 3255: ME 490W: row 3252 says 'Eng Design: Senior Project' 1, this row 'Eng Design: Senior Project' 2
+    row 3257: ME 491: row 3256 says 'Senior Projects II' 1, this row 'Senior Projects II' 2
+    row 3259: ME 491: row 3256 says 'Senior Projects II' 1, this row 'Senior Projects II' 2
+    row 3261: ME 491: row 3256 says 'Senior Projects II' 1, this row 'Senior Projects II' 2
+    row 3263: ME 491: row 3256 says 'Senior Projects II' 1, this row 'Senior Projects II' 2
+    row 3272: ME 570: row 3271 says 'Eng Sensor Tech' 2, this row 'Eng Sensor Tech' 1
+    row 3284: ME 696: row 3283 says 'Mechanobiology' 3, this row 'Comp Transprt Phenomena' 3
+    row 3285: ME 696: row 3283 says 'Mechanobiology' 3, this row 'Vacuum-Bsd Manuf for Enrgy Dev' 3
+    row 3539: MUSIC 151: row 3538 says 'Introduction to Music' 3, this row 'Intro Mus: Hstry of Rock' 3
+    row 3540: MUSIC 151: row 3538 says 'Introduction to Music' 3, this row 'Intro to Music: Classics' 3
+    row 3541: MUSIC 151: row 3538 says 'Introduction to Music' 3, this row 'Intro to Music: Jazz' 3
+    row 3542: MUSIC 151: row 3538 says 'Introduction to Music' 3, this row 'Int Mus Radiohead-Rachmoninoff' 3
+    row 3543: MUSIC 151: row 3538 says 'Introduction to Music' 3, this row 'Intro Mus: Rock History - 1980' 3
+    row 3544: MUSIC 151: row 3538 says 'Introduction to Music' 3, this row 'Intro Mus:Americn Pop Mus' 3
+    row 3545: MUSIC 151: row 3538 says 'Introduction to Music' 3, this row 'Intro Mus: Hstry of Rock' 3
+    row 3546: MUSIC 151: row 3538 says 'Introduction to Music' 3, this row 'Intro Mus: Rock History - 1980' 3
+    row 3547: MUSIC 151: row 3538 says 'Introduction to Music' 3, this row 'Intro to Mus: Popular Music' 3
+    row 3549: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Chamber Orchestra' 1
+    row 3550: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Guitar Ensemble' 1
+    row 3551: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Indoor Drmline Colorgrd' 1
+    row 3552: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Mariachi Ensemble' 1
+    row 3553: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3554: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3555: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3556: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3557: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3558: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3559: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Opera Ensemble' 1
+    row 3560: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Javanese Gamelan' 1
+    row 3561: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Pep Band' 1
+    row 3562: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Percussion Ensemble' 1
+    row 3563: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Piano Ensemble' 1
+    row 3564: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Piano Ensemble' 1
+    row 3565: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Trombone Ensemble' 1
+    row 3566: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Trumpet Ensemble' 1
+    row 3567: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'University Chorus' 1
+    row 3568: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Varsity Band' 1
+    row 3569: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Woodwind Forum' 1
+    row 3570: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Chamber Music' 1
+    row 3571: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3572: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3573: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Advanced Mariachi Ensemble' 1
+    row 3574: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Tenor/Bass Choir' 1
+    row 3575: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Klezmer' 1
+    row 3576: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3577: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3578: MUSIC 170: row 3548 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3709: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Chamber Orchestra' 1
+    row 3710: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Guitar Ensemble' 1
+    row 3711: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Indoor Drmline Colorgrd' 1
+    row 3712: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Mariachi Ensemble' 1
+    row 3713: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3714: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3715: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Opera Ensemble' 1
+    row 3716: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3717: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3718: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3719: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Javanese Gamelan' 1
+    row 3720: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3721: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Pep Band' 1
+    row 3722: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Percussion Ensemble' 1
+    row 3723: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Piano Ensemble' 1
+    row 3724: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Piano Ensemble' 1
+    row 3725: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Trombone Ensemble' 1
+    row 3726: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Trumpet Ensemble' 1
+    row 3727: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'University Chorus' 1
+    row 3728: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Varsity Band' 1
+    row 3729: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Woodwind Forum' 1
+    row 3730: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Chamber Music' 1
+    row 3731: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3732: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3733: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Tenor/Bass Choir' 1
+    row 3734: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Advanced Mariachi Ensemble' 1
+    row 3735: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Klezmer' 0
+    row 3736: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3737: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3738: MUSIC 370: row 3708 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3835: MUSIC 460: row 3834 says 'Art of Recording' 2, this row 'Art of Recording' 1
+    row 3844: MUSIC 541: row 3843 says 'Per St Pedagogy: String Pedago' 2, this row 'Per St Pedagogy: String Pedago' 1
+    row 3846: MUSIC 554: row 3845 says 'Music Literature: Band' 2, this row 'Music Lit: Song' 2
+    row 3849: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Chamber Orchestra' 1
+    row 3850: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Guitar Ensemble' 1
+    row 3851: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Adv Chamb Music' 1
+    row 3852: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3853: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3854: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3855: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3856: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3857: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Opera Ensemble' 1
+    row 3858: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Percussion Ensemble' 1
+    row 3859: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Piano Ensemble' 1
+    row 3860: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Piano Ensemble' 1
+    row 3861: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Trombone Ensemble' 1
+    row 3862: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Trumpet Ensemble' 1
+    row 3863: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'University Chorus' 1
+    row 3864: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Woodwind Forum' 1
+    row 3865: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Mariachi Ensemble' 1
+    row 3866: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Javanese Gamelan' 1
+    row 3867: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3868: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3869: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3870: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Tenor/Bass Choir' 1
+    row 3871: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Advanced Mariachi Ensemble' 1
+    row 3872: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Klezmer' 1
+    row 3873: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3874: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3875: MUSIC 570: row 3848 says 'Brass Chamber Music' 1, this row 'Jazz Combo' 1
+    row 3954: NURS 206: row 3953 says 'Fund Nurs Practice' 3, this row 'Fund Nurs Practice' 2
+    row 3955: NURS 206: row 3953 says 'Fund Nurs Practice' 3, this row 'Fund Nurs Practice' 2
+    row 3956: NURS 206: row 3953 says 'Fund Nurs Practice' 3, this row 'Fund Nurs Practice' 2
+    row 3957: NURS 206: row 3953 says 'Fund Nurs Practice' 3, this row 'Fund Nurs Practice' 2
+    row 3958: NURS 206: row 3953 says 'Fund Nurs Practice' 3, this row 'Fund Nurs Practice' 2
+    row 3959: NURS 206: row 3953 says 'Fund Nurs Practice' 3, this row 'Fund Nurs Practice' 2
+    row 3960: NURS 206: row 3953 says 'Fund Nurs Practice' 3, this row 'Fund Nurs Practice' 2
+    row 3961: NURS 206: row 3953 says 'Fund Nurs Practice' 3, this row 'Fund Nurs Practice' 2
+    row 3967: NURS 300: row 3966 says 'Nurs Acu & Chron I' 3, this row 'Nurs Acu & Chron I' 5
+    row 3968: NURS 300: row 3966 says 'Nurs Acu & Chron I' 3, this row 'Nurs Acu & Chron I' 5
+    row 3969: NURS 300: row 3966 says 'Nurs Acu & Chron I' 3, this row 'Nurs Acu & Chron I' 5
+    row 3970: NURS 300: row 3966 says 'Nurs Acu & Chron I' 3, this row 'Nurs Acu & Chron I' 5
+    row 3971: NURS 300: row 3966 says 'Nurs Acu & Chron I' 3, this row 'Nurs Acu & Chron I' 5
+    row 3972: NURS 300: row 3966 says 'Nurs Acu & Chron I' 3, this row 'Nurs Acu & Chron I' 5
+    row 3973: NURS 300: row 3966 says 'Nurs Acu & Chron I' 3, this row 'Nurs Acu & Chron I' 5
+    row 3974: NURS 300: row 3966 says 'Nurs Acu & Chron I' 3, this row 'Nurs Acu & Chron I' 5
+    row 3975: NURS 300: row 3966 says 'Nurs Acu & Chron I' 3, this row 'Nurs Acu & Chron I' 5
+    row 3976: NURS 300: row 3966 says 'Nurs Acu & Chron I' 3, this row 'Nurs Acu & Chron I' 5
+    row 3977: NURS 300: row 3966 says 'Nurs Acu & Chron I' 3, this row 'Nurs Acu & Chron I' 5
+    row 3985: NURS 316: row 3984 says 'Psych-Mental Health Nurs' 3, this row 'Psych-Mental Health Nurs' 2
+    row 3986: NURS 316: row 3984 says 'Psych-Mental Health Nurs' 3, this row 'Psych-Mental Health Nurs' 2
+    row 3987: NURS 316: row 3984 says 'Psych-Mental Health Nurs' 3, this row 'Psych-Mental Health Nurs' 2
+    row 3988: NURS 316: row 3984 says 'Psych-Mental Health Nurs' 3, this row 'Psych-Mental Health Nurs' 2
+    row 3989: NURS 316: row 3984 says 'Psych-Mental Health Nurs' 3, this row 'Psych-Mental Health Nurs' 2
+    row 3990: NURS 316: row 3984 says 'Psych-Mental Health Nurs' 3, this row 'Psych-Mental Health Nurs' 2
+    row 3991: NURS 316: row 3984 says 'Psych-Mental Health Nurs' 3, this row 'Psych-Mental Health Nurs' 2
+    row 3992: NURS 316: row 3984 says 'Psych-Mental Health Nurs' 3, this row 'Psych-Mental Health Nurs' 2
+    row 3993: NURS 316: row 3984 says 'Psych-Mental Health Nurs' 3, this row 'Psych-Mental Health Nurs' 2
+    row 3994: NURS 316: row 3984 says 'Psych-Mental Health Nurs' 3, this row 'Psych-Mental Health Nurs' 2
+    row 3996: NURS 320: row 3995 says 'Applied Health Assessment' 3, this row 'Applied Health Assessment' 1
+    row 3997: NURS 320: row 3995 says 'Applied Health Assessment' 3, this row 'Applied Health Assessment' 1
+    row 4026: NURS 401: row 4025 says 'Nursing Care Adult/Gero II' 3.5, this row 'Nursing Care Adult/Gero II' 2.5
+    row 4027: NURS 401: row 4025 says 'Nursing Care Adult/Gero II' 3.5, this row 'Nursing Care Adult/Gero II' 2.5
+    row 4028: NURS 401: row 4025 says 'Nursing Care Adult/Gero II' 3.5, this row 'Nursing Care Adult/Gero II' 2.5
+    row 4029: NURS 401: row 4025 says 'Nursing Care Adult/Gero II' 3.5, this row 'Nursing Care Adult/Gero II' 2.5
+    row 4030: NURS 401: row 4025 says 'Nursing Care Adult/Gero II' 3.5, this row 'Nursing Care Adult/Gero II' 2.5
+    row 4031: NURS 401: row 4025 says 'Nursing Care Adult/Gero II' 3.5, this row 'Nursing Care Adult/Gero II' 2.5
+    row 4032: NURS 401: row 4025 says 'Nursing Care Adult/Gero II' 3.5, this row 'Nursing Care Adult/Gero II' 2.5
+    row 4033: NURS 401: row 4025 says 'Nursing Care Adult/Gero II' 3.5, this row 'Nursing Care Adult/Gero II' 2.5
+    row 4034: NURS 401: row 4025 says 'Nursing Care Adult/Gero II' 3.5, this row 'Nursing Care Adult/Gero II' 2.5
+    row 4035: NURS 401: row 4025 says 'Nursing Care Adult/Gero II' 3.5, this row 'Nursing Care Adult/Gero II' 2.5
+    row 4037: NURS 416: row 4036 says 'Community Health Nursing' 3, this row 'Community Health Nursing' 2
+    row 4038: NURS 416: row 4036 says 'Community Health Nursing' 3, this row 'Community Health Nursing' 2
+    row 4039: NURS 416: row 4036 says 'Community Health Nursing' 3, this row 'Community Health Nursing' 2
+    row 4040: NURS 416: row 4036 says 'Community Health Nursing' 3, this row 'Community Health Nursing' 2
+    row 4041: NURS 416: row 4036 says 'Community Health Nursing' 3, this row 'Community Health Nursing' 2
+    row 4042: NURS 416: row 4036 says 'Community Health Nursing' 3, this row 'Community Health Nursing' 2
+    row 4043: NURS 416: row 4036 says 'Community Health Nursing' 3, this row 'Community Health Nursing' 2
+    row 4044: NURS 416: row 4036 says 'Community Health Nursing' 3, this row 'Community Health Nursing' 2
+    row 4045: NURS 416: row 4036 says 'Community Health Nursing' 3, this row 'Community Health Nursing' 2
+    row 4046: NURS 416: row 4036 says 'Community Health Nursing' 3, this row 'Community Health Nursing' 2
+    row 4049: NURS 437: row 4048 says 'Care Management Complex Needs' 3, this row 'Care Management Complex Needs' 1
+    row 4051: NURS 459: row 4050 says 'Nsg Leadership & Management' 3, this row 'Nsg Leadership & Management' 1
+    row 4099: OCEAN 100: row 4098 says 'The Ocean Planet' 3, this row 'The Ocean Planet' 1
+    row 4100: OCEAN 100: row 4098 says 'The Ocean Planet' 3, this row 'The Ocean Planet' 1
+    row 4101: OCEAN 100: row 4098 says 'The Ocean Planet' 3, this row 'The Ocean Planet' 1
+    row 4102: OCEAN 100: row 4098 says 'The Ocean Planet' 3, this row 'The Ocean Planet' 1
+    row 4103: OCEAN 100: row 4098 says 'The Ocean Planet' 3, this row 'The Ocean Planet' 1
+    row 4104: OCEAN 100: row 4098 says 'The Ocean Planet' 3, this row 'The Ocean Planet' 1
+    row 4105: OCEAN 100: row 4098 says 'The Ocean Planet' 3, this row 'The Ocean Planet' 1
+    row 4106: OCEAN 100: row 4098 says 'The Ocean Planet' 3, this row 'The Ocean Planet' 1
+    row 4107: OCEAN 100: row 4098 says 'The Ocean Planet' 3, this row 'The Ocean Planet' 1
+    row 4183: PH 632: row 4182 says 'Air Quality' 2, this row 'Air Quality' 1
+    row 4320: PHYS 317: row 4319 says 'Intro to Comput Physics' 1, this row 'Intro to Comput Physics' 2
+    row 4322: PHYS 357: row 4321 says 'Adv Physical Measurement' 1, this row 'Adv Physical Measurement' 2
+    row 4326: PHYS 412: row 4325 says 'Process & Inquiry Physics' 3, this row 'Process & Inquiry Physics' 1
+    row 4329: PHYS 553: row 4328 says 'Modern Optics Lab' 1, this row 'Modern Optics Lab' 2
+    row 4332: PHYS 596: row 4331 says 'Condensed Matter Physics Lab' 1, this row 'Condensed Matter Physics Lab' 2
+    row 4337: PHYS 672B: row 4336 says 'Diagnostic Imaging Lab' 1, this row 'Diagnostic Imaging Lab' 2
+    row 4339: PHYS 674: row 4338 says 'Radiation Treatment Plan' 2, this row 'Radiation Treatment Plan' 1
+    row 4432: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4433: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4434: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4435: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4436: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4438: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4439: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4440: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4441: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4442: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4444: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4445: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4446: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4447: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4448: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4450: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4451: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4452: PSY 280: row 4431 says 'Statistical Methods in Psychology' 3, this row 'Statistical Methods in Psychology' 1
+    row 4459: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4460: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4461: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4462: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4464: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4465: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4466: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4467: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4469: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4470: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4471: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4472: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4474: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4475: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4476: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4477: PSY 301: row 4458 says 'Introduction to Research Methods in Psychology' 3, this row 'Introduction to Research Methods in Psychology' 1
+    row 4500: PSY 410: row 4499 says 'Advanced Research Methods Laboratory' 2, this row 'Advanced Research Methods Laboratory' 3
+    row 4516: PSY 495: row 4514 says 'Field Placement in Psych' 2, this row 'Field Placement in Psych' 1
+    row 4517: PSY 495: row 4514 says 'Field Placement in Psych' 2, this row 'Field Placement in Psych' 1
+    row 4520: PSY 568: row 4519 says 'Systems Neuroscience' 1, this row 'Systems Neuroscience' 2
+    row 4524: PSY 670B: row 4523 says 'Adv Statistics in Psychology' 2, this row 'Adv Statistics in Psychology' 1
+    row 4530: PSY 768: row 4529 says 'Adv Systems Neuroscience' 1, this row 'Adv Systems Neuroscience' 2
+    row 4532: PSY 770B: row 4531 says 'Design Analysis Research' 2, this row 'Design Analysis Research' 1
+    row 4894: SCI 296: row 4892 says 'Discussion: MESA STEM' 1, this row 'Discussion: Ssp Scholar' 4
+    row 4895: SCI 296: row 4892 says 'Discussion: MESA STEM' 1, this row 'Discussion: Ssp Scholar' 4
+    row 4942: SOC 101: row 4941 says 'Introductory Sociology: The Study of Society' 2, this row 'Introductory Sociology: The Study of Society' 1
+    row 4943: SOC 101: row 4941 says 'Introductory Sociology: The Study of Society' 2, this row 'Introductory Sociology: The Study of Society' 1
+    row 4944: SOC 101: row 4941 says 'Introductory Sociology: The Study of Society' 2, this row 'Introductory Sociology: The Study of Society' 1
+    row 4945: SOC 101: row 4941 says 'Introductory Sociology: The Study of Society' 2, this row 'Introductory Sociology: The Study of Society' 1
+    row 4946: SOC 101: row 4941 says 'Introductory Sociology: The Study of Society' 2, this row 'Introductory Sociology: The Study of Society' 1
+    row 4947: SOC 101: row 4941 says 'Introductory Sociology: The Study of Society' 2, this row 'Introductory Sociology: The Study of Society' 1
+    row 4948: SOC 101: row 4941 says 'Introductory Sociology: The Study of Society' 2, this row 'Introductory Sociology: The Study of Society' 3
+    row 4949: SOC 101: row 4941 says 'Introductory Sociology: The Study of Society' 2, this row 'Introductory Sociology: The Study of Society' 3
+    row 4950: SOC 101: row 4941 says 'Introductory Sociology: The Study of Society' 2, this row 'Introductory Sociology: The Study of Society' 3
+    row 4951: SOC 101: row 4941 says 'Introductory Sociology: The Study of Society' 2, this row 'Introductory Sociology: The Study of Society' 3
+    row 5004: SOC 470: row 5003 says 'Soc Research Comm Engage' 2, this row 'Soc Research Comm Engage' 1
+    row 5127: STAT 250: row 5126 says 'Statistical Principles and Practices' 2, this row 'Statistical Principles and Practices' 1
+    row 5128: STAT 250: row 5126 says 'Statistical Principles and Practices' 2, this row 'Statistical Principles and Practices' 1
+    row 5129: STAT 250: row 5126 says 'Statistical Principles and Practices' 2, this row 'Statistical Principles and Practices' 1
+    row 5130: STAT 250: row 5126 says 'Statistical Principles and Practices' 2, this row 'Statistical Principles and Practices' 1
+    row 5131: STAT 250: row 5126 says 'Statistical Principles and Practices' 2, this row 'Statistical Principles and Practices' 1
+    row 5132: STAT 250: row 5126 says 'Statistical Principles and Practices' 2, this row 'Statistical Principles and Practices' 1
+    row 5133: STAT 250: row 5126 says 'Statistical Principles and Practices' 2, this row 'Statistical Principles and Practices' 1
+    row 5157: SWORK 120: row 5156 says 'Intro to Socialwork/Welfr' 2, this row 'Intro to Socialwork/Welfr' 1
+    row 5232: TE 303: row 5231 says 'Tch Prof: 1st Clin Exper' 3, this row 'Tch Prof: 1st Clin Exper' 1
+    row 5234: TE 303: row 5231 says 'Tch Prof: 1st Clin Exper' 3, this row 'Tch Prof: 1st Clin Exper' 1
+    row 5236: TE 303: row 5231 says 'Tch Prof: 1st Clin Exper' 3, this row 'Tch Prof: 1st Clin Exper' 1
+    row 5238: TE 362: row 5237 says 'Fldwk Community Settings' 1, this row 'Fldwk Community Settings' 3
+    row 5240: TE 362: row 5237 says 'Fldwk Community Settings' 1, this row 'Fldwk Community Settings' 3
+    row 5249: TE 637: row 5248 says 'Instr/Strat Rdg/Lang Arts' 3, this row 'Instr/Strat Rdg/Lang Arts' 1
+    row 5259: TE 902: row 5258 says 'Learning Environment' 2, this row 'Learning Environment' 1
+    row 5303: TE 954: row 5302 says 'Humanistic&Soc Asp Teach' 3, this row 'Humanistic&Soc Asp Teach' 4
+    row 5326: TFM 270: row 5325 says 'Introduction to Filmmaking' 1, this row 'Introduction to Filmmaking' 2
+    row 5327: TFM 270: row 5325 says 'Introduction to Filmmaking' 1, this row 'Introduction to Filmmaking' 2
+    row 5328: TFM 270: row 5325 says 'Introduction to Filmmaking' 1, this row 'Introduction to Filmmaking' 2
+    row 5331: TFM 321: row 5330 says 'Sound Design Video/Film' 2, this row 'Sound Design Video/Film' 1
+    row 5333: TFM 322: row 5332 says 'Cinematography' 2, this row 'Cinematography' 1
+    row 5335: TFM 327: row 5334 says 'Film & Video Editing' 2, this row 'Film & Video Editing' 1
+    row 5339: TFM 350: row 5338 says 'Staging & Art TV & Film' 2, this row 'Staging & Art TV & Film' 1
+    row 5341: TFM 361: row 5340 says 'Studio Production' 2, this row 'Studio Production' 1
+    row 5343: TFM 361: row 5340 says 'Studio Production' 2, this row 'Studio Production' 1
+    row 5345: TFM 362: row 5344 says 'Intermediate Filmmaking' 2, this row 'Intermediate Filmmaking' 1
+    row 5347: TFM 362: row 5344 says 'Intermediate Filmmaking' 2, this row 'Intermediate Filmmaking' 1
+    row 5356: TFM 465: row 5355 says 'Compositing and Vfx' 2, this row 'Compositing and Vfx' 1
+    row 5363: TFM 521: row 5362 says 'Advanced Sound Design' 2, this row 'Advanced Sound Design' 1
+    row 5365: TFM 522: row 5364 says 'Advanced Cinematography' 2, this row 'Advanced Cinematography' 1
+    row 5367: TFM 530: row 5366 says 'Genres:Doomsday Cinema' 3, this row 'Genre Studies: Teen Films' 3
+    row 5369: TFM 540: row 5368 says 'Documentary Production' 2, this row 'Documentary Production' 1
+    row 5371: TFM 540: row 5368 says 'Documentary Production' 2, this row 'Documentary Production' 1
+    row 5373: TFM 550: row 5372 says 'Art Direction TV & Film' 1, this row 'Art Direction TV & Film' 2
+    row 5375: TFM 552: row 5374 says '3d Digital Storytelling' 2, this row '3d Digital Storytelling' 1
+    row 5378: TFM 560: row 5377 says 'Advanced Film' 2, this row 'Advanced Film' 1
+    row 5380: TFM 560: row 5377 says 'Advanced Film' 2, this row 'Advanced Film' 1
+    row 5384: TFM 590: row 5383 says 'Directing Film & Televisn' 2, this row 'Directing Film & Televisn' 1
+    row 5387: TFM 621: row 5386 says 'Sound Design for Film' 2, this row 'Sound Design for Film' 1
+    row 5389: TFM 622: row 5388 says 'Fundamentals of Cinematography' 2, this row 'Fundamentals of Cinematography' 1
+    row 5391: TFM 627: row 5390 says 'Film Editing & Post' 1, this row 'Film Editing & Post' 2
+    row 5393: TFM 662: row 5392 says 'Scene-Based Film Prod' 2, this row 'Scene-Based Film Prod' 1
+    row 5395: TFM 662: row 5392 says 'Scene-Based Film Prod' 2, this row 'Scene-Based Film Prod' 1
+    row 5409: THEA 240: row 5408 says 'Theatre Design & Tech I' 2, this row 'Theatre Design & Tech I' 1
+    row 5410: THEA 240: row 5408 says 'Theatre Design & Tech I' 2, this row 'Theatre Design & Tech I' 1
+    row 5411: THEA 240: row 5408 says 'Theatre Design & Tech I' 2, this row 'Theatre Design & Tech I' 1
+    row 5422: THEA 351: row 5421 says 'Musical Theatre Perf II' 2, this row 'Musical Theatre Perf II' 1
+    row 5430: THEA 435: row 5429 says 'Acting on Camera' 2, this row 'Acting on Camera' 1
+    row 5439: THEA 446C: row 5438 says 'Pract Perform Cast Member' 1, this row 'Pract Perform Cast Member' 2
+    row 5440: THEA 446C: row 5438 says 'Pract Perform Cast Member' 1, this row 'Pract Perform Cast Member' 2
+    row 5441: THEA 446C: row 5438 says 'Pract Perform Cast Member' 1, this row 'Pract Perform Cast Member' 2
+    row 5442: THEA 446C: row 5438 says 'Pract Perform Cast Member' 1, this row 'Pract Perform Cast Member' 3
+    row 5446: THEA 447: row 5445 says 'Lighting Design I' 2, this row 'Lighting Design I' 1
+    row 5449: THEA 452: row 5448 says 'Costume Design I' 2, this row 'Costume Design I' 1
+    row 5451: THEA 459: row 5450 says 'Directing II' 2, this row 'Directing II' 1
+    row 5456: THEA 476: row 5455 says 'Evnt Coord Entnmnt Indust' 2, this row 'Evnt Coord Entnmnt Indust' 1
+    row 5459: THEA 496: row 5458 says 'Music Theory for Musical Theat' 3, this row 'Sewing Skills and Technology' 2
+    row 5465: THEA 532: row 5464 says 'Adv Topics Stg& Scrn Perf' 2, this row 'Adv Topics Stg& Scrn Perf' 1
+    row 5486: THEA 643: row 5485 says 'Collaborative Studies Des' 2, this row 'Collaborative Studies Des' 1
+    row 5487: THEA 643: row 5485 says 'Collaborative Studies Des' 2, this row 'Collaborative Studies Des' 1
 
 Skipped rows (fix them in the sheet, then run again):
   none

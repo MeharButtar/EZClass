@@ -40,7 +40,7 @@ CREATE TABLE courses (
     subject      TEXT NOT NULL,       -- e.g. 'CS'
     catalog_num  TEXT NOT NULL,       -- e.g. '514'
     title        TEXT NOT NULL,
-    units        INTEGER NOT NULL,
+    units        INTEGER NOT NULL,    -- 3, or 1.5 for a half-unit course (SQLite keeps the decimal)
     description  TEXT,
     UNIQUE (subject, catalog_num)
 );

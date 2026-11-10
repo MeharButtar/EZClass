@@ -22,12 +22,16 @@ One row is one section a student picks. A section can meet more than once
     day, time or room.
   - Professor First / Last Name: one part per component (not per meeting),
     zipped into people. A section lists every person once.
+  - Units: a whole number or a decimal (1.5).
+  - Section: a number (1 becomes 01) or letters and digits as written (A1).
   - Seats: one number per component. The section's seat count is the
     smallest, since a student needs a seat in every part.
   - Days, Start, End, Building and Room all empty: a section whose schedule
     isn't entered yet. It is imported with no meetings ("Time not listed yet").
 A course has one title, except special-topics courses (SPECIAL_TOPICS below)
-where every section has its own. Any other course with two titles is
+where every section has its own. A course whose sections' titles share no
+words at all (topics) keeps the course title it already had, and each
+section keeps its own. Any other course with two titles is
 reported (each section still keeps the title typed in its row).
 A row whose parts don't line up is skipped (with its row number); the rest
 still import, and the script exits with status 1 at the end.
@@ -311,11 +315,11 @@ def parse_row(rec, report):
                        ("course_title", "Course Title"), ("units", "Units")):
         if not rec.get(col):
             raise RowProblem(f"{label} is empty")
-    if not rec["units"].isdigit():
-        raise RowProblem(f"Units '{rec['units']}' must be a whole number")
-    number = rec["section_number"]
-    if number and not number.isdigit():
-        raise RowProblem(f"Section '{number}' must be a number")
+    if not re.fullmatch(r"\d+(\.\d+)?", rec["units"]):
+        raise RowProblem(f"Units '{rec['units']}' must be a number like 3 or 1.5")
+    number = rec["section_number"].upper()
+    if number and not re.fullmatch(r"[0-9A-Z]{1,6}", number):
+        raise RowProblem(f"Section '{number}' must be a number or letters and digits, like 01 or A1")
     class_number = rec.get("class_number", "")
     if class_number and not class_number.isdigit():
         raise RowProblem(f"Class Number '{class_number}' must be digits only")
@@ -326,14 +330,21 @@ def parse_row(rec, report):
         "subject": "".join(rec["subject"].split()).upper(),
         "catalog_num": "".join(rec["catalog_num"].split()).upper(),
         "title": rec["course_title"],
-        "units": int(rec["units"]),
-        "section_number": number.zfill(2) if number else "",
+        "units": units_value(rec["units"]),
+        "section_number": number.zfill(2) if number.isdigit() else number,   # 1 -> 01; A1 stays A1
         "class_number": class_number,
         "meetings": parse_meetings(rec, report),
         "instructors": parse_instructors(rec, report),
         "seats_text": seats_text,
         "seats_total": seats_total,
     }
+
+
+def units_value(text):
+    """'3' -> 3, '1.5' -> '1.5', '2.50' -> '2.5', '3.0' -> 3 (half units exist: ACCTG 201 is 1.5)."""
+    if "." in text:
+        text = text.rstrip("0").rstrip(".")
+    return int(text) if text.isdigit() else text
 
 
 # ---------- the last import ----------
@@ -505,7 +516,7 @@ def assign_section_numbers(sections, prev, report):
     """Fills in blank Section cells (see the module docstring)."""
     taken = collections.defaultdict(set)      # (term, subject, catalog) -> numbers used anywhere
     for s in sections:
-        if s["section_number"]:
+        if s["section_number"].isdigit():
             taken[(s["term"], s["subject"], s["catalog_num"])].add(int(s["section_number"]))
     claimed = {section_key(s["subject"], s["catalog_num"], s["section_number"], s["term"])
                for s in sections if s["section_number"]}
@@ -541,12 +552,17 @@ def assign_section_numbers(sections, prev, report):
                     f"{s['subject']} {s['catalog_num']} section {s['section_number']}")
 
 
-def shared_title(titles):
-    """'Music and Culture: Hip Hop', 'Music and Culture: Jazz' -> 'Music and Culture' (whole words only)."""
+def common_title(titles):
+    """'Music and Culture: Hip Hop', 'Music and Culture: Jazz' -> 'Music and Culture' (whole words only), or ''."""
     prefix = os.path.commonprefix(titles)
     if any(len(t) > len(prefix) and t[len(prefix)].isalnum() for t in titles):
         prefix = prefix.rsplit(" ", 1)[0] if " " in prefix else ""   # don't cut a word in half
-    return prefix.rstrip(" :-–—") or titles[0]
+    return prefix.rstrip(" :-–—")
+
+
+def shared_title(titles):
+    """common_title, or the first title when they share nothing."""
+    return common_title(titles) or titles[0]
 
 
 def build_tables(sections, prev, report):
@@ -560,12 +576,19 @@ def build_tables(sections, prev, report):
 
     courses, course_seen = {}, {}
     professors, rooms = {}, {}
-    # a special-topics course is called by what its sections' titles share
-    topics = collections.defaultdict(list)
+    # a special-topics course is called by what its sections' titles share. A course
+    # whose sections' titles share no words at all keeps the title it already had.
+    titles = collections.defaultdict(list)
     for s in sections:
-        if (s["subject"], s["catalog_num"]) in SPECIAL_TOPICS:
-            topics[(s["subject"], s["catalog_num"])].append(s["title"])
-    topic_titles = {k: shared_title(v) for k, v in topics.items()}
+        titles[(s["subject"], s["catalog_num"])].append(s["title"])
+    topic_titles = {}
+    for ckey, names in titles.items():
+        names = list(dict.fromkeys(names))
+        common = common_title(names) if len(names) > 1 else names[0]
+        if not common and ckey in prev["courses"]:
+            topic_titles[ckey] = prev["courses"][ckey]["title"]
+        elif ckey in SPECIAL_TOPICS:
+            topic_titles[ckey] = common or names[0]
     out_sections, out_meetings, out_instructors = [], [], []
     counts = collections.Counter()
 
@@ -577,7 +600,7 @@ def build_tables(sections, prev, report):
                              "title": topic_titles.get(ckey, s["title"]), "units": s["units"], "description": ""}
             course_seen[ckey] = s["_row"]
             old = prev["courses"].get(ckey)
-            title_changed = old and old["title"] != s["title"] and ckey not in SPECIAL_TOPICS
+            title_changed = old and old["title"] != courses[ckey]["title"] and ckey not in SPECIAL_TOPICS
             if old and (title_changed or str(old["units"]) != str(s["units"])):
                 report.warn("course title or units changed since the last import", s["_row"],
                             f"{s['subject']} {s['catalog_num']}: '{old['title']}' {old['units']} -> '{s['title']}' {s['units']}")
