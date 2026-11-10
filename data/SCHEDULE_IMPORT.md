@@ -50,8 +50,8 @@ One row is one section a student picks. A CSV has its header on row 1. The impor
 | Subject | Subject code, spaces are removed | `CS`, `POLS` |
 | Course Number | Catalog number with any letter suffix | `150`, `150L`, `305W` |
 | Course Title | The course title | `Introductory Computer Programming` |
-| Units | Whole number | `3` |
-| Section | Section number, text (leading zero kept) | `01` |
+| Units | A number; half units are fine | `3`, `1.5` |
+| Section | Section number, text: digits get a leading zero, letters stay as written | `01`, `A1` |
 | Days | One part per meeting: `M T W Th F Sa Su` run together, or `ONLINE` for a part with no day or time | `TTh`, `MW / ONLINE` |
 | Start Time | 24-hour `HH:MM`, one per meeting (empty for an online part) | `09:30`, `17:30 / ` |
 | End Time | Same as Start | `10:45` |
@@ -83,7 +83,7 @@ The converter decides these. Each one is counted in the report, with examples:
 - **`ARR` (arranged):** in an in-person section it means no schedule ("Time not listed yet"). In an online or hybrid section it's an online part.
 - **Rooms:** `GMCS428` is split into `GMCS` + `428`, trying the longest building code already in `rooms.csv` first. `OFFCSDSU` becomes `Off campus`. A code that doesn't split stays whole as the building.
 - **People:** the export has a last name and one initial. When exactly one current EzClass professor matches, their full name is used. Otherwise it's the initial and the last name (`L. Smith`).
-- **Titles:** the current EzClass title for a course we already have, the export's short title for a new one. A course with several titles in the export (special topics) keeps each section's own.
+- **Titles:** the current EzClass title for a course we already have, the export's short title for a new one. A course with several titles in the export (special topics) keeps each section's own; if those titles share no words, the importer keeps the course's current EzClass title (MUSIC 351 stays "Music and Culture").
 - **Seats:** `0` and `999` are placeholders and left blank.
 - **Two class numbers with the same subject, number and section:** the lowest is kept.
 

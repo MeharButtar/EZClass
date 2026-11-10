@@ -369,7 +369,8 @@ def convert(path, cleaned_dir=CLEANED_DIR, majors_dir=MAJORS_DIR, ge_dir=GE_DIR)
                    campus_rows=campus_rows, skipped=skipped, skipped_rows=skipped_rows, sections=sections, out=out,
                    thesis_skipped=thesis_skipped, no_time_kept=no_time_kept, duplicates=duplicates,
                    title_counts=title_counts, courses_now=courses_now, rooms=rooms, notes=notes, term=term,
-                   majors_dir=majors_dir, ge_dir=ge_dir)
+                   majors_dir=majors_dir, ge_dir=ge_dir,
+                   old_sections=len(read_csv(os.path.join(cleaned_dir, "sections.csv"))))
     return term, table, report_text(context)
 
 
@@ -640,6 +641,50 @@ def report_text(c):
       f"{sum(1 for v in multi.values() if len(v) > 1)}")
     w("")
 
+    k = notes.count
+    distinct = lambda kind: len(notes.examples[kind])                                   # noqa: E731
+    w("== What was decided, in plain words")
+    w(f"- Arranged times: {k['in-person arranged section -> no schedule (Time not listed yet)']} in-person sections "
+      "have no set time. They import with no meetings, and the site says \"Time not listed yet\".")
+    w(f"  {k['arranged in an HY section -> online part'] + k['arranged in an ON section -> online part'] + k['arranged in an OE section -> online part']}"
+      " arranged parts of online or hybrid sections became online parts.")
+    w(f"- Live online: {k['live online: day and time, Facility ONLINE']} meetings have a day and time but Facility ONLINE."
+      " They stay on the calendar (building ONLINE) and don't count as a day on campus.")
+    w(f"- Hybrid: {k['hybrid sections with a timed and an online part']} have a timed part and an online part, "
+      f"{k['hybrid sections (no online part listed)']} list only the timed part, "
+      f"{k['hybrid sections (online parts only)']} only online parts. Each shows what the file lists.")
+    w(f"- Off campus: OFFCSDSU became \"Off campus\" with no room ({k[next((x for x in k if x.startswith('OFFCSDSU')), 'OFFCSDSU')]} meetings),"
+      " the same shape as the \"Southwestern College\" classes already in EzClass.")
+    whole = distinct("facility code that doesn't split (kept whole as the building)")
+    w(f"- Rooms: glued codes are split (GMCS428 -> GMCS 428). {whole}"
+      f" codes don't split and stay whole. {distinct('building not in rooms.csv yet')} buildings and"
+      f" {distinct('room not in rooms.csv yet')} rooms are new (listed at the end).")
+    w(f"- Seats: 0 and 999 are placeholders, left blank ({k['seats 0 (placeholder, left blank)']} and "
+      f"{k['seats 999 (placeholder, left blank)']}). 99 is kept ({k['seats 99 (kept, could be a placeholder)']}). "
+      f"500 or more is kept and listed ({k['seats 500 or more (kept, please glance)']}).")
+    w(f"- People: {distinct('instructor matched to a current full name')} people matched one current EzClass professor and got"
+      f" their full name. {distinct('new instructor, initial used as the first name')} are new and show as initial + last name."
+      f" {distinct('instructor initial matches more than one current person (initial used)')} initials match two current"
+      " people, so the initial is used (listed at the end).")
+    w(f"- Titles: {c['title_counts']['current EzClass title kept']} sections keep the full EzClass title,"
+      f" {c['title_counts']['new course, export title']} (new courses) use the export's short one,"
+      f" {c['title_counts']['several titles, each section keeps its own']} are topics and keep their own.")
+    w(f"- Units: half units are kept ({k['half units (kept as they are)']} sections, like ACCTG 201 at 1.5)."
+      f" {sum(1 for v in multi.values() if len(v) > 1)} courses list their parts (lecture, lab, activity) as separate"
+      " sections with their own units, so a student adds each part, and the course card shows the first section's units.")
+    w(f"- Instructors per section: {k['instructor listed on only some meetings (the importer lists each person once per section)']}"
+      " sections list a person on only some meetings; EzClass lists each person once per section.")
+    w("")
+    w("== Old sections")
+    w(f"Every section in this file is new ({len(out)} sections, each with its class number). The"
+      f" {c['old_sections']} sections now in EzClass came from the hand-typed workbook, whose section numbers were wrong,")
+    w("so they are retired by importing with --retire-existing: their ids stay and no new class can take them.")
+    w(f"Courses: {len(courses - set(c['courses_now']))} new, {len(courses & set(c['courses_now']))} already in EzClass"
+      f" (they keep their ids and titles), {len(old_courses - courses)} EzClass courses have no section in this file.")
+    w("Saved plans: the site drops ids that no longer exist and tells the student once"
+      " (\"N classes in your plan are no longer in the schedule, so they were removed.\").")
+    w("")
+
     w("== Every rule applied (count, up to 5 examples)")
     for kind in sorted(notes.count):
         w(f"  {kind}: {notes.count[kind]}")
@@ -658,7 +703,7 @@ def report_text(c):
     for title, n in by_title.most_common(25):
         w(f"  {n:4}  {title}")
     if len(by_title) > 25:
-        w(f"  and one section each (or two): ")
+        w("  and one section each (or two):")
         lines.extend(wrap([f"{t} ({n})" for t, n in by_title.most_common()[25:]], per_line=5))
     w("")
     arranged = [s for s in c["no_time_kept"] if not s["online"]]

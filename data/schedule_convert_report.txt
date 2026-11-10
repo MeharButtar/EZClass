@@ -29,6 +29,25 @@ Sessions:             1 5520
 Components:           ACT 599, CPO 63, DIS 32, LAB 633, LEC 960, LED 2026, LLC 261, NNT 100, RTC 26, SEM 289, SUP 434, TAC 97
 Courses with two or more components (e.g. lecture + lab as separate sections): 213
 
+== What was decided, in plain words
+- Arranged times: 980 in-person sections have no set time. They import with no meetings, and the site says "Time not listed yet".
+  15 arranged parts of online or hybrid sections became online parts.
+- Live online: 139 meetings have a day and time but Facility ONLINE. They stay on the calendar (building ONLINE) and don't count as a day on campus.
+- Hybrid: 227 have a timed part and an online part, 58 list only the timed part, 13 only online parts. Each shows what the file lists.
+- Off campus: OFFCSDSU became "Off campus" with no room (121 meetings), the same shape as the "Southwestern College" classes already in EzClass.
+- Rooms: glued codes are split (GMCS428 -> GMCS 428). 4 codes don't split and stay whole. 17 buildings and 173 rooms are new (listed at the end).
+- Seats: 0 and 999 are placeholders, left blank (16 and 0). 99 is kept (6). 500 or more is kept and listed (19).
+- People: 574 people matched one current EzClass professor and got their full name. 1398 are new and show as initial + last name. 5 initials match two current people, so the initial is used (listed at the end).
+- Titles: 2007 sections keep the full EzClass title, 3218 (new courses) use the export's short one, 295 are topics and keep their own.
+- Units: half units are kept (50 sections, like ACCTG 201 at 1.5). 213 courses list their parts (lecture, lab, activity) as separate sections with their own units, so a student adds each part, and the course card shows the first section's units.
+- Instructors per section: 100 sections list a person on only some meetings; EzClass lists each person once per section.
+
+== Old sections
+Every section in this file is new (5520 sections, each with its class number). The 2293 sections now in EzClass came from the hand-typed workbook, whose section numbers were wrong,
+so they are retired by importing with --retire-existing: their ids stay and no new class can take them.
+Courses: 1773 new, 621 already in EzClass (they keep their ids and titles), 158 EzClass courses have no section in this file.
+Saved plans: the site drops ids that no longer exist and tells the student once ("N classes in your plan are no longer in the schedule, so they were removed.").
+
 == Every rule applied (count, up to 5 examples)
   0 units: 76
       ANTH 799B sec 01 (class 1057); ASIAN 799B sec 01 (class 1084); BDA 799B sec 01 (class 5584); BDA 799C sec 01 (class 5585); ECL 799B sec 01 (class 7921); ... (71 more)
@@ -131,7 +150,7 @@ Thesis and individual study, skipped (by title):
      1  Thesis Research
      1  Senior Honors Thesis
      1  Thesis in Iscor
-  and one section each (or two): 
+  and one section each (or two):
     Comprehensive Exam Ext (1), Comprehensive Examination (1), Directed Study (1), Doctoral Special Studies (1), Investigation and Report (1)
     Investigation&Report (1), Pract Thea Prod:Ind Study (1), Project (1), Research Crim Justice (1), Research Latam Studies (1)
     Research Project (1), Research in City Planning (1), Research/Public Admin (1), Senior Thesis Preparation (1), Supervised Spec in PH (1)
