@@ -16,6 +16,7 @@ import { mountDock } from "../dock.js";
 import { majorLabel, openMajorPrompt } from "../majorPrompt.js";
 import { watchPlan } from "../plan.js";
 import { courseCard } from "../sections.js";
+import { sectionPool, units } from "../progress.js";
 import { getState, isCompleted, setMajor, subscribe } from "../store.js";
 import { $, $$, clear, el, emptyBox, errorBox, loadingBox, plural } from "../ui.js";
 
@@ -30,9 +31,6 @@ sub.textContent = `Every class your major requires, with the ${CONFIG.termName} 
 mountDock($("#dock"));
 
 // ---------- numbers ----------
-
-// "3" -> 3, "1-4" -> 1 (the smallest the course can be), "14-15" -> 14
-const units = (value) => Number.parseFloat(String(value ?? "")) || 0;
 
 let model = null;            // { majorId, major, tree, sectionsByCourse, openCourses }
 let plannedCodes = new Set();
@@ -70,22 +68,13 @@ function groupProgress(group, key) {
   return null;
 }
 
-// Pool sections (CS upper division electives): units from all their groups together.
-function sectionPool(section) {
-  const need = units(section.pool_units);
-  const done = section.groups.filter((g) => g.rule === "pool").flatMap((g) => g.courses).filter((c) => isDone(c.code));
-  const doneUnits = done.reduce((n, c) => n + units(c.units), 0);
-  return { text: `${doneUnits} of ${section.pool_units} units`, finished: doneUnits >= need,
-           ratio: need ? Math.min(doneUnits / need, 1) : 0, needUnits: need, doneUnits: Math.min(doneUnits, need) };
-}
-
 const groupKey = (si, gi) => `${si}:${gi}`;
 
 function totals() {
   let need = 0, done = 0, finished = 0, count = 0;
   model.tree.sections.forEach((section, si) => {
     if (section.pool_units) {
-      const p = sectionPool(section);
+      const p = sectionPool(section, isDone);
       need += p.needUnits; done += p.doneUnits; count += 1; finished += p.finished ? 1 : 0;
     }
     section.groups.forEach((group, gi) => {
@@ -163,7 +152,7 @@ function render() {
   tree.sections.forEach((section, si) => {
     const head = el("div", { class: "req-section-head" }, el("h2", {}, section.name));
     if (section.pool_units) {
-      const p = sectionPool(section);
+      const p = sectionPool(section, isDone);
       head.append(el("div", { class: "stack", dataset: { pool: si } }, progressPill(p), meter(p.ratio)));
     }
     content.push(el("section", { class: "req-section", "aria-label": section.name }, head,
@@ -185,7 +174,7 @@ function refresh() {
   model.tree.sections.forEach((section, si) => {
     if (section.pool_units) {
       const holder = root.querySelector(`[data-pool="${si}"]`);
-      if (holder) clear(holder).append(progressPill(sectionPool(section)), meter(sectionPool(section).ratio));
+      if (holder) clear(holder).append(progressPill(sectionPool(section, isDone)), meter(sectionPool(section, isDone).ratio));
     }
     section.groups.forEach((group, gi) => {
       const p = groupProgress(group, groupKey(si, gi));

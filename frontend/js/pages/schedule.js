@@ -97,11 +97,16 @@ function renderActions(state) {
 
 function renderStats(sections) {
   const s = weekStats(sections);
-  const cell = (num, label) => el("div", {}, el("div", { class: "stat-num" }, num), el("div", { class: "stat-label" }, label));
+  const cell = (num, label, ...more) => el("div", {},
+    el("div", { class: "stat-num" }, num), el("div", { class: "stat-label" }, label), ...more);
+  const names = (days) => days.map((d) => DAY_SHORT[d]).join(", ");
+  const campus = s.campusDays.length;
   clear($("#stats")).append(
     cell(String(s.units), "units"),
     cell(formatDuration(Math.round(s.hoursInClass * 60)), "in class per week"),
-    cell(String(s.days.length), s.days.length ? `days on campus (${s.days.map((d) => DAY_SHORT[d]).join(", ")})` : "days on campus"),
+    // live online classes (room "Online") are class time, but not a trip to campus
+    cell(String(campus), `${campus === 1 ? "day" : "days"} on campus${campus ? ` (${names(s.campusDays)})` : ""}`,
+      s.onlineOnlyDays.length ? el("div", { class: "stat-label stat-extra" }, `Online only: ${names(s.onlineOnlyDays)}`) : null),
     cell(formatDuration(s.longestGap), "longest gap in a day"));
 }
 

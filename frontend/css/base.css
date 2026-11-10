@@ -582,6 +582,7 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 }
 .stat-num { font-size: var(--fs-2xl); font-weight: 750; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
 .stat-label { color: var(--text-muted); font-size: var(--fs-xs); }
+.stat-extra { margin-top: var(--sp-1); }
 
 /* GE blocks */
 .area-strip { display: flex; flex-wrap: wrap; gap: var(--sp-2); position: relative; }
