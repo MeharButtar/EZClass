@@ -8,3 +8,6 @@ analytics.db*
 feedback.db*
 *.lock
 reference/
+
+# official schedule exports (the converted CSV is committed instead)
+data/source/*.xlsx

@@ -39,20 +39,30 @@ function emptyMessage(params) {
   return emptyBox(params.q ? "No classes match that." : "No classes match", tips.join(" "));
 }
 
+// "5834" or "#5834": a class number, the number students register with
+const classNumberIn = (q) => (/^#?\s*(\d{4,5})$/.exec(q.trim()) || [])[1] || "";
+
 function renderResults(found, params) {
   clear(root);
-  const sections = timedFirst(found);
+  // a class number search: that section on top under its own heading, then the rest of the course
+  const wanted = classNumberIn(params.q);
+  const hit = wanted ? found.find((s) => s.classNumber === wanted) : null;
+  const sections = timedFirst(hit ? found.filter((s) => s !== hit) : found);
   const online = sections.filter((s) => s.untimed).length;
-  if (!sections.length) {
+  if (!sections.length && !hit) {
     root.append(emptyMessage(params));
     return;
   }
   const list = el("ul", { class: "sec-list" });
+  if (hit) {
+    list.append(el("li", { class: "sec-group" }, `Class # ${hit.classNumber}`), sectionRow(hit, { showCourse: true }));
+    if (sections.length) list.append(el("li", { class: "sec-group" }, `Other sections of ${hit.code}`));
+  }
   const more = el("button", { type: "button", class: "btn btn-block" });
   let shown = 0;
   const showMore = () => {
     for (const s of sections.slice(shown, shown + CHUNK)) {
-      if (s.untimed && !list.querySelector(".sec-group")) list.append(onlineHeading(online));
+      if (s.untimed && !list.querySelector(".sec-group.is-online")) list.append(onlineHeading(online));
       list.append(sectionRow(s, { showCourse: true }));
     }
     shown = Math.min(shown + CHUNK, sections.length);

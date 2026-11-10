@@ -87,6 +87,13 @@ export function seatsLabel(s) {
   return s.seatsText.includes("/") ? `${count} (${s.seatsText} by part)` : count;
 }
 
+// "Class # 5834", the number students register with, as plain selectable text
+// (screen readers read it as "Class number 5834"). Nothing when it's unknown.
+export function classNumberTag(s) {
+  if (!s.classNumber) return null;
+  return el("span", { class: "sec-cn" }, "Class # ", el("span", { class: "cn-num" }, s.classNumber));
+}
+
 // ---------- loading, empty and error boxes ----------
 
 export function loadingBox(text = "Loading…", lines = 3) {

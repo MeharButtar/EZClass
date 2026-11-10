@@ -5,9 +5,11 @@ database loads, so nobody has to deal with ids.
 Usage (from the project root):
     python3 data/import_real_data.py path/to/EzClass_Data_Template.xlsx
     python3 data/import_real_data.py my_rows.csv          # a CSV also works
+    python3 data/import_real_data.py --retire-existing data/source/spring2027_sections.csv
 
-Only the Sections sheet is read, columns A to N, data from row 3 (row 2 is
-the gray example row). Output goes to data/cleaned/:
+Only the Sections sheet is read, columns A to N (and an optional column O,
+Class Number), data from row 3 (row 2 is the gray example row). A CSV has
+its header on row 1 and data from row 2. Output goes to data/cleaned/:
     professors.csv, rooms.csv, courses.csv, sections.csv,
     section_meetings.csv, section_instructors.csv, data_info.json
 and the run's report to data/import_report.txt. Then load them with:
@@ -30,16 +32,34 @@ reported (each section still keeps the title typed in its row).
 A row whose parts don't line up is skipped (with its row number); the rest
 still import, and the script exits with status 1 at the end.
 
+Class Number (optional): the official number students type in to register
+(5834). Digits only. Two rows with the same class number in one term: the
+second is skipped. When some rows have one, the rows without one are reported.
+Files without the column import exactly as before.
+
 Ids stay the same between imports, because students' saved plans remember
 sections by id. Always import on top of the current data/cleaned/ files:
-  - a section is the same section when subject, course number, section and
-    term match. A blank Section cell (new rows go at the bottom) gets the next
+  - a row with a class number is the same section as the earlier section of
+    that term with the same class number, even if its section number changed
+    (the id stays, the new section number is stored).
+  - otherwise a section is the same section when subject, course number,
+    section and term match, unless both have a class number and they differ
+    (then it is a different class and gets a new id).
+    A blank Section cell (new rows go at the bottom) gets the next
     unused number for that course, or the number it got last time if the
     row's meetings, people and seats are the same.
   - a section that is no longer in the sheet is kept with active = 0, so its
     id is never handed to a different class (and it comes back if the row does).
   - courses, professors and rooms keep their ids too.
 Running it twice on the same file changes nothing.
+
+--retire-existing (one time, when the data source changes and the old section
+numbers can't be trusted): every section already in data/cleaned/ is marked
+retired (active = 0, retired = 1) before matching, so no row of the new file
+can take over an old section's id. Retired rows stay in sections.csv, so
+their ids are never handed out again, and they never match anything in later
+imports either. Courses, professors and rooms keep their ids as usual.
+Without the option nothing is retired.
 
 The importer never "fixes" a day, time, room or name. Anything odd is
 reported; the team fixes the workbook.
@@ -61,6 +81,7 @@ COLUMNS = ["term", "subject", "catalog_num", "course_title", "units",
            "section_number", "days", "start_time", "end_time",
            "professor_first", "professor_last", "building", "room_number",
            "seats"]
+OPTIONAL_COLUMNS = ["class_number"]   # a 15th column; files without it import as before
 # Headers in the workbook are friendly ("Course Number (e.g. 150)"). Only the
 # part before the first " (" is used to find the column, so the hint text can
 # change. The old code-style names still work too.
@@ -70,6 +91,7 @@ FRIENDLY = {
     "days": "days", "start time": "start_time", "end time": "end_time",
     "professor first name": "professor_first", "professor last name": "professor_last",
     "building": "building", "room number": "room_number", "seats": "seats", "capacity": "seats",
+    "class number": "class_number",
 }
 
 SPLIT = re.compile(r"\s*/\s*")
@@ -131,7 +153,7 @@ def read_rows(path, report):
         import openpyxl
         wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
         ws = wb["Sections"]
-        table = list(ws.iter_rows(min_row=1, max_col=len(COLUMNS), values_only=True))
+        table = list(ws.iter_rows(min_row=1, max_col=len(COLUMNS) + len(OPTIONAL_COLUMNS), values_only=True))
         header, first_data = table[0], 3         # row 2 is the gray example row
     else:
         with open(path, newline="", encoding="utf-8-sig") as f:
@@ -141,10 +163,13 @@ def read_rows(path, report):
     missing = [c for c in COLUMNS if c not in header]
     if missing:
         sys.exit(f"Missing column(s) in the sheet header: {', '.join(missing)}")
+    wanted = COLUMNS + OPTIONAL_COLUMNS
     rows = []
     for i, values in enumerate(table[first_data - 1:], start=first_data):
-        rec = {h: cell_text(v, h, i, report) for h, v in zip(header, values) if h in COLUMNS}
-        if not any(rec.get(c) for c in COLUMNS):
+        rec = {h: cell_text(v, h, i, report) for h, v in zip(header, values) if h in wanted}
+        for c in OPTIONAL_COLUMNS:
+            rec.setdefault(c, "")
+        if not any(rec.get(c) for c in wanted):
             continue                                       # blank row
         if rec.get("term", "").upper().startswith("EXAMPLE"):
             continue                                       # an example row
@@ -291,6 +316,9 @@ def parse_row(rec, report):
     number = rec["section_number"]
     if number and not number.isdigit():
         raise RowProblem(f"Section '{number}' must be a number")
+    class_number = rec.get("class_number", "")
+    if class_number and not class_number.isdigit():
+        raise RowProblem(f"Class Number '{class_number}' must be digits only")
     seats_text, seats_total = parse_seats(rec, report)
     return {
         "_row": rec["_row"],
@@ -300,6 +328,7 @@ def parse_row(rec, report):
         "title": rec["course_title"],
         "units": int(rec["units"]),
         "section_number": number.zfill(2) if number else "",
+        "class_number": class_number,
         "meetings": parse_meetings(rec, report),
         "instructors": parse_instructors(rec, report),
         "seats_text": seats_text,
@@ -339,7 +368,7 @@ def load_previous(out_dir=OUT_DIR):
     older one-meeting format too (no section_meetings.csv yet), so the first
     import in the new format keeps every id.
     """
-    prev = {"courses": {}, "professors": {}, "rooms": {}, "sections": {}, "highest": 0,
+    prev = {"courses": {}, "professors": {}, "rooms": {}, "sections": [], "highest": 0,
             "course_highest": 0, "prof_highest": 0, "room_highest": 0}
     courses = read_csv(os.path.join(out_dir, "courses.csv"))
     sections = read_csv(os.path.join(out_dir, "sections.csv"))
@@ -395,9 +424,55 @@ def load_previous(out_dir=OUT_DIR):
         else:
             plist = [names[s["professor_id"]]] if s.get("professor_id") in names else []
         seats_text = s.get("seats_text", s.get("capacity", "")) or ""
-        prev["sections"][key] = {"id": sid, "active": s.get("active", "1") != "0", "row": s, "meetings": mlist,
-                                 "content": content(mlist, plist, seats_text, s.get("section_title", ""))}
+        prev["sections"].append({
+            "id": sid, "key": key, "active": s.get("active", "1") != "0", "row": s, "meetings": mlist,
+            "class_number": (s.get("class_number") or "").strip(),
+            "retired": (s.get("retired") or "0").strip() == "1", "newly_retired": False,
+            "content": content(mlist, plist, seats_text, s.get("section_title", ""))})
     return prev
+
+
+def retire_all(prev):
+    """--retire-existing: every earlier section is retired and never matched again. Returns how many."""
+    count = 0
+    for p in prev["sections"]:
+        if not p["retired"]:
+            p["retired"] = p["newly_retired"] = True
+            count += 1
+    return count
+
+
+def match_previous(sections, prev):
+    """
+    For each incoming section, the earlier section it is (or None): first by
+    class number in the same term, then by subject + number + section + term
+    (never when both have a class number and they differ). Retired sections
+    never match, and no earlier section is matched twice.
+    """
+    pool = [p for p in prev["sections"] if not p["retired"]]
+    best_first = sorted(pool, key=lambda p: (not p["active"], -p["id"]))   # active first, then newest
+    by_number, by_key = {}, collections.defaultdict(list)
+    for p in best_first:
+        if p["class_number"]:
+            by_number.setdefault((p["key"][3], p["class_number"]), p)
+        by_key[p["key"]].append(p)
+    matched, claimed = [None] * len(sections), set()
+    for i, s in enumerate(sections):
+        p = by_number.get((s["term"], s["class_number"])) if s["class_number"] else None
+        if p is not None and p["id"] not in claimed:
+            matched[i] = p
+            claimed.add(p["id"])
+    for i, s in enumerate(sections):
+        if matched[i] is not None or not s["section_number"]:
+            continue
+        key = section_key(s["subject"], s["catalog_num"], s["section_number"], s["term"])
+        for p in by_key.get(key, []):
+            differ = s["class_number"] and p["class_number"] and s["class_number"] != p["class_number"]
+            if p["id"] not in claimed and not differ:
+                matched[i] = p
+                claimed.add(p["id"])
+                break
+    return matched
 
 
 def _minutes_or_none(text):
@@ -435,14 +510,22 @@ def assign_section_numbers(sections, prev, report):
     claimed = {section_key(s["subject"], s["catalog_num"], s["section_number"], s["term"])
                for s in sections if s["section_number"]}
     leftovers = collections.defaultdict(list)  # earlier sections no filled-in row claims
-    for key, p in prev["sections"].items():
-        subject, catalog, number, term = key
+    by_number = {(p["key"][3], p["class_number"]): p for p in prev["sections"]
+                 if p["class_number"] and not p["retired"]}
+    for p in prev["sections"]:
+        subject, catalog, number, term = p["key"]
         if number.isdigit():
             taken[(term, subject, catalog)].add(int(number))
-        if key not in claimed:
+        if p["key"] not in claimed and not p["retired"]:
             leftovers[(term, subject, catalog)].append((number, p["content"]))
     for s in sections:
         if s["section_number"]:
+            continue
+        same = by_number.get((s["term"], s["class_number"])) if s["class_number"] else None
+        if same is not None and same["key"][:2] == (s["subject"], s["catalog_num"]):
+            s["section_number"] = same["key"][2]            # same class number: the number it had
+            report.warn("Section was blank, number filled in (type it into the sheet)", s["_row"],
+                        f"{s['subject']} {s['catalog_num']} section {s['section_number']}")
             continue
         course = (s["term"], s["subject"], s["catalog_num"])
         mine = content(s["meetings"], s["instructors"], s["seats_text"],
@@ -472,7 +555,8 @@ def build_tables(sections, prev, report):
     course_ids = IdMap({k: v["id"] for k, v in prev["courses"].items()}, prev["course_highest"])
     prof_ids = IdMap(prev["professors"], prev["prof_highest"])
     room_ids = IdMap(prev["rooms"], prev["room_highest"])
-    section_ids = IdMap({k: v["id"] for k, v in prev["sections"].items()}, prev["highest"])
+    matches = match_previous(sections, prev)
+    next_section_id = prev["highest"]
 
     courses, course_seen = {}, {}
     professors, rooms = {}, {}
@@ -485,7 +569,7 @@ def build_tables(sections, prev, report):
     out_sections, out_meetings, out_instructors = [], [], []
     counts = collections.Counter()
 
-    for s in sections:
+    for s, before in zip(sections, matches):
         ckey = (s["subject"], s["catalog_num"])
         cid = course_ids.get(ckey)
         if ckey not in courses:
@@ -505,16 +589,23 @@ def build_tables(sections, prev, report):
         own_title = s["title"] if ckey in SPECIAL_TOPICS or s["title"] != courses[ckey]["title"] else ""
         counts["own_title"] += bool(own_title)
 
-        key = section_key(s["subject"], s["catalog_num"], s["section_number"], s["term"])
-        sid = section_ids.get(key)
-        before = prev["sections"].get(key)
+        if before is None:
+            next_section_id += 1
+            sid = next_section_id
+        else:
+            sid = before["id"]
         mine = content(s["meetings"], s["instructors"], s["seats_text"], own_title)
         if before is None:
             counts["created"] += 1
-        elif before["content"] == mine and before["active"]:
+        elif (before["content"] == mine and before["active"] and before["class_number"] == s["class_number"]
+              and before["key"][2] == s["section_number"]):
             counts["unchanged"] += 1
         else:
             counts["updated"] += 1
+        if before is not None and before["key"][2] != s["section_number"]:
+            report.warn("same class number, new section number (id kept)", s["_row"],
+                        f"{s['subject']} {s['catalog_num']} class {s['class_number']}: "
+                        f"section {before['key'][2]} -> {s['section_number']}")
 
         people = []
         for i, (first, last) in enumerate(s["instructors"]):
@@ -559,35 +650,49 @@ def build_tables(sections, prev, report):
             "seats_total": "" if s["seats_total"] is None else s["seats_total"],
             "active": 1,
             "section_title": own_title,
+            "class_number": s["class_number"],
+            "retired": 0,
         })
 
     # sections from the last import that aren't in the sheet: kept, marked inactive
-    in_sheet = {section_key(s["subject"], s["catalog_num"], s["section_number"], s["term"]) for s in sections}
+    in_sheet = {p["id"] for p in matches if p is not None}
     gone = []
-    for key, p in sorted(prev["sections"].items(), key=lambda kv: kv[1]["id"]):
-        if key in in_sheet:
+    for p in sorted(prev["sections"], key=lambda p: p["id"]):
+        if p["id"] in in_sheet:
             continue
+        key = p["key"]
         row = p["row"]
         ckey = key[:2]
         if ckey not in courses:          # keep its course so the key is still known next time
             c = prev["courses"][ckey]["row"]
             courses[ckey] = {"course_id": int(c["course_id"]), "subject": c["subject"], "catalog_num": c["catalog_num"],
                              "title": c["title"], "units": c["units"], "description": c.get("description", "")}
-        if key[3] not in terms:
+        if p["newly_retired"]:
+            counts["retired_now"] += 1
+        elif p["retired"]:
+            counts["retired_before"] += 1
+        elif key[3] not in terms:
             counts["other_terms"] += 1
         elif p["active"]:
             gone.append(f"{key[0]} {key[1]} section {key[2]} (id {p['id']})")
         else:
             counts["still_inactive"] += 1
+        if p["retired"]:
+            active = 0
+        elif key[3] in terms:
+            active = 0
+        else:          # other terms aren't this sheet's business: they keep whatever they had
+            active = 1 if p["active"] else 0
         out_sections.append({
             "section_id": p["id"], "course_id": courses[ckey]["course_id"], "professor_id": "", "room_id": "",
             "section_number": key[2], "term": key[3], "days": row.get("days", ""),
             "start_time": row.get("start_time", ""), "end_time": row.get("end_time", ""),
             "capacity": row.get("capacity", ""), "seats_text": row.get("seats_text", row.get("capacity", "")) or "",
             "seats_total": row.get("seats_total", row.get("capacity", "")) or "",
-            # other terms aren't this sheet's business: they keep whatever they had
-            "active": 0 if key[3] in terms else (1 if p["active"] else 0),
+            "active": active,
             "section_title": row.get("section_title", ""),
+            "class_number": p["class_number"],
+            "retired": 1 if p["retired"] else 0,
         })
         for i, m in enumerate(p["meetings"]):   # its meetings are kept as they were
             out_meetings.append({"section_id": p["id"], "idx": i, "day_code": m["day_code"],
@@ -611,7 +716,8 @@ TABLE_FIELDS = {
     "rooms": ["room_id", "building", "room_number", "capacity"],
     "courses": ["course_id", "subject", "catalog_num", "title", "units", "description"],
     "sections": ["section_id", "course_id", "professor_id", "room_id", "section_number", "term",
-                 "days", "start_time", "end_time", "capacity", "seats_text", "seats_total", "active", "section_title"],
+                 "days", "start_time", "end_time", "capacity", "seats_text", "seats_total", "active", "section_title",
+                 "class_number", "retired"],
     "section_meetings": ["section_id", "idx", "day_code", "start_min", "end_min", "building", "room", "is_online"],
     "section_instructors": ["section_id", "professor_id", "idx"],
 }
@@ -672,6 +778,11 @@ def report_text(source, rows_read, sections, counts, gone, report, changed):
         f"  no longer in the sheet:  {len(gone)}  (kept, marked inactive)",
         f"  still inactive:          {counts['still_inactive']}  (gone before this run too)",
         *([f"  other terms, untouched:  {counts['other_terms']}"] if counts["other_terms"] else []),
+        *([f"Retired now:               {counts['retired_now']}  (--retire-existing: kept with active = 0, "
+           "never matched again)"] if counts["retired_now"] else []),
+        *([f"Retired earlier:           {counts['retired_before']}  (kept, never matched)"]
+          if counts["retired_before"] else []),
+        f"With a class number:       {sum(1 for s in sections if s['class_number'])}",
         f"Meetings written:          {counts['meetings']}",
         f"Online-only sections:      {counts['online_only']}",
         f"Hybrid sections:           {counts['hybrid']}  (some meetings online)",
@@ -699,11 +810,11 @@ def report_text(source, rows_read, sections, counts, gone, report, changed):
     return "\n".join(lines) + "\n"
 
 
-def run(source, out_dir=OUT_DIR, report_path=REPORT_PATH):
+def run(source, out_dir=OUT_DIR, report_path=REPORT_PATH, retire_existing=False):
     """The whole import. Returns (report text, number of skipped rows)."""
     report = Report()
     rows = read_rows(source, report)
-    sections, seen = [], {}
+    sections, seen, seen_number = [], {}, {}
     for rec in rows:
         try:
             s = parse_row(rec, report)
@@ -717,8 +828,23 @@ def run(source, out_dir=OUT_DIR, report_path=REPORT_PATH):
                                                     f"({s['subject']} {s['catalog_num']} section {s['section_number']})"))
                 continue
             seen[key] = rec["_row"]
+        if s["class_number"]:
+            nkey = (s["term"], s["class_number"])
+            if nkey in seen_number:
+                report.skipped.append((rec["_row"], f"{s['subject']} {s['catalog_num']} section "
+                                                    f"{s['section_number'] or '(blank)'} has class number "
+                                                    f"{s['class_number']}, already used by row {seen_number[nkey]}"))
+                continue
+            seen_number[nkey] = rec["_row"]
         sections.append(s)
+    if any(s["class_number"] for s in sections):
+        for s in sections:
+            if not s["class_number"]:
+                report.warn("no class number (other rows have one)", s["_row"],
+                            f"{s['subject']} {s['catalog_num']} section {s['section_number'] or '(blank)'}")
     prev = load_previous(out_dir)
+    if retire_existing:
+        retire_all(prev)
     assign_section_numbers(sections, prev, report)
     tables, counts, gone = build_tables(sections, prev, report)
     changed = write_tables(tables, out_dir)
@@ -733,7 +859,7 @@ def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]   # --skip-problems is the default now
     if len(args) != 1:
         sys.exit(__doc__)
-    text, skipped = run(args[0])
+    text, skipped = run(args[0], retire_existing="--retire-existing" in sys.argv[1:])
     print(text)
     print(f"Report saved to {os.path.relpath(REPORT_PATH, BASE)}")
     print("Next: python3 backend/models/db.py data/cleaned")

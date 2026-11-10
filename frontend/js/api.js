@@ -107,6 +107,7 @@ export function normalizeSection(raw) {
     sectionTitle: raw.section_title || "",
     units: Number.parseFloat(raw.units) || 0,
     sectionNumber: raw.section_number || "",
+    classNumber: /^\d+$/.test(String(raw.class_number ?? "")) ? String(raw.class_number) : "",   // "5834", or "" when unknown
     meetings,
     instructors,
     untimed: timed.length === 0,                          // not on the calendar: online only, or no schedule yet

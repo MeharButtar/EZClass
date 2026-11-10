@@ -17,7 +17,7 @@ import {
 } from "../store.js";
 import { DAY_SHORT, describeOverlap } from "../time.js";
 import {
-  $, announce, clear, confirmDialog, el, emptyBox, instructorLinks, meetingLines, plural, promptDialog, seatsLabel, signal,
+  $, announce, classNumberTag, clear, confirmDialog, el, emptyBox, instructorLinks, meetingLines, plural, promptDialog, seatsLabel, signal,
 } from "../ui.js";
 
 const tabs = $("#plan-tabs");
@@ -128,7 +128,7 @@ function renderList(sections, state) {
   }
   clear(box).append(el("ul", { class: "plan-list" }, sections.map((s) => el("li", { class: "plan-item" },
     el("div", {},
-      el("strong", {}, `${s.code} · Sec ${s.sectionNumber}`),
+      el("strong", {}, `${s.code} · Sec ${s.sectionNumber}`), s.classNumber ? " " : null, classNumberTag(s),
       el("div", { class: "small" }, s.title),
       meetingLines(s),
       el("div", { class: "muted small" }, instructorLinks(s), ` · ${seatsLabel(s)}`),

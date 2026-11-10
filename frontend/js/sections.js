@@ -16,7 +16,7 @@ import { watchPlan } from "./plan.js";
 import { reportUrl } from "./nav.js";
 import { activePlan, isCompleted, isInPlan, toggleCompleted, toggleSection } from "./store.js";
 import { overlaps } from "./time.js";
-import { $$, el, instructorLinks, meetingLines, plural, seatsLabel } from "./ui.js";
+import { $$, classNumberTag, el, instructorLinks, meetingLines, plural, seatsLabel } from "./ui.js";
 
 export const sectionLabel = (s) => `${s.code} (Sec ${s.sectionNumber})`;
 
@@ -62,7 +62,8 @@ export function sectionRow(s, { showCourse = false } = {}) {
   const row = el("li", { class: "sec-row", dataset: { sectionId: s.id } },
     el("div", { class: "sec-when" }, meetingLines(s)),
     el("div", { class: "sec-info" },
-      el("span", { class: "sec-name" }, showCourse ? `${s.code} · Sec ${s.sectionNumber}` : `Section ${s.sectionNumber}`),
+      el("span", { class: "sec-name" }, showCourse ? `${s.code} · Sec ${s.sectionNumber}` : `Section ${s.sectionNumber}`,
+        s.classNumber ? " " : null, classNumberTag(s)),
       (showCourse || s.sectionTitle) && s.title ? el("span", { class: "sec-title" }, s.title) : null,
       el("span", { class: "sec-meta" }, sectionMeta(s), el("span", { class: "sec-rating" })),
       showCourse && (s.geAreas.length || s.cd || s.es || s.ai)
@@ -123,7 +124,7 @@ export function sectionItems(sections, options = {}) {
   ].filter(Boolean);
 }
 
-export const onlineHeading = (n) => el("li", { class: "sec-group" }, `Online or no time listed (${n})`);
+export const onlineHeading = (n) => el("li", { class: "sec-group is-online" }, `Online or no time listed (${n})`);
 
 // Timed sections first, online-only last, each group in its original order.
 export const timedFirst = (sections) => [...sections.filter((s) => !s.untimed), ...sections.filter((s) => s.untimed)];
