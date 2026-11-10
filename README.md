@@ -360,7 +360,8 @@ Make a token with `python3 -c "import secrets; print(secrets.token_urlsafe(32))"
 ### The live site
 
 The live site is **https://ezclass.win** (a custom domain on Render, DNS on
-Cloudflare). The old Render address still works and serves the same app.
+Cloudflare). It redirects to **https://www.ezclass.win**, which is the address
+that actually serves the app, so use the `www` one in commands and settings. The old Render address still works and serves the same app.
 `main` deploys automatically. The Render service has a 1 GB **persistent
 disk** mounted at `/data`, so visit counts, reviews and support messages
 survive deploys. With a disk, each deploy has about a minute of downtime.
@@ -372,7 +373,7 @@ Settings (Render: **Environment**; `.env.example` lists them too):
 | `ANALYTICS_DB_PATH` | `/data/analytics.db` | Visit counts. On the disk, or they reset on every deploy. |
 | `FEEDBACK_DB_PATH` | `/data/feedback.db` | Reviews and support messages. On the disk, or they are wiped on every deploy. |
 | `ADMIN_TOKEN` | a long random string | Unlocks the admin commands below. Only ever in Render and in your own terminal, never in code, chat or a URL. |
-| `SITE_URL` | `https://ezclass.win` | The address `sitemap.xml` and `robots.txt` use. Without it they use whatever address the visitor came in on (so the old Render address would show up there). |
+| `SITE_URL` | `https://www.ezclass.win` | The address `sitemap.xml` and `robots.txt` use. Without it they use whatever address the visitor came in on (so the old Render address would show up there). |
 | `EZCLASS_DB_PATH` | **leave unset** | The class database. Unset, it's rebuilt from the CSVs in the repo on each deploy. On the disk it would keep the first import forever and ignore every data update. |
 | `ANALYTICS_ENABLED` | unset (on) | `0` switches visit counting off. |
 
@@ -394,7 +395,7 @@ history.
 
 ```powershell
 $env:ADMIN_TOKEN = Read-Host "Admin token"
-$site = "https://ezclass.win"
+$site = "https://www.ezclass.win"   # www: ezclass.win only redirects, and curl drops the token when it follows a redirect
 $auth = @{ Authorization = "Bearer $env:ADMIN_TOKEN" }
 
 # visit stats for the last 14 days (days can be 1 to 90)
@@ -419,7 +420,7 @@ Invoke-RestMethod -Method Post -Uri "$site/api/admin/support/7" -Headers $auth -
 
 ```bash
 read -rsp "Admin token: " ADMIN_TOKEN; echo; export ADMIN_TOKEN
-SITE=https://ezclass.win
+SITE=https://www.ezclass.win   # www: ezclass.win only redirects, and curl drops the token when it follows a redirect
 
 # visit stats for the last 14 days (days can be 1 to 90)
 curl -s -H "Authorization: Bearer $ADMIN_TOKEN" "$SITE/api/admin/stats?days=14" | python3 -m json.tool
@@ -463,7 +464,7 @@ opt-out aren't counted.
 ### Search engines and links
 
 `/robots.txt` and `/sitemap.xml` are made by the app from `SITE_URL`
-(`https://ezclass.win` on the live site), or from the address the request came
+(`https://www.ezclass.win` on the live site), or from the address the request came
 in on when it isn't set. Nothing in the code hardcodes a domain: every link in
 the pages is relative. The
 sitemap lists the home page, My Major, GE, Search, My Schedule, Reviews and
