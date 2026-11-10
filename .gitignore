@@ -1,6 +1,8 @@
 __pycache__/
 *.pyc
 backend/sql/scheduler.db
+# official schedule exports (the converted CSV is committed instead)
+data/source/*.xlsx
 .env
 .DS_Store
 node_modules/
@@ -8,6 +10,3 @@ analytics.db*
 feedback.db*
 *.lock
 reference/
-
-# official schedule exports (the converted CSV is committed instead)
-data/source/*.xlsx
