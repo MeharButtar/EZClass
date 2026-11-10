@@ -101,7 +101,7 @@ class LoaderTests(unittest.TestCase):
             conn.close()
             db.ensure_database()
             self.assertEqual(count(path, "SELECT COUNT(*) FROM majors"), 7)
-            self.assertEqual(count(path, "SELECT COUNT(*) FROM sections"), 2293)
+            self.assertEqual(count(path, "SELECT COUNT(*) FROM sections"), 7813)
             self.assertEqual(count(path, "SELECT COUNT(*) FROM students WHERE first_name = 'Keep'"), 1)
             db.ensure_database()   # second start: nothing doubles
             self.assertEqual(count(path, "SELECT COUNT(*) FROM major_requirements"), 179)
@@ -241,8 +241,12 @@ class SectionFilterTests(AppTestCase):
         self.assertEqual(len(sections), cs150["section_count"])
         self.assertTrue(all(s["catalog_num"] == "150" for s in sections))
 
-        picked = self.client.get("/api/sections?ids=1,2,999999").get_json()
-        self.assertEqual(sorted(s["section_id"] for s in picked), [1, 2])
+        # two active sections; 1 is a retired id from the old workbook and 999999 never existed
+        conn = sqlite3.connect(CLASS_DB)
+        wanted = sorted(r[0] for r in conn.execute("SELECT section_id FROM sections WHERE class_number IN ('5834', '5843')"))
+        conn.close()
+        picked = self.client.get(f"/api/sections?ids=1,{wanted[0]},{wanted[1]},999999").get_json()
+        self.assertEqual(sorted(s["section_id"] for s in picked), wanted)
 
     def test_professor_last_name_for_ratemyprofessors(self):
         sections = self.client.get("/api/sections?professor=Kraft").get_json()

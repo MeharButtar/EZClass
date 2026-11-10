@@ -1,7 +1,9 @@
 // Search: subject, day, professor and keyword ("CS 480", "cs4", "data science").
 // The matching happens on the server (backend/search.py). Results are section
 // rows (with the hover ghost on the docked calendar), drawn 40 at a time so a
-// search for everything stays fast.
+// big search stays fast. With no filter at all nothing is loaded (the whole
+// term is 5,000+ sections); the page asks for a subject, day or keyword first.
+// A class number ("5834") puts that section on top under its own heading.
 // Typing searches by itself after a short pause; only Enter, the Search button
 // and the dropdowns report to tracking, and only whether the professor or
 // keyword box was used, never what was typed.
@@ -21,7 +23,7 @@ const form = $("#search-form");
 const root = $("#search-root");
 const countLine = $("#search-count");
 const fields = { subject: $("#f-subject"), day: $("#f-day"), professor: $("#f-professor"), q: $("#f-keyword") };
-$("#search-sub").textContent = `Every ${CONFIG.termName} class, by subject, day, professor or keyword.`;
+$("#search-sub").textContent = `Every ${CONFIG.termName} class, by subject, day, professor, keyword or class number.`;
 
 mountDock($("#dock"));
 
@@ -39,20 +41,30 @@ function emptyMessage(params) {
   return emptyBox(params.q ? "No classes match that." : "No classes match", tips.join(" "));
 }
 
+// "5834" or "#5834": a class number, the number students register with
+const classNumberIn = (q) => (/^#?\s*(\d{4,5})$/.exec(q.trim()) || [])[1] || "";
+
 function renderResults(found, params) {
   clear(root);
-  const sections = timedFirst(found);
+  // a class number search: that section on top under its own heading, then the rest of the course
+  const wanted = classNumberIn(params.q);
+  const hit = wanted ? found.find((s) => s.classNumber === wanted) : null;
+  const sections = timedFirst(hit ? found.filter((s) => s !== hit) : found);
   const online = sections.filter((s) => s.untimed).length;
-  if (!sections.length) {
+  if (!sections.length && !hit) {
     root.append(emptyMessage(params));
     return;
   }
   const list = el("ul", { class: "sec-list" });
+  if (hit) {
+    list.append(el("li", { class: "sec-group" }, `Class # ${hit.classNumber}`), sectionRow(hit, { showCourse: true }));
+    if (sections.length) list.append(el("li", { class: "sec-group" }, `Other sections of ${hit.code}`));
+  }
   const more = el("button", { type: "button", class: "btn btn-block" });
   let shown = 0;
   const showMore = () => {
     for (const s of sections.slice(shown, shown + CHUNK)) {
-      if (s.untimed && !list.querySelector(".sec-group")) list.append(onlineHeading(online));
+      if (s.untimed && !list.querySelector(".sec-group.is-online")) list.append(onlineHeading(online));
       list.append(sectionRow(s, { showCourse: true }));
     }
     shown = Math.min(shown + CHUNK, sections.length);
@@ -81,6 +93,14 @@ async function search({ report = true } = {}) {
   if (params.q.replace(/[^\p{L}\p{N}]/gu, "").length === 1) {   // one letter or digit: wait for more
     clear(root).append(emptyBox("Keep typing", "At least 2 characters."));
     announce(countLine, "Keep typing, at least 2 characters.");
+    return;
+  }
+  // nothing to search by: ask for a filter instead of loading every class (5,000+ sections)
+  const typed = (text) => /[\p{L}\p{N}]/u.test(text);
+  if (!params.subject && !params.day && !typed(params.q) && !typed(params.professor)) {
+    clear(root).append(emptyBox("Search for a class",
+      "Pick a subject or a day, or type a course (CS 150), a title, a professor or a class number (5834)."));
+    announce(countLine, "");
     return;
   }
   clear(root).append(loadingBox("Searching…", 4));

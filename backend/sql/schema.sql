@@ -40,7 +40,7 @@ CREATE TABLE courses (
     subject      TEXT NOT NULL,       -- e.g. 'CS'
     catalog_num  TEXT NOT NULL,       -- e.g. '514'
     title        TEXT NOT NULL,
-    units        INTEGER NOT NULL,
+    units        INTEGER NOT NULL,    -- 3, or 1.5 for a half-unit course (SQLite keeps the decimal)
     description  TEXT,
     UNIQUE (subject, catalog_num)
 );
@@ -91,6 +91,8 @@ CREATE TABLE sections (
     seats_total    INTEGER,           -- smallest part; NULL = unknown
     active         INTEGER NOT NULL DEFAULT 1,   -- 0 = no longer in the sheet (id kept, never reused)
     section_title  TEXT,              -- this section's own title (special topics), else NULL
+    class_number   TEXT,              -- official class number students register with ('5834'), else NULL
+    retired        INTEGER NOT NULL DEFAULT 0,   -- 1 = retired by import_real_data.py --retire-existing (never matched again)
     FOREIGN KEY (course_id) REFERENCES courses(course_id),
     FOREIGN KEY (professor_id) REFERENCES professors(professor_id),
     FOREIGN KEY (room_id) REFERENCES rooms(room_id)

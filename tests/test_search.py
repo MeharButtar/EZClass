@@ -1,8 +1,9 @@
 """
 Tests for the keyword and professor search (backend/search.py, /api/sections?q=).
 
-Shares test_smoke's throwaway database (the Spring 2027 data in data/cleaned).
-The acceptance counts are for that data; recompute them if it changes.
+Shares test_smoke's throwaway database (the Spring 2027 data in data/cleaned,
+from the official schedule export). The acceptance counts are for that data;
+recompute them if it changes.
 """
 
 import sqlite3
@@ -10,7 +11,7 @@ import unittest
 
 from test_smoke import CLASS_DB, AppTestCase
 
-from backend.search import load_courses, match_courses, norm, person_match, tokens
+from backend.search import class_number_query, load_courses, match_courses, norm, person_match, tokens
 
 
 def codes(sections):
@@ -47,53 +48,64 @@ class AcceptanceTests(SearchApiCase):
             self.assertFinds(q, ["CS 480"], 2)
 
     def test_number_alone(self):
-        self.assertFinds("480", ["AMIND 480", "CS 480", "GENS 480", "MKTG 480"], 11)
-        self.assertFinds("150", ["CCS 150", "CS 150", "CS 150L", "CSP 150", "MATH 150", "SLHS 150"], 22)
+        self.assertFinds("480", ["AMIND 480", "BIOL 480", "CONE 480", "CS 480", "GENS 480", "HTM 480", "JMS 480",
+                                 "MKTG 480", "PH 480", "SOC 480"], 17)
+        self.assertFinds("150", ["CCS 150", "CS 150", "CS 150L", "CSP 150", "MATH 150", "MATH 150S", "SLHS 150"], 24)
 
     def test_subject_alone_is_that_subject_only(self):
         for q in ("CS", "cs"):
             found = self.search(q)
-            self.assertEqual(len(found), 73, q)
+            self.assertEqual(len(found), 54, q)
             self.assertEqual({s["subject"] for s in found}, {"CS"})
-            self.assertEqual(len(codes(found)), 41)
-        self.assertFinds("csp", ["CSP 150", "CSP 240", "CSP 300", "CSP 420"], 6)
+            self.assertEqual(len(codes(found)), 35)
+        csp = self.search("csp")
+        self.assertEqual((len(csp), len(codes(csp))), (93, 46))
+        self.assertEqual({s["subject"] for s in csp}, {"CSP"})
+        self.assertEqual(codes(csp)[:4], ["CSP 150", "CSP 240", "CSP 300", "CSP 320"])
         math = self.search("math")
-        self.assertEqual(len(math), 77)
+        self.assertEqual(len(math), 128)
         self.assertEqual({s["subject"] for s in math}, {"MATH"})
-        self.assertEqual(len(codes(math)), 14)
+        self.assertEqual(len(codes(math)), 48)
 
     def test_prefixes(self):
-        cs4 = ["CS 420", "CS 450", "CS 460", "CS 470", "CS 480", "CS 496", "CS 497", "CS 498", "CS 499"]
+        # CS 470, 496 and 497 aren't offered in Spring 2027; 498 and 499 are thesis / special study (skipped)
+        cs4 = ["CS 420", "CS 450", "CS 460", "CS 480"]
         for q in ("CS 4", "cs4"):
-            self.assertFinds(q, cs4, 16)
+            self.assertFinds(q, cs4, 9)
         self.assertFinds("cs48", ["CS 480"], 2)
         for q in ("CS 150", "cs 15"):
-            self.assertFinds(q, ["CS 150", "CS 150L"], 6)
+            self.assertFinds(q, ["CS 150", "CS 150L"], 3)
         for q in ("CS150L", "cs 150 l"):
-            self.assertFinds(q, ["CS 150L"], 4)
-        self.assertFinds("BIOL 211", ["BIOL 211", "BIOL 211L"], 10)
+            self.assertFinds(q, ["CS 150L"], 2)
+        self.assertFinds("BIOL 211", ["BIOL 211", "BIOL 211L"], 19)
         for q in ("BIOL 211L", "biol 211 l", "biol211l"):
-            self.assertFinds(q, ["BIOL 211L"], 9)
+            self.assertFinds(q, ["BIOL 211L"], 18)
 
     def test_subjects_sdsu_writes_with_spaces(self):
         for q in ("GEN S 147", "gens147"):
             self.assertFinds(q, ["GENS 147"], 2)
         for q in ("P A 301", "pa301"):
-            self.assertFinds(q, ["PA 301"], 4)            # not GEOL 301 (title words p..., a...)
+            self.assertFinds(q, ["PA 301"], 3)            # not GEOL 301 (title words p..., a...)
         self.assertFinds("POL S 102", ["POLS 102"], 15)
         self.assertFinds("MUSIC 351", ["MUSIC 351"], 9)
 
     def test_title_words(self):
-        self.assertFinds("hip hop", ["MUSIC 351", "RELS 356"], 10)   # MUSIC 351's own section titles
-        self.assertFinds("Data Science Python", ["CS 200"], 1)
+        # MUSIC 351's own section title; DANCE 243 and ENS 138 have a Hip Hop section too (every section
+        # of the course comes back). RELS 356 isn't offered in Spring 2027.
+        self.assertFinds("hip hop", ["DANCE 243", "ENS 138", "MUSIC 351"], 48)
+        self.assertFinds("Data Science Python", ["CS 200"], 2)
         for q in ("business & diplomacy", "business and diplomacy"):
             self.assertFinds(q, ["MGT 403"], 1)
         intro = self.search("intro to")
-        self.assertEqual(len(intro), 153)
-        self.assertEqual(len(codes(intro)), 48)              # every course with an active section
+        self.assertEqual(len(intro), 245)
+        self.assertEqual(len(codes(intro)), 69)              # every course with an active section
+        # a course matches by its title or any of its sections' own titles (ECL 503 has an "Intro to" topic)
+        titles = {}
         for s in intro:
-            words = norm(f"{s['course_title']} {s['section_title'] or ''}").split()
-            self.assertTrue(any(w.startswith("intro") for w in words) and any(w.startswith("to") for w in words), s["course_title"])
+            titles.setdefault(s["course_id"], set()).update([s["course_title"], s["section_title"] or ""])
+        for course_titles in titles.values():
+            words = norm(" ".join(course_titles)).split()
+            self.assertTrue(any(w.startswith("intro") for w in words) and any(w.startswith("to") for w in words), course_titles)
 
     def test_cs_and_a_title_word(self):
         found = self.search("cs data")
@@ -103,14 +115,14 @@ class AcceptanceTests(SearchApiCase):
 
     def test_no_keyword_filter(self):
         everything = len(self.search())
-        self.assertEqual(everything, 2284)
+        self.assertEqual(everything, 5520)
         for q in ("c", "%", "_", "   ", "", "-", "%_%"):
             self.assertEqual(len(self.search(q)), everything, repr(q))
 
     def test_hostile_text(self):
         for q in ("'; DROP TABLE courses;--", "<script>alert(1)</script>"):
             self.assertEqual(self.search(q), [], q)
-        self.assertEqual(len(self.search()), 2284)            # nothing was dropped
+        self.assertEqual(len(self.search()), 5520)            # nothing was dropped
 
 
 class EveryCourseTests(SearchApiCase):
@@ -170,10 +182,10 @@ class ProfessorTests(SearchApiCase):
         self.assertEqual({p["last"] for s in rapp for p in s["instructors"] if p["last"].startswith("Rapp")}, {"Rapp"})
 
     def test_last_comma_first(self):
-        # Valerie Alexandra teaches BA 310 1-4; MIS 180 / 380 are Valerie Novikova's, so not here
+        # Valerie Alexandra teaches BA 310 1-14; MIS 180 / 380 are Valerie Novikova's, so not here
         found = self.search(professor="Alexandra, Valerie")
         self.assertEqual(codes(found), ["BA 310"])
-        self.assertEqual([s["section_number"] for s in found], ["01", "02", "03", "04"])
+        self.assertEqual([s["section_number"] for s in found], [f"{n:02d}" for n in range(1, 15)])
         self.assertEqual(codes(self.search(professor="Valerie")), ["BA 310", "MIS 180", "MIS 380"])
 
     def test_person_match(self):
@@ -182,6 +194,42 @@ class ProfessorTests(SearchApiCase):
         self.assertFalse(person_match("Michael", "Rapp", "%"))
         self.assertEqual(self.search(professor="%"), [])
         self.assertEqual(self.search(professor="'; DROP TABLE professors;--"), [])
+
+
+class ClassNumberSearchTests(SearchApiCase):
+    """A 4 or 5 digit query is a class number, the number students register with."""
+
+    def test_class_number_finds_the_section(self):
+        found = self.search("5834")
+        self.assertEqual(codes(found), ["CS 150"])
+        self.assertEqual((found[0]["class_number"], found[0]["section_number"]), ("5834", "01"))
+
+    def test_the_matching_section_comes_first(self):
+        found = self.search("5844")                         # CS 160 section 03
+        self.assertEqual(codes(found), ["CS 160"])
+        self.assertEqual((found[0]["class_number"], found[0]["section_number"]), ("5844", "03"))
+        self.assertGreater(len(found), 1)                   # the other CS 160 sections follow
+
+    def test_hash_and_spaces(self):
+        for q in ("#5834", " 5834 ", "# 5834", "#5834 "):
+            found = self.search(q)
+            self.assertEqual((codes(found), found[0]["class_number"]), (["CS 150"], "5834"), q)
+        self.assertEqual(class_number_query("#12095"), "12095")
+        for q in ("150", "cs150", "123456", "58 34", "5834a", "##5834"):
+            self.assertIsNone(class_number_query(q), q)
+
+    def test_unknown_class_number_is_a_normal_no_result_search(self):
+        self.assertEqual(self.search("99999"), [])
+        self.assertEqual(self.search("#1001"), [])           # the lowest class number is 1002
+
+    def test_three_digits_are_still_course_numbers(self):
+        found = self.search("150")
+        self.assertIn("CS 150", codes(found))
+        self.assertGreater(len(codes(found)), 1)
+
+    def test_every_section_has_its_class_number(self):
+        found = self.search("cs")
+        self.assertTrue(all(s["class_number"] and s["class_number"].isdigit() for s in found))
 
 
 class CombinedFilterTests(SearchApiCase):

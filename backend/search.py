@@ -17,6 +17,10 @@ Keyword rules (see tests/test_search.py):
   - typing a number makes it a code search: word matches are dropped when a
     code matches
   - one character, or only punctuation, is no keyword at all
+  - 4 or 5 digits alone ("5834", "#12095", " 5834 ") is a class number, the
+    number students register with: that section's course comes back, the
+    section first. Course numbers have at most 3 digits, so "150" is still a
+    course search. An unknown class number falls back to the rules above.
 """
 
 import os
@@ -26,7 +30,8 @@ import unicodedata
 
 MAX_Q = 100
 
-_cache = {"key": None, "courses": None}
+_cache = {"key": None, "courses": None, "numbers": None}
+CLASS_NUMBER = re.compile(r"\d{4,5}")
 _cache_lock = threading.Lock()
 
 
@@ -56,8 +61,14 @@ def load_courses(conn):
     return courses
 
 
-def get_course_index(conn, db_path):
-    """load_courses, cached until the database file changes (a re-import rewrites it)."""
+def load_class_numbers(conn):
+    """class number ('5834') -> (course_id, section_id), active sections only."""
+    return {r["class_number"]: (r["course_id"], r["section_id"]) for r in conn.execute(
+        "SELECT class_number, course_id, section_id FROM sections WHERE active = 1 AND class_number IS NOT NULL")}
+
+
+def _index(conn, db_path):
+    """Both lookups, cached until the database file changes (a re-import rewrites it)."""
     try:
         stamp = os.stat(db_path).st_mtime_ns
     except OSError:
@@ -66,8 +77,27 @@ def get_course_index(conn, db_path):
     with _cache_lock:
         if _cache["key"] != key or stamp is None:
             _cache["courses"] = load_courses(conn)
+            _cache["numbers"] = load_class_numbers(conn)
             _cache["key"] = key
-        return _cache["courses"]
+        return _cache
+
+
+def get_course_index(conn, db_path):
+    """load_courses, cached."""
+    return _index(conn, db_path)["courses"]
+
+
+def class_number_query(q):
+    """'5834', '#5834', ' # 12095 ' -> the digits; anything else -> None."""
+    text = str(q or "")[:MAX_Q].strip()
+    text = text[1:].strip() if text.startswith("#") else text
+    return text if CLASS_NUMBER.fullmatch(text) else None
+
+
+def match_class_number(conn, db_path, q):
+    """(course_id, section_id) of the active section with that class number, or None."""
+    number = class_number_query(q)
+    return _index(conn, db_path)["numbers"].get(number) if number else None
 
 
 def match_courses(courses, q):

@@ -299,6 +299,21 @@ class SectionTitleTests(unittest.TestCase):
             self.assertIn("two titles or unit values for one course: 1", text)
             self.assertEqual(sections[("CS", "150", "02", "Spring 2027")]["section_title"], "Intro to Programming")   # as typed
 
+    def test_topic_titles_that_share_nothing_keep_the_course_title(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            run([rec(3, subject="MUSIC", catalog_num="351", course_title="Music and Culture: Jazz")], tmp)
+            # the official file abbreviates every topic differently
+            rows = [rec(3, subject="MUSIC", catalog_num="351", section_number="1", course_title="Mus&Cult: Hip Hop"),
+                    rec(4, subject="MUSIC", catalog_num="351", section_number="2", course_title="Psychedelic Rock 1960s"),
+                    rec(5, subject="ECL", catalog_num="503", section_number="1", course_title="Topic A"),
+                    rec(6, subject="ECL", catalog_num="503", section_number="2", course_title="Other B")]
+            _, _, sections = run(rows, tmp)
+            titles = {(c["subject"], c["catalog_num"]): c["title"] for c in read_table(tmp, "courses")}
+            self.assertEqual(titles[("MUSIC", "351")], "Music and Culture: Jazz")          # the title it had
+            self.assertEqual(titles[("ECL", "503")], "Topic A")                            # new course: the first
+            self.assertEqual(sections[("MUSIC", "351", "02", "Spring 2027")]["section_title"], "Psychedelic Rock 1960s")
+            self.assertEqual(sections[("ECL", "503", "02", "Spring 2027")]["section_title"], "Other B")
+
     def test_shared_title(self):
         self.assertEqual(importer.shared_title(["Music and Culture: Hip Hop", "Music and Culture: Jazz"]), "Music and Culture")
         self.assertEqual(importer.shared_title(["Music and Cultures", "Music and Culture: Jazz"]), "Music and")
@@ -355,6 +370,177 @@ class StableIdTests(unittest.TestCase):
                             importer.section_key("CS", "150", "01", "Spring 2027"))
         self.assertEqual(importer.section_key("POL S", "101", "01", "Fall 2026"),
                          importer.section_key("pols", "101", "01", "Fall 2026"))
+
+
+# ---------- class numbers and --retire-existing ----------
+
+def run_numbered(sheet_rows, out_dir, retire=False):
+    """Like run(), with a 15th Class Number column (rec(class_number=...)). Returns (text, skipped, rows, codes)."""
+    sheet = os.path.join(out_dir, "sheet.csv")
+    with open(sheet, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["Term", "Subject", "Course Number", "Course Title", "Units", "Section", "Days", "Start Time",
+                    "End Time", "Professor First Name", "Professor Last Name", "Building", "Room Number", "Seats",
+                    "Class Number (registration)"])
+        for r in sheet_rows:
+            w.writerow([r[c] for c in importer.COLUMNS] + [r.get("class_number", "")])
+    text, skipped = importer.run(sheet, out_dir=out_dir, report_path=None, retire_existing=retire)
+    courses = {r["course_id"]: f"{r['subject']} {r['catalog_num']}" for r in read_table(out_dir, "courses")}
+    rows = read_table(out_dir, "sections")
+    return text, skipped, rows, {s["section_id"]: courses[s["course_id"]] for s in rows}
+
+
+def by_number(rows):
+    return {s["class_number"]: s for s in rows if s["class_number"]}
+
+
+class ClassNumberTests(unittest.TestCase):
+    def test_stored_and_carried_into_sections_csv(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            text, skipped, rows, _ = run_numbered([rec(3, class_number="5834"), rec(4, section_number="2", class_number="12095")], tmp)
+            self.assertEqual(skipped, 0)
+            self.assertEqual(sorted(by_number(rows)), ["12095", "5834"])
+            self.assertIn("With a class number:       2", text)
+
+    def test_a_file_without_the_column_imports_as_before(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            _, skipped, sections = run([rec(3), rec(4, section_number="2")], tmp)
+            self.assertEqual(skipped, 0)
+            self.assertEqual({s["class_number"] for s in sections.values()}, {""})
+            self.assertEqual({s["retired"] for s in sections.values()}, {"0"})
+
+    def test_letter_sections(self):
+        self.assertEqual(parse(section_number="A1")[0]["section_number"], "A1")
+        self.assertEqual(parse(section_number="b0")[0]["section_number"], "B0")
+        self.assertEqual(parse(section_number="7")[0]["section_number"], "07")
+        self.assertIn("like 01 or A1", problem(section_number="A-1"))
+        with tempfile.TemporaryDirectory() as tmp:     # a blank section next to letter ones still gets a number
+            _, skipped, sections = run([rec(3, section_number="A1"), rec(4, section_number="", days="F")], tmp)
+            self.assertEqual(skipped, 0)
+            self.assertIn(("CS", "150", "A1", "Spring 2027"), sections)
+            self.assertIn(("CS", "150", "01", "Spring 2027"), sections)
+
+    def test_half_units(self):
+        self.assertEqual(parse(units="1.5")[0]["units"], "1.5")
+        self.assertEqual(parse(units="2.50")[0]["units"], "2.5")
+        self.assertEqual(parse(units="3")[0]["units"], 3)
+        self.assertIn("like 3 or 1.5", problem(units="1-3"))
+
+    def test_class_number_must_be_digits(self):
+        self.assertIn("digits only", problem(class_number="58A4"))
+
+    def test_a_class_number_is_never_given_to_two_sections(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            text, skipped, rows, _ = run_numbered([rec(3, class_number="5834"), rec(4, section_number="2", class_number="5834")], tmp)
+            self.assertEqual(skipped, 1)
+            self.assertIn("row 3: CS 150 section 02 has class number 5834, already used by row 2", text)   # CSV rows start at 2
+            self.assertEqual(len([s for s in rows if s["class_number"] == "5834"]), 1)
+
+    def test_rows_without_one_are_reported_when_others_have_one(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            text, _, _, _ = run_numbered([rec(3, class_number="5834"), rec(4, section_number="2")], tmp)
+            self.assertIn("no class number (other rows have one): 1", text)
+            self.assertIn("row 3: CS 150 section 02", text)
+
+    def test_a_renumbered_section_keeps_its_id(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            _, _, first, _ = run_numbered([rec(3, section_number="1", class_number="5834"),
+                                           rec(4, section_number="2", class_number="5835")], tmp)
+            ids = {n: s["section_id"] for n, s in by_number(first).items()}
+            # the export renumbered them: 5834 is now section 02 and 5835 section 03
+            text, _, second, _ = run_numbered([rec(3, section_number="2", class_number="5834"),
+                                               rec(4, section_number="3", class_number="5835")], tmp)
+            now = by_number(second)
+            self.assertEqual((now["5834"]["section_id"], now["5834"]["section_number"]), (ids["5834"], "02"))
+            self.assertEqual((now["5835"]["section_id"], now["5835"]["section_number"]), (ids["5835"], "03"))
+            self.assertEqual(len(second), 2)                          # nothing new, nothing gone
+            self.assertIn("same class number, new section number (id kept): 2", text)
+
+    def test_same_section_number_with_a_different_class_number_is_a_different_class(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            _, _, first, _ = run_numbered([rec(3, class_number="5834")], tmp)
+            old_id = first[0]["section_id"]
+            _, _, second, _ = run_numbered([rec(3, class_number="7777")], tmp)
+            now = by_number(second)
+            self.assertNotEqual(now["7777"]["section_id"], old_id)
+            self.assertEqual((now["5834"]["section_id"], now["5834"]["active"]), (old_id, "0"))
+
+    def test_old_rule_fallback_for_a_file_without_the_column(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            _, _, first, _ = run_numbered([rec(3, class_number="5834")], tmp)
+            _, _, second = run([rec(3, days="TTh")], tmp)
+            s = second[("CS", "150", "01", "Spring 2027")]
+            self.assertEqual((s["section_id"], s["active"], s["days"]), (first[0]["section_id"], "1", "TTh"))
+
+    def test_running_twice_changes_nothing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            rows = [rec(3, class_number="5834"), rec(4, section_number="2", class_number="5835"),
+                    rec(5, subject="MATH", catalog_num="150", class_number="12095")]
+            run_numbered(rows, tmp)
+            before = {n: read_text(os.path.join(tmp, f"{n}.csv")) for n in importer.TABLE_FIELDS}
+            text, _, _, _ = run_numbered(rows, tmp)
+            self.assertEqual(before, {n: read_text(os.path.join(tmp, f"{n}.csv")) for n in importer.TABLE_FIELDS})
+            self.assertIn("unchanged:               3", text)
+
+
+class RetireExistingTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.dir = self.tmp.name
+        # the old data: CS 150 sections 01 and 02, MATH 150 section 01, no class numbers
+        _, _, self.old, _ = run_numbered([rec(3, section_number="1"), rec(4, section_number="2"),
+                                          rec(5, subject="MATH", catalog_num="150")], self.dir)
+        self.old_ids = {s["section_id"] for s in self.old}
+        self.old_courses = {r["course_id"]: (r["subject"], r["catalog_num"]) for r in read_table(self.dir, "courses")}
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def new_file(self):
+        return [rec(3, section_number="1", class_number="5834", days="TTh"),    # same subject, number, section
+                rec(4, subject="PSY", catalog_num="101", class_number="9001")]
+
+    def test_a_new_row_with_an_old_key_gets_a_new_id(self):
+        text, skipped, rows, codes = run_numbered(self.new_file(), self.dir, retire=True)
+        self.assertEqual(skipped, 0)
+        new = by_number(rows)
+        self.assertNotIn(new["5834"]["section_id"], self.old_ids)
+        self.assertNotIn(new["9001"]["section_id"], self.old_ids)
+        self.assertEqual(codes[new["5834"]["section_id"]], "CS 150")
+        self.assertIn("Retired now:               3", text)
+
+    def test_old_rows_are_kept_inactive_with_their_ids(self):
+        _, _, rows, _ = run_numbered(self.new_file(), self.dir, retire=True)
+        old = {s["section_id"]: s for s in rows if s["section_id"] in self.old_ids}
+        self.assertEqual(set(old), self.old_ids)
+        self.assertEqual({(s["active"], s["retired"]) for s in old.values()}, {("0", "1")})
+        # courses kept their ids, even MATH 150 that has no section now
+        courses = {(r["subject"], r["catalog_num"]): r["course_id"] for r in read_table(self.dir, "courses")}
+        for cid, key in self.old_courses.items():
+            self.assertEqual(courses[key], cid)
+
+    def test_the_next_run_without_the_flag_changes_nothing(self):
+        run_numbered(self.new_file(), self.dir, retire=True)
+        before = {n: read_text(os.path.join(self.dir, f"{n}.csv")) for n in importer.TABLE_FIELDS}
+        text, _, _, _ = run_numbered(self.new_file(), self.dir)
+        self.assertEqual(before, {n: read_text(os.path.join(self.dir, f"{n}.csv")) for n in importer.TABLE_FIELDS})
+        self.assertIn("Retired earlier:           3", text)
+
+    def test_retired_sections_never_match_later_even_by_the_old_rule(self):
+        run_numbered(self.new_file(), self.dir, retire=True)
+        # a later file without class numbers that has CS 150 section 02 (only the retired one has that key)
+        _, _, rows, _ = run_numbered([rec(3, section_number="2")], self.dir)
+        live = [s for s in rows if s["active"] == "1"]
+        self.assertEqual(len(live), 1)
+        self.assertNotIn(live[0]["section_id"], self.old_ids)
+
+    def test_without_the_flag_nothing_is_retired(self):
+        text, _, rows, _ = run_numbered([rec(3, section_number="1")], self.dir)
+        self.assertNotIn("Retired", text)
+        self.assertEqual({s["retired"] for s in rows}, {"0"})
+        kept = [s for s in rows if s["active"] == "1"]
+        self.assertEqual(len(kept), 1)
+        self.assertIn(kept[0]["section_id"], self.old_ids)       # the old rule still applies
 
 
 # ---------- 6-9. the real Spring 2027 sheet ----------

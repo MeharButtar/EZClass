@@ -9,6 +9,7 @@ back with:
   online_only  -> true when it has meetings and none has a set day and time
   no_schedule  -> true when no meetings are entered yet ("Time not listed yet")
   section_title -> the section's own title (special topics), else null
+  class_number -> the official number students register with ("5834"), else null
 The older flat fields (days, start_time, end_time, building, room_number,
 professor_name, capacity) are still there, filled from the first timed
 meeting and the first instructor (all null for a section with no schedule).
@@ -21,7 +22,7 @@ from flask import Blueprint, jsonify, request
 
 from backend.models.conflicts import DAY_TOKENS, parse_days
 from backend.models.db import DB_PATH, get_connection
-from backend.search import get_course_index, match_courses, person_match
+from backend.search import get_course_index, match_class_number, match_courses, person_match
 
 sections_bp = Blueprint("sections", __name__)
 
@@ -101,6 +102,7 @@ def section_to_dict(row, meetings, instructors):
         "units": row["units"],
         "section_number": row["section_number"],
         "section_title": row["section_title"] or None,
+        "class_number": row["class_number"] or None,
         "term": row["term"],
         "meetings": meetings,
         "instructors": instructors,
@@ -134,7 +136,7 @@ def sections_to_dicts(conn, rows):
 
 BASE_QUERY = """
     SELECT
-        s.section_id, s.course_id, s.section_number, s.term, s.seats_text, s.seats_total, s.section_title,
+        s.section_id, s.course_id, s.section_number, s.term, s.seats_text, s.seats_total, s.section_title, s.class_number,
         c.subject, c.catalog_num, c.title, c.units,
         (SELECT GROUP_CONCAT(g.area_code, ',') FROM course_ge g
           WHERE g.subject = c.subject AND g.catalog_num = c.catalog_num) AS ge_areas,
@@ -164,7 +166,9 @@ def search_sections():
                    anything else is a 400
       q         -> course code or title words: "CS 480", "cs4", "GEN S 147",
                    "data science" (see backend/search.py). Exact codes come
-                   first, then code prefixes, then title matches.
+                   first, then code prefixes, then title matches. A class
+                   number ("5834", "#5834") gives that section's course, with
+                   that section first.
       ge        -> GE area codes, comma separated, e.g. ?ge=3A,3B. Use ge=ALL
                    for any GE area. A section matches if its course counts for
                    ANY of the areas listed.
@@ -212,7 +216,11 @@ def search_sections():
         params.extend(people)
 
     q = request.args.get("q")
-    ranks = match_courses(get_course_index(conn, DB_PATH), q) if q else None
+    by_number = match_class_number(conn, DB_PATH, q) if q else None
+    if by_number:
+        ranks = {by_number[0]: 0}
+    else:
+        ranks = match_courses(get_course_index(conn, DB_PATH), q) if q else None
     if ranks is not None:
         if not ranks:
             conn.close()
@@ -250,6 +258,8 @@ def search_sections():
     if ranks:
         # exact code first, then code prefixes, then title matches (stable: keeps subject, number, section)
         rows = sorted(rows, key=lambda r: ranks.get(r["course_id"], 0))
+    if by_number:
+        rows = sorted(rows, key=lambda r: r["section_id"] != by_number[1])   # that section first
     result = sections_to_dicts(conn, rows)
     conn.close()
 

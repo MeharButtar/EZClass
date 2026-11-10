@@ -95,7 +95,9 @@ export function showSectionCard(section) {
         section.instructors.length ? el("dt", {}, many ? "Your scores" : "Your score") : null,
         section.instructors.length ? el("dd", {}, ratingControls(section, { beforeOpen: () => dialog.close() })) : null,
         el("dt", {}, "Seats"), el("dd", {}, seatsLabel(section)),
-        el("dt", {}, "Units"), el("dd", {}, String(section.units || "–"))),
+        el("dt", {}, "Units"), el("dd", {}, String(section.units || "–")),
+        section.classNumber ? el("dt", {}, "Class number") : null,
+        section.classNumber ? el("dd", {}, el("span", { class: "cn-num" }, section.classNumber)) : null),
       el("p", { class: "small" }, el("a", {
         href: reportUrl({ kind: "wrong_info", course: section.code, section: section.sectionNumber }),
       }, "Report wrong info for this class")),
