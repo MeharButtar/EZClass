@@ -425,6 +425,14 @@ class SiteTests(AppTestCase):
         self.assertNotIn("/api/", body)
         with mock.patch.dict(os.environ, {"SITE_URL": "https://www.ezclass.app/"}):
             self.assertIn("<loc>https://www.ezclass.app/search.html</loc>", self.client.get("/sitemap.xml").get_data(as_text=True))
+        # reached through the old Render address, the links still name the real domain
+        old = {"headers": {"X-Forwarded-Proto": "https"}, "base_url": "http://ezclass-old.onrender.example"}
+        with mock.patch.dict(os.environ, {"SITE_URL": "https://ezclass.win"}):
+            self.assertIn("Sitemap: https://ezclass.win/sitemap.xml", self.client.get("/robots.txt", **old).get_data(as_text=True))
+            body = self.client.get("/sitemap.xml", **old).get_data(as_text=True)
+            self.assertIn("<loc>https://ezclass.win/</loc>", body)
+            self.assertIn("<loc>https://ezclass.win/support.html</loc>", body)
+            self.assertNotIn("onrender", body)
         with self.client.get("/favicon.svg") as icon:
             self.assertEqual((icon.status_code, icon.mimetype), (200, "image/svg+xml"))
         self.assertEqual(self.client.get("/favicon.ico").headers["Location"], "/favicon.svg")

@@ -73,6 +73,9 @@ function normalizeMeeting(raw) {
     building: online || isOnlineBuilding ? "" : building,
     room: online ? "" : isOnlineBuilding ? "Online" : [building, raw.room].filter(Boolean).join(" "),
     online,
+    // live online: a set day and time, but on Zoom (building "ONLINE"). It is
+    // time in class, but not a day on campus. "ONLINE / BSE" is not live online.
+    liveOnline: !online && isOnlineBuilding,
   };
 }
 

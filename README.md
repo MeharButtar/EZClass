@@ -354,29 +354,89 @@ Make a token with `python3 -c "import secrets; print(secrets.token_urlsafe(32))"
    `ANALYTICS_ENABLED=0` to switch counting off.
 6. Under **Advanced**, set **Health Check Path** to `/api/health` (it returns 503
    if the class database can't be read).
-7. Create the service. The URL is shown at the top, like `https://ezclass.onrender.com`.
+7. Create the service. The URL is shown at the top (`https://<name>.onrender.com`).
    Every push to that branch redeploys.
 
-**Visit counts reset on free hosting.** Render's free web services have no
-persistent disk: the container's files are thrown away on every deploy and
-restart, and a free service also goes to sleep after about 15 minutes with no
-visitors (the next visit takes a minute or so to wake it). So `analytics.db`
-starts empty again regularly. Treat the free-plan stats as "since the last
-restart", and read them with `curl` before you push a change if you want to
-keep the numbers. The class data is not affected: it's baked into the image.
+### The live site
 
-To keep counts across deploys, move to a paid instance, add a **Disk** with
-mount path `/data`, and set `ANALYTICS_DB_PATH=/data/analytics.db`, or later move the counts to an
-external database. **Set `FEEDBACK_DB_PATH=/data/feedback.db` too**: reviews and
-support messages live in that file, and without the disk they are wiped on
-every deploy. Put **only** these two files on the disk: leave
-`EZCLASS_DB_PATH` unset. The app never overwrites a class database that already
-has classes in it, so a class database on the disk would keep the first import
-forever and ignore every later data update. Left alone, it's rebuilt from the
-CSVs in the repo on each deploy. (A service with a disk can't do zero-downtime
-deploys, so the site is down for a minute or so while each deploy goes out.) If
-`/api/event` then returns 503 and the logs say "could not save analytics
-event", the disk isn't writable by the image's non-root user (uid 1000).
+The live site is **https://ezclass.win** (a custom domain on Render, DNS on
+Cloudflare). The old Render address still works and serves the same app.
+`main` deploys automatically. The Render service has a 1 GB **persistent
+disk** mounted at `/data`, so visit counts, reviews and support messages
+survive deploys. With a disk, each deploy has about a minute of downtime.
+
+Settings (Render: **Environment**; `.env.example` lists them too):
+
+| Setting | Live value | What it does |
+|---|---|---|
+| `ANALYTICS_DB_PATH` | `/data/analytics.db` | Visit counts. On the disk, or they reset on every deploy. |
+| `FEEDBACK_DB_PATH` | `/data/feedback.db` | Reviews and support messages. On the disk, or they are wiped on every deploy. |
+| `ADMIN_TOKEN` | a long random string | Unlocks the admin commands below. Only ever in Render and in your own terminal, never in code, chat or a URL. |
+| `SITE_URL` | `https://ezclass.win` | The address `sitemap.xml` and `robots.txt` use. Without it they use whatever address the visitor came in on (so the old Render address would show up there). |
+| `EZCLASS_DB_PATH` | **leave unset** | The class database. Unset, it's rebuilt from the CSVs in the repo on each deploy. On the disk it would keep the first import forever and ignore every data update. |
+| `ANALYTICS_ENABLED` | unset (on) | `0` switches visit counting off. |
+
+Make a token with `python3 -c "import secrets; print(secrets.token_urlsafe(32))"`.
+If `/api/event` returns 503 and the logs say "could not save analytics event",
+the disk isn't writable by the image's non-root user (uid 1000). Without a
+disk (Render's free plan), counts, reviews and messages start empty after
+every deploy or restart; the class data is not affected, it's baked into the
+image.
+
+### Admin commands
+
+All of these need `ADMIN_TOKEN` in the `Authorization` header. They return
+404 when the server has no token set and 401 with a wrong one. Put the token
+in your own terminal only; typing it at a prompt keeps it out of your shell
+history.
+
+**Windows PowerShell**
+
+```powershell
+$env:ADMIN_TOKEN = Read-Host "Admin token"
+$site = "https://ezclass.win"
+$auth = @{ Authorization = "Bearer $env:ADMIN_TOKEN" }
+
+# visit stats for the last 14 days (days can be 1 to 90)
+Invoke-RestMethod -Uri "$site/api/admin/stats?days=14" -Headers $auth | ConvertTo-Json -Depth 6
+
+# new support messages, and reviews waiting for approval
+Invoke-RestMethod -Uri "$site/api/admin/feedback?status=new" -Headers $auth | ConvertTo-Json -Depth 6
+Invoke-RestMethod -Uri "$site/api/admin/feedback?status=pending" -Headers $auth | ConvertTo-Json -Depth 6
+
+# the same with curl.exe, as raw JSON on one line (piping it into python can
+# fail in Windows PowerShell, which may add a byte-order mark)
+curl.exe -s -H "Authorization: Bearer $env:ADMIN_TOKEN" "$site/api/admin/stats?days=14"
+
+# approve review 12, hide it again, mark support message 7 done
+# (Invoke-RestMethod: PowerShell can mangle the JSON quotes it passes to curl.exe)
+Invoke-RestMethod -Method Post -Uri "$site/api/admin/reviews/12" -Headers $auth -ContentType "application/json" -Body '{"status":"approved"}'
+Invoke-RestMethod -Method Post -Uri "$site/api/admin/reviews/12" -Headers $auth -ContentType "application/json" -Body '{"status":"hidden"}'
+Invoke-RestMethod -Method Post -Uri "$site/api/admin/support/7" -Headers $auth -ContentType "application/json" -Body '{"status":"done"}'
+```
+
+**Mac or Linux (bash)**
+
+```bash
+read -rsp "Admin token: " ADMIN_TOKEN; echo; export ADMIN_TOKEN
+SITE=https://ezclass.win
+
+# visit stats for the last 14 days (days can be 1 to 90)
+curl -s -H "Authorization: Bearer $ADMIN_TOKEN" "$SITE/api/admin/stats?days=14" | python3 -m json.tool
+
+# new support messages, and reviews waiting for approval
+curl -s -H "Authorization: Bearer $ADMIN_TOKEN" "$SITE/api/admin/feedback?status=new" | python3 -m json.tool
+curl -s -H "Authorization: Bearer $ADMIN_TOKEN" "$SITE/api/admin/feedback?status=pending" | python3 -m json.tool
+
+# approve review 12, hide it again, mark support message 7 done
+curl -s -X POST -H "Authorization: Bearer $ADMIN_TOKEN" -H "Content-Type: application/json" -d '{"status":"approved"}' "$SITE/api/admin/reviews/12"
+curl -s -X POST -H "Authorization: Bearer $ADMIN_TOKEN" -H "Content-Type: application/json" -d '{"status":"hidden"}' "$SITE/api/admin/reviews/12"
+curl -s -X POST -H "Authorization: Bearer $ADMIN_TOKEN" -H "Content-Type: application/json" -d '{"status":"done"}' "$SITE/api/admin/support/7"
+```
+
+`/api/admin/feedback` takes `status=pending|approved|hidden` for reviews or
+`new|done` for messages; with no status it returns both lists. A review can be
+set to `approved`, `hidden` or back to `pending`; a message to `done` or `new`.
 
 ### Before you share it with students
 
@@ -385,7 +445,7 @@ event", the disk isn't writable by the image's non-root user (uid 1000).
   in with the course and section). `reportProblemUrl` in
   `frontend/js/config.js` can point them somewhere else instead.
 - Set `ADMIN_TOKEN` and `FEEDBACK_DB_PATH` on the persistent disk (see above),
-  then check new reviews and messages now and then (next section).
+  then check new reviews and messages now and then (see "Admin commands" above).
 - Check `termName` and `catalogYear` in `config.js` match the data.
 - Import the latest data so the "last updated" date is current.
 - The site tells students to confirm every class in `registrationSite`
@@ -393,19 +453,19 @@ event", the disk isn't writable by the image's non-root user (uid 1000).
 
 ### Reading the visit stats
 
-```bash
-curl -H "Authorization: Bearer $ADMIN_TOKEN" "https://<your-domain>/api/admin/stats?days=14"
-```
-
-`days` can be 1 to 90. You get totals, visitors today and in the last 7 days,
-a per-day list, counts per event, page views per page, how often each major was
-picked, the most picked GE areas, conflict check outcomes, and mobile vs desktop. Dates are UTC. Without
-`ADMIN_TOKEN` set, the stats URL returns 404.
+Use the stats command under "Admin commands" above. You get totals, visitors
+today and in the last 7 days, a per-day list, counts per event, page views per
+page, how often each major was picked, the most picked GE areas, conflict check
+outcomes, and mobile vs desktop. Dates are UTC. A "visitor" is a browser, not a
+person, and people with Do Not Track, Global Privacy Control or the footer
+opt-out aren't counted.
 
 ### Search engines and links
 
-`/robots.txt` and `/sitemap.xml` are made by the app from the address it's
-served at (set `SITE_URL` to pin it, e.g. once you have your own domain): the
+`/robots.txt` and `/sitemap.xml` are made by the app from `SITE_URL`
+(`https://ezclass.win` on the live site), or from the address the request came
+in on when it isn't set. Nothing in the code hardcodes a domain: every link in
+the pages is relative. The
 sitemap lists the home page, My Major, GE, Search, My Schedule, Reviews and
 Support, and robots.txt keeps crawlers out of `/api/`. Short links work too:
 `/search`, `/major`, `/ge`, `/schedule`, `/reviews` and `/support` redirect to
@@ -425,33 +485,23 @@ SQLite file (`FEEDBACK_DB_PATH`). No IP address or user agent is stored.
 
 Reviews start **pending** and only show on the site after you approve them.
 Nothing is ever pre-filled: with no approved reviews the page says "No reviews
-yet. Be the first."
-
-```bash
-# reviews waiting for a look (status: pending, approved, hidden) or new messages (new, done)
-curl -H "Authorization: Bearer $ADMIN_TOKEN" "https://<your-domain>/api/admin/feedback?status=pending"
-curl -H "Authorization: Bearer $ADMIN_TOKEN" "https://<your-domain>/api/admin/feedback?status=new"
-
-# approve (or hide) review 12, mark message 7 done
-curl -X POST -H "Authorization: Bearer $ADMIN_TOKEN" -H "Content-Type: application/json" \
-  -d '{"status":"approved"}' https://<your-domain>/api/admin/reviews/12
-curl -X POST -H "Authorization: Bearer $ADMIN_TOKEN" -H "Content-Type: application/json" \
-  -d '{"status":"done"}' https://<your-domain>/api/admin/support/7
-```
-
-Like the stats, these return 404 when `ADMIN_TOKEN` isn't set and 401 with a
-wrong token; the token only ever goes in the header. Spam protection: a hidden
-field only bots fill in, a minimum time on the page, links refused in reviews,
-and at most 3 sends per 10 minutes per browser (60 an hour overall).
+yet. Be the first." To read messages and approve or hide reviews, use the
+commands under "Admin commands" above. Spam protection: a hidden field only
+bots fill in, a minimum time on the page, links refused in reviews, and at
+most 3 sends per 10 minutes per browser (60 an hour overall).
 
 ### What is tracked (and what isn't)
 
 `frontend/js/track.js` sends small anonymous events: page views (home, major,
-GE, search, schedule), which major was picked (`major_select`), searches
+GE, search, schedule, reviews, support), which major was picked (`major_select`), searches
 (subject, day, result count, and only *whether* the professor or keyword box was
 used), GE searches (area jumped to or filters changed, result count), plan adds,
 removes and clears (`cart_add`, `cart_remove`, `cart_clear`, with the plan
-size), new plans (`plan_create`), and conflict checks (conflict free or not).
+size), new plans (`plan_create`), conflict checks (conflict free or not), and
+that a review or support message was sent (`review_submit`, `support_submit`,
+with only the kind of message, never the text). The server keeps a page name
+or message kind only if it's one of the site's own; `tests/test_page_lists.py`
+fails if the lists in `track.js`, the server and the pages drift apart.
 Pages report these through an `ezclass:action` event; track.js never reads the
 page itself, so typed text can't reach it.
 Each event carries a random visitor id (localStorage) and session id
@@ -473,7 +523,10 @@ python3 -m unittest discover -s tests -v
 ```
 
 They use throwaway databases in a temp folder, so they never touch your local
-`scheduler.db` or `analytics.db`.
+`scheduler.db` or `analytics.db`. The frontend's pure JavaScript (the My
+Schedule numbers, the elective unit counter) has tests in `tests/js/`, which
+the same command runs through Node when Node 22 or newer is installed (they're
+skipped otherwise). To run only those: `node --test tests/js/*.test.mjs`.
 
 ### Before adding accounts
 
