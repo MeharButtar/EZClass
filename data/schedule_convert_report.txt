@@ -10,7 +10,7 @@ Rows read:            8083  (the title line says 8083: matches)
     same subject, number and section as a lower Class Nbr: 3 rows
     thesis or individual study: 439 rows
   check: 6910 + 1173 = 8083 (adds up)
-Sections in the file: 6529  (GLBL 350, IVC 218, SDSU 5961)
+Sections in the file: 4700  (GLBL 350, IVC 218, SDSU 5961)
 Sections skipped:     1009
     campus GLBL: 350
     campus IVC: 218
@@ -39,7 +39,8 @@ Courses with two or more components (e.g. lecture + lab as separate sections): 2
 - Seats: 0 and 999 are placeholders, left blank (16 and 0). 99 is kept (6). 500 or more is kept and listed (19).
 - People: 574 people matched one current EzClass professor and got their full name. 1398 are new and show as initial + last name. 5 initials match two current people, so the initial is used (listed at the end).
 - Titles: 2007 sections keep the full EzClass title, 3218 (new courses) use the export's short one, 295 are topics and keep their own.
-- Units: half units are kept (50 sections, like ACCTG 201 at 1.5). 213 courses list their parts (lecture, lab, activity) as separate sections with their own units, so a student adds each part, and the course card shows the first section's units.
+- Units: 209 courses are made of parts (lecture, lab, activity) listed as separate sections, each with only its part's units. EzClass counts a course once in a plan, so every part gets the total of the parts
+  taken together (same Associated Class): ACCTG 201 1.5 + 1.5 -> 3, CHEM 200 3 + 1 + 1 -> 5. A student still adds each part. Checked against the catalog units in the GE and major lists: 29 match, 0 differ.
 - Instructors per section: 100 sections list a person on only some meetings; EzClass lists each person once per section.
 
 == Old sections
@@ -66,6 +67,8 @@ Saved plans: the site drops ids that no longer exist and tells the student once 
   arranged in an in-person section (no schedule part): 983
       AFRAS 470 sec 02 (class 9118); AFRAS 499 sec 01 (class 6385); AFRAS 499 sec 10 (class 6649); AMIND 498 sec 01 (class 3743); AMIND 499 sec 01 (class 1025); ... (978 more)
   building not in rooms.csv yet: 186
+  course made of parts: each part gets its group's total units: 209
+      ACCTG 201: LED 1.5 + LLC 1.5 -> 3; AE 303: LAB 1 + LED 1 -> 2; AE 403W: LAB 2 + LED 1 -> 3; ANTH 301: LAB 1 + LED 2 -> 3; ANTH 302: LAB 1 + LED 2 -> 3; ... (204 more)
   course with several titles in the export (each section keeps its own): 295
       ECL 503; ECL 527; ECL 564; MALAS 600A; CSP 730; ... (24 more)
   current title kept instead of the export's short one: 1136

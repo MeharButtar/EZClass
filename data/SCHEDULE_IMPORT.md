@@ -85,6 +85,7 @@ The converter decides these. Each one is counted in the report, with examples:
 - **People:** the export has a last name and one initial. When exactly one current EzClass professor matches, their full name is used. Otherwise it's the initial and the last name (`L. Smith`).
 - **Titles:** the current EzClass title for a course we already have, the export's short title for a new one. A course with several titles in the export (special topics) keeps each section's own; if those titles share no words, the importer keeps the course's current EzClass title (MUSIC 351 stays "Music and Culture").
 - **Seats:** `0` and `999` are placeholders and left blank.
+- **Units of a course made of parts:** the export lists a lecture and its lab (or activity, discussion) as separate sections, each with only its part's units. Every part gets the total of the parts taken together (the same Associated Class): ACCTG 201 is 1.5 + 1.5 = 3, CHEM 200 is 3 + 1 + 1 = 5. The report checks those totals against the catalog units in the GE and major lists. A student still adds each part to the plan.
 - **Two class numbers with the same subject, number and section:** the lowest is kept.
 
 The report lists these for a person to check, and never guesses at them:

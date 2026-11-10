@@ -2,7 +2,7 @@
 Tests for data/convert_sdsu_schedule.py, the official schedule export ->
 Sections format converter.
 
-tests/fixtures/schedule/schedule_sample.xlsx holds 49 real rows of the
+tests/fixtures/schedule/schedule_sample.xlsx holds 50 real rows of the
 Spring 2027 export (picked by Class Nbr, one or two per hard case) plus 4
 made-up rows with class numbers 99001 to 99004 for cases the real file
 doesn't have. tests/fixtures/schedule/cleaned/ is a tiny "current EzClass
@@ -76,9 +76,9 @@ class SampleTests(unittest.TestCase):
     # ---- the numbers ----
     def test_term_and_counts_add_up(self):
         self.assertEqual(self.term, "Spring 2027")
-        self.assertIn("Rows read:            53  (the title line says 53: matches)", self.report)
+        self.assertIn("Rows read:            54  (the title line says 54: matches)", self.report)
         self.assertIn("(adds up)", self.report)
-        self.assertEqual(len(self.table), 31)
+        self.assertEqual(len(self.table), 32)
 
     def test_header_matches_the_importer(self):
         keys = [importer.header_key(h) for h in conv.OUT_HEADER]
@@ -104,8 +104,11 @@ class SampleTests(unittest.TestCase):
     def test_saturday(self):
         self.assertEqual(self.row("8047")["days"], "Sa")
 
-    def test_half_units_pass_through(self):
-        self.assertEqual(self.row("3807")["units"], "1.5")
+    def test_parts_taken_together_get_the_course_total(self):
+        # ACCTG 201: a 1.5-unit LED part and a 1.5-unit LLC part with the same Associated Class
+        self.assertEqual((self.row("3807")["units"], self.row("3808")["units"]), ("3", "3"))
+        self.assertIn("course made of parts: each part gets its group's total units: 1", self.report)
+        self.assertEqual(self.row("5834")["units"], "3")                      # one part only: as listed
 
     def test_placeholder_seats_are_blank(self):
         self.assertEqual(self.row("11636")["seats"], "")    # 0
@@ -276,6 +279,17 @@ class SmallRuleTests(unittest.TestCase):
         self.assertEqual(rooms.split("PSYANNX"), ("PSYANNX", "", False))
         self.assertEqual(rooms.split("39-105"), ("39-105", "", False))
 
+    def test_group_units(self):
+        self.assertEqual(conv.group_units({"LED": {"1.5"}, "LLC": {"1.5"}}), "3")
+        self.assertEqual(conv.group_units({"LLC": {"3"}, "LED": {"1"}, "LAB": {"1"}}), "5")
+        self.assertEqual(conv.group_units({"LEC": {"3.5"}, "CPO": {"2.5"}}), "6")
+        self.assertEqual(conv.group_units({"LEC": {"3"}, "LAB": {"0"}}), "3")
+        self.assertEqual(conv.group_units({"LED": {"2", "3"}, "ACT": {"1"}}), "4")   # a part with two values: the largest
+        self.assertIsNone(conv.group_units({"LEC": {"3"}}))                         # one part: nothing to add
+        self.assertIsNone(conv.group_units({"LEC": {"3"}, "LAB": {"1-2"}}))          # not a number: left alone
+        self.assertEqual(conv.number_text("5.0"), "5")
+        self.assertIsNone(conv.number_text("1-4"))
+
     def test_title_case_only_all_caps(self):
         self.assertEqual(conv.title_case_caps("RICHARDSON"), "Richardson")
         self.assertEqual(conv.title_case_caps("De La Pena"), "De La Pena")
@@ -299,7 +313,7 @@ class WholeFileTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             path = os.path.join(tmp, "moved.xlsx")
             write_xlsx(path, [rows[0], ["exported by someone"]] + rows[1:])
-            self.assertEqual(len(convert(path)[1]), 31)
+            self.assertEqual(len(convert(path)[1]), 32)
 
     def test_two_terms_stop(self):
         rows = sample_rows()
@@ -339,7 +353,7 @@ class WholeFileTests(unittest.TestCase):
                 meetings = {}
                 for m in csv.DictReader(f):
                     meetings.setdefault(m["section_id"], []).append(m)
-            self.assertEqual(len(sections), 31)
+            self.assertEqual(len(sections), 32)
             lab = meetings[sections["5837"]["section_id"]]                     # hybrid: timed + online
             self.assertEqual([(m["day_code"], m["building"], m["is_online"]) for m in lab],
                              [("M", "SSW", "0"), ("", "ONLINE", "1")])

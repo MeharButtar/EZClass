@@ -1,7 +1,9 @@
 // Search: subject, day, professor and keyword ("CS 480", "cs4", "data science").
 // The matching happens on the server (backend/search.py). Results are section
 // rows (with the hover ghost on the docked calendar), drawn 40 at a time so a
-// search for everything stays fast.
+// big search stays fast. With no filter at all nothing is loaded (the whole
+// term is 5,000+ sections); the page asks for a subject, day or keyword first.
+// A class number ("5834") puts that section on top under its own heading.
 // Typing searches by itself after a short pause; only Enter, the Search button
 // and the dropdowns report to tracking, and only whether the professor or
 // keyword box was used, never what was typed.
@@ -21,7 +23,7 @@ const form = $("#search-form");
 const root = $("#search-root");
 const countLine = $("#search-count");
 const fields = { subject: $("#f-subject"), day: $("#f-day"), professor: $("#f-professor"), q: $("#f-keyword") };
-$("#search-sub").textContent = `Every ${CONFIG.termName} class, by subject, day, professor or keyword.`;
+$("#search-sub").textContent = `Every ${CONFIG.termName} class, by subject, day, professor, keyword or class number.`;
 
 mountDock($("#dock"));
 
@@ -91,6 +93,14 @@ async function search({ report = true } = {}) {
   if (params.q.replace(/[^\p{L}\p{N}]/gu, "").length === 1) {   // one letter or digit: wait for more
     clear(root).append(emptyBox("Keep typing", "At least 2 characters."));
     announce(countLine, "Keep typing, at least 2 characters.");
+    return;
+  }
+  // nothing to search by: ask for a filter instead of loading every class (5,000+ sections)
+  const typed = (text) => /[\p{L}\p{N}]/u.test(text);
+  if (!params.subject && !params.day && !typed(params.q) && !typed(params.professor)) {
+    clear(root).append(emptyBox("Search for a class",
+      "Pick a subject or a day, or type a course (CS 150), a title, a professor or a class number (5834)."));
+    announce(countLine, "");
     return;
   }
   clear(root).append(loadingBox("Searching…", 4));

@@ -31,6 +31,9 @@ without a line there):
   - titles: the current EzClass title when the course already exists, else
     the export's (a course with several titles keeps each section's own)
   - seats 0 or 999 are placeholders and left blank
+  - a course made of parts (lecture + lab, each its own Class Nbr with its
+    part's units): every part gets the total of the parts taken together
+    (same Associated Class), since EzClass counts a course once in a plan
   - two Class Nbrs with the same subject, number, section and term: the
     lowest is kept (the importer can't keep them apart)
 Another export with different headers only needs SOURCE_COLUMNS changed.
@@ -63,6 +66,7 @@ SOURCE_COLUMNS = {
     "title": "Title",
     "section": "Class Section",
     "component": "Component",
+    "assoc": "Associated Class",
     "units": "Component Units",
     "facility": "Facility ID",
     "start": "Meeting Start",
@@ -360,6 +364,38 @@ def convert(path, cleaned_dir=CLEANED_DIR, majors_dir=MAJORS_DIR, ge_dir=GE_DIR)
             s["title"] = s["title_export"]
             title_counts["new course, export title"] += 1
 
+    # ---- units of a course made of parts (lecture + lab, ...) ----
+    # Each part is its own section with only its part's units. The parts a student takes
+    # together share an Associated Class; EzClass counts a course once in a plan, so every
+    # part gets the group's total (ACCTG 201: two 1.5-unit parts -> 3; CHEM 200: 3 + 1 + 1 -> 5).
+    # SOC 101 is offered two ways (one 3-unit lecture, or a 2 + 1 pair): both groups are 3.
+    catalog = catalog_units(majors_dir, ge_dir)
+    groups = collections.defaultdict(lambda: collections.defaultdict(set))
+    for s in out:
+        groups[(s["subject"], s["catalog"], s["assoc"])][s["component"]].add(s["units"])
+    totals = collections.defaultdict(set)                 # course -> its groups' totals
+    unit_counts, unit_looks = collections.Counter(), []
+    for s in out:
+        kinds = groups[(s["subject"], s["catalog"], s["assoc"])]
+        total = group_units(kinds)
+        if total is not None:
+            totals[(s["subject"], s["catalog"])].add(total)
+            s["units"] = total
+    for ckey, found in sorted(totals.items()):
+        shown = "; ".join(" + ".join(f"{c} {'/'.join(sorted(u))}" for c, u in sorted(kinds.items()))
+                          for (subj, num, _), kinds in sorted(groups.items()) if (subj, num) == ckey and len(kinds) > 1)
+        unit_counts["courses"] += 1
+        notes.add("course made of parts: each part gets its group's total units",
+                  f"{ckey[0]} {ckey[1]}: {shown.split('; ')[0]} -> {'/'.join(sorted(found))}")
+        if catalog.get(ckey) and found != {catalog[ckey]}:
+            unit_counts["differs from the catalog"] += 1
+            unit_looks.append(f"{ckey[0]} {ckey[1]}: parts {shown}, total {'/'.join(sorted(found))}, catalog says {catalog[ckey]}")
+        elif catalog.get(ckey):
+            unit_counts["matches the catalog"] += 1
+        if len(found) > 1:
+            unit_looks.append(f"{ckey[0]} {ckey[1]}: groups add up to different totals ({'/'.join(sorted(found))});"
+                              " the course shows its first section's")
+
     out.sort(key=sort_key)
     table = [[term, s["subject"], s["catalog"], s["title"], s["units"], s["section"],
               *s["schedule"], s["first"], s["last"], s["building"], s["room"], s["seats"], s["class_nbr"]]
@@ -369,9 +405,40 @@ def convert(path, cleaned_dir=CLEANED_DIR, majors_dir=MAJORS_DIR, ge_dir=GE_DIR)
                    campus_rows=campus_rows, skipped=skipped, skipped_rows=skipped_rows, sections=sections, out=out,
                    thesis_skipped=thesis_skipped, no_time_kept=no_time_kept, duplicates=duplicates,
                    title_counts=title_counts, courses_now=courses_now, rooms=rooms, notes=notes, term=term,
+                   unit_counts=unit_counts, unit_looks=unit_looks,
                    majors_dir=majors_dir, ge_dir=ge_dir,
                    old_sections=len(read_csv(os.path.join(cleaned_dir, "sections.csv"))))
     return term, table, report_text(context)
+
+
+def number_text(value):
+    """'3' -> '3', '1.5' -> '1.5', '5.0' -> '5'; a range ('1-4'), blank or text -> None."""
+    value = str(value or "").strip()
+    if not re.fullmatch(r"\d+(\.\d+)?", value):
+        return None
+    f = float(value)
+    return str(int(f)) if f == int(f) else str(f)
+
+
+def catalog_units(majors_dir, ge_dir):
+    """(subject, number) -> units the catalog gives it, from the GE list and the majors' requirements."""
+    units = {}
+    for r in read_csv(os.path.join(ge_dir, "ge_courses.csv")) + read_csv(os.path.join(majors_dir, "major_requirements.csv")):
+        value = number_text(r.get("units"))
+        if value and (r.get("catalog_num") or "").strip():
+            units.setdefault((squish(r["subject"]), r["catalog_num"].strip().upper()), value)
+    return units
+
+
+def group_units(kinds):
+    """
+    {component: {units text}} of one Associated Class group -> the group's total units text,
+    or None when there's only one kind of part (nothing to add) or a value isn't a number.
+    A part offered with several unit values counts its largest.
+    """
+    if len(kinds) < 2 or not all(number_text(u) for us in kinds.values() for u in us):
+        return None
+    return number_text(str(sum(max(float(u) for u in us) for us in kinds.values())))
 
 
 def sort_key(s):
@@ -558,7 +625,7 @@ def build_section(nbr, group, term, rooms, people_now, notes):
 
     return {
         "class_nbr": nbr, "subject": subject, "catalog": catalog, "section": section, "units": units,
-        "title_export": get("title").strip(), "component": get("component").strip().upper(),
+        "title_export": get("title").strip(), "component": get("component").strip().upper(), "assoc": get("assoc").strip(),
         "career": get("career").strip().upper(), "mode": mode, "session": get("session").strip(),
         "schedule": schedule, "building": building, "room": room, "seats": seats,
         "first": " / ".join(p[0] for p in people), "last": " / ".join(p[1] for p in people),
@@ -669,9 +736,13 @@ def report_text(c):
     w(f"- Titles: {c['title_counts']['current EzClass title kept']} sections keep the full EzClass title,"
       f" {c['title_counts']['new course, export title']} (new courses) use the export's short one,"
       f" {c['title_counts']['several titles, each section keeps its own']} are topics and keep their own.")
-    w(f"- Units: half units are kept ({k['half units (kept as they are)']} sections, like ACCTG 201 at 1.5)."
-      f" {sum(1 for v in multi.values() if len(v) > 1)} courses list their parts (lecture, lab, activity) as separate"
-      " sections with their own units, so a student adds each part, and the course card shows the first section's units.")
+    uc = c["unit_counts"]
+    w(f"- Units: {uc['courses']} courses are made of parts (lecture, lab, activity) listed as separate sections, each with"
+      " only its part's units. EzClass counts a course once in a plan, so every part gets the total of the parts")
+    differ = uc["differs from the catalog"]
+    w("  taken together (same Associated Class): ACCTG 201 1.5 + 1.5 -> 3, CHEM 200 3 + 1 + 1 -> 5. A student still"
+      f" adds each part. Checked against the catalog units in the GE and major lists: {uc['matches the catalog']} match,"
+      f" {differ} differ" + (" (listed below)." if differ else "."))
     w(f"- Instructors per section: {k['instructor listed on only some meetings (the importer lists each person once per section)']}"
       " sections list a person on only some meetings; EzClass lists each person once per section.")
     w("")
@@ -724,6 +795,12 @@ def report_text(c):
     if len(needed) > 30:
         w(f"    ... and {len(needed) - 30} more")
     w("")
+    if c["unit_looks"]:
+        w("Course units to glance at:")
+        lines.extend(f"  {x}" for x in c["unit_looks"][:30])
+        if len(c["unit_looks"]) > 30:
+            w(f"  ... and {len(c['unit_looks']) - 30} more")
+        w("")
     if c["duplicates"]:
         w("Same subject, number and section with two Class Nbrs (the lowest is kept, the others skipped):")
         for extra, keep in c["duplicates"][:30]:
