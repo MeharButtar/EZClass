@@ -122,7 +122,8 @@ def majors_schema():
 
 # columns sections gained with section_meetings; older databases get them added
 NEW_SECTION_COLUMNS = [("seats_text", "TEXT"), ("seats_total", "INTEGER"), ("active", "INTEGER NOT NULL DEFAULT 1"),
-                       ("section_title", "TEXT")]
+                       ("section_title", "TEXT"), ("class_number", "TEXT"),
+                       ("retired", "INTEGER NOT NULL DEFAULT 0")]
 
 
 def _minutes(text):

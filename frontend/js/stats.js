@@ -1,6 +1,8 @@
 // Numbers about a week of classes, for the strip under the calendar on
 // My Schedule: units, hours in class, days on campus and gaps between classes.
 // Counted per timed meeting; online parts take no time on the calendar.
+// A live online meeting (set day and time, room "Online") is time in class
+// but not a day on campus: a day with only those is an "online only" day.
 // (There is no walking-time number: the data has building codes, not distances.)
 // Pure functions, no DOM.
 
@@ -28,7 +30,7 @@ export function weekStats(sections) {
   const byDay = new Map(ALL_DAYS.map((d) => [d, []]));
   for (const s of sections) {
     for (const m of timedMeetings(s)) {
-      for (const d of m.dayList) byDay.get(d).push({ startMin: m.startMin, endMin: m.endMin });
+      for (const d of m.dayList) byDay.get(d).push({ startMin: m.startMin, endMin: m.endMin, liveOnline: Boolean(m.liveOnline) });
     }
   }
 
@@ -54,7 +56,9 @@ export function weekStats(sections) {
     classes: sections.length,
     units: planUnits(sections),
     hoursInClass: minutesInClass / 60,
-    days: ALL_DAYS.filter((d) => byDay.get(d).length),
+    days: ALL_DAYS.filter((d) => byDay.get(d).length),                                       // any class, campus or online
+    campusDays: ALL_DAYS.filter((d) => byDay.get(d).some((b) => !b.liveOnline)),
+    onlineOnlyDays: ALL_DAYS.filter((d) => byDay.get(d).length && byDay.get(d).every((b) => b.liveOnline)),
     longestGap,
     totalGap,
   };

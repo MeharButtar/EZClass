@@ -508,6 +508,9 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 .sec-group { padding: var(--sp-2) var(--sp-1) 0; font-size: var(--fs-sm); font-weight: 700; color: var(--text-muted); }
 .sec-info { display: grid; min-width: 0; }
 .sec-name { font-weight: 650; font-size: var(--fs-sm); }
+/* "Class # 5834": the number students register with; one tap selects it to copy */
+.sec-cn { font-weight: 500; font-size: var(--fs-xs); color: var(--text-muted); white-space: nowrap; }
+.cn-num { font-variant-numeric: tabular-nums; user-select: all; -webkit-user-select: all; }
 .sec-title { font-size: var(--fs-sm); }
 .sec-meta { color: var(--text-muted); font-size: var(--fs-xs); overflow-wrap: anywhere; }
 .sec-clash { color: var(--danger); font-size: var(--fs-xs); font-weight: 650; }
@@ -582,6 +585,7 @@ main.page > .notice { margin: 0 0 var(--sp-4); }
 }
 .stat-num { font-size: var(--fs-2xl); font-weight: 750; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
 .stat-label { color: var(--text-muted); font-size: var(--fs-xs); }
+.stat-extra { margin-top: var(--sp-1); }
 
 /* GE blocks */
 .area-strip { display: flex; flex-wrap: wrap; gap: var(--sp-2); position: relative; }

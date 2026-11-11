@@ -73,6 +73,9 @@ function normalizeMeeting(raw) {
     building: online || isOnlineBuilding ? "" : building,
     room: online ? "" : isOnlineBuilding ? "Online" : [building, raw.room].filter(Boolean).join(" "),
     online,
+    // live online: a set day and time, but on Zoom (building "ONLINE"). It is
+    // time in class, but not a day on campus. "ONLINE / BSE" is not live online.
+    liveOnline: !online && isOnlineBuilding,
   };
 }
 
@@ -104,6 +107,7 @@ export function normalizeSection(raw) {
     sectionTitle: raw.section_title || "",
     units: Number.parseFloat(raw.units) || 0,
     sectionNumber: raw.section_number || "",
+    classNumber: /^\d+$/.test(String(raw.class_number ?? "")) ? String(raw.class_number) : "",   // "5834", or "" when unknown
     meetings,
     instructors,
     untimed: timed.length === 0,                          // not on the calendar: online only, or no schedule yet

@@ -125,11 +125,13 @@ class CoreTests(AppTestCase):
 
     def test_database_built_on_first_start(self):
         self.assertTrue(os.path.exists(CLASS_DB))
-        # Spring 2027: 2,284 sections in the sheet, plus 9 from the earlier import kept as inactive
-        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections WHERE active = 1"), 2284)
-        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections WHERE active = 0"), 9)
-        self.assertEqual(class_db_count("SELECT COUNT(*) FROM section_meetings"), 3203 + 9)   # inactive ones keep theirs
-        self.assertEqual(class_db_count("SELECT COUNT(*) FROM courses"), 779)   # 777 offered + 2 with only inactive sections
+        # Spring 2027 from the official export: 5,520 sections, plus the 2,293 of the old workbook kept as
+        # retired (their ids are never reused)
+        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections WHERE active = 1"), 5520)
+        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections WHERE active = 0"), 2293)
+        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections WHERE retired = 1"), 2293)
+        self.assertEqual(class_db_count("SELECT COUNT(*) FROM section_meetings"), 5224 + 3212)   # retired ones keep theirs
+        self.assertEqual(class_db_count("SELECT COUNT(*) FROM courses"), 2552)   # 2,394 offered + 158 with only retired sections
 
     def test_existing_database_is_never_wiped(self):
         conn = sqlite3.connect(CLASS_DB)
@@ -148,16 +150,17 @@ class CoreTests(AppTestCase):
     def test_ge_filter_and_areas(self):
         areas = self.client.get("/api/ge-areas").get_json()
         self.assertEqual(len(areas["areas"]), 14)
-        self.assertEqual(areas["total_sections"], 1275)
-        self.assertEqual(len(self.client.get("/api/sections?ge=1B").get_json()), 83)
-        self.assertEqual(len(self.client.get("/api/sections?ge=1B,5C").get_json()), 170)
-        self.assertEqual(len(self.client.get("/api/sections?ge=1B&day=W").get_json()), 65)
+        self.assertEqual(areas["total_sections"], 1273)
+        self.assertEqual(len(self.client.get("/api/sections?ge=1B").get_json()), 151)
+        self.assertEqual(len(self.client.get("/api/sections?ge=1B,5C").get_json()), 246)
+        self.assertEqual(len(self.client.get("/api/sections?ge=1B&day=W").get_json()), 76)
 
     def test_section_with_no_schedule_yet(self):
-        pa = next(s for s in self.client.get("/api/sections?subject=PA").get_json()
-                  if s["catalog_num"] == "301" and s["section_number"] == "01")
+        # ARP 745 sec 01 (class 2366): arranged, in person, no instructor listed, 1 seat
+        pa = next(s for s in self.client.get("/api/sections?subject=ARP").get_json() if s["class_number"] == "2366")
         self.assertEqual((pa["meetings"], pa["no_schedule"], pa["online_only"], pa["instructors"]), ([], True, False, []))
-        self.assertEqual([pa[k] for k in ("days", "start_time", "end_time", "building", "room_number", "seats_total")], [None] * 6)
+        self.assertEqual([pa[k] for k in ("days", "start_time", "end_time", "building", "room_number")], [None] * 5)
+        self.assertEqual(pa["seats_total"], 1)
         # a class that meets every weekday all day still doesn't conflict with it
         busy = next(s for s in self.client.get("/api/sections?subject=CS").get_json() if not s["online_only"] and s["meetings"])
         res = self.client.post("/api/schedule/check", json={"section_ids": [pa["section_id"], busy["section_id"]]})
@@ -165,16 +168,16 @@ class CoreTests(AppTestCase):
 
     def test_online_only_and_hybrid_flags(self):
         sections = self.client.get("/api/sections").get_json()
-        self.assertEqual(len(sections), 2284)
-        self.assertEqual(sum(s["online_only"] for s in sections), 411)
-        self.assertEqual(sum(s["no_schedule"] for s in sections), 108)
-        self.assertEqual(sum(1 for s in sections if not s["online_only"] and any(m["online"] for m in s["meetings"])), 151)
+        self.assertEqual(len(sections), 5520)
+        self.assertEqual(sum(s["online_only"] for s in sections), 508)
+        self.assertEqual(sum(s["no_schedule"] for s in sections), 679)
+        self.assertEqual(sum(1 for s in sections if not s["online_only"] and any(m["online"] for m in s["meetings"])), 244)
 
     def test_special_topics_section_titles(self):
         music = [s for s in self.client.get("/api/sections?subject=MUSIC").get_json() if s["catalog_num"] == "351"]
         self.assertEqual(len(music), 9)
         self.assertEqual({s["course_title"] for s in music}, {"Music and Culture"})
-        self.assertIn("Music and Culture: Hip Hop", {s["section_title"] for s in music})
+        self.assertIn("Mus&Cult: Hip Hop", {s["section_title"] for s in music})   # the official file's wording
 
     def test_security_headers(self):
         for path in ("/", "/api/health", "/js/app.js", "/api/sections/999999"):
@@ -195,7 +198,7 @@ class ConflictCheckTests(AppTestCase):
 
     def test_good_input(self):
         conn = db.get_connection()
-        sections = [dict(r) for r in conn.execute("SELECT * FROM sections ORDER BY section_id")]
+        sections = [dict(r) for r in conn.execute("SELECT * FROM sections WHERE active = 1 ORDER BY section_id")]
         conn.close()
         a, b = find_conflicts(sections)[0]
 
@@ -237,7 +240,22 @@ class ConflictCheckTests(AppTestCase):
             self.assertIn("error", data)
             self.assertEqual(data["conflicts"], [])
             self.assertIs(data["conflict_free"], False)
-        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections"), 2293)
+        self.assertEqual(class_db_count("SELECT COUNT(*) FROM sections"), 7813)
+
+    def test_retired_ids_are_never_counted(self):
+        # a plan saved before the official import still holds old section ids (now retired)
+        conn = db.get_connection()
+        old = [dict(r) for r in conn.execute("SELECT * FROM sections WHERE retired = 1 ORDER BY section_id")]
+        meetings = {}
+        for m in conn.execute("SELECT * FROM section_meetings"):
+            meetings.setdefault(m["section_id"], []).append(dict(m))
+        conn.close()
+        a, b = find_conflicts([dict(s, meetings=meetings.get(s["section_id"], [])) for s in old])[0]
+        res = self.check({"section_ids": [a["section_id"], b["section_id"]]})   # they overlapped in the old data
+        self.assertEqual(res.get_json(), {"conflicts": [], "conflict_free": True})
+        ids = ",".join(str(s["section_id"]) for s in old[:3])
+        self.assertEqual(self.client.get(f"/api/sections?ids={ids}").get_json(), [])
+        self.assertEqual(self.client.get(f"/api/sections/{old[0]['section_id']}").status_code, 404)
 
     def test_sixty_ids_is_allowed(self):
         self.assertEqual(self.check({"section_ids": list(range(1, 61))}).status_code, 200)
@@ -425,6 +443,14 @@ class SiteTests(AppTestCase):
         self.assertNotIn("/api/", body)
         with mock.patch.dict(os.environ, {"SITE_URL": "https://www.ezclass.app/"}):
             self.assertIn("<loc>https://www.ezclass.app/search.html</loc>", self.client.get("/sitemap.xml").get_data(as_text=True))
+        # reached through the old Render address, the links still name the real domain
+        old = {"headers": {"X-Forwarded-Proto": "https"}, "base_url": "http://ezclass-old.onrender.example"}
+        with mock.patch.dict(os.environ, {"SITE_URL": "https://ezclass.win"}):
+            self.assertIn("Sitemap: https://ezclass.win/sitemap.xml", self.client.get("/robots.txt", **old).get_data(as_text=True))
+            body = self.client.get("/sitemap.xml", **old).get_data(as_text=True)
+            self.assertIn("<loc>https://ezclass.win/</loc>", body)
+            self.assertIn("<loc>https://ezclass.win/support.html</loc>", body)
+            self.assertNotIn("onrender", body)
         with self.client.get("/favicon.svg") as icon:
             self.assertEqual((icon.status_code, icon.mimetype), (200, "image/svg+xml"))
         self.assertEqual(self.client.get("/favicon.ico").headers["Location"], "/favicon.svg")
