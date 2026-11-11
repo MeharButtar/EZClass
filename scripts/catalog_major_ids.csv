@@ -11,7 +11,7 @@ poid,major_id,name,degree
 12173,pa_ba,Public Administration,B.A.
 12545,ph_environmental_health_bs,"Public Health, Emphasis in Environmental Health",B.S.
 12192,social_science_ba,Social Science,B.A.
-12492,ss_credential_ba,"Social Science, in Preparation for the Single Subject Teaching Credential",B.A.
+12492,social_science_credential_ba,"Social Science, in Preparation for the Single Subject Teaching Credential",B.A.
 12193,sw_ba,Social Work,B.A.
 12200,spanish_ba,Spanish,B.A.
 11892,ais_ba,American Indian Studies,B.A.
@@ -107,7 +107,7 @@ poid,major_id,name,degree
 12066,ib_chinese_asia_ba,"International Business, Emphasis in Chinese - Asia",B.A.
 12067,ib_english_north_america_ba,"International Business, Emphasis in English - North America",B.A.
 12618,ib_european_languages_ba,"International Business, Emphasis in European Languages - North Atlantic",B.A.
-12068,ib_french_north_ba,"International Business, Emphasis in French - North America",B.A.
+12068,ib_french_north_america_ba,"International Business, Emphasis in French - North America",B.A.
 12069,ib_french_western_ba,"International Business, Emphasis in French - Western Europe",B.A.
 12070,ib_german_western_ba,"International Business, Emphasis in German - Western Europe",B.A.
 12071,ib_italian_western_ba,"International Business, Emphasis in Italian - Western Europe",B.A.
