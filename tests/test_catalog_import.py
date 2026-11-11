@@ -463,6 +463,92 @@ class PromoteTests(unittest.TestCase):
         majors, _ = self.live_files()
         self.assertEqual(next(m for m in majors if m["major_id"] == "me_bs")["status"], "coming_soon")
 
+class RuleTextTests(unittest.TestCase):
+    """Rule sentences seen on the batch 1 pages (Business and engineering), on small made-up pages."""
+    COURSE = ('<li class="acalog-course"><span><a href="#">{0}&nbsp;-&nbsp;Course {0}</a> '
+              '<strong>Units:</strong> <strong>{1}</strong>{2}</span></li>')
+    OR = '<li class="acalog-adhoc"><p>or</p></li>'
+    SEP = '<li class="acalog-adhoc"><p>&#160;</p></li>'
+    TEXT = '<li><p>{0}</p></li>'
+
+    def course(self, name, units=3, extra=""):
+        return self.COURSE.format(name, units, extra)
+
+    def page(self, *blocks):
+        body = "".join(f'<div class="acalog-core"><{tag}>{heading}</{tag}>{paras}<ul>{items}</ul></div>'
+                       for tag, heading, paras, items in blocks)
+        return importer.parse_program('<h1 id="acalog-page-title">Example, B.S.</h1>' + body)
+
+    def test_units_selected_from_list_is_a_pool_in_its_own_section(self):
+        prog = self.page(
+            ("h2", "Major", "<p>A C (2.0) average or better is required in the courses stipulated here for the "
+                            "major. 9 upper division units to include:</p>", self.course("EX 300")),
+            ("h3", "Upper Division Major Electives", "<p>6 units selected from:</p>",
+             self.course("EX 400") + self.SEP + self.course("EX 404") + self.OR + self.course("EY 405")
+             + self.SEP + self.course("EX 410")))
+        pool = [r for r in prog.rows if r["rule"] == "pool"]
+        self.assertEqual([r["_code"] for r in pool], ["EX 400", "EX 404", "EY 405", "EX 410"])
+        self.assertEqual({(r["section"], r["group_label"], r["pick_units"]) for r in pool},
+                         {("Upper Division Major Electives", "Upper Division Major Electives", "6")})
+        self.assertEqual(next(r for r in pool if r["_code"] == "EX 404")["note"], "Or EY 405")
+        self.assertEqual(next(r for r in pool if r["_code"] == "EX 400")["note"], "")   # the counter says it
+        self.assertIn(("Major", "A C (2.0) average or better is required in the courses stipulated here for the major."),
+                      prog.notes)
+        self.assertEqual(prog.units_checks[0][1:], ("9", "9", "inside"))
+
+    def test_subject_range_rule_is_an_open_row(self):
+        prog = self.page(
+            ("h2", "Major", "<p>3 upper division units to include:</p>", self.course("ACCTG 331")),
+            ("h3", "Upper Division Accountancy Electives",
+             "<p>6 units of upper division Accounting (ACCTG) courses, excluding ACCTG 325 and ACCTG 326</p>", ""),
+            ("h3", "Note", "<p>A “C” (2.0) average or better is required in the courses stipulated here.</p>", ""))
+        opened = [r for r in prog.rows if r["rule"] == "open"]
+        self.assertEqual([(r["section"], r["group_label"], r["subject"], r["num_min"], r["num_max"], r["pick_units"])
+                          for r in opened],
+                         [("Upper Division Accountancy Electives", "Any ACCTG 300-599 course", "ACCTG", "300", "599", "6")])
+        self.assertIn("excluding ACCTG 325 and ACCTG 326", opened[0]["note"])
+        self.assertTrue(any("cannot leave out ACCTG 325 and ACCTG 326" in x for x in prog.review))
+        self.assertFalse(any("'Note'" in x for x in prog.review))     # a Note block is a major note, not a rule
+
+    def test_open_rule_written_inside_a_list(self):
+        prog = self.page(("h2", "Major", "", self.course("FIN 321") + self.TEXT.format("and")
+                          + self.TEXT.format("Nine units of 300- to 500-level finance courses. Units: 9")))
+        opened = [r for r in prog.rows if r["rule"] == "open"]
+        self.assertEqual([(r["section"], r["subject"], r["num_min"], r["num_max"], r["pick_units"]) for r in opened],
+                         [("Major", "FIN", "300", "599", "9")])
+        self.assertTrue(any("read from the department name" in x for x in prog.review))
+        self.assertFalse(any("text between courses" in x for x in prog.review))
+
+    def test_select_at_least_one_is_a_pick_one_group(self):
+        prog = self.page(("h2", "Engineering Science Elective", "<p>Select at least one of the following courses:</p>",
+                          self.course("EX 240") + self.course("EX 204") + self.course("EX 350")))
+        self.assertEqual({(r["group_label"], r["rule"], r["pick_n"]) for r in prog.rows},
+                         {("Engineering Science Elective (pick 1)", "choose", "1")})
+
+    def test_grade_rules_and_footnotes(self):
+        prog = self.page(
+            ("h2", "Preparation for the Major", "<p>(7 units)</p><p>These courses cannot be taken for credit/no "
+                                                "credit (Cr/NC).</p>",
+             self.course("EX 100", 1) + self.course("EX 200", 3, " must be completed with a grade C- (1.7) or better.")
+             + self.course("EX 210", 3, " must be completed with a grade of C (2.0) or better.")),
+            ("h2", "Major", "", self.course("EX 363", 3, " *") + self.TEXT.format("*No design component.")))
+        notes = {r["_code"]: r["note"] for r in prog.rows}
+        self.assertEqual(notes, {"EX 100": "No Cr/NC", "EX 200": "Grade of C- or better, no Cr/NC",
+                                 "EX 210": "Grade of C or better, no Cr/NC", "EX 363": "No design component"})
+        self.assertEqual(prog.review, [])
+
+    def test_business_grade_paragraph(self):
+        prog = self.page(("h2", "Preparation for the Major",
+                          "<p>These prerequisite courses may not be taken Cr/NC; the minimum grade in each class is C "
+                          "(2.0). Additional progress requirements must be met before a student is admitted to the "
+                          "upper division major.</p><p>Complete with a grade of C (2.0) or better:</p>",
+                          self.course("EX 201") + self.SEP + self.course("EX 119") + self.OR
+                          + self.course("EY 201", 3, " But not both.")))
+        self.assertEqual({r["note"] for r in prog.rows}, {"Grade of C or better, no Cr/NC"})
+        self.assertTrue(any("Additional progress requirements" in text for _, text in prog.notes))
+        self.assertEqual(prog.review, [])
+
+
 
 if __name__ == "__main__":
     unittest.main()

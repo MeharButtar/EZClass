@@ -1,2 +1,14 @@
 major_id,name,degree,college,catalog_year,status
 me_bs,Mechanical Engineering,B.S.,,2026-2027,coming_soon
+ba_accounting_bs,"Business Administration, Emphasis in Accounting",B.S.,,2026-2027,coming_soon
+ba_finance_bs,"Business Administration, Emphasis in Finance",B.S.,,2026-2027,coming_soon
+ba_financial_services_bs,"Business Administration, Emphasis in Financial Services",B.S.,,2026-2027,coming_soon
+ba_information_systems_bs,"Business Administration, Emphasis in Information Systems",B.S.,,2026-2027,coming_soon
+ba_management_bs,"Business Administration, Emphasis in Management",B.S.,,2026-2027,coming_soon
+ba_marketing_bs,"Business Administration, Emphasis in Marketing",B.S.,,2026-2027,coming_soon
+ba_real_estate_bs,"Business Administration, Emphasis in Real Estate",B.S.,,2026-2027,coming_soon
+ba_management_entrepreneurship_bs,"Business Administration, Management, Specialization in Entrepreneurship",B.S.,,2026-2027,coming_soon
+ba_management_human_resource_management_bs,"Business Administration, Management, Specialization in Human Resource Management",B.S.,,2026-2027,coming_soon
+civil_engineering_bs,Civil Engineering,B.S.,,2026-2027,coming_soon
+computer_engineering_bs,Computer Engineering,B.S.,,2026-2027,coming_soon
+electrical_engineering_bs,Electrical Engineering,B.S.,,2026-2027,coming_soon
