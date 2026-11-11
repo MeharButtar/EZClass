@@ -38,6 +38,16 @@ def scratch_db(drop_majors=False):
             yield path
 
 
+MAJORS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "majors")
+
+
+def csv_rows(name):
+    """The rows of data/majors/<name>: what the loader must bring in, whatever majors are live."""
+    import csv
+    with open(os.path.join(MAJORS_DIR, name), newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
 def count(path, sql, *params):
     conn = sqlite3.connect(path)
     try:
@@ -58,8 +68,9 @@ class LoaderTests(unittest.TestCase):
         self.assertEqual(db.normalize_subject("AFRAS"), "AFRAS")
 
     def test_real_majors_loaded_on_first_start(self):
-        self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM majors"), 7)
-        self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM major_requirements"), 179)
+        self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM majors"), len(csv_rows("majors.csv")))
+        self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM major_requirements"),
+                         len(csv_rows("major_requirements.csv")))
         self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM major_requirements WHERE subject LIKE '% %'"), 0)
         # catalog numbers stay text
         self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM major_requirements WHERE catalog_num = '150L'"), 1)
@@ -100,11 +111,12 @@ class LoaderTests(unittest.TestCase):
             conn.commit()
             conn.close()
             db.ensure_database()
-            self.assertEqual(count(path, "SELECT COUNT(*) FROM majors"), 7)
+            self.assertEqual(count(path, "SELECT COUNT(*) FROM majors"), len(csv_rows("majors.csv")))
             self.assertEqual(count(path, "SELECT COUNT(*) FROM sections"), 7813)
             self.assertEqual(count(path, "SELECT COUNT(*) FROM students WHERE first_name = 'Keep'"), 1)
             db.ensure_database()   # second start: nothing doubles
-            self.assertEqual(count(path, "SELECT COUNT(*) FROM major_requirements"), 179)
+            self.assertEqual(count(path, "SELECT COUNT(*) FROM major_requirements"),
+                             len(csv_rows("major_requirements.csv")))
 
     def client_get(self, url):
         from test_smoke import app_module
@@ -127,12 +139,12 @@ class MajorsApiTests(AppTestCase):
 
     def test_list_majors(self):
         majors = self.client.get("/api/majors").get_json()
-        self.assertEqual(len(majors), 7)
+        self.assertEqual(len(majors), len(csv_rows("majors.csv")))
         self.assertEqual(set(majors[0]), {"major_id", "name", "degree", "status"})
         by_id = {m["major_id"]: m for m in majors}
         self.assertEqual(by_id["cs_bs"]["status"], "live")
-        self.assertEqual(by_id["me_bs"]["status"], "coming_soon")
-        self.assertEqual(by_id["ba_marketing_bs"]["status"], "coming_soon")
+        self.assertEqual({k: m["status"] for k, m in by_id.items()},
+                         {m["major_id"]: m["status"] for m in csv_rows("majors.csv")})
 
     def test_cs_tree(self):
         tree = self.tree("cs_bs")

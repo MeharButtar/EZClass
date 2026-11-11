@@ -732,22 +732,23 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Preparation for the Major | Required | required | 14: E E 101, E E 200, E E 210, COMPE 160, COMPE 270, COMPE 271, MATH 150, MATH 151, MATH 252, MATH 254, PHYS 195, PHYS 195L, PHYS 196, PHYS 196L |
 | Preparation for the Major | BIOL 100 or BIOL 101 (pick 1) | choose 1 | 2: BIOL 100, BIOL 101 |
 | Major | Required | required | 14: E E 300, E E 310, E E 330, E E 330L, E E 340, E E 380, E E 410, E E 420, E E 430, E E 440, E E 450, E E 491W, E E 493, COMPE 375 |
-| Professional Electives | Computer Engineering | pool, 11 units | 5: COMPE 470, COMPE 475, COMPE 560, COMPE 565, COMPE 572 |
-| Professional Electives | Electromagnetics | pool, 11 units | 2: E E 455, E E 540 |
-| Professional Electives | Power and Controls | pool, 11 units | 9: E E 480, E E 483, E E 522, E E 581, E E 584, E E 586, E E 380L, E E 420L, E E 584L |
-| Professional Electives | Electronics | pool, 11 units | 5: E E 502, E E 503, E E 530, E E 533, E E 430L |
-| Professional Electives | Communications and Digital Signal Processing | pool, 11 units | 3: E E 458, E E 558, E E 458L |
+| Professional Electives | Computer Engineering | pool, 9 units | 5: COMPE 470, COMPE 475, COMPE 560, COMPE 565, COMPE 572 |
+| Professional Electives | Electromagnetics | pool, 9 units | 2: E E 455, E E 540 |
+| Professional Electives | Power and Controls | pool, 9 units | 6: E E 480, E E 483, E E 522, E E 581, E E 584, E E 586 |
+| Professional Electives | Electronics | pool, 9 units | 4: E E 502, E E 503, E E 530, E E 533 |
+| Professional Electives | Communications and Digital Signal Processing | pool, 9 units | 2: E E 458, E E 558 |
+| Laboratory Electives | Laboratory Electives | pool, 2 units | 5: E E 380L, E E 420L, E E 584L, E E 430L, E E 458L |
 
 ### Review list
 
 - [ ] BIOL 100 or BIOL 101 (pick 1) in Preparation for the Major: the 'or' sits next to other courses with no break, so it may cover more than one course. Check the catalog page.
-- [ ] 'Professional Electives' (under Major) is a rule in words, encoded as one pool; check it. Catalog: "9 units selected from upper division electrical engineering courses with no more than 3 units from computer engineering or approved upper division courses from other departments. Electrical Engineering laboratory electives: 2 units selected from any non-required upper division electrical engineering laboratory courses. Electives courses in different areas of specialization are listed below, with lab electives listed at the end of each group."
-- [ ] 'Professional Electives': pool set to 11 units, worked out from the Major total minus its other courses.
+- [ ] 'Professional Electives': split in two as the page states: 'Professional Electives' (9 units, 19 courses) and 'Laboratory Electives' (2 units, the 5 lab courses).
+- [ ] 'Professional Electives': the app cannot count "No more than 3 units from computer engineering or approved courses from other departments"; it is the note on each course.
 
 ### Units check (advisory)
 
 - Preparation for the Major: page says 42 units, listed courses give 42: **inside**
-- Major: page says at least 51 units, listed courses give 51: **inside (elective units were worked out from this total)**
+- Major: page says at least 51 units, listed courses give 51: **inside**
 
 ### Major notes (no rows made; for a human)
 
@@ -775,11 +776,11 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - Pick-n group courses: 2 of 2 have sections
   - with sections: BIOL 100 (4), BIOL 101 (1)
 - Elective pool courses: 14 of 24 have sections
-  - with sections: COMPE 470 (1), COMPE 475 (1), COMPE 565 (1), COMPE 572 (1), E E 455 (1), E E 483 (1), E E 380L (3), E E 420L (1), E E 502 (2), E E 530 (1), E E 533 (1), E E 430L (2), E E 458 (1), E E 458L (1)
-  - no sections: COMPE 560, E E 540, E E 480, E E 522, E E 581, E E 584, E E 586, E E 584L, E E 503, E E 558
+  - with sections: COMPE 470 (1), COMPE 475 (1), COMPE 565 (1), COMPE 572 (1), E E 455 (1), E E 483 (1), E E 502 (2), E E 530 (1), E E 533 (1), E E 458 (1), E E 380L (3), E E 420L (1), E E 430L (2), E E 458L (1)
+  - no sections: COMPE 560, E E 540, E E 480, E E 522, E E 581, E E 584, E E 586, E E 503, E E 558, E E 584L
 
 ### Title differences (catalog vs class data)
 
 - E E 530: catalog "Analog Integrated Circuit Design", class data "Analog Integrated Ckt Des"
 - E E 458L: catalog "Communications and Digital Signal Processing Laboratory", class data "Communication & Dsp Lab"
-- 17 more only shortened in the class data (not a real difference): E E 101, E E 200, COMPE 160, E E 300, E E 330, E E 330L, E E 340, E E 380, E E 430, COMPE 375, COMPE 565, E E 483, E E 380L, E E 420L, E E 502, E E 430L, E E 458
+- 17 more only shortened in the class data (not a real difference): E E 101, E E 200, COMPE 160, E E 300, E E 330, E E 330L, E E 340, E E 380, E E 430, COMPE 375, COMPE 565, E E 483, E E 502, E E 458, E E 380L, E E 420L, E E 430L

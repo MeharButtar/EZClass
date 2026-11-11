@@ -415,6 +415,13 @@ class PromoteTests(unittest.TestCase):
         self.live = os.path.join(self.tmp, "majors")
         shutil.copytree(os.path.join(ROOT, "data", "majors"), self.live,
                         ignore=shutil.ignore_patterns("staging"))
+        # me_bs as the empty coming_soon placeholder it was before it was promoted (no rows, no degree)
+        majors = read_csv(os.path.join(self.live, "majors.csv"))
+        importer.write_csv_ending(os.path.join(self.live, "majors.csv"), importer.MAJOR_FIELDS, [
+            dict(m, degree="", status="coming_soon") if m["major_id"] == "me_bs" else m for m in majors])
+        rows = read_csv(os.path.join(self.live, "major_requirements.csv"))
+        importer.write_csv_ending(os.path.join(self.live, "major_requirements.csv"), importer.REQ_FIELDS,
+                                  [r for r in rows if r["major_id"] != "me_bs"])
         self.staging = os.path.join(self.tmp, "staging")
         with contextlib.redirect_stdout(io.StringIO()):
             importer.run([("me_bs.html", read_fixture("me_bs.html"), None)], self.staging,
@@ -536,6 +543,28 @@ class RuleTextTests(unittest.TestCase):
         self.assertEqual(notes, {"EX 100": "No Cr/NC", "EX 200": "Grade of C- or better, no Cr/NC",
                                  "EX 210": "Grade of C or better, no Cr/NC", "EX 363": "No design component"})
         self.assertEqual(prog.review, [])
+
+    def test_lab_electives_are_their_own_pool(self):
+        prog = self.page(
+            ("h2", "Major", "<p>A minimum of 10 upper division units to include the following courses.</p>",
+             self.course("EX 300", 2) + self.course("EX 310", 3)),
+            ("h3", "Professional Electives", "<p>3 units selected from upper division example courses with no more "
+                                             "than 3 units from other subjects or approved upper division courses "
+                                             "from other departments. Example laboratory electives: 2 units selected "
+                                             "from any non-required example laboratory courses.</p>", ""),
+            ("h4", "Area One", "", self.course("EX 480") + self.course("EX 380L", 1)),
+            ("h4", "Area Two", "", self.course("EY 502") + self.course("EX 430L", 1)))
+        pools = {(r["section"], r["group_label"], r["pick_units"], r["_code"], r["note"]) for r in prog.rows
+                 if r["rule"] == "pool"}
+        limit = "No more than 3 units from other subjects or approved courses from other departments"
+        self.assertEqual(pools, {
+            ("Professional Electives", "Area One", "3", "EX 480", limit),
+            ("Professional Electives", "Area Two", "3", "EY 502", limit),
+            ("Laboratory Electives", "Laboratory Electives", "2", "EX 380L", ""),
+            ("Laboratory Electives", "Laboratory Electives", "2", "EX 430L", ""),
+        })
+        self.assertEqual(prog.units_checks[0][1:], ("at least 10", "10", "inside"))
+        self.assertFalse(any("encoded as one pool" in x for x in prog.review))
 
     def test_business_grade_paragraph(self):
         prog = self.page(("h2", "Preparation for the Major",

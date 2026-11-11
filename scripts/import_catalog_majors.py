@@ -128,6 +128,9 @@ MAJOR_NOTE_SENTENCE = re.compile(r"average (?:of C \(2\.0\) )?or better is requi
                                  r"|additional progress requirements", re.I)
 FILLER = re.compile(r"^(?:required (?:upper division )?courses in the major|but not both|and|or)\s*[:.]?$", re.I)
 NOTE_HEADING = re.compile(r"^notes?$", re.I)
+# "... Electrical Engineering laboratory electives: 2 units selected from ..." inside an electives rule
+LAB_RULE = re.compile(r"\blaboratory electives:\s*(\d+)(?:\s*[-–]\s*(\d+))?\s+units?\b", re.I)
+LAB_SECTION = "Laboratory Electives"
 FOOTNOTE = re.compile(r"^(\*+)\s*(\S.*)$", re.S)
 # "12 units selected from:" over an h3 course list: that list is a units pool
 POOL_SENTENCE = re.compile(r"\b(?:selected|chosen)\s+from\b|\bfrom the following\b", re.I)
@@ -576,7 +579,9 @@ def map_blocks(prog, blocks):
 
     def finish_parent():
         nonlocal parent, pending_pool
-        if parent and pending_pool:
+        if parent and pending_pool and split_labs(parent, pending_pool):
+            dedupe_pool(prog, parent["heading"], pending_pool)
+        elif parent and pending_pool:
             units = parent["units"]
             if units is None:
                 units = derive_pool_units(h2_rows_for(parent["h2"]), totals.get(parent["h2"]), pending_pool)
@@ -594,6 +599,34 @@ def map_blocks(prog, blocks):
         elif parent and not pending_pool:
             prog.flag(f"'{parent['heading']}' has a rule but no course lists followed it: {parent['rule']}")
         parent, pending_pool = None, []
+
+    def split_labs(parent, rows):
+        """'9 units selected from ... courses with no more than 3 units from ... . Laboratory electives: 2 units
+        selected from ... laboratory courses.' over lists that hold both: two pools, the courses and the labs
+        (the catalog numbers ending in L), each with the units the page gives it. False when it is not that rule."""
+        lab = LAB_RULE.search(parent["rule"])
+        main = re.match(r"\s*(\d+)(?:\s*[-–]\s*(\d+))?\s+units?\b", parent["rule"])
+        labs = [r for r in rows if r["catalog_num"].endswith("L")]
+        if not (lab and main and labs and len(labs) < len(rows)):
+            return False
+        lab_units = lab.group(1) + (f"-{lab.group(2)}" if lab.group(2) else "")
+        main_units = main.group(1) + (f"-{main.group(2)}" if main.group(2) else "")
+        limit = re.search(r"\bwith\s+(no more than [^.]*)", parent["rule"])
+        limit_note = re.sub(r"\bupper division\s+", "", limit.group(1)) if limit else ""
+        limit_note = limit_note[:1].upper() + limit_note[1:]
+        rule_text = join_note([parent["rule"]])
+        for r in rows:
+            rest = r["note"][len(rule_text):].lstrip(". ") if r["note"].startswith(rule_text) else r["note"]
+            if any(r is x for x in labs):
+                r.update(section=LAB_SECTION, group_label=LAB_SECTION, pick_units=lab_units, note=rest)
+            else:
+                r.update(pick_units=main_units, note=join_note([limit_note, rest]))
+        prog.flag(f"'{parent['heading']}': split in two as the page states: '{parent['heading']}' "
+                  f"({main_units} units, {len(rows) - len(labs)} courses) and '{LAB_SECTION}' ({lab_units} units, "
+                  f"the {len(labs)} lab courses).")
+        if limit_note:
+            prog.flag(f"'{parent['heading']}': the app cannot count \"{limit_note}\"; it is the note on each course.")
+        return True
 
     def h2_rows_for(name):
         return [r for r in prog.rows if r.get("_h2") == name]
@@ -669,7 +702,7 @@ def map_blocks(prog, blocks):
                 elif len(amounts) == 1:
                     low, high = amounts[0]
                     parent["units"] = f"{low}-{high}" if high else low
-                if rule:
+                if rule and not LAB_RULE.search(rule):
                     prog.flag(f"'{b['heading']}' (under {h2}) is a rule in words, encoded as one pool; check it. "
                               f"Catalog: \"{rule}\"")
                 continue
