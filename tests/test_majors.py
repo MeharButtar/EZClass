@@ -98,6 +98,46 @@ class LoaderTests(unittest.TestCase):
             self.assertFalse(courses[1]["has_sections"])
             self.assertEqual(courses[1]["section_count"], 0)
 
+    def test_exclude_list_and_section_note_rows(self):
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as folder, scratch_db():
+            write_csv(folder, "majors.csv", "major_id,name,degree,college,catalog_year,status\n"
+                                            "test_ac,Test Accounting,B.S.,,2026-2027,live\n")
+            write_csv(folder, "major_requirements.csv",
+                      "major_id,section,group_label,rule,pick_n,pick_units,subject,catalog_num,num_min,num_max,"
+                      "exclude,title,units,note\n"
+                      "test_ac,Major,Required,required,,,ACCTG,331,,,,Intermediate,3,\n"
+                      "test_ac,Electives,,note,,,,,,,,,,Six units outside the college need approval\n"
+                      "test_ac,Electives,Any ACCTG 300-599 course,open,,6,ACCTG,,300,599,acctg 325|CIV E 160,,,"
+                      "\"6 units of ACCTG, excluding ACCTG 325\"\n")
+            db.load_majors(folder)
+            tree = self.client_get("/api/majors/test_ac/requirements").get_json()
+            electives = tree["sections"][1]
+            self.assertEqual(tree["sections"][0]["note"], None)
+            self.assertEqual(electives["note"], "Six units outside the college need approval")   # once, on the section
+            self.assertEqual([g["label"] for g in electives["groups"]], ["Any ACCTG 300-599 course"])  # no note group
+            self.assertEqual(electives["groups"][0]["open"],
+                             {"subjects": ["ACCTG"], "min": 300, "max": 599, "exclude": ["ACCTG 325", "CIVE 160"]})
+
+    def test_database_from_before_the_exclude_column_gets_majors_reloaded(self):
+        with scratch_db() as path:
+            conn = sqlite3.connect(path)
+            columns = [r[1] for r in conn.execute("PRAGMA table_info(major_requirements)") if r[1] != "exclude"]
+            conn.executescript(f"""
+                CREATE TABLE old_reqs AS SELECT {', '.join(columns)} FROM major_requirements;
+                DROP TABLE major_requirements;
+                ALTER TABLE old_reqs RENAME TO major_requirements;
+                INSERT INTO students (first_name, last_name) VALUES ('Keep', 'Me');""")
+            conn.commit()
+            conn.close()
+            self.assertTrue(db.majors_need_upgrade())
+            db.ensure_database()
+            self.assertFalse(db.majors_need_upgrade())
+            self.assertEqual(count(path, "SELECT COUNT(*) FROM major_requirements"),
+                             len(csv_rows("major_requirements.csv")))
+            self.assertEqual(count(path, "SELECT COUNT(*) FROM students WHERE first_name = 'Keep'"), 1)
+            self.assertEqual(count(path, "SELECT exclude FROM major_requirements WHERE major_id = 'ba_accounting_bs' "
+                                         "AND rule = 'open'"), "ACCTG 325|ACCTG 326")
+
     def test_missing_majors_folder_is_not_an_error(self):
         with scratch_db(drop_majors=True):
             db.load_majors(os.path.join(CLASS_DB, "no-such-folder"))
@@ -167,7 +207,7 @@ class MajorsApiTests(AppTestCase):
     def test_psychology_open_rule(self):
         group = self.group(self.tree("psych_ba"), "Any 300-500 level Psychology course")
         self.assertEqual(group["rule"], "open")
-        self.assertEqual(group["open"], {"subjects": ["PSY"], "min": 300, "max": 599})
+        self.assertEqual(group["open"], {"subjects": ["PSY"], "min": 300, "max": 599, "exclude": []})
         self.assertEqual(group["courses"], [])
         self.assertIn("31 upper division", group["note"])
 
@@ -199,6 +239,19 @@ class MajorsApiTests(AppTestCase):
         codes = {c["code"]: c for c in self.group(tree, "Required")["courses"]}
         self.assertTrue(codes["BIOL 211L"]["has_sections"])
         self.assertEqual(codes["SOC 101"]["ge_areas"], ["4"])
+
+    def test_accounting_open_rule_excludes_and_section_notes(self):
+        tree = self.tree("ba_accounting_bs")
+        group = self.group(tree, "Any ACCTG 300-599 course")
+        self.assertEqual(group["open"]["exclude"], ["ACCTG 325", "ACCTG 326"])
+        me = self.tree("me_bs")
+        electives = next(s for s in me["sections"] if s["name"] == "Professional Electives")
+        self.assertIn("at least 3 units at the 500-level", electives["note"])
+        for g in electives["groups"]:
+            self.assertIsNone(g["note"])
+            self.assertTrue(all("500-level" not in (c["note"] or "") for c in g["courses"]))
+        self.assertEqual(self.group(me, "CHEM 202 or CHEM 200 (pick 1)")["rule"], "choose")
+        self.assertEqual(self.group(self.tree("civil_engineering_bs"), "CIVE 160 or STAT 250 (pick 1)")["pick_n"], 1)
 
     def test_unknown_and_bad_major_ids(self):
         for major_id in ("no_such_major", "Bad-Id!", "x" * 41, "CS_BS"):
@@ -289,6 +342,34 @@ class MajorAnalyticsTests(AppTestCase):
 
         stats = self.client.get("/api/admin/stats", headers={"Authorization": f"Bearer {ADMIN_TOKEN}"}).get_json()
         self.assertGreaterEqual(stats["majors"]["cs_bs"], 1)
+
+class CoverageReportTests(unittest.TestCase):
+    """scripts/coverage_report.py: an open rule counts neither its excluded courses nor the major's required ones."""
+
+    def test_open_rule_leaves_out_excluded_and_required_courses(self):
+        import importlib.util
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        spec = importlib.util.spec_from_file_location("coverage_report", os.path.join(root, "scripts", "coverage_report.py"))
+        report = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(report)
+        base = {"pick_n": "", "pick_units": "", "subject": "", "catalog_num": "", "num_min": "", "num_max": "",
+                "exclude": "", "title": "", "units": "3", "note": ""}
+        rows = [
+            dict(base, major_id="t", section="Major", group_label="Required", rule="required", subject="ACCTG",
+                 catalog_num="331"),
+            dict(base, major_id="t", section="Electives", group_label="", rule="note", note="A section note"),
+            dict(base, major_id="t", section="Electives", group_label="Any ACCTG 300-599 course", rule="open",
+                 pick_units="6", subject="ACCTG", num_min="300", num_max="599", exclude="ACCTG 325|ACCTG 326"),
+        ]
+        files = {("data", "majors", "majors.csv"): [{"major_id": "t", "name": "T", "status": "live"}],
+                 ("data", "majors", "major_requirements.csv"): rows}
+        offered = {(s, n): {"units": 3, "sections": 1, "scheduled": 1}
+                   for s, n in [("ACCTG", "325"), ("ACCTG", "326"), ("ACCTG", "331"), ("ACCTG", "409")]}
+        with mock.patch.object(report, "read", lambda *path: files[path]):
+            lines, _ = report.major_report(offered)
+        text = "\n".join(lines)
+        # only ACCTG 409 counts: 325/326 are excluded and 331 is already required
+        self.assertIn("any ACCTG 300-599 needs 1 course(s) / 6 units, 1 offered (3 units)", text)
 
 
 if __name__ == "__main__":

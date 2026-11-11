@@ -175,8 +175,9 @@ row for an `open` rule). Rows show up in file order.
 | `pick_units` | `pool` and `open`: units needed, can be a range like `14-15` |
 | `subject`, `catalog_num` | The course, e.g. `CS` and `150L`. Spaces in subjects are removed (`POL S` becomes `POLS`). For `open` rules `subject` can list several codes separated by `\|`, like `ACCTG\|BA\|FIN` |
 | `num_min`, `num_max` | `open` rules: the catalog number range, e.g. 300 to 599 |
+| `exclude` | `open` rules, optional: courses that don't count, separated by `\|`, like `ACCTG 325\|ACCTG 326` |
 | `title`, `units` | Shown on the course card (`units` can be `1-4`) |
-| `note` | Shown under the group (or under the course, if the courses in a group have different notes) |
+| `note` | Shown under the group (or under the course, if the courses in a group have different notes). On a `note` row: shown once under the section heading |
 
 What each `rule` means:
 
@@ -186,7 +187,12 @@ What each `rule` means:
   of its pool groups (Computer Science's 18 elective units from areas A to D).
 - `open`: no list, a rule like "any PSY 300 to 599". The page asks
   `/api/courses?subject=PSY&min=300&max=599&has_sections=1` for the matching
-  courses that have sections this term, and shows the group's note.
+  courses that have sections this term, and shows the group's note. It leaves
+  out the row's `exclude` courses and courses the same major already requires
+  (they can't count twice), and says how many it left out.
+- `note`: no course, just the `note` text for the whole section (an electives
+  rule like "6 units may be taken outside the college"), so it isn't repeated on
+  every course row. `group_label` stays empty.
 
 Courses are matched to class data by subject plus catalog number, so the same
 course can appear in several majors, and a required course without sections in

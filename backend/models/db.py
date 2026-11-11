@@ -236,16 +236,36 @@ def load_majors(majors_dir=MAJORS_DIR):
                     _int_or_none(r.get("pick_n")), (r.get("pick_units") or "").strip() or None,
                     subject or None, (r.get("catalog_num") or "").strip().upper() or None,
                     _int_or_none(r.get("num_min")), _int_or_none(r.get("num_max")),
+                    "|".join(normalize_code(c) for c in (r.get("exclude") or "").split("|") if c.strip()) or None,
                     (r.get("title") or "").strip() or None, (r.get("units") or "").strip() or None,
                     (r.get("note") or "").strip() or None,
                 ))
     conn.executemany(
         """INSERT INTO major_requirements (major_id, section, group_label, rule, pick_n, pick_units,
-           subject, catalog_num, num_min, num_max, title, units, note)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", rows)
+           subject, catalog_num, num_min, num_max, exclude, title, units, note)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", rows)
     print(f"  major_requirements: loaded {len(rows)} rows")
     conn.commit()
     conn.close()
+
+
+def normalize_code(code):
+    """'CIV E 160' -> 'CIVE 160', 'acctg 325' -> 'ACCTG 325' (the last word is the catalog number)."""
+    parts = code.split()
+    return f"{normalize_subject(' '.join(parts[:-1]))} {parts[-1].upper()}" if len(parts) > 1 else code.strip().upper()
+
+
+def majors_need_upgrade():
+    """True if major_requirements was built before the exclude column existed."""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        try:
+            columns = [r[1] for r in conn.execute("PRAGMA table_info(major_requirements)")]
+            return bool(columns) and "exclude" not in columns
+        finally:
+            conn.close()
+    except sqlite3.Error:
+        return False
 
 
 def majors_loaded():
@@ -289,14 +309,15 @@ def ensure_database():
     app works without a manual db.py step. Never wipes a database that
     already has sections in it. Uses data/cleaned if it exists, otherwise
     data/placeholder. A database built before majors existed gets just the
-    majors tables added.
+    majors tables added; one built before the exclude column gets its majors
+    reloaded from data/majors (they come only from those CSVs).
 
     Several gunicorn workers import the app at the same moment, so the build
     happens under a file lock and we check again once we hold it: the first
     worker builds, the others wait and then see the data is there.
     """
     if (database_has_data() and (majors_loaded() or not os.path.isdir(MAJORS_DIR))
-            and not sections_need_upgrade()):
+            and not sections_need_upgrade() and not majors_need_upgrade()):
         return
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
     with open(DB_PATH + ".lock", "w") as lock:
@@ -304,7 +325,14 @@ def ensure_database():
             fcntl.flock(lock, fcntl.LOCK_EX)
         try:
             if database_has_data():
-                if not majors_loaded() and os.path.isdir(MAJORS_DIR):
+                if majors_need_upgrade() and os.path.isdir(MAJORS_DIR):
+                    print(f"Reloading majors into {DB_PATH} (new exclude column)")
+                    conn = sqlite3.connect(DB_PATH)
+                    conn.execute("DROP TABLE IF EXISTS major_requirements")
+                    conn.commit()
+                    conn.close()
+                    load_majors()
+                elif not majors_loaded() and os.path.isdir(MAJORS_DIR):
                     print(f"Adding majors to {DB_PATH}")
                     load_majors()
                 if sections_need_upgrade():

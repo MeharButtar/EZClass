@@ -19,3 +19,27 @@ export function sectionPool(section, isDone) {
   return { text: `${doneUnits} of ${section.pool_units} units`, finished: doneUnits >= need,
            ratio: need ? Math.min(doneUnits / need, 1) : 0, needUnits: need, doneUnits: Math.min(doneUnits, need) };
 }
+
+// Pick-n groups: the units of the n smallest courses (a pick of CHEM 202 (4) or
+// CHEM 200 (5) needs 4). A course with no units counts as 3.
+export function chooseNeedUnits(group) {
+  const pick = group.pick_n || 1;
+  const sizes = group.courses.map((c) => units(c.units) || 3).sort((a, b) => a - b);
+  const counted = sizes.slice(0, pick);
+  return counted.reduce((n, u) => n + u, 0) + Math.max(pick - counted.length, 0) * 3;
+}
+
+// The courses an open rule ("any ACCTG 300-599") lists: without the rule's
+// exclude list (ACCTG 325, 326) and without courses the same major already
+// requires (they can't count twice). hidden says how many were left out.
+export function openChoices(courses, exclude = [], requiredCodes = new Set()) {
+  const excluded = new Set(exclude);
+  const shown = [];
+  const hidden = { excluded: 0, required: 0 };
+  for (const c of courses) {
+    if (excluded.has(c.code)) hidden.excluded += 1;
+    else if (requiredCodes.has(c.code)) hidden.required += 1;
+    else shown.push(c);
+  }
+  return { shown, hidden };
+}

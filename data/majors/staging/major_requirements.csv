@@ -1,500 +1,506 @@
-major_id,section,group_label,rule,pick_n,pick_units,subject,catalog_num,num_min,num_max,title,units,note
-me_bs,Preparation for the Major,Required,required,,,ME,190,,,Computer-Aided Design,2,
-me_bs,Preparation for the Major,Required,required,,,ME,202,,,Computer Programming and Applications,3,
-me_bs,Preparation for the Major,Required,required,,,ME,230,,,Basics of Mechatronics,3,
-me_bs,Preparation for the Major,Required,required,,,ME,240,,,Introduction to Engineering Materials,3,
-me_bs,Preparation for the Major,Required,required,,,ME,241,,,Materials Laboratory,1,
-me_bs,Preparation for the Major,Required,required,,,AE,280,,,Methods of Analysis,3,
-me_bs,Preparation for the Major,Required,required,,,MATH,150,,,Calculus I,4,"Grade of C or better, no Cr/NC"
-me_bs,Preparation for the Major,Required,required,,,MATH,151,,,Calculus II,4,"Grade of C or better, no Cr/NC"
-me_bs,Preparation for the Major,Required,required,,,MATH,252,,,Calculus III,4,
-me_bs,Preparation for the Major,Required,required,,,PHYS,195,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
-me_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,Principles of Physics Laboratory,1,
-me_bs,Preparation for the Major,Required,required,,,PHYS,196,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
-me_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,Principles of Physics Laboratory,1,
-me_bs,Preparation for the Major,"M E 200 / A E 200 (same course, pick 1)",choose,1,,ME,200,,,Statics,3,"Cross-listed. Grade of C or better, no Cr/NC"
-me_bs,Preparation for the Major,"M E 200 / A E 200 (same course, pick 1)",choose,1,,AE,200,,,Statics,3,"Cross-listed. Grade of C or better, no Cr/NC"
-me_bs,Preparation for the Major,"M E 220 / A E 220 (same course, pick 1)",choose,1,,ME,220,,,Dynamics,3,Cross-listed
-me_bs,Preparation for the Major,"M E 220 / A E 220 (same course, pick 1)",choose,1,,AE,220,,,Dynamics,3,Cross-listed
-me_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,100,,,General Biology,3,
-me_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,101,,,World of Animals,3,
-me_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,202,,,General Chemistry for Engineers,4,"Grade of C or better, no Cr/NC"
-me_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,200,,,General Chemistry,5,"Grade of C or better, no Cr/NC"
-me_bs,Major,Required,required,,,ME,304,,,Mechanics of Materials,3,
-me_bs,Major,Required,required,,,ME,314,,,Engineering Design: Mechanical Components,3,
-me_bs,Major,Required,required,,,ME,330,,,Mechatronics Laboratory,3,
-me_bs,Major,Required,required,,,ME,340,,,Introduction to Manufacturing Engineering,3,
-me_bs,Major,Required,required,,,ME,350,,,Thermodynamics,3,
-me_bs,Major,Required,required,,,ME,360,,,Fluids Engineering,3,
-me_bs,Major,Required,required,,,ME,430,,,Automatic Control Systems,3,
-me_bs,Major,Required,required,,,ME,452,,,Principles of Heat Transfer,3,
-me_bs,Major,Required,required,,,ME,490W,,,Engineering Design: Senior Project,3,Satisfies the Graduation Writing Assessment
-me_bs,Major,Required,required,,,ME,491,,,Engineering Design: Senior Project,3,
-me_bs,Major,Required,required,,,ME,495,,,Mechanical and Thermal Systems Laboratory,2,
-me_bs,Major,Required,required,,,AE,341,,,Fluid Mechanics Laboratory,1,
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,520,,,Introduction to Mechanical Vibrations,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,530,,,Linear Control,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,532,,,Robot Modeling and Control,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,AE,535,,,Mechanics of Composite Structures,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval. Cross-listed with M E 535"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,535,,,Mechanics of Composite Structures,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval. Cross-listed with A E 535"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,540,,,Mechanics of Polymers,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,542,,,Materials Structures,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,543,,,Powder-Based Manufacturing,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,544,,,Scalable Manufacturing of Emerging Technology,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval. Also listed under Thermal Systems"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,570,,,Engineering Sensor Technology,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval. Also listed under Thermal Systems"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,580,,,Biomechanics,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,582,,,Introduction to Nanobiotechnology,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,585,,,Fundamentals of Micro-Electro-Mechanical Systems (MEMS),3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Thermal Systems,pool,,12,ME,450,,,Applications of Thermodynamics,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Thermal Systems,pool,,12,ME,552,,,"Heating, Ventilating, and Air-Conditioning",3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Thermal Systems,pool,,12,ME,554,,,Automotive Power,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Thermal Systems,pool,,12,ME,555,,,Thermal Systems Analysis and Design,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-me_bs,Professional Electives,Thermal Systems,pool,,12,ME,556,,,Solar Energy Conversion,3,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
-ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_accounting_bs,Preparation for the Major,Required,required,,,ECON,101,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_accounting_bs,Preparation for the Major,Required,required,,,ECON,102,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_accounting_bs,Preparation for the Major,Required,required,,,FIN,240,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
-ba_accounting_bs,Preparation for the Major,Required,required,,,MIS,180,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
-ba_accounting_bs,Preparation for the Major,Required,required,,,MATH,120,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
-ba_accounting_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
-ba_accounting_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
-ba_accounting_bs,Major,Required,required,,,ACCTG,331,,,Intermediate Accounting I,3,(with a grade of C (2.0) or better)
-ba_accounting_bs,Major,Required,required,,,ACCTG,332,,,Federal Income Taxation,3,(with a grade of C (2.0) or better)
-ba_accounting_bs,Major,Required,required,,,ACCTG,333,,,Accounting Information Systems,3,(with a grade of C (2.0) or better)
-ba_accounting_bs,Major,Required,required,,,ACCTG,334,,,Intermediate Accounting II,3,(with a grade of C (2.0) or better)
-ba_accounting_bs,Major,Required,required,,,ACCTG,390W,,,Reporting Techniques for Accountants,3,(with a grade of C (2.0) or better). Satisfies the Graduation Writing Assessment
-ba_accounting_bs,Major,Required,required,,,ACCTG,431,,,Auditing,3,
-ba_accounting_bs,Major,Required,required,,,ACCTG,530,,,Ethics in Accounting,3,
-ba_accounting_bs,Major,Required,required,,,ACCTG,532,,,Cost Management,3,
-ba_accounting_bs,Major,Required,required,,,BA,305,,,Career and Professional Readiness,1,
-ba_accounting_bs,Major,Required,required,,,BA,310,,,Foundations of Business in a Global Environment,1,
-ba_accounting_bs,Major,Required,required,,,BA,323,,,Fundamentals of Finance,3,
-ba_accounting_bs,Major,Required,required,,,BA,350,,,Management and Organizational Behavior,3,
-ba_accounting_bs,Major,Required,required,,,BA,360,,,Introduction to Operations and Supply Chain Management,3,
-ba_accounting_bs,Major,Required,required,,,BA,370,,,Marketing,3,
-ba_accounting_bs,Major,Required,required,,,MIS,301,,,Statistical Analysis for Business,3,
-ba_accounting_bs,Upper Division Accountancy Electives,Any ACCTG 300-599 course,open,,6,ACCTG,,300,599,,,"6 units of upper division Accounting (ACCTG) courses, excluding ACCTG 325 and ACCTG 326"
-ba_finance_bs,Preparation for the Major,Required,required,,,FIN,240,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
-ba_finance_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_finance_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_finance_bs,Preparation for the Major,Required,required,,,ECON,101,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_finance_bs,Preparation for the Major,Required,required,,,ECON,102,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_finance_bs,Preparation for the Major,Required,required,,,MIS,180,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
-ba_finance_bs,Preparation for the Major,Required,required,,,MATH,120,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
-ba_finance_bs,Preparation for the Major,Required,required,,,RWS,290,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
-ba_finance_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
-ba_finance_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
-ba_finance_bs,Major,Required,required,,,FIN,321,,,Managerial Economics,3,
-ba_finance_bs,Major,Required,required,,,FIN,325,,,Intermediate Finance,4,
-ba_finance_bs,Major,Required,required,,,FIN,327,,,Investments,3,
-ba_finance_bs,Major,Required,required,,,FIN,423,,,Financial Analysis and Management,4,
-ba_finance_bs,Major,Required,required,,,ACCTG,326,,,Intermediate Financial Accounting,3,
-ba_finance_bs,Major,Required,required,,,BA,300,,,Ethical Decision Making in Business,1,
-ba_finance_bs,Major,Required,required,,,BA,305,,,Career and Professional Readiness,1,
-ba_finance_bs,Major,Required,required,,,BA,310,,,Foundations of Business in a Global Environment,1,
-ba_finance_bs,Major,Required,required,,,BA,323,,,Fundamentals of Finance,3,
-ba_finance_bs,Major,Required,required,,,BA,350,,,Management and Organizational Behavior,3,
-ba_finance_bs,Major,Required,required,,,BA,360,,,Introduction to Operations and Supply Chain Management,3,
-ba_finance_bs,Major,Required,required,,,BA,370,,,Marketing,3,
-ba_finance_bs,Major,Any FIN 300-599 course,open,,9,FIN,,300,599,,,Nine units of 300- to 500-level finance courses
-ba_financial_services_bs,Preparation for the Major,Required,required,,,FIN,240,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
-ba_financial_services_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_financial_services_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_financial_services_bs,Preparation for the Major,Required,required,,,ECON,101,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_financial_services_bs,Preparation for the Major,Required,required,,,ECON,102,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_financial_services_bs,Preparation for the Major,Required,required,,,MIS,180,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
-ba_financial_services_bs,Preparation for the Major,Required,required,,,MATH,120,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
-ba_financial_services_bs,Preparation for the Major,Required,required,,,RWS,290,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
-ba_financial_services_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
-ba_financial_services_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
-ba_financial_services_bs,Major,Required,required,,,FIN,327,,,Investments,3,
-ba_financial_services_bs,Major,Required,required,,,FIN,331,,,Real Estate Principles,3,
-ba_financial_services_bs,Major,Required,required,,,FIN,589,,,Personal Financial Planning,3,
-ba_financial_services_bs,Major,Required,required,,,BA,300,,,Ethical Decision Making in Business,1,
-ba_financial_services_bs,Major,Required,required,,,BA,305,,,Career and Professional Readiness,1,
-ba_financial_services_bs,Major,Required,required,,,BA,310,,,Foundations of Business in a Global Environment,1,
-ba_financial_services_bs,Major,Required,required,,,BA,323,,,Fundamentals of Finance,3,
-ba_financial_services_bs,Major,Required,required,,,BA,350,,,Management and Organizational Behavior,3,
-ba_financial_services_bs,Major,Required,required,,,BA,360,,,Introduction to Operations and Supply Chain Management,3,
-ba_financial_services_bs,Major,Required,required,,,BA,370,,,Marketing,3,
-ba_financial_services_bs,Major,FIN 334 or FIN 522 (pick 1),choose,1,,FIN,334,,,Principles of Risk Management and Insurance,3,
-ba_financial_services_bs,Major,FIN 334 or FIN 522 (pick 1),choose,1,,FIN,522,,,Individual Insurance Management,3,
-ba_financial_services_bs,Major,FIN 433 or ACCTG 503 (pick 1),choose,1,,FIN,433,,,Theory of Real Property Value,3,
-ba_financial_services_bs,Major,FIN 433 or ACCTG 503 (pick 1),choose,1,,ACCTG,503,,,Federal Taxation of Individuals,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,326,,,Financial Institutions Management,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,335,,,Financial Modeling,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,336,,,Principles of Residential Property Management,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,421,,,Portfolio Management and Security Analysis,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,422,,,Property-Liability Insurance,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,427,,,Derivatives and Financial Risk Management,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,431,,,Real Estate Finance,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,435,,,Real Estate Investment Analysis,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,436,,,Residential Property Management Practices and Issues,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,585,,,Estate Planning Issues and Practice,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,590,,,Personal Financial Planning Practicum,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,ACCTG,326,,,Intermediate Financial Accounting,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,ECON,320,,,Intermediate Macroeconomic Theory,3,Or ECON 422
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,ECON,422,,,Business Cycles,3,Or ECON 320
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,ECON,490,,,Money and Banking,3,
-ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,MKTG,377,,,Selling Strategy and Practices,4,
-ba_information_systems_bs,Preparation for the Major,Required,required,,,MIS,180,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
-ba_information_systems_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_information_systems_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_information_systems_bs,Preparation for the Major,Required,required,,,ECON,101,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_information_systems_bs,Preparation for the Major,Required,required,,,ECON,102,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_information_systems_bs,Preparation for the Major,Required,required,,,FIN,240,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
-ba_information_systems_bs,Preparation for the Major,Required,required,,,MATH,120,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
-ba_information_systems_bs,Preparation for the Major,Required,required,,,RWS,290,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
-ba_information_systems_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
-ba_information_systems_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
-ba_information_systems_bs,Major,Required,required,,,MIS,301,,,Statistical Analysis for Business,3,
-ba_information_systems_bs,Major,Required,required,,,MIS,306,,,Information Systems Analysis and Design,3,
-ba_information_systems_bs,Major,Required,required,,,MIS,315,,,Business Applications Programming,3,
-ba_information_systems_bs,Major,Required,required,,,MIS,380,,,Data Management Systems,3,
-ba_information_systems_bs,Major,Required,required,,,MIS,383,,,Networks and Data Communications,3,
-ba_information_systems_bs,Major,Required,required,,,MIS,460,,,Project Management,3,
-ba_information_systems_bs,Major,Required,required,,,BA,300,,,Ethical Decision Making in Business,1,
-ba_information_systems_bs,Major,Required,required,,,BA,305,,,Career and Professional Readiness,1,
-ba_information_systems_bs,Major,Required,required,,,BA,310,,,Foundations of Business in a Global Environment,1,
-ba_information_systems_bs,Major,Required,required,,,BA,323,,,Fundamentals of Finance,3,
-ba_information_systems_bs,Major,Required,required,,,BA,350,,,Management and Organizational Behavior,3,
-ba_information_systems_bs,Major,Required,required,,,BA,360,,,Introduction to Operations and Supply Chain Management,3,
-ba_information_systems_bs,Major,Required,required,,,BA,370,,,Marketing,3,
-ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,305,,,"Business Processes, ERP, and Analytics",3,
-ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,396W,,,Reporting Techniques for Business Professionals,3,
-ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,401,,,Business Intelligence and Analytics,3,
-ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,420,,,"Cloud Services, Architecture and Security",3,
-ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,425,,,Artificial Intelligence for Business Applications,3,
-ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,429,,,Contemporary Issues in Information Systems,3,
-ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,455,,,Digital Entrepreneurship and Innovation,3,
-ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,481,,,E-Business/Web Development,3,
-ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,495,,,Management Information Systems Internship,3,
-ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,515,,,Programming for Data-Driven Applications,3,
-ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,585,,,Fundamentals of Cybersecurity Management,3,
-ba_management_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_management_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_management_bs,Preparation for the Major,Required,required,,,ECON,101,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_management_bs,Preparation for the Major,Required,required,,,ECON,102,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_management_bs,Preparation for the Major,Required,required,,,FIN,240,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
-ba_management_bs,Preparation for the Major,Required,required,,,MIS,180,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
-ba_management_bs,Preparation for the Major,Required,required,,,MATH,120,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
-ba_management_bs,Preparation for the Major,Required,required,,,RWS,290,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
-ba_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
-ba_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
-ba_management_bs,Major,Required,required,,,MGT,352,,,Human Resource Management,3,
-ba_management_bs,Major,Required,required,,,MGT,357,,,Multinational Business and Comparative Management,3,
-ba_management_bs,Major,Required,required,,,MGT,358,,,Fundamentals of Entrepreneurship,3,
-ba_management_bs,Major,Required,required,,,MGT,401,,,Management Internship,3,
-ba_management_bs,Major,Required,required,,,MGT,444,,,Business Ethics and Corporate Governance,3,
-ba_management_bs,Major,Required,required,,,MGT,475,,,Leadership in Organizations,3,
-ba_management_bs,Major,Required,required,,,BA,300,,,Ethical Decision Making in Business,1,
-ba_management_bs,Major,Required,required,,,BA,305,,,Career and Professional Readiness,1,
-ba_management_bs,Major,Required,required,,,BA,310,,,Foundations of Business in a Global Environment,1,
-ba_management_bs,Major,Required,required,,,BA,323,,,Fundamentals of Finance,3,
-ba_management_bs,Major,Required,required,,,BA,350,,,Management and Organizational Behavior,3,
-ba_management_bs,Major,Required,required,,,BA,360,,,Introduction to Operations and Supply Chain Management,3,
-ba_management_bs,Major,Required,required,,,BA,370,,,Marketing,3,
-ba_management_bs,Major,Required,required,,,MGT,405,,,Strategic Management,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,BA,404,,,Small Business Consulting,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,353,,,Creativity and Innovation,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,403,,,Global Business & Diplomacy,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,420,,,Entrepreneurial Opportunity Recognition and Evaluation,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,422,,,International Entrepreneurship,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,452,,,Family Business Management,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,455,,,Social Entrepreneurship,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,459,,,Franchise Management,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,460,,,Business Model Design and Development,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,461,,,Human Resource Selection,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,462,,,Compensation,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,463,,,Performance Management,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,464,,,Legal Issues in Managing Employees,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,466,,,International Human Resource Management,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,467,,,Diversity Issues,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,468,,,Human Resource Analytics,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,483,,,Lean Startup Applications to National Security Challenges,3,
-ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MIS,301,,,Statistical Analysis for Business,3,
-ba_marketing_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_marketing_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_marketing_bs,Preparation for the Major,Required,required,,,ECON,101,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_marketing_bs,Preparation for the Major,Required,required,,,ECON,102,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_marketing_bs,Preparation for the Major,Required,required,,,FIN,240,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
-ba_marketing_bs,Preparation for the Major,Required,required,,,MIS,180,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
-ba_marketing_bs,Preparation for the Major,Required,required,,,MATH,120,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
-ba_marketing_bs,Preparation for the Major,Required,required,,,RWS,290,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
-ba_marketing_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
-ba_marketing_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
-ba_marketing_bs,Major,Required,required,,,BA,300,,,Ethical Decision Making in Business,1,
-ba_marketing_bs,Major,Required,required,,,MIS,301,,,Statistical Analysis for Business,3,
-ba_marketing_bs,Major,Required,required,,,MKTG,305,,,Professional Development in Marketing,1,
-ba_marketing_bs,Major,Required,required,,,BA,310,,,Foundations of Business in a Global Environment,1,
-ba_marketing_bs,Major,Required,required,,,BA,323,,,Fundamentals of Finance,3,
-ba_marketing_bs,Major,Required,required,,,BA,350,,,Management and Organizational Behavior,3,
-ba_marketing_bs,Major,Required,required,,,BA,360,,,Introduction to Operations and Supply Chain Management,3,
-ba_marketing_bs,Major,Required,required,,,BA,370,,,Marketing,3,
-ba_marketing_bs,Major,Required,required,,,MKTG,371,,,Consumer Behavior,4,
-ba_marketing_bs,Major,MKTG 470 or MKTG 480 (pick 1),choose,1,,MKTG,470,,,Marketing Research,4,
-ba_marketing_bs,Major,MKTG 470 or MKTG 480 (pick 1),choose,1,,MKTG,480,,,Marketing Analytics,4,
-ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,490,,,Advanced Marketing Analytics,4,
-ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,491,,,Customer Experience Design,4,
-ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,492,,,Advanced Integrated Marketing Communications,4,
-ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,493,,,Sustainable Marketing Consulting,4,
-ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,494,,,Advanced Strategic Marketing,4,
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,306,,,Marketing and Sales Micro-internship,1,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,372,,,Retail Marketing Methods,4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,373,,,Integrated Marketing Communications,4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,376,,,Global Marketing Strategy,4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,377,,,Selling Strategy and Practices,4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,380,,,Direct Marketing Methods,4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,381,,,Introduction to Business Tools for Data Analysis and Visualization,3,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,402,,,Marketing and Sales Internship,4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,470,,,Marketing Research,4,"(6 units may be taken outside the Fowler College of Business by department chair approval). If MKTG 470 or MKTG 480 was completed to satisfy the Marketing core requirements, a different course must be needed to satisfy the 14 units of electives"
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,473,,,Sales Management,4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,474,,,Business Marketing,4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,476,,,Internet/Interactive Marketing,4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,477,,,Sustainable Marketing,4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,478,,,Marketing and Sales for Social Impact,4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,480,,,Marketing Analytics,4,"(6 units may be taken outside the Fowler College of Business by department chair approval). If MKTG 470 or MKTG 480 was completed to satisfy the Marketing core requirements, a different course must be needed to satisfy the 14 units of electives"
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,495,,,Marketing and Sales Applications,2,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,496,,,Selected Topics in Marketing,1-4,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,498,,,Investigation and Report,1-3,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,499,,,Special Study,1-3,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,BA,404,,,Small Business Consulting,3,(6 units may be taken outside the Fowler College of Business by department chair approval). Or MGT 405
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MGT,405,,,Strategic Management,3,(6 units may be taken outside the Fowler College of Business by department chair approval). Or B A 404
-ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MIS,305,,,"Business Processes, ERP, and Analytics",3,(6 units may be taken outside the Fowler College of Business by department chair approval)
-ba_real_estate_bs,Preparation for the Major,Required,required,,,FIN,240,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
-ba_real_estate_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_real_estate_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_real_estate_bs,Preparation for the Major,Required,required,,,ECON,101,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_real_estate_bs,Preparation for the Major,Required,required,,,ECON,102,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_real_estate_bs,Preparation for the Major,Required,required,,,MIS,180,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
-ba_real_estate_bs,Preparation for the Major,Required,required,,,MATH,120,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
-ba_real_estate_bs,Preparation for the Major,Required,required,,,RWS,290,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
-ba_real_estate_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
-ba_real_estate_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
-ba_real_estate_bs,Major,Required,required,,,FIN,331,,,Real Estate Principles,3,
-ba_real_estate_bs,Major,Required,required,,,FIN,333,,,Law of Real Property,3,
-ba_real_estate_bs,Major,Required,required,,,FIN,431,,,Real Estate Finance,3,
-ba_real_estate_bs,Major,Required,required,,,FIN,433,,,Theory of Real Property Value,3,
-ba_real_estate_bs,Major,Required,required,,,FIN,435,,,Real Estate Investment Analysis,3,
-ba_real_estate_bs,Major,Required,required,,,BA,300,,,Ethical Decision Making in Business,1,
-ba_real_estate_bs,Major,Required,required,,,BA,305,,,Career and Professional Readiness,1,
-ba_real_estate_bs,Major,Required,required,,,BA,310,,,Foundations of Business in a Global Environment,1,
-ba_real_estate_bs,Major,Required,required,,,BA,323,,,Fundamentals of Finance,3,
-ba_real_estate_bs,Major,Required,required,,,BA,350,,,Management and Organizational Behavior,3,
-ba_real_estate_bs,Major,Required,required,,,BA,360,,,Introduction to Operations and Supply Chain Management,3,
-ba_real_estate_bs,Major,Required,required,,,BA,370,,,Marketing,3,
-ba_real_estate_bs,Upper Division Major Electives,Any FIN 300-599 course,open,,9,FIN,,300,599,,,9 units selected from Finance (FIN) courses numbered 300-599
-ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,ECON,101,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,ECON,102,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,FIN,240,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
-ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,MIS,180,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
-ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,MATH,120,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
-ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,RWS,290,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
-ba_management_entrepreneurship_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
-ba_management_entrepreneurship_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
-ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,358,,,Fundamentals of Entrepreneurship,3,
-ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,401,,,Management Internship,3,
-ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,420,,,Entrepreneurial Opportunity Recognition and Evaluation,3,
-ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,444,,,Business Ethics and Corporate Governance,3,
-ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,460,,,Business Model Design and Development,3,
-ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,475,,,Leadership in Organizations,3,
-ba_management_entrepreneurship_bs,Major,Required,required,,,BA,300,,,Ethical Decision Making in Business,1,
-ba_management_entrepreneurship_bs,Major,Required,required,,,BA,305,,,Career and Professional Readiness,1,
-ba_management_entrepreneurship_bs,Major,Required,required,,,BA,310,,,Foundations of Business in a Global Environment,1,
-ba_management_entrepreneurship_bs,Major,Required,required,,,BA,323,,,Fundamentals of Finance,3,
-ba_management_entrepreneurship_bs,Major,Required,required,,,BA,350,,,Management and Organizational Behavior,3,
-ba_management_entrepreneurship_bs,Major,Required,required,,,BA,360,,,Introduction to Operations and Supply Chain Management,3,
-ba_management_entrepreneurship_bs,Major,Required,required,,,BA,370,,,Marketing,3,
-ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,405,,,Strategic Management,3,
-ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,353,,,Creativity and Innovation,3,
-ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,422,,,International Entrepreneurship,3,
-ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,452,,,Family Business Management,3,
-ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,455,,,Social Entrepreneurship,3,
-ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,459,,,Franchise Management,3,
-ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,470,,,Venture Launch,3,
-ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,JMS,480,,,Principles of Public Relations,3,
-ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MIS,301,,,Statistical Analysis for Business,3,
-ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
-ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,ECON,101,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,ECON,102,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
-ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,FIN,240,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
-ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,MIS,180,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
-ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,MATH,120,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
-ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,RWS,290,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
-ba_management_human_resource_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
-ba_management_human_resource_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
-ba_management_human_resource_management_bs,Major,Required,required,,,MGT,352,,,Human Resource Management,3,
-ba_management_human_resource_management_bs,Major,Required,required,,,MGT,401,,,Management Internship,3,
-ba_management_human_resource_management_bs,Major,Required,required,,,MGT,444,,,Business Ethics and Corporate Governance,3,
-ba_management_human_resource_management_bs,Major,Required,required,,,MGT,461,,,Human Resource Selection,3,
-ba_management_human_resource_management_bs,Major,Required,required,,,MGT,462,,,Compensation,3,
-ba_management_human_resource_management_bs,Major,Required,required,,,MGT,475,,,Leadership in Organizations,3,
-ba_management_human_resource_management_bs,Major,Required,required,,,BA,300,,,Ethical Decision Making in Business,1,
-ba_management_human_resource_management_bs,Major,Required,required,,,BA,305,,,Career and Professional Readiness,1,
-ba_management_human_resource_management_bs,Major,Required,required,,,BA,310,,,Foundations of Business in a Global Environment,1,
-ba_management_human_resource_management_bs,Major,Required,required,,,BA,323,,,Fundamentals of Finance,3,
-ba_management_human_resource_management_bs,Major,Required,required,,,BA,350,,,Management and Organizational Behavior,3,
-ba_management_human_resource_management_bs,Major,Required,required,,,BA,360,,,Introduction to Operations and Supply Chain Management,3,
-ba_management_human_resource_management_bs,Major,Required,required,,,BA,370,,,Marketing,3,
-ba_management_human_resource_management_bs,Major,Required,required,,,MGT,405,,,Strategic Management,3,
-ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,463,,,Performance Management,3,
-ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,464,,,Legal Issues in Managing Employees,3,
-ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,466,,,International Human Resource Management,3,
-ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,467,,,Diversity Issues,3,
-ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,468,,,Human Resource Analytics,3,
-ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MIS,301,,,Statistical Analysis for Business,3,
-civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,100,,,Introduction to Civil Engineering,1,No Cr/NC
-civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,121,,,Computer Graphics for the Built Environment,3,No Cr/NC
-civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,218,,,Surveying for Civil Engineering and Construction,3,No Cr/NC
-civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,220,,,Civil and Environmental Engineering Computer Applications,3,No Cr/NC
-civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,225,,,Mechanics for Civil Engineers,3,"Grade of C or better, no Cr/NC"
-civil_engineering_bs,Preparation for the Major,Required,required,,,AE,280,,,Methods of Analysis,3,No Cr/NC
-civil_engineering_bs,Preparation for the Major,Required,required,,,CONE,101,,,Construction and Culture,3,No Cr/NC
-civil_engineering_bs,Preparation for the Major,Required,required,,,MATH,150,,,Calculus I,4,"Grade of C or better, no Cr/NC"
-civil_engineering_bs,Preparation for the Major,Required,required,,,MATH,151,,,Calculus II,4,"Grade of C or better, no Cr/NC"
-civil_engineering_bs,Preparation for the Major,Required,required,,,MATH,252,,,Calculus III,4,No Cr/NC
-civil_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
-civil_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,Principles of Physics Laboratory,1,No Cr/NC
-civil_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
-civil_engineering_bs,Preparation for the Major,CIV E 160 or STAT 250 (pick 1),choose,1,,CIVE,160,,,Statistical Methods for the Built Environment,3,No Cr/NC
-civil_engineering_bs,Preparation for the Major,CIV E 160 or STAT 250 (pick 1),choose,1,,STAT,250,,,Statistical Principles and Practices,3,No Cr/NC
-civil_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,100,,,General Biology,3,No Cr/NC
-civil_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,101,,,World of Animals,3,No Cr/NC
-civil_engineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,202,,,General Chemistry for Engineers,4,"Grade of C or better, no Cr/NC"
-civil_engineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,200,,,General Chemistry,5,"Grade of C or better, no Cr/NC"
-civil_engineering_bs,Engineering Science Elective,Engineering Science Elective (pick 1),choose,1,,CONE,240,,,Introduction to Construction Materials,3,Select at least one of the following courses
-civil_engineering_bs,Engineering Science Elective,Engineering Science Elective (pick 1),choose,1,,EE,204,,,Principles of Electrical Engineering,3,Select at least one of the following courses
-civil_engineering_bs,Engineering Science Elective,Engineering Science Elective (pick 1),choose,1,,ME,350,,,Thermodynamics,3,Select at least one of the following courses
-civil_engineering_bs,Major,Required,required,,,CIVE,302,,,Solid Mechanics Laboratory,1,
-civil_engineering_bs,Major,Required,required,,,CIVE,321,,,Structural Analysis I,3,
-civil_engineering_bs,Major,Required,required,,,CIVE,401,,,Civil Engineering and Society,1,
-civil_engineering_bs,Major,Required,required,,,CIVE,421,,,Reinforced Concrete Design,3,
-civil_engineering_bs,Major,Required,required,,,CIVE,444,,,Applied Hydraulics,3,
-civil_engineering_bs,Major,Required,required,,,CIVE,462,,,Geotechnical Engineering,3,
-civil_engineering_bs,Major,Required,required,,,CIVE,463,,,Soil Testing Fundamentals,1,
-civil_engineering_bs,Major,Required,required,,,CIVE,481,,,Transportation Engineering,3,
-civil_engineering_bs,Major,Required,required,,,CIVE,495W,,,Capstone Design Project,3,
-civil_engineering_bs,Major,Required,required,,,AE,340,,,Fluid Mechanics,3,
-civil_engineering_bs,Major,Required,required,,,CONE,330,,,Principles of Engineering Economy,3,
-civil_engineering_bs,Major,Required,required,,,ENVE,355,,,Environmental Engineering,3,
-civil_engineering_bs,Major,CIV E 301 or M E 304 (pick 1),choose,1,,CIVE,301,,,Introduction to Solid Mechanics,3,
-civil_engineering_bs,Major,CIV E 301 or M E 304 (pick 1),choose,1,,ME,304,,,Mechanics of Materials,3,
-civil_engineering_bs,Professional Electives,Water,pool,,15,CIVE,445,,,Applied Hydrology,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Water,pool,,15,CIVE,530,,,Open Channel Hydraulics,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Transportation,pool,,15,CIVE,482,,,Highway Engineering,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Transportation,pool,,15,CIVE,580,,,Traffic Engineering Design,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Environmental,pool,,15,ENVE,363,,,Environmental Engineering Laboratory,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses. No design component
-civil_engineering_bs,Professional Electives,Environmental,pool,,15,ENVE,445,,,Water and Wastewater Treatment Systems,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Environmental,pool,,15,ENVE,556,,,Air Pollution Engineering,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Environmental,pool,,15,ENVE,558,,,Solid and Hazardous Waste Engineering,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Structural,pool,,15,CIVE,521,,,Structural Analysis II,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses. No design component
-civil_engineering_bs,Professional Electives,Structural,pool,,15,CIVE,523,,,Design of Light Framed Structures,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Structural,pool,,15,CIVE,525,,,Design of Steel Structures,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Structural,pool,,15,CIVE,528,,,Masonry Structures Design,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Geotechnical,pool,,15,CIVE,465,,,Foundation Engineering and Earth Retaining Structures,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,401,,,Construction Planning and Scheduling,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,479,,,Construction Materials,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,480,,,Design of Temporary Structures,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,520,,,Environmentally Conscious Construction,3,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
-computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,101,,,Introduction to Electrical and Computer Engineering,1,No Cr/NC
-computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,160,,,Introduction to Computer Programming,3,"Grade of C or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,260,,,Data Structures and Object-Oriented Programming in C++,3,"Grade of C- or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,270,,,Digital Systems,3,"Grade of C- or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,271,,,Computer Organization,3,"Grade of C- or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,EE,200,,,Analytical Methods for Electrical Engineers,3,"Grade of C- or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,EE,210,,,Circuit Analysis I,3,"Grade of C or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,MATH,150,,,Calculus I,4,"Grade of C or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,MATH,151,,,Calculus II,4,"Grade of C or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,MATH,245,,,Discrete Mathematics,3,"Grade of C- or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,MATH,254,,,Introduction to Linear Algebra,3,"Grade of C- or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
-computer_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,Principles of Physics Laboratory,1,No Cr/NC
-computer_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,100,,,General Biology,3,No Cr/NC
-computer_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,101,,,World of Animals,3,No Cr/NC
-computer_engineering_bs,Major,Required,required,,,COMPE,361,,,Advanced Programming,3,
-computer_engineering_bs,Major,Required,required,,,COMPE,375,,,Embedded Systems Programming,3,
-computer_engineering_bs,Major,Required,required,,,COMPE,470,,,Digital Circuits,3,
-computer_engineering_bs,Major,Required,required,,,COMPE,470L,,,Digital Logic Laboratory,1,
-computer_engineering_bs,Major,Required,required,,,COMPE,475,,,Computer Architecture,3,
-computer_engineering_bs,Major,Required,required,,,COMPE,491W,,,Senior Design Project A,3,Satisfies the Graduation Writing Assessment
-computer_engineering_bs,Major,Required,required,,,COMPE,493,,,Senior Design Project B,3,
-computer_engineering_bs,Major,Required,required,,,COMPE,560,,,Computer and Data Networks,3,
-computer_engineering_bs,Major,Required,required,,,EE,300,,,Computational and Statistical Methods for Electrical Engineers,3,
-computer_engineering_bs,Major,Required,required,,,EE,310,,,Circuit Analysis II,3,
-computer_engineering_bs,Major,Required,required,,,EE,330,,,Fundamentals of Engineering Electronics,3,
-computer_engineering_bs,Major,Required,required,,,EE,330L,,,Engineering Electronics Laboratory,1,
-computer_engineering_bs,Major,Required,required,,,EE,410,,,Signals and Systems,3,
-computer_engineering_bs,Upper Division Major Electives,Computer Networks,pool,,15,COMPE,561,,,Windows Database and Web Programming,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,Computer Networks,pool,,15,COMPE,565,,,Multimedia Communication Systems,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,Computer Networks,pool,,15,EE,458,,,Analog and Pulse Communication Systems,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,Computer Networks,pool,,15,EE,558,,,Digital Communications,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,Embedded Systems,pool,,15,COMPE,525,,,Cyber-Physical Systems,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,Embedded Systems,pool,,15,COMPE,571,,,Embedded Operating Systems,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,Embedded Systems,pool,,15,EE,420,,,Feedback Control Systems,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,Machine Learning and Scientific Computing,pool,,15,COMPE,510,,,Machine Learning for Engineers,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,Machine Learning and Scientific Computing,pool,,15,EE,450,,,Digital Signal Processing,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,Machine Learning and Scientific Computing,pool,,15,EE,533,,,Neuromorphic Computing,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,COMPE,570,,,VLSI System Design,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,COMPE,572,,,VLSI Circuit Design,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,EE,430,,,Analysis and Design of Electronic Circuits,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,EE,503,,,Biomedical Instrumentation,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,EE,530,,,Analog Integrated Circuit Design,3,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
-electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,101,,,Introduction to Electrical and Computer Engineering,1,No Cr/NC
-electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,200,,,Analytical Methods for Electrical Engineers,3,"Grade of C- or better, no Cr/NC"
-electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,210,,,Circuit Analysis I,3,"Grade of C or better, no Cr/NC"
-electrical_engineering_bs,Preparation for the Major,Required,required,,,COMPE,160,,,Introduction to Computer Programming,3,"Grade of C or better, no Cr/NC"
-electrical_engineering_bs,Preparation for the Major,Required,required,,,COMPE,270,,,Digital Systems,3,No Cr/NC
-electrical_engineering_bs,Preparation for the Major,Required,required,,,COMPE,271,,,Computer Organization,3,"Grade of C- or better, no Cr/NC"
-electrical_engineering_bs,Preparation for the Major,Required,required,,,MATH,150,,,Calculus I,4,"Grade of C or better, no Cr/NC"
-electrical_engineering_bs,Preparation for the Major,Required,required,,,MATH,151,,,Calculus II,4,"Grade of C or better, no Cr/NC"
-electrical_engineering_bs,Preparation for the Major,Required,required,,,MATH,252,,,Calculus III,4,"Grade of C- or better, no Cr/NC"
-electrical_engineering_bs,Preparation for the Major,Required,required,,,MATH,254,,,Introduction to Linear Algebra,3,"Grade of C- or better, no Cr/NC"
-electrical_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
-electrical_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,Principles of Physics Laboratory,1,No Cr/NC
-electrical_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
-electrical_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,Principles of Physics Laboratory,1,No Cr/NC
-electrical_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,100,,,General Biology,3,No Cr/NC
-electrical_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,101,,,World of Animals,3,No Cr/NC
-electrical_engineering_bs,Major,Required,required,,,EE,300,,,Computational and Statistical Methods for Electrical Engineers,3,
-electrical_engineering_bs,Major,Required,required,,,EE,310,,,Circuit Analysis II,3,
-electrical_engineering_bs,Major,Required,required,,,EE,330,,,Fundamentals of Engineering Electronics,3,
-electrical_engineering_bs,Major,Required,required,,,EE,330L,,,Engineering Electronics Laboratory,1,
-electrical_engineering_bs,Major,Required,required,,,EE,340,,,Electric and Magnetic Fields,3,
-electrical_engineering_bs,Major,Required,required,,,EE,380,,,Electrical Energy Conversion,3,
-electrical_engineering_bs,Major,Required,required,,,EE,410,,,Signals and Systems,3,
-electrical_engineering_bs,Major,Required,required,,,EE,420,,,Feedback Control Systems,3,
-electrical_engineering_bs,Major,Required,required,,,EE,430,,,Analysis and Design of Electronic Circuits,3,
-electrical_engineering_bs,Major,Required,required,,,EE,440,,,Electromagnetic Waves,3,
-electrical_engineering_bs,Major,Required,required,,,EE,450,,,Digital Signal Processing,3,
-electrical_engineering_bs,Major,Required,required,,,EE,491W,,,Senior Design A,3,Satisfies the Graduation Writing Assessment
-electrical_engineering_bs,Major,Required,required,,,EE,493,,,Senior Design Project B,3,
-electrical_engineering_bs,Major,Required,required,,,COMPE,375,,,Embedded Systems Programming,3,
-electrical_engineering_bs,Professional Electives,Computer Engineering,pool,,9,COMPE,470,,,Digital Circuits,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Computer Engineering,pool,,9,COMPE,475,,,Computer Architecture,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Computer Engineering,pool,,9,COMPE,560,,,Computer and Data Networks,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Computer Engineering,pool,,9,COMPE,565,,,Multimedia Communication Systems,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Computer Engineering,pool,,9,COMPE,572,,,VLSI Circuit Design,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Electromagnetics,pool,,9,EE,455,,,Antenna Theory and Design,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Electromagnetics,pool,,9,EE,540,,,Microwave Devices and Systems,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,480,,,Power System Analysis,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,483,,,Power Distribution Systems,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,522,,,Digital Control Systems,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,581,,,Power System Dynamics,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,584,,,Power Electronics,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,586,,,Distributed Energy Resources and Smart Grid Technologies,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Electronics,pool,,9,EE,502,,,Electronic Devices for Rehabilitation,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Electronics,pool,,9,EE,503,,,Biomedical Instrumentation,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Electronics,pool,,9,EE,530,,,Analog Integrated Circuit Design,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Electronics,pool,,9,EE,533,,,Neuromorphic Computing,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Communications and Digital Signal Processing,pool,,9,EE,458,,,Analog and Pulse Communication Systems,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Professional Electives,Communications and Digital Signal Processing,pool,,9,EE,558,,,Digital Communications,3,No more than 3 units from computer engineering or approved courses from other departments
-electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,380L,,,Electrical Energy Conversion Laboratory,1,
-electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,420L,,,Control Systems Laboratory,1,
-electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,584L,,,Power Electronics Laboratory,1,
-electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,430L,,,Electronic Circuits Laboratory,1,
-electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,458L,,,Communications and Digital Signal Processing Laboratory,1,
+major_id,section,group_label,rule,pick_n,pick_units,subject,catalog_num,num_min,num_max,exclude,title,units,note
+me_bs,Preparation for the Major,Required,required,,,ME,190,,,,Computer-Aided Design,2,
+me_bs,Preparation for the Major,Required,required,,,ME,202,,,,Computer Programming and Applications,3,
+me_bs,Preparation for the Major,Required,required,,,ME,230,,,,Basics of Mechatronics,3,
+me_bs,Preparation for the Major,Required,required,,,ME,240,,,,Introduction to Engineering Materials,3,
+me_bs,Preparation for the Major,Required,required,,,ME,241,,,,Materials Laboratory,1,
+me_bs,Preparation for the Major,Required,required,,,AE,280,,,,Methods of Analysis,3,
+me_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,"Grade of C or better, no Cr/NC"
+me_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,"Grade of C or better, no Cr/NC"
+me_bs,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,
+me_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+me_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,
+me_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+me_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,
+me_bs,Preparation for the Major,"ME 200 / AE 200 (same course, pick 1)",choose,1,,ME,200,,,,Statics,3,"Cross-listed. Grade of C or better, no Cr/NC"
+me_bs,Preparation for the Major,"ME 200 / AE 200 (same course, pick 1)",choose,1,,AE,200,,,,Statics,3,"Cross-listed. Grade of C or better, no Cr/NC"
+me_bs,Preparation for the Major,"ME 220 / AE 220 (same course, pick 1)",choose,1,,ME,220,,,,Dynamics,3,Cross-listed
+me_bs,Preparation for the Major,"ME 220 / AE 220 (same course, pick 1)",choose,1,,AE,220,,,,Dynamics,3,Cross-listed
+me_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,100,,,,General Biology,3,
+me_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,101,,,,World of Animals,3,
+me_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,202,,,,General Chemistry for Engineers,4,"Grade of C or better, no Cr/NC"
+me_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,200,,,,General Chemistry,5,"Grade of C or better, no Cr/NC"
+me_bs,Major,Required,required,,,ME,304,,,,Mechanics of Materials,3,
+me_bs,Major,Required,required,,,ME,314,,,,Engineering Design: Mechanical Components,3,
+me_bs,Major,Required,required,,,ME,330,,,,Mechatronics Laboratory,3,
+me_bs,Major,Required,required,,,ME,340,,,,Introduction to Manufacturing Engineering,3,
+me_bs,Major,Required,required,,,ME,350,,,,Thermodynamics,3,
+me_bs,Major,Required,required,,,ME,360,,,,Fluids Engineering,3,
+me_bs,Major,Required,required,,,ME,430,,,,Automatic Control Systems,3,
+me_bs,Major,Required,required,,,ME,452,,,,Principles of Heat Transfer,3,
+me_bs,Major,Required,required,,,ME,490W,,,,Engineering Design: Senior Project,3,Satisfies the Graduation Writing Assessment
+me_bs,Major,Required,required,,,ME,491,,,,Engineering Design: Senior Project,3,
+me_bs,Major,Required,required,,,ME,495,,,,Mechanical and Thermal Systems Laboratory,2,
+me_bs,Major,Required,required,,,AE,341,,,,Fluid Mechanics Laboratory,1,
+me_bs,Professional Electives,,note,,,,,,,,,,"6 units of coursework to be selected from one of either mechanical systems or thermal systems areas, with at least 3 units at the 500-level; and 6 units of additional coursework selected from any of the 400- or 500-level mechanical engineering courses listed below. Students may select professional electives from other departments, with departmental approval"
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,520,,,,Introduction to Mechanical Vibrations,3,
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,530,,,,Linear Control,3,
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,532,,,,Robot Modeling and Control,3,
+me_bs,Professional Electives,Mechanical Systems,pool,,12,AE,535,,,,Mechanics of Composite Structures,3,Cross-listed with ME 535
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,535,,,,Mechanics of Composite Structures,3,Cross-listed with AE 535
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,540,,,,Mechanics of Polymers,3,
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,542,,,,Materials Structures,3,
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,543,,,,Powder-Based Manufacturing,3,
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,544,,,,Scalable Manufacturing of Emerging Technology,3,Also listed under Thermal Systems
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,570,,,,Engineering Sensor Technology,3,Also listed under Thermal Systems
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,580,,,,Biomechanics,3,
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,582,,,,Introduction to Nanobiotechnology,3,
+me_bs,Professional Electives,Mechanical Systems,pool,,12,ME,585,,,,Fundamentals of Micro-Electro-Mechanical Systems (MEMS),3,
+me_bs,Professional Electives,Thermal Systems,pool,,12,ME,450,,,,Applications of Thermodynamics,3,
+me_bs,Professional Electives,Thermal Systems,pool,,12,ME,552,,,,"Heating, Ventilating, and Air-Conditioning",3,
+me_bs,Professional Electives,Thermal Systems,pool,,12,ME,554,,,,Automotive Power,3,
+me_bs,Professional Electives,Thermal Systems,pool,,12,ME,555,,,,Thermal Systems Analysis and Design,3,
+me_bs,Professional Electives,Thermal Systems,pool,,12,ME,556,,,,Solar Energy Conversion,3,
+ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_accounting_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_accounting_bs,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_accounting_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
+ba_accounting_bs,Preparation for the Major,Required,required,,,MIS,180,,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
+ba_accounting_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
+ba_accounting_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+ba_accounting_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_accounting_bs,Major,Required,required,,,ACCTG,331,,,,Intermediate Accounting I,3,Grade of C or better
+ba_accounting_bs,Major,Required,required,,,ACCTG,332,,,,Federal Income Taxation,3,Grade of C or better
+ba_accounting_bs,Major,Required,required,,,ACCTG,333,,,,Accounting Information Systems,3,Grade of C or better
+ba_accounting_bs,Major,Required,required,,,ACCTG,334,,,,Intermediate Accounting II,3,Grade of C or better
+ba_accounting_bs,Major,Required,required,,,ACCTG,390W,,,,Reporting Techniques for Accountants,3,Grade of C or better. Satisfies the Graduation Writing Assessment
+ba_accounting_bs,Major,Required,required,,,ACCTG,431,,,,Auditing,3,
+ba_accounting_bs,Major,Required,required,,,ACCTG,530,,,,Ethics in Accounting,3,
+ba_accounting_bs,Major,Required,required,,,ACCTG,532,,,,Cost Management,3,
+ba_accounting_bs,Major,Required,required,,,BA,305,,,,Career and Professional Readiness,1,
+ba_accounting_bs,Major,Required,required,,,BA,310,,,,Foundations of Business in a Global Environment,1,
+ba_accounting_bs,Major,Required,required,,,BA,323,,,,Fundamentals of Finance,3,
+ba_accounting_bs,Major,Required,required,,,BA,350,,,,Management and Organizational Behavior,3,
+ba_accounting_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations and Supply Chain Management,3,
+ba_accounting_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
+ba_accounting_bs,Major,Required,required,,,MIS,301,,,,Statistical Analysis for Business,3,
+ba_accounting_bs,Upper Division Accountancy Electives,Any ACCTG 300-599 course,open,,6,ACCTG,,300,599,ACCTG 325|ACCTG 326,,,"6 units of upper division Accounting (ACCTG) courses, excluding ACCTG 325 and ACCTG 326"
+ba_finance_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
+ba_finance_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_finance_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_finance_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_finance_bs,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_finance_bs,Preparation for the Major,Required,required,,,MIS,180,,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
+ba_finance_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
+ba_finance_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
+ba_finance_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+ba_finance_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_finance_bs,Major,Required,required,,,FIN,321,,,,Managerial Economics,3,
+ba_finance_bs,Major,Required,required,,,FIN,325,,,,Intermediate Finance,4,
+ba_finance_bs,Major,Required,required,,,FIN,327,,,,Investments,3,
+ba_finance_bs,Major,Required,required,,,FIN,423,,,,Financial Analysis and Management,4,
+ba_finance_bs,Major,Required,required,,,ACCTG,326,,,,Intermediate Financial Accounting,3,
+ba_finance_bs,Major,Required,required,,,BA,300,,,,Ethical Decision Making in Business,1,
+ba_finance_bs,Major,Required,required,,,BA,305,,,,Career and Professional Readiness,1,
+ba_finance_bs,Major,Required,required,,,BA,310,,,,Foundations of Business in a Global Environment,1,
+ba_finance_bs,Major,Required,required,,,BA,323,,,,Fundamentals of Finance,3,
+ba_finance_bs,Major,Required,required,,,BA,350,,,,Management and Organizational Behavior,3,
+ba_finance_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations and Supply Chain Management,3,
+ba_finance_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
+ba_finance_bs,Major,Any FIN 300-599 course,open,,9,FIN,,300,599,,,,Nine units of 300- to 500-level finance courses
+ba_financial_services_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
+ba_financial_services_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_financial_services_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_financial_services_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_financial_services_bs,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_financial_services_bs,Preparation for the Major,Required,required,,,MIS,180,,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
+ba_financial_services_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
+ba_financial_services_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
+ba_financial_services_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+ba_financial_services_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_financial_services_bs,Major,Required,required,,,FIN,327,,,,Investments,3,
+ba_financial_services_bs,Major,Required,required,,,FIN,331,,,,Real Estate Principles,3,
+ba_financial_services_bs,Major,Required,required,,,FIN,589,,,,Personal Financial Planning,3,
+ba_financial_services_bs,Major,Required,required,,,BA,300,,,,Ethical Decision Making in Business,1,
+ba_financial_services_bs,Major,Required,required,,,BA,305,,,,Career and Professional Readiness,1,
+ba_financial_services_bs,Major,Required,required,,,BA,310,,,,Foundations of Business in a Global Environment,1,
+ba_financial_services_bs,Major,Required,required,,,BA,323,,,,Fundamentals of Finance,3,
+ba_financial_services_bs,Major,Required,required,,,BA,350,,,,Management and Organizational Behavior,3,
+ba_financial_services_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations and Supply Chain Management,3,
+ba_financial_services_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
+ba_financial_services_bs,Major,FIN 334 or FIN 522 (pick 1),choose,1,,FIN,334,,,,Principles of Risk Management and Insurance,3,
+ba_financial_services_bs,Major,FIN 334 or FIN 522 (pick 1),choose,1,,FIN,522,,,,Individual Insurance Management,3,
+ba_financial_services_bs,Major,FIN 433 or ACCTG 503 (pick 1),choose,1,,FIN,433,,,,Theory of Real Property Value,3,
+ba_financial_services_bs,Major,FIN 433 or ACCTG 503 (pick 1),choose,1,,ACCTG,503,,,,Federal Taxation of Individuals,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,326,,,,Financial Institutions Management,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,335,,,,Financial Modeling,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,336,,,,Principles of Residential Property Management,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,421,,,,Portfolio Management and Security Analysis,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,422,,,,Property-Liability Insurance,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,427,,,,Derivatives and Financial Risk Management,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,431,,,,Real Estate Finance,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,435,,,,Real Estate Investment Analysis,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,436,,,,Residential Property Management Practices and Issues,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,585,,,,Estate Planning Issues and Practice,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,FIN,590,,,,Personal Financial Planning Practicum,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,ACCTG,326,,,,Intermediate Financial Accounting,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,ECON,320,,,,Intermediate Macroeconomic Theory,3,Or ECON 422
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,ECON,422,,,,Business Cycles,3,Or ECON 320
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,ECON,490,,,,Money and Banking,3,
+ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,MKTG,377,,,,Selling Strategy and Practices,4,
+ba_information_systems_bs,Preparation for the Major,Required,required,,,MIS,180,,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
+ba_information_systems_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_information_systems_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_information_systems_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_information_systems_bs,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_information_systems_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
+ba_information_systems_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
+ba_information_systems_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
+ba_information_systems_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+ba_information_systems_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_information_systems_bs,Major,Required,required,,,MIS,301,,,,Statistical Analysis for Business,3,
+ba_information_systems_bs,Major,Required,required,,,MIS,306,,,,Information Systems Analysis and Design,3,
+ba_information_systems_bs,Major,Required,required,,,MIS,315,,,,Business Applications Programming,3,
+ba_information_systems_bs,Major,Required,required,,,MIS,380,,,,Data Management Systems,3,
+ba_information_systems_bs,Major,Required,required,,,MIS,383,,,,Networks and Data Communications,3,
+ba_information_systems_bs,Major,Required,required,,,MIS,460,,,,Project Management,3,
+ba_information_systems_bs,Major,Required,required,,,BA,300,,,,Ethical Decision Making in Business,1,
+ba_information_systems_bs,Major,Required,required,,,BA,305,,,,Career and Professional Readiness,1,
+ba_information_systems_bs,Major,Required,required,,,BA,310,,,,Foundations of Business in a Global Environment,1,
+ba_information_systems_bs,Major,Required,required,,,BA,323,,,,Fundamentals of Finance,3,
+ba_information_systems_bs,Major,Required,required,,,BA,350,,,,Management and Organizational Behavior,3,
+ba_information_systems_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations and Supply Chain Management,3,
+ba_information_systems_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
+ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,305,,,,"Business Processes, ERP, and Analytics",3,
+ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,396W,,,,Reporting Techniques for Business Professionals,3,
+ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,401,,,,Business Intelligence and Analytics,3,
+ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,420,,,,"Cloud Services, Architecture and Security",3,
+ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,425,,,,Artificial Intelligence for Business Applications,3,
+ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,429,,,,Contemporary Issues in Information Systems,3,
+ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,455,,,,Digital Entrepreneurship and Innovation,3,
+ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,481,,,,E-Business/Web Development,3,
+ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,495,,,,Management Information Systems Internship,3,
+ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,515,,,,Programming for Data-Driven Applications,3,
+ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,585,,,,Fundamentals of Cybersecurity Management,3,
+ba_management_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_management_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_management_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_management_bs,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_management_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
+ba_management_bs,Preparation for the Major,Required,required,,,MIS,180,,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
+ba_management_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
+ba_management_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
+ba_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+ba_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_management_bs,Major,Required,required,,,MGT,352,,,,Human Resource Management,3,
+ba_management_bs,Major,Required,required,,,MGT,357,,,,Multinational Business and Comparative Management,3,
+ba_management_bs,Major,Required,required,,,MGT,358,,,,Fundamentals of Entrepreneurship,3,
+ba_management_bs,Major,Required,required,,,MGT,401,,,,Management Internship,3,
+ba_management_bs,Major,Required,required,,,MGT,444,,,,Business Ethics and Corporate Governance,3,
+ba_management_bs,Major,Required,required,,,MGT,475,,,,Leadership in Organizations,3,
+ba_management_bs,Major,Required,required,,,BA,300,,,,Ethical Decision Making in Business,1,
+ba_management_bs,Major,Required,required,,,BA,305,,,,Career and Professional Readiness,1,
+ba_management_bs,Major,Required,required,,,BA,310,,,,Foundations of Business in a Global Environment,1,
+ba_management_bs,Major,Required,required,,,BA,323,,,,Fundamentals of Finance,3,
+ba_management_bs,Major,Required,required,,,BA,350,,,,Management and Organizational Behavior,3,
+ba_management_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations and Supply Chain Management,3,
+ba_management_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
+ba_management_bs,Major,Required,required,,,MGT,405,,,,Strategic Management,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,BA,404,,,,Small Business Consulting,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,353,,,,Creativity and Innovation,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,403,,,,Global Business & Diplomacy,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,420,,,,Entrepreneurial Opportunity Recognition and Evaluation,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,422,,,,International Entrepreneurship,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,452,,,,Family Business Management,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,455,,,,Social Entrepreneurship,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,459,,,,Franchise Management,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,460,,,,Business Model Design and Development,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,461,,,,Human Resource Selection,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,462,,,,Compensation,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,463,,,,Performance Management,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,464,,,,Legal Issues in Managing Employees,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,466,,,,International Human Resource Management,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,467,,,,Diversity Issues,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,468,,,,Human Resource Analytics,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,483,,,,Lean Startup Applications to National Security Challenges,3,
+ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MIS,301,,,,Statistical Analysis for Business,3,
+ba_marketing_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_marketing_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_marketing_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_marketing_bs,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_marketing_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
+ba_marketing_bs,Preparation for the Major,Required,required,,,MIS,180,,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
+ba_marketing_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
+ba_marketing_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
+ba_marketing_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+ba_marketing_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_marketing_bs,Major,Required,required,,,BA,300,,,,Ethical Decision Making in Business,1,
+ba_marketing_bs,Major,Required,required,,,MIS,301,,,,Statistical Analysis for Business,3,
+ba_marketing_bs,Major,Required,required,,,MKTG,305,,,,Professional Development in Marketing,1,
+ba_marketing_bs,Major,Required,required,,,BA,310,,,,Foundations of Business in a Global Environment,1,
+ba_marketing_bs,Major,Required,required,,,BA,323,,,,Fundamentals of Finance,3,
+ba_marketing_bs,Major,Required,required,,,BA,350,,,,Management and Organizational Behavior,3,
+ba_marketing_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations and Supply Chain Management,3,
+ba_marketing_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
+ba_marketing_bs,Major,Required,required,,,MKTG,371,,,,Consumer Behavior,4,
+ba_marketing_bs,Major,MKTG 470 or MKTG 480 (pick 1),choose,1,,MKTG,470,,,,Marketing Research,4,
+ba_marketing_bs,Major,MKTG 470 or MKTG 480 (pick 1),choose,1,,MKTG,480,,,,Marketing Analytics,4,
+ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,490,,,,Advanced Marketing Analytics,4,
+ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,491,,,,Customer Experience Design,4,
+ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,492,,,,Advanced Integrated Marketing Communications,4,
+ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,493,,,,Sustainable Marketing Consulting,4,
+ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,494,,,,Advanced Strategic Marketing,4,
+ba_marketing_bs,Upper Division Major Electives,,note,,,,,,,,,,(6 units may be taken outside the Fowler College of Business by department chair approval)
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,306,,,,Marketing and Sales Micro-internship,1,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,372,,,,Retail Marketing Methods,4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,373,,,,Integrated Marketing Communications,4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,376,,,,Global Marketing Strategy,4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,377,,,,Selling Strategy and Practices,4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,380,,,,Direct Marketing Methods,4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,381,,,,Introduction to Business Tools for Data Analysis and Visualization,3,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,402,,,,Marketing and Sales Internship,4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,470,,,,Marketing Research,4,"If MKTG 470 or MKTG 480 was completed to satisfy the Marketing core requirements, a different course must be needed to satisfy the 14 units of electives"
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,473,,,,Sales Management,4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,474,,,,Business Marketing,4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,476,,,,Internet/Interactive Marketing,4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,477,,,,Sustainable Marketing,4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,478,,,,Marketing and Sales for Social Impact,4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,480,,,,Marketing Analytics,4,"If MKTG 470 or MKTG 480 was completed to satisfy the Marketing core requirements, a different course must be needed to satisfy the 14 units of electives"
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,495,,,,Marketing and Sales Applications,2,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,496,,,,Selected Topics in Marketing,1-4,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,498,,,,Investigation and Report,1-3,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,499,,,,Special Study,1-3,
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,BA,404,,,,Small Business Consulting,3,Or MGT 405
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MGT,405,,,,Strategic Management,3,Or BA 404
+ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MIS,305,,,,"Business Processes, ERP, and Analytics",3,
+ba_real_estate_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
+ba_real_estate_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_real_estate_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_real_estate_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_real_estate_bs,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_real_estate_bs,Preparation for the Major,Required,required,,,MIS,180,,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
+ba_real_estate_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
+ba_real_estate_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
+ba_real_estate_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+ba_real_estate_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_real_estate_bs,Major,Required,required,,,FIN,331,,,,Real Estate Principles,3,
+ba_real_estate_bs,Major,Required,required,,,FIN,333,,,,Law of Real Property,3,
+ba_real_estate_bs,Major,Required,required,,,FIN,431,,,,Real Estate Finance,3,
+ba_real_estate_bs,Major,Required,required,,,FIN,433,,,,Theory of Real Property Value,3,
+ba_real_estate_bs,Major,Required,required,,,FIN,435,,,,Real Estate Investment Analysis,3,
+ba_real_estate_bs,Major,Required,required,,,BA,300,,,,Ethical Decision Making in Business,1,
+ba_real_estate_bs,Major,Required,required,,,BA,305,,,,Career and Professional Readiness,1,
+ba_real_estate_bs,Major,Required,required,,,BA,310,,,,Foundations of Business in a Global Environment,1,
+ba_real_estate_bs,Major,Required,required,,,BA,323,,,,Fundamentals of Finance,3,
+ba_real_estate_bs,Major,Required,required,,,BA,350,,,,Management and Organizational Behavior,3,
+ba_real_estate_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations and Supply Chain Management,3,
+ba_real_estate_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
+ba_real_estate_bs,Upper Division Major Electives,Any FIN 300-599 course,open,,9,FIN,,300,599,,,,9 units selected from Finance (FIN) courses numbered 300-599
+ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
+ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,MIS,180,,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
+ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
+ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
+ba_management_entrepreneurship_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+ba_management_entrepreneurship_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,358,,,,Fundamentals of Entrepreneurship,3,
+ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,401,,,,Management Internship,3,
+ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,420,,,,Entrepreneurial Opportunity Recognition and Evaluation,3,
+ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,444,,,,Business Ethics and Corporate Governance,3,
+ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,460,,,,Business Model Design and Development,3,
+ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,475,,,,Leadership in Organizations,3,
+ba_management_entrepreneurship_bs,Major,Required,required,,,BA,300,,,,Ethical Decision Making in Business,1,
+ba_management_entrepreneurship_bs,Major,Required,required,,,BA,305,,,,Career and Professional Readiness,1,
+ba_management_entrepreneurship_bs,Major,Required,required,,,BA,310,,,,Foundations of Business in a Global Environment,1,
+ba_management_entrepreneurship_bs,Major,Required,required,,,BA,323,,,,Fundamentals of Finance,3,
+ba_management_entrepreneurship_bs,Major,Required,required,,,BA,350,,,,Management and Organizational Behavior,3,
+ba_management_entrepreneurship_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations and Supply Chain Management,3,
+ba_management_entrepreneurship_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
+ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,405,,,,Strategic Management,3,
+ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,353,,,,Creativity and Innovation,3,
+ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,422,,,,International Entrepreneurship,3,
+ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,452,,,,Family Business Management,3,
+ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,455,,,,Social Entrepreneurship,3,
+ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,459,,,,Franchise Management,3,
+ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,470,,,,Venture Launch,3,
+ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,JMS,480,,,,Principles of Public Relations,3,
+ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MIS,301,,,,Statistical Analysis for Business,3,
+ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
+ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
+ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,MIS,180,,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
+ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
+ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
+ba_management_human_resource_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+ba_management_human_resource_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_management_human_resource_management_bs,Major,Required,required,,,MGT,352,,,,Human Resource Management,3,
+ba_management_human_resource_management_bs,Major,Required,required,,,MGT,401,,,,Management Internship,3,
+ba_management_human_resource_management_bs,Major,Required,required,,,MGT,444,,,,Business Ethics and Corporate Governance,3,
+ba_management_human_resource_management_bs,Major,Required,required,,,MGT,461,,,,Human Resource Selection,3,
+ba_management_human_resource_management_bs,Major,Required,required,,,MGT,462,,,,Compensation,3,
+ba_management_human_resource_management_bs,Major,Required,required,,,MGT,475,,,,Leadership in Organizations,3,
+ba_management_human_resource_management_bs,Major,Required,required,,,BA,300,,,,Ethical Decision Making in Business,1,
+ba_management_human_resource_management_bs,Major,Required,required,,,BA,305,,,,Career and Professional Readiness,1,
+ba_management_human_resource_management_bs,Major,Required,required,,,BA,310,,,,Foundations of Business in a Global Environment,1,
+ba_management_human_resource_management_bs,Major,Required,required,,,BA,323,,,,Fundamentals of Finance,3,
+ba_management_human_resource_management_bs,Major,Required,required,,,BA,350,,,,Management and Organizational Behavior,3,
+ba_management_human_resource_management_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations and Supply Chain Management,3,
+ba_management_human_resource_management_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
+ba_management_human_resource_management_bs,Major,Required,required,,,MGT,405,,,,Strategic Management,3,
+ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,463,,,,Performance Management,3,
+ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,464,,,,Legal Issues in Managing Employees,3,
+ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,466,,,,International Human Resource Management,3,
+ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,467,,,,Diversity Issues,3,
+ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,468,,,,Human Resource Analytics,3,
+ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MIS,301,,,,Statistical Analysis for Business,3,
+civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,100,,,,Introduction to Civil Engineering,1,No Cr/NC
+civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,121,,,,Computer Graphics for the Built Environment,3,No Cr/NC
+civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,218,,,,Surveying for Civil Engineering and Construction,3,No Cr/NC
+civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,220,,,,Civil and Environmental Engineering Computer Applications,3,No Cr/NC
+civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,225,,,,Mechanics for Civil Engineers,3,"Grade of C or better, no Cr/NC"
+civil_engineering_bs,Preparation for the Major,Required,required,,,AE,280,,,,Methods of Analysis,3,No Cr/NC
+civil_engineering_bs,Preparation for the Major,Required,required,,,CONE,101,,,,Construction and Culture,3,No Cr/NC
+civil_engineering_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,"Grade of C or better, no Cr/NC"
+civil_engineering_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,"Grade of C or better, no Cr/NC"
+civil_engineering_bs,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,No Cr/NC
+civil_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+civil_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,No Cr/NC
+civil_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+civil_engineering_bs,Preparation for the Major,CIVE 160 or STAT 250 (pick 1),choose,1,,CIVE,160,,,,Statistical Methods for the Built Environment,3,No Cr/NC
+civil_engineering_bs,Preparation for the Major,CIVE 160 or STAT 250 (pick 1),choose,1,,STAT,250,,,,Statistical Principles and Practices,3,No Cr/NC
+civil_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,100,,,,General Biology,3,No Cr/NC
+civil_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,101,,,,World of Animals,3,No Cr/NC
+civil_engineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,202,,,,General Chemistry for Engineers,4,"Grade of C or better, no Cr/NC"
+civil_engineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,200,,,,General Chemistry,5,"Grade of C or better, no Cr/NC"
+civil_engineering_bs,Engineering Science Elective,,note,,,,,,,,,,Select at least one of the following courses
+civil_engineering_bs,Engineering Science Elective,Engineering Science Elective (pick 1),choose,1,,CONE,240,,,,Introduction to Construction Materials,3,
+civil_engineering_bs,Engineering Science Elective,Engineering Science Elective (pick 1),choose,1,,EE,204,,,,Principles of Electrical Engineering,3,
+civil_engineering_bs,Engineering Science Elective,Engineering Science Elective (pick 1),choose,1,,ME,350,,,,Thermodynamics,3,
+civil_engineering_bs,Major,Required,required,,,CIVE,302,,,,Solid Mechanics Laboratory,1,
+civil_engineering_bs,Major,Required,required,,,CIVE,321,,,,Structural Analysis I,3,
+civil_engineering_bs,Major,Required,required,,,CIVE,401,,,,Civil Engineering and Society,1,
+civil_engineering_bs,Major,Required,required,,,CIVE,421,,,,Reinforced Concrete Design,3,
+civil_engineering_bs,Major,Required,required,,,CIVE,444,,,,Applied Hydraulics,3,
+civil_engineering_bs,Major,Required,required,,,CIVE,462,,,,Geotechnical Engineering,3,
+civil_engineering_bs,Major,Required,required,,,CIVE,463,,,,Soil Testing Fundamentals,1,
+civil_engineering_bs,Major,Required,required,,,CIVE,481,,,,Transportation Engineering,3,
+civil_engineering_bs,Major,Required,required,,,CIVE,495W,,,,Capstone Design Project,3,
+civil_engineering_bs,Major,Required,required,,,AE,340,,,,Fluid Mechanics,3,
+civil_engineering_bs,Major,Required,required,,,CONE,330,,,,Principles of Engineering Economy,3,
+civil_engineering_bs,Major,Required,required,,,ENVE,355,,,,Environmental Engineering,3,
+civil_engineering_bs,Major,CIVE 301 or ME 304 (pick 1),choose,1,,CIVE,301,,,,Introduction to Solid Mechanics,3,
+civil_engineering_bs,Major,CIVE 301 or ME 304 (pick 1),choose,1,,ME,304,,,,Mechanics of Materials,3,
+civil_engineering_bs,Professional Electives,,note,,,,,,,,,,15 units of elective credit. Course choices must consist of at least one course from at least four of the six areas to include ten units of designated design courses
+civil_engineering_bs,Professional Electives,Water,pool,,15,CIVE,445,,,,Applied Hydrology,3,
+civil_engineering_bs,Professional Electives,Water,pool,,15,CIVE,530,,,,Open Channel Hydraulics,3,
+civil_engineering_bs,Professional Electives,Transportation,pool,,15,CIVE,482,,,,Highway Engineering,3,
+civil_engineering_bs,Professional Electives,Transportation,pool,,15,CIVE,580,,,,Traffic Engineering Design,3,
+civil_engineering_bs,Professional Electives,Environmental,pool,,15,ENVE,363,,,,Environmental Engineering Laboratory,3,No design component
+civil_engineering_bs,Professional Electives,Environmental,pool,,15,ENVE,445,,,,Water and Wastewater Treatment Systems,3,
+civil_engineering_bs,Professional Electives,Environmental,pool,,15,ENVE,556,,,,Air Pollution Engineering,3,
+civil_engineering_bs,Professional Electives,Environmental,pool,,15,ENVE,558,,,,Solid and Hazardous Waste Engineering,3,
+civil_engineering_bs,Professional Electives,Structural,pool,,15,CIVE,521,,,,Structural Analysis II,3,No design component
+civil_engineering_bs,Professional Electives,Structural,pool,,15,CIVE,523,,,,Design of Light Framed Structures,3,
+civil_engineering_bs,Professional Electives,Structural,pool,,15,CIVE,525,,,,Design of Steel Structures,3,
+civil_engineering_bs,Professional Electives,Structural,pool,,15,CIVE,528,,,,Masonry Structures Design,3,
+civil_engineering_bs,Professional Electives,Geotechnical,pool,,15,CIVE,465,,,,Foundation Engineering and Earth Retaining Structures,3,
+civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,401,,,,Construction Planning and Scheduling,3,
+civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,479,,,,Construction Materials,3,
+civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,480,,,,Design of Temporary Structures,3,
+civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,520,,,,Environmentally Conscious Construction,3,
+computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,101,,,,Introduction to Electrical and Computer Engineering,1,No Cr/NC
+computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,160,,,,Introduction to Computer Programming,3,"Grade of C or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,260,,,,Data Structures and Object-Oriented Programming in C++,3,"Grade of C- or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,270,,,,Digital Systems,3,"Grade of C- or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,271,,,,Computer Organization,3,"Grade of C- or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,EE,200,,,,Analytical Methods for Electrical Engineers,3,"Grade of C- or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,EE,210,,,,Circuit Analysis I,3,"Grade of C or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,"Grade of C or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,"Grade of C or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,MATH,245,,,,Discrete Mathematics,3,"Grade of C- or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,MATH,254,,,,Introduction to Linear Algebra,3,"Grade of C- or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+computer_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,No Cr/NC
+computer_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,100,,,,General Biology,3,No Cr/NC
+computer_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,101,,,,World of Animals,3,No Cr/NC
+computer_engineering_bs,Major,Required,required,,,COMPE,361,,,,Advanced Programming,3,
+computer_engineering_bs,Major,Required,required,,,COMPE,375,,,,Embedded Systems Programming,3,
+computer_engineering_bs,Major,Required,required,,,COMPE,470,,,,Digital Circuits,3,
+computer_engineering_bs,Major,Required,required,,,COMPE,470L,,,,Digital Logic Laboratory,1,
+computer_engineering_bs,Major,Required,required,,,COMPE,475,,,,Computer Architecture,3,
+computer_engineering_bs,Major,Required,required,,,COMPE,491W,,,,Senior Design Project A,3,Satisfies the Graduation Writing Assessment
+computer_engineering_bs,Major,Required,required,,,COMPE,493,,,,Senior Design Project B,3,
+computer_engineering_bs,Major,Required,required,,,COMPE,560,,,,Computer and Data Networks,3,
+computer_engineering_bs,Major,Required,required,,,EE,300,,,,Computational and Statistical Methods for Electrical Engineers,3,
+computer_engineering_bs,Major,Required,required,,,EE,310,,,,Circuit Analysis II,3,
+computer_engineering_bs,Major,Required,required,,,EE,330,,,,Fundamentals of Engineering Electronics,3,
+computer_engineering_bs,Major,Required,required,,,EE,330L,,,,Engineering Electronics Laboratory,1,
+computer_engineering_bs,Major,Required,required,,,EE,410,,,,Signals and Systems,3,
+computer_engineering_bs,Upper Division Major Electives,,note,,,,,,,,,,(15 units) Five upper division major elective courses from the following list in 4 concentration areas
+computer_engineering_bs,Upper Division Major Electives,Computer Networks,pool,,15,COMPE,561,,,,Windows Database and Web Programming,3,
+computer_engineering_bs,Upper Division Major Electives,Computer Networks,pool,,15,COMPE,565,,,,Multimedia Communication Systems,3,
+computer_engineering_bs,Upper Division Major Electives,Computer Networks,pool,,15,EE,458,,,,Analog and Pulse Communication Systems,3,
+computer_engineering_bs,Upper Division Major Electives,Computer Networks,pool,,15,EE,558,,,,Digital Communications,3,
+computer_engineering_bs,Upper Division Major Electives,Embedded Systems,pool,,15,COMPE,525,,,,Cyber-Physical Systems,3,
+computer_engineering_bs,Upper Division Major Electives,Embedded Systems,pool,,15,COMPE,571,,,,Embedded Operating Systems,3,
+computer_engineering_bs,Upper Division Major Electives,Embedded Systems,pool,,15,EE,420,,,,Feedback Control Systems,3,
+computer_engineering_bs,Upper Division Major Electives,Machine Learning and Scientific Computing,pool,,15,COMPE,510,,,,Machine Learning for Engineers,3,
+computer_engineering_bs,Upper Division Major Electives,Machine Learning and Scientific Computing,pool,,15,EE,450,,,,Digital Signal Processing,3,
+computer_engineering_bs,Upper Division Major Electives,Machine Learning and Scientific Computing,pool,,15,EE,533,,,,Neuromorphic Computing,3,
+computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,COMPE,570,,,,VLSI System Design,3,
+computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,COMPE,572,,,,VLSI Circuit Design,3,
+computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,EE,430,,,,Analysis and Design of Electronic Circuits,3,
+computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,EE,503,,,,Biomedical Instrumentation,3,
+computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,EE,530,,,,Analog Integrated Circuit Design,3,
+electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,101,,,,Introduction to Electrical and Computer Engineering,1,No Cr/NC
+electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,200,,,,Analytical Methods for Electrical Engineers,3,"Grade of C- or better, no Cr/NC"
+electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,210,,,,Circuit Analysis I,3,"Grade of C or better, no Cr/NC"
+electrical_engineering_bs,Preparation for the Major,Required,required,,,COMPE,160,,,,Introduction to Computer Programming,3,"Grade of C or better, no Cr/NC"
+electrical_engineering_bs,Preparation for the Major,Required,required,,,COMPE,270,,,,Digital Systems,3,No Cr/NC
+electrical_engineering_bs,Preparation for the Major,Required,required,,,COMPE,271,,,,Computer Organization,3,"Grade of C- or better, no Cr/NC"
+electrical_engineering_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,"Grade of C or better, no Cr/NC"
+electrical_engineering_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,"Grade of C or better, no Cr/NC"
+electrical_engineering_bs,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,"Grade of C- or better, no Cr/NC"
+electrical_engineering_bs,Preparation for the Major,Required,required,,,MATH,254,,,,Introduction to Linear Algebra,3,"Grade of C- or better, no Cr/NC"
+electrical_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+electrical_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,No Cr/NC
+electrical_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+electrical_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,No Cr/NC
+electrical_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,100,,,,General Biology,3,No Cr/NC
+electrical_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,101,,,,World of Animals,3,No Cr/NC
+electrical_engineering_bs,Major,Required,required,,,EE,300,,,,Computational and Statistical Methods for Electrical Engineers,3,
+electrical_engineering_bs,Major,Required,required,,,EE,310,,,,Circuit Analysis II,3,
+electrical_engineering_bs,Major,Required,required,,,EE,330,,,,Fundamentals of Engineering Electronics,3,
+electrical_engineering_bs,Major,Required,required,,,EE,330L,,,,Engineering Electronics Laboratory,1,
+electrical_engineering_bs,Major,Required,required,,,EE,340,,,,Electric and Magnetic Fields,3,
+electrical_engineering_bs,Major,Required,required,,,EE,380,,,,Electrical Energy Conversion,3,
+electrical_engineering_bs,Major,Required,required,,,EE,410,,,,Signals and Systems,3,
+electrical_engineering_bs,Major,Required,required,,,EE,420,,,,Feedback Control Systems,3,
+electrical_engineering_bs,Major,Required,required,,,EE,430,,,,Analysis and Design of Electronic Circuits,3,
+electrical_engineering_bs,Major,Required,required,,,EE,440,,,,Electromagnetic Waves,3,
+electrical_engineering_bs,Major,Required,required,,,EE,450,,,,Digital Signal Processing,3,
+electrical_engineering_bs,Major,Required,required,,,EE,491W,,,,Senior Design A,3,Satisfies the Graduation Writing Assessment
+electrical_engineering_bs,Major,Required,required,,,EE,493,,,,Senior Design Project B,3,
+electrical_engineering_bs,Major,Required,required,,,COMPE,375,,,,Embedded Systems Programming,3,
+electrical_engineering_bs,Professional Electives,,note,,,,,,,,,,No more than 3 units from computer engineering or approved courses from other departments
+electrical_engineering_bs,Professional Electives,Computer Engineering,pool,,9,COMPE,470,,,,Digital Circuits,3,
+electrical_engineering_bs,Professional Electives,Computer Engineering,pool,,9,COMPE,475,,,,Computer Architecture,3,
+electrical_engineering_bs,Professional Electives,Computer Engineering,pool,,9,COMPE,560,,,,Computer and Data Networks,3,
+electrical_engineering_bs,Professional Electives,Computer Engineering,pool,,9,COMPE,565,,,,Multimedia Communication Systems,3,
+electrical_engineering_bs,Professional Electives,Computer Engineering,pool,,9,COMPE,572,,,,VLSI Circuit Design,3,
+electrical_engineering_bs,Professional Electives,Electromagnetics,pool,,9,EE,455,,,,Antenna Theory and Design,3,
+electrical_engineering_bs,Professional Electives,Electromagnetics,pool,,9,EE,540,,,,Microwave Devices and Systems,3,
+electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,480,,,,Power System Analysis,3,
+electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,483,,,,Power Distribution Systems,3,
+electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,522,,,,Digital Control Systems,3,
+electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,581,,,,Power System Dynamics,3,
+electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,584,,,,Power Electronics,3,
+electrical_engineering_bs,Professional Electives,Power and Controls,pool,,9,EE,586,,,,Distributed Energy Resources and Smart Grid Technologies,3,
+electrical_engineering_bs,Professional Electives,Electronics,pool,,9,EE,502,,,,Electronic Devices for Rehabilitation,3,
+electrical_engineering_bs,Professional Electives,Electronics,pool,,9,EE,503,,,,Biomedical Instrumentation,3,
+electrical_engineering_bs,Professional Electives,Electronics,pool,,9,EE,530,,,,Analog Integrated Circuit Design,3,
+electrical_engineering_bs,Professional Electives,Electronics,pool,,9,EE,533,,,,Neuromorphic Computing,3,
+electrical_engineering_bs,Professional Electives,Communications and Digital Signal Processing,pool,,9,EE,458,,,,Analog and Pulse Communication Systems,3,
+electrical_engineering_bs,Professional Electives,Communications and Digital Signal Processing,pool,,9,EE,558,,,,Digital Communications,3,
+electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,380L,,,,Electrical Energy Conversion Laboratory,1,
+electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,420L,,,,Control Systems Laboratory,1,
+electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,584L,,,,Power Electronics Laboratory,1,
+electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,430L,,,,Electronic Circuits Laboratory,1,
+electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,458L,,,,Communications and Digital Signal Processing Laboratory,1,

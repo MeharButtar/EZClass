@@ -86,8 +86,8 @@ class MechanicalEngineeringTests(unittest.TestCase):
         picks = {label: codes(rows) for (section, label), rows in self.groups.items()
                  if section == "Preparation for the Major" and rows[0]["rule"] == "choose"}
         self.assertEqual(picks, {
-            "M E 200 / A E 200 (same course, pick 1)": ["ME 200", "AE 200"],
-            "M E 220 / A E 220 (same course, pick 1)": ["ME 220", "AE 220"],
+            "ME 200 / AE 200 (same course, pick 1)": ["ME 200", "AE 200"],
+            "ME 220 / AE 220 (same course, pick 1)": ["ME 220", "AE 220"],
             "BIOL 100 or BIOL 101 (pick 1)": ["BIOL 100", "BIOL 101"],
             "CHEM 202 or CHEM 200 (pick 1)": ["CHEM 202", "CHEM 200"],
         })
@@ -100,9 +100,9 @@ class MechanicalEngineeringTests(unittest.TestCase):
         self.assertTrue(all("Cross-listed" not in r["note"] for r in chem))
 
     def test_also_listed_as_pair(self):
-        statics = self.groups[("Preparation for the Major", "M E 200 / A E 200 (same course, pick 1)")]
+        statics = self.groups[("Preparation for the Major", "ME 200 / AE 200 (same course, pick 1)")]
         self.assertEqual({r["note"] for r in statics}, {"Cross-listed. Grade of C or better, no Cr/NC"})
-        dynamics = self.groups[("Preparation for the Major", "M E 220 / A E 220 (same course, pick 1)")]
+        dynamics = self.groups[("Preparation for the Major", "ME 220 / AE 220 (same course, pick 1)")]
         self.assertEqual({r["note"] for r in dynamics}, {"Cross-listed"})
 
     def test_grade_note_is_the_standard_text(self):
@@ -127,19 +127,28 @@ class MechanicalEngineeringTests(unittest.TestCase):
         self.assertEqual(codes(thermal), ["ME 450", "ME 552", "ME 554", "ME 555", "ME 556"])
         for r in mech + thermal:
             self.assertEqual((r["rule"], r["pick_units"]), ("pool", "12"))
-            self.assertIn("at least 3 units at the 500-level", r["note"])   # the catalog sentence is kept
-        self.assertIn("Cross-listed with M E 535", next(r for r in mech if codes([r]) == ["AE 535"])["note"])
+            self.assertNotIn("500-level", r["note"])   # the rule sentence is the section note, not on each row
+        self.assertEqual(next(r for r in mech if codes([r]) == ["AE 535"])["note"], "Cross-listed with ME 535")
         for num in ("544", "570"):
             row = next(r for r in mech if r["catalog_num"] == num)
             self.assertTrue(row["note"].endswith("Also listed under Thermal Systems"), row["note"])
-        self.assertEqual(len([r for r in self.rows if r["section"] == "Professional Electives"]), 18)
+        self.assertEqual(len([r for r in self.rows if r["section"] == "Professional Electives"
+                              and r["rule"] == "pool"]), 18)
+
+    def test_section_note_row(self):
+        notes = [r for r in self.rows if r["rule"] == "note"]
+        self.assertEqual([(r["section"], r["group_label"], r["subject"], r["catalog_num"]) for r in notes],
+                         [("Professional Electives", "", "", "")])
+        self.assertIn("at least 3 units at the 500-level", notes[0]["note"])   # the catalog sentence, once
+        first = next(i for i, r in enumerate(self.rows) if r["section"] == "Professional Electives")
+        self.assertEqual(self.rows[first]["rule"], "note")   # at the top of its section
 
     def test_professional_electives_on_review_list(self):
         review = " ".join(self.prog.review)
         self.assertIn("'Professional Electives' (under Major) is a rule in words", review)
         self.assertIn("M E 544 is listed under both 'Mechanical Systems' and 'Thermal Systems'", review)
         self.assertIn("M E 570 is listed under both", review)
-        self.assertIn("A E 535 / M E 535", review)
+        self.assertIn("AE 535 / ME 535", review)
 
     def test_units_check(self):
         checks = {h: (stated, listed, verdict) for h, stated, listed, verdict in self.prog.units_checks}
@@ -161,7 +170,7 @@ class MechanicalEngineeringTests(unittest.TestCase):
         self.assertIn("M E 490W", notes["Graduation Writing Assessment Requirement"])
 
     def test_report(self):
-        self.assertIn("| 1 | 51 | 1 |", self.report)
+        self.assertIn("| 1 | 52 | 1 |", self.report)   # 51 courses + 1 note row
         self.assertIn("### Review list", self.report)
         self.assertIn("**Impacted Program**", self.report)
         with open(os.path.join(self.out, "REPORT.md"), encoding="utf-8") as f:
@@ -514,7 +523,8 @@ class RuleTextTests(unittest.TestCase):
                           for r in opened],
                          [("Upper Division Accountancy Electives", "Any ACCTG 300-599 course", "ACCTG", "300", "599", "6")])
         self.assertIn("excluding ACCTG 325 and ACCTG 326", opened[0]["note"])
-        self.assertTrue(any("cannot leave out ACCTG 325 and ACCTG 326" in x for x in prog.review))
+        self.assertEqual(opened[0]["exclude"], "ACCTG 325|ACCTG 326")
+        self.assertTrue(any("ACCTG 325, ACCTG 326 left out" in x for x in prog.review))
         self.assertFalse(any("'Note'" in x for x in prog.review))     # a Note block is a major note, not a rule
 
     def test_open_rule_written_inside_a_list(self):
@@ -529,8 +539,31 @@ class RuleTextTests(unittest.TestCase):
     def test_select_at_least_one_is_a_pick_one_group(self):
         prog = self.page(("h2", "Engineering Science Elective", "<p>Select at least one of the following courses:</p>",
                           self.course("EX 240") + self.course("EX 204") + self.course("EX 350")))
-        self.assertEqual({(r["group_label"], r["rule"], r["pick_n"]) for r in prog.rows},
-                         {("Engineering Science Elective (pick 1)", "choose", "1")})
+        self.assertEqual([(r["group_label"], r["rule"], r["pick_n"], r["note"]) for r in prog.rows], [
+            ("", "note", "", "Select at least one of the following courses"),   # once, for the section
+            ("Engineering Science Elective (pick 1)", "choose", "1", ""),
+            ("Engineering Science Elective (pick 1)", "choose", "1", ""),
+            ("Engineering Science Elective (pick 1)", "choose", "1", ""),
+        ])
+
+    def test_pool_text_is_the_section_note(self):
+        prog = self.page(
+            ("h2", "Major", "", self.course("EX 300")),
+            ("h3", "Upper Division Major Electives", "<p>14 units selected from:</p><p>(6 units may be taken outside "
+                                                     "the college by department chair approval)</p>",
+             self.course("EX 400", 3, " *") + self.course("EX 410") + self.course("EX 420")
+             + self.TEXT.format("* If EX 400 counted for the core, pick a different course.")))
+        rows = [r for r in prog.rows if r["section"] == "Upper Division Major Electives"]
+        self.assertEqual([(r["rule"], r["note"]) for r in rows], [
+            ("note", "(6 units may be taken outside the college by department chair approval)"),
+            ("pool", "If EX 400 counted for the core, pick a different course"),   # course-specific: stays
+            ("pool", ""), ("pool", ""),
+        ])
+
+    def test_pick_labels_use_the_app_codes(self):
+        prog = self.page(("h2", "Preparation for the Major", "",
+                          self.course("CIV E 160") + self.OR + self.course("STAT 250")))
+        self.assertEqual({r["group_label"] for r in prog.rows}, {"CIVE 160 or STAT 250 (pick 1)"})
 
     def test_grade_rules_and_footnotes(self):
         prog = self.page(
@@ -557,9 +590,11 @@ class RuleTextTests(unittest.TestCase):
         pools = {(r["section"], r["group_label"], r["pick_units"], r["_code"], r["note"]) for r in prog.rows
                  if r["rule"] == "pool"}
         limit = "No more than 3 units from other subjects or approved courses from other departments"
+        self.assertEqual([(r["section"], r["note"]) for r in prog.rows if r["rule"] == "note"],
+                         [("Professional Electives", limit)])
         self.assertEqual(pools, {
-            ("Professional Electives", "Area One", "3", "EX 480", limit),
-            ("Professional Electives", "Area Two", "3", "EY 502", limit),
+            ("Professional Electives", "Area One", "3", "EX 480", ""),
+            ("Professional Electives", "Area Two", "3", "EY 502", ""),
             ("Laboratory Electives", "Laboratory Electives", "2", "EX 380L", ""),
             ("Laboratory Electives", "Laboratory Electives", "2", "EX 430L", ""),
         })

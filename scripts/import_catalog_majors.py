@@ -39,7 +39,12 @@ How a page becomes rows (decided with Mehar after the Mechanical Engineering rev
     grade note on each course. A "*" footnote is put on the courses marked "*".
   - A rule the app cannot express ("6 units from one area, at least 3 at the 500
     level") becomes one pool for the whole total, with the full catalog sentence
-    as the note, and goes on the review list. When the rule gives no single
+    as the section note, and goes on the review list.
+  - Text about a whole section (that rule sentence, "6 units may be taken outside
+    the college", "Select at least one") is one `note` row at the top of the
+    section, shown once; course rows keep only their own notes (grade, footnote,
+    cross-listing). "excluding ACCTG 325 and ACCTG 326" fills the open row's exclude.
+  - Group labels and "Or ..." notes use the app's codes (CIVE 160, not CIV E 160). When the rule gives no single
     total, pick_units is what the h2 total leaves after its other rows.
   - A course in more than one pool group of one section keeps one row (the
     first), with "Also listed under <other group>", and goes on the review list.
@@ -80,7 +85,7 @@ SECONDS_BETWEEN_REQUESTS = 1.0
 
 MAJOR_FIELDS = ["major_id", "name", "degree", "college", "catalog_year", "status"]
 REQ_FIELDS = ["major_id", "section", "group_label", "rule", "pick_n", "pick_units", "subject", "catalog_num",
-              "num_min", "num_max", "title", "units", "note"]
+              "num_min", "num_max", "exclude", "title", "units", "note"]
 
 # the 7 majors the app already has, by catalog program id (poid); these ids never change
 KNOWN_IDS = {
@@ -123,7 +128,7 @@ TOTAL_SENTENCE = re.compile(r"^(?:a\s+)?(minimum of\s+)?(\d+)(?:\s*[-–]\s*(\d+
 NO_CRNC = re.compile(r"(?:cannot|may not) be taken (?:for )?(?:credit/\s*no credit\s*)?\(?Cr/NC\)?", re.I)
 BLOCK_GRADE = re.compile(r"minimum grade in each class is (C-?)(?![\w-])|^complete with a grade of (C-?) \(\d\.\d\) or better:?$",
                          re.I)
-COURSE_GRADE = re.compile(r"^must be completed with a grade (?:of )?(C-?) \(\d\.\d\) or better\.?$", re.I)
+COURSE_GRADE = re.compile(r"^\(?(?:must be completed )?with a grade (?:of )?(C-?) \(\d\.\d\) or better\)?\.?$", re.I)
 MAJOR_NOTE_SENTENCE = re.compile(r"average (?:of C \(2\.0\) )?or better is required|grade point average of C"
                                  r"|additional progress requirements", re.I)
 FILLER = re.compile(r"^(?:required (?:upper division )?courses in the major|but not both|and|or)\s*[:.]?$", re.I)
@@ -412,8 +417,10 @@ def parse_open(text):
     a, b = amounts[0]
     units = str(number(a)) + (f"-{b}" if b else "")
     excluded = re.search(r"\bexcluding\s+(.+?)\.?$", text)
+    codes = [f"{subject_key(a)} {b}" for a, b in
+             re.findall(r"\b([A-Z][A-Z ]*?[A-Z])\s+(\d{1,3}[A-Z]{0,3})\b", excluded.group(1))] if excluded else []
     return {"units": units, "subjects": subjects, "min": low, "max": high, "guessed": guessed,
-            "excluded": excluded.group(1) if excluded else ""}
+            "excluded": excluded.group(1) if excluded else "", "exclude": codes}
 
 
 def course_note(course, gwar_codes, footnotes=None, crnc=False, grade=""):
@@ -476,8 +483,13 @@ def chains(items):
     return out
 
 
+def app_code(course):
+    """The code the app shows: 'CIV E 160' -> 'CIVE 160' (subjects lose their spaces)."""
+    return f"{subject_key(course['subject'])} {course['catalog_num']}"
+
+
 def chain_label(courses, joiners):
-    names = [code(c["subject"], c["catalog_num"]) for c in courses]
+    names = [app_code(c) for c in courses]
     if set(joiners) == {"also"}:
         return " / ".join(names) + " (same course, pick 1)"
     if set(joiners) == {"or"}:
@@ -500,7 +512,13 @@ class Program:
         self.review = []         # sentences for a human
         self.units_checks = []   # (heading, stated text, listed text, verdict)
         self.derived = set()     # h2 headings whose pool units were worked out from the h2 total
+        self.section_notes = collections.OrderedDict()   # section -> texts shown once under its heading
         self.special = False
+
+    def section_note(self, section, text):
+        text = join_note([text])
+        if text and text not in self.section_notes.get(section, []):
+            self.section_notes.setdefault(section, []).append(text)
 
     def flag(self, text):
         if text not in self.review:
@@ -582,6 +600,8 @@ def map_blocks(prog, blocks):
         if parent and pending_pool and split_labs(parent, pending_pool):
             dedupe_pool(prog, parent["heading"], pending_pool)
         elif parent and pending_pool:
+            if parent["rule"]:
+                prog.section_note(parent["heading"], parent["rule"])
             units = parent["units"]
             if units is None:
                 units = derive_pool_units(h2_rows_for(parent["h2"]), totals.get(parent["h2"]), pending_pool)
@@ -614,18 +634,18 @@ def map_blocks(prog, blocks):
         limit = re.search(r"\bwith\s+(no more than [^.]*)", parent["rule"])
         limit_note = re.sub(r"\bupper division\s+", "", limit.group(1)) if limit else ""
         limit_note = limit_note[:1].upper() + limit_note[1:]
-        rule_text = join_note([parent["rule"]])
         for r in rows:
-            rest = r["note"][len(rule_text):].lstrip(". ") if r["note"].startswith(rule_text) else r["note"]
             if any(r is x for x in labs):
-                r.update(section=LAB_SECTION, group_label=LAB_SECTION, pick_units=lab_units, note=rest)
+                r.update(section=LAB_SECTION, group_label=LAB_SECTION, pick_units=lab_units)
             else:
-                r.update(pick_units=main_units, note=join_note([limit_note, rest]))
+                r.update(pick_units=main_units)
+        if limit_note:
+            prog.section_note(parent["heading"], limit_note)
         prog.flag(f"'{parent['heading']}': split in two as the page states: '{parent['heading']}' "
                   f"({main_units} units, {len(rows) - len(labs)} courses) and '{LAB_SECTION}' ({lab_units} units, "
                   f"the {len(labs)} lab courses).")
         if limit_note:
-            prog.flag(f"'{parent['heading']}': the app cannot count \"{limit_note}\"; it is the note on each course.")
+            prog.flag(f"'{parent['heading']}': the app cannot count \"{limit_note}\"; it is the section note.")
         return True
 
     def h2_rows_for(name):
@@ -637,17 +657,19 @@ def map_blocks(prog, blocks):
         prog.rows.append({
             "major_id": "", "section": section, "group_label": label, "rule": "open", "pick_n": "",
             "pick_units": rule["units"], "subject": subjects, "catalog_num": "", "num_min": str(rule["min"]),
-            "num_max": str(rule["max"]), "title": "", "units": "", "note": join_note([sentence]),
-            "_h2": h2, "_code": label,
+            "num_max": str(rule["max"]), "exclude": "|".join(rule["exclude"]), "title": "", "units": "",
+            "note": join_note([sentence]), "_h2": h2, "_code": label,
         })
         prog.flag(f"'{label}' in {section}: \"{sentence}\" encoded as an open rule ({subjects} "
                   f"{rule['min']}-{rule['max']}, {rule['units']} units); check it.")
         if rule["guessed"]:
             prog.flag(f"'{label}': the page names no subject code; {subjects} was read from the department "
                       f"name. Check it.")
-        if rule["excluded"]:
-            prog.flag(f"'{label}': the app cannot leave out {rule['excluded']}; they still show as choices "
-                      f"(the exclusion is in the note).")
+        if rule["excluded"] and rule["exclude"]:
+            prog.flag(f"'{label}': {', '.join(rule['exclude'])} left out of its list (exclude column), from "
+                      f"\"excluding {rule['excluded']}\".")
+        elif rule["excluded"]:
+            prog.flag(f"'{label}': \"excluding {rule['excluded']}\" names no course codes; nothing excluded, check it.")
 
     for b in blocks:
         courses = [v for k, v in b["items"] if k == "course"]
@@ -764,7 +786,9 @@ def map_blocks(prog, blocks):
                 elif not FILLER.match(sent):
                     block_note.append(sent)
                     prog.flag(f"'{label}' in {section}: text between courses that was not read as a rule: \"{sent}\"")
-        if rule_paras and not in_pool:
+        if rule_paras and not in_pool and pool_units:
+            prog.flag(f"'{label}': rule text kept as the section note, check it: \"{' '.join(rule_paras)}\"")
+        elif rule_paras and not in_pool:
             prog.flag(f"'{label}' in {section}: rule text kept as the note, check the group: \"{' '.join(rule_paras)}\"")
 
         def note_for(course, before=()):
@@ -790,7 +814,7 @@ def map_blocks(prog, blocks):
                     made.append(row(chain[0], "pool", label, note_for(chain[0], note)))
                     continue
                 for course in chain:
-                    others = [code(c["subject"], c["catalog_num"]) for c in chain if c is not course]
+                    others = [app_code(c) for c in chain if c is not course]
                     tie = f"{CROSS_NOTE} with {', '.join(others)}" if set(joiners) == {"also"} else f"Or {', '.join(others)}"
                     made.append(row(course, "pool", label, note_for(course, note + [tie])))
                 prog.flag(f"{chain_label(chain, joiners)} in the '{label}' pool: kept as pool rows with a note "
@@ -798,10 +822,12 @@ def map_blocks(prog, blocks):
             return made
 
         if in_pool:
-            pending_pool.extend(pool_rows(([parent["rule"]] if parent["rule"] else []) + block_note))
+            pending_pool.extend(pool_rows(block_note))
         elif pool_units:
             section = label        # an electives pool is always its own section (see the docstring)
-            for r in pool_rows(block_note):
+            for p in rule_paras:
+                prog.section_note(section, p)
+            for r in pool_rows([p for p in block_note if p not in rule_paras]):
                 r["pick_units"] = pool_units
             prog.flag(f"'{label}' (under {h2}) asks for {pool_units} units of its list: encoded as a pool in its "
                       f"own section '{label}', check it.")
@@ -819,6 +845,10 @@ def map_blocks(prog, blocks):
                 groups.append((chain, joiners))
             if pick_n and not groups:
                 group_label = f"{b['heading'] or h2} (pick {pick_n})"
+                if b["level"] < 3:
+                    for p in choose_note:
+                        prog.section_note(section, p)
+                    choose_note = []
                 for course in required:
                     row(course, "choose", group_label, note_for(course, block_note + choose_note), pick_n=str(pick_n))
                 prog.flag(f"'{group_label}' in {section}: read as pick {pick_n} of {len(required)}; check it.")
@@ -911,12 +941,17 @@ def listed_units(rows):
 
 
 def order_rows(prog):
-    """Within each section: the Required group first, then the other groups in page order (like the existing rows)."""
+    """Within each section: its note row (if any), the Required group, then the other groups in page order."""
     sections = collections.OrderedDict()
     for r in prog.rows:
         sections.setdefault(r["section"], []).append(r)
     ordered = []
-    for rows in sections.values():
+    for name, rows in sections.items():
+        if name in prog.section_notes:
+            ordered.append({"major_id": "", "section": name, "group_label": "", "rule": "note", "pick_n": "",
+                            "pick_units": "", "subject": "", "catalog_num": "", "num_min": "", "num_max": "",
+                            "exclude": "", "title": "", "units": "", "note": ". ".join(prog.section_notes[name]),
+                            "_h2": rows[0]["_h2"], "_code": ""})
         ordered += [r for r in rows if r["group_label"] == "Required"] + [r for r in rows if r["group_label"] != "Required"]
     prog.rows = ordered
 
@@ -1320,13 +1355,17 @@ def coverage_lines(prog, offered):
             lines.append("  - with sections: " + ", ".join(f"{c} ({n})" for c, n in have))
         if missing:
             lines.append("  - no sections: " + ", ".join(missing))
+    required = {(r["subject"], r["catalog_num"]) for r in prog.rows if r["rule"] == "required"}
     for r in prog.rows:
         if r["rule"] != "open":
             continue
         subjects, low, high = set(r["subject"].split("|")), int(r["num_min"] or 0), int(r["num_max"] or 9999)
+        excluded = {tuple(c.split()) for c in r.get("exclude", "").split("|") if c}
         found = [f"{s} {n}" for (s, n), hit in sorted(offered.items()) if s in subjects and hit["sections"]
-                 and re.match(r"\d+", n) and low <= int(re.match(r"\d+", n).group()) <= high]
-        lines.append(f"- Open rule '{r['group_label']}': {len(found)} courses with sections"
+                 and re.match(r"\d+", n) and low <= int(re.match(r"\d+", n).group()) <= high
+                 and (s, n) not in excluded and (s, n) not in required]
+        lines.append(f"- Open rule '{r['group_label']}' (without excluded and already-required courses): "
+                     f"{len(found)} courses with sections"
                      + (f": {', '.join(found)}" if found else ""))
     return lines
 
@@ -1361,10 +1400,16 @@ def build_report(programs, log, offered, titles, batch=None):
         lines += ["### Groups", "", "| Section | Group | Rule | Courses |", "| --- | --- | --- | --- |"]
         groups = collections.OrderedDict()
         for r in prog.rows:
+            if r["rule"] == "note":
+                continue
             groups.setdefault((r["section"], r["group_label"], r["rule"], r["pick_n"], r["pick_units"]), []).append(r["_code"])
         for (section, label, rule, pick_n, pick_units), codes in groups.items():
             rule_text = rule + (f" {pick_n}" if pick_n else "") + (f", {pick_units} units" if pick_units else "")
             lines.append(f"| {md(section)} | {md(label)} | {rule_text} | {len(codes)}: {', '.join(codes)} |")
+        lines.append("")
+        notes = [r for r in prog.rows if r["rule"] == "note"]
+        lines += ["### Section notes (shown once under the heading)", ""]
+        lines += [f"- **{md(r['section'])}**: {md(r['note'])}" for r in notes] or ["- none"]
         lines.append("")
         lines += ["### Review list", ""] + ([f"- [ ] {md(x)}" for x in prog.review] or ["- nothing flagged"]) + [""]
         lines += ["### Units check (advisory)", ""]

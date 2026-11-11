@@ -16,7 +16,7 @@ import { mountDock } from "../dock.js";
 import { majorLabel, openMajorPrompt } from "../majorPrompt.js";
 import { watchPlan } from "../plan.js";
 import { courseCard } from "../sections.js";
-import { sectionPool, units } from "../progress.js";
+import { chooseNeedUnits, openChoices, sectionPool, units } from "../progress.js";
 import { getState, isCompleted, setMajor, subscribe } from "../store.js";
 import { $, $$, clear, el, emptyBox, errorBox, loadingBox, plural } from "../ui.js";
 
@@ -32,7 +32,7 @@ mountDock($("#dock"));
 
 // ---------- numbers ----------
 
-let model = null;            // { majorId, major, tree, sectionsByCourse, openCourses }
+let model = null;            // { majorId, major, tree, sectionsByCourse, openCourses, openHidden }
 let plannedCodes = new Set();
 
 const isDone = (code) => isCompleted(code) || plannedCodes.has(code);
@@ -50,10 +50,9 @@ function groupProgress(group, key) {
   }
   if (group.rule === "choose") {
     const pick = group.pick_n || 1;
-    const smallest = Math.min(...group.courses.map((c) => units(c.units)).filter(Boolean), 3);
     const counted = done.slice(0, pick);
     return { text: `${Math.min(done.length, pick)} of ${pick} picked`, finished: done.length >= pick,
-             ratio: Math.min(done.length / pick, 1), needUnits: pick * smallest,
+             ratio: Math.min(done.length / pick, 1), needUnits: chooseNeedUnits(group),
              doneUnits: counted.reduce((n, c) => n + units(c.units), 0) };
   }
   if (group.rule === "open") {
@@ -136,6 +135,12 @@ function renderGroup(group, key) {
     box.append(el("p", { class: "req-note" }, courses.length
       ? `${plural(courses.length, "matching course")} with ${CONFIG.termName} sections in our data:`
       : `No matching courses have ${CONFIG.termName} sections in our data yet.`));
+    const hidden = model.openHidden.get(key);
+    const left = [
+      hidden?.required ? `${plural(hidden.required, "course")} already required above` : "",
+      hidden?.excluded ? `${plural(hidden.excluded, "course")} the catalog excludes (${group.open.exclude.join(", ")})` : "",
+    ].filter(Boolean);
+    if (left.length) box.append(el("p", { class: "req-note" }, `Not listed: ${left.join("; ")}.`));
   }
   box.append(el("div", { class: "course-list" }, courses.map((course) =>
     courseCard(course, course.course_id ? (model.sectionsByCourse.get(course.course_id) || []) : [], { takenToggle: true }))));
@@ -156,6 +161,7 @@ function render() {
       head.append(el("div", { class: "stack", dataset: { pool: si } }, progressPill(p), meter(p.ratio)));
     }
     content.push(el("section", { class: "req-section", "aria-label": section.name }, head,
+      section.note ? el("p", { class: "req-note req-section-note" }, section.note) : null,
       section.groups.map((group, gi) => renderGroup(group, groupKey(si, gi)))));
   });
   clear(root).append(...content);
@@ -212,10 +218,17 @@ async function load(majorId) {
     tree.sections.forEach((section, si) => section.groups.forEach((group, gi) => {
       if (group.rule === "open" && group.open) openGroups.push([groupKey(si, gi), group.open]);
     }));
+    // courses the major already requires don't show again under its open rules
+    const requiredCodes = new Set(tree.sections.flatMap((s) => s.groups)
+      .filter((g) => g.rule === "required").flatMap((g) => g.courses.map((c) => c.code)));
     const openCourses = new Map();
+    const openHidden = new Map();
     await Promise.all(openGroups.map(async ([key, rule]) => {
       try {
-        openCourses.set(key, (await findCourses({ subjects: rule.subjects, min: rule.min, max: rule.max })).courses);
+        const found = (await findCourses({ subjects: rule.subjects, min: rule.min, max: rule.max })).courses;
+        const { shown, hidden } = openChoices(found, rule.exclude || [], requiredCodes);
+        openCourses.set(key, shown);
+        openHidden.set(key, hidden);
       } catch (e) {
         openCourses.set(key, null);
       }
@@ -226,7 +239,7 @@ async function load(majorId) {
     ].filter((c) => c.has_sections && c.course_id).map((c) => c.course_id);
     const sectionsByCourse = await sectionsForCourses(courseIds);
     if (mine !== loading) return;
-    model = { majorId, major: tree.major, tree, sectionsByCourse, openCourses };
+    model = { majorId, major: tree.major, tree, sectionsByCourse, openCourses, openHidden };
     render();
   } catch (e) {
     if (mine !== loading) return;
