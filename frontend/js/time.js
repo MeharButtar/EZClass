@@ -87,17 +87,6 @@ export function meetingClashes(a, b) {
 
 export const overlaps = (a, b) => meetingClashes(a, b).length > 0;
 
-// Every clashing pair in a list.
-export function findOverlaps(sections) {
-  const pairs = [];
-  for (let i = 0; i < sections.length; i++) {
-    for (let j = i + 1; j < sections.length; j++) {
-      if (overlaps(sections[i], sections[j])) pairs.push([sections[i], sections[j]]);
-    }
-  }
-  return pairs;
-}
-
 // "Mon and Wed, 9:30–10:15am": when two clashing sections are both in class.
 // Clashes at the same time on different days are merged; different times are
 // joined with "; " ("Mon and Wed, 12–12:50pm; Mon, 1–1:15pm").

@@ -64,13 +64,6 @@ def time_to_minutes(t):
     return h * 60 + m
 
 
-def times_overlap(start1, end1, start2, end2):
-    s1, e1 = time_to_minutes(start1), time_to_minutes(end1)
-    s2, e2 = time_to_minutes(start2), time_to_minutes(end2)
-    # standard interval overlap check: NOT (one ends before the other starts)
-    return s1 < e2 and s2 < e1
-
-
 def timed_meetings(section):
     """
     The meetings with a day and a time, as (days set, start_min, end_min).
