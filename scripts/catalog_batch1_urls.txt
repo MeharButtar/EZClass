@@ -1,0 +1,15 @@
+# Batch 1: the other Business emphases, Computer, Electrical and Civil Engineering.
+# Save each page from a browser into data/catalog_html/ (the script reads the page, not the file name).
+# name<TAB>degree<TAB>url. Only the URL is read; lines starting with # are skipped.
+Business Administration, Emphasis in Marketing	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12120
+Business Administration, Emphasis in Accounting	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11880
+Business Administration, Emphasis in Finance	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12008
+Business Administration, Management, Specialization in Entrepreneurship	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12113
+Business Administration, Emphasis in Financial Services	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12009
+Business Administration, Management, Specialization in Human Resource Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12114
+Business Administration, Emphasis in Information Systems	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12117
+Business Administration, Emphasis in Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12112
+Business Administration, Emphasis in Real Estate	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12010
+Computer Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11968
+Electrical Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11987
+Civil Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11952

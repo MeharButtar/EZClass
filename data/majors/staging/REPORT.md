@@ -61,11 +61,19 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - **Master Plan**
   - The master plan provides an advising record and a roadmap toward graduation for mechanical engineering majors. The master plan must be filed electronically with the department advisors (https://mechanical.sdsu.edu/undergraduate/advising). All students transferring from another institution are required to file the master plan at the time of transfer. Current SDSU students are required to file the master plan as part of their course requirements in M E 190 . Students are encouraged to seek the guidance of their advisors when completing the master plan. If there is any change to the course sequence listed in the master plan that is already on file, it must be updated and refiled. All students must have an updated master plan on file in the department prior to enrollment in M E 350 and M E 490W . All course substitutions must be approved by the department chair prior to enrolling in the course.
 
-### Coverage (courses with no sections in data/cleaned)
+### Coverage (sections in data/cleaned)
 
-- 10 of 51 listed courses have sections this term
-- no sections: M E 190, M E 202, M E 230, M E 240, M E 241, A E 280, M E 200, A E 200, M E 220, A E 220, CHEM 202, M E 304, M E 314, M E 330, M E 340, M E 350, M E 360, M E 430, M E 452, M E 490W, M E 491, M E 495, A E 341, M E 520, M E 530, M E 532, A E 535, M E 535, M E 540, M E 542, M E 543, M E 544, M E 570, M E 580, M E 582, M E 585, M E 450, M E 552, M E 554, M E 555, M E 556
+- Required courses: 25 of 25 have sections
+  - with sections: M E 190 (12), M E 202 (4), M E 230 (8), M E 240 (2), M E 241 (6), A E 280 (3), MATH 150 (12), MATH 151 (20), MATH 252 (13), PHYS 195 (2), PHYS 195L (17), PHYS 196 (1), PHYS 196L (10), M E 304 (3), M E 314 (2), M E 330 (8), M E 340 (6), M E 350 (3), M E 360 (2), M E 430 (2), M E 452 (3), M E 490W (4), M E 491 (8), M E 495 (4), A E 341 (9)
+- Pick-n group courses: 8 of 8 have sections
+  - with sections: M E 200 (3), A E 200 (3), M E 220 (5), A E 220 (1), BIOL 100 (4), BIOL 101 (1), CHEM 202 (11), CHEM 200 (49)
+- Elective pool courses: 7 of 18 have sections
+  - with sections: A E 535 (1), M E 544 (1), M E 570 (2), M E 582 (1), M E 450 (1), M E 555 (1), M E 556 (1)
+  - no sections: M E 520, M E 530, M E 532, M E 535, M E 540, M E 542, M E 543, M E 580, M E 585, M E 552, M E 554
 
 ### Title differences (catalog vs class data)
 
-- none
+- M E 491: catalog "Engineering Design: Senior Project", class data "Senior Projects II"
+- A E 535: catalog "Mechanics of Composite Structures", class data "Mech of Composites Struct"
+- M E 555: catalog "Thermal Systems Analysis and Design", class data "Enrgy& Thrm Sys Anal/Dsgn"
+- 14 more only shortened in the class data (not a real difference): M E 202, M E 240, CHEM 202, M E 314, M E 340, M E 452, M E 490W, M E 495, A E 341, M E 544, M E 570, M E 582, M E 450, M E 556

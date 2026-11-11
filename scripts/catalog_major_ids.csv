@@ -10,7 +10,7 @@ poid,major_id,name,degree
 13959,nursing_registered_nurse_second_bs,"Nursing, Registered Nurse, Second Bachelor’s Degree",B.S.
 12173,pa_ba,Public Administration,B.A.
 12545,ph_environmental_health_bs,"Public Health, Emphasis in Environmental Health",B.S.
-12192,ss_ba,Social Science,B.A.
+12192,social_science_ba,Social Science,B.A.
 12492,ss_credential_ba,"Social Science, in Preparation for the Single Subject Teaching Credential",B.A.
 12193,sw_ba,Social Work,B.A.
 12200,spanish_ba,Spanish,B.A.
@@ -57,7 +57,7 @@ poid,major_id,name,degree
 12120,ba_marketing_bs,"Business Administration, Emphasis in Marketing",B.S.
 12010,ba_real_estate_bs,"Business Administration, Emphasis in Real Estate",B.S.
 12113,ba_management_entrepreneurship_bs,"Business Administration, Management, Specialization in Entrepreneurship",B.S.
-12114,ba_management_human_bs,"Business Administration, Management, Specialization in Human Resource Management",B.S.
+12114,ba_management_human_resource_management_bs,"Business Administration, Management, Specialization in Human Resource Management",B.S.
 11940,chemistry_ba,Chemistry,B.A.
 12519,chemistry_credential_ba,"Chemistry, Emphasis in Preparation for the Single Subject Teaching Credential",B.A.
 11938,chemistry_biochemistry_acs_bs,"Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society",B.S.
@@ -66,7 +66,7 @@ poid,major_id,name,degree
 11953,classics_ba,Classics,B.A.
 11954,classics_classical_humanities_ba,"Classics, Emphasis in Classical Humanities",B.A.
 11955,classics_classical_language_ba,"Classics, Emphasis in Classical Language",B.A.
-11956,classics_classical_languages_ba,"Classics, Emphasis in Classical Languages with Honors",B.A.
+11956,classics_classical_languages_honors_ba,"Classics, Emphasis in Classical Languages with Honors",B.A.
 11965,cis_ba,Comparative International Studies,B.A.
 11968,computer_engineering_bs,Computer Engineering,B.S.
 11969,cs_bs,Computer Science,B.S.
@@ -87,7 +87,7 @@ poid,major_id,name,degree
 12016,geography_general_ba,"Geography, Emphasis in General Geography",B.A.
 12018,geography_geographic_information_ba,"Geography, Emphasis in Geographic Information Science and Technology",B.A.
 12020,geography_geographic_information_bs,"Geography, Emphasis in Geographic Information Science and Technology",B.S.
-12019,geography_human_global_ba,"Geography, Emphasis in Human Geography and Global Studies",B.A.
+12019,geography_human_geography_global_studies_ba,"Geography, Emphasis in Human Geography and Global Studies",B.A.
 12021,geography_water_climate_bs,"Geography, Emphasis in Water, Climate, and Ecosystems",B.S.
 12035,gs_ba,Geological Sciences,B.A.
 12032,gs_environmental_geosciences_bs,"Geological Sciences, Emphasis in Environmental Geosciences",B.S.
@@ -100,12 +100,12 @@ poid,major_id,name,degree
 12048,htm_restaurant_operations_bs,"Hospitality and Tourism Management, Emphasis in Restaurant Operations and Management",B.S.
 12049,htm_tribal_gaming_bs,"Hospitality and Tourism Management, Emphasis in Tribal Gaming Operations and Management",B.S.
 12051,humanities_ba,Humanities,B.A.
-13954,id_ba,Integrated Design,B.A.
+13954,integrated_design_ba,Integrated Design,B.A.
 12054,istd_ba,Interdisciplinary Studies in Three Departments,B.A.
 12065,ib_arabic_middle_ba,"International Business, Emphasis in Arabic - Middle East and North Africa",B.A.
 12540,ib_asian_languages_ba,"International Business, Emphasis in Asian Languages - Singapore",B.A.
 12066,ib_chinese_asia_ba,"International Business, Emphasis in Chinese - Asia",B.A.
-12067,ib_english_north_ba,"International Business, Emphasis in English - North America",B.A.
+12067,ib_english_north_america_ba,"International Business, Emphasis in English - North America",B.A.
 12618,ib_european_languages_ba,"International Business, Emphasis in European Languages - North Atlantic",B.A.
 12068,ib_french_north_ba,"International Business, Emphasis in French - North America",B.A.
 12069,ib_french_western_ba,"International Business, Emphasis in French - Western Europe",B.A.
@@ -153,12 +153,12 @@ poid,major_id,name,degree
 12141,music_entrepreneurship_business_bm,"Music, Music Entrepreneurship and Business Track",B.M.
 12143,music_recording_technology_bm,"Music, Music Recording Technology and Audio Design Track",B.M.
 12138,music_performance_bm,"Music, Performance Specialization",B.M.
-12597,mt_ba,Musical Theatre,B.A.
+12597,musical_theatre_ba,Musical Theatre,B.A.
 12154,philosophy_ba,Philosophy,B.A.
 12156,physics_ba,Physics,B.A.
 12157,physics_general_bs,"Physics, General Physics",B.S.
 12158,physics_modern_optics_bs,"Physics, Modern Optics",B.S.
-12162,ps_ba,Political Science,B.A.
+12162,political_science_ba,Political Science,B.A.
 12498,psych_ba,Psychology,B.A.
 12168,psychology_industrial_organizational_ba,"Psychology, Emphasis in Industrial and Organizational Psychology",B.A.
 12544,psychology_neuroscience_ba,"Psychology, Emphasis in Neuroscience",B.A.
@@ -166,7 +166,7 @@ poid,major_id,name,degree
 12178,ra_outdoor_resource_bs,"Recreation Administration, Emphasis in Outdoor Resource Management",B.S.
 12179,ra_recreation_systems_bs,"Recreation Administration, Emphasis in Recreation Systems Management",B.S.
 12180,ra_sustainable_tourism_bs,"Recreation Administration, Emphasis in Sustainable Tourism Management",B.S.
-12182,rs_ba,Religious Studies,B.A.
+12182,religious_studies_ba,Religious Studies,B.A.
 12186,rws_ba,Rhetoric and Writing Studies,B.A.
 12194,sw_community_corrections_ba,"Social Work, Specialization in Community Corrections Case Management",B.A.
 12199,spanish_credential_ba,"Spanish, in preparation for the Single Subject Teaching Credential in Foreign Languages",B.A.

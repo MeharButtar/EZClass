@@ -196,6 +196,17 @@ class HelperTests(unittest.TestCase):
         ])
         self.assertTrue(any("own section 'Electives'" in x for x in prog.review))
 
+    def test_shortened_schedule_titles(self):
+        for short, full in [("Intro to Eng Materials", "Introduction to Engineering Materials"),
+                            ("Engr Design:Mech Compon", "Engineering Design: Mechanical Components"),
+                            ("Mech & Thermal Sys Lab", "Mechanical and Thermal Systems Laboratory"),
+                            ("Applicatns Thermodynamics", "Applications of Thermodynamics")]:
+            self.assertTrue(importer.is_abbreviation(short, full), short)
+        for short, full in [("Senior Projects II", "Engineering Design: Senior Project"),
+                            ("Enrgy& Thrm Sys Anal/Dsgn", "Thermal Systems Analysis and Design"),
+                            ("Data Structures", "Computer Organization")]:
+            self.assertFalse(importer.is_abbreviation(short, full), short)
+
     def test_propose_id(self):
         self.assertEqual(importer.propose_id("Civil Engineering", "B.S."), "ce_bs")
         self.assertEqual(importer.propose_id("Civil Engineering", "B.S.", full=True), "civil_engineering_bs")
@@ -335,6 +346,67 @@ class DiscoveryTests(unittest.TestCase):
         self.assertTrue(all(importer.re.fullmatch(r"[a-z0-9_]+", i) for i in ids))
         for poid, known in importer.KNOWN_IDS.items():
             self.assertEqual(next(p.major_id for p in progs if p.poid == poid), known)
+
+
+class BatchTests(unittest.TestCase):
+    """--html-dir on hand-saved pages: matched by what is inside them, checked against a batch list."""
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        self.ids = os.path.join(self.tmp, "ids.csv")
+        importer.write_ids({"12130": {"poid": "12130", "major_id": "me_bs", "name": "Mechanical Engineering",
+                                      "degree": "B.S."}}, self.ids)
+        self.expect = [("Mechanical Engineering", "B.S.", "https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12130"),
+                       ("Civil Engineering", "B.S.", "https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11952")]
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def stage(self, pages):
+        with contextlib.redirect_stdout(io.StringIO()):
+            return importer.run(pages, os.path.join(self.tmp, "out"), self.ids, self.expect)
+
+    def test_matched_by_content_not_file_name(self):
+        programs, report = self.stage([("Program__Civil_Engineering.html", read_fixture("me_bs.html"), None)])
+        self.assertEqual([p.major_id for p in programs], ["me_bs"])
+        self.assertIn("## Batch check: 1 of 2 pages found", report)
+        self.assertIn("| 1 | Mechanical Engineering, B.S. | `me_bs` | found |", report)
+        self.assertIn("| 2 | Civil Engineering, B.S. | `` | **missing** |", report)
+
+    def test_page_without_a_poid_is_matched_by_its_title(self):
+        page = read_fixture("me_bs.html").replace("poid=12130", "poid=x")   # no usable program id left
+        programs, report = self.stage([("page.html", page, None)])
+        self.assertEqual([(p.poid, p.major_id) for p in programs], [("12130", "me_bs")])
+        self.assertIn("matched by its title to poid 12130", report)
+
+    def test_title_that_does_not_match_the_listing_is_flagged(self):
+        importer.write_ids({"12130": {"poid": "12130", "major_id": "me_bs", "name": "Civil Engineering",
+                                      "degree": "B.S."}}, self.ids)
+        programs, _ = self.stage([("page.html", read_fixture("me_bs.html"), None)])
+        self.assertTrue(any("differs from the listing" in x for x in programs[0].review))
+
+    def test_bot_check_page_is_skipped(self):
+        challenge = "<html><script>AwsWafIntegration.getToken()</script></html>"
+        programs, report = self.stage([("blocked.html", challenge, None),
+                                       ("me.html", read_fixture("me_bs.html"), None)])
+        self.assertEqual(len(programs), 1)
+        self.assertIn("a saved bot-check page", report)
+
+    def test_coverage_lists_required_courses_with_sections(self):
+        cov = importer.coverage(MechanicalEngineeringTests.prog if hasattr(MechanicalEngineeringTests, "prog")
+                                else self.stage([("me.html", read_fixture("me_bs.html"), None)])[0][0],
+                                {("MATH", "150"): {"sections": 4, "units": 4, "scheduled": 4}})
+        have, missing = cov["required"]
+        self.assertEqual(have, [("MATH 150", 4)])
+        self.assertIn("M E 190", missing)
+
+    def test_read_expect(self):
+        path = os.path.join(ROOT, "scripts", "catalog_batch1_urls.txt")
+        batch = importer.read_expect(path)
+        self.assertEqual(len(batch), 12)
+        self.assertEqual(len({url for _, _, url in batch}), 12)
+        ids = importer.read_ids()
+        self.assertTrue(all((importer.re.search(r"poid=(\d+)", url).group(1)) in ids for _, _, url in batch))
 
 
 class PromoteTests(unittest.TestCase):

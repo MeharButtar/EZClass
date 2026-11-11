@@ -12,7 +12,8 @@ Usage (from the project root):
     python3 scripts/import_catalog_majors.py --urls scripts/catalog_urls.txt --out data/majors/staging
         downloads each program page (cached in data/catalog_html/) and stages it
     python3 scripts/import_catalog_majors.py --html-dir data/catalog_html --out data/majors/staging
-        works fully offline on saved pages
+        works fully offline on saved pages; --html-dir can be given more than once, and
+        --expect scripts/catalog_batch1_urls.txt reports which batch pages were found
     python3 scripts/import_catalog_majors.py --promote me_bs
         copies one reviewed staged major into data/majors (status coming_soon)
 
@@ -970,6 +971,27 @@ def same_title(a, b):
     return squash(a) == squash(b)
 
 
+def is_abbreviation(short, full):
+    """'Intro to Eng Materials' of 'Introduction to Engineering Materials': every word of the short title
+    is a shortening (same first letter, letters in order) of a later word of the full one.
+    The official schedule cuts titles to about 25 characters."""
+    words = lambda t: re.findall(r"[a-z0-9]+", t.lower().replace("&", " and "))
+    long_words = words(full)
+    i = 0
+    for w in words(short):
+        while i < len(long_words) and not (long_words[i][0] == w[0] and _in_order(w, long_words[i])):
+            i += 1
+        if i == len(long_words):
+            return False
+        i += 1
+    return True
+
+
+def _in_order(short, word):
+    it = iter(word)
+    return all(ch in it for ch in short)
+
+
 # ---------- output ----------
 
 def write_csv(path, fields, rows):
@@ -984,7 +1006,7 @@ def major_row(prog):
             "catalog_year": CATALOG_YEAR, "status": "coming_soon"}
 
 
-def write_staging(programs, out_dir, log, offered, titles):
+def write_staging(programs, out_dir, log, offered, titles, batch=None):
     os.makedirs(out_dir, exist_ok=True)
     rows = []
     for prog in programs:
@@ -993,7 +1015,7 @@ def write_staging(programs, out_dir, log, offered, titles):
             rows.append(r)
     write_csv(os.path.join(out_dir, "majors.csv"), MAJOR_FIELDS, [major_row(p) for p in programs])
     write_csv(os.path.join(out_dir, "major_requirements.csv"), REQ_FIELDS, rows)
-    report = build_report(programs, log, offered, titles)
+    report = build_report(programs, log, offered, titles, batch)
     with open(os.path.join(out_dir, "REPORT.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(report)
     return report
@@ -1007,16 +1029,54 @@ def shown_path(path):
     return full.replace(os.sep, "/") if not path.startswith("http") else path
 
 
+def coverage(prog, offered):
+    """{rule: (with sections [(code, n)], without [code])}, each course once, in row order."""
+    out = collections.OrderedDict((rule, ([], [])) for rule in ("required", "choose", "pool"))
+    seen = set()
+    for r in prog.rows:
+        if not r["catalog_num"] or r["_code"] in seen or r["rule"] not in out:
+            continue
+        seen.add(r["_code"])
+        hit = offered.get((r["subject"], r["catalog_num"]))
+        if hit:
+            out[r["rule"]][0].append((r["_code"], hit["sections"]))
+        else:
+            out[r["rule"]][1].append(r["_code"])
+    return out
+
+
+def coverage_lines(prog, offered):
+    names = {"required": "Required courses", "choose": "Pick-n group courses", "pool": "Elective pool courses"}
+    lines = []
+    for rule, (have, missing) in coverage(prog, offered).items():
+        total = len(have) + len(missing)
+        if not total:
+            continue
+        lines.append(f"- {names[rule]}: {len(have)} of {total} have sections")
+        if have:
+            lines.append("  - with sections: " + ", ".join(f"{c} ({n})" for c, n in have))
+        if missing:
+            lines.append("  - no sections: " + ", ".join(missing))
+    return lines
+
+
 def md(text):
     return text.replace("|", "\\|")
 
 
-def build_report(programs, log, offered, titles):
+def build_report(programs, log, offered, titles, batch=None):
     lines = [f"# Catalog import report ({CATALOG_YEAR})", "",
              "Staging only: nothing here is live. Every major is `coming_soon`. Check each one against its catalog "
              "page, then promote it with `python3 scripts/import_catalog_majors.py --promote <major_id>`.", "",
              "| Majors processed | Requirement rows | Majors with open review items |", "| --- | --- | --- |",
              f"| {len(programs)} | {sum(len(p.rows) for p in programs)} | {sum(1 for p in programs if p.review)} |", ""]
+    if batch is not None:
+        missing = [b for b in batch if not b[4]]
+        lines += [f"## Batch check: {len(batch) - len(missing)} of {len(batch)} pages found", "",
+                  "| # | Program | major_id | Page |", "| --- | --- | --- | --- |"]
+        lines += [f"| {n} | {md(name)}, {degree} | `{mid}` | {'found' if ok else '**missing**'} |"
+                  for n, (name, degree, url, mid, ok) in enumerate(batch, 1)]
+        lines.append("")
     if log:
         lines += ["## Run notes", ""] + [f"- {md(x)}" for x in log] + [""]
     lines += ["| major_id | Name | Degree | Rows | Review items |", "| --- | --- | --- | --- | --- |"]
@@ -1050,28 +1110,27 @@ def build_report(programs, log, offered, titles):
                 last = heading
             lines.append(f"  - {md(text)}")
         lines.append("")
-        lines += ["### Coverage (courses with no sections in data/cleaned)", ""]
+        lines += ["### Coverage (sections in data/cleaned)", ""]
         if offered is None:
             lines.append("- data/cleaned not found, skipped")
         else:
-            missing = []
-            for r in prog.rows:
-                key = (r["subject"], r["catalog_num"])
-                if r["catalog_num"] and key not in offered and r["_code"] not in missing:
-                    missing.append(r["_code"])
-            have = len({r["_code"] for r in prog.rows}) - len(missing)
-            lines.append(f"- {have} of {have + len(missing)} listed courses have sections this term")
-            if missing:
-                lines.append(f"- no sections: {', '.join(missing)}")
+            lines += coverage_lines(prog, offered)
         lines.append("")
         lines += ["### Title differences (catalog vs class data)", ""]
-        diffs = []
+        diffs, shortened = [], []
         if titles:
             for r in prog.rows:
                 theirs = titles.get((r["subject"], r["catalog_num"]))
-                if theirs and not same_title(theirs, r["title"]) and r["_code"] not in [d[0] for d in diffs]:
+                if not theirs or same_title(theirs, r["title"]) or r["_code"] in [d[0] for d in diffs] + shortened:
+                    continue
+                if is_abbreviation(theirs, r["title"]):
+                    shortened.append(r["_code"])
+                else:
                     diffs.append((r["_code"], r["title"], theirs))
         lines += [f"- {c}: catalog \"{md(a)}\", class data \"{md(b)}\"" for c, a, b in diffs] or ["- none"]
+        if shortened:
+            lines.append(f"- {len(shortened)} more only shortened in the class data (not a real difference): "
+                         + ", ".join(shortened))
         lines.append("")
     return "\n".join(lines)
 
@@ -1140,29 +1199,76 @@ def is_listing(text):
     return "Programs by Campus Location" in text[:5000] and "acalog-page-title" not in text
 
 
-def run(pages, out_dir, ids_file=IDS_FILE):
-    """pages: [(source, html, url)] -> programs written to out_dir."""
+def title_key(name, degree):
+    squash = lambda t: re.sub(r"[^a-z0-9]+", " ", (t or "").lower().replace("’", "'")).strip()
+    return squash(name), squash(degree)
+
+
+def run(pages, out_dir, ids_file=IDS_FILE, expect=None):
+    """pages: [(source, html, url)] -> programs written to out_dir.
+    A page is matched to its major by what is inside it (the poid in the saved-from URL, the
+    canonical link or the page's own links, else its title), never by the file name.
+    expect: [(name, degree, url)] that should be among the pages (a batch list); the report says
+    which were found and which are missing."""
     log, programs = [], []
+    ids = read_ids(ids_file)
+    by_title = {title_key(r.get("name"), r.get("degree")): poid for poid, r in ids.items()}
     for source, text, url in pages:
         if is_listing(text):
             continue
-        prog = parse_program(text, source, url)
-        if not prog.poid:
-            log.append(f"{os.path.basename(source)}: no catalog program id (poid) found, skipped")
+        if is_bot_challenge(text):
+            log.append(f"{shown_path(source)}: a saved bot-check page, not a program page; skipped")
             continue
+        prog = parse_program(text, source, url)
+        if not prog.title:
+            log.append(f"{shown_path(source)}: no program title on the page; skipped")
+            continue
+        from_title = by_title.get(title_key(prog.name, prog.degree))
+        if not prog.poid:
+            if not from_title:
+                log.append(f"{shown_path(source)}: no program id (poid) and the title '{prog.title}' is not in "
+                           f"{shown_path(ids_file)}; skipped")
+                continue
+            prog.poid = from_title
+            log.append(f"{shown_path(source)}: no program id in the page; matched by its title to poid {from_title}")
+        elif prog.poid in ids and title_key(prog.name, prog.degree) != title_key(ids[prog.poid].get("name"),
+                                                                               ids[prog.poid].get("degree")):
+            prog.flag(f"The page title '{prog.title}' differs from the listing's "
+                      f"'{ids[prog.poid].get('name')}, {ids[prog.poid].get('degree')}' for poid {prog.poid}; check "
+                      f"that the right page was saved.")
         programs.append(prog)
     dupes = [p for p, n in collections.Counter(p.poid for p in programs).items() if n > 1]
     if dupes:
         log.append(f"same program read more than once (poid {', '.join(dupes)}); keeping the first copy")
         seen = set()
         programs = [p for p in programs if not (p.poid in seen or seen.add(p.poid))]
-    ids = read_ids(ids_file)
     if assign_ids(programs, ids, log):
         write_ids(ids, ids_file)
         log.append(f"new major_ids saved to {shown_path(ids_file)}")
+    batch = None
+    if expect is not None:
+        found = {p.poid for p in programs}
+        batch = []
+        for name, degree, url in expect:
+            poid = (re.search(r"poid=(\d+)", url) or [None, None])[1]
+            mid = ids.get(poid, {}).get("major_id", "")
+            batch.append((name, degree, url, mid, poid in found))
     offered, titles = class_data()
-    report = write_staging(programs, out_dir, log, offered, titles)
+    report = write_staging(programs, out_dir, log, offered, titles, batch)
     return programs, report
+
+
+def read_expect(path):
+    """A batch list (name<TAB>degree<TAB>url lines, like scripts/catalog_urls.txt)."""
+    out = []
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            if line.startswith("#") or not line.strip():
+                continue
+            parts = line.rstrip("\n").split("\t")
+            url = next((p for p in parts if p.startswith("http")), "")
+            out.append((parts[0] if len(parts) > 1 else url, parts[1] if len(parts) > 2 else "", url))
+    return out
 
 
 def main(argv=None):
@@ -1170,12 +1276,15 @@ def main(argv=None):
     mode = ap.add_mutually_exclusive_group(required=True)
     mode.add_argument("--discover", action="store_true", help="read the program listing and write --urls-out")
     mode.add_argument("--urls", help="file with one catalog program URL per line")
-    mode.add_argument("--html-dir", help="folder of saved program pages (offline)")
+    mode.add_argument("--html-dir", action="append",
+                      help="folder of saved program pages (offline); give it more than once to stage several folders")
     mode.add_argument("--promote", metavar="MAJOR_ID", help="copy one staged major into data/majors")
     ap.add_argument("--out", default=STAGING_DIR, help="staging folder (default data/majors/staging)")
     ap.add_argument("--listing-html", help="--discover: use this saved listing page instead of fetching it")
     ap.add_argument("--urls-out", default=URLS_FILE, help="--discover: where to write the URL list")
     ap.add_argument("--ids", default=IDS_FILE, help="major_id file (default scripts/catalog_major_ids.csv)")
+    ap.add_argument("--expect", help="a batch list (like scripts/catalog_batch1_urls.txt): report which of its "
+                                     "programs were found among the pages and which are missing")
     args = ap.parse_args(argv)
 
     if args.promote:
@@ -1214,11 +1323,12 @@ def main(argv=None):
 
     pages = []
     if args.html_dir:
-        for name in sorted(os.listdir(args.html_dir)):
-            if name.lower().endswith((".html", ".htm")):
-                path = os.path.join(args.html_dir, name)
-                with open(path, encoding="utf-8", errors="replace") as f:
-                    pages.append((path, f.read(), None))
+        for folder in args.html_dir:
+            for name in sorted(os.listdir(folder)):
+                if name.lower().endswith((".html", ".htm")):
+                    path = os.path.join(folder, name)
+                    with open(path, encoding="utf-8", errors="replace") as f:
+                        pages.append((path, f.read(), None))
     else:
         fetcher = Fetcher()
         urls = read_urls(args.urls)
@@ -1233,9 +1343,15 @@ def main(argv=None):
                 print(f"skipping {url}: no poid")
                 continue
             pages.append((url, fetcher.get(url, f"program_{poid}.html"), url))
-    programs, _ = run(pages, args.out, args.ids)
+    expect = read_expect(args.expect) if args.expect else None
+    programs, _ = run(pages, args.out, args.ids, expect)
     print(f"{len(programs)} majors, {sum(len(p.rows) for p in programs)} rows, "
-          f"{sum(1 for p in programs if p.review)} with review items. See {os.path.join(args.out, 'REPORT.md')}")
+          f"{sum(1 for p in programs if p.review)} with review items. See {shown_path(os.path.join(args.out, 'REPORT.md'))}")
+    if expect is not None:
+        found = {p.poid for p in programs}
+        for n, (name, degree, url) in enumerate(expect, 1):
+            poid = (re.search(r"poid=(\d+)", url) or [None, None])[1]
+            print(f"  {n:>2}. {'found  ' if poid in found else 'MISSING'} {name}, {degree}")
     return 0
 
 
