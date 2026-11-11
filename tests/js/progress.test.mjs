@@ -3,7 +3,7 @@
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { sectionPool, units } from "../../frontend/js/progress.js";
+import { chooseNeedUnits, openChoices, sectionPool, units } from "../../frontend/js/progress.js";
 
 const course = (code, u = "3") => ({ code, units: u });
 
@@ -55,3 +55,21 @@ test("unit strings: ranges use the smallest number", () => {
   assert.equal(units(""), 0);
   assert.equal(units(null), 0);
 });
+
+test("a pick-1 group needs its smallest course's units, not a fixed 3", () => {
+  const chem = { pick_n: 1, courses: [course("CHEM 202", "4"), course("CHEM 200", "5")] };
+  assert.equal(chooseNeedUnits(chem), 4);
+  const mktg = { pick_n: 1, courses: [course("MKTG 470", "4"), course("MKTG 480", "4")] };
+  assert.equal(chooseNeedUnits(mktg), 4);
+  assert.equal(chooseNeedUnits({ pick_n: 2, courses: [course("A 1", "1"), course("A 2", "3"), course("A 3", "2")] }), 3);
+  assert.equal(chooseNeedUnits({ courses: [course("X 1", "")] }), 3);   // no units: counts as 3
+});
+
+test("open rule lists leave out excluded and already-required courses", () => {
+  const found = ["ACCTG 325", "ACCTG 326", "ACCTG 331", "ACCTG 409", "ACCTG 503"].map((c) => course(c));
+  const { shown, hidden } = openChoices(found, ["ACCTG 325", "ACCTG 326"], new Set(["ACCTG 331"]));
+  assert.deepEqual(shown.map((c) => c.code), ["ACCTG 409", "ACCTG 503"]);
+  assert.deepEqual(hidden, { excluded: 2, required: 1 });
+  assert.equal(openChoices(found).shown.length, 5);
+});
+

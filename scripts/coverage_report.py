@@ -14,7 +14,9 @@ Rules (the "rule" column of major_requirements.csv):
   pool     -> the offered courses of the pool (all pool groups in one part of
               the major together) must add up to pick_units
   open     -> some course in the subject list and number range must have
-              sections (pick_n / pick_units when given)
+              sections (pick_n / pick_units when given). Courses in the row's
+              exclude list, and courses the same major already requires, don't count.
+  note     -> a section's note; no course, nothing to check
 
 A course whose sections have no days or times entered yet still counts as
 offered (students can add it); the report lists those as "no times yet".
@@ -78,6 +80,12 @@ def no_times(keys, offered):
     return sorted(f"{k[0]} {k[1]}" for k in keys if k in offered and not offered[k]["scheduled"])
 
 
+def exclude_key(code):
+    """'CIV E 160' or 'CIVE 160' -> ('CIVE', '160')"""
+    parts = code.split()
+    return norm(" ".join(parts[:-1])), parts[-1].upper()
+
+
 def known(code):
     note = KNOWN.get(code) or KNOWN.get(code.split()[0])
     return f"  [known: {note}]" if note else ""
@@ -95,6 +103,8 @@ def major_report(offered):
                 groups.setdefault((r["section"].strip(), r["group_label"].strip(), r["rule"].strip().lower()), []).append(r)
         out = []
         pools = collections.defaultdict(list)       # part of the major -> its pool rows
+        required = {(norm(r["subject"]), r["catalog_num"].strip().upper())
+                    for (_, _, rule), items in groups.items() if rule == "required" for r in items}
         for (part, label, rule), items in groups.items():
             codes = [f"{norm(r['subject'])} {r['catalog_num'].strip().upper()}" for r in items if r.get("catalog_num")]
             missing = [c for c in codes if tuple(c.split()) not in offered]
@@ -117,7 +127,9 @@ def major_report(offered):
                 for r in items:
                     subjects = [norm(s) for s in (r["subject"] or "").split("|") if s.strip()]
                     low, high = int(r["num_min"] or 0), int(r["num_max"] or 9999)
-                    matches = [k for k in offered if k[0] in subjects and number(k[1]) is not None and low <= number(k[1]) <= high]
+                    excluded = {exclude_key(c) for c in (r.get("exclude") or "").split("|") if c.strip()}
+                    matches = [k for k in offered if k[0] in subjects and number(k[1]) is not None
+                               and low <= number(k[1]) <= high and k not in excluded and k not in required]
                     need_n = int(r["pick_n"]) if (r.get("pick_n") or "").strip() else 1
                     need_units = units_low(r.get("pick_units"))
                     have_units = sum(offered[k]["units"] for k in matches)

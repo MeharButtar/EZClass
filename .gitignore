@@ -10,3 +10,4 @@ analytics.db*
 feedback.db*
 *.lock
 reference/
+data/catalog_html/

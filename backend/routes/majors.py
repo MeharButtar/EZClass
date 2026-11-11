@@ -78,11 +78,13 @@ def list_majors():
 def major_requirements(major_id):
     """
     The requirement tree for one major:
-      {"major": {...}, "sections": [{"name", "pool_units", "groups": [
+      {"major": {...}, "sections": [{"name", "pool_units", "note", "groups": [
           {"label", "rule", "pick_n", "pick_units", "note", "open", "courses": [...]}]}]}
-    "open" is {"subjects": [...], "min": 300, "max": 599} for rules without a
-    course list; the frontend fetches those courses from /api/courses.
-    A note shared by every course in a group is moved up to the group.
+    "open" is {"subjects": [...], "min": 300, "max": 599, "exclude": ["ACCTG 325"]} for
+    rules without a course list; the frontend fetches those courses from /api/courses
+    and leaves out the excluded ones and the ones the major already requires.
+    A "note" row is the section's note. A note shared by every course in a group
+    is moved up to the group.
     """
     if not MAJOR_ID_PATTERN.match(major_id):
         return jsonify({"error": "major not found"}), 404
@@ -106,8 +108,12 @@ def major_requirements(major_id):
     sections, groups = [], {}
     for r in rows:
         if not sections or sections[-1]["name"] != r["section"]:
-            sections.append({"name": r["section"], "pool_units": None, "groups": []})
+            sections.append({"name": r["section"], "pool_units": None, "note": None, "groups": []})
         section = sections[-1]
+        if r["rule"] == "note":       # a note for the whole section, shown once under its heading
+            if r["note"]:
+                section["note"] = f"{section['note']} {r['note']}" if section["note"] else r["note"]
+            continue
         key = (r["section"], r["group_label"])
         group = groups.get(key)
         if group is None:
@@ -124,6 +130,7 @@ def major_requirements(major_id):
             group["open"] = {
                 "subjects": [s for s in (r["subject"] or "").split("|") if s],
                 "min": r["num_min"], "max": r["num_max"],
+                "exclude": [c for c in (r["exclude"] or "").split("|") if c],
             }
             group["_notes"].append(r["note"])
             continue

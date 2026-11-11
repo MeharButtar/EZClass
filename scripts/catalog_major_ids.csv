@@ -1,0 +1,189 @@
+poid,major_id,name,degree
+12130,me_bs,Mechanical Engineering,B.S.
+11937,chemistry_acs_bs,"Chemistry, and Certificate of the American Chemical Society",B.S.
+12460,ecl_credential_ba,"English and Comparative Literature, in preparation for the Single Subject Teaching Credential in English Language Arts",B.A.
+12043,history_ba,History,B.A.
+12096,las_ba,Latin American Studies,B.A.
+12491,mathematics_credential_ba,"Mathematics, In preparation for the Single Subject Teaching Credential",B.A.
+13958,nursing_second_bs,"Nursing, Second Bachelor’s Degree",B.S.
+12494,nursing_registered_nurse_bs,"Nursing, Registered Nurse",B.S.
+13959,nursing_registered_nurse_second_bs,"Nursing, Registered Nurse, Second Bachelor’s Degree",B.S.
+12173,pa_ba,Public Administration,B.A.
+12545,ph_environmental_health_bs,"Public Health, Emphasis in Environmental Health",B.S.
+12192,social_science_ba,Social Science,B.A.
+12492,social_science_credential_ba,"Social Science, in Preparation for the Single Subject Teaching Credential",B.A.
+12193,sw_ba,Social Work,B.A.
+12200,spanish_ba,Spanish,B.A.
+11892,ais_ba,American Indian Studies,B.A.
+11935,ba_general_bs,"Business Administration, Emphasis in General Business",B.S.
+11947,cd_bs,Child Development,B.S.
+11952,civil_engineering_bs,Civil Engineering,B.S.
+11960,communication_ba,Communication,B.A.
+11974,crim_justice,Criminal Justice,B.S.
+11981,economics_ba,Economics,B.A.
+12151,nursing_bs,Nursing,B.S.
+12176,ph_bs,Public Health,B.S.
+12197,sociology_ba,Sociology,B.A.
+11888,ae_bs,Aerospace Engineering,B.S.
+11890,africana_studies_ba,Africana Studies,B.A.
+11894,anthropology_ba,Anthropology,B.A.
+12795,ah_ba,Art History,B.A.
+11906,art_ba,Art,B.A.
+11900,art_applied_design_ba,"Art, Emphasis in Applied Design",B.A.
+11902,art_interior_architecture_ba,"Art, Emphasis in Interior Architecture",B.A.
+11904,art_painting_printmaking_ba,"Art, Emphasis in Painting and Printmaking",B.A.
+11905,art_sculpture_ba,"Art, Emphasis in Sculpture",B.A.
+11899,art_studio_arts_ba,"Art, Emphasis in Studio Arts",B.A.
+12791,aihr_bs,Artificial Intelligence and Human Responsibility,B.S.
+12645,aas_ba,Asian American Studies,B.A.
+11910,asian_studies_ba,Asian Studies,B.A.
+11915,astronomy_ba,Astronomy,B.A.
+11916,astronomy_bs,Astronomy,B.S.
+12796,astronomy_data_science_bs,"Astronomy, Emphasis in Data Science",B.S.
+11918,biology_ba,Biology,B.A.
+11919,biology_bs,Biology,B.S.
+11928,biology_credential_bs,"Biology, in Preparation for the Single Subject Teaching Credential in Science/Biological Sciences",B.S.
+11920,biology_cellular_molecular_bs,"Biology, Emphasis in Cellular and Molecular Biology",B.S.
+11921,biology_ecology_bs,"Biology, Emphasis in Ecology",B.S.
+11922,biology_evolutionary_bs,"Biology, Emphasis in Evolutionary Biology",B.S.
+11923,biology_marine_bs,"Biology, Emphasis in Marine Biology",B.S.
+11924,biology_zoology_bs,"Biology, Emphasis in Zoology",B.S.
+12572,brazilian_studies_ba,Brazilian Studies,B.A.
+11880,ba_accounting_bs,"Business Administration, Emphasis in Accounting",B.S.
+12008,ba_finance_bs,"Business Administration, Emphasis in Finance",B.S.
+12009,ba_financial_services_bs,"Business Administration, Emphasis in Financial Services",B.S.
+12117,ba_information_systems_bs,"Business Administration, Emphasis in Information Systems",B.S.
+12112,ba_management_bs,"Business Administration, Emphasis in Management",B.S.
+12120,ba_marketing_bs,"Business Administration, Emphasis in Marketing",B.S.
+12010,ba_real_estate_bs,"Business Administration, Emphasis in Real Estate",B.S.
+12113,ba_management_entrepreneurship_bs,"Business Administration, Management, Specialization in Entrepreneurship",B.S.
+12114,ba_management_human_resource_management_bs,"Business Administration, Management, Specialization in Human Resource Management",B.S.
+11940,chemistry_ba,Chemistry,B.A.
+12519,chemistry_credential_ba,"Chemistry, Emphasis in Preparation for the Single Subject Teaching Credential",B.A.
+11938,chemistry_biochemistry_acs_bs,"Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society",B.S.
+11943,ccs_ba,Chicana and Chicano Studies,B.A.
+12547,cd_early_childhood_bs,"Child Development, Emphasis in Early Childhood Special Education Integrated Teacher Education (ITEP)",B.S.
+11953,classics_ba,Classics,B.A.
+11954,classics_classical_humanities_ba,"Classics, Emphasis in Classical Humanities",B.A.
+11955,classics_classical_language_ba,"Classics, Emphasis in Classical Language",B.A.
+11956,classics_classical_languages_honors_ba,"Classics, Emphasis in Classical Languages with Honors",B.A.
+11965,cis_ba,Comparative International Studies,B.A.
+11968,computer_engineering_bs,Computer Engineering,B.S.
+11969,cs_bs,Computer Science,B.S.
+11972,construction_engineering_bs,Construction Engineering,B.S.
+12534,cm_bs,Construction Management,B.S.
+11976,dance_ba,Dance,B.A.
+11975,dance_bfa,Dance,B.F.A.
+12646,dance_education_bfa,"Dance, Dance Education Concentration",B.F.A.
+11982,economics_international_ba,"Economics, Emphasis in International Economics",B.A.
+11983,economics_public_policy_ba,"Economics, Emphasis in Public Policy",B.A.
+11984,economics_quantitative_analysis_ba,"Economics, Specialization in Quantitative Analysis",B.A.
+11987,electrical_engineering_bs,Electrical Engineering,B.S.
+11989,ecl_ba,English and Comparative Literature,B.A.
+11997,environmental_engineering_bs,Environmental Engineering,B.S.
+11998,es_bs,Environmental Sciences,B.S.
+12152,fn_bs,Foods and Nutrition,B.S.
+12017,geography_environment_sustainability_ba,"Geography, Emphasis in Environment, Sustainability, and Policy",B.A.
+12016,geography_general_ba,"Geography, Emphasis in General Geography",B.A.
+12018,geography_geographic_information_ba,"Geography, Emphasis in Geographic Information Science and Technology",B.A.
+12020,geography_geographic_information_bs,"Geography, Emphasis in Geographic Information Science and Technology",B.S.
+12019,geography_human_geography_global_studies_ba,"Geography, Emphasis in Human Geography and Global Studies",B.A.
+12021,geography_water_climate_bs,"Geography, Emphasis in Water, Climate, and Ecosystems",B.S.
+12035,gs_ba,Geological Sciences,B.A.
+12032,gs_environmental_geosciences_bs,"Geological Sciences, Emphasis in Environmental Geosciences",B.S.
+12029,gs_general_geology_bs,"Geological Sciences, Emphasis in General Geology",B.S.
+12031,gs_geophysics_bs,"Geological Sciences, Emphasis in Geophysics",B.S.
+12040,gerontology_ba,Gerontology,B.A.
+11961,hc_bs,Health Communication,B.S.
+12046,htm_hotel_operations_bs,"Hospitality and Tourism Management, Emphasis in Hotel Operations and Management",B.S.
+12047,htm_meetings_events_bs,"Hospitality and Tourism Management, Emphasis in Meetings and Events Operations and Management",B.S.
+12048,htm_restaurant_operations_bs,"Hospitality and Tourism Management, Emphasis in Restaurant Operations and Management",B.S.
+12049,htm_tribal_gaming_bs,"Hospitality and Tourism Management, Emphasis in Tribal Gaming Operations and Management",B.S.
+12051,humanities_ba,Humanities,B.A.
+13954,integrated_design_ba,Integrated Design,B.A.
+12054,istd_ba,Interdisciplinary Studies in Three Departments,B.A.
+12065,ib_arabic_middle_ba,"International Business, Emphasis in Arabic - Middle East and North Africa",B.A.
+12540,ib_asian_languages_ba,"International Business, Emphasis in Asian Languages - Singapore",B.A.
+12066,ib_chinese_asia_ba,"International Business, Emphasis in Chinese - Asia",B.A.
+12067,ib_english_north_america_ba,"International Business, Emphasis in English - North America",B.A.
+12618,ib_european_languages_ba,"International Business, Emphasis in European Languages - North Atlantic",B.A.
+12068,ib_french_north_america_ba,"International Business, Emphasis in French - North America",B.A.
+12069,ib_french_western_ba,"International Business, Emphasis in French - Western Europe",B.A.
+12070,ib_german_western_ba,"International Business, Emphasis in German - Western Europe",B.A.
+12071,ib_italian_western_ba,"International Business, Emphasis in Italian - Western Europe",B.A.
+12072,ib_japanese_asia_ba,"International Business, Emphasis in Japanese - Asia",B.A.
+12073,ib_korean_asia_ba,"International Business, Emphasis in Korean - Asia",B.A.
+12074,ib_portuguese_latin_ba,"International Business, Emphasis in Portuguese - Latin America",B.A.
+12075,ib_portuguese_western_ba,"International Business, Emphasis in Portuguese - Western Europe",B.A.
+12076,ib_russian_central_ba,"International Business, Emphasis in Russian - Central Europe",B.A.
+12077,ib_spanish_latin_ba,"International Business, Emphasis in Spanish - Latin America",B.A.
+12078,ib_spanish_western_ba,"International Business, Emphasis in Spanish - Western Europe",B.A.
+12080,iscr_conflict_global_ba,"International Security and Conflict Resolution, Specialization in Conflict in the Global System",B.A.
+12081,iscr_environment_global_ba,"International Security and Conflict Resolution, Specialization in Environment in the Global System",B.A.
+12082,iscr_justice_global_ba,"International Security and Conflict Resolution, Specialization in Justice in the Global System",B.A.
+11896,ias_ba,Islamic and Arabic Studies,B.A.
+12085,japanese_ba,Japanese,B.A.
+12089,journalism_ba,Journalism,B.A.
+12090,journalism_advertising_ba,"Journalism, Emphasis in Advertising",B.A.
+12091,journalism_media_studies_ba,"Journalism, Emphasis in Media Studies",B.A.
+12092,journalism_public_relations_ba,"Journalism, Emphasis in Public Relations",B.A.
+12004,kinesiology_exercise_science_bs,"Kinesiology, Emphasis in Exercise Science Generalist",B.S.
+12005,kinesiology_fitness_specialist_bs,"Kinesiology, Emphasis in Fitness Specialist",B.S.
+12006,kin_prept,"Kinesiology, Emphasis in Prephysical Therapy",B.S.
+12520,lcs_ba,"Language, Culture, and Society",B.A.
+12596,leadership_studies_bs,Leadership Studies,B.S.
+12101,lgbtq_ba,"Lesbian, Gay, Bisexual, Transgender, Queer, and Plus (LGBTQ+) Studies",B.A.
+12104,liberal_studies_education_generalist_ba,"Liberal Studies, Emphasis in Education-Generalist",B.A.
+12105,liberal_studies_elementary_education_ba,"Liberal Studies, Emphasis in Elementary Education",B.A.
+12106,linguistics_ba,Linguistics,B.A.
+12128,mathematics_ba,Mathematics,B.A.
+12125,mathematics_applied_bs,"Mathematics, Emphasis in Applied Mathematics",B.S.
+12126,mathematics_computational_science_bs,"Mathematics, Emphasis in Computational Science",B.S.
+12522,mathematics_education_bs,"Mathematics, Emphasis in Mathematics Education",B.S.
+12127,mathematics_science_bs,"Mathematics, Emphasis in Science",B.S.
+12131,me_bioengineering_bs,"Mechanical Engineering, Emphasis in Bioengineering",B.S.
+11926,microbiology_bs,Microbiology,B.S.
+11927,microbiology_clinical_laboratory_bs,"Microbiology, Emphasis in Clinical Laboratory Science",B.S.
+12088,mjs_ba,Modern Jewish Studies,B.A.
+12135,music_ba,Music,B.A.
+12142,music_general_bm,"Music, General Track",B.M.
+12139,music_global_composition_bm,"Music, Global Composition Specialization",B.M.
+12140,music_jazz_studies_bm,"Music, Jazz Studies Specialization",B.M.
+12137,music_education_bm,"Music, Music Education Specialization",B.M.
+12141,music_entrepreneurship_business_bm,"Music, Music Entrepreneurship and Business Track",B.M.
+12143,music_recording_technology_bm,"Music, Music Recording Technology and Audio Design Track",B.M.
+12138,music_performance_bm,"Music, Performance Specialization",B.M.
+12597,musical_theatre_ba,Musical Theatre,B.A.
+12154,philosophy_ba,Philosophy,B.A.
+12156,physics_ba,Physics,B.A.
+12157,physics_general_bs,"Physics, General Physics",B.S.
+12158,physics_modern_optics_bs,"Physics, Modern Optics",B.S.
+12162,political_science_ba,Political Science,B.A.
+12498,psych_ba,Psychology,B.A.
+12168,psychology_industrial_organizational_ba,"Psychology, Emphasis in Industrial and Organizational Psychology",B.A.
+12544,psychology_neuroscience_ba,"Psychology, Emphasis in Neuroscience",B.A.
+12174,pa_city_planning_ba,"Public Administration, Emphasis in City Planning",B.A.
+12178,ra_outdoor_resource_bs,"Recreation Administration, Emphasis in Outdoor Resource Management",B.S.
+12179,ra_recreation_systems_bs,"Recreation Administration, Emphasis in Recreation Systems Management",B.S.
+12180,ra_sustainable_tourism_bs,"Recreation Administration, Emphasis in Sustainable Tourism Management",B.S.
+12182,religious_studies_ba,Religious Studies,B.A.
+12186,rws_ba,Rhetoric and Writing Studies,B.A.
+12194,sw_community_corrections_ba,"Social Work, Specialization in Community Corrections Case Management",B.A.
+12199,spanish_credential_ba,"Spanish, in preparation for the Single Subject Teaching Credential in Foreign Languages",B.A.
+12203,slhs_ba,"Speech, Language, and Hearing Sciences",B.A.
+12204,statistics_bs,Statistics,B.S.
+12205,statistics_actuarial_science_bs,"Statistics, Emphasis in Actuarial Science",B.S.
+12206,statistics_data_science_bs,"Statistics, Emphasis in Data Science",B.S.
+12208,sustainability_ba,Sustainability,B.A.
+12218,tfm_critical_studies_bs,"Television, Film and New Media, Emphasis in Critical Studies",B.S.
+12219,tfm_production_bs,"Television, Film and New Media, Emphasis in Production",B.S.
+12212,ta_ba,Theatre Arts,B.A.
+12214,ta_design_technology_ba,"Theatre Arts, Emphasis in Design and Technology",B.A.
+12216,ta_performance_ba,"Theatre Arts, Emphasis in Performance",B.A.
+12217,ta_youth_theatre_ba,"Theatre Arts, Emphasis in Youth Theatre",B.A.
+12213,ta_general_theatre_ba,"Theatre Arts, General Theatre Arts",B.A.
+12056,us_urban_cultures_ba,"Urban Studies, Urban Cultures and Societies Specialization",B.A.
+12057,us_urban_planning_ba,"Urban Studies, Urban Planning, Design, and Management Specialization",B.A.
+12058,us_urban_political_ba,"Urban Studies, Urban Political Economy and Public Policy Specialization",B.A.
+12059,us_urban_sustainability_ba,"Urban Studies, Urban Sustainability Specialization",B.A.
+12223,wgs_ba,Women’s and Gender Studies,B.A.

@@ -168,13 +168,14 @@ CREATE TABLE IF NOT EXISTS major_requirements (
     major_id    TEXT NOT NULL,
     section     TEXT NOT NULL,        -- 'Preparation for the Major', 'Major', ...
     group_label TEXT NOT NULL,        -- 'Required', 'Statistics (pick 1)', ...
-    rule        TEXT NOT NULL,        -- required | choose | pool | open
+    rule        TEXT NOT NULL,        -- required | choose | pool | open | note (a section's note, no course)
     pick_n      INTEGER,              -- choose: how many courses; open: how many courses (optional)
     pick_units  TEXT,                 -- pool/open: units needed, can be a range like '14-15'
     subject     TEXT,                 -- normalized ('POLS'); open rules may list 'ACCTG|BA|FIN'
     catalog_num TEXT,                 -- text on purpose: '150L', '437A'
     num_min     INTEGER,              -- open rules: lowest catalog number
     num_max     INTEGER,              -- open rules: highest catalog number
+    exclude     TEXT,                 -- open rules: courses that do not count, 'ACCTG 325|ACCTG 326'
     title       TEXT,
     units       TEXT,                 -- text: can be '1-4'
     note        TEXT,
