@@ -57,7 +57,7 @@ def make_professors(n=15):
                 used_names.add((first, last))
                 break
         dept = random.choice(SUBJECTS)
-        email = f"{first.lower()}.{last.lower()}@sdsu.edu"
+        email = f"{first.lower()}.{last.lower()}@example.com"
         rows.append({
             "professor_id": i,
             "first_name": first,
@@ -173,7 +173,7 @@ def make_students(n=25, sections=None):
             if (first, last, i) not in used_names:
                 used_names.add((first, last, i))
                 break
-        email = f"{first.lower()}.{last.lower()}{i}@sdsu.edu"
+        email = f"{first.lower()}.{last.lower()}{i}@example.com"
         rows.append({
             "student_id": i,
             "first_name": first,
