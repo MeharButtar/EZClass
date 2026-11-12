@@ -34,18 +34,22 @@ How a page becomes rows (decided with Mehar after the Mechanical Engineering rev
       * "6 units of upper division Accounting (ACCTG) courses" / "9 units ... numbered
         300-599" (no list): an open row (subject, number range, units) in the h3's section.
   - "Select at least one of the following courses:" over a list makes a pick-n group.
-  - Text over a whole h2 list (C average, pathways, progress rules) is a major note, not a
-    course note. "Cannot be taken Cr/NC" and "grade of C (2.0) or better" become the short
+  - Text over a whole h2 list: "MKTG 490 may only be taken after ..." goes on those
+    courses' rows; a sentence with a rule in it (must, required, may only, the C
+    average, progress requirements) is the section note; anything else (pathways,
+    "please visit", "should refer to") is a blurb and only goes to the report.
+    "Cannot be taken Cr/NC" and "grade of C (2.0) or better" become the short
     grade note on each course. A "*" footnote is put on the courses marked "*".
   - A rule the app cannot express ("6 units from one area, at least 3 at the 500
     level") becomes one pool for the whole total, with the full catalog sentence
-    as the section note, and goes on the review list.
+    as the section note, and goes on the review list. When the rule gives no single
+    total, pick_units is what the h2 total leaves after its other rows.
   - Text about a whole section (that rule sentence, "6 units may be taken outside
     the college", "Select at least one") is one `note` row at the top of the
     section, shown once; course rows keep only their own notes (grade, footnote,
     cross-listing). "excluding ACCTG 325 and ACCTG 326" fills the open row's exclude.
-  - Group labels and "Or ..." notes use the app's codes (CIVE 160, not CIV E 160). When the rule gives no single
-    total, pick_units is what the h2 total leaves after its other rows.
+  - The GWAR note goes on the course the writing block names, listed or only in its text.
+  - Group labels and "Or ..." notes use the app's codes (CIVE 160, not CIV E 160).
   - A course in more than one pool group of one section keeps one row (the
     first), with "Also listed under <other group>", and goes on the review list.
   - "or" makes a pick-1 group; "also listed as" makes a pick-1 group noted
