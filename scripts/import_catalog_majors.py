@@ -115,6 +115,9 @@ NOTE_BLOCKS = re.compile(r"general education|graduation writing|master plan|impa
 APPROVAL_LIST = re.compile(r"\bapproval\b.*\b(?:allow|count|fulfill)", re.I)
 # an h2 that is a requirement with no courses: a section with only its note (shown to the student)
 LANGUAGE_BLOCK = re.compile(r"language requirement", re.I)
+# 'Mathematics Competency Requirement' over a list with no rule of its own: pick 1 for now (Mehar, 2026-11-11:
+# to be confirmed with the department), the list as the catalog writes it in the note
+COMPETENCY_BLOCK = re.compile(r"competency requirement", re.I)
 # 'Emphasis in Bioengineering' over the whole program (Preparation, Major ... one level down)
 EMPHASIS_WRAPPER = re.compile(r"^(?:emphasis|specialization|concentration|option)\s+in\b", re.I)
 GWAR_BLOCK = re.compile(r"graduation writing", re.I)
@@ -1070,6 +1073,20 @@ def map_blocks(prog, blocks):
                           f"(a pick-1 group inside a units pool would be counted on its own).")
             return made
 
+        if b["level"] < 3 and COMPETENCY_BLOCK.search(b["heading"]) and courses:
+            parts = [("c", app_code(v)) if k == "course" else ("or", "or") if k == "or" else ("t", v.strip())
+                     for k, v in b["items"] if k in ("course", "or") or (k == "text" and v.strip())]
+            listed = ""
+            for n, (k, v) in enumerate(parts):
+                listed += (", " if k == "c" and parts[n - 1][0] == "c" else " ") if n else ""
+                listed += v
+            group_label = f"{b['heading']} (pick 1)"
+            for course in courses:
+                row(course, "choose", group_label, note_for(course, [f"Catalog list: {listed}"]), pick_n="1")
+            prog.review = [x for x in prog.review if not x.startswith(f"'Required' in {section}: text between courses")]
+            prog.flag(f"'{b['heading']}': read as pick 1 of {len(courses)} for now (to confirm with the department); "
+                      f"the catalog list is the note: \"{listed}\"")
+            continue
         if in_pool:
             pending_pool.extend(pool_rows(block_note))
         elif pool_units and len(chains(b["items"])) == 1 and set(chains(b["items"])[0][1]) == {"or"}:
@@ -1145,10 +1162,11 @@ def map_blocks(prog, blocks):
                     row(course, "choose", group_label, note_for(course, block_note + extra), pick_n="1")
         for alternatives in and_or:
             group_label = ", or ".join(" and ".join(app_code(c) for c in alt) for alt in alternatives)
+            pair_units = min(sum(units_range(c["units"])[0] for c in alt) for alt in alternatives)
             for alt in alternatives:
                 for course in alt:
                     row(course, "choose", group_label, note_for(course, ["Take both courses of one pair"]),
-                        pick_n=str(len(alt)))
+                        pick_n=str(len(alt)))["pick_units"] = str(pair_units)
             prog.flag(f"'{group_label}' in {section}: a choice between pairs, encoded as pick {len(alternatives[0])} "
                       f"with a note; the app cannot stop a student mixing the pairs. Check it.")
         for sent, opened in opens:
@@ -1226,6 +1244,10 @@ def listed_units(rows):
         elif r["rule"] in ("pool", "open"):
             pools[(r["section"], r["group_label"] if r["rule"] == "open" else "")] = r["pick_units"]
     for items in groups.values():
+        if items[0].get("pick_units"):          # a pair choice: the units of one pair
+            a, b = units_range(items[0]["pick_units"])
+            low, high = low + a, high + b
+            continue
         n = int(items[0]["pick_n"] or 1)
         lows = sorted(units_range(r["units"])[0] for r in items)
         highs = sorted((units_range(r["units"])[1] for r in items), reverse=True)

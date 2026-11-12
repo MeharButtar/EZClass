@@ -748,10 +748,10 @@ chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Re
 chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,
 chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,
 chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,Take both courses of one pair
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,Take both courses of one pair
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,,BIOL,204,,,,Principles of Organismal Biology,3,Take both courses of one pair
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,203,,,,Principles of Cell and Molecular Biology,3,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,204,,,,Principles of Organismal Biology,3,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,Take both courses of one pair
 chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,410A,,,,Physical Chemistry,4,
 chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,410B,,,,Physical Chemistry,3,
 chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,432,,,,Organic Chemistry,3,
@@ -774,6 +774,55 @@ chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electiv
 chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,549,,,,Microbial Genetics and Physiology,3,
 chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,570,,,,Neurobiology,3,
 chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,590,,,,Physiology of Human Systems,4,
+child_development_bs,Preparation for the Major,,note,,,,,,,,,,The minimum grade in each class is a C (2.0) or better
+child_development_bs,Preparation for the Major,Required,required,,,CFD,135,,,,Principles of Family Development,3,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Preparation for the Major,Required,required,,,CFD,270,,,,Human Development Across the Lifespan,3,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Preparation for the Major,Required,required,,,CFD,270L,,,,Principles of Observation: Child Development Laboratory,1-3,Choose One:. A three unit elementary statistics course. No Cr/NC. (one unit)
+child_development_bs,Preparation for the Major,Required,required,,,CFD,272,,,,"Child, Family, and Community Engagement",3,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Preparation for the Major,Required,required,,,CFD,275,,,,Learning Environments and Developmentally Appropriate Practices,3,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Preparation for the Major,Required,required,,,CFD,278,,,,"Foundations of Human Health, Nutrition, and Safety",2,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Preparation for the Major,Required,required,,,BIOL,100,,,,General Biology,3,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Preparation for the Major,Required,required,,,PSY,101,,,,Introductory Psychology,3,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Preparation for the Major,Required,required,,,SOC,101,,,,Introductory Sociology: The Study of Society,3,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Preparation for the Major,PSY 280 or SOC 201 or STAT 119 or STAT 250 (pick 1),choose,1,,PSY,280,,,,Statistical Methods in Psychology,4,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Preparation for the Major,PSY 280 or SOC 201 or STAT 119 or STAT 250 (pick 1),choose,1,,SOC,201,,,,Elementary Social Statistics,3,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Preparation for the Major,PSY 280 or SOC 201 or STAT 119 or STAT 250 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Preparation for the Major,PSY 280 or SOC 201 or STAT 119 or STAT 250 (pick 1),choose,1,,STAT,250,,,,Statistical Principles and Practices,3,Choose One:. A three unit elementary statistics course. No Cr/NC
+child_development_bs,Major,Required,required,,,CFD,335,,,,Interactions in Culturally Diverse Families,3,
+child_development_bs,Major,Required,required,,,CFD,354,,,,"Parenting: Context, Research, and Application",3,
+child_development_bs,Major,Required,required,,,CFD,370,,,,"Research, Assessment, and Evaluation of Children and Families",3,
+child_development_bs,Major,Required,required,,,CFD,375A,,,,Human Development & Learning: Infancy to Toddlerhood,2,
+child_development_bs,Major,Required,required,,,CFD,375B,,,,Human Development and Learning: Early to Middle Childhood,2,
+child_development_bs,Major,Required,required,,,CFD,375C,,,,Human Development and Learning: Adolescence to Adulthood,2,
+child_development_bs,Major,Required,required,,,CFD,475,,,,Promoting Behavior Support and Classroom Organization in Early Childhood Settings,3,
+child_development_bs,Major,Required,required,,,CFD,537,,,,Child Abuse and Family Violence,3,
+child_development_bs,Major,Required,required,,,CFD,560,,,,Theories in Socio-Emotional Development,3,
+child_development_bs,Major,Required,required,,,CFD,575,,,,Public Policy and Professional Ethics in Child and Family Development,3,
+child_development_bs,Major,Required,required,,,CFD,578,,,,Conflict Resolution Across the Life Span,4,
+child_development_bs,Major,Required,required,,,CFD,590,,,,Disability: Conception through Emerging Adulthood,4,
+child_development_bs,Major,Required,required,,,CFD,598,,,,Reflective Learning Portfolio,1,
+child_development_bs,Major,And Two Units from,required,,,CFD,378A,,,,Laboratory Experience: Infancy to Toddlerhood,1-3,(one unit)
+child_development_bs,Major,And Two Units from,required,,,CFD,378B,,,,Laboratory Experience: Early Childhood,1-3,(one unit)
+child_development_bs,Major,And Two Units from,required,,,CFD,378C,,,,Laboratory Experience: Middle Childhood to Adolescence,1-3,(one unit)
+child_development_bs,Major,And Two Units from,required,,,CFD,378D,,,,Laboratory Experience: Development Across the Lifespan,1-3,(one unit)
+child_development_bs,Major,Electives,required,,,CFD,377,,,,Building Leadership and Communication Skills in Human and Family Development Programs,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,380,,,,Early Language and Literacy Development in a Linguistically Diverse Society,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,390,,,,The Hospitalized Child,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,404,,,,Kumeyaay Shamull Project: Child and Family Development,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,437,,,,Violence in Relationships,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,450,,,,The Human-Nature Connection: Developmental Perspectives,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,477,,,,Administration of Early Childhood Education Programs,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,497,,,,Field Experience in Child and Family Development Programs,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,536,,,,Divorce and Remarriage,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,577,,,,Professional Development and Mentorship in Human and Family Development Programs,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,580,,,,Observation and Assessment of Young Children’s Environments and Relationships,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,585,,,,Family Involvement and Engagement with Young Children: Services and Resources,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,595,,,,Early Childhood Mental Health: Theory and Practice,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,596,,,,Advanced Studies in Child and Family Development,1-6,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,ED,451,,,,Introduction to Multicultural Education,3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,CFD,499,,,,Special Study,1-3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Electives,required,,,ED,450,,,,Study Abroad,1-3,12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:. Selected Study research experiences are determined by the department. Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity. Study abroad course sections selected in consultation with the undergraduate advisor
+child_development_bs,Major,Capstone: Reflective Learning Portfolio,required,,,CFD,598,,,,Reflective Learning Portfolio,1,"This is a required capstone course. Students are required to prepare a portfolio to reflect, integrate, and synthesize their cumulative learning experience acquired in child and family development courses, study abroad programs, involvement in research projects with faculty, and/or internships. The reflective portfolio will be a capstone culminating experience to provide the opportunity to integrate knowledge and understanding of the child and family development curriculum with their academic and personal growth"
 civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,100,,,,Introduction to Civil Engineering,1,No Cr/NC
 civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,121,,,,Computer Graphics for the Built Environment,3,No Cr/NC
 civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,218,,,,Surveying for Civil Engineering and Construction,3,No Cr/NC
@@ -835,12 +884,12 @@ communication_ba,Preparation for the Major,Choose from these courses,pool,,6,COM
 communication_ba,Preparation for the Major,Choose from these courses,pool,,6,COMM,204,,,,Advanced Public Speaking,3,
 communication_ba,Preparation for the Major,Choose from these courses,pool,,6,COMM,245,,,,Interpersonal Communication,3,
 communication_ba,Mathematics Competency Requirement,,note,,,,,,,,,,Competency in mathematics is generally satisfied by completing three semesters of college mathematics
-communication_ba,Mathematics Competency Requirement,Required,required,,,STAT,250,,,,Statistical Principles and Practices,3,(highly recommended)
-communication_ba,Mathematics Competency Requirement,Required,required,,,STAT,350A,,,,Statistical Methods,3,(highly recommended)
-communication_ba,Mathematics Competency Requirement,Required,required,,,STAT,350B,,,,Statistical Methods,3,(highly recommended)
-communication_ba,Mathematics Competency Requirement,Required,required,,,SOC,201,,,,Elementary Social Statistics,3,(highly recommended). Additional prerequisites required
-communication_ba,Mathematics Competency Requirement,Required,required,,,SOC,406,,,,Intermediate Social Statistics,3,(highly recommended). Additional prerequisites required
-communication_ba,Mathematics Competency Requirement,Required,required,,,SOC,407,,,,Survey and Experimental Research Methods,3,(highly recommended). Additional prerequisites required
+communication_ba,Mathematics Competency Requirement,Mathematics Competency Requirement (pick 1),choose,1,,STAT,250,,,,Statistical Principles and Practices,3,"Catalog list: STAT 250, STAT 350A, STAT 350B or (highly recommended) SOC 201, SOC 406, SOC 407"
+communication_ba,Mathematics Competency Requirement,Mathematics Competency Requirement (pick 1),choose,1,,STAT,350A,,,,Statistical Methods,3,"Catalog list: STAT 250, STAT 350A, STAT 350B or (highly recommended) SOC 201, SOC 406, SOC 407"
+communication_ba,Mathematics Competency Requirement,Mathematics Competency Requirement (pick 1),choose,1,,STAT,350B,,,,Statistical Methods,3,"Catalog list: STAT 250, STAT 350A, STAT 350B or (highly recommended) SOC 201, SOC 406, SOC 407"
+communication_ba,Mathematics Competency Requirement,Mathematics Competency Requirement (pick 1),choose,1,,SOC,201,,,,Elementary Social Statistics,3,"Catalog list: STAT 250, STAT 350A, STAT 350B or (highly recommended) SOC 201, SOC 406, SOC 407. Additional prerequisites required"
+communication_ba,Mathematics Competency Requirement,Mathematics Competency Requirement (pick 1),choose,1,,SOC,406,,,,Intermediate Social Statistics,3,"Catalog list: STAT 250, STAT 350A, STAT 350B or (highly recommended) SOC 201, SOC 406, SOC 407. Additional prerequisites required"
+communication_ba,Mathematics Competency Requirement,Mathematics Competency Requirement (pick 1),choose,1,,SOC,407,,,,Survey and Experimental Research Methods,3,"Catalog list: STAT 250, STAT 350A, STAT 350B or (highly recommended) SOC 201, SOC 406, SOC 407. Additional prerequisites required"
 communication_ba,Major,Required,required,,,COMM,300,,,,Conceptualizing Communication,3,
 communication_ba,Major,Required,required,,,COMM,350,,,,Investigating Communication,3,
 communication_ba,Major,Communication Capstone,required,,,COMM,495,,,,Communication Capstone: Conceptualizing and Investigating Communication,3,(3 units) Must be taken after completion of at least 90 units to include 6 units in Conceptualizing Communication and 6 units in Investigating Communication
@@ -970,6 +1019,115 @@ construction_engineering_bs,Technical Elective A,Technical Elective A,pool,,3,CI
 construction_engineering_bs,Technical Elective A,Technical Elective A,pool,,3,CIVE,525,,,,Design of Steel Structures,3,
 construction_engineering_bs,Technical Elective A,Technical Elective A,pool,,3,CIVE,528,,,,Masonry Structures Design,3,
 construction_engineering_bs,Technical Elective B,Technical Elective B,pool,,1,CONE,499,,,,Special Study,1-3,
+economics_ba,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+economics_ba,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+economics_ba,Preparation for the Major,ECON 201 or STAT 119 or STAT 250 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+economics_ba,Preparation for the Major,ECON 201 or STAT 119 or STAT 250 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+economics_ba,Preparation for the Major,ECON 201 or STAT 119 or STAT 250 (pick 1),choose,1,,STAT,250,,,,Statistical Principles and Practices,3,"Grade of C or better, no Cr/NC"
+economics_ba,Calculus,Calculus,pool,,3-4,MATH,120,,,,Calculus for Business Analysis,3,
+economics_ba,Calculus,Calculus,pool,,3-4,MATH,124,,,,Calculus for the Life Sciences,4,
+economics_ba,Calculus,Calculus,pool,,3-4,MATH,150,,,,Calculus I,4,
+economics_ba,Major,,note,,,,,,,,,,A minimum of 33 upper division Economics (ECON) units to include:
+economics_ba,Major,Required,required,,,ECON,301,,,,Introduction to Applied Econometrics,3,
+economics_ba,Major,Required,required,,,ECON,320,,,,Intermediate Macroeconomic Theory,3,
+economics_ba,Major,Required,required,,,ECON,321,,,,Intermediate Microeconomic Theory,3,
+economics_ba,Major,Variable Unit and Repeatable Courses,required,,,ECON,499,,,,Special Study,1-3,Courses listed below may be applied to the major. These units may be counted towards the international economics elective requirement with department approval. (maximum three units)
+economics_ba,Major,Variable Unit and Repeatable Courses,required,,,ECON,495,,,,Economics Internship,3,Courses listed below may be applied to the major. These units may be counted towards the international economics elective requirement with department approval. (maximum three units)
+economics_ba,Major,Variable Unit and Repeatable Courses: ECON 496 or ECON 596 (pick 1),choose,1,,ECON,496,,,,Experimental Topics,1-3,Courses listed below may be applied to the major. These units may be counted towards the international economics elective requirement with department approval
+economics_ba,Major,Variable Unit and Repeatable Courses: ECON 496 or ECON 596 (pick 1),choose,1,,ECON,596,,,,Experimental Topics,3,Courses listed below may be applied to the major. These units may be counted towards the international economics elective requirement with department approval. (maximum nine units combined)
+economics_ba,International Economics Electives,International Economics Electives,pool,,6,ECON,330,,,,Comparative Economic Systems,3,
+economics_ba,International Economics Electives,International Economics Electives,pool,,6,ECON,360,,,,International Economic Problems,3,
+economics_ba,International Economics Electives,International Economics Electives,pool,,6,ECON,365,,,,Economics of Underdeveloped Areas,3,
+economics_ba,International Economics Electives,International Economics Electives,pool,,6,ECON,460,,,,Economics of Financial Crises,3,
+economics_ba,International Economics Electives,International Economics Electives,pool,,6,ECON,463,,,,Economic Development Before 1900,3,
+economics_ba,International Economics Electives,International Economics Electives,pool,,6,ECON,464,,,,Economic Problems of Latin America,3,
+economics_ba,International Economics Electives,International Economics Electives,pool,,6,ECON,466,,,,Economics of the Middle East,3,
+economics_ba,International Economics Electives,International Economics Electives,pool,,6,ECON,561,,,,International Trade,3,
+economics_ba,International Economics Electives,International Economics Electives,pool,,6,ECON,592,,,,International Monetary Theory and Policy,3,
+economics_ba,Language Requirement,,note,,,,,,,,,,Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill this requirement
+economics_international_ba,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+economics_international_ba,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+economics_international_ba,Preparation for the Major,ECON 201 or STAT 119 or STAT 250 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+economics_international_ba,Preparation for the Major,ECON 201 or STAT 119 or STAT 250 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+economics_international_ba,Preparation for the Major,ECON 201 or STAT 119 or STAT 250 (pick 1),choose,1,,STAT,250,,,,Statistical Principles and Practices,3,"Grade of C or better, no Cr/NC"
+economics_international_ba,Calculus,Calculus,pool,,3-4,MATH,120,,,,Calculus for Business Analysis,3,
+economics_international_ba,Calculus,Calculus,pool,,3-4,MATH,124,,,,Calculus for the Life Sciences,4,
+economics_international_ba,Calculus,Calculus,pool,,3-4,MATH,150,,,,Calculus I,4,
+economics_international_ba,Major,,note,,,,,,,,,,A minimum of 33 upper division units (27 units in Economics and 6-7 units from the Fowler College of Business) to include:
+economics_international_ba,Major,Required,required,,,ECON,301,,,,Introduction to Applied Econometrics,3,
+economics_international_ba,Major,Required,required,,,ECON,320,,,,Intermediate Macroeconomic Theory,3,
+economics_international_ba,Major,Required,required,,,ECON,321,,,,Intermediate Microeconomic Theory,3,
+economics_international_ba,International Economics Electives,International Economics Electives,pool,,12,ECON,330,,,,Comparative Economic Systems,3,
+economics_international_ba,International Economics Electives,International Economics Electives,pool,,12,ECON,360,,,,International Economic Problems,3,
+economics_international_ba,International Economics Electives,International Economics Electives,pool,,12,ECON,365,,,,Economics of Underdeveloped Areas,3,
+economics_international_ba,International Economics Electives,International Economics Electives,pool,,12,ECON,460,,,,Economics of Financial Crises,3,
+economics_international_ba,International Economics Electives,International Economics Electives,pool,,12,ECON,463,,,,Economic Development Before 1900,3,
+economics_international_ba,International Economics Electives,International Economics Electives,pool,,12,ECON,464,,,,Economic Problems of Latin America,3,
+economics_international_ba,International Economics Electives,International Economics Electives,pool,,12,ECON,466,,,,Economics of the Middle East,3,
+economics_international_ba,International Economics Electives,International Economics Electives,pool,,12,ECON,561,,,,International Trade,3,
+economics_international_ba,International Economics Electives,International Economics Electives,pool,,12,ECON,592,,,,International Monetary Theory and Policy,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,311,,,,History of Economic Thought,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,338,,,,Economic History of the United States,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,349,,,,Economics for Teachers,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,380,,,,Labor Economics,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,382,,,,"Economics of Work, Marriage, and Family",3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,401,,,,Public Finance,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,403,,,,Health Economics,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,406,,,,Economics of Sports,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,422,,,,Business Cycles,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,441,,,,Introduction to Econometrics,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,449W,,,,Economic Literacy,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,455,,,,Environmental Economics,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,456,,,,Economics of Natural Resources,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,485,,,,Law and Economics,3,
+economics_international_ba,Upper Division Major Electives,Upper Division Major Electives,pool,,6,ECON,490,,,,Money and Banking,3,
+economics_international_ba,Upper Division Business Electives,Upper Division Business Electives,pool,,6-7,BA,323,,,,Fundamentals of Finance,3,and
+economics_international_ba,Upper Division Business Electives,Upper Division Business Electives,pool,,6-7,FIN,329,,,,International Business Finance,3,Or BA 350
+economics_international_ba,Upper Division Business Electives,Upper Division Business Electives,pool,,6-7,BA,350,,,,Management and Organizational Behavior,3,Or FIN 329. and
+economics_international_ba,Upper Division Business Electives,Upper Division Business Electives,pool,,6-7,MGT,357,,,,Multinational Business and Comparative Management,3,Or BA 370
+economics_international_ba,Upper Division Business Electives,Upper Division Business Electives,pool,,6-7,BA,370,,,,Marketing,3,Or MGT 357. and
+economics_international_ba,Upper Division Business Electives,Upper Division Business Electives,pool,,6-7,MKTG,376,,,,Global Marketing Strategy,4,
+economics_international_ba,Language Requirement,,note,,,,,,,,,,Successful completion of a course in a language other than English at the fourth semester level or higher. Students who have graduated from high school in another country where the language of instruction is not English have met the language requirement for this major
+economics_public_policy_ba,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+economics_public_policy_ba,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
+economics_public_policy_ba,Preparation for the Major,Required,required,,,COMM,160,,,,Argumentation,3,"Grade of C or better, no Cr/NC"
+economics_public_policy_ba,Preparation for the Major,Required,required,,,MIS,180,,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
+economics_public_policy_ba,Preparation for the Major,ECON 201 or STAT 119 or STAT 250 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+economics_public_policy_ba,Preparation for the Major,ECON 201 or STAT 119 or STAT 250 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
+economics_public_policy_ba,Preparation for the Major,ECON 201 or STAT 119 or STAT 250 (pick 1),choose,1,,STAT,250,,,,Statistical Principles and Practices,3,"Grade of C or better, no Cr/NC"
+economics_public_policy_ba,Preparation for the Major,One Course Selected from (pick 1),choose,1,,MATH,120,,,,Calculus for Business Analysis,3,
+economics_public_policy_ba,Preparation for the Major,One Course Selected from (pick 1),choose,1,,MATH,124,,,,Calculus for the Life Sciences,4,
+economics_public_policy_ba,Preparation for the Major,One Course Selected from (pick 1),choose,1,,MATH,150,,,,Calculus I,4,
+economics_public_policy_ba,Major,Required,required,,,ECON,301,,,,Introduction to Applied Econometrics,3,
+economics_public_policy_ba,Major,Required,required,,,ECON,320,,,,Intermediate Macroeconomic Theory,3,
+economics_public_policy_ba,Major,Required,required,,,ECON,321,,,,Intermediate Microeconomic Theory,3,
+economics_public_policy_ba,Major,Required,required,,,BA,323,,,,Fundamentals of Finance,3,
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,311,,,,History of Economic Thought,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,338,,,,Economic History of the United States,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,349,,,,Economics for Teachers,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,380,,,,Labor Economics,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,382,,,,"Economics of Work, Marriage, and Family",3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,401,,,,Public Finance,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,403,,,,Health Economics,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,406,,,,Economics of Sports,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,422,,,,Business Cycles,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,441,,,,Introduction to Econometrics,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,449W,,,,Economic Literacy,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,455,,,,Environmental Economics,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,456,,,,Economics of Natural Resources,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,485,,,,Law and Economics,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,487,,,,Economics of Strategy,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,A. Public Policy Group,pool,,18,ECON,490,,,,Money and Banking,3,At least 12 units selected from the public policy group:
+economics_public_policy_ba,18 Units of Electives in Economics,B. International Group,pool,,18,ECON,330,,,,Comparative Economic Systems,3,Three units of electives selected from the international group:
+economics_public_policy_ba,18 Units of Electives in Economics,B. International Group,pool,,18,ECON,360,,,,International Economic Problems,3,Three units of electives selected from the international group:
+economics_public_policy_ba,18 Units of Electives in Economics,B. International Group,pool,,18,ECON,365,,,,Economics of Underdeveloped Areas,3,Three units of electives selected from the international group:
+economics_public_policy_ba,18 Units of Electives in Economics,B. International Group,pool,,18,ECON,460,,,,Economics of Financial Crises,3,Three units of electives selected from the international group:
+economics_public_policy_ba,18 Units of Electives in Economics,B. International Group,pool,,18,ECON,463,,,,Economic Development Before 1900,3,Three units of electives selected from the international group:
+economics_public_policy_ba,18 Units of Electives in Economics,B. International Group,pool,,18,ECON,464,,,,Economic Problems of Latin America,3,Three units of electives selected from the international group:
+economics_public_policy_ba,18 Units of Electives in Economics,B. International Group,pool,,18,ECON,466,,,,Economics of the Middle East,3,Three units of electives selected from the international group:
+economics_public_policy_ba,18 Units of Electives in Economics,B. International Group,pool,,18,ECON,561,,,,International Trade,3,Three units of electives selected from the international group:
+economics_public_policy_ba,18 Units of Electives in Economics,B. International Group,pool,,18,ECON,592,,,,International Monetary Theory and Policy,3,Three units of electives selected from the international group:
+economics_public_policy_ba,Language Requirement,,note,,,,,,,,,,Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to section of catalog on “Graduation Requirements .”
 electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,101,,,,Introduction to Electrical and Computer Engineering,1,No Cr/NC
 electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,200,,,,Analytical Methods for Electrical Engineers,3,"Grade of C- or better, no Cr/NC"
 electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,210,,,,Circuit Analysis I,3,"Grade of C or better, no Cr/NC"
@@ -1065,6 +1223,54 @@ environmental_engineering_bs,Three Units of Professional Electives,Three Units o
 environmental_engineering_bs,Three Units of Professional Electives,Three Units of Professional Electives,pool,,3,CIVE,545,,,,Field Methods in Hydrology,3,
 environmental_engineering_bs,Three Units of Professional Electives,Three Units of Professional Electives,pool,,3,GEOG,570,,,,Environmental Conservation Practice,3,
 environmental_engineering_bs,Three Units of Professional Electives,Three Units of Professional Electives,pool,,3,GEOL,530,,,,Geochemistry,3,
+foods_nutrition_bs,Preparation for the Major,,note,,,,,,,,,,A grade of C (2.0) or better must be earned in CHEM 100 or CHEM 103 and CHEM 130 
+foods_nutrition_bs,Preparation for the Major,Required,required,,,FN,200,,,,Foods and Nutrition: Overview and Opportunities,1,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,FN,201,,,,Fundamentals of Nutrition,3,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,FN,203,,,,Cultural Aspects of Food and Nutrition,2,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,FN,205,,,,Introduction to Science of Food,2,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,FN,205L,,,,Introduction to Food Science Laboratory,2,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,BIOL,100,,,,General Biology,3,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,BIOL,100L,,,,General Biology Laboratory,1,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,BIOL,211,,,,Fundamentals of Microbiology,2,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,BIOL,211L,,,,Fundamentals of Microbiology Laboratory,2,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,BIOL,212,,,,Human Anatomy,4,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,CHEM,130,,,,Elementary Organic Chemistry,3,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,CHEM,160,,,,Introductory Biochemistry,3,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,PSY,101,,,,Introductory Psychology,3,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,Required,required,,,SOC,101,,,,Introductory Sociology: The Study of Society,3,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,CHEM 100 or CHEM 103 (pick 1),choose,1,,CHEM,100,,,,Preparation for General Chemistry,4,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,CHEM 100 or CHEM 103 (pick 1),choose,1,,CHEM,103,,,,Introduction to General Chemistry with Laboratory,4,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,ECON 201 or STAT 250 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,No Cr/NC
+foods_nutrition_bs,Preparation for the Major,ECON 201 or STAT 250 (pick 1),choose,1,,STAT,250,,,,Statistical Principles and Practices,3,No Cr/NC
+foods_nutrition_bs,Major,Required,required,,,FN,302,,,,Advanced Nutrition,3,
+foods_nutrition_bs,Major,Required,required,,,FN,302L,,,,Nutritional Assessment and Research Laboratory,2,
+foods_nutrition_bs,Major,Required,required,,,FN,303,,,,Quantity Food Production,2,
+foods_nutrition_bs,Major,Required,required,,,FN,304,,,,Nutrition Throughout the Life Span,3,
+foods_nutrition_bs,Major,Required,required,,,FN,401,,,,Advanced Science of Food,3,
+foods_nutrition_bs,Major,Required,required,,,FN,404,,,,Food Systems Management,3,
+foods_nutrition_bs,Major,Required,required,,,FN,405,,,,Experimental Food Science and Technology Laboratory,2,
+foods_nutrition_bs,Major,Required,required,,,FN,406,,,,Medical Nutrition Therapy I,3,
+foods_nutrition_bs,Major,Required,required,,,FN,408,,,,Medical Nutrition Therapy II,3,
+foods_nutrition_bs,Major,Required,required,,,FN,510,,,,Community Nutrition,2,
+foods_nutrition_bs,Major,Required,required,,,FN,512,,,,Nutrition for Athletes,3,
+foods_nutrition_bs,Major,Required,required,,,BIOL,336,,,,Principles of Human Physiology,3,Grade of C or better
+foods_nutrition_bs,Major,Required,required,,,ENS,304,,,,Physiology of Exercise,3,
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,FN,407,,,,Medical Nutrition Therapy I Laboratory,1,6 units selected with the approval of the advisor from:
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,FN,409,,,,Medical Nutrition Therapy II Laboratory,1,6 units selected with the approval of the advisor from:
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,FN,499,,,,Special Study,1-3,6 units selected with the approval of the advisor from:
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,FN,511,,,,Nutrition Education and Counseling,1,6 units selected with the approval of the advisor from:
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,BIOL,315,,,,Ecology and Human Impacts on the Environment,3,6 units selected with the approval of the advisor from:
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,BA,350,,,,Management and Organizational Behavior,3,6 units selected with the approval of the advisor from:. Additional prerequisites required
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,COMM,307,,,,Communication in Professional Settings,3,6 units selected with the approval of the advisor from:. Additional prerequisites required
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,COMM,371,,,,Intercultural Communication,3,6 units selected with the approval of the advisor from:
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,CSP,320,,,,Counseling Skills and Practice,3,6 units selected with the approval of the advisor from:
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,CSP,400,,,,Counseling and the Helping Professions,3,6 units selected with the approval of the advisor from:
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,MGT,352,,,,Human Resource Management,3,6 units selected with the approval of the advisor from:. Additional prerequisites required
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,NURS,350,,,,Women’s Health Across the Lifespan,3,6 units selected with the approval of the advisor from:
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,PSY,319,,,,Industrial and Organizational Psychology,3,6 units selected with the approval of the advisor from:. Additional prerequisites required
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,PH,302,,,,Epidemiology of Communicable and Chronic Disease,3,6 units selected with the approval of the advisor from:. Additional prerequisites required
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,PH,305,,,,Medical Care Organization and Delivery,3,6 units selected with the approval of the advisor from:. Additional prerequisites required
+foods_nutrition_bs,Major,Upper Division Major Electives,required,,,PH,362,,,,Global Health,3,6 units selected with the approval of the advisor from:
 health_communication_bs,Preparation for the Major,,note,,,,,,,,,,General Education Oral Communication requirement (3 units) and 6 units selected from:
 health_communication_bs,Preparation for the Major,Choose from these courses,pool,,6,COMM,160,,,,Argumentation,3,
 health_communication_bs,Preparation for the Major,Choose from these courses,pool,,6,COMM,201,,,,Communication and Community,3,
@@ -1106,6 +1312,153 @@ health_communication_bs,Health-Related Preparation Courses,Health-Related Prepar
 health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,PH,353,,,,Human Sexuality and Disease,3,
 health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,PH,362,,,,Global Health,3,
 health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,SWORK,430,,,,Alcohol and Other Drug Problems: Prevention and Intervention,3,
+journalism_ba,Preparation for the Major,Required,required,,,JMS,200,,,,Introduction to Contemporary Media,3,No Cr/NC
+journalism_ba,Preparation for the Major,Required,required,,,JMS,210,,,,Digital Literacy,3,No Cr/NC
+journalism_ba,Preparation for the Major,Required,required,,,JMS,220,,,,Writing for the Mass Media,3,No Cr/NC
+journalism_ba,Preparation for the Major,Required,required,,,JMS,250,,,,Introduction to Intersectional Representation in the Media,3,No Cr/NC
+journalism_ba,Major,Required,required,,,JMS,300,,,,Principles of Journalism,3,
+journalism_ba,Major,Required,required,,,JMS,310W,,,,Media Writing and Reporting,3,Satisfies the Graduation Writing Assessment
+journalism_ba,Major,Required,required,,,JMS,315,,,,Digital Media Principles and Design,3,
+journalism_ba,Major,Required,required,,,JMS,420,,,,Public Affairs News Reporting,3,
+journalism_ba,Major,Required,required,,,JMS,430,,,,Digital Journalism,3,
+journalism_ba,Major,Required,required,,,JMS,485,,,,Research Methods for Journalism,3,
+journalism_ba,Major,Required,required,,,JMS,494,,,,Media Law and Ethics,3,
+journalism_ba,Major,Required,required,,,JMS,550,,,,Multimedia News Laboratory,3,
+journalism_ba,And 15 Units of Upper Division Coursework,,note,,,,,,,,,,Fifteen units of upper division coursework in either journalism and media studies or learning design and technology
+journalism_ba,And 15 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,15,JMS,416,,,,Media and Sports,3,At least three units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,15,JMS,450,,,,Media and Culture,3,At least three units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,15,JMS,452,,,,Media and Identity,3,At least three units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,15,JMS,453,,,,Selena and Latinx Media,3,At least three units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,15,JMS,506,,,,Advertising and Society,3,At least three units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,15,JMS,540,,,,Media and Masculinities,3,At least three units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,15,JMS,545,,,,Media and Youth,3,At least three units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,15,JMS,574,,,,International Advertising,3,At least three units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,15,JMS,582,,,,Seminar in Media and Politics,3,At least three units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,312W,,,,Media Writing for Scientists,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,415,,,,Audio Technology and Storytelling for Media,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,418,,,,Social Media Influencing and Community Leadership,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,426,,,,Sports Journalism,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,428,,,,Digital and Social Media Analytics,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,434,,,,Writing for Spanish-Language and Latinx Media,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,435,,,,Photojournalism,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,441,,,,Magazine and Feature Writing,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,445,,,,Television News Reporting and Producing,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,492,,,,Creative Uses of Emerging Media,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,495,,,,Advanced Topics in Media Writing and Skills,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,515,,,,Media Entrepreneurship and Intrapreneurship,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,527,,,,Advanced Topics in Journalism,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,529,,,,Data-Driven Investigative Journalism,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,530,,,,Solutions Journalism,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,555,,,,Border Reporting,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,566,,,,Advertising Strategy and Digital Analytics Platforms,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Skills Courses,pool,,15,JMS,568,,,,Artificial Intelligence and Strategic Decision Making,3,At least six units must be taken from the following list of courses
+journalism_ba,And 15 Units of Upper Division Coursework,Applied News Courses,pool,,15,JMS,333,,,,Applied Student Media - Daily Aztec,3,At least three units must be taken from the following courses
+journalism_ba,And 15 Units of Upper Division Coursework,Applied News Courses,pool,,15,JMS,490,,,,Internship,1-3,At least three units must be taken from the following courses
+journalism_ba,Language Requirement,,note,,,,,,,,,,Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to the section of this catalog on “Graduation Requirements .”
+journalism_advertising_ba,Impacted Program,,note,,,,,,,,,,"Applicants not meeting the minimum requirements may petition for admission to the advertising studies emphasis. See the School of Journalism and Media Studies advising office for further information. The advertising emphasis is designated as an impacted program. To be admitted to the advertising emphasis, students must meet the following criteria: JMS 200 JMS 210 JMS 220 JMS 250 Achieve a passing score on the grammar and spelling assessment (see school for details); Complete a minimum of 45 baccalaureate level semester units. A maximum of 90 semester units is recommended. (A minimum of 60 units is required for all transfer applicants.); Have a cumulative grade point average of 3.0 or higher. Language Requirement: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement"
+journalism_advertising_ba,Impacted Program,Preparation for the Major,pool,,60,JMS,200,,,,Introduction to Contemporary Media,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_advertising_ba,Impacted Program,Preparation for the Major,pool,,60,JMS,210,,,,Digital Literacy,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_advertising_ba,Impacted Program,Preparation for the Major,pool,,60,JMS,220,,,,Writing for the Mass Media,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_advertising_ba,Impacted Program,Preparation for the Major,pool,,60,JMS,250,,,,Introduction to Intersectional Representation in the Media,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_advertising_ba,Impacted Program,Major,pool,,60,JMS,310W,,,,Media Writing and Reporting,3,
+journalism_advertising_ba,Impacted Program,Major,pool,,60,JMS,315,,,,Digital Media Principles and Design,3,
+journalism_advertising_ba,Impacted Program,Major,pool,,60,JMS,460,,,,Principles of Advertising,3,
+journalism_advertising_ba,Impacted Program,Major,pool,,60,JMS,462,,,,Advertising Strategy and Social Media,3,
+journalism_advertising_ba,Impacted Program,Major,pool,,60,JMS,494,,,,Media Law and Ethics,3,
+journalism_advertising_ba,Impacted Program,Major,pool,,60,JMS,560,,,,Advertising Research,3,
+journalism_advertising_ba,Impacted Program,Major,pool,,60,JMS,562,,,,Advertising Creative,3,
+journalism_advertising_ba,Impacted Program,Major,pool,,60,JMS,563,,,,Creative Portfolio,3,
+journalism_advertising_ba,Impacted Program,Major,pool,,60,JMS,565,,,,Advertising Campaigns,3,
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,,note,,,,,,,,,,Twelve units of upper division coursework in journalism and media studies or learning design and technology
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Critical / Cultural Media Courses,pool,,,JMS,416,,,,Media and Sports,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Critical / Cultural Media Courses,pool,,,JMS,450,,,,Media and Culture,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Critical / Cultural Media Courses,pool,,,JMS,452,,,,Media and Identity,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Critical / Cultural Media Courses,pool,,,JMS,453,,,,Selena and Latinx Media,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Critical / Cultural Media Courses,pool,,,JMS,506,,,,Advertising and Society,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Critical / Cultural Media Courses,pool,,,JMS,540,,,,Media and Masculinities,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Critical / Cultural Media Courses,pool,,,JMS,545,,,,Media and Youth,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Critical / Cultural Media Courses,pool,,,JMS,574,,,,International Advertising,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Critical / Cultural Media Courses,pool,,,JMS,582,,,,Seminar in Media and Politics,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,312W,,,,Media Writing for Scientists,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,415,,,,Audio Technology and Storytelling for Media,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,418,,,,Social Media Influencing and Community Leadership,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,426,,,,Sports Journalism,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,428,,,,Digital and Social Media Analytics,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,333,,,,Applied Student Media - Daily Aztec,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,434,,,,Writing for Spanish-Language and Latinx Media,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,435,,,,Photojournalism,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,441,,,,Magazine and Feature Writing,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,445,,,,Television News Reporting and Producing,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,490,,,,Internship,1-3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,495,,,,Advanced Topics in Media Writing and Skills,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,529,,,,Data-Driven Investigative Journalism,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,530,,,,Solutions Journalism,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,555,,,,Border Reporting,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,566,,,,Advertising Strategy and Digital Analytics Platforms,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,567,,,,Advanced Topics in Advertising,3,At least three units must be taken from the following list of courses
+journalism_advertising_ba,And 12 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,568,,,,Artificial Intelligence and Strategic Decision Making,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,Impacted Program,,note,,,,,,,,,,"Applicants not meeting the minimum requirements may petition for admission to the media studies emphasis. See the School of Journalism and Media Studies advising office for further information. The media studies emphasis is an impacted program. To be admitted to the media studies emphasis, students must meet the following criteria: JMS 200 JMS 210 JMS 220 JMS 250 Achieve a passing score on the grammar and spelling assessment (see school for details); Complete a minimum of 45 baccalaureate level semester units. A maximum of 90 semester units is recommended. (A minimum of 60 units is required for all transfer applicants.); Have a cumulative grade point average of 3.0 or higher. Language Requirement: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement"
+journalism_media_studies_ba,Impacted Program,Preparation for the Major,pool,,60,JMS,200,,,,Introduction to Contemporary Media,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_media_studies_ba,Impacted Program,Preparation for the Major,pool,,60,JMS,210,,,,Digital Literacy,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_media_studies_ba,Impacted Program,Preparation for the Major,pool,,60,JMS,220,,,,Writing for the Mass Media,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_media_studies_ba,Impacted Program,Preparation for the Major,pool,,60,JMS,250,,,,Introduction to Intersectional Representation in the Media,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_media_studies_ba,Impacted Program,Major,pool,,60,JMS,310W,,,,Media Writing and Reporting,3,
+journalism_media_studies_ba,Impacted Program,Major,pool,,60,JMS,315,,,,Digital Media Principles and Design,3,
+journalism_media_studies_ba,Impacted Program,Major,pool,,60,JMS,408,,,,Principles of Media Studies,3,
+journalism_media_studies_ba,Impacted Program,Major,pool,,60,JMS,472,,,,Media Technology and Society,3,
+journalism_media_studies_ba,Impacted Program,Major,pool,,60,JMS,489,,,,Research Methods in Media Studies,3,
+journalism_media_studies_ba,Impacted Program,Major,pool,,60,JMS,494,,,,Media Law and Ethics,3,
+journalism_media_studies_ba,Impacted Program,Major,pool,,60,JMS,508,,,,Media Studies Capstone,3,
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,,note,,,,,,,,,,Eighteen units of upper division coursework in Journalism and Media Studies or learning design and technology
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,312W,,,,Media Writing for Scientists,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,333,,,,Applied Student Media - Daily Aztec,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,415,,,,Audio Technology and Storytelling for Media,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,418,,,,Social Media Influencing and Community Leadership,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,428,,,,Digital and Social Media Analytics,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,434,,,,Writing for Spanish-Language and Latinx Media,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,435,,,,Photojournalism,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,441,,,,Magazine and Feature Writing,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,445,,,,Television News Reporting and Producing,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,492,,,,Creative Uses of Emerging Media,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,529,,,,Data-Driven Investigative Journalism,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,530,,,,Solutions Journalism,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Skills Courses,pool,,,JMS,555,,,,Border Reporting,3,At least three units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,,JMS,416,,,,Media and Sports,3,At least six units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,,JMS,450,,,,Media and Culture,3,At least six units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,,JMS,452,,,,Media and Identity,3,At least six units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,,JMS,453,,,,Selena and Latinx Media,3,At least six units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,,JMS,540,,,,Media and Masculinities,3,At least six units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,,JMS,545,,,,Media and Youth,3,At least six units must be taken from the following list of courses
+journalism_media_studies_ba,And 18 Units of Upper Division Coursework,Critical / Cultural Courses,pool,,,JMS,582,,,,Seminar in Media and Politics,3,At least six units must be taken from the following list of courses
+journalism_public_relations_ba,Emphasis in Public Relations,,note,,,,,,,,,,"Impacted Program: Applicants not meeting the minimum requirements may petition for admission to the public relations emphasis. Impacted Program: To be admitted to the public relations emphasis, students must meet the following criteria:. Language Requirement: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement"
+journalism_public_relations_ba,Emphasis in Public Relations,Preparation for the Major,required,,,JMS,200,,,,Introduction to Contemporary Media,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_public_relations_ba,Emphasis in Public Relations,Preparation for the Major,required,,,JMS,210,,,,Digital Literacy,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_public_relations_ba,Emphasis in Public Relations,Preparation for the Major,required,,,JMS,220,,,,Writing for the Mass Media,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_public_relations_ba,Emphasis in Public Relations,Preparation for the Major,required,,,JMS,250,,,,Introduction to Intersectional Representation in the Media,3,Some of these courses may also be used to fulfill lower division general education requirements. No Cr/NC
+journalism_public_relations_ba,Emphasis in Public Relations,Major,required,,,JMS,310W,,,,Media Writing and Reporting,3,
+journalism_public_relations_ba,Emphasis in Public Relations,Major,required,,,JMS,315,,,,Digital Media Principles and Design,3,
+journalism_public_relations_ba,Emphasis in Public Relations,Major,required,,,JMS,480,,,,Principles of Public Relations,3,
+journalism_public_relations_ba,Emphasis in Public Relations,Major,required,,,JMS,481,,,,Public Relations Writing,3,
+journalism_public_relations_ba,Emphasis in Public Relations,Major,required,,,JMS,494,,,,Media Law and Ethics,3,
+journalism_public_relations_ba,Emphasis in Public Relations,Major,required,,,JMS,581,,,,Applied Research in Public Relations,3,
+journalism_public_relations_ba,Emphasis in Public Relations,Major,required,,,JMS,585,,,,Professional Practices in Public Relations,3,
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,,note,,,,,,,,,,Eighteen units of upper division coursework in either journalism and media studies or learning design and technology
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,312W,,,,Media Writing for Scientists,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,416,,,,Media and Sports,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,428,,,,Digital and Social Media Analytics,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,434,,,,Writing for Spanish-Language and Latinx Media,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,450,,,,Media and Culture,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,452,,,,Media and Identity,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,453,,,,Selena and Latinx Media,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,490,,,,Internship,1-3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,492,,,,Creative Uses of Emerging Media,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,499,,,,Special Study,1-3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,540,,,,Media and Masculinities,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,545,,,,Media and Youth,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,568,,,,Artificial Intelligence and Strategic Decision Making,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,582,,,,Seminar in Media and Politics,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,590,,,,Crisis Communication in PR Management,3,At least twelve units must be taken from among the following courses
+journalism_public_relations_ba,And 18 Units of Upper Division Coursework,Strategic Practice Courses,pool,,,JMS,595,,,,Public Relations Theory,3,At least twelve units must be taken from among the following courses
 kinesiology_exercise_science_generalist_bs,Preparation for the Major,,note,,,,,,,,,,Students must complete the following courses as part of the TMC or at SDSU:
 kinesiology_exercise_science_generalist_bs,Preparation for the Major,Required,required,,,ENS,265,,,,Care and Prevention of Athletic and Recreational Injuries,2,
 kinesiology_exercise_science_generalist_bs,Preparation for the Major,CHEM 100 or CHEM 102 or CHEM 200 (pick 1),choose,1,,CHEM,100,,,,Preparation for General Chemistry,4,
@@ -1172,6 +1525,224 @@ kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,440,,,,Fitness P
 kinesiology_fitness_specialist_bs,Major,Required,required,,,BIOL,336,,,,Principles of Human Physiology,3,will also satisfy the General Education requirement in IV.A. Must be completed with a grade of a C (2. 0) or better
 kinesiology_fitness_specialist_bs,Major,ENS 437A or ENS 437B (pick 1),choose,1,,ENS,437A,,,,Adaptive Fitness Clinic,1,(one unit)
 kinesiology_fitness_specialist_bs,Major,ENS 437A or ENS 437B (pick 1),choose,1,,ENS,437B,,,,Community Rehabilitation Laboratory,1,But not both (one unit)
+mathematics_ba,Preparation for the Major,,note,,,,,,,,,,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better"
+mathematics_ba,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,And one course selected from:. No Cr/NC
+mathematics_ba,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,And one course selected from:. No Cr/NC
+mathematics_ba,Preparation for the Major,Required,required,,,MATH,237,,,,Elementary Differential Equations,3,And one course selected from:. No Cr/NC
+mathematics_ba,Preparation for the Major,Required,required,,,MATH,245,,,,Discrete Mathematics,3,And one course selected from:. No Cr/NC
+mathematics_ba,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,And one course selected from:. No Cr/NC
+mathematics_ba,Preparation for the Major,Required,required,,,MATH,254,,,,Introduction to Linear Algebra,3,And one course selected from:. No Cr/NC
+mathematics_ba,Preparation for the Major,Required,required,,,STAT,250,,,,Statistical Principles and Practices,3,And one course selected from:. No Cr/NC
+mathematics_ba,Preparation for the Major,Required,required,,,CS,150,,,,Introductory Computer Programming,3,And one course selected from:. No Cr/NC
+mathematics_ba,Preparation for the Major,Required,required,,,CS,150L,,,,Introductory Computer Programming Laboratory,1,And one course selected from:. No Cr/NC
+mathematics_ba,Preparation for the Major,CS 200 or STAT 200 (pick 1),choose,1,,CS,200,,,,Introduction to Data Science and Python,4,And one course selected from:. No Cr/NC
+mathematics_ba,Preparation for the Major,CS 200 or STAT 200 (pick 1),choose,1,,STAT,200,,,,Introduction to Data Science with R,3,And one course selected from:. No Cr/NC
+mathematics_ba,Major,,note,,,,,,,,,,A minimum of 30 upper division units selected with approval of the departmental adviser before starting upper division work to include. 12 Units of Electives: Students planning to take MATH 499 as an elective course must obtain approval from the program adviser
+mathematics_ba,Major,Required,required,,,MATH,320,,,,Abstract Algebra,3,
+mathematics_ba,Major,Required,required,,,MATH,330,,,,Advanced Calculus I,3,
+mathematics_ba,Major,Required,required,,,MATH,340,,,,Programming in Mathematics,3,
+mathematics_ba,Major,Required,required,,,MATH,524,,,,Linear Algebra,3,
+mathematics_ba,Major,MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,531,,,,Partial Differential Equations,3,
+mathematics_ba,Major,MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,537,,,,Ordinary Differential Equations,3,
+mathematics_ba,Major,MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,542,,,,Introduction to Computational Ordinary Differential Equations,3,
+mathematics_ba,Major,One Course Selected From (pick 1),choose,1,,MATH,520,,,,Algebraic Structures,3,
+mathematics_ba,Major,One Course Selected From (pick 1),choose,1,,MATH,530,,,,Advanced Calculus II,3,
+mathematics_ba,Major,One Course Selected From (pick 1),choose,1,,MATH,531,,,,Partial Differential Equations,3,
+mathematics_ba,Major,One Course Selected From (pick 1),choose,1,,MATH,537,,,,Ordinary Differential Equations,3,
+mathematics_ba,Major,One Course Selected From (pick 1),choose,1,,MATH,538,,,,Discrete Dynamical Systems and Chaos,3,
+mathematics_ba,Major,One Course Selected From (pick 1),choose,1,,MATH,542,,,,Introduction to Computational Ordinary Differential Equations,3,
+mathematics_ba,Major,One Course Selected From (pick 1),choose,1,,MATH,543,,,,Numerical Matrix Analysis,3,
+mathematics_ba,Major,One Course Selected From (pick 1),choose,1,,STAT,551B,,,,Probability and Mathematical Statistics,3,
+mathematics_ba,Language Requirement,,note,,,,,,,,,,Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to the section of this catalog on “Graduation Requirements .”
+mathematics_applied_bs,Emphasis in Applied Mathematics,,note,,,,,,,,,,Master Plan: A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department
+mathematics_applied_bs,Emphasis in Applied Mathematics,Impacted Program,required,,,MATH,150,,,,Calculus I,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Impacted Program,required,,,MATH,151,,,,Calculus II,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Impacted Program,required,,,MATH,237,,,,Elementary Differential Equations,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Impacted Program,required,,,MATH,245,,,,Discrete Mathematics,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Impacted Program,required,,,MATH,252,,,,Calculus III,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Impacted Program,required,,,MATH,254,,,,Introduction to Linear Algebra,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Impacted Program,required,,,STAT,250,,,,Statistical Principles and Practices,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Impacted Program,required,,,CS,150,,,,Introductory Computer Programming,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Impacted Program,required,,,CS,150L,,,,Introductory Computer Programming Laboratory,1,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Impacted Program: CS 200 or STAT 200 (pick 1),choose,1,,CS,200,,,,Introduction to Data Science and Python,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Impacted Program: CS 200 or STAT 200 (pick 1),choose,1,,STAT,200,,,,Introduction to Data Science with R,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Preparation for the Major,required,,,MATH,150,,,,Calculus I,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Preparation for the Major,required,,,MATH,151,,,,Calculus II,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Preparation for the Major,required,,,MATH,237,,,,Elementary Differential Equations,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Preparation for the Major,required,,,MATH,245,,,,Discrete Mathematics,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Preparation for the Major,required,,,MATH,252,,,,Calculus III,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Preparation for the Major,required,,,MATH,254,,,,Introduction to Linear Algebra,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Preparation for the Major,required,,,STAT,250,,,,Statistical Principles and Practices,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Preparation for the Major,required,,,CS,150,,,,Introductory Computer Programming,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Preparation for the Major,required,,,CS,150L,,,,Introductory Computer Programming Laboratory,1,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Preparation for the Major: CS 200 or STAT 200 (pick 1),choose,1,,CS,200,,,,Introduction to Data Science and Python,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Preparation for the Major: CS 200 or STAT 200 (pick 1),choose,1,,STAT,200,,,,Introduction to Data Science with R,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major,required,,,MATH,320,,,,Abstract Algebra,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major,required,,,MATH,330,,,,Advanced Calculus I,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major,required,,,MATH,340,,,,Programming in Mathematics,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major: MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,531,,,,Partial Differential Equations,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major: MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,537,,,,Ordinary Differential Equations,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major: MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,542,,,,Introduction to Computational Ordinary Differential Equations,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major: MATH 524 or MATH 543 (pick 1),choose,1,,MATH,524,,,,Linear Algebra,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major: MATH 524 or MATH 543 (pick 1),choose,1,,MATH,543,,,,Numerical Matrix Analysis,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major: MATH 530 or MATH 532 (pick 1),choose,1,,MATH,530,,,,Advanced Calculus II,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major: MATH 530 or MATH 532 (pick 1),choose,1,,MATH,532,,,,Functions of a Complex Variable,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major: STAT 350A or STAT 550 or STAT 551A (pick 1),choose,1,,STAT,350A,,,,Statistical Methods,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major: STAT 350A or STAT 550 or STAT 551A (pick 1),choose,1,,STAT,550,,,,Applied Probability,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,Major: STAT 350A or STAT 550 or STAT 551A (pick 1),choose,1,,STAT,551A,,,,Probability and Mathematical Statistics,3,
+mathematics_applied_bs,Emphasis in Applied Mathematics,15 Units of Electives in Mathematics,required,,,MATH,303,,,,History of Mathematics,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. 15 units of electives in mathematics or an area to which mathematics may be applied (approved by the applied mathematics adviser) excluding:
+mathematics_applied_bs,Emphasis in Applied Mathematics,15 Units of Electives in Mathematics,required,,,MATH,312,,,,Topics from Elementary Mathematics: Statistics and Probability,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. 15 units of electives in mathematics or an area to which mathematics may be applied (approved by the applied mathematics adviser) excluding:
+mathematics_applied_bs,Emphasis in Applied Mathematics,15 Units of Electives in Mathematics,required,,,MATH,313,,,,Topics in Elementary Mathematics: Algebra of Change,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. 15 units of electives in mathematics or an area to which mathematics may be applied (approved by the applied mathematics adviser) excluding:
+mathematics_applied_bs,Emphasis in Applied Mathematics,15 Units of Electives in Mathematics,required,,,MATH,342A,,,,Methods of Applied Mathematics I,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. 15 units of electives in mathematics or an area to which mathematics may be applied (approved by the applied mathematics adviser) excluding:
+mathematics_applied_bs,Emphasis in Applied Mathematics,15 Units of Electives in Mathematics,required,,,MATH,342B,,,,Methods of Applied Mathematics II,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. 15 units of electives in mathematics or an area to which mathematics may be applied (approved by the applied mathematics adviser) excluding:
+mathematics_applied_bs,Emphasis in Applied Mathematics,15 Units of Electives in Mathematics,required,,,MATH,413,,,,Mathematics for the Middle Grades,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. 15 units of electives in mathematics or an area to which mathematics may be applied (approved by the applied mathematics adviser) excluding:
+mathematics_applied_bs,Emphasis in Applied Mathematics,15 Units of Electives in Mathematics,required,,,MATH,414,,,,Mathematics Curriculum and Instruction,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. 15 units of electives in mathematics or an area to which mathematics may be applied (approved by the applied mathematics adviser) excluding:
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area,required,,,PHYS,195,,,,Principles of Physics,3,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area,required,,,PHYS,196,,,,Principles of Physics,3,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area,required,,,PHYS,197,,,,Principles of Physics,3,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area,required,,,CHEM,201,,,,General Chemistry,5,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area,required,,,ECON,101,,,,Principles of Economics,3,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area,required,,,ECON,102,,,,Principles of Economics,3,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area,required,,,ECON,320,,,,Intermediate Macroeconomic Theory,3,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area,required,,,ECON,321,,,,Intermediate Microeconomic Theory,3,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area: PHYS 197L or CHEM 200 (pick 1),choose,1,,PHYS,197L,,,,Principles of Physics Laboratory,1,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_applied_bs,Emphasis in Applied Mathematics,Auxiliary Area: PHYS 197L or CHEM 200 (pick 1),choose,1,,CHEM,200,,,,General Chemistry,5,"The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be. A course for which these are prerequisite"
+mathematics_computational_science_bs,Emphasis in Computational Science,,note,,,,,,,,,,Students planning to take MATH 499 as an elective course must obtain approval from the program adviser. Master Plan: A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,MATH,150,,,,Calculus I,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,MATH,151,,,,Calculus II,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,MATH,237,,,,Elementary Differential Equations,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,MATH,245,,,,Discrete Mathematics,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,MATH,252,,,,Calculus III,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,MATH,254,,,,Introduction to Linear Algebra,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,CS,150,,,,Introductory Computer Programming,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,CS,150L,,,,Introductory Computer Programming Laboratory,1,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,CS,160,,,,Intermediate Computer Programming,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,CS,160L,,,,Intermediate Computer Programming Laboratory,1,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,CS,210,,,,Data Structures,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Impacted Program,required,,,STAT,250,,,,Statistical Principles and Practices,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Grade of C or better, no Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,MATH,150,,,,Calculus I,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,MATH,151,,,,Calculus II,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,MATH,237,,,,Elementary Differential Equations,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,MATH,245,,,,Discrete Mathematics,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,MATH,252,,,,Calculus III,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,MATH,254,,,,Introduction to Linear Algebra,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,CS,150,,,,Introductory Computer Programming,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,CS,150L,,,,Introductory Computer Programming Laboratory,1,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,CS,160,,,,Intermediate Computer Programming,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,CS,160L,,,,Intermediate Computer Programming Laboratory,1,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,CS,210,,,,Data Structures,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Preparation for the Major,required,,,STAT,250,,,,Statistical Principles and Practices,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. No Cr/NC"
+mathematics_computational_science_bs,Emphasis in Computational Science,Major,required,,,MATH,320,,,,Abstract Algebra,3,
+mathematics_computational_science_bs,Emphasis in Computational Science,Major,required,,,MATH,330,,,,Advanced Calculus I,3,
+mathematics_computational_science_bs,Emphasis in Computational Science,Major,required,,,MATH,340,,,,Programming in Mathematics,3,
+mathematics_computational_science_bs,Emphasis in Computational Science,Major: MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,531,,,,Partial Differential Equations,3,
+mathematics_computational_science_bs,Emphasis in Computational Science,Major: MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,537,,,,Ordinary Differential Equations,3,
+mathematics_computational_science_bs,Emphasis in Computational Science,Major: MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,542,,,,Introduction to Computational Ordinary Differential Equations,3,
+mathematics_computational_science_bs,Emphasis in Computational Science,Major: MATH 524 or MATH 543 (pick 1),choose,1,,MATH,524,,,,Linear Algebra,3,
+mathematics_computational_science_bs,Emphasis in Computational Science,Major: MATH 524 or MATH 543 (pick 1),choose,1,,MATH,543,,,,Numerical Matrix Analysis,3,
+mathematics_computational_science_bs,Emphasis in Computational Science,Three Units,required,,,MATH,499,,,,Special Study,1-3,Three units of. (Senior Project)
+mathematics_computational_science_bs,Emphasis in Computational Science,And Nine Units of Electives,required,,,MATH,303,,,,History of Mathematics,3,"Students planning to take MATH 302 as an elective course must obtain approval from the program adviser. Nine units of electives in computer science, mathematics, or statistics (approved by the applied mathematics adviser) excluding"
+mathematics_computational_science_bs,Emphasis in Computational Science,And Nine Units of Electives,required,,,MATH,312,,,,Topics from Elementary Mathematics: Statistics and Probability,3,"Students planning to take MATH 302 as an elective course must obtain approval from the program adviser. Nine units of electives in computer science, mathematics, or statistics (approved by the applied mathematics adviser) excluding"
+mathematics_computational_science_bs,Emphasis in Computational Science,And Nine Units of Electives,required,,,MATH,313,,,,Topics in Elementary Mathematics: Algebra of Change,3,"Students planning to take MATH 302 as an elective course must obtain approval from the program adviser. Nine units of electives in computer science, mathematics, or statistics (approved by the applied mathematics adviser) excluding"
+mathematics_computational_science_bs,Emphasis in Computational Science,And Nine Units of Electives,required,,,MATH,342A,,,,Methods of Applied Mathematics I,3,"Students planning to take MATH 302 as an elective course must obtain approval from the program adviser. Nine units of electives in computer science, mathematics, or statistics (approved by the applied mathematics adviser) excluding"
+mathematics_computational_science_bs,Emphasis in Computational Science,And Nine Units of Electives,required,,,MATH,342B,,,,Methods of Applied Mathematics II,3,"Students planning to take MATH 302 as an elective course must obtain approval from the program adviser. Nine units of electives in computer science, mathematics, or statistics (approved by the applied mathematics adviser) excluding"
+mathematics_computational_science_bs,Emphasis in Computational Science,And Nine Units of Electives,required,,,MATH,413,,,,Mathematics for the Middle Grades,3,"Students planning to take MATH 302 as an elective course must obtain approval from the program adviser. Nine units of electives in computer science, mathematics, or statistics (approved by the applied mathematics adviser) excluding"
+mathematics_computational_science_bs,Emphasis in Computational Science,And Nine Units of Electives,required,,,MATH,414,,,,Mathematics Curriculum and Instruction,3,"Students planning to take MATH 302 as an elective course must obtain approval from the program adviser. Nine units of electives in computer science, mathematics, or statistics (approved by the applied mathematics adviser) excluding"
+mathematics_computational_science_bs,Emphasis in Computational Science Electives,Emphasis in Computational Science Electives,pool,,9,COMP,526,,,,Computational Methods for Scientists,3,
+mathematics_computational_science_bs,Emphasis in Computational Science Electives,Emphasis in Computational Science Electives,pool,,9,COMP,536,,,,Scientific Modeling and Machine Learning,3,
+mathematics_computational_science_bs,Emphasis in Computational Science Electives,Emphasis in Computational Science Electives,pool,,9,CS,503,,,,Scientific Database Techniques,3,
+mathematics_computational_science_bs,Emphasis in Computational Science Electives,Emphasis in Computational Science Electives,pool,,9,CS,558,,,,Computer Simulation,3,
+mathematics_computational_science_bs,Emphasis in Computational Science Electives,Emphasis in Computational Science Electives,pool,,9,MATH,336,,,,Introduction to Mathematical Modeling,3,
+mathematics_computational_science_bs,Emphasis in Computational Science Electives,Emphasis in Computational Science Electives,pool,,9,MATH,525,,,,Algebraic Coding Theory,3,
+mathematics_computational_science_bs,Emphasis in Computational Science Electives,Emphasis in Computational Science Electives,pool,,9,MATH,532,,,,Functions of a Complex Variable,3,
+mathematics_computational_science_bs,Emphasis in Computational Science Electives,Emphasis in Computational Science Electives,pool,,9,MATH,537,,,,Ordinary Differential Equations,3,
+mathematics_computational_science_bs,Emphasis in Computational Science Electives,Emphasis in Computational Science Electives,pool,,9,MATH,542,,,,Introduction to Computational Ordinary Differential Equations,3,
+mathematics_computational_science_bs,Emphasis in Computational Science Electives,Emphasis in Computational Science Electives,pool,,9,MATH,543,,,,Numerical Matrix Analysis,3,
+mathematics_computational_science_bs,Emphasis in Computational Science Electives,Emphasis in Computational Science Electives,pool,,9,MATH,586,,,,Climate Mathematics,3,
+mathematics_education_bs,Preparation for the Major,,note,,,,,,,,,,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better"
+mathematics_education_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,No Cr/NC
+mathematics_education_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,No Cr/NC
+mathematics_education_bs,Preparation for the Major,Required,required,,,MATH,237,,,,Elementary Differential Equations,3,No Cr/NC
+mathematics_education_bs,Preparation for the Major,Required,required,,,MATH,245,,,,Discrete Mathematics,3,No Cr/NC
+mathematics_education_bs,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,No Cr/NC
+mathematics_education_bs,Preparation for the Major,Required,required,,,MATH,254,,,,Introduction to Linear Algebra,3,No Cr/NC
+mathematics_education_bs,Preparation for the Major,Required,required,,,STAT,250,,,,Statistical Principles and Practices,3,No Cr/NC
+mathematics_education_bs,Preparation for the Major,And One Course Selected From,required,,,CS,150,,,,Introductory Computer Programming,3,
+mathematics_education_bs,Preparation for the Major,And One Course Selected From,required,,,CS,150L,,,,Introductory Computer Programming Laboratory,1,
+mathematics_education_bs,Preparation for the Major,And One Course Selected From: CS 200 or STAT 200 (pick 1),choose,1,,CS,200,,,,Introduction to Data Science and Python,4,
+mathematics_education_bs,Preparation for the Major,And One Course Selected From: CS 200 or STAT 200 (pick 1),choose,1,,STAT,200,,,,Introduction to Data Science with R,3,
+mathematics_education_bs,Major,Required,required,,,MATH,302,,,,Transition to Higher Mathematics,3,
+mathematics_education_bs,Major,Required,required,,,MATH,303,,,,History of Mathematics,3,
+mathematics_education_bs,Major,Required,required,,,MATH,320,,,,Abstract Algebra,3,
+mathematics_education_bs,Major,Required,required,,,MATH,330,,,,Advanced Calculus I,3,
+mathematics_education_bs,Major,Required,required,,,MATH,340,,,,Programming in Mathematics,3,
+mathematics_education_bs,Major,Required,required,,,MATH,341,,,,Mathematics Software Workshop,1,
+mathematics_education_bs,Major,Required,required,,,MATH,414,,,,Mathematics Curriculum and Instruction,3,
+mathematics_education_bs,Major,Required,required,,,TE,362,,,,Fieldwork in Community Settings,1-4,(3 units)
+mathematics_education_bs,Major,MATH 336 or MATH 586 (pick 1),choose,1,,MATH,336,,,,Introduction to Mathematical Modeling,3,
+mathematics_education_bs,Major,MATH 336 or MATH 586 (pick 1),choose,1,,MATH,586,,,,Climate Mathematics,3,
+mathematics_education_bs,Major,MATH 508 or MATH 510 (pick 1),choose,1,,MATH,508,,,,Dynamical Systems and Modeling,3,
+mathematics_education_bs,Major,MATH 508 or MATH 510 (pick 1),choose,1,,MATH,510,,,,Introduction to the Foundations of Geometry,3,
+mathematics_education_bs,Major,MATH 524 or MATH 543 (pick 1),choose,1,,MATH,524,,,,Linear Algebra,3,
+mathematics_education_bs,Major,MATH 524 or MATH 543 (pick 1),choose,1,,MATH,543,,,,Numerical Matrix Analysis,3,
+mathematics_education_bs,Major,MATH 530 or MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,530,,,,Advanced Calculus II,3,
+mathematics_education_bs,Major,MATH 530 or MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,531,,,,Partial Differential Equations,3,
+mathematics_education_bs,Major,MATH 530 or MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,537,,,,Ordinary Differential Equations,3,
+mathematics_education_bs,Major,MATH 530 or MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,542,,,,Introduction to Computational Ordinary Differential Equations,3,
+mathematics_education_bs,Major,STAT 350A or STAT 550 or STAT 551A (pick 1),choose,1,,STAT,350A,,,,Statistical Methods,3,
+mathematics_education_bs,Major,STAT 350A or STAT 550 or STAT 551A (pick 1),choose,1,,STAT,550,,,,Applied Probability,3,
+mathematics_education_bs,Major,STAT 350A or STAT 550 or STAT 551A (pick 1),choose,1,,STAT,551A,,,,Probability and Mathematical Statistics,3,
+mathematics_education_bs,Major,Any MATH 300-599 course,open,,3,MATH,,300,599,MATH 312|MATH 313|MATH 413,,,"Three units of electives in mathematics (approved by the adviser for the major) excluding MATH 312 , MATH 313 , and MATH 413 "
+mathematics_education_bs,Auxiliary Area,,note,,,,,,,,,,A minimum of nine lower or upper division units of teaching-related electives are required from an area that will enhance understanding of teaching or applications of teaching mathematics. All programs must be approved by the adviser
+mathematics_education_bs,Auxiliary Area,Required,required,,,PHYS,195,,,,Principles of Physics,3,
+mathematics_education_bs,Auxiliary Area,Required,required,,,CHEM,201,,,,General Chemistry,5,
+mathematics_education_bs,Auxiliary Area,PHYS 195L or CHEM 200 (pick 1),choose,1,,PHYS,195L,,,,Principles of Physics Laboratory,1,
+mathematics_education_bs,Auxiliary Area,PHYS 195L or CHEM 200 (pick 1),choose,1,,CHEM,200,,,,General Chemistry,5,
+mathematics_science_bs,Emphasis in Science,Impacted Program,required,,,MATH,150,,,,Calculus I,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_science_bs,Emphasis in Science,Impacted Program,required,,,MATH,151,,,,Calculus II,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_science_bs,Emphasis in Science,Impacted Program,required,,,MATH,237,,,,Elementary Differential Equations,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_science_bs,Emphasis in Science,Impacted Program,required,,,MATH,245,,,,Discrete Mathematics,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_science_bs,Emphasis in Science,Impacted Program,required,,,MATH,252,,,,Calculus III,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_science_bs,Emphasis in Science,Impacted Program,required,,,MATH,254,,,,Introduction to Linear Algebra,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_science_bs,Emphasis in Science,Impacted Program,required,,,STAT,250,,,,Statistical Principles and Practices,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_science_bs,Emphasis in Science,Impacted Program,required,,,CS,150,,,,Introductory Computer Programming,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_science_bs,Emphasis in Science,Impacted Program,required,,,CS,150L,,,,Introductory Computer Programming Laboratory,1,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_science_bs,Emphasis in Science,Impacted Program: CS 200 or STAT 200 (pick 1),choose,1,,CS,200,,,,Introduction to Data Science and Python,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_science_bs,Emphasis in Science,Impacted Program: CS 200 or STAT 200 (pick 1),choose,1,,STAT,200,,,,Introduction to Data Science with R,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. Grade of C or better, no Cr/NC"
+mathematics_science_bs,Emphasis in Science,Preparation for the Major,required,,,MATH,150,,,,Calculus I,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_science_bs,Emphasis in Science,Preparation for the Major,required,,,MATH,151,,,,Calculus II,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_science_bs,Emphasis in Science,Preparation for the Major,required,,,MATH,237,,,,Elementary Differential Equations,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_science_bs,Emphasis in Science,Preparation for the Major,required,,,MATH,245,,,,Discrete Mathematics,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_science_bs,Emphasis in Science,Preparation for the Major,required,,,MATH,252,,,,Calculus III,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_science_bs,Emphasis in Science,Preparation for the Major,required,,,MATH,254,,,,Introduction to Linear Algebra,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_science_bs,Emphasis in Science,Preparation for the Major,required,,,STAT,250,,,,Statistical Principles and Practices,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_science_bs,Emphasis in Science,Preparation for the Major,required,,,CS,150,,,,Introductory Computer Programming,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_science_bs,Emphasis in Science,Preparation for the Major,required,,,CS,150L,,,,Introductory Computer Programming Laboratory,1,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_science_bs,Emphasis in Science,Preparation for the Major: CS 200 or STAT 200 (pick 1),choose,1,,CS,200,,,,Introduction to Data Science and Python,4,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_science_bs,Emphasis in Science,Preparation for the Major: CS 200 or STAT 200 (pick 1),choose,1,,STAT,200,,,,Introduction to Data Science with R,3,"The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from:. No Cr/NC"
+mathematics_science_bs,Emphasis in Science,Major,required,,,MATH,330,,,,Advanced Calculus I,3,
+mathematics_science_bs,Emphasis in Science,Major,required,,,MATH,340,,,,Programming in Mathematics,3,
+mathematics_science_bs,Emphasis in Science,Major: MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,531,,,,Partial Differential Equations,3,
+mathematics_science_bs,Emphasis in Science,Major: MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,537,,,,Ordinary Differential Equations,3,
+mathematics_science_bs,Emphasis in Science,Major: MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,542,,,,Introduction to Computational Ordinary Differential Equations,3,
+mathematics_science_bs,Emphasis in Science,Major: MATH 524 or MATH 543 (pick 1),choose,1,,MATH,524,,,,Linear Algebra,3,
+mathematics_science_bs,Emphasis in Science,Major: MATH 524 or MATH 543 (pick 1),choose,1,,MATH,543,,,,Numerical Matrix Analysis,3,
+mathematics_science_bs,Emphasis in Science Electives,Emphasis in Science Electives,pool,,6,MATH,320,,,,Abstract Algebra,3,
+mathematics_science_bs,Emphasis in Science Electives,Emphasis in Science Electives,pool,,6,MATH,525,,,,Algebraic Coding Theory,3,
+mathematics_science_bs,Emphasis in Science Electives,Emphasis in Science Electives,pool,,6,MATH,530,,,,Advanced Calculus II,3,Or MATH 532
+mathematics_science_bs,Emphasis in Science Electives,Emphasis in Science Electives,pool,,6,MATH,532,,,,Functions of a Complex Variable,3,Or MATH 530
+mathematics_science_bs,Emphasis in Science Electives,Emphasis in Science Electives,pool,,6,MATH,531,,,,Partial Differential Equations,3,
+mathematics_science_bs,Emphasis in Science Electives,Emphasis in Science Electives,pool,,6,MATH,537,,,,Ordinary Differential Equations,3,
+mathematics_science_bs,12 Units from a Science,,note,,,,,,,,,,12 units from a science to which mathematics may be applied (these should be from a single science and must be approved by the B.S. adviser). Master Plan: A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department
+mathematics_science_bs,12 Units from a Science,"Six Units of Electives in Computer Science, Mathematics, or Statistics",pool,,12,MATH,303,,,,History of Mathematics,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. Excluding:
+mathematics_science_bs,12 Units from a Science,"Six Units of Electives in Computer Science, Mathematics, or Statistics",pool,,12,MATH,312,,,,Topics from Elementary Mathematics: Statistics and Probability,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. Excluding:
+mathematics_science_bs,12 Units from a Science,"Six Units of Electives in Computer Science, Mathematics, or Statistics",pool,,12,MATH,313,,,,Topics in Elementary Mathematics: Algebra of Change,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. Excluding:
+mathematics_science_bs,12 Units from a Science,"Six Units of Electives in Computer Science, Mathematics, or Statistics",pool,,12,MATH,342A,,,,Methods of Applied Mathematics I,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. Excluding:
+mathematics_science_bs,12 Units from a Science,"Six Units of Electives in Computer Science, Mathematics, or Statistics",pool,,12,MATH,342B,,,,Methods of Applied Mathematics II,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. Excluding:
+mathematics_science_bs,12 Units from a Science,"Six Units of Electives in Computer Science, Mathematics, or Statistics",pool,,12,MATH,413,,,,Mathematics for the Middle Grades,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. Excluding:
+mathematics_science_bs,12 Units from a Science,"Six Units of Electives in Computer Science, Mathematics, or Statistics",pool,,12,MATH,414,,,,Mathematics Curriculum and Instruction,3,Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. Excluding:
 mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,ME,190,,,,Computer-Aided Design,2,
 mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,ME,202,,,,Computer Programming and Applications,3,
 mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,ME,230,,,,Basics of Mechatronics,3,
@@ -1212,6 +1783,117 @@ mechanical_engineering_bioengineering_bs,Professional Electives,Professional Ele
 mechanical_engineering_bioengineering_bs,Professional Electives,Professional Electives,pool,,9,ME,582,,,,,,
 mechanical_engineering_bioengineering_bs,Professional Electives,Professional Electives,pool,,9,ME,585,,,,,,
 mechanical_engineering_bioengineering_bs,Professional Electives,Professional Electives,pool,,9,EE,503,,,,,,
+nursing_bs,Preparation for the Major,Required,required,,,BIOL,211,,,,Fundamentals of Microbiology,2,"Grade of C or better, no Cr/NC"
+nursing_bs,Preparation for the Major,Required,required,,,BIOL,211L,,,,Fundamentals of Microbiology Laboratory,2,"Grade of C or better, no Cr/NC"
+nursing_bs,Preparation for the Major,Required,required,,,BIOL,212,,,,Human Anatomy,4,"Grade of C or better, no Cr/NC"
+nursing_bs,Preparation for the Major,Required,required,,,BIOL,261,,,,Human Physiology,4,"Grade of C or better, no Cr/NC. 1"
+nursing_bs,Preparation for the Major,Required,required,,,CHEM,102,,,,"Introduction to General, Organic, and Biological Chemistry",5,"Grade of C or better, no Cr/NC. 2"
+nursing_bs,Preparation for the Major,Required,required,,,COMM,103,,,,Oral Communication,3,"Grade of C or better, no Cr/NC. (or a course listed under General Education I.1. Oral Communication) 4"
+nursing_bs,Preparation for the Major,Required,required,,,RWS,100,,,,Rhetoric of Written Argument,3,"Grade of C or better, no Cr/NC. (or a course listed under General Education, I.2. Written Communication) 5"
+nursing_bs,Preparation for the Major,Required,required,,,RWS,200,,,,Rhetoric of Written Arguments in Context,3,"Grade of C or better, no Cr/NC. (or a course listed under General Education, I.3. Critical Thinking) 6"
+nursing_bs,Preparation for the Major,Required,required,,,NURS,202,,,,Client Assessment,3,"Grade of C or better, no Cr/NC"
+nursing_bs,Preparation for the Major,Required,required,,,NURS,206,,,,Fundamentals of Nursing Practice,5,"Grade of C or better, no Cr/NC"
+nursing_bs,Preparation for the Major,Required,required,,,NURS,208,,,,Pathophysiology,3,"Grade of C or better, no Cr/NC"
+nursing_bs,Preparation for the Major,Required,required,,,NURS,219,,,,Information Management for Professional Relationships,2,"Grade of C or better, no Cr/NC"
+nursing_bs,Preparation for the Major,Required,required,,,NURS,221,,,,Professional Formation A,1,"Grade of C or better, no Cr/NC"
+nursing_bs,Preparation for the Major,STAT 250 or BIOL 215 or PSY 280 (pick 1),choose,1,,STAT,250,,,,Statistical Principles and Practices,3,"Grade of C or better, no Cr/NC"
+nursing_bs,Preparation for the Major,STAT 250 or BIOL 215 or PSY 280 (pick 1),choose,1,,BIOL,215,,,,Biostatistics,3,"Grade of C or better, no Cr/NC"
+nursing_bs,Preparation for the Major,STAT 250 or BIOL 215 or PSY 280 (pick 1),choose,1,,PSY,280,,,,Statistical Methods in Psychology,4,"Grade of C or better, no Cr/NC. 3"
+nursing_bs,Additional Lower Division Requirements,,note,,,,,,,,,,"1 Upper division transfer students fulfill these course requirements by completing human anatomy (with required laboratory), human physiology (with required laboratory), and microbiology (with required laboratory), designated as certified Cal-GETC certified Biological Science and Laboratory (5B, 5C) transfer courses"
+nursing_bs,Additional Lower Division Requirements,Required,required,,,PSY,101,,,,Introductory Psychology,3,No Cr/NC
+nursing_bs,Additional Lower Division Requirements,Required,required,,,PSY,230,,,,Developmental Psychology,3,No Cr/NC
+nursing_bs,Major,Required,required,,,NURS,300,,,,Nursing Care of the Acute and Chronically Ill Adult and Gerontologic Patient I,8,
+nursing_bs,Major,Required,required,,,NURS,304,,,,Clinical Pharmacology in Nursing Practice,2,
+nursing_bs,Major,Required,required,,,NURS,307W,,,,"Research, Evidence Based Practice, and Writing for Nurses",3,Satisfies the Graduation Writing Assessment
+nursing_bs,Major,Required,required,,,NURS,316,,,,Psychiatric-Mental Health Nursing,5,
+nursing_bs,Major,Required,required,,,NURS,321,,,,Professional Formation B,1,
+nursing_bs,Major,Required,required,,,NURS,354,,,,Nursing Care of the Childbearing Family,5,
+nursing_bs,Major,Required,required,,,NURS,356,,,,Pediatric Nursing,5,
+nursing_bs,Major,Required,required,,,NURS,401,,,,Nursing Care of the Acute and Chronically Ill Adult and Gerontologic Patient II,6,
+nursing_bs,Major,Required,required,,,NURS,416,,,,Community Health Nursing,5,
+nursing_bs,Major,Required,required,,,NURS,421,,,,Professional Formation C,1,
+political_science_ba,Preparation for the Major,Required,required,,,POLS,101,,,,Introduction to American Politics in Global Perspective,3,"Grade of C or better, no Cr/NC"
+political_science_ba,Preparation for the Major,Required,required,,,POLS,102,,,,Introduction to American and California Government and Politics,3,"Grade of C or better, no Cr/NC"
+political_science_ba,Preparation for the Major,POLS 103 or POLS 104 (pick 1),choose,1,,POLS,103,,,,Introduction to Comparative Politics,3,"Grade of C or better, no Cr/NC"
+political_science_ba,Preparation for the Major,POLS 103 or POLS 104 (pick 1),choose,1,,POLS,104,,,,Introduction to Global Politics,3,"Grade of C or better, no Cr/NC"
+political_science_ba,Preparation for the Major,Three Units of Either Statistics or Logic,required,,,PHIL,120,,,,Introduction to Logic,3,
+political_science_ba,Preparation for the Major,Three Units of Either Statistics or Logic,required,,,SOC,201,,,,Elementary Social Statistics,3,
+political_science_ba,Preparation for the Major,Three Units of Either Statistics or Logic,required,,,PSY,280,,,,Statistical Methods in Psychology,4,
+political_science_ba,Preparation for the Major,Three Units of Either Statistics or Logic,required,,,STAT,119,,,,Elementary Statistics for Business,3,
+political_science_ba,Preparation for the Major,Three Units of Either Statistics or Logic,required,,,STAT,250,,,,Statistical Principles and Practices,3,
+political_science_ba,Preparation for the Major,Three Units of Either Statistics or Logic: POLS 201 or ECON 201 (pick 1),choose,1,,POLS,201,,,,Statistics and Politics,3,
+political_science_ba,Preparation for the Major,Three Units of Either Statistics or Logic: POLS 201 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,
+political_science_ba,Courses by Field,,note,,,,,,,,,,"The major requires one three-unit course in each of the five fields – Political Theory, American Politics, Comparative Politics, International Politics, and Law and Public Policy – for a total of 15 units. Additional courses in a field may be taken as major electives"
+political_science_ba,Courses by Field,Political Theory,pool,,15,POLS,301A,,,,Ancient Political Thought,3,
+political_science_ba,Courses by Field,Political Theory,pool,,15,POLS,301B,,,,Early Modern Political Thought,3,
+political_science_ba,Courses by Field,Political Theory,pool,,15,POLS,302,,,,Modern Political Thought,3,
+political_science_ba,Courses by Field,Political Theory,pool,,15,POLS,305,,,,American Political Thought,3,
+political_science_ba,Courses by Field,Political Theory,pool,,15,POLS,406,,,,Democracy and Mass Society,3,
+political_science_ba,Courses by Field,American Politics,pool,,15,POLS,320,,,,The U.S. Constitution,3,
+political_science_ba,Courses by Field,American Politics,pool,,15,POLS,321,,,,State Politics,3,
+political_science_ba,Courses by Field,American Politics,pool,,15,POLS,331,,,,American Indian Political Experience,3,Cross-listed with AMIND 331
+political_science_ba,Courses by Field,American Politics,pool,,15,AMIND,331,,,,The American Indian Political Experience,3,Cross-listed with POLS 331
+political_science_ba,Courses by Field,American Politics,pool,,15,POLS,338,,,,U.S. Congress: Conflict and Compromise,3,
+political_science_ba,Courses by Field,American Politics,pool,,15,POLS,348,,,,The Supreme Court and Contemporary Issues,3,
+political_science_ba,Courses by Field,American Politics,pool,,15,POLS,422,,,,Urban Politics,3,
+political_science_ba,Courses by Field,American Politics,pool,,15,POLS,425,,,,Psychology of Politics,3,
+political_science_ba,Courses by Field,American Politics,pool,,15,POLS,426,,,,Political Communication,3,
+political_science_ba,Courses by Field,American Politics,pool,,15,POLS,428,,,,Campaigns and Elections,3,
+political_science_ba,Courses by Field,American Politics,pool,,15,POLS,436,,,,The American Presidency,3,
+political_science_ba,Courses by Field,Comparative Politics,pool,,15,POLS,353,,,,Islam and Politics,3,
+political_science_ba,Courses by Field,Comparative Politics,pool,,15,POLS,356,,,,European Politics,3,
+political_science_ba,Courses by Field,Comparative Politics,pool,,15,POLS,357,,,,British Politics,3,
+political_science_ba,Courses by Field,Comparative Politics,pool,,15,POLS,359,,,,Government and Politics in Russia and Eurasia,3,
+political_science_ba,Courses by Field,Comparative Politics,pool,,15,POLS,361,,,,Governments and Politics of the Developing Areas,3,
+political_science_ba,Courses by Field,Comparative Politics,pool,,15,POLS,362,,,,Governments and Politics of East Asia,3,
+political_science_ba,Courses by Field,Comparative Politics,pool,,15,POLS,363,,,,Governments and Politics of the Middle East,3,
+political_science_ba,Courses by Field,Comparative Politics,pool,,15,POLS,364,,,,Political Change in Modern Africa,3,
+political_science_ba,Courses by Field,Comparative Politics,pool,,15,POLS,365,,,,Chinese Politics,3,
+political_science_ba,Courses by Field,Comparative Politics,pool,,15,POLS,366,,,,Latin American Politics,3,Cross-listed with LATAM 366
+political_science_ba,Courses by Field,Comparative Politics,pool,,15,LATAM,366,,,,Latin American Politics,3,Cross-listed with POLS 366
+political_science_ba,Courses by Field,International Politics,pool,,15,POLS,370,,,,Political Violence,3,
+political_science_ba,Courses by Field,International Politics,pool,,15,POLS,372,,,,Politics and Conflict,3,
+political_science_ba,Courses by Field,International Politics,pool,,15,POLS,375,,,,Global Politics,3,
+political_science_ba,Courses by Field,International Politics,pool,,15,POLS,380,,,,Human Rights in a Global Perspective,3,
+political_science_ba,Courses by Field,International Politics,pool,,15,POLS,479,,,,National Security Policy,3,
+political_science_ba,Courses by Field,International Politics,pool,,15,POLS,482,,,,United States-Latin American Relations,3,
+political_science_ba,Courses by Field,International Politics,pool,,15,POLS,485,,,,Politics of Globalization,3,
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,POLS,334,,,,Politics of the Environment,3,Cross-listed with SUSTN 334
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,SUSTN,334,,,,Politics of the Environment,3,Cross-listed with POLS 334
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,POLS,335,,,,Policy Issues and Debates,3,
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,POLS,336,,,,Gender and Public Policy,3,
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,POLS,340,,,,Drug Policy and Politics,3,
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,POLS,345,,,,U.S. Constitutional Law: Powers and Constraints,3,
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,POLS,346,,,,Law and the Political System,3,
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,POLS,347,,,,U.S. Constitutional Law: Rights and Liberties,3,
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,POLS,430,,,,Immigration and Border Politics,3,Cross-listed with LATAM 430
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,LATAM,430,,,,Immigration and Border Politics,3,Cross-listed with POLS 430
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,POLS,435,,,,Power and Poverty in the United States,3,
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,POLS,440,,,,Food Justice,3,Cross-listed with GEOG 440
+political_science_ba,Courses by Field,Law and Public Policy,pool,,15,GEOG,440,,,,Food Justice,3,Cross-listed with POLS 440
+political_science_ba,Capstone Requirement,Required,required,,,POLS,495,,,,Internship in Politics,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,497B,,,,Senior Thesis,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,498,,,,"Washington, D.C. internship",6-12,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,507,,,,Marx and Marxism,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,510,,,,Contemporary Political Thought,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,530,,,,Political Parties,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,533,,,,Democracy in America,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,535,,,,Gender and Politics,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,541,,,,Special Problems in Public Law,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,555,,,,Comparative Political Systems,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,560,,,,Comparative Citizenship in Policy and Practice,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,562,,,,Religion and Politics in Comparative Perspective,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,564,,,,Political Ecology of Latin America,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,565,,,,Nations and Nationalism,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,568,,,,Mexican Politics,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,575,,,,International Relations of the Pacific Rim,3,any 500-level political science course
+political_science_ba,Capstone Requirement,Required,required,,,POLS,577,,,,Politics of International Law,3,any 500-level political science course
+political_science_ba,Major Electives,,note,,,,,,,,,,"The major requires 12 units of major electives, which may come from any SDSU upper-division political science courses (except POL S 390W )"
+political_science_ba,Major Electives,Required,required,,,AFRAS,321,,,,Black Political Participation in America,3,
+political_science_ba,Major Electives,Required,required,,,AFRAS,322,,,,African American Political Thought,3,
+political_science_ba,Major Electives,Required,required,,,AMIND,485,,,,Federal Indian Law,3,
+political_science_ba,Major Electives,Required,required,,,WGSS,375,,,,"Sex, Power, and Politics",3,
+political_science_ba,Language Requirement,,note,,,,,,,,,,Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to section of catalog on “Graduation Requirements .”
 psychology_industrial_organizational_ba,Preparation for the Major,Required,required,,,PSY,101,,,,Introductory Psychology,3,
 psychology_industrial_organizational_ba,Preparation for the Major,Required,required,,,PSY,201,,,,Academic and Career Opportunities in Psychology,1,
 psychology_industrial_organizational_ba,Preparation for the Major,Required,required,,,PSY,211,,,,Introduction to Cognitive Psychology,3,
@@ -1269,3 +1951,103 @@ psychology_neuroscience_ba,Breadth,Group III (pick 1),choose,1,,PSY,333,,,,Devel
 psychology_neuroscience_ba,Breadth,Group III (pick 1),choose,1,,PSY,350,,,,Psychopathology,3,
 psychology_neuroscience_ba,Breadth,Group III (pick 1),choose,1,,PSY,407,,,,Health Psychology,3,
 psychology_neuroscience_ba,Upper Division Major Electives,Any PSY 300-599 course,open,,5-6,PSY,,300,599,,,,An additional 5-6 elective units selected from 300- to 500-level Psychology courses to satisfy the 31 units required for the Psychology major
+public_health_bs,Preparation for the Major,Required,required,,,PH,101,,,,Introduction to Public Health,3,
+public_health_bs,Preparation for the Major,Required,required,,,PH,292,,,,History of Public Health,3,
+public_health_bs,Preparation for the Major,Required,required,,,BIOL,100,,,,General Biology,3,
+public_health_bs,Preparation for the Major,Required,required,,,BIOL,100L,,,,General Biology Laboratory,1,
+public_health_bs,Preparation for the Major,Required,required,,,BIOL,211,,,,Fundamentals of Microbiology,2,
+public_health_bs,Preparation for the Major,Required,required,,,BIOL,212,,,,Human Anatomy,4,
+public_health_bs,Preparation for the Major,Required,required,,,CHEM,100,,,,Preparation for General Chemistry,4,
+public_health_bs,Preparation for the Major,Required,required,,,PSY,101,,,,Introductory Psychology,3,
+public_health_bs,Preparation for the Major,Required,required,,,SOC,101,,,,Introductory Sociology: The Study of Society,3,
+public_health_bs,Preparation for the Major,PSY 280 or SOC 201 (pick 1),choose,1,,PSY,280,,,,Statistical Methods in Psychology,4,
+public_health_bs,Preparation for the Major,PSY 280 or SOC 201 (pick 1),choose,1,,SOC,201,,,,Elementary Social Statistics,3,
+public_health_bs,Additional Lower Division Courses,Required (pick 1),choose,1,,PH,250,,,,Infections and Epidemics,3,Or PH 233
+public_health_bs,Additional Lower Division Courses,Required (pick 1),choose,1,,PH,233,,,,Health Equity: Exploring Root Causes of Disparities,3,Or PH 250
+public_health_bs,Major,Required,required,,,PH,300,,,,Professionalism and Public Health,3,
+public_health_bs,Major,Required,required,,,PH,302,,,,Epidemiology of Communicable and Chronic Disease,3,
+public_health_bs,Major,Required,required,,,PH,304,,,,Environment and Public Health,3,
+public_health_bs,Major,Required,required,,,PH,305,,,,Medical Care Organization and Delivery,3,
+public_health_bs,Major,Required,required,,,PH,306,,,,Public Health Research,3,
+public_health_bs,Major,Required,required,,,PH,307,,,,Applied Biostatistics in Public Health,3,
+public_health_bs,Major,Required,required,,,PH,401,,,,Biological Basis of Disease,3,
+public_health_bs,Major,Required,required,,,PH,450,,,,Public Health Policy,3,
+public_health_bs,Major,Required,required,,,PH,490,,,,Health Data Analysis,3,
+public_health_bs,Major,Required,required,,,PH,491,,,,Program Planning and Evaluation,3,
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,330,,,,Plagues Through the Ages,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,331,,,,Emergency Preparedness and Disaster Response,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,332,,,,Public Health Nutrition,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,353,,,,Human Sexuality and Disease,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,362,,,,Global Health,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,395,,,,Emerging Topics in Public Health,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,402,,,,Public Health Communications,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,451,,,,Public Health and Food Safety,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,452,,,,Health Impacts of Climate Change,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,485,,,,Applied Public Health Research,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,496,,,,Experimental Topics,1-4,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both). (maximum of three units)
+public_health_bs,Major,Upper Division Major Electives,required,,,PH,538A,,,,Principles of Toxicology,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Major,Upper Division Major Electives,required,,,GENS,340,,,,Confronting HIV/AIDS,3,(12 units) (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
+public_health_bs,Three Units from One of the Following Categories During the Junior or Senior Year:,Peer Health Education,pool,,,PH,480,,,,Peer Health Education,2-3,(must be taken for 3 units)
+public_health_bs,Three Units from One of the Following Categories During the Junior or Senior Year:,Applied Public Health Practice,pool,,,PH,497,,,,Supervised Specialization in Public Health,1-6,Internship from a list of selected public health agencies
+public_health_bs,Three Units from One of the Following Categories During the Junior or Senior Year:,Research,pool,,,PH,485,,,,Applied Public Health Research,3,Must receive approval from the undergraduate Public Health advisor and be in Junior or Senior standing in Public Health. (May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement; cannot be used to satisfy both.). (Participation in a public health-related research project or series of research projects under the guidance of a faculty member.)
+public_health_bs,Three Units from One of the Following Categories During the Junior or Senior Year:,Research,pool,,,PH,499,,,,Special Study,1-3,Must receive approval from the undergraduate Public Health advisor and be in Junior or Senior standing in Public Health. (May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement; cannot be used to satisfy both.). (Participation in a public health-related research project or series of research projects under the guidance of a faculty member.)
+public_health_environmental_health_bs,Preparation for the Major,Required,required,,,PH,101,,,,Introduction to Public Health,3,
+public_health_environmental_health_bs,Preparation for the Major,Required,required,,,PH,292,,,,History of Public Health,3,
+public_health_environmental_health_bs,Preparation for the Major,Required,required,,,BIOL,100,,,,General Biology,3,
+public_health_environmental_health_bs,Preparation for the Major,Required,required,,,BIOL,100L,,,,General Biology Laboratory,1,
+public_health_environmental_health_bs,Preparation for the Major,Required,required,,,BIOL,211,,,,Fundamentals of Microbiology,2,
+public_health_environmental_health_bs,Preparation for the Major,Required,required,,,BIOL,211L,,,,Fundamentals of Microbiology Laboratory,2,
+public_health_environmental_health_bs,Preparation for the Major,Required,required,,,CHEM,100,,,,Preparation for General Chemistry,4,
+public_health_environmental_health_bs,Preparation for the Major,PSY 101 or SOC 101 (pick 1),choose,1,,PSY,101,,,,Introductory Psychology,3,
+public_health_environmental_health_bs,Preparation for the Major,PSY 101 or SOC 101 (pick 1),choose,1,,SOC,101,,,,Introductory Sociology: The Study of Society,3,
+public_health_environmental_health_bs,Preparation for the Major,PSY 280 or SOC 201 (pick 1),choose,1,,PSY,280,,,,Statistical Methods in Psychology,4,
+public_health_environmental_health_bs,Preparation for the Major,PSY 280 or SOC 201 (pick 1),choose,1,,SOC,201,,,,Elementary Social Statistics,3,
+public_health_environmental_health_bs,Preparation for the Major,CHEM 130 or CHEM 232 (pick 1),choose,1,,CHEM,130,,,,Elementary Organic Chemistry,3,
+public_health_environmental_health_bs,Preparation for the Major,CHEM 130 or CHEM 232 (pick 1),choose,1,,CHEM,232,,,,Organic Chemistry,3,
+public_health_environmental_health_bs,Preparation for the Major,MATH 140 or MATH 141 or MATH 150 or MATH 151 (pick 1),choose,1,,MATH,140,,,,College Algebra,3,
+public_health_environmental_health_bs,Preparation for the Major,MATH 140 or MATH 141 or MATH 150 or MATH 151 (pick 1),choose,1,,MATH,141,,,,Precalculus,4,
+public_health_environmental_health_bs,Preparation for the Major,MATH 140 or MATH 141 or MATH 150 or MATH 151 (pick 1),choose,1,,MATH,150,,,,Calculus I,4,
+public_health_environmental_health_bs,Preparation for the Major,MATH 140 or MATH 141 or MATH 150 or MATH 151 (pick 1),choose,1,,MATH,151,,,,Calculus II,4,
+public_health_environmental_health_bs,Additional Lower Division Courses,Required (pick 1),choose,1,,PH,250,,,,Infections and Epidemics,3,Or PH 233
+public_health_environmental_health_bs,Additional Lower Division Courses,Required (pick 1),choose,1,,PH,233,,,,Health Equity: Exploring Root Causes of Disparities,3,Or PH 250
+public_health_environmental_health_bs,Major,Required,required,,,PH,300,,,,Professionalism and Public Health,3,
+public_health_environmental_health_bs,Major,Required,required,,,PH,302,,,,Epidemiology of Communicable and Chronic Disease,3,
+public_health_environmental_health_bs,Major,Required,required,,,PH,304,,,,Environment and Public Health,3,
+public_health_environmental_health_bs,Major,Required,required,,,PH,305,,,,Medical Care Organization and Delivery,3,
+public_health_environmental_health_bs,Major,Required,required,,,PH,306,,,,Public Health Research,3,
+public_health_environmental_health_bs,Major,Required,required,,,PH,307,,,,Applied Biostatistics in Public Health,3,
+public_health_environmental_health_bs,Major,Required,required,,,PH,401,,,,Biological Basis of Disease,3,
+public_health_environmental_health_bs,Major,Required,required,,,PH,490,,,,Health Data Analysis,3,
+public_health_environmental_health_bs,Major,Required,required,,,PH,491,,,,Program Planning and Evaluation,3,
+public_health_environmental_health_bs,Major,Environmental Health Courses,required,,,PH,451,,,,Public Health and Food Safety,3,
+public_health_environmental_health_bs,Major,Environmental Health Courses,required,,,PH,452,,,,Health Impacts of Climate Change,3,
+public_health_environmental_health_bs,Major,Environmental Health Courses,required,,,PH,538A,,,,Principles of Toxicology,3,
+public_health_environmental_health_bs,Upper Division Major Electives,,note,,,,,,,,,,(Additional electives may be selected with approval from the Public Health academic advisor.)
+public_health_environmental_health_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,3,PH,330,,,,Plagues Through the Ages,3,
+public_health_environmental_health_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,3,PH,331,,,,Emergency Preparedness and Disaster Response,3,
+public_health_environmental_health_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,3,PH,332,,,,Public Health Nutrition,3,
+public_health_environmental_health_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,3,PH,353,,,,Human Sexuality and Disease,3,
+public_health_environmental_health_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,3,PH,362,,,,Global Health,3,
+public_health_environmental_health_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,3,PH,395,,,,Emerging Topics in Public Health,3,
+public_health_environmental_health_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,3,PH,402,,,,Public Health Communications,3,
+public_health_environmental_health_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,3,PH,496,,,,Experimental Topics,1-4,
+public_health_environmental_health_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,3,PH,485,,,,Applied Public Health Research,3,
+public_health_environmental_health_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,3,GENS,340,,,,Confronting HIV/AIDS,3,
+public_health_environmental_health_bs,Three Units from One of the Following Categories:,Applied Public Health Practice,pool,,3,PH,497,,,,Supervised Specialization in Public Health,1-6,Internship from a list of selected public health agencies
+public_health_environmental_health_bs,Three Units from One of the Following Categories:,Research,pool,,3,PH,499,,,,Special Study,1-3,Participation in a public health-related research project or series of research projects under the guidance of a faculty member. Must receive approval from the undergraduate Public Health advisor and in Junior or Senior standing
+sociology_ba,Preparation for the Major,Required,required,,,SOC,101,,,,Introductory Sociology: The Study of Society,3,"Grade of C or better, no Cr/NC"
+sociology_ba,Preparation for the Major,Required,required,,,SOC,102,,,,Introduction to Social Problems,3,"Grade of C or better, no Cr/NC"
+sociology_ba,Preparation for the Major,Required,required,,,SOC,201,,,,Elementary Social Statistics,3,"Grade of C or better, no Cr/NC"
+sociology_ba,Major,Required,required,,,SOC,301,,,,Social Research Methods,3,
+sociology_ba,Major,Required,required,,,SOC,401,,,,Classical Social Theory,3,
+sociology_ba,Major,Required,required,,,SOC,403,,,,Contemporary Social Theory,3,
+sociology_ba,Major,SOC 406 or SOC 407 or SOC 408 (pick 1),choose,1,,SOC,406,,,,Intermediate Social Statistics,3,
+sociology_ba,Major,SOC 406 or SOC 407 or SOC 408 (pick 1),choose,1,,SOC,407,,,,Survey and Experimental Research Methods,3,
+sociology_ba,Major,SOC 406 or SOC 407 or SOC 408 (pick 1),choose,1,,SOC,408,,,,Qualitative Research Methods,3,
+sociology_ba,Major,SOC 433 or SOC 455 (pick 1),choose,1,,SOC,433,,,,"Wealth, Status, and Power",3,
+sociology_ba,Major,SOC 433 or SOC 455 (pick 1),choose,1,,SOC,455,,,,Sociology of Intersectionality,3,
+sociology_ba,Major,SOC 450 or SOC 457 or SOC 458 or SOC 459 (pick 1),choose,1,,SOC,450,,,,Social Change,3,
+sociology_ba,Major,SOC 450 or SOC 457 or SOC 458 or SOC 459 (pick 1),choose,1,,SOC,457,,,,"Protests, Reforms, and Revolutions",3,
+sociology_ba,Major,SOC 450 or SOC 457 or SOC 458 or SOC 459 (pick 1),choose,1,,SOC,458,,,,"Nonviolence, Peace, and Social Change",3,
+sociology_ba,Major,SOC 450 or SOC 457 or SOC 458 or SOC 459 (pick 1),choose,1,,SOC,459,,,,The American Labor Movement,3,
+sociology_ba,Language Requirement,,note,,,,,,,,,,Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to section of catalog on “Graduation Requirements .”

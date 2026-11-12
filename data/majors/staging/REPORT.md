@@ -4,9 +4,9 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 | Majors processed | Requirement rows | Majors with open review items |
 | --- | --- | --- |
-| 33 | 1270 | 33 |
+| 52 | 2052 | 52 |
 
-## Batch check: 20 of 20 pages found
+## Batch check: 39 of 40 pages found
 
 | # | Program | major_id | Page |
 | --- | --- | --- | --- |
@@ -30,15 +30,42 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | 18 | Chemistry, B.A. | `chemistry_ba` | found |
 | 19 | Chemistry, and Certificate of the American Chemical Society, B.S. | `chemistry_american_chemical_society_bs` | found |
 | 20 | Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society, B.S. | `chemistry_biochemistry_american_chemical_society_bs` | found |
+| 21 | Public Health, B.S. | `public_health_bs` | found |
+| 22 | Public Health, Emphasis in Environmental Health, B.S. | `public_health_environmental_health_bs` | found |
+| 23 | Nursing, B.S. | `nursing_bs` | found |
+| 24 | Foods and Nutrition, B.S. | `foods_nutrition_bs` | found |
+| 25 | Child Development, B.S. | `child_development_bs` | found |
+| 26 | Sociology, B.A. | `sociology_ba` | found |
+| 27 | Political Science, B.A. | `political_science_ba` | found |
+| 28 | Economics, B.A. | `economics_ba` | found |
+| 29 | Economics, Emphasis in International Economics, B.A. | `economics_international_ba` | found |
+| 30 | Economics, Emphasis in Public Policy, B.A. | `economics_public_policy_ba` | found |
+| 31 | Economics, Specialization in Quantitative Analysis, B.A. | `economics_quantitative_analysis_ba` | **missing** |
+| 32 | Journalism, B.A. | `journalism_ba` | found |
+| 33 | Journalism, Emphasis in Advertising, B.A. | `journalism_advertising_ba` | found |
+| 34 | Journalism, Emphasis in Media Studies, B.A. | `journalism_media_studies_ba` | found |
+| 35 | Journalism, Emphasis in Public Relations, B.A. | `journalism_public_relations_ba` | found |
+| 36 | Mathematics, B.A. | `mathematics_ba` | found |
+| 37 | Mathematics, Emphasis in Applied Mathematics, B.S. | `mathematics_applied_bs` | found |
+| 38 | Mathematics, Emphasis in Computational Science, B.S. | `mathematics_computational_science_bs` | found |
+| 39 | Mathematics, Emphasis in Mathematics Education, B.S. | `mathematics_education_bs` | found |
+| 40 | Mathematics, Emphasis in Science, B.S. | `mathematics_science_bs` | found |
 
 ## Run notes
 
 - data/catalog_html/Program_ Business Administration, Emphasis in Management, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 12112
 - data/catalog_html/Program_ Chemistry, Emphasis in Biochemistry, B.S. and Certificate of the American Chemical Society - San Diego State University.html: no program id in the page; matched by its title to poid 11938
 - data/catalog_html/Program_ Construction Engineering, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 11972
+- data/catalog_html/Program_ Economics, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 11981
+- data/catalog_html/Program_ Economics, Emphasis in Public Policy, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 11983
 - data/catalog_html/Program_ Environmental Engineering, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 11997
+- data/catalog_html/Program_ Journalism, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12089
+- data/catalog_html/Program_ Journalism, Emphasis in Media Studies, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12091
+- data/catalog_html/Program_ Journalism, Emphasis in Public Relations, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12092
 - data/catalog_html/Program_ Kinesiology, Emphasis in Exercise Science Generalist, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 12004
 - data/catalog_html/Program_ Kinesiology, Emphasis in Fitness Specialist, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 12005
+- data/catalog_html/Program_ Mathematics, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12128
+- data/catalog_html/Program_ Sociology, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12197
 
 | major_id | Name | Degree | Rows | Review items |
 | --- | --- | --- | --- | --- |
@@ -63,18 +90,37 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | `chemistry_ba` | Chemistry | B.A. | 24 | 4 |
 | `chemistry_american_chemical_society_bs` | Chemistry, and Certificate of the American Chemical Society | B.S. | 26 | 6 |
 | `chemistry_biochemistry_american_chemical_society_bs` | Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society | B.S. | 39 | 6 |
+| `child_development_bs` | Child Development | B.S. | 49 | 8 |
 | `civil_engineering_bs` | Civil Engineering | B.S. | 55 | 2 |
 | `communication_ba` | Communication | B.A. | 49 | 10 |
 | `computer_engineering_bs` | Computer Engineering | B.S. | 46 | 2 |
 | `construction_engineering_bs` | Construction Engineering | B.S. | 46 | 5 |
+| `economics_ba` | Economics | B.A. | 26 | 7 |
+| `economics_international_ba` | Economics, Emphasis in International Economics | B.A. | 43 | 14 |
+| `economics_public_policy_ba` | Economics, Emphasis in Public Policy | B.A. | 40 | 6 |
 | `electrical_engineering_bs` | Electrical Engineering | B.S. | 55 | 3 |
 | `environmental_engineering_bs` | Environmental Engineering | B.S. | 40 | 1 |
+| `foods_nutrition_bs` | Foods and Nutrition | B.S. | 48 | 2 |
 | `health_communication_bs` | Health Communication | B.S. | 41 | 8 |
+| `journalism_ba` | Journalism | B.A. | 43 | 6 |
+| `journalism_advertising_ba` | Journalism, Emphasis in Advertising | B.A. | 42 | 9 |
+| `journalism_media_studies_ba` | Journalism, Emphasis in Media Studies | B.A. | 33 | 9 |
+| `journalism_public_relations_ba` | Journalism, Emphasis in Public Relations | B.A. | 29 | 11 |
 | `kinesiology_exercise_science_generalist_bs` | Kinesiology, Emphasis in Exercise Science Generalist | B.S. | 29 | 4 |
 | `kinesiology_fitness_specialist_bs` | Kinesiology, Emphasis in Fitness Specialist | B.S. | 37 | 2 |
+| `mathematics_ba` | Mathematics | B.A. | 29 | 6 |
+| `mathematics_applied_bs` | Mathematics, Emphasis in Applied Mathematics | B.S. | 55 | 13 |
+| `mathematics_computational_science_bs` | Mathematics, Emphasis in Computational Science | B.S. | 52 | 9 |
+| `mathematics_education_bs` | Mathematics, Emphasis in Mathematics Education | B.S. | 39 | 9 |
+| `mathematics_science_bs` | Mathematics, Emphasis in Science | B.S. | 43 | 12 |
 | `mechanical_engineering_bioengineering_bs` | Mechanical Engineering, Emphasis in Bioengineering | B.S. | 40 | 2 |
+| `nursing_bs` | Nursing | B.S. | 29 | 2 |
+| `political_science_ba` | Political Science | B.A. | 82 | 18 |
 | `psychology_industrial_organizational_ba` | Psychology, Emphasis in Industrial and Organizational Psychology | B.A. | 27 | 8 |
 | `psychology_neuroscience_ba` | Psychology, Emphasis in Neuroscience | B.A. | 30 | 9 |
+| `public_health_bs` | Public Health | B.S. | 40 | 8 |
+| `public_health_environmental_health_bs` | Public Health, Emphasis in Environmental Health | B.S. | 44 | 4 |
+| `sociology_ba` | Sociology | B.A. | 16 | 4 |
 
 ## Mechanical Engineering, B.S. (`me_bs`)
 
@@ -1341,7 +1387,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Section | Group | Rule | Courses |
 | --- | --- | --- | --- |
 | Preparation for the Major | Required | required | 12: CHEM 200, CHEM 201, CHEM 232, CHEM 232L, CHEM 251, MATH 150, MATH 151, MATH 252, PHYS 195, PHYS 195L, PHYS 196, PHYS 196L |
-| Preparation for the Major | BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L | choose 2 | 4: BIOL 203, BIOL 203L, BIOL 204, BIOL 204L |
+| Preparation for the Major | BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L | choose 2, 4 units | 4: BIOL 203, BIOL 203L, BIOL 204, BIOL 204L |
 | Major | Required | required | 8: CHEM 410A, CHEM 410B, CHEM 432, CHEM 432L, CHEM 457, CHEM 550, CHEM 560, CHEM 567 |
 | Major | Senior Project | required | 1: CHEM 498 |
 | Advanced Biochemistry Core | Advanced Biochemistry Core | pool, 6 units | 3: CHEM 562, CHEM 563, CHEM 564 |
@@ -1363,7 +1409,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Units check (advisory)
 
-- Preparation for the Major: page says 43 units, listed courses give 41-45: **overlaps**
+- Preparation for the Major: page says 43 units, listed courses give 43: **inside**
 - Major: page says at least 36 units, listed courses give 36-38: **inside**
 
 ### Major notes (no rows made; for a human)
@@ -1390,6 +1436,68 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 - none
 - 7 more only shortened in the class data (not a real difference): CHEM 232L, BIOL 204, BIOL 204L, CHEM 432L, CHEM 457, CHEM 550, CHEM 564
+
+## Child Development, B.S. (`child_development_bs`)
+
+- Source: `data/catalog_html/Program_ Child Development, B.S. - San Diego State University.html`, poid 11947, major code 08231
+- Rows: 49
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 9: CFD 135, CFD 270, CFD 270L, CFD 272, CFD 275, CFD 278, BIOL 100, PSY 101, SOC 101 |
+| Preparation for the Major | PSY 280 or SOC 201 or STAT 119 or STAT 250 (pick 1) | choose 1 | 4: PSY 280, SOC 201, STAT 119, STAT 250 |
+| Major | Required | required | 13: CFD 335, CFD 354, CFD 370, CFD 375A, CFD 375B, CFD 375C, CFD 475, CFD 537, CFD 560, CFD 575, CFD 578, CFD 590, CFD 598 |
+| Major | And Two Units from | required | 4: CFD 378A, CFD 378B, CFD 378C, CFD 378D |
+| Major | Electives | required | 17: CFD 377, CFD 380, CFD 390, CFD 404, CFD 437, CFD 450, CFD 477, CFD 497, CFD 536, CFD 577, CFD 580, CFD 585, CFD 595, CFD 596, ED 451, CFD 499, ED 450 |
+| Major | Capstone: Reflective Learning Portfolio | required | 1: CFD 598 |
+
+### Section notes (shown once under the heading)
+
+- **Preparation for the Major**: The minimum grade in each class is a C (2.0) or better
+
+### Review list
+
+- [ ] 'Preparation for the Major': rule text kept as the section note: "The minimum grade in each class is a C (2.0) or better."
+- [ ] 'Required' in Preparation for the Major: text between courses that was not read as a rule: "Choose One:"
+- [ ] 'Required' in Preparation for the Major: text between courses that was not read as a rule: "A three unit elementary statistics course"
+- [ ] 'Electives' in Major: text between courses that was not read as a rule: "Selected Study research experiences are determined by the department."
+- [ ] 'Electives' in Major: text between courses that was not read as a rule: "Contact the undergraduate advisor for directions to register for CFD 499 and go through an application process to be matched with a faculty member overseeing various research opportunity."
+- [ ] 'Electives' in Major: text between courses that was not read as a rule: "Study abroad course sections selected in consultation with the undergraduate advisor"
+- [ ] 'Electives' in Major: rule text kept as the note, check the group: "12 units of additional CFD courses ranging from CFD 300 to 599. Students may take 300 to 599 level courses from other departments with advisor permission. Elective units include but are not limited to the following:"
+- [ ] 'Capstone: Reflective Learning Portfolio' in Major: rule text kept as the note, check the group: "This is a required capstone course. Students are required to prepare a portfolio to reflect, integrate, and synthesize their cumulative learning experience acquired in child and family development courses, study abroad programs, involvement in research projects with faculty, and/or internships. The reflective portfolio will be a capstone culminating experience to provide the opportunity to integrate knowledge and understanding of the child and family development curriculum with their academic and personal growth."
+
+### Units check (advisory)
+
+- Preparation for the Major: page says 27-28 units, listed courses give 27-30: **overlaps**
+- Major: page says at least 50 units, listed courses give 86-103: **inside**
+
+### Major notes (no rows made; for a human)
+
+- **Program description**
+  - All candidates for a bachelor’s degree must complete the requirements outlined in the “Graduation Requirements” section of this catalog.
+  - A minor is not required with this major.
+  - Students must complete the major requirements in effect at the time they were admitted to the premajor at SDSU, provided they maintain continuous enrollment.
+- **Graduation Writing Assessment Requirement**
+  - Completing one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 35 of 43 have sections
+  - with sections: CFD 135 (3), CFD 270 (1), CFD 270L (3), CFD 272 (1), CFD 275 (4), CFD 278 (1), BIOL 100 (4), PSY 101 (2), SOC 101 (11), CFD 335 (3), CFD 354 (1), CFD 370 (2), CFD 375A (1), CFD 375B (1), CFD 375C (1), CFD 475 (1), CFD 537 (2), CFD 560 (1), CFD 575 (2), CFD 578 (6), CFD 590 (4), CFD 598 (6), CFD 378A (1), CFD 378B (1), CFD 378C (1), CFD 378D (2), CFD 380 (1), CFD 390 (1), CFD 404 (2), CFD 437 (1), CFD 450 (2), CFD 536 (1), CFD 577 (1), ED 451 (6), ED 450 (1)
+  - no sections: CFD 377, CFD 477, CFD 497, CFD 580, CFD 585, CFD 595, CFD 596, CFD 499
+- Pick-n group courses: 4 of 4 have sections
+  - with sections: PSY 280 (22), SOC 201 (7), STAT 119 (5), STAT 250 (8)
+
+### Title differences (catalog vs class data)
+
+- CFD 375A: catalog "Human Development & Learning: Infancy to Toddlerhood", class data "Hum Dev Lrn Infnt Toddlr"
+- CFD 578: catalog "Conflict Resolution Across the Life Span", class data "Conflict Resolut Lifespan"
+- CFD 378A: catalog "Laboratory Experience: Infancy to Toddlerhood", class data "Lab Infant Todler"
+- CFD 577: catalog "Professional Development and Mentorship in Human and Family Development Programs", class data "Professional Dev CFD Programs"
+- ED 450: catalog "Study Abroad", class data "Ed Study Abroad Mexico"
+- 21 more only shortened in the class data (not a real difference): CFD 270L, CFD 272, CFD 275, CFD 278, CFD 335, CFD 370, CFD 375B, CFD 375C, CFD 475, CFD 537, CFD 560, CFD 575, CFD 590, CFD 598, CFD 378B, CFD 378C, CFD 378D, CFD 380, CFD 404, CFD 450, ED 451
 
 ## Civil Engineering, B.S. (`civil_engineering_bs`)
 
@@ -1473,7 +1581,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Section | Group | Rule | Courses |
 | --- | --- | --- | --- |
 | Preparation for the Major | Choose from these courses | pool, 6 units | 4: COMM 160, COMM 201, COMM 204, COMM 245 |
-| Mathematics Competency Requirement | Required | required | 6: STAT 250, STAT 350A, STAT 350B, SOC 201, SOC 406, SOC 407 |
+| Mathematics Competency Requirement | Mathematics Competency Requirement (pick 1) | choose 1 | 6: STAT 250, STAT 350A, STAT 350B, SOC 201, SOC 406, SOC 407 |
 | Major | Required | required | 2: COMM 300, COMM 350 |
 | Major | Communication Capstone | required | 1: COMM 495 |
 | Conceptualizing Communication | Conceptualizing Communication | pool, 9 units | 6: COMM 321, COMM 371, COMM 415, COMM 450, COMM 470, COMM 492 |
@@ -1492,7 +1600,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Preparation for the Major' asks for 6 units of its list: the whole list is a 6-unit pool, check it.
 - [ ] 'Mathematics Competency Requirement': rule text kept as the section note: "Competency in mathematics is generally satisfied by completing three semesters of college mathematics."
 - [ ] Text under 'Mathematics Competency Requirement' left out (no rule in it; in the report only): "Refer to the “General Education Requirements” section of this catalog for a list of approved Area 2. Mathematical Concepts and Quantitative Reasoning courses. or Students interested in a statistics sequence may choose from one of the following two statistics sequences approved for the Communication major."
-- [ ] 'Required' in Mathematics Competency Requirement: text between courses that was not read as a rule: "(highly recommended)"
+- [ ] 'Mathematics Competency Requirement': read as pick 1 of 6 for now (to confirm with the department); the catalog list is the note: "STAT 250, STAT 350A, STAT 350B or (highly recommended) SOC 201, SOC 406, SOC 407"
 - [ ] 'Conceptualizing Communication' (under Major) asks for 9 units of its list: encoded as a pool in its own section 'Conceptualizing Communication', check it.
 - [ ] 'Investigating Communication' (under Major) asks for 6 units of its list: encoded as a pool in its own section 'Investigating Communication', check it.
 - [ ] 'Communication Electives' (under Major) asks for 12 units of its list: encoded as a pool in its own section 'Communication Electives', check it.
@@ -1524,8 +1632,10 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Coverage (sections in data/cleaned)
 
-- Required courses: 7 of 9 have sections
-  - with sections: STAT 250 (8), STAT 350B (1), SOC 201 (7), SOC 407 (1), COMM 300 (4), COMM 350 (4), COMM 495 (6)
+- Required courses: 3 of 3 have sections
+  - with sections: COMM 300 (4), COMM 350 (4), COMM 495 (6)
+- Pick-n group courses: 4 of 6 have sections
+  - with sections: STAT 250 (8), STAT 350B (1), SOC 201 (7), SOC 407 (1)
   - no sections: STAT 350A, SOC 406
 - Elective pool courses: 31 of 38 have sections
   - with sections: COMM 160 (3), COMM 201 (1), COMM 204 (1), COMM 245 (2), COMM 321 (4), COMM 371 (7), COMM 415 (1), COMM 450 (1), COMM 470 (1), COMM 492 (1), COMM 407 (2), COMM 420 (1), COMM 441 (1), COMM 462 (1), COMM 465 (2), COMM 301 (1), COMM 307 (4), COMM 406 (1), COMM 445 (3), COMM 452 (2), COMM 482 (1), COMM 485 (2), COMM 490 (1), COMM 496 (1), COMM 508 (1), COMM 540 (1), COMM 555 (1), COMM 422 (1), COMM 426 (1), COMM 427 (1), COMM 428 (1)
@@ -1670,6 +1780,208 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - none
 - 18 more only shortened in the class data (not a real difference): CON E 201, CIV E 218, CIV E 225, CON E 215, CIV E 121, CHEM 202, CIV E 160, CON E 330, CON E 340, CON E 401, CON E 480, CON E 590, CIV E 301, CIV E 302, CON E 520, CIV E 421, CIV E 465, CIV E 523
 
+## Economics, B.A. (`economics_ba`)
+
+- Source: `data/catalog_html/Program_ Economics, B.A. - San Diego State University.html`, poid 11981, major code 22041
+- Rows: 26
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 2: ECON 101, ECON 102 |
+| Preparation for the Major | ECON 201 or STAT 119 or STAT 250 (pick 1) | choose 1 | 3: ECON 201, STAT 119, STAT 250 |
+| Calculus | Calculus | pool, 3-4 units | 3: MATH 120, MATH 124, MATH 150 |
+| Major | Required | required | 3: ECON 301, ECON 320, ECON 321 |
+| Major | Variable Unit and Repeatable Courses | required | 2: ECON 499, ECON 495 |
+| Major | Variable Unit and Repeatable Courses: ECON 496 or ECON 596 (pick 1) | choose 1 | 2: ECON 496, ECON 596 |
+| International Economics Electives | International Economics Electives | pool, 6 units | 9: ECON 330, ECON 360, ECON 365, ECON 460, ECON 463, ECON 464, ECON 466, ECON 561, ECON 592 |
+
+### Section notes (shown once under the heading)
+
+- **Major**: A minimum of 33 upper division Economics (ECON) units to include:
+- **Language Requirement**: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill this requirement
+
+### Review list
+
+- [ ] Text under 'Preparation for the Major' left out (no rule in it; in the report only): "Students completing the California Community College Associate in Arts in Economics for Transfer (AA-T) will satisfy preparation for the major."
+- [ ] 'Calculus' (under Preparation for the Major) asks for 3-4 units of its list: encoded as a pool in its own section 'Calculus', check it.
+- [ ] 'Language Requirement' has no courses; shown as a section with only its note: "Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill this requirement."
+- [ ] 'Major': rule text kept as the section note: "A minimum of 33 upper division Economics (ECON) units to include:"
+- [ ] 'International Economics Electives' (under Major) asks for 6 units of its list: encoded as a pool in its own section 'International Economics Electives', check it.
+- [ ] Text under 'Upper Division Major Electives' left out (no rule in it; in the report only): "18 additional units of upper division Economics (ECON) electives."
+- [ ] 'Variable Unit and Repeatable Courses' in Major: rule text kept as the note, check the group: "Courses listed below may be applied to the major. These units may be counted towards the international economics elective requirement with department approval."
+
+### Units check (advisory)
+
+- Preparation for the Major: page says 12-13 units, listed courses give 12-13: **inside**
+
+### Major notes (no rows made; for a human)
+
+- **Associate Degree for Transfer (ADT) Major**
+  - All candidates for a bachelor’s degree must complete the requirements outlined in the “Graduation Requirements” section of this catalog.
+  - A minor is not required with this major.
+- **Impacted Program**
+  - The Economics major is an impacted program. To be admitted to the major, students must meet the following criteria:
+  - a. Complete with a grade of C (2.0) or better: ECON 101, ECON 102; ECON 201 or STAT 119 or STAT 250; one course selected from MATH 120, MATH 124, or MATH 150. These courses cannot be taken for credit/no credit (Cr/NC);
+  - b. Have a cumulative GPA of 2.40 or better.
+  - Students must complete the major requirements in effect at the time they were admitted to the premajor at SDSU, provided they maintain continuous enrollment.
+- **Preparation for the Major**
+  - Students completing the California Community College Associate in Arts in Economics for Transfer (AA-T) will satisfy preparation for the major.
+- **Graduation Writing Assessment Requirement**
+  - Completing one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements.
+- **Major: Upper Division Major Electives**
+  - 18 additional units of upper division Economics (ECON) electives.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 6 of 7 have sections
+  - with sections: ECON 101 (6), ECON 102 (6), ECON 301 (3), ECON 320 (3), ECON 321 (3), ECON 495 (1)
+  - no sections: ECON 499
+- Pick-n group courses: 4 of 5 have sections
+  - with sections: ECON 201 (4), STAT 119 (5), STAT 250 (8), ECON 496 (1)
+  - no sections: ECON 596
+- Elective pool courses: 9 of 12 have sections
+  - with sections: MATH 120 (5), MATH 124 (9), MATH 150 (12), ECON 330 (1), ECON 360 (1), ECON 365 (1), ECON 460 (1), ECON 466 (1), ECON 592 (1)
+  - no sections: ECON 463, ECON 464, ECON 561
+
+### Title differences (catalog vs class data)
+
+- ECON 496: catalog "Experimental Topics", class data "Regulation and Antitrust"
+- ECON 466: catalog "Economics of the Middle East", class data "Econ Prblms of Mid East"
+- 7 more only shortened in the class data (not a real difference): ECON 301, ECON 320, ECON 321, ECON 360, ECON 365, ECON 460, ECON 592
+
+## Economics, Emphasis in International Economics, B.A. (`economics_international_ba`)
+
+- Source: `data/catalog_html/Program_ Economics, Emphasis in International Economics, B.A. - San Diego State University.html`, poid 11982
+- Rows: 43
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 2: ECON 101, ECON 102 |
+| Preparation for the Major | ECON 201 or STAT 119 or STAT 250 (pick 1) | choose 1 | 3: ECON 201, STAT 119, STAT 250 |
+| Calculus | Calculus | pool, 3-4 units | 3: MATH 120, MATH 124, MATH 150 |
+| Major | Required | required | 3: ECON 301, ECON 320, ECON 321 |
+| International Economics Electives | International Economics Electives | pool, 12 units | 9: ECON 330, ECON 360, ECON 365, ECON 460, ECON 463, ECON 464, ECON 466, ECON 561, ECON 592 |
+| Upper Division Major Electives | Upper Division Major Electives | pool, 6 units | 15: ECON 311, ECON 338, ECON 349, ECON 380, ECON 382, ECON 401, ECON 403, ECON 406, ECON 422, ECON 441, ECON 449W, ECON 455, ECON 456, ECON 485, ECON 490 |
+| Upper Division Business Electives | Upper Division Business Electives | pool, 6-7 units | 6: B A 323, FIN 329, B A 350, MGT 357, B A 370, MKTG 376 |
+
+### Section notes (shown once under the heading)
+
+- **Major**: A minimum of 33 upper division units (27 units in Economics and 6-7 units from the Fowler College of Business) to include:
+- **Language Requirement**: Successful completion of a course in a language other than English at the fourth semester level or higher. Students who have graduated from high school in another country where the language of instruction is not English have met the language requirement for this major
+
+### Review list
+
+- [ ] ECON 201 or STAT 119 or STAT 250 (pick 1) in Preparation for the Major: the 'or' sits next to other courses with no break, so it may cover more than one course. Check the catalog page.
+- [ ] 'Calculus' (under Preparation for the Major) asks for 3-4 units of its list: encoded as a pool in its own section 'Calculus', check it.
+- [ ] 'Language Requirement' has no courses; shown as a section with only its note: "Successful completion of a course in a language other than English at the fourth semester level or higher. Students who have graduated from high school in another country where the language of instruction is not English have met the language requirement for this major."
+- [ ] Text under 'Study/Internship Abroad Requirement' was not read as a rule (no courses in that block): "Completion of a study abroad or internship abroad of at least 12 units of coursework or 6 units of an internship course in another nation."
+- [ ] Text under 'Study/Internship Abroad Requirement' was not read as a rule (no courses in that block): "Students may also choose to complete a combination of 9 units of study and 3 units of an internship abroad."
+- [ ] Text under 'Study/Internship Abroad Requirement' was not read as a rule (no courses in that block): "Students who have graduated from high school outside the U.S. meet this requirement by studying at SDSU."
+- [ ] 'Major': rule text kept as the section note: "A minimum of 33 upper division units (27 units in Economics and 6-7 units from the Fowler College of Business) to include:"
+- [ ] 'International Economics Electives' (under Major) asks for 12 units of its list: encoded as a pool in its own section 'International Economics Electives', check it.
+- [ ] 'Upper Division Major Electives' (under Major) asks for 6 units of its list: encoded as a pool in its own section 'Upper Division Major Electives', check it.
+- [ ] FIN 329 or BA 350 (pick 1) in the 'Upper Division Business Electives' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
+- [ ] MGT 357 or BA 370 (pick 1) in the 'Upper Division Business Electives' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
+- [ ] 'Upper Division Business Electives' (under Major) asks for 6-7 units of its list: encoded as a pool in its own section 'Upper Division Business Electives', check it.
+- [ ] 'Variable Unit and Repeatable Courses' (under Major) is a rule in words, encoded as one pool; check it. Catalog: "A maximum of 9 units of ECON 496 or ECON 596 and maximum of 3 units of ECON 499 may be substituted as appropriate with department approval except for ECON 360, ECON 561, or ECON 592. A maximum of 3 units of ECON 495 may be substituted in International Economics with appropriate international content and department approval."
+- [ ] 'Variable Unit and Repeatable Courses' has a rule but no course lists followed it: A maximum of 9 units of ECON 496 or ECON 596 and maximum of 3 units of ECON 499 may be substituted as appropriate with department approval except for ECON 360, ECON 561, or ECON 592. A maximum of 3 units of ECON 495 may be substituted in International Economics with appropriate international content and department approval.
+
+### Units check (advisory)
+
+- Preparation for the Major: page says 12-13 units, listed courses give 12-13: **inside**
+
+### Major notes (no rows made; for a human)
+
+- **(Academic Plan Code: 111920BALS)**
+  - All candidates for a bachelor’s degree must complete the graduation requirements outlined in the “Graduation Requirements” section of this catalog.
+  - A minor is not required with this major.
+  - Students must complete the major requirements in effect at the time they were admitted to the premajor at SDSU, provided they maintain continuous enrollment.
+- **Graduation Writing Assessment Requirement**
+  - Completing one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements.
+- **Study/Internship Abroad Requirement**
+  - Completion of a study abroad or internship abroad of at least 12 units of coursework or 6 units of an internship course in another nation.
+  - Students may also choose to complete a combination of 9 units of study and 3 units of an internship abroad.
+  - Students who have graduated from high school outside the U.S. meet this requirement by studying at SDSU.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 5 of 5 have sections
+  - with sections: ECON 101 (6), ECON 102 (6), ECON 301 (3), ECON 320 (3), ECON 321 (3)
+- Pick-n group courses: 3 of 3 have sections
+  - with sections: ECON 201 (4), STAT 119 (5), STAT 250 (8)
+- Elective pool courses: 25 of 33 have sections
+  - with sections: MATH 120 (5), MATH 124 (9), MATH 150 (12), ECON 330 (1), ECON 360 (1), ECON 365 (1), ECON 460 (1), ECON 466 (1), ECON 592 (1), ECON 311 (1), ECON 349 (1), ECON 401 (1), ECON 403 (1), ECON 422 (1), ECON 441 (1), ECON 455 (1), ECON 456 (1), ECON 485 (1), ECON 490 (1), B A 323 (13), FIN 329 (4), B A 350 (14), MGT 357 (3), B A 370 (16), MKTG 376 (2)
+  - no sections: ECON 463, ECON 464, ECON 561, ECON 338, ECON 380, ECON 382, ECON 406, ECON 449W
+
+### Title differences (catalog vs class data)
+
+- ECON 466: catalog "Economics of the Middle East", class data "Econ Prblms of Mid East"
+- 10 more only shortened in the class data (not a real difference): ECON 301, ECON 320, ECON 321, ECON 360, ECON 365, ECON 460, ECON 592, ECON 311, ECON 441, ECON 456
+
+## Economics, Emphasis in Public Policy, B.A. (`economics_public_policy_ba`)
+
+- Source: `data/catalog_html/Program_ Economics, Emphasis in Public Policy, B.A. - San Diego State University.html`, poid 11983
+- Rows: 40
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 4: ECON 101, ECON 102, COMM 160, MIS 180 |
+| Preparation for the Major | ECON 201 or STAT 119 or STAT 250 (pick 1) | choose 1 | 3: ECON 201, STAT 119, STAT 250 |
+| Preparation for the Major | One Course Selected from (pick 1) | choose 1 | 3: MATH 120, MATH 124, MATH 150 |
+| Major | Required | required | 4: ECON 301, ECON 320, ECON 321, B A 323 |
+| 18 Units of Electives in Economics | A. Public Policy Group | pool, 18 units | 16: ECON 311, ECON 338, ECON 349, ECON 380, ECON 382, ECON 401, ECON 403, ECON 406, ECON 422, ECON 441, ECON 449W, ECON 455, ECON 456, ECON 485, ECON 487, ECON 490 |
+| 18 Units of Electives in Economics | B. International Group | pool, 18 units | 9: ECON 330, ECON 360, ECON 365, ECON 460, ECON 463, ECON 464, ECON 466, ECON 561, ECON 592 |
+
+### Section notes (shown once under the heading)
+
+- **Language Requirement**: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to section of catalog on “Graduation Requirements .”
+
+### Review list
+
+- [ ] 'One Course Selected from (pick 1)' in Preparation for the Major: read as pick 1 of 3; check it.
+- [ ] 'Language Requirement' has no courses; shown as a section with only its note: "Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to section of catalog on “Graduation Requirements .”"
+- [ ] Text under 'C. Upper Division Economics' left out (no rule in it; in the report only): "Three additional units of upper division economics electives."
+- [ ] '18 Units of Electives in Economics': pool set to 18 units, worked out from the Major total minus its other courses.
+- [ ] 'Maximum Units' (under Major) is a rule in words, encoded as one pool; check it. Catalog: "Maximum nine units of ECON 496 or ECON 596 may be substituted as upper division electives with approval of adviser. Maximum three units of 495 and maximum three units of 499 may be substituted into group A with appropriate policy content as approved by adviser."
+- [ ] 'Maximum Units' has a rule but no course lists followed it: Maximum nine units of ECON 496 or ECON 596 may be substituted as upper division electives with approval of adviser. Maximum three units of 495 and maximum three units of 499 may be substituted into group A with appropriate policy content as approved by adviser.
+
+### Units check (advisory)
+
+- Preparation for the Major: page says 18 units, listed courses give 18-19: **overlaps**
+- Major: page says at least 30 units, listed courses give 30: **inside (elective units were worked out from this total)**
+
+### Major notes (no rows made; for a human)
+
+- **(Academic Plan Code: 111961BALS)**
+  - All candidates for a bachelor’s degree must complete the requirements outlined in the “Graduation Requirements” section of this catalog.
+  - A minor is not required with this major.
+  - Students must complete the major requirements in effect at the time they were admitted to the premajor at SDSU, provided they maintain continuous enrollment.
+- **Graduation Writing Assessment Requirement**
+  - Completing one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements.
+- **Major: C. Upper Division Economics**
+  - Three additional units of upper division economics electives.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 8 of 8 have sections
+  - with sections: ECON 101 (6), ECON 102 (6), COMM 160 (3), MIS 180 (20), ECON 301 (3), ECON 320 (3), ECON 321 (3), B A 323 (13)
+- Pick-n group courses: 6 of 6 have sections
+  - with sections: ECON 201 (4), STAT 119 (5), STAT 250 (8), MATH 120 (5), MATH 124 (9), MATH 150 (12)
+- Elective pool courses: 17 of 25 have sections
+  - with sections: ECON 311 (1), ECON 349 (1), ECON 401 (1), ECON 403 (1), ECON 422 (1), ECON 441 (1), ECON 455 (1), ECON 456 (1), ECON 485 (1), ECON 487 (1), ECON 490 (1), ECON 330 (1), ECON 360 (1), ECON 365 (1), ECON 460 (1), ECON 466 (1), ECON 592 (1)
+  - no sections: ECON 338, ECON 380, ECON 382, ECON 406, ECON 449W, ECON 463, ECON 464, ECON 561
+
+### Title differences (catalog vs class data)
+
+- ECON 466: catalog "Economics of the Middle East", class data "Econ Prblms of Mid East"
+- 11 more only shortened in the class data (not a real difference): ECON 301, ECON 320, ECON 321, ECON 311, ECON 441, ECON 456, ECON 487, ECON 360, ECON 365, ECON 460, ECON 592
+
 ## Electrical Engineering, B.S. (`electrical_engineering_bs`)
 
 - Source: `data/catalog_html/Program_ Electrical Engineering, B.S. - San Diego State University.html`, poid 11987, major code 09091
@@ -1800,6 +2112,59 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - none
 - 16 more only shortened in the class data (not a real difference): ENV E 101, BIOL 204, BIOL 204L, CHEM 130, CIV E 121, CIV E 225, ENV E 200, CHEM 202, CIV E 160, ENV E 356, ENV E 363, ENV E 445, ENV E 554, ENV E 558, CON E 330, GEOG 570
 
+## Foods and Nutrition, B.S. (`foods_nutrition_bs`)
+
+- Source: `data/catalog_html/Program_ Foods and Nutrition, B.S. - San Diego State University.html`, poid 12152, major code 13061
+- Rows: 48
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 14: FN 200, FN 201, FN 203, FN 205, FN 205L, BIOL 100, BIOL 100L, BIOL 211, BIOL 211L, BIOL 212, CHEM 130, CHEM 160, PSY 101, SOC 101 |
+| Preparation for the Major | CHEM 100 or CHEM 103 (pick 1) | choose 1 | 2: CHEM 100, CHEM 103 |
+| Preparation for the Major | ECON 201 or STAT 250 (pick 1) | choose 1 | 2: ECON 201, STAT 250 |
+| Major | Required | required | 13: FN 302, FN 302L, FN 303, FN 304, FN 401, FN 404, FN 405, FN 406, FN 408, FN 510, FN 512, BIOL 336, ENS 304 |
+| Major | Upper Division Major Electives | required | 16: FN 407, FN 409, FN 499, FN 511, BIOL 315, B A 350, COMM 307, COMM 371, CSP 320, CSP 400, MGT 352, NURS 350, PSY 319, P H 302, P H 305, P H 362 |
+
+### Section notes (shown once under the heading)
+
+- **Preparation for the Major**: A grade of C (2.0) or better must be earned in CHEM 100 or CHEM 103 and CHEM 130 
+
+### Review list
+
+- [ ] 'Preparation for the Major': rule text kept as the section note: "A grade of C (2.0) or better must be earned in CHEM 100 or CHEM 103 and CHEM 130 ."
+- [ ] 'Upper Division Major Electives' in Major: rule text kept as the note, check the group: "6 units selected with the approval of the advisor from:"
+
+### Units check (advisory)
+
+- Preparation for the Major: page says 41 units, listed courses give 41: **inside**
+- Major: page says at least 41 units, listed courses give 75-77: **inside**
+
+### Major notes (no rows made; for a human)
+
+- **Program description**
+  - All candidates for a bachelor’s degree must complete the graduation requirements outlined in the “Graduation Requirements” section of this catalog.
+  - A minor is not required with this major.
+  - To complete the major, students must fulfill the degree requirements for the major described in the catalog in effect at the time they are accepted into the premajor at SDSU (assuming continuous enrollment).
+- **Graduation Writing Assessment Requirement**
+  - Completing one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements.
+- **Note**
+  - BIOL 336 will also satisfy three units of the General Education requirement in Explorations of Human Experience Area 2 or 5. Mathematical Concepts and Quantitative Reasoning or Physical and Biological Sciences. ^Admission to the Didactic Program in Dietetics (DPD) required.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 35 of 43 have sections
+  - with sections: FN 201 (1), FN 205 (1), FN 205L (2), BIOL 100 (4), BIOL 100L (26), BIOL 211 (1), BIOL 211L (18), BIOL 212 (18), CHEM 130 (1), PSY 101 (2), SOC 101 (11), FN 302 (1), FN 302L (2), FN 304 (1), FN 401 (1), FN 404 (1), FN 405 (2), FN 408 (1), FN 510 (1), BIOL 336 (1), ENS 304 (2), FN 409 (2), FN 511 (2), BIOL 315 (1), B A 350 (14), COMM 307 (4), COMM 371 (7), CSP 320 (3), CSP 400 (2), MGT 352 (4), NURS 350 (2), PSY 319 (1), P H 302 (1), P H 305 (1), P H 362 (1)
+  - no sections: FN 200, FN 203, CHEM 160, FN 303, FN 406, FN 512, FN 407, FN 499
+- Pick-n group courses: 4 of 4 have sections
+  - with sections: CHEM 100 (11), CHEM 103 (6), ECON 201 (4), STAT 250 (8)
+
+### Title differences (catalog vs class data)
+
+- P H 305: catalog "Medical Care Organization and Delivery", class data "Medical Care Orgs"
+- 13 more only shortened in the class data (not a real difference): FN 205, FN 205L, CHEM 130, FN 302L, FN 304, FN 405, FN 408, FN 409, FN 511, COMM 307, CSP 320, CSP 400, P H 302
+
 ## Health Communication, B.S. (`health_communication_bs`)
 
 - Source: `data/catalog_html/Program_ Health Communication, B.S. - San Diego State University.html`, poid 11961, major code 06013
@@ -1866,6 +2231,266 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - COMM 427: catalog "Health Communication and Cultural Communities", class data "HealthComm/CulturalCommunities"
 - HHS 350: catalog "Applied International Health and Human Services", class data "International Experience"
 - 13 more only shortened in the class data (not a real difference): COMM 201, COMM 495, COMM 407, COMM 420, COMM 441, COMM 462, COMM 465, COMM 422, COMM 426, COMM 428, COMM 540, COMM 555, SWORK 430
+
+## Journalism, B.A. (`journalism_ba`)
+
+- Source: `data/catalog_html/Program_ Journalism, B.A. - San Diego State University.html`, poid 12089, major code 06021
+- Rows: 43
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 4: JMS 200, JMS 210, JMS 220, JMS 250 |
+| Major | Required | required | 8: JMS 300, JMS 310W, JMS 315, JMS 420, JMS 430, JMS 485, JMS 494, JMS 550 |
+| And 15 Units of Upper Division Coursework | Critical / Cultural Courses | pool, 15 units | 9: JMS 416, JMS 450, JMS 452, JMS 453, JMS 506, JMS 540, JMS 545, JMS 574, JMS 582 |
+| And 15 Units of Upper Division Coursework | Skills Courses | pool, 15 units | 18: JMS 312W, JMS 415, JMS 418, JMS 426, JMS 428, JMS 434, JMS 435, JMS 441, JMS 445, JMS 492, JMS 495, JMS 515, JMS 527, JMS 529, JMS 530, JMS 555, JMS 566, JMS 568 |
+| And 15 Units of Upper Division Coursework | Applied News Courses | pool, 15 units | 2: JMS 333, JMS 490 |
+
+### Section notes (shown once under the heading)
+
+- **And 15 Units of Upper Division Coursework**: Fifteen units of upper division coursework in either journalism and media studies or learning design and technology
+- **Language Requirement**: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to the section of this catalog on “Graduation Requirements .”
+
+### Review list
+
+- [ ] Text under 'Preparation for the Major' left out (no rule in it; in the report only): "Some of these courses may also be used to fulfill lower division general education requirements."
+- [ ] 'Language Requirement' has no courses; shown as a section with only its note: "Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to the section of this catalog on “Graduation Requirements .”"
+- [ ] 'And 15 Units of Upper Division Coursework' (under Major) is a rule in words, encoded as one pool; check it. Catalog: "Fifteen units of upper division coursework in either journalism and media studies or learning design and technology."
+- [ ] 'And 15 Units of Upper Division Coursework': pool set to 15 units, worked out from the Major total minus its other courses.
+- [ ] Text under 'Auxiliary Discipline' was not read as a rule (no courses in that block): "Students selecting the journalism major are required to complete 15 additional units, six units of which must be at the upper division level, within one academic unit outside journalism and media studies."
+- [ ] Text under 'Auxiliary Discipline' was not read as a rule (no courses in that block): "Completion of a minor or a second major will satisfy the Auxiliary Discipline requirement."
+
+### Units check (advisory)
+
+- Preparation for the Major: page says 12 units, listed courses give 12: **inside**
+- Major: page says at least 39 units, listed courses give 39: **inside (elective units were worked out from this total)**
+
+### Major notes (no rows made; for a human)
+
+- **Program description**
+  - All candidates for a bachelor’s degree must complete the requirements outlined in the “Graduation Requirements” section of this catalog.
+  - Journalism education emphasizes the training of writers, reporters, and editors for the mass media. It also seeks to prepare and guide students interested in pursuing careers in a wide range of informational and interpretive multimedia environments, including in digital and social media. The courses offered in the Journalism major are designed to give students a working knowledge of the skills, concepts, values, and ethics needed to succeed as professional communicators. Courses focus on the basic elements of factual and analytical writing, editing, producing, designing, history, communication law and theory, and social responsibility of the mass media.
+  - Career opportunities for Journalism graduates are diverse, including book editing and publishing, freelance writing, industrial journalism, magazines, communication research, news agencies, newspapers, radio, television, teaching, and digital and social media.
+  - All candidates for a bachelor’s degree must complete the requirements outlined in the “Graduation Requirements” section of this catalog.
+  - Students must complete the major requirements in effect at the time they were admitted to the premajor at SDSU, provided they maintain continuous enrollment. Students must also complete 15 additional units within an Auxiliary Discipline (within one academic unit outside Journalism and Media Studies).
+- **Impacted Program**
+  - The journalism major is designated as an impacted program. To be admitted to the journalism major, students must meet the following criteria:
+- **Preparation for the Major**
+  - Some of these courses may also be used to fulfill lower division general education requirements.
+- **Graduation Writing Assessment Requirement**
+  - Complete JMS 310W and earn a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements.
+- **Auxiliary Discipline**
+  - Students selecting the journalism major are required to complete 15 additional units, six units of which must be at the upper division level, within one academic unit outside journalism and media studies.
+  - Completion of a minor or a second major will satisfy the Auxiliary Discipline requirement.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 12 of 12 have sections
+  - with sections: JMS 200 (2), JMS 210 (18), JMS 220 (7), JMS 250 (3), JMS 300 (1), JMS 310W (6), JMS 315 (7), JMS 420 (4), JMS 430 (4), JMS 485 (1), JMS 494 (6), JMS 550 (6)
+- Elective pool courses: 16 of 29 have sections
+  - with sections: JMS 450 (1), JMS 540 (1), JMS 545 (1), JMS 415 (1), JMS 418 (4), JMS 426 (1), JMS 428 (1), JMS 435 (2), JMS 441 (2), JMS 445 (2), JMS 515 (1), JMS 527 (1), JMS 529 (2), JMS 566 (1), JMS 333 (1), JMS 490 (3)
+  - no sections: JMS 416, JMS 452, JMS 453, JMS 506, JMS 574, JMS 582, JMS 312W, JMS 434, JMS 492, JMS 495, JMS 530, JMS 555, JMS 568
+
+### Title differences (catalog vs class data)
+
+- JMS 527: catalog "Advanced Topics in Journalism", class data "Courage in Media"
+- JMS 566: catalog "Advertising Strategy and Digital Analytics Platforms", class data "Ad Strat & Digital Anylts"
+- 11 more only shortened in the class data (not a real difference): JMS 220, JMS 315, JMS 485, JMS 415, JMS 418, JMS 428, JMS 441, JMS 445, JMS 515, JMS 529, JMS 333
+
+## Journalism, Emphasis in Advertising, B.A. (`journalism_advertising_ba`)
+
+- Source: `data/catalog_html/Program_ Journalism, Emphasis in Advertising, B.A. - San Diego State University.html`, poid 12090, major code 06041
+- Rows: 42
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Impacted Program | Preparation for the Major | pool, 60 units | 4: JMS 200, JMS 210, JMS 220, JMS 250 |
+| Impacted Program | Major | pool, 60 units | 9: JMS 310W, JMS 315, JMS 460, JMS 462, JMS 494, JMS 560, JMS 562, JMS 563, JMS 565 |
+| And 12 Units of Upper Division Coursework | Critical / Cultural Media Courses | pool | 9: JMS 416, JMS 450, JMS 452, JMS 453, JMS 506, JMS 540, JMS 545, JMS 574, JMS 582 |
+| And 12 Units of Upper Division Coursework | Skills Courses | pool | 18: JMS 312W, JMS 415, JMS 418, JMS 426, JMS 428, JMS 333, JMS 434, JMS 435, JMS 441, JMS 445, JMS 490, JMS 495, JMS 529, JMS 530, JMS 555, JMS 566, JMS 567, JMS 568 |
+
+### Section notes (shown once under the heading)
+
+- **Impacted Program**: Applicants not meeting the minimum requirements may petition for admission to the advertising studies emphasis. See the School of Journalism and Media Studies advising office for further information. The advertising emphasis is designated as an impacted program. To be admitted to the advertising emphasis, students must meet the following criteria: JMS 200 JMS 210 JMS 220 JMS 250 Achieve a passing score on the grammar and spelling assessment (see school for details); Complete a minimum of 45 baccalaureate level semester units. A maximum of 90 semester units is recommended. (A minimum of 60 units is required for all transfer applicants.); Have a cumulative grade point average of 3.0 or higher. Language Requirement: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement
+- **And 12 Units of Upper Division Coursework**: Twelve units of upper division coursework in journalism and media studies or learning design and technology
+
+### Review list
+
+- [ ] Text under 'Emphasis in Advertising' was not read as a rule (no courses in that block): "JMS curriculum mixes theory with practice, ensuring students develop both the critical thinking and applied skills necessary for a successful career in all media industries."
+- [ ] 'Impacted Program' (under Emphasis in Advertising) is a rule in words, encoded as one pool; check it. Catalog: "Applicants not meeting the minimum requirements may petition for admission to the advertising studies emphasis. See the School of Journalism and Media Studies advising office for further information. The advertising emphasis is designated as an impacted program. To be admitted to the advertising emphasis, students must meet the following criteria: JMS 200 JMS 210 JMS 220 JMS 250 Achieve a passing score on the grammar and spelling assessment (see school for details); Complete a minimum of 45 baccalaureate level semester units. A maximum of 90 semester units is recommended. (A minimum of 60 units is required for all transfer applicants.); Have a cumulative grade point average of 3.0 or higher."
+- [ ] Text under 'Language Requirement' kept as the 'Impacted Program' section note: "Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement."
+- [ ] Text under 'Language Requirement' left out (no rule in it; in the report only): "Refer to the section of this catalog on “Graduation Requirements .”"
+- [ ] Text under 'Graduation Writing Assessment Requirement' left out (no rule in it; in the report only): "Complete JMS 310W and earn a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements."
+- [ ] 'And 12 Units of Upper Division Coursework' (under Emphasis in Advertising) is a rule in words, encoded as one pool; check it. Catalog: "Twelve units of upper division coursework in journalism and media studies or learning design and technology."
+- [ ] 'And 12 Units of Upper Division Coursework': could not work out how many units the pool needs; pick_units is blank.
+- [ ] 'Auxiliary Discipline' (under Emphasis in Advertising) is a rule in words, encoded as one pool; check it. Catalog: "Students selecting the advertising emphasis are required to complete 15 additional units, six units of which must be at the upper division level, within one academic unit outside journalism and media studies. Completion of a minor or a second major will satisfy the Auxiliary Discipline requirement."
+- [ ] 'Auxiliary Discipline' has a rule but no course lists followed it: Students selecting the advertising emphasis are required to complete 15 additional units, six units of which must be at the upper division level, within one academic unit outside journalism and media studies. Completion of a minor or a second major will satisfy the Auxiliary Discipline requirement.
+
+### Units check (advisory)
+
+- no units totals on the page
+
+### Major notes (no rows made; for a human)
+
+- **Program description**
+  - Students majoring in advertising learn to understand the basic principles and theories of advertising; write copy and design messages for distribution through multiple media channels; apply appropriate research methods to plan, monitor, and evaluate advertising; develop strategic thinking skills applied to targeting audiences; create and implement advertising campaigns that are responsible to both consumers’ as well as corporate needs; critically analyze issues related to advertising; communicate effectively with diverse audiences; and practice ethical communication.
+  - Advertising graduates are employed in advertising agencies and marketing departments in the areas of media ad sales, sales promotions, research, creative development, account services, sales management, and digital and social media.
+  - To complete the degree, students must fulfill the degree requirements for the major described in the catalog in effect at the time they are accepted into the premajor at SDSU (assuming continuous enrollment). Students must also complete 15 additional units within an Auxiliary Discipline (within one academic unit outside journalism and media studies).
+- **Emphasis in Advertising**
+  - JMS curriculum mixes theory with practice, ensuring students develop both the critical thinking and applied skills necessary for a successful career in all media industries.
+- **Emphasis in Advertising: Language Requirement**
+  - Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement.
+  - Refer to the section of this catalog on “Graduation Requirements .”
+- **Emphasis in Advertising: Graduation Writing Assessment Requirement**
+  - Complete JMS 310W and earn a grade of C (2.0) or better.
+  - See “Graduation Requirements ” section for a complete listing of requirements.
+
+### Coverage (sections in data/cleaned)
+
+- Elective pool courses: 28 of 40 have sections
+  - with sections: JMS 200 (2), JMS 210 (18), JMS 220 (7), JMS 250 (3), JMS 310W (6), JMS 315 (7), JMS 460 (1), JMS 462 (1), JMS 494 (6), JMS 560 (1), JMS 562 (4), JMS 563 (4), JMS 565 (2), JMS 450 (1), JMS 540 (1), JMS 545 (1), JMS 415 (1), JMS 418 (4), JMS 426 (1), JMS 428 (1), JMS 333 (1), JMS 435 (2), JMS 441 (2), JMS 445 (2), JMS 490 (3), JMS 529 (2), JMS 566 (1), JMS 567 (1)
+  - no sections: JMS 416, JMS 452, JMS 453, JMS 506, JMS 574, JMS 582, JMS 312W, JMS 434, JMS 495, JMS 530, JMS 555, JMS 568
+
+### Title differences (catalog vs class data)
+
+- JMS 566: catalog "Advertising Strategy and Digital Analytics Platforms", class data "Ad Strat & Digital Anylts"
+- JMS 567: catalog "Advanced Topics in Advertising", class data "Ntnall Stdntt Advt. Comp II"
+- 10 more only shortened in the class data (not a real difference): JMS 220, JMS 315, JMS 462, JMS 415, JMS 418, JMS 428, JMS 333, JMS 441, JMS 445, JMS 529
+
+## Journalism, Emphasis in Media Studies, B.A. (`journalism_media_studies_ba`)
+
+- Source: `data/catalog_html/Program_ Journalism, Emphasis in Media Studies, B.A. - San Diego State University.html`, poid 12091, major code 06010
+- Rows: 33
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Impacted Program | Preparation for the Major | pool, 60 units | 4: JMS 200, JMS 210, JMS 220, JMS 250 |
+| Impacted Program | Major | pool, 60 units | 7: JMS 310W, JMS 315, JMS 408, JMS 472, JMS 489, JMS 494, JMS 508 |
+| And 18 Units of Upper Division Coursework | Skills Courses | pool | 13: JMS 312W, JMS 333, JMS 415, JMS 418, JMS 428, JMS 434, JMS 435, JMS 441, JMS 445, JMS 492, JMS 529, JMS 530, JMS 555 |
+| And 18 Units of Upper Division Coursework | Critical / Cultural Courses | pool | 7: JMS 416, JMS 450, JMS 452, JMS 453, JMS 540, JMS 545, JMS 582 |
+
+### Section notes (shown once under the heading)
+
+- **Impacted Program**: Applicants not meeting the minimum requirements may petition for admission to the media studies emphasis. See the School of Journalism and Media Studies advising office for further information. The media studies emphasis is an impacted program. To be admitted to the media studies emphasis, students must meet the following criteria: JMS 200 JMS 210 JMS 220 JMS 250 Achieve a passing score on the grammar and spelling assessment (see school for details); Complete a minimum of 45 baccalaureate level semester units. A maximum of 90 semester units is recommended. (A minimum of 60 units is required for all transfer applicants.); Have a cumulative grade point average of 3.0 or higher. Language Requirement: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement
+- **And 18 Units of Upper Division Coursework**: Eighteen units of upper division coursework in Journalism and Media Studies or learning design and technology
+
+### Review list
+
+- [ ] Text under 'Emphasis in Media Studies' was not read as a rule (no courses in that block): "JMS curriculum mixes theory with practice, ensuring students develop both the critical thinking and applied skills necessary for a successful career in all media industries."
+- [ ] 'Impacted Program' (under Emphasis in Media Studies) is a rule in words, encoded as one pool; check it. Catalog: "Applicants not meeting the minimum requirements may petition for admission to the media studies emphasis. See the School of Journalism and Media Studies advising office for further information. The media studies emphasis is an impacted program. To be admitted to the media studies emphasis, students must meet the following criteria: JMS 200 JMS 210 JMS 220 JMS 250 Achieve a passing score on the grammar and spelling assessment (see school for details); Complete a minimum of 45 baccalaureate level semester units. A maximum of 90 semester units is recommended. (A minimum of 60 units is required for all transfer applicants.); Have a cumulative grade point average of 3.0 or higher."
+- [ ] Text under 'Language Requirement' kept as the 'Impacted Program' section note: "Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement."
+- [ ] Text under 'Language Requirement' left out (no rule in it; in the report only): "Refer to the section of this catalog on “Graduation Requirements .”"
+- [ ] Text under 'Graduation Writing Assessment Requirement' left out (no rule in it; in the report only): "Completion of an approved upper division writing course with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements."
+- [ ] 'And 18 Units of Upper Division Coursework' (under Emphasis in Media Studies) is a rule in words, encoded as one pool; check it. Catalog: "Eighteen units of upper division coursework in Journalism and Media Studies or learning design and technology."
+- [ ] 'And 18 Units of Upper Division Coursework': could not work out how many units the pool needs; pick_units is blank.
+- [ ] 'Auxiliary Discipline' (under Emphasis in Media Studies) is a rule in words, encoded as one pool; check it. Catalog: "Students selecting the media studies emphasis are required to complete 15 additional units, six units of which must be at the upper division level, within one academic unit outside journalism and media studies. Completion of a minor or a second major will satisfy the Auxiliary Discipline requirement."
+- [ ] 'Auxiliary Discipline' has a rule but no course lists followed it: Students selecting the media studies emphasis are required to complete 15 additional units, six units of which must be at the upper division level, within one academic unit outside journalism and media studies. Completion of a minor or a second major will satisfy the Auxiliary Discipline requirement.
+
+### Units check (advisory)
+
+- no units totals on the page
+
+### Major notes (no rows made; for a human)
+
+- **Program description**
+  - Media studies prepares students for the ever-changing, globalized world of the 21st century and the many new opportunities that communication technology makes possible. Classes emphasize both conceptual and practical knowledge and explore the wide range of phenomena that constitute media in the 21st century. Specific courses focus on digital media analytics, social media leadership, media innovation, and fundamentals of multi-media development. Students have the flexibility to focus on particular areas of interest.
+  - Media studies also prepares students for a range of careers, including media analyst, social media community leader, entrepreneur, and online content manager. Given the rapidly changing nature of technology, media studies graduates will also invent new career paths for themselves as media industries evolve.
+  - To complete the media studies emphasis, students must fulfill the degree requirements for the major described in the catalog in effect at the time they are accepted into the premajor at SDSU (assuming continuous enrollment).
+  - Students must follow their major requirements and complete 15 additional units within an Auxiliary Discipline (within one academic unit outside journalism and media studies).
+- **Emphasis in Media Studies**
+  - JMS curriculum mixes theory with practice, ensuring students develop both the critical thinking and applied skills necessary for a successful career in all media industries.
+- **Emphasis in Media Studies: Language Requirement**
+  - Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement.
+  - Refer to the section of this catalog on “Graduation Requirements .”
+- **Emphasis in Media Studies: Graduation Writing Assessment Requirement**
+  - Completion of an approved upper division writing course with a grade of C (2.0) or better.
+  - See “Graduation Requirements ” section for a complete listing of requirements.
+
+### Coverage (sections in data/cleaned)
+
+- Elective pool courses: 22 of 31 have sections
+  - with sections: JMS 200 (2), JMS 210 (18), JMS 220 (7), JMS 250 (3), JMS 310W (6), JMS 315 (7), JMS 408 (1), JMS 472 (1), JMS 489 (1), JMS 494 (6), JMS 508 (2), JMS 333 (1), JMS 415 (1), JMS 418 (4), JMS 428 (1), JMS 435 (2), JMS 441 (2), JMS 445 (2), JMS 529 (2), JMS 450 (1), JMS 540 (1), JMS 545 (1)
+  - no sections: JMS 312W, JMS 434, JMS 492, JMS 530, JMS 555, JMS 416, JMS 452, JMS 453, JMS 582
+
+### Title differences (catalog vs class data)
+
+- none
+- 10 more only shortened in the class data (not a real difference): JMS 220, JMS 315, JMS 489, JMS 333, JMS 415, JMS 418, JMS 428, JMS 441, JMS 445, JMS 529
+
+## Journalism, Emphasis in Public Relations, B.A. (`journalism_public_relations_ba`)
+
+- Source: `data/catalog_html/Program_ Journalism, Emphasis in Public Relations, B.A. - San Diego State University.html`, poid 12092, major code 05992
+- Rows: 29
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Emphasis in Public Relations | Preparation for the Major | required | 4: JMS 200, JMS 210, JMS 220, JMS 250 |
+| Emphasis in Public Relations | Major | required | 7: JMS 310W, JMS 315, JMS 480, JMS 481, JMS 494, JMS 581, JMS 585 |
+| And 18 Units of Upper Division Coursework | Strategic Practice Courses | pool | 16: JMS 312W, JMS 416, JMS 428, JMS 434, JMS 450, JMS 452, JMS 453, JMS 490, JMS 492, JMS 499, JMS 540, JMS 545, JMS 568, JMS 582, JMS 590, JMS 595 |
+
+### Section notes (shown once under the heading)
+
+- **Emphasis in Public Relations**: Impacted Program: Applicants not meeting the minimum requirements may petition for admission to the public relations emphasis. Impacted Program: To be admitted to the public relations emphasis, students must meet the following criteria:. Language Requirement: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement
+- **And 18 Units of Upper Division Coursework**: Eighteen units of upper division coursework in either journalism and media studies or learning design and technology
+
+### Review list
+
+- [ ] Text under 'Emphasis in Public Relations' was not read as a rule (no courses in that block): "JMS curriculum mixes theory with practice, ensuring students develop both the critical thinking and applied skills necessary for a successful career in all media industries."
+- [ ] Text under 'Impacted Program' kept as the 'Emphasis in Public Relations' section note: "Applicants not meeting the minimum requirements may petition for admission to the public relations emphasis. To be admitted to the public relations emphasis, students must meet the following criteria:"
+- [ ] Text under 'Impacted Program' left out (no rule in it; in the report only): "See the School of Journalism and Media Studies advising office for further information. The public relations emphasis is an impacted program."
+- [ ] 'Preparation for the Major' in Emphasis in Public Relations: rule text kept as the note, check the group: "Some of these courses may also be used to fulfill lower division general education requirements."
+- [ ] Text under 'Language Requirement' kept as the 'Emphasis in Public Relations' section note: "Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement."
+- [ ] Text under 'Language Requirement' left out (no rule in it; in the report only): "Refer to the section of this catalog on “Graduation Requirements .”"
+- [ ] Text under 'Graduation Writing Assessment Requirement' left out (no rule in it; in the report only): "Complete JMS 310W and earn a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements."
+- [ ] 'And 18 Units of Upper Division Coursework' (under Emphasis in Public Relations) is a rule in words, encoded as one pool; check it. Catalog: "Eighteen units of upper division coursework in either journalism and media studies or learning design and technology."
+- [ ] 'And 18 Units of Upper Division Coursework': could not work out how many units the pool needs; pick_units is blank.
+- [ ] 'Auxiliary Discipline' (under Emphasis in Public Relations) is a rule in words, encoded as one pool; check it. Catalog: "Students selecting the public relations degree are required to complete 15 additional units, six units of which must be at the upper division level, within one academic unit outside journalism and media studies. Completion of a minor or a second major will satisfy the Auxiliary Discipline requirement."
+- [ ] 'Auxiliary Discipline' has a rule but no course lists followed it: Students selecting the public relations degree are required to complete 15 additional units, six units of which must be at the upper division level, within one academic unit outside journalism and media studies. Completion of a minor or a second major will satisfy the Auxiliary Discipline requirement.
+
+### Units check (advisory)
+
+- no units totals on the page
+
+### Major notes (no rows made; for a human)
+
+- **Program description**
+  - Public relations students learn the theories and skills necessary to help them execute each stage of the strategic planning process. Specifically, students learn mass communication and public relations theories and principles; research methods; journalistic writing; public relations techniques and tactics; and strategic planning. A selective internship program also gives students the opportunity to try out their skills in the workplace, under the supervision of faculty and on-the-job mentors.
+  - Public relations graduates work as media relations specialists and strategic planners in public relations departments and firms, as internal and external communication specialists in corporations, as public information specialists in government agencies and the military, and in fundraising and membership development for not-for-profit organizations.
+  - To complete the degree, students must fulfill the degree requirements for the major described in the catalog in effect at the time they are accepted into the premajor at SDSU (assuming continuous enrollment). Students must also complete 15 additional units within an Auxiliary Discipline (within one academic unit outside journalism and media studies).
+- **Emphasis in Public Relations**
+  - JMS curriculum mixes theory with practice, ensuring students develop both the critical thinking and applied skills necessary for a successful career in all media industries.
+- **Emphasis in Public Relations: Impacted Program**
+  - Applicants not meeting the minimum requirements may petition for admission to the public relations emphasis.
+  - See the School of Journalism and Media Studies advising office for further information.
+  - The public relations emphasis is an impacted program.
+  - To be admitted to the public relations emphasis, students must meet the following criteria:
+- **Emphasis in Public Relations: Language Requirement**
+  - Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement.
+  - Refer to the section of this catalog on “Graduation Requirements .”
+- **Emphasis in Public Relations: Graduation Writing Assessment Requirement**
+  - Complete JMS 310W and earn a grade of C (2.0) or better.
+  - See “Graduation Requirements ” section for a complete listing of requirements.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 11 of 11 have sections
+  - with sections: JMS 200 (2), JMS 210 (18), JMS 220 (7), JMS 250 (3), JMS 310W (6), JMS 315 (7), JMS 480 (1), JMS 481 (2), JMS 494 (6), JMS 581 (1), JMS 585 (3)
+- Elective pool courses: 6 of 16 have sections
+  - with sections: JMS 428 (1), JMS 450 (1), JMS 490 (3), JMS 540 (1), JMS 545 (1), JMS 590 (1)
+  - no sections: JMS 312W, JMS 416, JMS 434, JMS 452, JMS 453, JMS 492, JMS 499, JMS 568, JMS 582, JMS 595
+
+### Title differences (catalog vs class data)
+
+- JMS 581: catalog "Applied Research in Public Relations", class data "Applied Research in PR"
+- JMS 585: catalog "Professional Practices in Public Relations", class data "Professional Practices in PR"
+- 4 more only shortened in the class data (not a real difference): JMS 220, JMS 315, JMS 428, JMS 590
 
 ## Kinesiology, Emphasis in Exercise Science Generalist, B.S. (`kinesiology_exercise_science_generalist_bs`)
 
@@ -1980,6 +2605,350 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - none
 - 6 more only shortened in the class data (not a real difference): ENS 265L, ENS 322, ENS 340, ENS 433, ENS 439, ENS 440
 
+## Mathematics, B.A. (`mathematics_ba`)
+
+- Source: `data/catalog_html/Program_ Mathematics, B.A. - San Diego State University.html`, poid 12128, major code 17011
+- Rows: 29
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 9: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L |
+| Preparation for the Major | CS 200 or STAT 200 (pick 1) | choose 1 | 2: CS 200, STAT 200 |
+| Major | Required | required | 4: MATH 320, MATH 330, MATH 340, MATH 524 |
+| Major | MATH 531 or MATH 537 or MATH 542 (pick 1) | choose 1 | 3: MATH 531, MATH 537, MATH 542 |
+| Major | One Course Selected From (pick 1) | choose 1 | 8: MATH 520, MATH 530, MATH 531, MATH 537, MATH 538, MATH 542, MATH 543, STAT 551B |
+
+### Section notes (shown once under the heading)
+
+- **Preparation for the Major**: The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better
+- **Major**: A minimum of 30 upper division units selected with approval of the departmental adviser before starting upper division work to include. 12 Units of Electives: Students planning to take MATH 499 as an elective course must obtain approval from the program adviser
+- **Language Requirement**: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to the section of this catalog on “Graduation Requirements .”
+
+### Review list
+
+- [ ] 'Preparation for the Major': rule text kept as the section note: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] 'Required' in Preparation for the Major: text between courses that was not read as a rule: "And one course selected from:"
+- [ ] 'Language Requirement' has no courses; shown as a section with only its note: "Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to the section of this catalog on “Graduation Requirements .”"
+- [ ] 'Major': rule text kept as the section note: "A minimum of 30 upper division units selected with approval of the departmental adviser before starting upper division work to include"
+- [ ] 'One Course Selected From (pick 1)' in Major: read as pick 1 of 8; check it.
+- [ ] Text under '12 Units of Electives' kept as the 'Major' section note: "Students planning to take MATH 499 as an elective course must obtain approval from the program adviser."
+
+### Units check (advisory)
+
+- no units totals on the page
+
+### Major notes (no rows made; for a human)
+
+- **Program description**
+  - All candidates for a bachelor’s degree must complete the requirements outlined in the “Graduation Requirements” section of this catalog.
+  - Students must complete the major requirements in effect at the time they were admitted to the premajor at SDSU, provided they maintain continuous enrollment.
+- **Impacted Program**
+  - These courses cannot be taken for credit/no credit (Cr/NC). The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Complete with a grade of C (2.0) or better: Courses listed: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L, CS 200, STAT 200.
+- **Graduation Writing Assessment Requirement**
+  - Completing one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements.
+- **Major: 12 Units of Electives**
+  - Students planning to take MATH 499 as an elective course must obtain approval from the program adviser.
+- **Master Plan**
+  - A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 13 of 13 have sections
+  - with sections: MATH 150 (12), MATH 151 (20), MATH 237 (1), MATH 245 (1), MATH 252 (13), MATH 254 (1), STAT 250 (8), CS 150 (1), CS 150L (2), MATH 320 (1), MATH 330 (1), MATH 340 (3), MATH 524 (1)
+- Pick-n group courses: 7 of 10 have sections
+  - with sections: CS 200 (2), STAT 200 (2), MATH 531 (1), MATH 520 (1), MATH 530 (1), MATH 543 (1), STAT 551B (1)
+  - no sections: MATH 537, MATH 542, MATH 538
+
+### Title differences (catalog vs class data)
+
+- none
+- 4 more only shortened in the class data (not a real difference): MATH 237, MATH 340, MATH 531, STAT 551B
+
+## Mathematics, Emphasis in Applied Mathematics, B.S. (`mathematics_applied_bs`)
+
+- Source: `data/catalog_html/Program_ Mathematics, Emphasis in Applied Mathematics, B.S. - San Diego State University.html`, poid 12125, major code 17031
+- Rows: 55
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Emphasis in Applied Mathematics | Impacted Program | required | 9: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L |
+| Emphasis in Applied Mathematics | Impacted Program: CS 200 or STAT 200 (pick 1) | choose 1 | 2: CS 200, STAT 200 |
+| Emphasis in Applied Mathematics | Preparation for the Major | required | 9: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L |
+| Emphasis in Applied Mathematics | Preparation for the Major: CS 200 or STAT 200 (pick 1) | choose 1 | 2: CS 200, STAT 200 |
+| Emphasis in Applied Mathematics | Major | required | 3: MATH 320, MATH 330, MATH 340 |
+| Emphasis in Applied Mathematics | Major: MATH 531 or MATH 537 or MATH 542 (pick 1) | choose 1 | 3: MATH 531, MATH 537, MATH 542 |
+| Emphasis in Applied Mathematics | Major: MATH 524 or MATH 543 (pick 1) | choose 1 | 2: MATH 524, MATH 543 |
+| Emphasis in Applied Mathematics | Major: MATH 530 or MATH 532 (pick 1) | choose 1 | 2: MATH 530, MATH 532 |
+| Emphasis in Applied Mathematics | Major: STAT 350A or STAT 550 or STAT 551A (pick 1) | choose 1 | 3: STAT 350A, STAT 550, STAT 551A |
+| Emphasis in Applied Mathematics | 15 Units of Electives in Mathematics | required | 7: MATH 303, MATH 312, MATH 313, MATH 342A, MATH 342B, MATH 413, MATH 414 |
+| Emphasis in Applied Mathematics | Auxiliary Area | required | 10: PHYS 195, PHYS 195L, PHYS 196, PHYS 196L, PHYS 197, CHEM 201, ECON 101, ECON 102, ECON 320, ECON 321 |
+| Emphasis in Applied Mathematics | Auxiliary Area: PHYS 197L or CHEM 200 (pick 1) | choose 1 | 2: PHYS 197L, CHEM 200 |
+
+### Section notes (shown once under the heading)
+
+- **Emphasis in Applied Mathematics**: Master Plan: A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department
+
+### Review list
+
+- [ ] Text under 'Emphasis in Applied Mathematics' was not read as a rule (no courses in that block): "This emphasis is designed to train the student in those areas of mathematics which may be applied to formulate and solve problems in other disciplines."
+- [ ] Text under 'Emphasis in Applied Mathematics' was not read as a rule (no courses in that block): "The program is designed to qualify the student for employment as an applied mathematician, but the graduate would also be well prepared for graduate study in pure or applied mathematics."
+- [ ] Text under 'Emphasis in Applied Mathematics' was not read as a rule (no courses in that block): "A minor is not required with this major."
+- [ ] 'Impacted Program' in Emphasis in Applied Mathematics: text between courses that was not read as a rule: "And one course selected from:"
+- [ ] 'Impacted Program' in Emphasis in Applied Mathematics: rule text kept as the note, check the group: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] 'Preparation for the Major' in Emphasis in Applied Mathematics: text between courses that was not read as a rule: "And one course selected from:"
+- [ ] 'Preparation for the Major' in Emphasis in Applied Mathematics: rule text kept as the note, check the group: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] Text under 'Graduation Writing Assessment Requirement' left out (no rule in it; in the report only): "Complete one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements."
+- [ ] '15 Units of Electives in Mathematics' in Emphasis in Applied Mathematics: rule text kept as the note, check the group: "Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. 15 units of electives in mathematics or an area to which mathematics may be applied (approved by the applied mathematics adviser) excluding:"
+- [ ] Text under 'Master Plan' kept as the 'Emphasis in Applied Mathematics' section note: "A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department."
+- [ ] 'Auxiliary Area' in Emphasis in Applied Mathematics: text between courses that was not read as a rule: "A course for which these are prerequisite"
+- [ ] 'Auxiliary Area' in Emphasis in Applied Mathematics: rule text kept as the note, check the group: "The intent is to train the student in an area in some depth. Some latitude may be allowed in the choice of department and mix of courses, but all programs must be approved by the applied mathematics adviser. The 10 unit requirement is minimal, and a minor in an approved field is highly recommended. A minimum of 10 units (lower or upper division) from an area to which mathematics may be applied. A typical program might be"
+- [ ] PHYS 197L or CHEM 200 (pick 1) in Emphasis in Applied Mathematics: the 'or' sits next to other courses with no break, so it may cover more than one course. Check the catalog page.
+
+### Units check (advisory)
+
+- no units totals on the page
+
+### Major notes (no rows made; for a human)
+
+- **Emphasis in Applied Mathematics**
+  - This emphasis is designed to train the student in those areas of mathematics which may be applied to formulate and solve problems in other disciplines.
+  - The program is designed to qualify the student for employment as an applied mathematician, but the graduate would also be well prepared for graduate study in pure or applied mathematics.
+  - A minor is not required with this major.
+- **Emphasis in Applied Mathematics: Graduation Writing Assessment Requirement**
+  - Complete one of the approved upper division writing courses (W) with a grade of C (2.0) or better.
+  - See “Graduation Requirements ” section for a complete listing of requirements.
+- **Emphasis in Applied Mathematics: Master Plan**
+  - A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 28 of 29 have sections
+  - with sections: MATH 150 (12), MATH 151 (20), MATH 237 (1), MATH 245 (1), MATH 252 (13), MATH 254 (1), STAT 250 (8), CS 150 (1), CS 150L (2), MATH 320 (1), MATH 330 (1), MATH 340 (3), MATH 303 (2), MATH 312 (2), MATH 313 (3), MATH 342A (1), MATH 342B (1), MATH 414 (1), PHYS 195 (2), PHYS 195L (17), PHYS 196 (1), PHYS 196L (10), PHYS 197 (1), CHEM 201 (19), ECON 101 (6), ECON 102 (6), ECON 320 (3), ECON 321 (3)
+  - no sections: MATH 413
+- Pick-n group courses: 9 of 14 have sections
+  - with sections: CS 200 (2), STAT 200 (2), MATH 531 (1), MATH 524 (1), MATH 543 (1), MATH 530 (1), STAT 550 (2), PHYS 197L (2), CHEM 200 (49)
+  - no sections: MATH 537, MATH 542, MATH 532, STAT 350A, STAT 551A
+
+### Title differences (catalog vs class data)
+
+- none
+- 11 more only shortened in the class data (not a real difference): MATH 237, MATH 340, MATH 531, MATH 312, MATH 313, MATH 342A, MATH 342B, MATH 414, ECON 320, ECON 321, PHYS 197L
+
+## Mathematics, Emphasis in Computational Science, B.S. (`mathematics_computational_science_bs`)
+
+- Source: `data/catalog_html/Program_ Mathematics, Emphasis in Computational Science, B.S. - San Diego State University.html`, poid 12126, major code 17031
+- Rows: 52
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Emphasis in Computational Science | Impacted Program | required | 12: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, CS 150, CS 150L, CS 160, CS 160L, CS 210, STAT 250 |
+| Emphasis in Computational Science | Preparation for the Major | required | 12: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, CS 150, CS 150L, CS 160, CS 160L, CS 210, STAT 250 |
+| Emphasis in Computational Science | Major | required | 3: MATH 320, MATH 330, MATH 340 |
+| Emphasis in Computational Science | Major: MATH 531 or MATH 537 or MATH 542 (pick 1) | choose 1 | 3: MATH 531, MATH 537, MATH 542 |
+| Emphasis in Computational Science | Major: MATH 524 or MATH 543 (pick 1) | choose 1 | 2: MATH 524, MATH 543 |
+| Emphasis in Computational Science | Three Units | required | 1: MATH 499 |
+| Emphasis in Computational Science | And Nine Units of Electives | required | 7: MATH 303, MATH 312, MATH 313, MATH 342A, MATH 342B, MATH 413, MATH 414 |
+| Emphasis in Computational Science Electives | Emphasis in Computational Science Electives | pool, 9 units | 11: COMP 526, COMP 536, CS 503, CS 558, MATH 336, MATH 525, MATH 532, MATH 537, MATH 542, MATH 543, MATH 586 |
+
+### Section notes (shown once under the heading)
+
+- **Emphasis in Computational Science**: Students planning to take MATH 499 as an elective course must obtain approval from the program adviser. Master Plan: A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department
+
+### Review list
+
+- [ ] Text under 'Emphasis in Computational Science' was not read as a rule (no courses in that block): "A minor is not required with this major."
+- [ ] 'Impacted Program' in Emphasis in Computational Science: rule text kept as the note, check the group: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] 'Preparation for the Major' in Emphasis in Computational Science: rule text kept as the note, check the group: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] Text under 'Graduation Writing Assessment Requirement' left out (no rule in it; in the report only): "Completing one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements."
+- [ ] 'Emphasis in Computational Science Electives' (under Emphasis in Computational Science) asks for 9 units of its list: encoded as a pool in its own section 'Emphasis in Computational Science Electives', check it.
+- [ ] 'Three Units' in Emphasis in Computational Science: rule text kept as the note, check the group: "Three units of"
+- [ ] 'And Nine Units of Electives' in Emphasis in Computational Science: rule text kept as the note, check the group: "Students planning to take MATH 302 as an elective course must obtain approval from the program adviser. Nine units of electives in computer science, mathematics, or statistics (approved by the applied mathematics adviser) excluding"
+- [ ] Text under 'Note' kept as the 'Emphasis in Computational Science' section note: "Students planning to take MATH 499 as an elective course must obtain approval from the program adviser."
+- [ ] Text under 'Master Plan' kept as the 'Emphasis in Computational Science' section note: "A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department."
+
+### Units check (advisory)
+
+- no units totals on the page
+
+### Major notes (no rows made; for a human)
+
+- **Emphasis in Computational Science**
+  - A minor is not required with this major.
+- **Emphasis in Computational Science: Graduation Writing Assessment Requirement**
+  - Completing one of the approved upper division writing courses (W) with a grade of C (2.0) or better.
+  - See “Graduation Requirements ” section for a complete listing of requirements.
+- **Emphasis in Computational Science: Note**
+  - Students planning to take MATH 499 as an elective course must obtain approval from the program adviser.
+- **Emphasis in Computational Science: Master Plan**
+  - A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 21 of 23 have sections
+  - with sections: MATH 150 (12), MATH 151 (20), MATH 237 (1), MATH 245 (1), MATH 252 (13), MATH 254 (1), CS 150 (1), CS 150L (2), CS 160 (2), CS 160L (4), CS 210 (1), STAT 250 (8), MATH 320 (1), MATH 330 (1), MATH 340 (3), MATH 303 (2), MATH 312 (2), MATH 313 (3), MATH 342A (1), MATH 342B (1), MATH 414 (1)
+  - no sections: MATH 499, MATH 413
+- Pick-n group courses: 3 of 5 have sections
+  - with sections: MATH 531 (1), MATH 524 (1), MATH 543 (1)
+  - no sections: MATH 537, MATH 542
+- Elective pool courses: 2 of 8 have sections
+  - with sections: COMP 536 (1), MATH 586 (1)
+  - no sections: COMP 526, CS 503, CS 558, MATH 336, MATH 525, MATH 532
+
+### Title differences (catalog vs class data)
+
+- none
+- 9 more only shortened in the class data (not a real difference): MATH 237, MATH 340, MATH 531, MATH 312, MATH 313, MATH 342A, MATH 342B, MATH 414, COMP 536
+
+## Mathematics, Emphasis in Mathematics Education, B.S. (`mathematics_education_bs`)
+
+- Source: `data/catalog_html/Program_ Mathematics, Emphasis in Mathematics Education, B.S. - San Diego State University.html`, poid 12522, major code 17031
+- Rows: 39
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 7: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250 |
+| Preparation for the Major | And One Course Selected From | required | 2: CS 150, CS 150L |
+| Preparation for the Major | And One Course Selected From: CS 200 or STAT 200 (pick 1) | choose 1 | 2: CS 200, STAT 200 |
+| Major | Required | required | 8: MATH 302, MATH 303, MATH 320, MATH 330, MATH 340, MATH 341, MATH 414, TE 362 |
+| Major | MATH 336 or MATH 586 (pick 1) | choose 1 | 2: MATH 336, MATH 586 |
+| Major | MATH 508 or MATH 510 (pick 1) | choose 1 | 2: MATH 508, MATH 510 |
+| Major | MATH 524 or MATH 543 (pick 1) | choose 1 | 2: MATH 524, MATH 543 |
+| Major | MATH 530 or MATH 531 or MATH 537 or MATH 542 (pick 1) | choose 1 | 4: MATH 530, MATH 531, MATH 537, MATH 542 |
+| Major | STAT 350A or STAT 550 or STAT 551A (pick 1) | choose 1 | 3: STAT 350A, STAT 550, STAT 551A |
+| Major | Any MATH 300-599 course | open, 3 units | 1: Any MATH 300-599 course |
+| Auxiliary Area | Required | required | 2: PHYS 195, CHEM 201 |
+| Auxiliary Area | PHYS 195L or CHEM 200 (pick 1) | choose 1 | 2: PHYS 195L, CHEM 200 |
+
+### Section notes (shown once under the heading)
+
+- **Preparation for the Major**: The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better
+- **Auxiliary Area**: A minimum of nine lower or upper division units of teaching-related electives are required from an area that will enhance understanding of teaching or applications of teaching mathematics. All programs must be approved by the adviser
+
+### Review list
+
+- [ ] 'Preparation for the Major': rule text kept as the section note: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] 'Any MATH 300-599 course' in Major: "Three units of electives in mathematics (approved by the adviser for the major) excluding MATH 312 , MATH 313 , and MATH 413 ." encoded as an open rule (MATH 300-599, 3 units); check it.
+- [ ] 'Any MATH 300-599 course': the page names no subject code; MATH was read from the department name. Check it.
+- [ ] 'Any MATH 300-599 course': MATH 312, MATH 313, MATH 413 left out of its list (exclude column), from "excluding MATH 312 , MATH 313 , and MATH 413 ".
+- [ ] 'Auxiliary Area': rule text kept as the section note: "A minimum of nine lower or upper division units of teaching-related electives are required from an area that will enhance understanding of teaching or applications of teaching mathematics."
+- [ ] 'Auxiliary Area': rule text kept as the section note: "All programs must be approved by the adviser."
+- [ ] Text under 'Auxiliary Area' left out (no rule in it; in the report only): "Elective courses include:"
+- [ ] PHYS 195L or CHEM 200 (pick 1) in Auxiliary Area: the 'or' sits next to other courses with no break, so it may cover more than one course. Check the catalog page.
+- [ ] Units check for Major: page says at least 40, listed courses add up to 38-41.
+
+### Units check (advisory)
+
+- Major: page says at least 40 units, listed courses give 38-41: **MISMATCH**
+
+### Major notes (no rows made; for a human)
+
+- **Program description**
+  - This emphasis allows students with a strong interest in mathematics and an interest in teaching in the secondary schools to be prepared for both graduate school in mathematics and admission into the Single Subject Teaching Credential program. This degree also prepares with options to teach at the community college level.
+  - A minor is not required with this major.
+- **Impacted Program**
+  - These courses must be completed with a grade of C (2.0) or better, and cannot be taken for credit/no credit (Cr/NC). The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. Complete with a grade of C (2.0) or better: Courses listed: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L, CS 200, STAT 200.
+- **Graduation Writing Assessment Requirement**
+  - Complete one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements.
+- **Master Plan**
+  - A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department.
+- **Auxiliary Area**
+  - Elective courses include:
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 19 of 19 have sections
+  - with sections: MATH 150 (12), MATH 151 (20), MATH 237 (1), MATH 245 (1), MATH 252 (13), MATH 254 (1), STAT 250 (8), CS 150 (1), CS 150L (2), MATH 302 (1), MATH 303 (2), MATH 320 (1), MATH 330 (1), MATH 340 (3), MATH 341 (1), MATH 414 (1), TE 362 (4), PHYS 195 (2), CHEM 201 (19)
+- Pick-n group courses: 11 of 17 have sections
+  - with sections: CS 200 (2), STAT 200 (2), MATH 586 (1), MATH 510 (1), MATH 524 (1), MATH 543 (1), MATH 530 (1), MATH 531 (1), STAT 550 (2), PHYS 195L (17), CHEM 200 (49)
+  - no sections: MATH 336, MATH 508, MATH 537, MATH 542, STAT 350A, STAT 551A
+- Open rule 'Any MATH 300-599 course' (without excluded and already-required courses): 11 courses with sections: MATH 342A, MATH 342B, MATH 510, MATH 520, MATH 524, MATH 530, MATH 531, MATH 543, MATH 579, MATH 586, MATH 596
+
+### Title differences (catalog vs class data)
+
+- none
+- 8 more only shortened in the class data (not a real difference): MATH 237, MATH 302, MATH 340, MATH 341, MATH 414, TE 362, MATH 510, MATH 531
+
+## Mathematics, Emphasis in Science, B.S. (`mathematics_science_bs`)
+
+- Source: `data/catalog_html/Program_ Mathematics, Emphasis in Science, B.S. - San Diego State University.html`, poid 12127, major code 17031
+- Rows: 43
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Emphasis in Science | Impacted Program | required | 9: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L |
+| Emphasis in Science | Impacted Program: CS 200 or STAT 200 (pick 1) | choose 1 | 2: CS 200, STAT 200 |
+| Emphasis in Science | Preparation for the Major | required | 9: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L |
+| Emphasis in Science | Preparation for the Major: CS 200 or STAT 200 (pick 1) | choose 1 | 2: CS 200, STAT 200 |
+| Emphasis in Science | Major | required | 2: MATH 330, MATH 340 |
+| Emphasis in Science | Major: MATH 531 or MATH 537 or MATH 542 (pick 1) | choose 1 | 3: MATH 531, MATH 537, MATH 542 |
+| Emphasis in Science | Major: MATH 524 or MATH 543 (pick 1) | choose 1 | 2: MATH 524, MATH 543 |
+| Emphasis in Science Electives | Emphasis in Science Electives | pool, 6 units | 6: MATH 320, MATH 525, MATH 530, MATH 532, MATH 531, MATH 537 |
+| 12 Units from a Science | Six Units of Electives in Computer Science, Mathematics, or Statistics | pool, 12 units | 7: MATH 303, MATH 312, MATH 313, MATH 342A, MATH 342B, MATH 413, MATH 414 |
+
+### Section notes (shown once under the heading)
+
+- **12 Units from a Science**: 12 units from a science to which mathematics may be applied (these should be from a single science and must be approved by the B.S. adviser). Master Plan: A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department
+
+### Review list
+
+- [ ] Text under 'Emphasis in Science' was not read as a rule (no courses in that block): "The purpose of this emphasis is to allow students with a strong interest in the mathematical aspects of a particular science to apply courses in that science to their major."
+- [ ] Text under 'Emphasis in Science' was not read as a rule (no courses in that block): "This will provide a good background for employment or graduate work in applied mathematics or in that science."
+- [ ] Text under 'Emphasis in Science' was not read as a rule (no courses in that block): "A minor is not required with this major."
+- [ ] 'Impacted Program' in Emphasis in Science: text between courses that was not read as a rule: "And one course selected from:"
+- [ ] 'Impacted Program' in Emphasis in Science: rule text kept as the note, check the group: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] 'Preparation for the Major' in Emphasis in Science: text between courses that was not read as a rule: "And one course selected from:"
+- [ ] 'Preparation for the Major' in Emphasis in Science: rule text kept as the note, check the group: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] Text under 'Graduation Writing Assessment Requirement' left out (no rule in it; in the report only): "Complete one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements."
+- [ ] MATH 530 or MATH 532 (pick 1) in the 'Emphasis in Science Electives' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
+- [ ] 'Emphasis in Science Electives' (under Emphasis in Science) asks for 6 units of its list: encoded as a pool in its own section 'Emphasis in Science Electives', check it.
+- [ ] '12 Units from a Science' (under Emphasis in Science) is a rule in words, encoded as one pool; check it. Catalog: "12 units from a science to which mathematics may be applied (these should be from a single science and must be approved by the B.S. adviser)"
+- [ ] Text under 'Master Plan' kept as the '12 Units from a Science' section note: "A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department."
+
+### Units check (advisory)
+
+- no units totals on the page
+
+### Major notes (no rows made; for a human)
+
+- **Associate Degree for Transfer (ADT) Major**
+  - All candidates for a bachelor’s degree must complete the requirements outlined in the “Graduation Requirements” section of this catalog.
+  - Students must complete the major requirements in effect at the time they were admitted to the premajor at SDSU, provided they maintain continuous enrollment.
+- **Emphasis in Science**
+  - The purpose of this emphasis is to allow students with a strong interest in the mathematical aspects of a particular science to apply courses in that science to their major.
+  - This will provide a good background for employment or graduate work in applied mathematics or in that science.
+  - A minor is not required with this major.
+- **Emphasis in Science: Graduation Writing Assessment Requirement**
+  - Complete one of the approved upper division writing courses (W) with a grade of C (2.0) or better.
+  - See “Graduation Requirements ” section for a complete listing of requirements.
+- **Emphasis in Science: Master Plan**
+  - A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 11 of 11 have sections
+  - with sections: MATH 150 (12), MATH 151 (20), MATH 237 (1), MATH 245 (1), MATH 252 (13), MATH 254 (1), STAT 250 (8), CS 150 (1), CS 150L (2), MATH 330 (1), MATH 340 (3)
+- Pick-n group courses: 5 of 7 have sections
+  - with sections: CS 200 (2), STAT 200 (2), MATH 531 (1), MATH 524 (1), MATH 543 (1)
+  - no sections: MATH 537, MATH 542
+- Elective pool courses: 8 of 11 have sections
+  - with sections: MATH 320 (1), MATH 530 (1), MATH 303 (2), MATH 312 (2), MATH 313 (3), MATH 342A (1), MATH 342B (1), MATH 414 (1)
+  - no sections: MATH 525, MATH 532, MATH 413
+
+### Title differences (catalog vs class data)
+
+- none
+- 8 more only shortened in the class data (not a real difference): MATH 237, MATH 340, MATH 531, MATH 312, MATH 313, MATH 342A, MATH 342B, MATH 414
+
 ## Mechanical Engineering, Emphasis in Bioengineering, B.S. (`mechanical_engineering_bioengineering_bs`)
 
 - Source: `data/catalog_html/Program_ Mechanical Engineering, Emphasis in Bioengineering, B.S. - San Diego State University.html`, poid 12131, major code 09101
@@ -2035,6 +3004,168 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - M E 570: catalog "", class data "Eng Sensor Tech"
 - M E 582: catalog "", class data "Intro to Nanobiotechnolgy"
 - 8 more only shortened in the class data (not a real difference): M E 202, M E 240, CHEM 202, M E 314, M E 340, M E 452, M E 490W, A E 341
+
+## Nursing, B.S. (`nursing_bs`)
+
+- Source: `data/catalog_html/Program_ Nursing, B.S. - San Diego State University.html`, poid 12151, major code 12031
+- Rows: 29
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 13: BIOL 211, BIOL 211L, BIOL 212, BIOL 261, CHEM 102, COMM 103, RWS 100, RWS 200, NURS 202, NURS 206, NURS 208, NURS 219, NURS 221 |
+| Preparation for the Major | STAT 250 or BIOL 215 or PSY 280 (pick 1) | choose 1 | 3: STAT 250, BIOL 215, PSY 280 |
+| Additional Lower Division Requirements | Required | required | 2: PSY 101, PSY 230 |
+| Major | Required | required | 10: NURS 300, NURS 304, NURS 307W, NURS 316, NURS 321, NURS 354, NURS 356, NURS 401, NURS 416, NURS 421 |
+
+### Section notes (shown once under the heading)
+
+- **Additional Lower Division Requirements**: 1 Upper division transfer students fulfill these course requirements by completing human anatomy (with required laboratory), human physiology (with required laboratory), and microbiology (with required laboratory), designated as certified Cal-GETC certified Biological Science and Laboratory (5B, 5C) transfer courses
+
+### Review list
+
+- [ ] Text under 'Preparation for the Major' left out (no rule in it; in the report only): "Students in the nursing program are coded as nursing majors once they successfully complete:"
+- [ ] Text under 'Note' kept as the 'Additional Lower Division Requirements' section note: "1 Upper division transfer students fulfill these course requirements by completing human anatomy (with required laboratory), human physiology (with required laboratory), and microbiology (with required laboratory), designated as certified Cal-GETC certified Biological Science and Laboratory (5B, 5C) transfer courses."
+
+### Units check (advisory)
+
+- Preparation for the Major: page says 43 units, listed courses give 43-44: **overlaps**
+- Major: page says at least 41 units, listed courses give 41: **inside**
+
+### Major notes (no rows made; for a human)
+
+- **(Academic Plan Code: 554602BSE - SDSU Global Campus)**
+  - All candidates for a bachelor’s degree must complete the graduation requirements outlined in the “Graduation Requirements” section of this catalog.
+  - A minor is not required with this major.
+  - Nursing majors may be part-time students in the curriculum with Director approval. Consultation with the undergraduate advisor is mandatory.
+  - To complete the major, students must fulfill the degree requirements for the major described in the catalog in effect at the time they are accepted into the premajor at SDSU (assuming continuous enrollment).
+- **Preparation for the Major**
+  - Students in the nursing program are coded as nursing majors once they successfully complete:
+- **Additional Lower Division Requirements: Note**
+  - 1 Upper division transfer students fulfill these course requirements by completing human anatomy (with required laboratory), human physiology (with required laboratory), and microbiology (with required laboratory), designated as certified Cal-GETC certified Biological Science and Laboratory (5B, 5C) transfer courses.
+  - 2 Upper division transfer students fulfill this course requirement with a Cal-GETC certified 5A Physical Science chemistry course (general, organic, inorganic, or integrated).
+  - 3 Upper division transfer students fulfill this area with a statistics course certified for Cal-GETC Mathematical Concepts/Quantitative Reasoning (2).
+  - 4 Upper division transfer students fulfill this area with any certified Cal-GETC Oral Communication (1C) transfer course.
+  - 5 Upper division transfer students fulfill this area with any certified Cal-GETC English Composition (1A) transfer course.
+  - 6 Upper division transfer students fulfill this area with any certified Cal-GETC Critical Thinking and Composition (1B) transfer course.
+- **General Education**
+  - It is recommended that students take PHIL 330 to satisfy three units of upper division GE Explorations Arts and Humanities [UD 3].
+- **Graduation Writing Assessment Requirement**
+  - Complete NURS 307W with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements. Courses listed: NURS 307W.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 23 of 25 have sections
+  - with sections: BIOL 211 (1), BIOL 211L (18), BIOL 212 (18), COMM 103 (98), RWS 100 (15), RWS 200 (119), NURS 202 (6), NURS 206 (9), NURS 208 (1), NURS 219 (1), NURS 221 (1), PSY 101 (2), PSY 230 (2), NURS 300 (12), NURS 304 (1), NURS 307W (4), NURS 316 (11), NURS 321 (1), NURS 354 (12), NURS 356 (10), NURS 401 (11), NURS 416 (11), NURS 421 (1)
+  - no sections: BIOL 261, CHEM 102
+- Pick-n group courses: 3 of 3 have sections
+  - with sections: STAT 250 (8), BIOL 215 (11), PSY 280 (22)
+
+### Title differences (catalog vs class data)
+
+- NURS 307W: catalog "Research, Evidence Based Practice, and Writing for Nurses", class data "ResearchEvidence&WritingNurses"
+- 7 more only shortened in the class data (not a real difference): NURS 206, NURS 219, NURS 300, NURS 304, NURS 316, NURS 354, NURS 401
+
+## Political Science, B.A. (`political_science_ba`)
+
+- Source: `data/catalog_html/Program_ Political Science, B.A. - San Diego State University.html`, poid 12162, major code 22071
+- Rows: 82
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 2: POL S 101, POL S 102 |
+| Preparation for the Major | POLS 103 or POLS 104 (pick 1) | choose 1 | 2: POL S 103, POL S 104 |
+| Preparation for the Major | Three Units of Either Statistics or Logic | required | 5: PHIL 120, SOC 201, PSY 280, STAT 119, STAT 250 |
+| Preparation for the Major | Three Units of Either Statistics or Logic: POLS 201 or ECON 201 (pick 1) | choose 1 | 2: POL S 201, ECON 201 |
+| Courses by Field | Political Theory | pool, 15 units | 5: POL S 301A, POL S 301B, POL S 302, POL S 305, POL S 406 |
+| Courses by Field | American Politics | pool, 15 units | 11: POL S 320, POL S 321, POL S 331, AMIND 331, POL S 338, POL S 348, POL S 422, POL S 425, POL S 426, POL S 428, POL S 436 |
+| Courses by Field | Comparative Politics | pool, 15 units | 11: POL S 353, POL S 356, POL S 357, POL S 359, POL S 361, POL S 362, POL S 363, POL S 364, POL S 365, POL S 366, LATAM 366 |
+| Courses by Field | International Politics | pool, 15 units | 7: POL S 370, POL S 372, POL S 375, POL S 380, POL S 479, POL S 482, POL S 485 |
+| Courses by Field | Law and Public Policy | pool, 15 units | 13: POL S 334, SUSTN 334, POL S 335, POL S 336, POL S 340, POL S 345, POL S 346, POL S 347, POL S 430, LATAM 430, POL S 435, POL S 440, GEOG 440 |
+| Capstone Requirement | Required | required | 17: POL S 495, POL S 497B, POL S 498, POL S 507, POL S 510, POL S 530, POL S 533, POL S 535, POL S 541, POL S 555, POL S 560, POL S 562, POL S 564, POL S 565, POL S 568, POL S 575, POL S 577 |
+| Major Electives | Required | required | 4: AFRAS 321, AFRAS 322, AMIND 485, WGSS 375 |
+
+### Section notes (shown once under the heading)
+
+- **Courses by Field**: The major requires one three-unit course in each of the five fields – Political Theory, American Politics, Comparative Politics, International Politics, and Law and Public Policy – for a total of 15 units. Additional courses in a field may be taken as major electives
+- **Major Electives**: The major requires 12 units of major electives, which may come from any SDSU upper-division political science courses (except POL S 390W )
+- **Language Requirement**: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to section of catalog on “Graduation Requirements .”
+
+### Review list
+
+- [ ] Text under 'Preparation for the Major' left out (no rule in it; in the report only): "The major requires four lower-division courses (12 units): POL S 101, POL S 102, either POL S 103 or POL S 104, and a course in either statistics or logic."
+- [ ] 'Language Requirement' has no courses; shown as a section with only its note: "Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to section of catalog on “Graduation Requirements .”"
+- [ ] Text under 'International Experience' was not read as a rule (no courses in that block): "The department encourages international experience for its majors."
+- [ ] Text under 'International Experience' was not read as a rule (no courses in that block): "It will facilitate the transfer of political science credits for appropriate study abroad, student exchange, or other overseas programs."
+- [ ] Text under 'International Experience' was not read as a rule (no courses in that block): "Study abroad courses, including international internship courses, may receive political science credit if approved in advance by the Political Science undergraduate adviser."
+- [ ] Text under 'Major' was not read as a rule (no courses in that block): "The major requires a minimum of 30 upper-division units:"
+- [ ] Text under 'Major' was not read as a rule (no courses in that block): "Three units in each of the five subfields – Political Theory, American Politics, Comparative Politics, International Politics, and Law and Public Policy – for 15 units total, three units from a capstone course, and 12 units from any SDSU upper-division political science courses (except POL S 390W )."
+- [ ] Text under 'Major' was not read as a rule (no courses in that block): "Upper-division political science courses from other universities may be used toward the major only with approval of the Political Science undergraduate adviser."
+- [ ] 'Courses by Field' (under Major) is a rule in words, encoded as one pool; check it. Catalog: "The major requires one three-unit course in each of the five fields – Political Theory, American Politics, Comparative Politics, International Politics, and Law and Public Policy – for a total of 15 units. Additional courses in a field may be taken as major electives."
+- [ ] POLS 331 / AMIND 331 (same course, pick 1) in the 'American Politics' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
+- [ ] POLS 366 / LATAM 366 (same course, pick 1) in the 'Comparative Politics' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
+- [ ] POLS 334 / SUSTN 334 (same course, pick 1) in the 'Law and Public Policy' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
+- [ ] POLS 430 / LATAM 430 (same course, pick 1) in the 'Law and Public Policy' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
+- [ ] POLS 440 / GEOG 440 (same course, pick 1) in the 'Law and Public Policy' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
+- [ ] Text under 'Capstone Requirement' left out (no rule in it; in the report only): "The major requires one three-unit capstone course fulfilled by:"
+- [ ] 'Required' in Capstone Requirement: text between courses that was not read as a rule: "any 500-level political science course"
+- [ ] 'Major Electives': rule text kept as the section note: "The major requires 12 units of major electives, which may come from any SDSU upper-division political science courses (except POL S 390W )."
+- [ ] Text under 'Major Electives' left out (no rule in it; in the report only): "Upper-division political science courses from other universities, including study abroad programs, may be used toward the major only with approval of the Political Science undergraduate advisor. Students may optionally take up to three units toward the 12 units of major electives from one of:"
+
+### Units check (advisory)
+
+- no units totals on the page
+
+### Major notes (no rows made; for a human)
+
+- **Associate Degree for Transfer (ADT) Major**
+  - All candidates for a bachelor’s degree must complete the requirements outlined in the “Graduation Requirements” section of this catalog.
+  - A minor is not required with this major.
+- **Impacted Program**
+  - The Political Science major is an impacted program. To be admitted to the major, students must meet the following criteria:
+  - Complete with a grade of C (2.0) or better: POL S 101 , POL S 102 , either POL S 103 or POL S 104 , and three units of either Statistics or Logic (POL S 201 ; ECON 201 ; SOC 201 ; PHIL 120 ; STAT 119 ; STAT 250 ; PSY 280 ). These courses cannot be taken for credit/no credit (Cr/NC);
+  - Have a cumulative GPA of 2.40 or better.
+  - Students must complete the major requirements in effect at the time they were admitted to the premajor at SDSU, provided they maintain continuous enrollment.
+- **Preparation for the Major**
+  - The major requires four lower-division courses (12 units):
+  - POL S 101, POL S 102, either POL S 103 or POL S 104, and a course in either statistics or logic.
+- **Graduation Writing Assessment Requirement**
+  - Complete POL S 390W or another approved upper division writing course (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements.
+- **International Experience**
+  - The department encourages international experience for its majors.
+  - It will facilitate the transfer of political science credits for appropriate study abroad, student exchange, or other overseas programs.
+  - Study abroad courses, including international internship courses, may receive political science credit if approved in advance by the Political Science undergraduate adviser.
+- **Major**
+  - The major requires a minimum of 30 upper-division units:
+  - Three units in each of the five subfields – Political Theory, American Politics, Comparative Politics, International Politics, and Law and Public Policy – for 15 units total, three units from a capstone course, and 12 units from any SDSU upper-division political science courses (except POL S 390W ).
+  - Upper-division political science courses from other universities may be used toward the major only with approval of the Political Science undergraduate adviser.
+- **Capstone Requirement**
+  - The major requires one three-unit capstone course fulfilled by:
+- **Major Electives**
+  - Upper-division political science courses from other universities, including study abroad programs, may be used toward the major only with approval of the Political Science undergraduate advisor.
+  - Students may optionally take up to three units toward the 12 units of major electives from one of:
+- **Graduation Writing Assessment Requirement**
+  - POL S 390W is listed for the GWAR but not in the major lists.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 15 of 28 have sections
+  - with sections: POL S 101 (4), POL S 102 (15), PHIL 120 (1), SOC 201 (7), PSY 280 (22), STAT 119 (5), STAT 250 (8), POL S 495 (2), POL S 498 (1), POL S 507 (1), POL S 533 (1), POL S 555 (1), POL S 575 (1), AFRAS 321 (1), WGSS 375 (1)
+  - no sections: POL S 497B, POL S 510, POL S 530, POL S 535, POL S 541, POL S 560, POL S 562, POL S 564, POL S 565, POL S 568, POL S 577, AFRAS 322, AMIND 485
+- Pick-n group courses: 3 of 4 have sections
+  - with sections: POL S 104 (2), POL S 201 (2), ECON 201 (4)
+  - no sections: POL S 103
+- Elective pool courses: 23 of 47 have sections
+  - with sections: POL S 301B (2), POL S 302 (1), POL S 305 (2), POL S 331 (1), AMIND 331 (1), POL S 348 (1), POL S 422 (2), POL S 425 (2), POL S 361 (1), POL S 365 (1), POL S 366 (2), POL S 375 (2), POL S 380 (1), POL S 479 (2), POL S 334 (2), SUSTN 334 (2), POL S 340 (1), POL S 346 (1), POL S 347 (1), POL S 430 (1), LATAM 430 (1), POL S 440 (1), GEOG 440 (1)
+  - no sections: POL S 301A, POL S 406, POL S 320, POL S 321, POL S 338, POL S 426, POL S 428, POL S 436, POL S 353, POL S 356, POL S 357, POL S 359, POL S 362, POL S 363, POL S 364, LATAM 366, POL S 370, POL S 372, POL S 482, POL S 485, POL S 335, POL S 336, POL S 345, POL S 435
+
+### Title differences (catalog vs class data)
+
+- none
+- 5 more only shortened in the class data (not a real difference): POL S 331, POL S 348, POL S 380, POL S 555, POL S 575
 
 ## Psychology, Emphasis in Industrial and Organizational Psychology, B.A. (`psychology_industrial_organizational_ba`)
 
@@ -2199,3 +3330,229 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ### Title differences (catalog vs class data)
 
 - none
+
+## Public Health, B.S. (`public_health_bs`)
+
+- Source: `data/catalog_html/Program_ Public Health, B.S. - San Diego State University.html`, poid 12176, major code 12141
+- Rows: 40
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 9: P H 101, P H 292, BIOL 100, BIOL 100L, BIOL 211, BIOL 212, CHEM 100, PSY 101, SOC 101 |
+| Preparation for the Major | PSY 280 or SOC 201 (pick 1) | choose 1 | 2: PSY 280, SOC 201 |
+| Additional Lower Division Courses | Required (pick 1) | choose 1 | 2: P H 250, P H 233 |
+| Major | Required | required | 10: P H 300, P H 302, P H 304, P H 305, P H 306, P H 307, P H 401, P H 450, P H 490, P H 491 |
+| Major | Upper Division Major Electives | required | 13: P H 330, P H 331, P H 332, P H 353, P H 362, P H 395, P H 402, P H 451, P H 452, P H 485, P H 496, P H 538A, GEN S 340 |
+| Three Units from One of the Following Categories During the Junior or Senior Year: | Peer Health Education | pool | 1: P H 480 |
+| Three Units from One of the Following Categories During the Junior or Senior Year: | Applied Public Health Practice | pool | 1: P H 497 |
+| Three Units from One of the Following Categories During the Junior or Senior Year: | Research | pool | 2: P H 485, P H 499 |
+
+### Section notes (shown once under the heading)
+
+- none
+
+### Review list
+
+- [ ] 'Required (pick 1)' in Additional Lower Division Courses: read as pick 1, its or / also-listed-as pairs kept with a note; check it.
+- [ ] 'Upper Division Major Electives' in Major: text between courses that was not read as a rule: "May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)."
+- [ ] 'Upper Division Major Electives' in Major: rule text kept as the note, check the group: "(12 units) (Area A Electives) Other electives as selected and offered by the School of Public Health with approval of academic advisor."
+- [ ] 'Applied Public Health Practice' in Three Units from One of the Following Categories During the Junior or Senior Year:: text between courses that was not read as a rule: "Internship from a list of selected public health agencies"
+- [ ] Text under 'Preprofessional Science' left out (no rule in it; in the report only): "300-level or 400-level science courses selected with approval of School of Public Health undergraduate academic advisor."
+- [ ] 'Research' in Three Units from One of the Following Categories During the Junior or Senior Year:: text between courses that was not read as a rule: "(May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement; cannot be used to satisfy both.)"
+- [ ] 'Research' in Three Units from One of the Following Categories During the Junior or Senior Year:: text between courses that was not read as a rule: "(Participation in a public health-related research project or series of research projects under the guidance of a faculty member.)"
+- [ ] 'Three Units from One of the Following Categories During the Junior or Senior Year:': could not work out how many units the pool needs; pick_units is blank.
+
+### Units check (advisory)
+
+- Preparation for the Major: page says 29-30 units, listed courses give 29-30: **inside**
+- Additional Lower Division Courses: page says 3 units, listed courses give 3: **inside**
+- Major: page says at least 45 units, listed courses give 67-70: **inside**
+
+### Major notes (no rows made; for a human)
+
+- **Program description**
+  - All candidates for a bachelor’s degree must complete the graduation requirements outlined in the “Graduation Requirements” section of this catalog.
+  - A minor is not required with this major.
+- **Impacted Program**
+  - The Public Health major is an impacted program. To be admitted to the major, students must meet the following criteria:
+  - a. Complete with a grade of B (3.0) or better: P H 101 and P H 292. These courses cannot be taken for credit/no credit (Cr/NC);
+  - b. Complete with a grade of C (2.0) or better: BIOL 100, BIOL 100L, BIOL 211, BIOL 212, CHEM 100, PSY 101, SOC 101, and PSY 280 or SOC 201. These courses cannot be taken for credit/no credit (Cr/NC);
+  - c. Have a cumulative GPA of 2.90 or better.
+  - To complete the major, students must fulfill the degree requirements for the major described in the catalog in effect at the time they are accepted into the premajor at SDSU (assuming continuous enrollment).
+- **Graduation Writing Assessment Requirement**
+  - Complete RWS 305W or LING 305W with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements. Courses listed: RWS 305W, LING 305W.
+- **Major: Preprofessional Science**
+  - 300-level or 400-level science courses selected with approval of School of Public Health undergraduate academic advisor.
+- **Time Limitation**
+  - All Public Health courses taken for the major must have been taken and completed within seven years of the granting of the undergraduate degree. Courses taken prior to the seven year rule must be repeated. This policy applies to courses taken at SDSU or transferred from another four-year college or university or appropriate courses from a community college. No exceptions will be made to this policy.
+- **Graduation Writing Assessment Requirement**
+  - LING 305W is listed for the GWAR but not in the major lists.
+  - RWS 305W is listed for the GWAR but not in the major lists.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 28 of 32 have sections
+  - with sections: P H 101 (1), P H 292 (1), BIOL 100 (4), BIOL 100L (26), BIOL 211 (1), BIOL 212 (18), CHEM 100 (11), PSY 101 (2), SOC 101 (11), P H 300 (1), P H 302 (1), P H 304 (1), P H 305 (1), P H 306 (2), P H 307 (1), P H 401 (1), P H 450 (1), P H 490 (1), P H 330 (1), P H 331 (1), P H 332 (1), P H 353 (1), P H 362 (1), P H 395 (1), P H 402 (1), P H 485 (1), P H 496 (1), GEN S 340 (1)
+  - no sections: P H 491, P H 451, P H 452, P H 538A
+- Pick-n group courses: 3 of 4 have sections
+  - with sections: PSY 280 (22), SOC 201 (7), P H 250 (1)
+  - no sections: P H 233
+- Elective pool courses: 1 of 3 have sections
+  - with sections: P H 480 (2)
+  - no sections: P H 497, P H 499
+
+### Title differences (catalog vs class data)
+
+- P H 300: catalog "Professionalism and Public Health", class data "Prof in PH"
+- P H 305: catalog "Medical Care Organization and Delivery", class data "Medical Care Orgs"
+- P H 402: catalog "Public Health Communications", class data "PH Communications"
+- P H 496: catalog "Experimental Topics", class data "Community Organizing & Action"
+- 7 more only shortened in the class data (not a real difference): P H 101, P H 302, P H 307, P H 401, P H 331, P H 395, P H 485
+
+## Public Health, Emphasis in Environmental Health, B.S. (`public_health_environmental_health_bs`)
+
+- Source: `data/catalog_html/Program_ Public Health, Emphasis in Environmental Health, B.S. - San Diego State University.html`, poid 12545, major code 12141
+- Rows: 44
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 7: P H 101, P H 292, BIOL 100, BIOL 100L, BIOL 211, BIOL 211L, CHEM 100 |
+| Preparation for the Major | PSY 101 or SOC 101 (pick 1) | choose 1 | 2: PSY 101, SOC 101 |
+| Preparation for the Major | PSY 280 or SOC 201 (pick 1) | choose 1 | 2: PSY 280, SOC 201 |
+| Preparation for the Major | CHEM 130 or CHEM 232 (pick 1) | choose 1 | 2: CHEM 130, CHEM 232 |
+| Preparation for the Major | MATH 140 or MATH 141 or MATH 150 or MATH 151 (pick 1) | choose 1 | 4: MATH 140, MATH 141, MATH 150, MATH 151 |
+| Additional Lower Division Courses | Required (pick 1) | choose 1 | 2: P H 250, P H 233 |
+| Major | Required | required | 9: P H 300, P H 302, P H 304, P H 305, P H 306, P H 307, P H 401, P H 490, P H 491 |
+| Major | Environmental Health Courses | required | 3: P H 451, P H 452, P H 538A |
+| Upper Division Major Electives | Upper Division Major Electives | pool, 3 units | 10: P H 330, P H 331, P H 332, P H 353, P H 362, P H 395, P H 402, P H 496, P H 485, GEN S 340 |
+| Three Units from One of the Following Categories: | Applied Public Health Practice | pool, 3 units | 1: P H 497 |
+| Three Units from One of the Following Categories: | Research | pool, 3 units | 1: P H 499 |
+
+### Section notes (shown once under the heading)
+
+- **Upper Division Major Electives**: (Additional electives may be selected with approval from the Public Health academic advisor.)
+
+### Review list
+
+- [ ] 'Required (pick 1)' in Additional Lower Division Courses: read as pick 1, its or / also-listed-as pairs kept with a note; check it.
+- [ ] 'Upper Division Major Electives': rule text kept as the section note, check it: "(Additional electives may be selected with approval from the Public Health academic advisor.)"
+- [ ] 'Upper Division Major Electives' (under Major) asks for 3 units of its list: encoded as a pool in its own section 'Upper Division Major Electives', check it.
+- [ ] Text under 'Preprofessional Science' left out (no rule in it; in the report only): "A 300- or 400-level science course selected with approval from the School of Public Health undergraduate academic advisor."
+
+### Units check (advisory)
+
+- Preparation for the Major: page says 30-32 units, listed courses give 30-32: **inside**
+- Additional Lower Division Courses: page says 3 units, listed courses give 3: **inside**
+- Major: page says at least 42 units, listed courses give 42: **inside**
+
+### Major notes (no rows made; for a human)
+
+- **Program description**
+  - All candidates for a bachelor’s degree must complete the graduation requirements outlined in the “Graduation Requirements” section of this catalog.
+  - A minor is not required for this major.
+- **Impacted Program**
+  - The Public Health major is an impacted program. To be admitted to the major, students must meet the following criteria:
+  - a. Complete with a grade of B (3.0) or better: P H 101 and P H 292 . These courses cannot be taken for credit/no credit (Cr/NC);
+  - b. Complete with a grade of C (2.0) or better: BIOL 100, BIOL 100L, BIOL 211, BIOL 211L, BIOL 212, CHEM 100, PSY 101 or SOC 101, PSY 280 or SOC 201, CHEM 130 or CHEM 232, and MATH 140, MATH 141, MATH 150, or MATH 151. These courses cannot be taken for credit/no credit (Cr/NC);
+  - c. Have a cumulative GPA of 2.90 or better.
+  - To complete the major, students must fulfill the degree requirements for the major described in the catalog in effect at the time they are accepted into the premajor at SDSU (assuming continuous enrollment).
+- **Graduation Writing Assessment Requirement**
+  - Complete RWS 305W or LING 305W with a grade of C (2. 0) or better. See Graduation Requirements section for a complete listing of requirements. Courses listed: RWS 305W, LING 305W.
+- **Major: Preprofessional Science**
+  - A 300- or 400-level science course selected with approval from the School of Public Health undergraduate academic advisor.
+- **Note**
+  - Upon completion of emphasis, students have the option to take the Registered Environmental Health Specialist (REHS) certification examination with the State of California. Prior to the examination, students should take an additional year of physics laboratory courses.
+- **Time Limitation**
+  - All Public Health courses taken for the major must have been taken and completed within seven years of the granting of the undergraduate degree. Courses taken prior to the seven year rule must be repeated. This policy applies to courses taken at SDSU or transferred from another four-year college or university or appropriate courses from a community college. No exceptions will be made to this policy.
+- **Graduation Writing Assessment Requirement**
+  - LING 305W is listed for the GWAR but not in the major lists.
+  - RWS 305W is listed for the GWAR but not in the major lists.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 15 of 19 have sections
+  - with sections: P H 101 (1), P H 292 (1), BIOL 100 (4), BIOL 100L (26), BIOL 211 (1), BIOL 211L (18), CHEM 100 (11), P H 300 (1), P H 302 (1), P H 304 (1), P H 305 (1), P H 306 (2), P H 307 (1), P H 401 (1), P H 490 (1)
+  - no sections: P H 491, P H 451, P H 452, P H 538A
+- Pick-n group courses: 11 of 12 have sections
+  - with sections: PSY 101 (2), SOC 101 (11), PSY 280 (22), SOC 201 (7), CHEM 130 (1), CHEM 232 (1), MATH 140 (3), MATH 141 (16), MATH 150 (12), MATH 151 (20), P H 250 (1)
+  - no sections: P H 233
+- Elective pool courses: 10 of 12 have sections
+  - with sections: P H 330 (1), P H 331 (1), P H 332 (1), P H 353 (1), P H 362 (1), P H 395 (1), P H 402 (1), P H 496 (1), P H 485 (1), GEN S 340 (1)
+  - no sections: P H 497, P H 499
+
+### Title differences (catalog vs class data)
+
+- P H 300: catalog "Professionalism and Public Health", class data "Prof in PH"
+- P H 305: catalog "Medical Care Organization and Delivery", class data "Medical Care Orgs"
+- P H 402: catalog "Public Health Communications", class data "PH Communications"
+- P H 496: catalog "Experimental Topics", class data "Community Organizing & Action"
+- 8 more only shortened in the class data (not a real difference): P H 101, CHEM 130, P H 302, P H 307, P H 401, P H 331, P H 395, P H 485
+
+## Sociology, B.A. (`sociology_ba`)
+
+- Source: `data/catalog_html/Program_ Sociology, B.A. - San Diego State University.html`, poid 12197, major code 22081
+- Rows: 16
+
+### Groups
+
+| Section | Group | Rule | Courses |
+| --- | --- | --- | --- |
+| Preparation for the Major | Required | required | 3: SOC 101, SOC 102, SOC 201 |
+| Major | Required | required | 3: SOC 301, SOC 401, SOC 403 |
+| Major | SOC 406 or SOC 407 or SOC 408 (pick 1) | choose 1 | 3: SOC 406, SOC 407, SOC 408 |
+| Major | SOC 433 or SOC 455 (pick 1) | choose 1 | 2: SOC 433, SOC 455 |
+| Major | SOC 450 or SOC 457 or SOC 458 or SOC 459 (pick 1) | choose 1 | 4: SOC 450, SOC 457, SOC 458, SOC 459 |
+
+### Section notes (shown once under the heading)
+
+- **Language Requirement**: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to section of catalog on “Graduation Requirements .”
+
+### Review list
+
+- [ ] 'Language Requirement' has no courses; shown as a section with only its note: "Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to section of catalog on “Graduation Requirements .”"
+- [ ] Text under 'Major' left out (no rule in it; in the report only): "Complete 18 units of core requirements listed below and 12 units of upper division sociology electives. (30 units) Core requirements (18 units) should be completed before upper division sociology electives (12 units):"
+- [ ] Text under 'Advanced Research and Community Experience' was not read as a rule (no courses in that block): "The Department of Sociology offers undergraduates a number of advanced research, community engagement, and internship experiences (Sociology 470, 480, 499, and others)."
+- [ ] Text under 'Advanced Research and Community Experience' was not read as a rule (no courses in that block): "Interested students should consult with the undergraduate adviser for the Sociology Department."
+
+### Units check (advisory)
+
+- Preparation for the Major: page says 9 units, listed courses give 9: **inside**
+
+### Major notes (no rows made; for a human)
+
+- **Associate Degree for Transfer (ADT) Major**
+  - All candidates for a bachelor’s degree must complete the requirements outlined in the “Graduation Requirements” section of this catalog.
+  - A minor is not required with this major.
+- **Impacted Program**
+  - The Sociology major is an impacted program. To be admitted to the major, students must meet the following criteria:
+  - a. Complete with a grade of C (2.0) or better: SOC 101 , SOC 102 , and SOC 201 . (9 units) NOTE: STAT 119 or STAT 250 , or BIOL 215 , will be accepted in lieu of SOC 201 . These courses cannot be taken for credit/no credit (Cr/NC);
+  - b. Have a cumulative GPA of 2.50 or better.
+  - Students must complete the major requirements in effect at the time they were admitted to the premajor at SDSU, provided they maintain continuous enrollment.
+- **Preparation for the Major: Note**
+  - STAT 119 or STAT 250 , or BIOL 215 will be accepted in lieu of SOC 201 .
+- **Graduation Writing Assessment Requirement**
+  - Complete one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements.
+- **Major**
+  - Complete 18 units of core requirements listed below and 12 units of upper division sociology electives.
+  - (30 units)
+  - Core requirements (18 units) should be completed before upper division sociology electives (12 units):
+- **Advanced Research and Community Experience**
+  - The Department of Sociology offers undergraduates a number of advanced research, community engagement, and internship experiences (Sociology 470, 480, 499, and others).
+  - Interested students should consult with the undergraduate adviser for the Sociology Department.
+
+### Coverage (sections in data/cleaned)
+
+- Required courses: 6 of 6 have sections
+  - with sections: SOC 101 (11), SOC 102 (5), SOC 201 (7), SOC 301 (3), SOC 401 (2), SOC 403 (3)
+- Pick-n group courses: 6 of 9 have sections
+  - with sections: SOC 407 (1), SOC 408 (1), SOC 433 (2), SOC 455 (1), SOC 450 (1), SOC 457 (2)
+  - no sections: SOC 406, SOC 458, SOC 459
+
+### Title differences (catalog vs class data)
+
+- none
+- 5 more only shortened in the class data (not a real difference): SOC 403, SOC 407, SOC 408, SOC 455, SOC 457

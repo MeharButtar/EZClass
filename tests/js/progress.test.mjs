@@ -73,3 +73,10 @@ test("open rule lists leave out excluded and already-required courses", () => {
   assert.equal(openChoices(found).shown.length, 5);
 });
 
+test("a pick group with pick_units needs those units (a lecture+lab pair)", () => {
+  const pair = { pick_n: 2, pick_units: "4",
+                 courses: [course("BIOL 203", "3"), course("BIOL 203L", "1"), course("BIOL 204", "3"), course("BIOL 204L", "1")] };
+  assert.equal(chooseNeedUnits(pair), 4);
+  assert.equal(chooseNeedUnits({ ...pair, pick_units: null }), 2);   // without it: the two smallest
+});
+

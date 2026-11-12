@@ -705,12 +705,27 @@ class RuleTextTests(unittest.TestCase):
             ("h4", "Area One", "", self.course("PSY 480")))
         groups = self.groups_of(prog)
         self.assertEqual(groups[("Preparation for the Major", "BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",
-                                 "choose", "2", "")], ["BIOL 203", "BIOL 203L", "BIOL 204", "BIOL 204L"])
+                                 "choose", "2", "4")], ["BIOL 203", "BIOL 203L", "BIOL 204", "BIOL 204L"])
+        prep = [r for r in prog.rows if r["section"] == "Preparation for the Major"]
+        self.assertEqual(importer.listed_units(prep), (7, 7))   # EX 200 (3) + one pair (4), not 3 + 2
         opened = [(r["section"], r["subject"], r["num_min"], r["num_max"], r["pick_units"]) for r in prog.rows
                   if r["rule"] == "open"]
         self.assertEqual(opened, [("Major", "CHEM", "300", "599", "7"),
                                   ("Upper Division Major Electives", "PSY", "300", "599", "5-6")])
         self.assertIn(("Professional Electives", "Area One", "pool", "", "9"), groups)   # lists follow: not open
+
+    def test_competency_list_is_pick_one_with_the_catalog_list(self):
+        prog = self.page(("h2", "Mathematics Competency Requirement", "<p>Competency in mathematics is generally "
+                                                                       "satisfied by three semesters of college "
+                                                                       "mathematics.</p>",
+                          self.course("STAT 250") + self.course("STAT 350A") + self.OR + self.TEXT.format(
+                              "(highly recommended)") + self.course("SOC 201") + self.course("SOC 406")))
+        rows = [r for r in prog.rows if r["rule"] != "note"]
+        self.assertEqual({(r["group_label"], r["rule"], r["pick_n"]) for r in rows},
+                         {("Mathematics Competency Requirement (pick 1)", "choose", "1")})
+        self.assertEqual({r["note"] for r in rows},
+                         {"Catalog list: STAT 250, STAT 350A or (highly recommended) SOC 201, SOC 406"})
+        self.assertTrue(any("to confirm with the department" in x for x in prog.review))
 
     def test_grade_text_and_footnote_right_under_a_course(self):
         prog = self.page(("h2", "Preparation for the Major", "",

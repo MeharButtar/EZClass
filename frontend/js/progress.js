@@ -21,8 +21,11 @@ export function sectionPool(section, isDone) {
 }
 
 // Pick-n groups: the units of the n smallest courses (a pick of CHEM 202 (4) or
-// CHEM 200 (5) needs 4). A course with no units counts as 3.
+// CHEM 200 (5) needs 4), or the group's pick_units when the catalog gives them.
+// A course with no units counts as 3.
 export function chooseNeedUnits(group) {
+  // pick_units, when set, is what the pick needs (a lecture+lab pair: BIOL 203 and 203L = 4)
+  if (units(group.pick_units)) return units(group.pick_units);
   const pick = group.pick_n || 1;
   const sizes = group.courses.map((c) => units(c.units) || 3).sort((a, b) => a - b);
   const counted = sizes.slice(0, pick);

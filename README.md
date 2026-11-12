@@ -172,7 +172,7 @@ row for an `open` rule). Rows show up in file order.
 | `group_label` | Group name under the heading, e.g. `Required`, `Statistics (pick 1)` |
 | `rule` | How the group is satisfied, see below |
 | `pick_n` | `choose`: how many courses to pick. `open`: how many courses (optional) |
-| `pick_units` | `pool` and `open`: units needed, can be a range like `14-15` |
+| `pick_units` | `pool` and `open`: units needed, can be a range like `14-15`. `choose`: optional, the units the pick needs when it is not simply its smallest courses (a lecture and lab pair: `4`) |
 | `subject`, `catalog_num` | The course, e.g. `CS` and `150L`. Spaces in subjects are removed (`POL S` becomes `POLS`). For `open` rules `subject` can list several codes separated by `\|`, like `ACCTG\|BA\|FIN` |
 | `num_min`, `num_max` | `open` rules: the catalog number range, e.g. 300 to 599 |
 | `exclude` | `open` rules, optional: courses that don't count, separated by `\|`, like `ACCTG 325\|ACCTG 326` |
