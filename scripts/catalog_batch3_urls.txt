@@ -1,0 +1,47 @@
+# Batch 3: 40 more bachelor's programs (2026-2027 catalog, San Diego campus), in the order Mehar chose.
+# Save each page from a browser into data/catalog_html/ (the script reads the page, not the file name).
+# name<TAB>degree<TAB>url. Only the URL is read; lines starting with # are skipped. 4 groups of 10.
+# Group 1: Art, Liberal Studies, English, Public Administration
+Art	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11906
+Art, Emphasis in Studio Arts	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11899
+Art, Emphasis in Applied Design	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11900
+Art, Emphasis in Interior Architecture	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11902
+Art, Emphasis in Painting and Printmaking	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11904
+Art, Emphasis in Sculpture	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11905
+Liberal Studies, Emphasis in Education-Generalist	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12104
+Liberal Studies, Emphasis in Elementary Education	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12105
+English and Comparative Literature	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11989
+Public Administration	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12173
+# Group 2: Hospitality and Tourism Management, International Business, Social Science, History
+Hospitality and Tourism Management, Emphasis in Hotel Operations and Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12046
+Hospitality and Tourism Management, Emphasis in Meetings and Events Operations and Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12047
+Hospitality and Tourism Management, Emphasis in Restaurant Operations and Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12048
+Hospitality and Tourism Management, Emphasis in Tribal Gaming Operations and Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12049
+International Business, Emphasis in Spanish - Latin America	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12077
+International Business, Emphasis in English - North America	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12067
+International Business, Emphasis in Chinese - Asia	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12066
+International Business, Emphasis in Spanish - Western Europe	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12078
+Social Science	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12192
+History	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12043
+# Group 3: International Security and Conflict Resolution, Spanish, Television Film and New Media, Anthropology, Social Work, Speech Language and Hearing Sciences, City Planning
+International Security and Conflict Resolution, Specialization in Conflict in the Global System	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12080
+International Security and Conflict Resolution, Specialization in Environment in the Global System	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12081
+International Security and Conflict Resolution, Specialization in Justice in the Global System	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12082
+Spanish	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12200
+Television, Film and New Media, Emphasis in Production	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12219
+Television, Film and New Media, Emphasis in Critical Studies	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12218
+Anthropology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11894
+Social Work	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12193
+Speech, Language, and Hearing Sciences	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12203
+Public Administration, Emphasis in City Planning	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12174
+# Group 4: Theatre Arts, Artificial Intelligence, Environmental Sciences, Statistics, Microbiology, Recreation, Women's and Gender Studies, Geography
+Theatre Arts, General Theatre Arts	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12213
+Theatre Arts, Emphasis in Performance	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12216
+Artificial Intelligence and Human Responsibility	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12791
+Environmental Sciences	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11998
+Statistics	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12204
+Statistics, Emphasis in Data Science	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12206
+Microbiology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11926
+Recreation Administration, Emphasis in Recreation Systems Management	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12179
+Women’s and Gender Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12223
+Geography, Emphasis in General Geography	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12016
