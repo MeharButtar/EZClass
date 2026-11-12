@@ -131,6 +131,13 @@ BLOCK_GRADE = re.compile(r"minimum grade in each class is (C-?)(?![\w-])|^comple
 COURSE_GRADE = re.compile(r"^\(?(?:must be completed )?with a grade (?:of )?(C-?) \(\d\.\d\) or better\)?\.?$", re.I)
 MAJOR_NOTE_SENTENCE = re.compile(r"average (?:of C \(2\.0\) )?or better is required|grade point average of C"
                                  r"|additional progress requirements", re.I)
+# "MKTG 491, 492, 493, or 494 may only be taken after ...": a rule about those courses, put on their rows
+COURSE_RULE = re.compile(r"^([A-Z][A-Z ]*?[A-Z])\s+(\d{3}[A-Z]?(?:(?:\s*,\s*(?:or\s+|and\s+)?|\s+(?:or|and)\s+)\d{3}[A-Z]?)*)"
+                         r"\s+(?:may|must|can|cannot)\b")
+# a sentence over a whole list that states a rule (kept as the section note); others are blurbs (report only)
+RULE_WORDS = re.compile(r"\b(?:must|required|may only|only after|cannot|may not|minimum|at least|no more than|unless)\b",
+                        re.I)
+COURSE_CODE = re.compile(r"\b([A-Z][A-Z ]*?[A-Z])\s+(\d{3}[A-Z]?)\b")
 FILLER = re.compile(r"^(?:required (?:upper division )?courses in the major|but not both|and|or)\s*[:.]?$", re.I)
 NOTE_HEADING = re.compile(r"^notes?$", re.I)
 # "... Electrical Engineering laboratory electives: 2 units selected from ..." inside an electives rule
@@ -382,6 +389,7 @@ def read_rule_text(prog, heading, paras):
                 continue
             if MAJOR_NOTE_SENTENCE.search(sent):
                 add_note(prog, heading, sent)
+                prog.section_note(heading, sent)
                 continue
             out["rule"].append(sent)
     return out
@@ -517,7 +525,8 @@ class Program:
 
     def section_note(self, section, text):
         text = join_note([text])
-        if text and text not in self.section_notes.get(section, []):
+        same = lambda t: re.sub(r"[“”\"]", "", t).lower()     # 'A “C” average' and 'A C average' are one note
+        if text and same(text) not in {same(t) for t in self.section_notes.get(section, [])}:
             self.section_notes.setdefault(section, []).append(text)
 
     def flag(self, text):
@@ -587,6 +596,7 @@ def map_blocks(prog, blocks):
     for b in blocks:
         if b["level"] == 2 and GWAR_BLOCK.search(b["heading"]):
             gwar_codes |= {code(v["subject"], v["catalog_num"]) for k, v in b["items"] if k == "course"}
+            gwar_codes |= {code(a, n) for p in b["paras"] for a, n in COURSE_CODE.findall(p)}
     used_codes = set()
 
     h2 = None                 # current h2 heading
@@ -594,6 +604,7 @@ def map_blocks(prog, blocks):
     parent = None             # an h3 with a rule but no courses: the following h3 lists are its groups
     totals = collections.OrderedDict()   # h2 -> stated units (low, high, kind)
     pending_pool = []         # pool rows waiting for pick_units, per parent heading
+    course_rules = []         # ([app codes], sentence, section) to put on those courses' rows
 
     def finish_parent():
         nonlocal parent, pending_pool
@@ -766,10 +777,21 @@ def map_blocks(prog, blocks):
                 break
 
         if b["level"] < 3 and rule_paras:
-            # text over a whole h2 list describes the section, not each course: a major note
+            # text over a whole h2 list describes the section, not each course
+            blurbs = []
             for p in rule_paras:
-                add_note(prog, h2, p)
-            prog.flag(f"Text under '{h2}' kept as a major note, not on its courses: \"{' '.join(rule_paras)}\"")
+                m = COURSE_RULE.match(p)
+                if m:
+                    codes = [f"{subject_key(m.group(1))} {n}" for n in re.findall(r"\d{3}[A-Z]?", m.group(2))]
+                    course_rules.append((codes, p, section))
+                elif RULE_WORDS.search(p):
+                    prog.section_note(section, p)
+                    prog.flag(f"'{section}': rule text kept as the section note: \"{p}\"")
+                else:
+                    add_note(prog, h2, p)
+                    blurbs.append(p)
+            if blurbs:
+                prog.flag(f"Text under '{h2}' left out (no rule in it; in the report only): \"{' '.join(blurbs)}\"")
             rule_paras = []
 
         block_note = rule_paras[:]
@@ -783,6 +805,7 @@ def map_blocks(prog, blocks):
                     opens.append((sent, opened))
                 elif MAJOR_NOTE_SENTENCE.search(sent):
                     add_note(prog, h2, sent)
+                    prog.section_note(h2, sent)
                 elif not FILLER.match(sent):
                     block_note.append(sent)
                     prog.flag(f"'{label}' in {section}: text between courses that was not read as a rule: \"{sent}\"")
@@ -869,6 +892,17 @@ def map_blocks(prog, blocks):
         for sent, opened in opens:
             open_row(section, sent, opened)
     finish_parent()
+
+    for codes, sentence, section in course_rules:
+        hits = [r for r in prog.rows if f"{r['subject']} {r['catalog_num']}" in codes]
+        for r in hits:
+            r["note"] = join_note([r["note"], sentence])
+        if hits:
+            names = ", ".join(dict.fromkeys(f"{r['subject']} {r['catalog_num']}" for r in hits))
+            prog.flag(f"\"{sentence}\" put on {names}.")
+        else:
+            prog.section_note(section, sentence)
+            prog.flag(f"\"{sentence}\": none of {', '.join(codes)} is in the lists; kept as the section note.")
 
     for c in sorted(gwar_codes - used_codes):
         prog.notes.append(("Graduation Writing Assessment Requirement", f"{c} is listed for the GWAR but not in the major lists."))

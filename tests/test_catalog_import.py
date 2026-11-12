@@ -560,6 +560,32 @@ class RuleTextTests(unittest.TestCase):
             ("pool", ""), ("pool", ""),
         ])
 
+    def test_rule_sentences_are_kept_and_blurbs_left_out(self):
+        prog = self.page(
+            ("h2", "Graduation Writing Assessment Requirement",
+             "<p>Complete EX 495W with a grade of C (2.0) or better.</p>", ""),
+            ("h2", "Major", "<p>Students may pursue pathways. Please visit the department website. "
+                            "A C (2.0) average or better is required in the courses stipulated here for the major. "
+                            "EX 490 may only be taken after completion of both EX 470 and EX 480. "
+                            "EX 491, 492, or 493 may only be taken after completion of EX 371. "
+                            "Students intending to pursue the certificate should refer to its requirements.</p>",
+             self.course("EX 371") + self.course("EX 490") + self.course("EX 491") + self.course("EX 493")
+             + self.course("EX 495W")),
+            ("h3", "Note", "<p>A “C” (2.0) average or better is required in the courses stipulated here for the "
+                           "major.</p>", ""))
+        notes = {r["_code"]: r["note"] for r in prog.rows if r["rule"] != "note"}
+        self.assertEqual(notes["EX 490"], "EX 490 may only be taken after completion of both EX 470 and EX 480")
+        self.assertEqual(notes["EX 491"], "EX 491, 492, or 493 may only be taken after completion of EX 371")
+        self.assertEqual(notes["EX 493"], notes["EX 491"])
+        self.assertEqual(notes["EX 371"], "")
+        self.assertEqual(notes["EX 495W"], "Satisfies the Graduation Writing Assessment")   # named only in the text
+        self.assertEqual([(r["section"], r["note"]) for r in prog.rows if r["rule"] == "note"],
+                         [("Major", "A C (2.0) average or better is required in the courses stipulated here for the "
+                                    "major")])                                       # once, though written twice
+        left_out = " ".join(text for _, text in prog.notes)
+        self.assertIn("Please visit the department website", left_out)              # blurbs: report only
+        self.assertIn("should refer to its requirements", left_out)
+
     def test_pick_labels_use_the_app_codes(self):
         prog = self.page(("h2", "Preparation for the Major", "",
                           self.course("CIV E 160") + self.OR + self.course("STAT 250")))
@@ -608,8 +634,10 @@ class RuleTextTests(unittest.TestCase):
                           "upper division major.</p><p>Complete with a grade of C (2.0) or better:</p>",
                           self.course("EX 201") + self.SEP + self.course("EX 119") + self.OR
                           + self.course("EY 201", 3, " But not both.")))
-        self.assertEqual({r["note"] for r in prog.rows}, {"Grade of C or better, no Cr/NC"})
-        self.assertTrue(any("Additional progress requirements" in text for _, text in prog.notes))
+        self.assertEqual({r["note"] for r in prog.rows if r["rule"] != "note"}, {"Grade of C or better, no Cr/NC"})
+        self.assertEqual([r["note"] for r in prog.rows if r["rule"] == "note"],   # a rule: kept, once
+                         ["Additional progress requirements must be met before a student is admitted to the upper "
+                          "division major"])
         self.assertEqual(prog.review, [])
 
 

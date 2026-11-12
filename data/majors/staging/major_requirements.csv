@@ -51,6 +51,7 @@ me_bs,Professional Electives,Thermal Systems,pool,,12,ME,552,,,,"Heating, Ventil
 me_bs,Professional Electives,Thermal Systems,pool,,12,ME,554,,,,Automotive Power,3,
 me_bs,Professional Electives,Thermal Systems,pool,,12,ME,555,,,,Thermal Systems Analysis and Design,3,
 me_bs,Professional Electives,Thermal Systems,pool,,12,ME,556,,,,Solar Energy Conversion,3,
+ba_accounting_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to an upper division major
 ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_accounting_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
@@ -60,6 +61,7 @@ ba_accounting_bs,Preparation for the Major,Required,required,,,MIS,180,,,,Princi
 ba_accounting_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calculus for Business Analysis,3,"Grade of C or better, no Cr/NC. (or an approved calculus course or an approved three-unit finite mathematics course)"
 ba_accounting_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
 ba_accounting_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_accounting_bs,Major,,note,,,,,,,,,,A “C” (2.0) average or better is required in the courses stipulated here for the major
 ba_accounting_bs,Major,Required,required,,,ACCTG,331,,,,Intermediate Accounting I,3,Grade of C or better
 ba_accounting_bs,Major,Required,required,,,ACCTG,332,,,,Federal Income Taxation,3,Grade of C or better
 ba_accounting_bs,Major,Required,required,,,ACCTG,333,,,,Accounting Information Systems,3,Grade of C or better
@@ -76,6 +78,7 @@ ba_accounting_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations 
 ba_accounting_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
 ba_accounting_bs,Major,Required,required,,,MIS,301,,,,Statistical Analysis for Business,3,
 ba_accounting_bs,Upper Division Accountancy Electives,Any ACCTG 300-599 course,open,,6,ACCTG,,300,599,ACCTG 325|ACCTG 326,,,"6 units of upper division Accounting (ACCTG) courses, excluding ACCTG 325 and ACCTG 326"
+ba_finance_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to an upper division major
 ba_finance_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
 ba_finance_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_finance_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
@@ -86,6 +89,7 @@ ba_finance_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calculus
 ba_finance_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
 ba_finance_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
 ba_finance_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_finance_bs,Major,,note,,,,,,,,,,A C (2.0) average or better is required in the courses stipulated here for the major
 ba_finance_bs,Major,Required,required,,,FIN,321,,,,Managerial Economics,3,
 ba_finance_bs,Major,Required,required,,,FIN,325,,,,Intermediate Finance,4,
 ba_finance_bs,Major,Required,required,,,FIN,327,,,,Investments,3,
@@ -99,6 +103,7 @@ ba_finance_bs,Major,Required,required,,,BA,350,,,,Management and Organizational 
 ba_finance_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations and Supply Chain Management,3,
 ba_finance_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
 ba_finance_bs,Major,Any FIN 300-599 course,open,,9,FIN,,300,599,,,,Nine units of 300- to 500-level finance courses
+ba_financial_services_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to the upper division major
 ba_financial_services_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
 ba_financial_services_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_financial_services_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
@@ -109,6 +114,7 @@ ba_financial_services_bs,Preparation for the Major,Required,required,,,MATH,120,
 ba_financial_services_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
 ba_financial_services_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
 ba_financial_services_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_financial_services_bs,Major,,note,,,,,,,,,,A grade point average of C (2.0) or better is required in the courses stipulated here for the major
 ba_financial_services_bs,Major,Required,required,,,FIN,327,,,,Investments,3,
 ba_financial_services_bs,Major,Required,required,,,FIN,331,,,,Real Estate Principles,3,
 ba_financial_services_bs,Major,Required,required,,,FIN,589,,,,Personal Financial Planning,3,
@@ -139,6 +145,7 @@ ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Ele
 ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,ECON,422,,,,Business Cycles,3,Or ECON 320
 ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,ECON,490,,,,Money and Banking,3,
 ba_financial_services_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,9-10,MKTG,377,,,,Selling Strategy and Practices,4,
+ba_information_systems_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to the upper division major
 ba_information_systems_bs,Preparation for the Major,Required,required,,,MIS,180,,,,Principles of Information Systems,3,"Grade of C or better, no Cr/NC"
 ba_information_systems_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_information_systems_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
@@ -149,6 +156,7 @@ ba_information_systems_bs,Preparation for the Major,Required,required,,,MATH,120
 ba_information_systems_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
 ba_information_systems_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
 ba_information_systems_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_information_systems_bs,Major,,note,,,,,,,,,,A C (2.0) average or better is required in the courses stipulated here for the major
 ba_information_systems_bs,Major,Required,required,,,MIS,301,,,,Statistical Analysis for Business,3,
 ba_information_systems_bs,Major,Required,required,,,MIS,306,,,,Information Systems Analysis and Design,3,
 ba_information_systems_bs,Major,Required,required,,,MIS,315,,,,Business Applications Programming,3,
@@ -173,6 +181,7 @@ ba_information_systems_bs,Upper Division Major Electives,Upper Division Major El
 ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,495,,,,Management Information Systems Internship,3,
 ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,515,,,,Programming for Data-Driven Applications,3,
 ba_information_systems_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,12,MIS,585,,,,Fundamentals of Cybersecurity Management,3,
+ba_management_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to the upper division major
 ba_management_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_management_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_management_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
@@ -183,6 +192,7 @@ ba_management_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calcu
 ba_management_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
 ba_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
 ba_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_management_bs,Major,,note,,,,,,,,,,A C (2.0) average or better is required in the courses stipulated here for the major
 ba_management_bs,Major,Required,required,,,MGT,352,,,,Human Resource Management,3,
 ba_management_bs,Major,Required,required,,,MGT,357,,,,Multinational Business and Comparative Management,3,
 ba_management_bs,Major,Required,required,,,MGT,358,,,,Fundamentals of Entrepreneurship,3,
@@ -215,6 +225,7 @@ ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,p
 ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,468,,,,Human Resource Analytics,3,
 ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,483,,,,Lean Startup Applications to National Security Challenges,3,
 ba_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MIS,301,,,,Statistical Analysis for Business,3,
+ba_marketing_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to the upper division major
 ba_marketing_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_marketing_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_marketing_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
@@ -225,6 +236,7 @@ ba_marketing_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calcul
 ba_marketing_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
 ba_marketing_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
 ba_marketing_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_marketing_bs,Major,,note,,,,,,,,,,A C (2.0) average or better is required in the courses stipulated here for the major
 ba_marketing_bs,Major,Required,required,,,BA,300,,,,Ethical Decision Making in Business,1,
 ba_marketing_bs,Major,Required,required,,,MIS,301,,,,Statistical Analysis for Business,3,
 ba_marketing_bs,Major,Required,required,,,MKTG,305,,,,Professional Development in Marketing,1,
@@ -236,11 +248,11 @@ ba_marketing_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
 ba_marketing_bs,Major,Required,required,,,MKTG,371,,,,Consumer Behavior,4,
 ba_marketing_bs,Major,MKTG 470 or MKTG 480 (pick 1),choose,1,,MKTG,470,,,,Marketing Research,4,
 ba_marketing_bs,Major,MKTG 470 or MKTG 480 (pick 1),choose,1,,MKTG,480,,,,Marketing Analytics,4,
-ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,490,,,,Advanced Marketing Analytics,4,
-ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,491,,,,Customer Experience Design,4,
-ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,492,,,,Advanced Integrated Marketing Communications,4,
-ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,493,,,,Sustainable Marketing Consulting,4,
-ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,494,,,,Advanced Strategic Marketing,4,
+ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,490,,,,Advanced Marketing Analytics,4,MKTG 490 may only be taken after completion of both MKTG 470 and MKTG 480
+ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,491,,,,Customer Experience Design,4,"MKTG 491, 492, 493, or 494 may only be taken after completion of MKTG 371 and either MKTG 470 or MKTG 480"
+ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,492,,,,Advanced Integrated Marketing Communications,4,"MKTG 491, 492, 493, or 494 may only be taken after completion of MKTG 371 and either MKTG 470 or MKTG 480"
+ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,493,,,,Sustainable Marketing Consulting,4,"MKTG 491, 492, 493, or 494 may only be taken after completion of MKTG 371 and either MKTG 470 or MKTG 480"
+ba_marketing_bs,Major,MKTG 490 or MKTG 491 or MKTG 492 or MKTG 493 or MKTG 494 (pick 1),choose,1,,MKTG,494,,,,Advanced Strategic Marketing,4,"MKTG 491, 492, 493, or 494 may only be taken after completion of MKTG 371 and either MKTG 470 or MKTG 480"
 ba_marketing_bs,Upper Division Major Electives,,note,,,,,,,,,,(6 units may be taken outside the Fowler College of Business by department chair approval)
 ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,306,,,,Marketing and Sales Micro-internship,1,
 ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MKTG,372,,,,Retail Marketing Methods,4,
@@ -264,6 +276,7 @@ ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,po
 ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,BA,404,,,,Small Business Consulting,3,Or MGT 405
 ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MGT,405,,,,Strategic Management,3,Or BA 404
 ba_marketing_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,14,MIS,305,,,,"Business Processes, ERP, and Analytics",3,
+ba_real_estate_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to the upper division major
 ba_real_estate_bs,Preparation for the Major,Required,required,,,FIN,240,,,,Legal Environment of Business,3,"Grade of C or better, no Cr/NC. (or an approved business law course)"
 ba_real_estate_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_real_estate_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
@@ -274,6 +287,7 @@ ba_real_estate_bs,Preparation for the Major,Required,required,,,MATH,120,,,,Calc
 ba_real_estate_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
 ba_real_estate_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
 ba_real_estate_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_real_estate_bs,Major,,note,,,,,,,,,,A C (2.0) average or better is required in the courses stipulated here for the major
 ba_real_estate_bs,Major,Required,required,,,FIN,331,,,,Real Estate Principles,3,
 ba_real_estate_bs,Major,Required,required,,,FIN,333,,,,Law of Real Property,3,
 ba_real_estate_bs,Major,Required,required,,,FIN,431,,,,Real Estate Finance,3,
@@ -287,6 +301,7 @@ ba_real_estate_bs,Major,Required,required,,,BA,350,,,,Management and Organizatio
 ba_real_estate_bs,Major,Required,required,,,BA,360,,,,Introduction to Operations and Supply Chain Management,3,
 ba_real_estate_bs,Major,Required,required,,,BA,370,,,,Marketing,3,
 ba_real_estate_bs,Upper Division Major Electives,Any FIN 300-599 course,open,,9,FIN,,300,599,,,,9 units selected from Finance (FIN) courses numbered 300-599
+ba_management_entrepreneurship_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to the upper division major
 ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
@@ -297,6 +312,7 @@ ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,
 ba_management_entrepreneurship_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
 ba_management_entrepreneurship_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
 ba_management_entrepreneurship_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_management_entrepreneurship_bs,Major,,note,,,,,,,,,,A C (2.0) average or better is required in the courses stipulated here for the major
 ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,358,,,,Fundamentals of Entrepreneurship,3,
 ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,401,,,,Management Internship,3,
 ba_management_entrepreneurship_bs,Major,Required,required,,,MGT,420,,,,Entrepreneurial Opportunity Recognition and Evaluation,3,
@@ -319,6 +335,7 @@ ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division 
 ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,470,,,,Venture Launch,3,
 ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,JMS,480,,,,Principles of Public Relations,3,
 ba_management_entrepreneurship_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MIS,301,,,,Statistical Analysis for Business,3,
+ba_management_human_resource_management_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to the upper division major
 ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,ECON,101,,,,Principles of Economics,3,"Grade of C or better, no Cr/NC"
@@ -329,6 +346,7 @@ ba_management_human_resource_management_bs,Preparation for the Major,Required,re
 ba_management_human_resource_management_bs,Preparation for the Major,Required,required,,,RWS,290,,,,Business Writing and Rhetoric,3,"Grade of C or better, no Cr/NC"
 ba_management_human_resource_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,"Grade of C or better, no Cr/NC"
 ba_management_human_resource_management_bs,Preparation for the Major,STAT 119 or ECON 201 (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,"Grade of C or better, no Cr/NC"
+ba_management_human_resource_management_bs,Major,,note,,,,,,,,,,A C (2.0) average or better is required in the courses stipulated here for the major
 ba_management_human_resource_management_bs,Major,Required,required,,,MGT,352,,,,Human Resource Management,3,
 ba_management_human_resource_management_bs,Major,Required,required,,,MGT,401,,,,Management Internship,3,
 ba_management_human_resource_management_bs,Major,Required,required,,,MGT,444,,,,Business Ethics and Corporate Governance,3,
@@ -380,7 +398,7 @@ civil_engineering_bs,Major,Required,required,,,CIVE,444,,,,Applied Hydraulics,3,
 civil_engineering_bs,Major,Required,required,,,CIVE,462,,,,Geotechnical Engineering,3,
 civil_engineering_bs,Major,Required,required,,,CIVE,463,,,,Soil Testing Fundamentals,1,
 civil_engineering_bs,Major,Required,required,,,CIVE,481,,,,Transportation Engineering,3,
-civil_engineering_bs,Major,Required,required,,,CIVE,495W,,,,Capstone Design Project,3,
+civil_engineering_bs,Major,Required,required,,,CIVE,495W,,,,Capstone Design Project,3,Satisfies the Graduation Writing Assessment
 civil_engineering_bs,Major,Required,required,,,AE,340,,,,Fluid Mechanics,3,
 civil_engineering_bs,Major,Required,required,,,CONE,330,,,,Principles of Engineering Economy,3,
 civil_engineering_bs,Major,Required,required,,,ENVE,355,,,,Environmental Engineering,3,
@@ -420,6 +438,7 @@ computer_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196,,
 computer_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,No Cr/NC
 computer_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,100,,,,General Biology,3,No Cr/NC
 computer_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,101,,,,World of Animals,3,No Cr/NC
+computer_engineering_bs,Major,,note,,,,,,,,,,"After enrollment in Computer Engineering at SDSU, the Computer Engineering major must take all upper division computer science and engineering courses at SDSU unless prior approval is obtained from the department"
 computer_engineering_bs,Major,Required,required,,,COMPE,361,,,,Advanced Programming,3,
 computer_engineering_bs,Major,Required,required,,,COMPE,375,,,,Embedded Systems Programming,3,
 computer_engineering_bs,Major,Required,required,,,COMPE,470,,,,Digital Circuits,3,

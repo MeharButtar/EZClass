@@ -4,7 +4,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 | Majors processed | Requirement rows | Majors with open review items |
 | --- | --- | --- |
-| 13 | 505 | 13 |
+| 13 | 524 | 13 |
 
 ## Batch check: 12 of 12 pages found
 
@@ -30,17 +30,17 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | major_id | Name | Degree | Rows | Review items |
 | --- | --- | --- | --- | --- |
 | `me_bs` | Mechanical Engineering | B.S. | 52 | 5 |
-| `ba_accounting_bs` | Business Administration, Emphasis in Accounting | B.S. | 25 | 2 |
-| `ba_finance_bs` | Business Administration, Emphasis in Finance | B.S. | 23 | 2 |
-| `ba_financial_services_bs` | Business Administration, Emphasis in Financial Services | B.S. | 40 | 3 |
-| `ba_information_systems_bs` | Business Administration, Emphasis in Information Systems | B.S. | 34 | 1 |
-| `ba_management_bs` | Business Administration, Emphasis in Management | B.S. | 42 | 1 |
-| `ba_marketing_bs` | Business Administration, Emphasis in Marketing | B.S. | 49 | 4 |
-| `ba_real_estate_bs` | Business Administration, Emphasis in Real Estate | B.S. | 23 | 1 |
-| `ba_management_entrepreneurship_bs` | Business Administration, Management, Specialization in Entrepreneurship | B.S. | 32 | 1 |
-| `ba_management_human_resource_management_bs` | Business Administration, Management, Specialization in Human Resource Management | B.S. | 30 | 1 |
+| `ba_accounting_bs` | Business Administration, Emphasis in Accounting | B.S. | 27 | 2 |
+| `ba_finance_bs` | Business Administration, Emphasis in Finance | B.S. | 25 | 2 |
+| `ba_financial_services_bs` | Business Administration, Emphasis in Financial Services | B.S. | 42 | 3 |
+| `ba_information_systems_bs` | Business Administration, Emphasis in Information Systems | B.S. | 36 | 1 |
+| `ba_management_bs` | Business Administration, Emphasis in Management | B.S. | 44 | 1 |
+| `ba_marketing_bs` | Business Administration, Emphasis in Marketing | B.S. | 51 | 6 |
+| `ba_real_estate_bs` | Business Administration, Emphasis in Real Estate | B.S. | 25 | 1 |
+| `ba_management_entrepreneurship_bs` | Business Administration, Management, Specialization in Entrepreneurship | B.S. | 34 | 1 |
+| `ba_management_human_resource_management_bs` | Business Administration, Management, Specialization in Human Resource Management | B.S. | 32 | 1 |
 | `civil_engineering_bs` | Civil Engineering | B.S. | 55 | 2 |
-| `computer_engineering_bs` | Computer Engineering | B.S. | 45 | 2 |
+| `computer_engineering_bs` | Computer Engineering | B.S. | 46 | 2 |
 | `electrical_engineering_bs` | Electrical Engineering | B.S. | 55 | 3 |
 
 ## Mechanical Engineering, B.S. (`me_bs`)
@@ -118,7 +118,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Business Administration, Emphasis in Accounting, B.S. (`ba_accounting_bs`)
 
 - Source: `data/catalog_html/Program_ Business Administration, Emphasis in Accounting, B.S. - San Diego State University.html`, poid 11880, major code 05021
-- Rows: 25
+- Rows: 27
 
 ### Groups
 
@@ -131,7 +131,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- none
+- **Preparation for the Major**: Additional progress requirements must be met before a student is admitted to an upper division major
+- **Major**: A “C” (2.0) average or better is required in the courses stipulated here for the major
 
 ### Review list
 
@@ -173,7 +174,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Business Administration, Emphasis in Finance, B.S. (`ba_finance_bs`)
 
 - Source: `data/catalog_html/Program_ Business Administration, Emphasis in Finance, B.S. - San Diego State University.html`, poid 12008, major code 05041
-- Rows: 23
+- Rows: 25
 
 ### Groups
 
@@ -186,7 +187,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- none
+- **Preparation for the Major**: Additional progress requirements must be met before a student is admitted to an upper division major
+- **Major**: A C (2.0) average or better is required in the courses stipulated here for the major
 
 ### Review list
 
@@ -228,7 +230,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Business Administration, Emphasis in Financial Services, B.S. (`ba_financial_services_bs`)
 
 - Source: `data/catalog_html/Program_ Business Administration, Emphasis in Financial Services, B.S. - San Diego State University.html`, poid 12009, major code 05043
-- Rows: 40
+- Rows: 42
 
 ### Groups
 
@@ -243,11 +245,12 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- none
+- **Preparation for the Major**: Additional progress requirements must be met before a student is admitted to the upper division major
+- **Major**: A grade point average of C (2.0) or better is required in the courses stipulated here for the major
 
 ### Review list
 
-- [ ] Text under 'Major' kept as a major note, not on its courses: "Students intending to pursue the Personal Financial Planning Certificate should refer to the certificate requirements when choosing their elective courses."
+- [ ] Text under 'Major' left out (no rule in it; in the report only): "Students intending to pursue the Personal Financial Planning Certificate should refer to the certificate requirements when choosing their elective courses."
 - [ ] ECON 320 or ECON 422 (pick 1) in the 'Upper Division Major Electives' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
 - [ ] 'Upper Division Major Electives' (under Major) asks for 9-10 units of its list: encoded as a pool in its own section 'Upper Division Major Electives', check it.
 
@@ -289,7 +292,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Business Administration, Emphasis in Information Systems, B.S. (`ba_information_systems_bs`)
 
 - Source: `data/catalog_html/Program_ Business Administration, Emphasis in Information Systems, B.S. - San Diego State University.html`, poid 12117, major code 07021
-- Rows: 34
+- Rows: 36
 
 ### Groups
 
@@ -302,7 +305,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- none
+- **Preparation for the Major**: Additional progress requirements must be met before a student is admitted to the upper division major
+- **Major**: A C (2.0) average or better is required in the courses stipulated here for the major
 
 ### Review list
 
@@ -346,7 +350,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Business Administration, Emphasis in Management, B.S. (`ba_management_bs`)
 
 - Source: `data/catalog_html/Program_ Business Administration, Emphasis in Management, B.S. - San Diego State University.html`, poid 12112, major code 05061
-- Rows: 42
+- Rows: 44
 
 ### Groups
 
@@ -359,7 +363,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- none
+- **Preparation for the Major**: Additional progress requirements must be met before a student is admitted to the upper division major
+- **Major**: A C (2.0) average or better is required in the courses stipulated here for the major
 
 ### Review list
 
@@ -401,7 +406,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Business Administration, Emphasis in Marketing, B.S. (`ba_marketing_bs`)
 
 - Source: `data/catalog_html/Program_ Business Administration, Emphasis in Marketing, B.S. - San Diego State University.html`, poid 12120, major code 05091
-- Rows: 49
+- Rows: 51
 
 ### Groups
 
@@ -416,14 +421,18 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
+- **Preparation for the Major**: Additional progress requirements must be met before a student is admitted to the upper division major
+- **Major**: A C (2.0) average or better is required in the courses stipulated here for the major
 - **Upper Division Major Electives**: (6 units may be taken outside the Fowler College of Business by department chair approval)
 
 ### Review list
 
-- [ ] Text under 'Major' kept as a major note, not on its courses: "Marketing students may pursue various career objectives supported by pathways. These pathways include Brand Management, Customer Experience Management, Integrated Marketing Communications, Marketing Analytics and Intelligence, Professional Selling and Sales Leadership, Strategic Marketing Management, or Sustainable Marketing Management. Please visit the Marketing Department Website https://business.sdsu.edu/undergrad/marketing for specific pathway coursework options. MKTG 490 may only be taken after completion of both MKTG 470 and MKTG 480. MKTG 491, 492, 493, or 494 may only be taken after completion of MKTG 371 and either MKTG 470 or MKTG 480."
+- [ ] Text under 'Major' left out (no rule in it; in the report only): "Marketing students may pursue various career objectives supported by pathways. These pathways include Brand Management, Customer Experience Management, Integrated Marketing Communications, Marketing Analytics and Intelligence, Professional Selling and Sales Leadership, Strategic Marketing Management, or Sustainable Marketing Management. Please visit the Marketing Department Website https://business.sdsu.edu/undergrad/marketing for specific pathway coursework options."
 - [ ] 'Upper Division Major Electives': rule text kept as the section note, check it: "(6 units may be taken outside the Fowler College of Business by department chair approval)"
 - [ ] BA 404 or MGT 405 (pick 1) in the 'Upper Division Major Electives' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
 - [ ] 'Upper Division Major Electives' (under Major) asks for 14 units of its list: encoded as a pool in its own section 'Upper Division Major Electives', check it.
+- [ ] "MKTG 490 may only be taken after completion of both MKTG 470 and MKTG 480." put on MKTG 490.
+- [ ] "MKTG 491, 492, 493, or 494 may only be taken after completion of MKTG 371 and either MKTG 470 or MKTG 480." put on MKTG 491, MKTG 492, MKTG 493, MKTG 494.
 
 ### Units check (advisory)
 
@@ -446,8 +455,6 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
   - Marketing students may pursue various career objectives supported by pathways.
   - These pathways include Brand Management, Customer Experience Management, Integrated Marketing Communications, Marketing Analytics and Intelligence, Professional Selling and Sales Leadership, Strategic Marketing Management, or Sustainable Marketing Management.
   - Please visit the Marketing Department Website https://business.sdsu.edu/undergrad/marketing for specific pathway coursework options.
-  - MKTG 490 may only be taken after completion of both MKTG 470 and MKTG 480.
-  - MKTG 491, 492, 493, or 494 may only be taken after completion of MKTG 371 and either MKTG 470 or MKTG 480.
 
 ### Coverage (sections in data/cleaned)
 
@@ -468,7 +475,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Business Administration, Emphasis in Real Estate, B.S. (`ba_real_estate_bs`)
 
 - Source: `data/catalog_html/Program_ Business Administration, Emphasis in Real Estate, B.S. - San Diego State University.html`, poid 12010, major code 05111
-- Rows: 23
+- Rows: 25
 
 ### Groups
 
@@ -481,7 +488,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- none
+- **Preparation for the Major**: Additional progress requirements must be met before a student is admitted to the upper division major
+- **Major**: A C (2.0) average or better is required in the courses stipulated here for the major
 
 ### Review list
 
@@ -522,7 +530,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Business Administration, Management, Specialization in Entrepreneurship, B.S. (`ba_management_entrepreneurship_bs`)
 
 - Source: `data/catalog_html/Program_ Business Administration, Management, Specialization in Entrepreneurship, B.S. - San Diego State University.html`, poid 12113
-- Rows: 32
+- Rows: 34
 
 ### Groups
 
@@ -535,7 +543,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- none
+- **Preparation for the Major**: Additional progress requirements must be met before a student is admitted to the upper division major
+- **Major**: A C (2.0) average or better is required in the courses stipulated here for the major
 
 ### Review list
 
@@ -577,7 +586,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Business Administration, Management, Specialization in Human Resource Management, B.S. (`ba_management_human_resource_management_bs`)
 
 - Source: `data/catalog_html/Program_ Business Administration, Management, Specialization in Human Resource Management, B.S. - San Diego State University.html`, poid 12114
-- Rows: 30
+- Rows: 32
 
 ### Groups
 
@@ -590,7 +599,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- none
+- **Preparation for the Major**: Additional progress requirements must be met before a student is admitted to the upper division major
+- **Major**: A C (2.0) average or better is required in the courses stipulated here for the major
 
 ### Review list
 
@@ -704,7 +714,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Computer Engineering, B.S. (`computer_engineering_bs`)
 
 - Source: `data/catalog_html/Program_ Computer Engineering, B.S. - San Diego State University.html`, poid 11968, major code 09094
-- Rows: 45
+- Rows: 46
 
 ### Groups
 
@@ -720,11 +730,12 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
+- **Major**: After enrollment in Computer Engineering at SDSU, the Computer Engineering major must take all upper division computer science and engineering courses at SDSU unless prior approval is obtained from the department
 - **Upper Division Major Electives**: (15 units) Five upper division major elective courses from the following list in 4 concentration areas
 
 ### Review list
 
-- [ ] Text under 'Major' kept as a major note, not on its courses: "After enrollment in Computer Engineering at SDSU, the Computer Engineering major must take all upper division computer science and engineering courses at SDSU unless prior approval is obtained from the department."
+- [ ] 'Major': rule text kept as the section note: "After enrollment in Computer Engineering at SDSU, the Computer Engineering major must take all upper division computer science and engineering courses at SDSU unless prior approval is obtained from the department."
 - [ ] 'Upper Division Major Electives' (under Major) is a rule in words, encoded as one pool; check it. Catalog: "(15 units) Five upper division major elective courses from the following list in 4 concentration areas."
 
 ### Units check (advisory)
@@ -747,8 +758,6 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
   - Engineering majors automatically satisfy Area 2/5. Mathematical Concepts and Quantitative Reasoning or Physical and Biological Sciences and Area 4. Social and Behavioral Explorations GE areas by completion of the major.
 - **Graduation Writing Assessment Requirement**
   - Complete COMPE 491W with a grade of C (2.0) or better to satisfy the Graduation Writing Assessment Requirement. See Graduation Requirements section for a complete listing of requirements. Courses listed: COMPE 491W.
-- **Major**
-  - After enrollment in Computer Engineering at SDSU, the Computer Engineering major must take all upper division computer science and engineering courses at SDSU unless prior approval is obtained from the department.
 - **Master Plan**
   - The master plan provides an advising record and a roadmap toward graduation for computer engineering majors. The master plan must be filed electronically with the department advisors (https://csse.sdsu.edu/advising/advising). All students transferring from another institution are required to file the master plan at the time of transfer. Current SDSU students are required to file the master plan as part of their course requirements in COMPE 101. Students are encouraged to seek the guidance of their advisors when completing the master plan. If there is any change to the course sequence listed in the master plan that is already on file, it must be updated and refiled. All students must have an updated master plan on file in the department prior to enrollment in E E 410 and COMPE 491W . All course substitutions must be approved by the department chair prior to enrolling in the course.
 
