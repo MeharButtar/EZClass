@@ -109,7 +109,14 @@ SPECIAL = re.compile(r"Credential|\bITEP\b|Honors|Second Bachelor|Registered Nur
 
 # h2 blocks that are not course requirements: their text goes to the report as major notes
 NOTE_BLOCKS = re.compile(r"general education|graduation writing|master plan|impacted|major restriction|advising"
-                         r"|roadmap", re.I)
+                         r"|roadmap|time limitation|\bminor\b|recommend|^notes?$", re.I)
+# "Prior approval ... is required to allow the following courses to fulfill ...": a list of courses that can
+# count with approval, not a requirement
+APPROVAL_LIST = re.compile(r"\bapproval\b.*\b(?:allow|count|fulfill)", re.I)
+# an h2 that is a requirement with no courses: a section with only its note (shown to the student)
+LANGUAGE_BLOCK = re.compile(r"language requirement", re.I)
+# 'Emphasis in Bioengineering' over the whole program (Preparation, Major ... one level down)
+EMPHASIS_WRAPPER = re.compile(r"^(?:emphasis|specialization|concentration|option)\s+in\b", re.I)
 GWAR_BLOCK = re.compile(r"graduation writing", re.I)
 
 GRADE_C = re.compile(r"must be completed with a grade of C \(2\.0\) or better\.?\s*These courses cannot be taken "
@@ -128,8 +135,11 @@ UNIT_WORDS = re.compile(r"\b(\d+|" + "|".join(NUMBER_WORDS) + r")(?:\s*[-–]\s*
 
 # sentences in a block's paragraphs, sorted by read_rule_text
 TOTAL_SENTENCE = re.compile(r"^(?:a\s+)?(minimum of\s+)?(\d+)(?:\s*[-–]\s*(\d+))?\s+(?:upper[- ]division\s+)?units?\s+"
-                            r"(?:to include|consisting of)\b", re.I)
-NO_CRNC = re.compile(r"(?:cannot|may not) be taken (?:for )?(?:credit/\s*no credit\s*)?\(?Cr/NC\)?", re.I)
+                            r"(?:in\s+[A-Za-z ]+?\s+)?(?:to include|consisting of)\b", re.I)
+NO_CRNC = re.compile(r"(?:these courses )?(?:cannot|may not) be taken (?:for )?(?:credit/\s*no credit\s*)?\(?Cr/\s*NC\)?",
+                     re.I)
+# a grade rule anywhere in a course's text: '(must be completed with a grade of C (2.0) or better)'
+GRADE_ANY = re.compile(r"(?:must be completed )?with a grade (?:of )?([BC]-?) \(\d\.\s?\d\) or (?:higher |better)+", re.I)
 BLOCK_GRADE = re.compile(r"minimum grade in each class is (C-?)(?![\w-])|^complete with a grade of (C-?) \(\d\.\d\) or better:?$",
                          re.I)
 COURSE_GRADE = re.compile(r"^\(?(?:must be completed )?with a grade (?:of )?(C-?) \(\d\.\d\) or better\)?\.?$", re.I)
@@ -139,23 +149,29 @@ MAJOR_NOTE_SENTENCE = re.compile(r"average (?:of C \(2\.0\) )?or better is requi
 COURSE_RULE = re.compile(r"^([A-Z][A-Z ]*?[A-Z])\s+(\d{3}[A-Z]?(?:(?:\s*,\s*(?:or\s+|and\s+)?|\s+(?:or|and)\s+)\d{3}[A-Z]?)*)"
                          r"\s+(?:may|must|can|cannot)\b")
 # a sentence over a whole list that states a rule (kept as the section note); others are blurbs (report only)
-RULE_WORDS = re.compile(r"\b(?:must|required|may only|only after|cannot|may not|minimum|at least|no more than|unless)\b",
-                        re.I)
+RULE_WORDS = re.compile(r"\b(?:must|required|may only|only after|cannot|may not|minimum|at least|no more than|unless"
+                        r"|except|include all|satisfied by|maximum)\b", re.I)
 COURSE_CODE = re.compile(r"\b([A-Z][A-Z ]*?[A-Z])\s+(\d{3}[A-Z]?)\b")
 FILLER = re.compile(r"^(?:required (?:upper division )?courses in the major|but not both|and|or)\s*[:.]?$", re.I)
-NOTE_HEADING = re.compile(r"^notes?$", re.I)
+NOTE_HEADING = re.compile(r"^(?:notes?|recommended(?: courses)?)$", re.I)
+RECOMMENDED = re.compile(r"^recommended\b", re.I)
 # "... Electrical Engineering laboratory electives: 2 units selected from ..." inside an electives rule
 LAB_RULE = re.compile(r"\blaboratory electives:\s*(\d+)(?:\s*[-–]\s*(\d+))?\s+units?\b", re.I)
 LAB_SECTION = "Laboratory Electives"
-FOOTNOTE = re.compile(r"^(\*+)\s*(\S.*)$", re.S)
+FOOTNOTE = re.compile(r"^([*°†‡]+)\s*(\S.*)$", re.S)
 # "12 units selected from:" over an h3 course list: that list is a units pool
 POOL_SENTENCE = re.compile(r"\b(?:selected|chosen)\s+from\b|\bfrom the following\b", re.I)
-POOL_ONLY = re.compile(r"^\(?\d+(?:\s*[-–]\s*\d+)?\s+units?\)?(?:\s+of\s+[^:.]*?)?\s+selected from:?$", re.I)
+POOL_ONLY = re.compile(r"^\(?(?:\d+|" + "|".join(NUMBER_WORDS) + r")(?:\s*[-–]\s*\d+)?\s+units?\)?(?:\s+of\s+[^:.]*?)?"
+                       r"\s+selected from(?: the following)?:?$", re.I)
 # "Select at least one of the following courses:" over a course list: a pick-n group
-CHOOSE_SENTENCE = re.compile(r"^select\s+(at least\s+)?(\d+|one|two|three|four)\s+(?:of the following|courses?\b)", re.I)
+CHOOSE_SENTENCE = re.compile(r"^(?:select\s+|choose\s+|complete\s+)?((?:at least|a minimum of)\s+)?(\d+|one|two|three|four|five)"
+                             r"\s+(?:of the following|(?:courses?\s+)?(?:selected\s+)?from\b|courses?\b(?!\s+in\b))", re.I)
+# "5-6 elective units" in an open rule (one word may sit between the number and "units")
+UNIT_WORDS_ADJ = re.compile(r"\b(\d+|" + "|".join(NUMBER_WORDS) + r")(?:\s*[-–]\s*(\d+))?\s+(?:[a-z]+\s+)?units?\b", re.I)
 # department words for "Nine units of 300- to 500-level finance courses" (no subject code on the page)
 SUBJECT_WORDS = {"accounting": "ACCTG", "finance": "FIN", "marketing": "MKTG", "management": "MGT",
-                 "information systems": "MIS", "economics": "ECON"}
+                 "information systems": "MIS", "economics": "ECON", "psychology": "PSY", "biology": "BIOL",
+                 "chemistry": "CHEM", "mathematics": "MATH", "communication": "COMM"}
 
 
 def clean(text):
@@ -404,25 +420,29 @@ def add_note(prog, heading, text):
         prog.notes.append((heading, text))
 
 
-def parse_open(text):
+def parse_open(text, upper=False):
     """'9 units selected from Finance (FIN) courses numbered 300-599' ->
-    {units, subjects, min, max, guessed, excluded}; None when the text is not one such rule."""
-    amounts = UNIT_WORDS.findall(text)
-    if len(amounts) != 1:
+    {units, subjects, min, max, guessed, excluded}; None when the text is not one such rule.
+    upper: the heading above says 'upper division', so no range in the text means 300-599."""
+    amounts = UNIT_WORDS_ADJ.findall(text)
+    lead = re.match(r"\s*(?:an?\s+additional\s+|additional\s+|a minimum of\s+)?" + UNIT_WORDS_ADJ.pattern, text, re.I)
+    if len(amounts) != 1 and not lead:
         return None
+    amounts = amounts[:1]
     m = re.search(r"\bnumbered\s+(\d{3})\s*[-–]\s*(\d{3})\b", text)
     n = re.search(r"\b(\d)00-?\s*(?:to|or|through|and)\s+(\d)00-level\b", text)
     if m:
         low, high = int(m.group(1)), int(m.group(2))
     elif n:
         low, high = int(n.group(1)) * 100, int(n.group(2)) * 100 + 99
-    elif re.search(r"\bupper[- ]division\b", text, re.I):
+    elif re.search(r"\bupper[- ]division\b", text, re.I) or upper:
         low, high = 300, 599
     else:
         return None
     subjects, guessed = re.findall(r"\(([A-Z]{2,6})\)\s+courses\b", text), False
     if not subjects:
-        subjects = [s for w, s in SUBJECT_WORDS.items() if re.search(rf"\b{w}\s+courses\b", text, re.I)]
+        subjects = [s for w, s in SUBJECT_WORDS.items()
+                    if re.search(rf"\b{w}\s+courses\b|\belectives?\s+in\s+{w}\b", text, re.I)]
         guessed = True
     if len(subjects) != 1:
         return None
@@ -439,16 +459,21 @@ def course_note(course, gwar_codes, footnotes=None, crnc=False, grade=""):
     """The note for one course row: its grade rule (the block's or its own), its own text, a footnote it points to."""
     parts = []
     extra = course["extra"]
+    if footnotes and extra in footnotes:
+        extra = footnotes[extra]
     if GRADE_C.search(extra):
         grade, crnc = "C", True
         extra = clean(GRADE_C.sub("", extra))
     m = COURSE_GRADE.match(extra)
     if m:
         grade, extra = m.group(1).upper(), ""
-    if re.fullmatch(r"but not both\.?", extra, re.I):    # the pick-1 group already says so
-        extra = ""
-    if footnotes and extra in footnotes:
-        extra = footnotes[extra]
+    g = GRADE_ANY.search(extra)
+    if g:
+        grade, extra = g.group(1).upper(), clean(GRADE_ANY.sub("", extra))
+    if NO_CRNC.search(extra):
+        crnc, extra = True, clean(NO_CRNC.sub("", extra))
+    if re.fullmatch(r"[\W_]*", extra) or re.fullmatch(r"\(?but not both\)?\.?\W*", extra, re.I):
+        extra = ""                                     # only brackets left, or 'but not both' (the pick-1 says it)
     if grade:
         parts.append(f"Grade of {grade} or better" + (", no Cr/NC" if crnc else ""))
     elif crnc:
@@ -527,11 +552,12 @@ class Program:
         self.section_notes = collections.OrderedDict()   # section -> texts shown once under its heading
         self.special = False
 
-    def section_note(self, section, text):
+    def section_note(self, section, text, first=False):
         text = join_note([text])
         same = lambda t: re.sub(r"[“”\"]", "", t).lower()     # 'A “C” average' and 'A C average' are one note
         if text and same(text) not in {same(t) for t in self.section_notes.get(section, [])}:
-            self.section_notes.setdefault(section, []).append(text)
+            notes = self.section_notes.setdefault(section, [])
+            notes.insert(0, text) if first else notes.append(text)
 
     def flag(self, text):
         if text not in self.review:
@@ -563,7 +589,7 @@ def parse_program(text, source="", url=None):
 
 def take_footnotes(blocks):
     """'*No design component.' (a paragraph or list item) -> {'*': 'No design component.'}; removed from the blocks."""
-    footnotes = {}
+    footnotes, trailing = {}, []
     for b in blocks:
         keep = []
         for p in b["paras"]:
@@ -578,23 +604,70 @@ def take_footnotes(blocks):
             m = FOOTNOTE.match(value.strip()) if kind == "text" and value else None
             if m:
                 footnotes.setdefault(m.group(1), clean(m.group(2)))
+                if items and items[-1][0] == "course" and not items[-1][1]["extra"]:
+                    trailing.append((m.group(1), items[-1][1]))
             else:
                 items.append((kind, value))
         b["items"] = items
+    used = {c["extra"] for b in blocks for k, c in b["items"] if k == "course"}
+    for marker, course in trailing:
+        if marker not in used:
+            course["extra"] = marker     # '° A college level statistics course ...' right under PSY 280
     return footnotes
+
+
+def take_and_or_pairs(items):
+    """'BIOL 203 and BIOL 203L or BIOL 204 and BIOL 204L': a choice between two pairs. Returns the items without
+    them and the pairs ([[BIOL 203, BIOL 203L], [BIOL 204, BIOL 204L]], ...)."""
+    out, pairs, i = [], [], 0
+    is_and = lambda it: it[0] == "text" and it[1].strip().lower() == "and"
+    while i < len(items):
+        window = items[i:i + 7]
+        if (len(window) == 7 and window[0][0] == "course" and is_and(window[1]) and window[2][0] == "course"
+                and window[3][0] == "or" and window[4][0] == "course" and is_and(window[5]) and window[6][0] == "course"):
+            pairs.append([[window[0][1], window[2][1]], [window[4][1], window[6][1]]])
+            out.append(("sep", None))
+            i += 7
+            continue
+        out.append(items[i])
+        i += 1
+    return out, pairs
 
 
 def pool_units_from(sentence):
     """'9-10 units of upper division major electives selected from:' -> '9-10'; None if not such a sentence."""
     amounts = UNIT_WORDS.findall(sentence)
-    if not POOL_SENTENCE.search(sentence) or len(amounts) != 1:
+    if not POOL_SENTENCE.search(sentence) or not amounts:
         return None
-    a, b = amounts[0]
+    near = re.search(UNIT_WORDS.pattern + r"(?:\s+of\s+[^.:]*?)?\s+(?:may\s+(?:also\s+)?be\s+)?(?:selected|chosen)\s+from",
+                     sentence, re.I)
+    if near:
+        a, b = near.group(1), near.group(2)
+    elif len(amounts) == 1:
+        a, b = amounts[0]
+    else:
+        return None
     return str(number(a)) + (f"-{b}" if b else "")
+
+
+def unwrap_emphasis(blocks):
+    """'Emphasis in Bioengineering' (h2) over Preparation for the Major, Major ... (h3): those move up one
+    level, so they read like any other program. The wrapper keeps only its text (a major note)."""
+    shift = False
+    for i, b in enumerate(blocks):
+        if b["level"] in (0, 2):
+            nxt = blocks[i + 1] if i + 1 < len(blocks) else None
+            shift = bool(EMPHASIS_WRAPPER.match(b["heading"]) and not [k for k, _ in b["items"] if k == "course"]
+                         and nxt and nxt["level"] == 3 and re.match(r"preparation for the major|major\b",
+                                                                   nxt["heading"], re.I))
+            b["wrapper"] = shift
+        elif shift:
+            b["level"] -= 1
 
 
 def map_blocks(prog, blocks):
     blocks = [dict(b) for b in blocks]
+    unwrap_emphasis(blocks)
     footnotes = take_footnotes(blocks)
     gwar_codes = set()
     for b in blocks:
@@ -609,14 +682,23 @@ def map_blocks(prog, blocks):
     totals = collections.OrderedDict()   # h2 -> stated units (low, high, kind)
     pending_pool = []         # pool rows waiting for pick_units, per parent heading
     course_rules = []         # ([app codes], sentence, section) to put on those courses' rows
+    pool_ctx = None           # a pool section made from one list: deeper lists right after it join it
+    h2_upper = False          # the h2 text says 'upper division' (an open rule without a range is 300-599)
 
     def finish_parent():
         nonlocal parent, pending_pool
-        if parent and pending_pool and split_labs(parent, pending_pool):
+        if parent and pending_pool and (split_labs(parent, pending_pool) or split_named_groups(parent, pending_pool)
+                                        or pick_per_group(parent, pending_pool)):
             dedupe_pool(prog, parent["heading"], pending_pool)
+            stale = f"'{parent['heading']}' (under {parent['h2']}) is a rule in words, encoded as one pool"
+            prog.review = [x for x in prog.review if not x.startswith(stale)]
+            prog.review = [x for x in prog.review if not (" pool: kept as pool rows" in x and parent["rule"]
+                                                           and re.search(r"\bone course\b", parent["rule"]))]
+        elif parent and not pending_pool and pool_from_rule_text(parent):
+            pass
         elif parent and pending_pool:
             if parent["rule"]:
-                prog.section_note(parent["heading"], parent["rule"])
+                prog.section_note(parent["heading"], parent["rule"], first=True)
             units = parent["units"]
             if units is None:
                 units = derive_pool_units(h2_rows_for(parent["h2"]), totals.get(parent["h2"]), pending_pool)
@@ -663,6 +745,60 @@ def map_blocks(prog, blocks):
             prog.flag(f"'{parent['heading']}': the app cannot count \"{limit_note}\"; it is the section note.")
         return True
 
+    def split_named_groups(parent, rows):
+        """'Three units from Technical elective A and one unit from Technical elective B': each group its own
+        pool section with its own units. False unless every group's units are in the rule."""
+        labels = list(dict.fromkeys(r["group_label"] for r in rows))
+        units = {}
+        for label in labels:
+            m = re.search(r"\b(\d+|" + "|".join(NUMBER_WORDS) + r")(?:\s*[-–]\s*(\d+))?\s+units?\s+(?:selected\s+)?"
+                          r"from\s+(?:the\s+)?" + re.escape(label) + r"\b", parent["rule"], re.I)
+            if not m:
+                return False
+            units[label] = str(number(m.group(1))) + (f"-{m.group(2)}" if m.group(2) else "")
+        if len(labels) < 2:
+            return False
+        for r in rows:
+            r.update(section=r["group_label"], pick_units=units[r["group_label"]])
+        prog.section_note(labels[0], parent["rule"], first=True)
+        prog.flag(f"'{parent['heading']}': \"{parent['rule']}\" read as separate pools: "
+                  + ", ".join(f"'{l}' {u} units" for l, u in units.items()) + ".")
+        return True
+
+    def pick_per_group(parent, rows):
+        """'one course selected from Groups I, III, and IV': every group is a pick-1 group."""
+        if not re.search(r"\bone course (?:selected )?from (?:each of )?(?:the )?groups?\b", parent["rule"], re.I):
+            return False
+        for r in rows:
+            r.update(rule="choose", pick_n="1", pick_units="", group_label=f"{r['group_label']} (pick 1)",
+                     note=join_note([p for p in r["note"].split(". ") if not p.startswith("Or ")]))
+        prog.section_note(parent["heading"], parent["rule"], first=True)
+        prog.flag(f"'{parent['heading']}': \"{parent['rule']}\" read as pick 1 in each group.")
+        return True
+
+    def pool_from_rule_text(parent):
+        """'Nine units ... may be selected from M E 499 (3 units), M E 570, ... and other ... courses': no lists
+        follow, so the courses named in the sentence are the pool."""
+        rule = parent["rule"]
+        lead = re.match(r"\s*(?:an?\s+additional\s+)?" + UNIT_WORDS.pattern, rule, re.I)
+        found = list(dict.fromkeys(COURSE_CODE.findall(rule)))
+        if not lead or len(found) < 2:
+            return False
+        units = str(number(lead.group(1))) + (f"-{lead.group(2)}" if lead.group(2) else "")
+        for subj, num in found:
+            u = re.search(re.escape(f"{subj} {num}") + r"\s*\((\d+)\s+units?\)", rule)
+            used_codes.add(code(subj, num))
+            prog.rows.append({
+                "major_id": "", "section": parent["heading"], "group_label": parent["heading"], "rule": "pool",
+                "pick_n": "", "pick_units": units, "subject": subject_key(subj), "catalog_num": num,
+                "num_min": "", "num_max": "", "title": "", "units": u.group(1) if u else "", "note": "",
+                "_h2": parent["h2"], "_code": code(subj, num),
+            })
+        prog.section_note(parent["heading"], rule)
+        prog.flag(f"'{parent['heading']}': no lists follow, so the {len(found)} courses named in the rule are a "
+                  f"{units}-unit pool; titles and units come from the class data. Check it: \"{rule}\"")
+        return True
+
     def h2_rows_for(name):
         return [r for r in prog.rows if r.get("_h2") == name]
 
@@ -686,11 +822,38 @@ def map_blocks(prog, blocks):
         elif rule["excluded"]:
             prog.flag(f"'{label}': \"excluding {rule['excluded']}\" names no course codes; nothing excluded, check it.")
 
-    for b in blocks:
+    def text_rules(sentences_, section_name, prefix=""):
+        """Text with no list of its own: course rules onto those courses, rules as the section note, the rest
+        (advice, blurbs) only in the report. Returns the blurbs."""
+        blurbs = []
+        for p in sentences_:
+            m = COURSE_RULE.match(p)
+            if m:
+                codes = [f"{subject_key(m.group(1))} {n}" for n in re.findall(r"\d{3}[A-Z]?", m.group(2))]
+                course_rules.append((codes, p, section_name))
+            elif RULE_WORDS.search(p):
+                prog.section_note(section_name, f"{prefix}{p}")
+            else:
+                blurbs.append(p)
+        return blurbs
+
+    for i, b in enumerate(blocks):
         courses = [v for k, v in b["items"] if k == "course"]
+        if b.get("wrapper"):
+            for p in b["paras"]:
+                add_note(prog, b["heading"], p)
+            continue
         if b["level"] in (0, 2):
             finish_parent()
+            pool_ctx = None
             h2 = b["heading"] or "(no heading)"
+            h2_upper = bool(re.search(r"\bupper[- ]division\b", " ".join(b["paras"]), re.I))
+            if LANGUAGE_BLOCK.search(h2) and not courses:
+                text = " ".join(p for p in b["paras"] if not p.startswith("Refer to"))
+                if text:
+                    prog.section_note(h2, text)
+                    prog.flag(f"'{h2}' has no courses; shown as a section with only its note: \"{text}\"")
+                continue
             h2_is_note = bool(NOTE_BLOCKS.search(h2))
             if h2_is_note:
                 listed = ", ".join(code(c["subject"], c["catalog_num"]) for c in courses)
@@ -720,13 +883,23 @@ def map_blocks(prog, blocks):
         if b["level"] >= 3:
             if not courses:
                 rule = " ".join(rule_paras)
-                if NOTE_HEADING.match(b["heading"]) or not (stated or UNIT_WORDS.search(rule)):
-                    for p in rule_paras:          # "Note: ..." under a list: for a human, not a rule
+                has_lists = any(n["level"] > b["level"] and any(k == "course" for k, _ in n["items"])
+                                for n in blocks[i + 1:i + 2])
+                if NOTE_HEADING.match(b["heading"]) or not (stated or UNIT_WORDS.search(rule) or has_lists):
+                    # "Note: ..." or text with no units: its rules are the section note, the rest is for a human
+                    target = parent["heading"] if parent else (pool_ctx["section"] if pool_ctx else h2)
+                    prefix = "" if NOTE_HEADING.match(b["heading"]) else f"{b['heading']}: "
+                    blurbs = text_rules(rule_paras, target, prefix)
+                    for p in rule_paras:
                         add_note(prog, f"{h2}: {b['heading']}", p)
-                        if not NOTE_HEADING.match(b["heading"]):
-                            prog.flag(f"Text under '{b['heading']}' (no courses, no units) kept as a major note: \"{p}\"")
+                    kept = [p for p in rule_paras if p not in blurbs]
+                    if kept:
+                        prog.flag(f"Text under '{b['heading']}' kept as the '{target}' section note: \"{' '.join(kept)}\"")
+                    if blurbs and not NOTE_HEADING.match(b["heading"]):
+                        prog.flag(f"Text under '{b['heading']}' left out (no rule in it; in the report only): "
+                                  f"\"{' '.join(blurbs)}\"")
                     continue
-                opened = None if stated else parse_open(rule)
+                opened = None if stated or has_lists else parse_open(rule, h2_upper)
                 if opened:
                     finish_parent()
                     open_row(b["heading"], rule, opened)  # an electives rule is its own section (see the docstring)
@@ -750,19 +923,69 @@ def map_blocks(prog, blocks):
                 finish_parent()
         else:
             finish_parent()
+            pool_ctx = None
+
+        b["items"], and_or = take_and_or_pairs(b["items"])
+        heading = b["heading"] if b["level"] >= 3 else ""
+        heading_pick = CHOOSE_SENTENCE.match(heading) if heading else None
+        if heading and APPROVAL_LIST.search(" ".join(rule_paras)):
+            target = parent["heading"] if parent else h2
+            names = ", ".join(app_code(c) for c in courses)
+            prog.section_note(target, f"{' '.join(rule_paras)} ({names})")
+            prog.flag(f"'{heading}': courses that count only with approval, not a requirement: a section note ({names}).")
+            continue
+        heading_pool = pool_units_from(heading) if heading and not heading_pick else None
+        if heading and TOTAL_SENTENCE.match(heading):
+            label = "Required"                    # 'A Minimum of 36 Upper Division Units to Include'
+        if heading and RECOMMENDED.match(heading):
+            target = parent["heading"] if parent else (pool_ctx["section"] if pool_ctx else h2)
+            names = ", ".join(app_code(c) for c in courses)
+            prog.section_note(target, f"{heading} (not required): {names}")
+            prog.flag(f"'{heading}' list under '{target}' is not required: no rows, a section note ({names}).")
+            continue
+        if pool_ctx and b["level"] > pool_ctx["level"] and not parent:
+            # a list right under a pool's list ('3 units may also be selected from:', 'no more than 9 units
+            # selected from:'): more courses for the same pool, its text on its rows
+            section = pool_ctx["section"]
+            extra_note = [heading.rstrip(":")] if heading_pool else []
+            for p in rule_paras:
+                extra_note.append(p)
+            sub_rows = []
+            for chain, joiners, _, _ in chains(b["items"]):
+                for course in chain:
+                    others = [app_code(c) for c in chain if c is not course]
+                    tie = ([f"{CROSS_NOTE} with {', '.join(others)}"] if set(joiners) == {"also"}
+                           else [f"Or {', '.join(others)}"]) if others else []
+                    used_codes.add(code(course["subject"], course["catalog_num"]))
+                    r = {"major_id": "", "section": section, "group_label": label.rstrip(":"), "rule": "pool",
+                         "pick_n": "", "pick_units": pool_ctx["units"], "subject": subject_key(course["subject"]),
+                         "catalog_num": course["catalog_num"], "num_min": "", "num_max": "", "title": course["title"],
+                         "units": course["units"],
+                         "note": join_note(extra_note + tie + course_note(course, gwar_codes, footnotes,
+                                                                          info["crnc"], info["grade"])),
+                         "_h2": h2, "_code": code(course["subject"], course["catalog_num"])}
+                    prog.rows.append(r)
+                    sub_rows.append(r)
+            dedupe_pool(prog, section, [r for r in prog.rows if r["section"] == section and r["rule"] == "pool"])
+            prog.flag(f"'{label}' (a list under the '{section}' pool) joined that pool ({pool_ctx['units']} units)"
+                      + (f" with the note \"{join_note(extra_note)}\"" if extra_note else "") + "; check it.")
+            continue
+        pool_ctx = None
 
         in_pool = bool(parent) and b["level"] >= 3
 
         # a units pool over this list ("12 units selected from:", or "(9 units)" over a longer list)
-        pool_units = None
-        if b["level"] >= 3 and not in_pool:
+        pool_units = heading_pool if not in_pool else None
+        if heading_pool and not in_pool:
+            label = f"{h2} Electives" if heading_pool and label == heading else label   # the heading is the rule
+        if not pool_units and not in_pool:
             for s in rule_paras:
                 pool_units = pool_units_from(s)
                 if pool_units:
                     if POOL_ONLY.match(s):
                         rule_paras = [p for p in rule_paras if p is not s]   # the counter says the same
                     break
-            if not pool_units and stated and stated[2] == "exact":
+            if not pool_units and stated and stated[2] == "exact" and b["level"] >= 3:
                 single = [c[0] for c, _, _, _ in chains(b["items"]) if len(c) == 1]
                 multi = [c for c, _, _, _ in chains(b["items"]) if len(c) > 1]
                 listed_low = sum(units_range(c["units"])[0] for c in single) + \
@@ -772,7 +995,10 @@ def map_blocks(prog, blocks):
 
         # a pick-n group over this list ("Select at least one of the following courses:")
         pick_n, choose_note = None, []
-        for s in rule_paras:
+        if heading_pick and not in_pool:
+            pick_n = number(heading_pick.group(2))
+            label = heading.rstrip(":")
+        for s in ([] if pick_n else rule_paras):
             m = CHOOSE_SENTENCE.match(s)
             if m:
                 pick_n = number(m.group(2))
@@ -780,20 +1006,14 @@ def map_blocks(prog, blocks):
                 choose_note = [s.rstrip(":")] if m.group(1) else []
                 break
 
-        if b["level"] < 3 and rule_paras:
+        if b["level"] < 3 and rule_paras and not pool_units:
             # text over a whole h2 list describes the section, not each course
-            blurbs = []
+            blurbs = text_rules(rule_paras, section)
             for p in rule_paras:
-                m = COURSE_RULE.match(p)
-                if m:
-                    codes = [f"{subject_key(m.group(1))} {n}" for n in re.findall(r"\d{3}[A-Z]?", m.group(2))]
-                    course_rules.append((codes, p, section))
-                elif RULE_WORDS.search(p):
-                    prog.section_note(section, p)
+                if p not in blurbs and not COURSE_RULE.match(p):
                     prog.flag(f"'{section}': rule text kept as the section note: \"{p}\"")
-                else:
-                    add_note(prog, h2, p)
-                    blurbs.append(p)
+            for p in blurbs:
+                add_note(prog, h2, p)
             if blurbs:
                 prog.flag(f"Text under '{h2}' left out (no rule in it; in the report only): \"{' '.join(blurbs)}\"")
             rule_paras = []
@@ -804,7 +1024,7 @@ def map_blocks(prog, blocks):
             if kind != "text" or not value.strip() or FILLER.match(value.strip()):
                 continue
             for sent in sentences(re.sub(r"\s*Units:\s*[\d\s–-]+$", "", value)):   # "... courses. Units: 9"
-                opened = parse_open(sent)
+                opened = parse_open(sent, h2_upper)
                 if opened:
                     opens.append((sent, opened))
                 elif MAJOR_NOTE_SENTENCE.search(sent):
@@ -850,14 +1070,32 @@ def map_blocks(prog, blocks):
 
         if in_pool:
             pending_pool.extend(pool_rows(block_note))
+        elif pool_units and len(chains(b["items"])) == 1 and set(chains(b["items"])[0][1]) == {"or"}:
+            chain = chains(b["items"])[0][0]
+            if b["level"] >= 3:
+                section = label
+            for p in rule_paras:
+                prog.section_note(section, p)
+            for course in chain:
+                row(course, "choose", label, note_for(course, [p for p in block_note if p not in rule_paras]), pick_n="1")
+            prog.flag(f"'{label}' asks for {pool_units} units of one 'or' list ({chain_label(chain, ['or'] * (len(chain) - 1))}): "
+                      f"read as pick 1; check it.")
         elif pool_units:
-            section = label        # an electives pool is always its own section (see the docstring)
+            if b["level"] >= 3:
+                section = label    # an electives pool is always its own section (see the docstring)
+            else:
+                label = "Choose from these courses"    # the whole h2 list is the pool ('6 units selected from:')
+            pool_ctx = {"section": section, "level": b["level"], "units": pool_units}
             for p in rule_paras:
                 prog.section_note(section, p)
             for r in pool_rows([p for p in block_note if p not in rule_paras]):
                 r["pick_units"] = pool_units
-            prog.flag(f"'{label}' (under {h2}) asks for {pool_units} units of its list: encoded as a pool in its "
-                      f"own section '{label}', check it.")
+            if b["level"] >= 3:
+                prog.flag(f"'{label}' (under {h2}) asks for {pool_units} units of its list: encoded as a pool in its "
+                          f"own section '{label}', check it.")
+            else:
+                prog.flag(f"'{h2}' asks for {pool_units} units of its list: the whole list is a {pool_units}-unit "
+                          f"pool, check it.")
         else:
             required, groups = [], []
             for chain, joiners, loose, _ in chains(b["items"]):
@@ -881,9 +1119,19 @@ def map_blocks(prog, blocks):
                 prog.flag(f"'{group_label}' in {section}: read as pick {pick_n} of {len(required)}; check it.")
                 required = []
             elif pick_n:
-                block_note += choose_note
-                prog.flag(f"'{label}' in {section}: a 'select' rule over a list that also has 'or' groups; "
-                          f"not read, check it.")
+                # 'A minimum of two courses selected from:' over a list with or / also-listed-as pairs: one
+                # pick-n group; a pair's courses keep a note saying so
+                group_label = label if heading_pick else f"{label} (pick {pick_n})"
+                for chain, joiners, _, _ in chains(b["items"]):
+                    for course in chain:
+                        others = [app_code(c) for c in chain if c is not course]
+                        tie = ([f"{CROSS_NOTE} with {', '.join(others)}"] if set(joiners) == {"also"}
+                               else [f"Or {', '.join(others)}"]) if others else []
+                        row(course, "choose", group_label, note_for(course, block_note + choose_note + tie),
+                            pick_n=str(pick_n))
+                prog.flag(f"'{group_label}' in {section}: read as pick {pick_n}, its or / also-listed-as pairs "
+                          f"kept with a note; check it.")
+                required, groups = [], []
             for course in required:
                 row(course, "required", label, note_for(course, block_note))
             for chain, joiners in groups:
@@ -893,6 +1141,14 @@ def map_blocks(prog, blocks):
                 for course in chain:
                     extra = [CROSS_NOTE] if set(joiners) == {"also"} else []
                     row(course, "choose", group_label, note_for(course, block_note + extra), pick_n="1")
+        for alternatives in and_or:
+            group_label = ", or ".join(" and ".join(app_code(c) for c in alt) for alt in alternatives)
+            for alt in alternatives:
+                for course in alt:
+                    row(course, "choose", group_label, note_for(course, ["Take both courses of one pair"]),
+                        pick_n=str(len(alt)))
+            prog.flag(f"'{group_label}' in {section}: a choice between pairs, encoded as pick {len(alternatives[0])} "
+                      f"with a note; the app cannot stop a student mixing the pairs. Check it.")
         for sent, opened in opens:
             open_row(section, sent, opened)
     finish_parent()
@@ -991,6 +1247,11 @@ def order_rows(prog):
                             "exclude": "", "title": "", "units": "", "note": ". ".join(prog.section_notes[name]),
                             "_h2": rows[0]["_h2"], "_code": ""})
         ordered += [r for r in rows if r["group_label"] == "Required"] + [r for r in rows if r["group_label"] != "Required"]
+    for name, notes in prog.section_notes.items():
+        if name not in sections:     # a requirement with no courses ('Language Requirement'): a section of its note
+            ordered.append({"major_id": "", "section": name, "group_label": "", "rule": "note", "pick_n": "",
+                            "pick_units": "", "subject": "", "catalog_num": "", "num_min": "", "num_max": "",
+                            "exclude": "", "title": "", "units": "", "note": ". ".join(notes), "_h2": name, "_code": ""})
     prog.rows = ordered
 
 
@@ -1020,20 +1281,22 @@ ID_STOP = {"and", "of", "in", "the", "for", "with", "a", "an", "to", "emphasis",
 
 
 DEGREE_SLUGS = {"ba", "bs", "bm", "bfa", "ma", "ms", "mba", "phd"}
-# major names that have commas of their own, with the short form SDSU uses
+# the API and the page accept ids up to this long (backend/routes/majors.py, frontend/js/store.js)
+MAX_ID_LEN = 64
+# major names that have commas of their own, and the words their ids start with
 BASE_NAMES = {
-    "Business Administration": "ba",     # the existing ids: ba_general_bs, ba_marketing_bs
-    "Television, Film and New Media": "tfm",
-    "Lesbian, Gay, Bisexual, Transgender, Queer, and Plus (LGBTQ+) Studies": "lgbtq",
-    "Language, Culture, and Society": "lcs",
-    "Speech, Language, and Hearing Sciences": "slhs",
+    "Business Administration": "ba",     # the live ids: ba_general_bs, ba_accounting_bs, ...
+    "Television, Film and New Media": "television_film_new_media",
+    "Lesbian, Gay, Bisexual, Transgender, Queer, and Plus (LGBTQ+) Studies": "lgbtq_studies",
+    "Language, Culture, and Society": "language_culture_society",
+    "Speech, Language, and Hearing Sciences": "speech_language_hearing_sciences",
 }
 # long phrases in a program name, shortened for its id
 ID_PHRASES = [
     (r"in preparation for the single subject teaching credential.*?(?=,|$)", "credential"),
     (r"preparation for the single subject teaching credential.*?(?=,|$)", "credential"),
     (r"second bachelor[’']?s degree", "second"),
-    (r"certificate of the american chemical society", "acs"),
+    (r"(?:and )?certificate of the american chemical society", "american chemical society"),
 ]
 
 
@@ -1043,33 +1306,39 @@ def slug_words(text):
 
 
 def degree_slug(degree):
-    return re.sub(r"[^a-z]", "", degree.lower())
+    return "".join(ch for ch in degree.lower() if ch.isalpha())
 
 
 def id_parts(name):
-    """'Civil Engineering, ...' -> (base 'Civil Engineering', short 'ce', full 'civil_engineering', rest)."""
-    for base, short in BASE_NAMES.items():
+    """'Civil Engineering, Emphasis in X' -> ('Civil Engineering', 'civil_engineering', ', Emphasis in X')."""
+    for base, head in BASE_NAMES.items():
         if name == base or name.startswith(base + ","):
-            return base, short, short, name[len(base):]
+            return base, head, name[len(base):]
     base, _, rest = name.partition(",")
-    words = slug_words(base) or ["major"]
-    full = "_".join(words)
-    short = words[0] if len(words) == 1 else "".join(w[0] for w in words)
-    if short in DEGREE_SLUGS:      # 'Brazilian Studies' -> 'bs' would read like a degree
-        short = full
-    return base.strip(), short, full, rest
+    return base.strip(), "_".join(slug_words(base) or ["major"]), rest
 
 
-def propose_id(name, degree, full=False, extra=2):
-    """'Civil Engineering', 'B.S.' -> 'ce_bs'; 'Business Administration, Emphasis in Accounting' -> 'ba_accounting_bs'.
-    full=True spells the base name out ('civil_engineering_bs'); extra is how many emphasis words to keep."""
-    _, short, full_head, rest = id_parts(name)
-    head = full_head if full else short
+def propose_id(name, degree):
+    """Full words, as decided with Mehar: 'Aerospace Engineering', 'B.S.' -> 'aerospace_engineering_bs';
+    'Kinesiology, Emphasis in Fitness Specialist' -> 'kinesiology_fitness_specialist_bs'. Words already in the
+    base are not repeated ('music_education_bm'). Emphasis words are dropped from the end only if the id would
+    be longer than MAX_ID_LEN."""
+    _, head, rest = id_parts(name)
     for pattern, word in ID_PHRASES:
         rest = re.sub(pattern, f" {word} ", rest, flags=re.I)
-    skip = set(head.split("_")) if head == full_head else set()   # no 'music_music_education'
-    words = [w for w in slug_words(rest) if w not in skip][:extra]
-    return "_".join([head] + words + [degree_slug(degree) or "x"])
+    # the whole base again is dropped ('Music, Music Education' -> music_education, 'Biology, Marine Biology' ->
+    # biology_marine); part of it is kept ('Public Health, Environmental Health' -> public_health_environmental_health)
+    base_words, words = head.split("_"), slug_words(rest)
+    n = len(base_words)
+    for i in range(len(words) - n + 1):
+        if words[i:i + n] == base_words:
+            words = words[:i] + words[i + n:]
+            break
+    words = list(dict.fromkeys(words))
+    tail = degree_slug(degree) or "x"
+    while words and len("_".join([head] + words + [tail])) > MAX_ID_LEN:
+        words.pop()
+    return "_".join([head] + words + [tail])[: MAX_ID_LEN]
 
 
 def read_ids(path=IDS_FILE):
@@ -1087,49 +1356,24 @@ def write_ids(ids, path=IDS_FILE):
 
 
 def assign_ids(programs, ids, log):
-    """Gives every program its major_id: the ids file first, then the 7 known ids, then a new one.
-    New ids are added to `ids`; collisions are logged. Existing ids are never changed."""
+    """Gives every program its major_id: the ids file first, then the 7 known ids, then a new one (full words,
+    see propose_id). New ids are added to `ids`; collisions are logged. Existing ids are never changed."""
     taken = {r["major_id"]: poid for poid, r in ids.items()}
     taken.update({mid: poid for poid, mid in KNOWN_IDS.items()})
-    new = [p for p in programs if (p.poid or "") not in ids and (p.poid or "") not in KNOWN_IDS]
-
-    # initials shared by different majors (Civil / Computer / Construction Engineering -> 'ce'):
-    # every one of them is spelled out, so no major gets the short form just for coming first
-    bases = collections.defaultdict(set)
-    for name in [r.get("name", "") for r in ids.values()] + [p.name for p in programs]:
-        base, short, _, _ = id_parts(name)
-        bases[short].add(base)
-    proposals = {}
-    for p in new:
-        base, short, _, _ = id_parts(p.name)
-        spelled = len(bases[short]) > 1
-        if spelled:
-            log.append(f"'{short}' would fit {', '.join(sorted(bases[short]))}: {p.name}, {p.degree} is spelled out")
-        proposals[id(p)] = (spelled, propose_id(p.name, p.degree, full=spelled))
-    # the same id for two new programs, or an id already taken: more emphasis words for each of them
-    counts = collections.Counter(mid for _, mid in proposals.values())
-    for p in new:
-        spelled, mid = proposals[id(p)]
-        if counts[mid] > 1 or mid in taken:
-            longer = propose_id(p.name, p.degree, full=spelled, extra=6)
-            if longer != mid:
-                log.append(f"id collision on '{mid}': {p.name}, {p.degree} (poid {p.poid}) gets '{longer}'")
-            proposals[id(p)] = (spelled, longer)
-
     changed = False
     for prog in programs:
         poid = prog.poid or ""
         if poid in ids:
             prog.major_id = ids[poid]["major_id"]
             continue
-        mid = KNOWN_IDS[poid] if poid in KNOWN_IDS else proposals[id(prog)][1]
+        mid = KNOWN_IDS[poid] if poid in KNOWN_IDS else propose_id(prog.name, prog.degree)
         if mid in taken and taken[mid] != poid:
             n = 2
             while f"{mid}_{n}" in taken:
                 n += 1
-            log.append(f"id collision on '{mid}' (still taken): {prog.name}, {prog.degree} gets '{mid}_{n}'")
+            log.append(f"id collision on '{mid}': {prog.name}, {prog.degree} (poid {poid}) gets '{mid}_{n}'")
             mid = f"{mid}_{n}"
-        if not re.fullmatch(r"[a-z0-9_]+", mid):
+        if not re.fullmatch(r"[a-z0-9_]+", mid) or len(mid) > MAX_ID_LEN:
             raise SystemExit(f"bad major_id {mid!r} for {prog.name}, {prog.degree}")
         prog.major_id = mid
         taken[mid] = poid

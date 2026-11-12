@@ -253,6 +253,12 @@ class MajorsApiTests(AppTestCase):
         self.assertEqual(self.group(me, "CHEM 202 or CHEM 200 (pick 1)")["rule"], "choose")
         self.assertEqual(self.group(self.tree("civil_engineering_bs"), "CIVE 160 or STAT 250 (pick 1)")["pick_n"], 1)
 
+    def test_long_major_id_loads(self):
+        # 42 characters: the old 40-character limit answered 404 for this live major
+        tree = self.tree("ba_management_human_resource_management_bs")
+        self.assertEqual(tree["major"]["status"], "live")
+        self.assertEqual(self.client.get("/api/majors/" + "a" * 65 + "/requirements").status_code, 404)
+
     def test_unknown_and_bad_major_ids(self):
         for major_id in ("no_such_major", "Bad-Id!", "x" * 41, "CS_BS"):
             res = self.client.get(f"/api/majors/{major_id}/requirements")

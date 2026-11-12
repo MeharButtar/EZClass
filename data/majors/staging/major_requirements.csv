@@ -51,6 +51,324 @@ me_bs,Professional Electives,Thermal Systems,pool,,12,ME,552,,,,"Heating, Ventil
 me_bs,Professional Electives,Thermal Systems,pool,,12,ME,554,,,,Automotive Power,3,
 me_bs,Professional Electives,Thermal Systems,pool,,12,ME,555,,,,Thermal Systems Analysis and Design,3,
 me_bs,Professional Electives,Thermal Systems,pool,,12,ME,556,,,,Solar Energy Conversion,3,
+aerospace_engineering_bs,Preparation for the Major,Required,required,,,AE,123,,,,The Aerospace Engineer,1,
+aerospace_engineering_bs,Preparation for the Major,Required,required,,,AE,260,,,,Programming and Numerical Methods in Aerospace,3,
+aerospace_engineering_bs,Preparation for the Major,Required,required,,,AE,280,,,,Methods of Analysis,3,
+aerospace_engineering_bs,Preparation for the Major,Required,required,,,EE,204,,,,Principles of Electrical Engineering,3,
+aerospace_engineering_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,"Grade of C or better, no Cr/NC"
+aerospace_engineering_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,"Grade of C or better, no Cr/NC"
+aerospace_engineering_bs,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,
+aerospace_engineering_bs,Preparation for the Major,Required,required,,,ME,190,,,,Computer-Aided Design,2,
+aerospace_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+aerospace_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,
+aerospace_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+aerospace_engineering_bs,Preparation for the Major,"AE 200 / ME 200 (same course, pick 1)",choose,1,,AE,200,,,,Statics,3,"Cross-listed. Grade of C or better, no Cr/NC"
+aerospace_engineering_bs,Preparation for the Major,"AE 200 / ME 200 (same course, pick 1)",choose,1,,ME,200,,,,Statics,3,"Cross-listed. Grade of C or better, no Cr/NC"
+aerospace_engineering_bs,Preparation for the Major,"AE 220 / ME 220 (same course, pick 1)",choose,1,,AE,220,,,,Dynamics,3,Cross-listed
+aerospace_engineering_bs,Preparation for the Major,"AE 220 / ME 220 (same course, pick 1)",choose,1,,ME,220,,,,Dynamics,3,Cross-listed
+aerospace_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,100,,,,General Biology,3,
+aerospace_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,101,,,,World of Animals,3,
+aerospace_engineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,202,,,,General Chemistry for Engineers,4,"Grade of C or better, no Cr/NC"
+aerospace_engineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,200,,,,General Chemistry,5,"Grade of C or better, no Cr/NC"
+aerospace_engineering_bs,Major,Required,required,,,AE,301,,,,Low Speed Aerodynamics,3,
+aerospace_engineering_bs,Major,Required,required,,,AE,302,,,,High Speed Aerodynamics,3,
+aerospace_engineering_bs,Major,Required,required,,,AE,303,,,,Experimental Aerodynamics,2,
+aerospace_engineering_bs,Major,Required,required,,,AE,310,,,,Aerospace Structural Mechanics and Materials,4,
+aerospace_engineering_bs,Major,Required,required,,,AE,320,,,,Astrodynamics,3,
+aerospace_engineering_bs,Major,Required,required,,,AE,331,,,,Feedback Flight Control,3,
+aerospace_engineering_bs,Major,Required,required,,,AE,340,,,,Fluid Mechanics,3,
+aerospace_engineering_bs,Major,Required,required,,,AE,341,,,,Fluid Mechanics Laboratory,1,
+aerospace_engineering_bs,Major,Required,required,,,AE,403W,,,,Aerospace Engineering Senior Project,3,Satisfies the Graduation Writing Assessment
+aerospace_engineering_bs,Major,Required,required,,,AE,410,,,,Aerospace Structural Dynamics,3,
+aerospace_engineering_bs,Major,Required,required,,,AE,430,,,,Aircraft Propulsion Systems,3,
+aerospace_engineering_bs,Major,Required,required,,,AE,440,,,,Aircraft Stability and Control I,3,
+aerospace_engineering_bs,Major,Required,required,,,AE,460A,,,,Aerospace Engineering Applications,3,
+aerospace_engineering_bs,Major,Required,required,,,AE,460B,,,,Aerospace Engineering Applications,2,
+aerospace_engineering_bs,Major,Required,required,,,CIVE,302,,,,Solid Mechanics Laboratory,1,
+aerospace_engineering_bs,Major,CIVE 301 or ME 304 (pick 1),choose,1,,CIVE,301,,,,Introduction to Solid Mechanics,3,
+aerospace_engineering_bs,Major,CIVE 301 or ME 304 (pick 1),choose,1,,ME,304,,,,Mechanics of Materials,3,
+aerospace_engineering_bs,Major Electives,,note,,,,,,,,,,Other electives may be substituted with consent of the advisor and department chair
+aerospace_engineering_bs,Major Electives,Major Electives,pool,,6,AE,510,,,,Finite Element Methods in Aerospace Structures,3,
+aerospace_engineering_bs,Major Electives,Major Electives,pool,,6,AE,515,,,,Methods of Analysis,3,
+aerospace_engineering_bs,Major Electives,Major Electives,pool,,6,AE,520,,,,Spacecraft Attitude Dynamics and Control,3,
+aerospace_engineering_bs,Major Electives,Major Electives,pool,,6,AE,530,,,,Rocket and Space Propulsion,3,
+aerospace_engineering_bs,Major Electives,Major Electives,pool,,6,AE,535,,,,Mechanics of Composite Structures,3,Cross-listed with ME 535
+aerospace_engineering_bs,Major Electives,Major Electives,pool,,6,ME,535,,,,Mechanics of Composite Structures,3,Cross-listed with AE 535
+aerospace_engineering_bs,Major Electives,Major Electives,pool,,6,AE,540,,,,Aircraft Stability and Control II,3,
+aerospace_engineering_bs,Major Electives,Major Electives,pool,,6,AE,546,,,,Aerospace Guidance and Navigation,3,
+aerospace_engineering_bs,Major Electives,Major Electives,pool,,6,AE,550,,,,Viscous Flow,3,
+aerospace_engineering_bs,Major Electives,Major Electives,pool,,6,AE,596,,,,Advanced Aerospace Engineering Topics,3,
+biology_ba,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
+biology_ba,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
+biology_ba,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
+biology_ba,Preparation for the Major,Required,required,,,BIOL,204,,,,Principles of Organismal Biology,3,No Cr/NC
+biology_ba,Preparation for the Major,Required,required,,,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,No Cr/NC
+biology_ba,Preparation for the Major,Required,required,,,BIOL,215,,,,Biostatistics,3,No Cr/NC
+biology_ba,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,No Cr/NC
+biology_ba,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,No Cr/NC
+biology_ba,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
+biology_ba,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
+biology_ba,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
+biology_ba,Major,,note,,,,,,,,,,"All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Upper Division Major Electives: Upper division major elective courses include all upper division biology courses numbered 350 and above (except BIOL 497 and BIOL 495 ), and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , CHEM 560 ). Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses"
+biology_ba,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
+biology_ba,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
+biology_ba,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
+biology_ba,Major,Required,required,,,PHYS,182B,,,,Physical Measurements Laboratory,1,
+biology_ba,Major,Required,required,,,BIOL,351,,,,Genetics,4,
+biology_ba,Major,Required,required,,,BIOL,352,,,,Evolution,3,
+biology_ba,Major,Required,required,,,BIOL,354,,,,Ecology and the Environment,3,
+biology_ba,Major,Required,required,,,BIOL,366,,,,Cell Biology,3,
+biology_ba,Major,Required,required,,,BIOL,366L,,,,Cell Biology Laboratory,1,
+biology_ba,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochemistry,3,
+biology_ba,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
+biology_ba,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
+biology_ba,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
+biology_ba,Language Requirement,,note,,,,,,,,,,Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill this requirement
+biology_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
+biology_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
+biology_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
+biology_bs,Preparation for the Major,Required,required,,,BIOL,204,,,,Principles of Organismal Biology,3,No Cr/NC
+biology_bs,Preparation for the Major,Required,required,,,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,No Cr/NC
+biology_bs,Preparation for the Major,Required,required,,,BIOL,215,,,,Biostatistics,3,No Cr/NC
+biology_bs,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,No Cr/NC
+biology_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,No Cr/NC
+biology_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
+biology_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
+biology_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
+biology_bs,Major,,note,,,,,,,,,,All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar
+biology_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
+biology_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
+biology_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
+biology_bs,Major,Required,required,,,PHYS,182B,,,,Physical Measurements Laboratory,1,
+biology_bs,Major,Required,required,,,BIOL,351,,,,Genetics,4,
+biology_bs,Major,Required,required,,,BIOL,352,,,,Evolution,3,
+biology_bs,Major,Required,required,,,BIOL,354,,,,Ecology and the Environment,3,
+biology_bs,Major,Required,required,,,BIOL,366,,,,Cell Biology,3,
+biology_bs,Major,Required,required,,,BIOL,366L,,,,Cell Biology Laboratory,1,
+biology_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochemistry,3,
+biology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
+biology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
+biology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
+biology_bs,Upper Division Major Electives,,note,,,,,,,,,,Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses
+biology_cellular_molecular_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
+biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
+biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
+biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,BIOL,204,,,,Principles of Organismal Biology,3,No Cr/NC
+biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,No Cr/NC
+biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,BIOL,215,,,,Biostatistics,3,No Cr/NC
+biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,No Cr/NC
+biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,No Cr/NC
+biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
+biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
+biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
+biology_cellular_molecular_bs,Major,,note,,,,,,,,,,"All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 496, BIOL 596, CHEM 496, CHEM 498, CHEM 499, CHEM 596)"
+biology_cellular_molecular_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
+biology_cellular_molecular_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
+biology_cellular_molecular_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
+biology_cellular_molecular_bs,Major,Required,required,,,PHYS,182B,,,,Physical Measurements Laboratory,1,
+biology_cellular_molecular_bs,Major,Required,required,,,BIOL,351,,,,Genetics,4,
+biology_cellular_molecular_bs,Major,Required,required,,,BIOL,352,,,,Evolution,3,
+biology_cellular_molecular_bs,Major,Required,required,,,BIOL,354,,,,Ecology and the Environment,3,
+biology_cellular_molecular_bs,Major,Required,required,,,BIOL,366,,,,Cell Biology,3,
+biology_cellular_molecular_bs,Major,Required,required,,,BIOL,366L,,,,Cell Biology Laboratory,1,
+biology_cellular_molecular_bs,Major,Required,required,,,BIOL,567,,,,"Advanced Biochemistry, Cellular, and Molecular Biology",4,
+biology_cellular_molecular_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochemistry,3,
+biology_cellular_molecular_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
+biology_cellular_molecular_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
+biology_cellular_molecular_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,350,,,,General Microbiology,4,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,464,,,,Functional Genomics Laboratory,2,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,480,,,,Clinical Hematology,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,510,,,,Molecular Evolution,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,528,,,,Microbial Ecology,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,549,,,,Microbial Genetics and Physiology,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,554,,,,Molecular Virology,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,556,,,,Scanning Electron Microscopy Laboratory,2,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,557,,,,Transmission Electron Microscopy Laboratory,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,562,,,,Ecological Metagenomics,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,564,,,,Principles of Cancer Biology,4,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,565,,,,Genome Editing,4,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,567L,,,,"Biochemistry, Cellular, and Molecular Biology Laboratory II",2,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,568,,,,Bioinformatics,3,A minimum of two courses selected from. also listed as
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOMI,568,,,,Bioinformatics,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,570,,,,Neurobiology,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,575,,,,Molecular Basis of Heart Disease,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,576,,,,Developmental Biology,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,584,,,,Medical Microbiology,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,485,,,,Principles of Immunology,3,A minimum of two courses selected from. Or BIOL 585
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,585,,,,Cellular and Molecular Immunology,3,A minimum of two courses selected from. Or BIOL 485
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,589,,,,Stem Cell and Regenerative Biology,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,590,,,,Physiology of Human Systems,4,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,CHEM,432,,,,Organic Chemistry,3,A minimum of two courses selected from
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,A minimum of two courses selected from. (maximum three units)
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,CHEM,496,,,,Selected Topics in Chemistry,1-4,A minimum of two courses selected from. (maximum three units)
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,A minimum of two courses selected from. (maximum three units)
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,CHEM,596,,,,Advanced Special Topics in Chemistry,1-3,A minimum of two courses selected from. (maximum three units)
+biology_ecology_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
+biology_ecology_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
+biology_ecology_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
+biology_ecology_bs,Preparation for the Major,Required,required,,,BIOL,204,,,,Principles of Organismal Biology,3,No Cr/NC
+biology_ecology_bs,Preparation for the Major,Required,required,,,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,No Cr/NC
+biology_ecology_bs,Preparation for the Major,Required,required,,,BIOL,215,,,,Biostatistics,3,No Cr/NC
+biology_ecology_bs,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,No Cr/NC
+biology_ecology_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,No Cr/NC
+biology_ecology_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
+biology_ecology_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
+biology_ecology_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
+biology_ecology_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Other upper division major electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 496, BIOL 596)"
+biology_ecology_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
+biology_ecology_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
+biology_ecology_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
+biology_ecology_bs,Major,Required,required,,,PHYS,182B,,,,Physical Measurements Laboratory,1,
+biology_ecology_bs,Major,Required,required,,,BIOL,351,,,,Genetics,4,
+biology_ecology_bs,Major,Required,required,,,BIOL,352,,,,Evolution,3,
+biology_ecology_bs,Major,Required,required,,,BIOL,354,,,,Ecology and the Environment,3,
+biology_ecology_bs,Major,Required,required,,,BIOL,358,,,,Experimental Ecology,2,
+biology_ecology_bs,Major,Required,required,,,BIOL,366,,,,Cell Biology,3,
+biology_ecology_bs,Major,Required,required,,,BIOL,366L,,,,Cell Biology Laboratory,1,
+biology_ecology_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochemistry,3,
+biology_ecology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
+biology_ecology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
+biology_ecology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,509,,,,Advanced Evolution,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,514,,,,Biology of the Algae,4,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516A,,,,Marine Larval Ecology Research Part 1,4,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516B,,,,Marine Larval Ecology Research Part 2,4,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,517,,,,Marine Ecology,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,526,,,,Terrestrial Arthropod Biology,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,527,,,,Animal Behavior,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,528,,,,Microbial Ecology,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,535,,,,Plant Ecology,4,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,540,,,,Conservation Ecology,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,542,,,,Ecological Signaling in the Environment,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,544,,,,Terrestrial Ecosystems and Climate Change,3,A minimum of two courses selected from. also listed as
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,ENVS,544,,,,Terrestrial Ecosystems and Climate Change,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,560,,,,Animal Physiology,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,562,,,,Ecological Metagenomics,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,578,,,,Environmental Systems Modeling: Principles and Application,3,A minimum of two courses selected from
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,A minimum of two courses selected from. (maximum three units)
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,A minimum of two courses selected from. (maximum three units)
+biology_evolutionary_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
+biology_evolutionary_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
+biology_evolutionary_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
+biology_evolutionary_bs,Preparation for the Major,Required,required,,,BIOL,204,,,,Principles of Organismal Biology,3,No Cr/NC
+biology_evolutionary_bs,Preparation for the Major,Required,required,,,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,No Cr/NC
+biology_evolutionary_bs,Preparation for the Major,Required,required,,,BIOL,215,,,,Biostatistics,3,No Cr/NC
+biology_evolutionary_bs,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,No Cr/NC
+biology_evolutionary_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,No Cr/NC
+biology_evolutionary_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
+biology_evolutionary_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
+biology_evolutionary_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
+biology_evolutionary_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division elective courses must be biology laboratory courses. Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)"
+biology_evolutionary_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
+biology_evolutionary_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
+biology_evolutionary_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
+biology_evolutionary_bs,Major,Required,required,,,PHYS,182B,,,,Physical Measurements Laboratory,1,
+biology_evolutionary_bs,Major,Required,required,,,BIOL,351,,,,Genetics,4,
+biology_evolutionary_bs,Major,Required,required,,,BIOL,352,,,,Evolution,3,
+biology_evolutionary_bs,Major,Required,required,,,BIOL,354,,,,Ecology and the Environment,3,
+biology_evolutionary_bs,Major,Required,required,,,BIOL,366,,,,Cell Biology,3,
+biology_evolutionary_bs,Major,Required,required,,,BIOL,366L,,,,Cell Biology Laboratory,1,
+biology_evolutionary_bs,Major,Required,required,,,BIOL,509,,,,Advanced Evolution,3,
+biology_evolutionary_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochemistry,3,
+biology_evolutionary_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
+biology_evolutionary_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
+biology_evolutionary_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,459,,,,Plant Biology,3,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,510,,,,Molecular Evolution,3,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,515,,,,Marine Invertebrate Biology,4,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,523,,,,Herpetology,3,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,524,,,,Ornithology,4,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,525,,,,Mammalogy,3,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,526,,,,Terrestrial Arthropod Biology,3,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,527,,,,Animal Behavior,3,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,528,,,,Microbial Ecology,3,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,530,,,,Plant Systematics,4,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,531,,,,Taxonomy of California Plants,4,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,568,,,,Bioinformatics,3,A minimum of two courses selected from. also listed as
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOMI,568,,,,Bioinformatics,3,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,576,,,,Developmental Biology,3,A minimum of two courses selected from
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,A minimum of two courses selected from. (maximum three units)
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,A minimum of two courses selected from. (maximum three units)
+biology_marine_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
+biology_marine_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
+biology_marine_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
+biology_marine_bs,Preparation for the Major,Required,required,,,BIOL,204,,,,Principles of Organismal Biology,3,No Cr/NC
+biology_marine_bs,Preparation for the Major,Required,required,,,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,No Cr/NC
+biology_marine_bs,Preparation for the Major,Required,required,,,BIOL,215,,,,Biostatistics,3,No Cr/NC
+biology_marine_bs,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,No Cr/NC
+biology_marine_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,No Cr/NC
+biology_marine_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
+biology_marine_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
+biology_marine_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
+biology_marine_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)"
+biology_marine_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
+biology_marine_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
+biology_marine_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
+biology_marine_bs,Major,Required,required,,,PHYS,182B,,,,Physical Measurements Laboratory,1,
+biology_marine_bs,Major,Required,required,,,BIOL,351,,,,Genetics,4,
+biology_marine_bs,Major,Required,required,,,BIOL,352,,,,Evolution,3,
+biology_marine_bs,Major,Required,required,,,BIOL,354,,,,Ecology and the Environment,3,
+biology_marine_bs,Major,Required,required,,,BIOL,366,,,,Cell Biology,3,
+biology_marine_bs,Major,Required,required,,,BIOL,366L,,,,Cell Biology Laboratory,1,
+biology_marine_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochemistry,3,
+biology_marine_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
+biology_marine_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
+biology_marine_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,A minimum of two courses selected from
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,514,,,,Biology of the Algae,4,A minimum of two courses selected from
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,515,,,,Marine Invertebrate Biology,4,A minimum of two courses selected from
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516A,,,,Marine Larval Ecology Research Part 1,4,A minimum of two courses selected from
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516B,,,,Marine Larval Ecology Research Part 2,4,A minimum of two courses selected from
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,517,,,,Marine Ecology,3,A minimum of two courses selected from
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,A minimum of two courses selected from
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,542,,,,Ecological Signaling in the Environment,3,A minimum of two courses selected from
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,A minimum of two courses selected from. (maximum three units)
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,A minimum of two courses selected from. (maximum three units)
+biology_zoology_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
+biology_zoology_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
+biology_zoology_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
+biology_zoology_bs,Preparation for the Major,Required,required,,,BIOL,204,,,,Principles of Organismal Biology,3,No Cr/NC
+biology_zoology_bs,Preparation for the Major,Required,required,,,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,No Cr/NC
+biology_zoology_bs,Preparation for the Major,Required,required,,,BIOL,215,,,,Biostatistics,3,No Cr/NC
+biology_zoology_bs,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,No Cr/NC
+biology_zoology_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,No Cr/NC
+biology_zoology_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
+biology_zoology_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
+biology_zoology_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
+biology_zoology_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)"
+biology_zoology_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
+biology_zoology_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
+biology_zoology_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
+biology_zoology_bs,Major,Required,required,,,PHYS,182B,,,,Physical Measurements Laboratory,1,
+biology_zoology_bs,Major,Required,required,,,BIOL,351,,,,Genetics,4,
+biology_zoology_bs,Major,Required,required,,,BIOL,352,,,,Evolution,3,
+biology_zoology_bs,Major,Required,required,,,BIOL,354,,,,Ecology and the Environment,3,
+biology_zoology_bs,Major,Required,required,,,BIOL,366,,,,Cell Biology,3,
+biology_zoology_bs,Major,Required,required,,,BIOL,366L,,,,Cell Biology Laboratory,1,
+biology_zoology_bs,Major,Required,required,,,BIOL,462,,,,Zoology,3,
+biology_zoology_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochemistry,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,509,,,,Advanced Evolution,3,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,510,,,,Molecular Evolution,3,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,515,,,,Marine Invertebrate Biology,4,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516A,,,,Marine Larval Ecology Research Part 1,4,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,523,,,,Herpetology,3,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,524,,,,Ornithology,4,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,525,,,,Mammalogy,3,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,526,,,,Terrestrial Arthropod Biology,3,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,527,,,,Animal Behavior,3,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,540,,,,Conservation Ecology,3,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,542,,,,Ecological Signaling in the Environment,3,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,560,,,,Animal Physiology,3,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,576,,,,Developmental Biology,3,A minimum of two courses selected from
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,A minimum of two courses selected from. (maximum three units)
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,A minimum of two courses selected from. (maximum three units)
 ba_accounting_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to an upper division major
 ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
@@ -367,6 +685,94 @@ ba_management_human_resource_management_bs,Upper Division Major Electives,Upper 
 ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,467,,,,Diversity Issues,3,
 ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MGT,468,,,,Human Resource Analytics,3,
 ba_management_human_resource_management_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,6,MIS,301,,,,Statistical Analysis for Business,3,
+chemistry_ba,Preparation for the Major,,note,,,,,,,,,,"Recommended (not required): PHYS 197, PHYS 197L"
+chemistry_ba,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,
+chemistry_ba,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,
+chemistry_ba,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,
+chemistry_ba,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,
+chemistry_ba,Preparation for the Major,Required,required,,,CHEM,251,,,,Analytical Chemistry,5,
+chemistry_ba,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,
+chemistry_ba,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,
+chemistry_ba,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,
+chemistry_ba,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,
+chemistry_ba,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,
+chemistry_ba,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,
+chemistry_ba,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,
+chemistry_ba,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,
+chemistry_ba,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,
+chemistry_ba,Major,Required,required,,,CHEM,410A,,,,Physical Chemistry,4,
+chemistry_ba,Major,Required,required,,,CHEM,410B,,,,Physical Chemistry,3,
+chemistry_ba,Major,Required,required,,,CHEM,417,,,,Advanced Physical Chemistry Laboratory,2,
+chemistry_ba,Major,Required,required,,,CHEM,432,,,,Organic Chemistry,3,
+chemistry_ba,Major,Required,required,,,CHEM,432L,,,,Organic Chemistry Laboratory,1,
+chemistry_ba,Major,Required,required,,,CHEM,457,,,,Instrumental Methods of Chemical Analysis Laboratory,2,
+chemistry_ba,Major,Required,required,,,CHEM,550,,,,Instrumental Methods of Chemical Analysis,2,
+chemistry_ba,Major,Any CHEM 300-599 course,open,,7,CHEM,,300,599,,,,Seven units of electives in chemistry
+chemistry_ba,Language Requirement,,note,,,,,,,,,,Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to section of this catalog on “Graduation Requirements .”
+chemistry_american_chemical_society_bs,Preparation for the Major,,note,,,,,,,,,,"If CHEM 251 and MATH 252 were not completed prior to matriculation, it must be completed at SDSU. Recommended (not required): PHYS 197, PHYS 197L"
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,251,,,,Analytical Chemistry,5,
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,
+chemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,410A,,,,Physical Chemistry,4,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,410B,,,,Physical Chemistry,3,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,417,,,,Advanced Physical Chemistry Laboratory,2,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,427,,,,Inorganic Chemistry Laboratory,2,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,432,,,,Organic Chemistry,3,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,432L,,,,Organic Chemistry Laboratory,1,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,457,,,,Instrumental Methods of Chemical Analysis Laboratory,2,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,520A,,,,Inorganic Chemistry,3,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,520B,,,,Inorganic Chemistry,3,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,550,,,,Instrumental Methods of Chemical Analysis,2,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,560,,,,General Biochemistry,3,
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,498,,,,Senior Project,1-3,(one unit)
+chemistry_american_chemical_society_bs,Major,Any CHEM 300-599 course,open,,7,CHEM,,300,599,,,,Seven units of upper division electives in chemistry
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,,note,,,,,,,,,,"Recommended (not required): PHYS 197, PHYS 197L"
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,251,,,,Analytical Chemistry,5,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,,BIOL,204,,,,Principles of Organismal Biology,3,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,410A,,,,Physical Chemistry,4,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,410B,,,,Physical Chemistry,3,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,432,,,,Organic Chemistry,3,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,432L,,,,Organic Chemistry Laboratory,1,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,457,,,,Instrumental Methods of Chemical Analysis Laboratory,2,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,550,,,,Instrumental Methods of Chemical Analysis,2,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,560,,,,General Biochemistry,3,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,567,,,,Biochemistry Laboratory,3,
+chemistry_biochemistry_american_chemical_society_bs,Major,Senior Project,required,,,CHEM,498,,,,Senior Project,1-3,
+chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,562,,,,Intermediary Metabolism,3,
+chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,563,,,,Nucleic Acid Function and Protein Synthesis,3,
+chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,564,,,,Receptor Biochemistry and Protein Modification,3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,496,,,,Selected Topics in Chemistry,1-4,Any 500-level chemistry course
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,497,,,,Undergraduate Research,1-3,Any 500-level chemistry course
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,498,,,,Senior Project,1-3,Any 500-level chemistry course
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,350,,,,General Microbiology,4,Any 500-level chemistry course
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,352,,,,Evolution,3,Any 500-level chemistry course
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,485,,,,Principles of Immunology,3,Any 500-level chemistry course
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,549,,,,Microbial Genetics and Physiology,3,Any 500-level chemistry course
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,570,,,,Neurobiology,3,Any 500-level chemistry course
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,590,,,,Physiology of Human Systems,4,Any 500-level chemistry course
 civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,100,,,,Introduction to Civil Engineering,1,No Cr/NC
 civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,121,,,,Computer Graphics for the Built Environment,3,No Cr/NC
 civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,218,,,,Surveying for Civil Engineering and Construction,3,No Cr/NC
@@ -422,6 +828,55 @@ civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,401,,,,Co
 civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,479,,,,Construction Materials,3,
 civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,480,,,,Design of Temporary Structures,3,
 civil_engineering_bs,Professional Electives,Construction,pool,,15,CONE,520,,,,Environmentally Conscious Construction,3,
+communication_ba,Preparation for the Major,,note,,,,,,,,,,(9 units) General Education Oral Communication requirement (3 units) and 6 units selected from:
+communication_ba,Preparation for the Major,Choose from these courses,pool,,6,COMM,160,,,,Argumentation,3,
+communication_ba,Preparation for the Major,Choose from these courses,pool,,6,COMM,201,,,,Communication and Community,3,
+communication_ba,Preparation for the Major,Choose from these courses,pool,,6,COMM,204,,,,Advanced Public Speaking,3,
+communication_ba,Preparation for the Major,Choose from these courses,pool,,6,COMM,245,,,,Interpersonal Communication,3,
+communication_ba,Mathematics Competency Requirement,,note,,,,,,,,,,Competency in mathematics is generally satisfied by completing three semesters of college mathematics
+communication_ba,Mathematics Competency Requirement,Required,required,,,STAT,250,,,,Statistical Principles and Practices,3,(highly recommended)
+communication_ba,Mathematics Competency Requirement,Required,required,,,STAT,350A,,,,Statistical Methods,3,(highly recommended)
+communication_ba,Mathematics Competency Requirement,Required,required,,,STAT,350B,,,,Statistical Methods,3,(highly recommended)
+communication_ba,Mathematics Competency Requirement,Required,required,,,SOC,201,,,,Elementary Social Statistics,3,(highly recommended). Additional prerequisites required
+communication_ba,Mathematics Competency Requirement,Required,required,,,SOC,406,,,,Intermediate Social Statistics,3,(highly recommended). Additional prerequisites required
+communication_ba,Mathematics Competency Requirement,Required,required,,,SOC,407,,,,Survey and Experimental Research Methods,3,(highly recommended). Additional prerequisites required
+communication_ba,Major,Required,required,,,COMM,300,,,,Conceptualizing Communication,3,
+communication_ba,Major,Required,required,,,COMM,350,,,,Investigating Communication,3,
+communication_ba,Major,Communication Capstone,required,,,COMM,495,,,,Communication Capstone: Conceptualizing and Investigating Communication,3,(3 units) Must be taken after completion of at least 90 units to include 6 units in Conceptualizing Communication and 6 units in Investigating Communication
+communication_ba,Conceptualizing Communication,Conceptualizing Communication,pool,,9,COMM,321,,,,Introduction to Health Communication,3,
+communication_ba,Conceptualizing Communication,Conceptualizing Communication,pool,,9,COMM,371,,,,Intercultural Communication,3,
+communication_ba,Conceptualizing Communication,Conceptualizing Communication,pool,,9,COMM,415,,,,Nonverbal Communication,3,
+communication_ba,Conceptualizing Communication,Conceptualizing Communication,pool,,9,COMM,450,,,,Rhetorical Theory,3,
+communication_ba,Conceptualizing Communication,Conceptualizing Communication,pool,,9,COMM,470,,,,Argumentation Theory,3,
+communication_ba,Conceptualizing Communication,Conceptualizing Communication,pool,,9,COMM,492,,,,Persuasion,3,
+communication_ba,Investigating Communication,Investigating Communication,pool,,6,COMM,407,,,,Communicative Perspectives on Interviewing,3,
+communication_ba,Investigating Communication,Investigating Communication,pool,,6,COMM,420,,,,Quantitative Methods in Communication,3,
+communication_ba,Investigating Communication,Investigating Communication,pool,,6,COMM,441,,,,Foundations of Critical and Cultural Study,3,
+communication_ba,Investigating Communication,Investigating Communication,pool,,6,COMM,462,,,,Ethnography and Communication,3,
+communication_ba,Investigating Communication,Investigating Communication,pool,,6,COMM,465,,,,Conversational Interaction,3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,301,,,,Intercollegiate Speech and Debate Competition,1-3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,307,,,,Communication in Professional Settings,3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,406,,,,Organizational Communication,3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,444,,,,Sexual Communication,3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,445,,,,Relational Communication,3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,446,,,,Communication and Rhetorical Movements,3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,452,,,,Interaction and Gender,3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,482,,,,Communication and Politics,3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,485,,,,Communicating Leadership,3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,490,,,,Internship,1-3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,496,,,,Experimental Topics,1-4,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,499,,,,Special Study,1-3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,508,,,,Media Literacy,3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,540,,,,Communicating Science in the Public Interest,3,
+communication_ba,Communication Electives,Communication Electives,pool,,12,COMM,555,,,,Conflict Management Communication,3,
+communication_ba,Communication Electives,Health Communication Electives,pool,,12,COMM,421,,,,Health Communication and Community Based Service Learning,3,"Additional Communication Electives can be selected from the following list, with no more than 9 units selected from:"
+communication_ba,Communication Electives,Health Communication Electives,pool,,12,COMM,422,,,,Politics of Health Communication,3,"Additional Communication Electives can be selected from the following list, with no more than 9 units selected from:"
+communication_ba,Communication Electives,Health Communication Electives,pool,,12,COMM,423,,,,Patient-Provider Communication,3,"Additional Communication Electives can be selected from the following list, with no more than 9 units selected from:"
+communication_ba,Communication Electives,Health Communication Electives,pool,,12,COMM,424,,,,Health Communication and Relationships,3,"Additional Communication Electives can be selected from the following list, with no more than 9 units selected from:"
+communication_ba,Communication Electives,Health Communication Electives,pool,,12,COMM,425,,,,Theory and Research in Health Communication Campaigns,3,"Additional Communication Electives can be selected from the following list, with no more than 9 units selected from:"
+communication_ba,Communication Electives,Health Communication Electives,pool,,12,COMM,426,,,,Communication in Health Risk and Crises,3,"Additional Communication Electives can be selected from the following list, with no more than 9 units selected from:"
+communication_ba,Communication Electives,Health Communication Electives,pool,,12,COMM,427,,,,Health Communication and Cultural Communities,3,"Additional Communication Electives can be selected from the following list, with no more than 9 units selected from:"
+communication_ba,Communication Electives,Health Communication Electives,pool,,12,COMM,428,,,,Communicating Health and Well-Being at Work,3,"Additional Communication Electives can be selected from the following list, with no more than 9 units selected from:"
 computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,101,,,,Introduction to Electrical and Computer Engineering,1,No Cr/NC
 computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,160,,,,Introduction to Computer Programming,3,"Grade of C or better, no Cr/NC"
 computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,260,,,,Data Structures and Object-Oriented Programming in C++,3,"Grade of C- or better, no Cr/NC"
@@ -468,6 +923,52 @@ computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,COM
 computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,EE,430,,,,Analysis and Design of Electronic Circuits,3,
 computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,EE,503,,,,Biomedical Instrumentation,3,
 computer_engineering_bs,Upper Division Major Electives,VLSI Systems,pool,,15,EE,530,,,,Analog Integrated Circuit Design,3,
+construction_engineering_bs,Preparation for the Major,Required,required,,,CONE,101,,,,Construction and Culture,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,Required,required,,,CONE,201,,,,Construction Concepts and Building Codes,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,Required,required,,,CONE,280,,,,Construction Methods,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,Required,required,,,CIVE,218,,,,Surveying for Civil Engineering and Construction,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,Required,required,,,CIVE,225,,,,Mechanics for Civil Engineers,3,"Grade of C or better, no Cr/NC"
+construction_engineering_bs,Preparation for the Major,Required,required,,,ECON,102,,,,Principles of Economics,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,Required,required,,,GEOL,100,,,,Planet Earth,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,Required,required,,,GEOL,101,,,,Dynamics of the Earth Laboratory,1,No Cr/NC
+construction_engineering_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,"Grade of C or better, no Cr/NC"
+construction_engineering_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,"Grade of C or better, no Cr/NC"
+construction_engineering_bs,Preparation for the Major,Required,required,,,PHIL,101,,,,Introduction to Philosophy: Ethics,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+construction_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,No Cr/NC
+construction_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+construction_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,No Cr/NC
+construction_engineering_bs,Preparation for the Major,CONE 215 or CIVE 121 (pick 1),choose,1,,CONE,215,,,,Virtual Design and Construction,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,CONE 215 or CIVE 121 (pick 1),choose,1,,CIVE,121,,,,Computer Graphics for the Built Environment,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,100,,,,General Biology,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,BIOL 100 or BIOL 101 (pick 1),choose,1,,BIOL,101,,,,World of Animals,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,202,,,,General Chemistry for Engineers,4,"Grade of C or better, no Cr/NC"
+construction_engineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,200,,,,General Chemistry,5,"Grade of C or better, no Cr/NC"
+construction_engineering_bs,Preparation for the Major,CIVE 160 or STAT 250 (pick 1),choose,1,,CIVE,160,,,,Statistical Methods for the Built Environment,3,No Cr/NC
+construction_engineering_bs,Preparation for the Major,CIVE 160 or STAT 250 (pick 1),choose,1,,STAT,250,,,,Statistical Principles and Practices,3,No Cr/NC
+construction_engineering_bs,Major,Required,required,,,CONE,301,,,,"Construction Ethics, Law, and Contracts",3,
+construction_engineering_bs,Major,Required,required,,,CONE,312,,,,Mechanical and Electrical Principles for Construction,3,
+construction_engineering_bs,Major,Required,required,,,CONE,320,,,,Construction Estimating,3,
+construction_engineering_bs,Major,Required,required,,,CONE,330,,,,Principles of Engineering Economy,3,
+construction_engineering_bs,Major,Required,required,,,CONE,340,,,,Analysis and Design of Construction Operations,3,
+construction_engineering_bs,Major,Required,required,,,CONE,401,,,,Construction Planning and Scheduling,3,
+construction_engineering_bs,Major,Required,required,,,CONE,479,,,,Construction Materials,3,
+construction_engineering_bs,Major,Required,required,,,CONE,480,,,,Design of Temporary Structures,3,
+construction_engineering_bs,Major,Required,required,,,CONE,590,,,,Construction Management and Safety,3,
+construction_engineering_bs,Major,Required,required,,,CIVE,301,,,,Introduction to Solid Mechanics,3,
+construction_engineering_bs,Major,Required,required,,,CIVE,302,,,,Solid Mechanics Laboratory,1,
+construction_engineering_bs,Major,Required,required,,,CIVE,321,,,,Structural Analysis I,3,
+construction_engineering_bs,Major,Required,required,,,CIVE,462,,,,Geotechnical Engineering,3,
+construction_engineering_bs,Major,Required,required,,,CIVE,463,,,,Soil Testing Fundamentals,1,
+construction_engineering_bs,Major,Required,required,,,CIVE,495W,,,,Capstone Design Project,3,Satisfies the Graduation Writing Assessment
+construction_engineering_bs,Technical Elective A,,note,,,,,,,,,,Three units from Technical elective A and one unit from Technical elective B
+construction_engineering_bs,Technical Elective A,Technical Elective A,pool,,3,CONE,520,,,,Environmentally Conscious Construction,3,
+construction_engineering_bs,Technical Elective A,Technical Elective A,pool,,3,CIVE,421,,,,Reinforced Concrete Design,3,
+construction_engineering_bs,Technical Elective A,Technical Elective A,pool,,3,CIVE,465,,,,Foundation Engineering and Earth Retaining Structures,3,
+construction_engineering_bs,Technical Elective A,Technical Elective A,pool,,3,CIVE,523,,,,Design of Light Framed Structures,3,
+construction_engineering_bs,Technical Elective A,Technical Elective A,pool,,3,CIVE,525,,,,Design of Steel Structures,3,
+construction_engineering_bs,Technical Elective A,Technical Elective A,pool,,3,CIVE,528,,,,Masonry Structures Design,3,
+construction_engineering_bs,Technical Elective B,Technical Elective B,pool,,1,CONE,499,,,,Special Study,1-3,
 electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,101,,,,Introduction to Electrical and Computer Engineering,1,No Cr/NC
 electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,200,,,,Analytical Methods for Electrical Engineers,3,"Grade of C- or better, no Cr/NC"
 electrical_engineering_bs,Preparation for the Major,Required,required,,,EE,210,,,,Circuit Analysis I,3,"Grade of C or better, no Cr/NC"
@@ -523,3 +1024,247 @@ electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,4
 electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,584L,,,,Power Electronics Laboratory,1,
 electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,430L,,,,Electronic Circuits Laboratory,1,
 electrical_engineering_bs,Laboratory Electives,Laboratory Electives,pool,,2,EE,458L,,,,Communications and Digital Signal Processing Laboratory,1,
+environmental_engineering_bs,Preparation for the Major,Required,required,,,ENVE,101,,,,Environmental Engineering Seminar,3,No Cr/NC
+environmental_engineering_bs,Preparation for the Major,Required,required,,,AE,280,,,,Methods of Analysis,3,No Cr/NC
+environmental_engineering_bs,Preparation for the Major,Required,required,,,BIOL,204,,,,Principles of Organismal Biology,3,No Cr/NC
+environmental_engineering_bs,Preparation for the Major,Required,required,,,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,No Cr/NC
+environmental_engineering_bs,Preparation for the Major,Required,required,,,CHEM,130,,,,Elementary Organic Chemistry,3,No Cr/NC
+environmental_engineering_bs,Preparation for the Major,Required,required,,,CIVE,121,,,,Computer Graphics for the Built Environment,3,No Cr/NC
+environmental_engineering_bs,Preparation for the Major,Required,required,,,CIVE,220,,,,Civil and Environmental Engineering Computer Applications,3,No Cr/NC
+environmental_engineering_bs,Preparation for the Major,Required,required,,,CIVE,225,,,,Mechanics for Civil Engineers,3,"Grade of C or better, no Cr/NC"
+environmental_engineering_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,"Grade of C or better, no Cr/NC"
+environmental_engineering_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,"Grade of C or better, no Cr/NC"
+environmental_engineering_bs,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,No Cr/NC
+environmental_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+environmental_engineering_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,No Cr/NC
+environmental_engineering_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+environmental_engineering_bs,Preparation for the Major,Required,required,,,ENVE,200,,,,Environmental Data Analysis and Applications,3,No Cr/NC
+environmental_engineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,202,,,,General Chemistry for Engineers,4,"Grade of C or better, no Cr/NC"
+environmental_engineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,200,,,,General Chemistry,5,"Grade of C or better, no Cr/NC"
+environmental_engineering_bs,Preparation for the Major,CIVE 160 or STAT 250 (pick 1),choose,1,,CIVE,160,,,,Statistical Methods for the Built Environment,3,No Cr/NC
+environmental_engineering_bs,Preparation for the Major,CIVE 160 or STAT 250 (pick 1),choose,1,,STAT,250,,,,Statistical Principles and Practices,3,No Cr/NC
+environmental_engineering_bs,Major,Required,required,,,ENVE,355,,,,Environmental Engineering,3,
+environmental_engineering_bs,Major,Required,required,,,ENVE,356,,,,Environmental Chemistry for Engineers,3,
+environmental_engineering_bs,Major,Required,required,,,ENVE,363,,,,Environmental Engineering Laboratory,3,
+environmental_engineering_bs,Major,Required,required,,,ENVE,445,,,,Water and Wastewater Treatment Systems,3,
+environmental_engineering_bs,Major,Required,required,,,ENVE,554,,,,Process Fundamentals of Environmental Systems,3,
+environmental_engineering_bs,Major,Required,required,,,ENVE,556,,,,Air Pollution Engineering,3,
+environmental_engineering_bs,Major,Required,required,,,ENVE,558,,,,Solid and Hazardous Waste Engineering,3,
+environmental_engineering_bs,Major,Required,required,,,AE,340,,,,Fluid Mechanics,3,
+environmental_engineering_bs,Major,Required,required,,,CIVE,444,,,,Applied Hydraulics,3,
+environmental_engineering_bs,Major,Required,required,,,CIVE,462,,,,Geotechnical Engineering,3,
+environmental_engineering_bs,Major,Required,required,,,CIVE,495W,,,,Capstone Design Project,3,Satisfies the Graduation Writing Assessment
+environmental_engineering_bs,Major,Required,required,,,CONE,330,,,,Principles of Engineering Economy,3,
+environmental_engineering_bs,Major,Required,required,,,ME,350,,,,Thermodynamics,3,
+environmental_engineering_bs,Three Units of Professional Electives,Three Units of Professional Electives,pool,,3,ENVE,499,,,,Special Study,1-3,
+environmental_engineering_bs,Three Units of Professional Electives,Three Units of Professional Electives,pool,,3,ENVE,555,,,,Sustainable Water and Sanitation Systems,3,
+environmental_engineering_bs,Three Units of Professional Electives,Three Units of Professional Electives,pool,,3,CIVE,445,,,,Applied Hydrology,3,
+environmental_engineering_bs,Three Units of Professional Electives,Three Units of Professional Electives,pool,,3,CIVE,530,,,,Open Channel Hydraulics,3,
+environmental_engineering_bs,Three Units of Professional Electives,Three Units of Professional Electives,pool,,3,CIVE,531,,,,Pipe Flow and Water Distribution Systems,3,
+environmental_engineering_bs,Three Units of Professional Electives,Three Units of Professional Electives,pool,,3,CIVE,545,,,,Field Methods in Hydrology,3,
+environmental_engineering_bs,Three Units of Professional Electives,Three Units of Professional Electives,pool,,3,GEOG,570,,,,Environmental Conservation Practice,3,
+environmental_engineering_bs,Three Units of Professional Electives,Three Units of Professional Electives,pool,,3,GEOL,530,,,,Geochemistry,3,
+health_communication_bs,Preparation for the Major,,note,,,,,,,,,,General Education Oral Communication requirement (3 units) and 6 units selected from:
+health_communication_bs,Preparation for the Major,Choose from these courses,pool,,6,COMM,160,,,,Argumentation,3,
+health_communication_bs,Preparation for the Major,Choose from these courses,pool,,6,COMM,201,,,,Communication and Community,3,
+health_communication_bs,Preparation for the Major,Choose from these courses,pool,,6,COMM,204,,,,Advanced Public Speaking,3,
+health_communication_bs,Preparation for the Major,Choose from these courses,pool,,6,COMM,245,,,,Interpersonal Communication,3,
+health_communication_bs,Major,Required,required,,,COMM,300,,,,Conceptualizing Communication,3,
+health_communication_bs,Major,Required,required,,,COMM,321,,,,Introduction to Health Communication,3,
+health_communication_bs,Major,Required,required,,,COMM,350,,,,Investigating Communication,3,
+health_communication_bs,Major,Health Communication Capstone,required,,,COMM,495,,,,Communication Capstone: Conceptualizing and Investigating Communication,3,Must be taken after completion of at least 90 units to include 6 units in Investigating Communication and 6 units in Health Communication Electives
+health_communication_bs,Investigating Communication,Investigating Communication,pool,,6,COMM,407,,,,Communicative Perspectives on Interviewing,3,
+health_communication_bs,Investigating Communication,Investigating Communication,pool,,6,COMM,420,,,,Quantitative Methods in Communication,3,
+health_communication_bs,Investigating Communication,Investigating Communication,pool,,6,COMM,441,,,,Foundations of Critical and Cultural Study,3,
+health_communication_bs,Investigating Communication,Investigating Communication,pool,,6,COMM,462,,,,Ethnography and Communication,3,
+health_communication_bs,Investigating Communication,Investigating Communication,pool,,6,COMM,465,,,,Conversational Interaction,3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,421,,,,Health Communication and Community Based Service Learning,3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,422,,,,Politics of Health Communication,3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,423,,,,Patient-Provider Communication,3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,424,,,,Health Communication and Relationships,3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,425,,,,Theory and Research in Health Communication Campaigns,3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,426,,,,Communication in Health Risk and Crises,3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,427,,,,Health Communication and Cultural Communities,3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,428,,,,Communicating Health and Well-Being at Work,3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,444,,,,Sexual Communication,3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,485,,,,Communicating Leadership,3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,490,,,,Internship,1-3,
+health_communication_bs,Health Communication Electives,Health Communication Electives,pool,,18,COMM,540,,,,Communicating Science in the Public Interest,3,
+health_communication_bs,Health Communication Electives,3 units may also be selected from,pool,,18,COMM,371,,,,Intercultural Communication,3,3 units may also be selected from
+health_communication_bs,Health Communication Electives,3 units may also be selected from,pool,,18,COMM,415,,,,Nonverbal Communication,3,3 units may also be selected from
+health_communication_bs,Health Communication Electives,3 units may also be selected from,pool,,18,COMM,445,,,,Relational Communication,3,3 units may also be selected from
+health_communication_bs,Health Communication Electives,3 units may also be selected from,pool,,18,COMM,492,,,,Persuasion,3,3 units may also be selected from
+health_communication_bs,Health Communication Electives,3 units may also be selected from,pool,,18,COMM,499,,,,Special Study,1-3,3 units may also be selected from
+health_communication_bs,Health Communication Electives,3 units may also be selected from,pool,,18,COMM,555,,,,Conflict Management Communication,3,3 units may also be selected from
+health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,GERO,360,,,,Diversity and Aging,3,
+health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,GERO,370,,,,Images of Aging in Contemporary Society,3,
+health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,HHS,350,,,,Applied International Health and Human Services,3,
+health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,NURS,350,,,,Women’s Health Across the Lifespan,3,
+health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,PHIL,330,,,,Biomedical Ethics,3,
+health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,PA,340,,,,Administrative Behavior,3,
+health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,PH,353,,,,Human Sexuality and Disease,3,
+health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,PH,362,,,,Global Health,3,
+health_communication_bs,Health-Related Preparation Courses,Health-Related Preparation Courses,pool,,6,SWORK,430,,,,Alcohol and Other Drug Problems: Prevention and Intervention,3,
+kinesiology_exercise_science_generalist_bs,Preparation for the Major,,note,,,,,,,,,,Students must complete the following courses as part of the TMC or at SDSU:
+kinesiology_exercise_science_generalist_bs,Preparation for the Major,Required,required,,,ENS,265,,,,Care and Prevention of Athletic and Recreational Injuries,2,
+kinesiology_exercise_science_generalist_bs,Preparation for the Major,CHEM 100 or CHEM 102 or CHEM 200 (pick 1),choose,1,,CHEM,100,,,,Preparation for General Chemistry,4,
+kinesiology_exercise_science_generalist_bs,Preparation for the Major,CHEM 100 or CHEM 102 or CHEM 200 (pick 1),choose,1,,CHEM,102,,,,"Introduction to General, Organic, and Biological Chemistry",5,
+kinesiology_exercise_science_generalist_bs,Preparation for the Major,CHEM 100 or CHEM 102 or CHEM 200 (pick 1),choose,1,,CHEM,200,,,,General Chemistry,5,
+kinesiology_exercise_science_generalist_bs,Preparation for the Major,Statistics (pick 1),choose,1,,BIOL,215,,,,Biostatistics,3,
+kinesiology_exercise_science_generalist_bs,Preparation for the Major,Statistics (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,
+kinesiology_exercise_science_generalist_bs,Preparation for the Major,Statistics (pick 1),choose,1,,PSY,280,,,,Statistical Methods in Psychology,4,
+kinesiology_exercise_science_generalist_bs,Preparation for the Major,Statistics (pick 1),choose,1,,SOC,201,,,,Elementary Social Statistics,3,
+kinesiology_exercise_science_generalist_bs,Preparation for the Major,Statistics (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,303,,,,Applied Kinesiology,3,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,304,,,,Physiology of Exercise,3,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,304L,,,,Exercise Physiology Laboratory,1,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,305,,,,Measurement and Evaluation in Kinesiology,3,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,307,,,,Neuroscience of Movement,3,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,308,,,,Biomechanics Foundations,3,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,322,,,,Applied Assessments in Health and Fitness,3,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,332,,,,Pathophysiology and Exercise Programming of Disease Populations I,3,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,333,,,,Pathophysiology and Exercise Programming of Disease Populations II,2,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,340,,,,"Program Design for Health, Fitness, and Performance",3,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,433,,,,"Exercise, Physical Activity, and Aging",3,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,ENS,434,,,,Promoting Physical Activity and Healthy Eating,3,
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,HHS,350,,,,Applied International Health and Human Services,3,will satisfy three units of the General Education Explorations Area 4. Social and Behavioral Science
+kinesiology_exercise_science_generalist_bs,Major,Required,required,,,FN,313,,,,Contemporary Nutrition,3,
+kinesiology_exercise_science_generalist_bs,Major,ENS 437A or ENS 437B (pick 1),choose,1,,ENS,437A,,,,Adaptive Fitness Clinic,1,(one unit)
+kinesiology_exercise_science_generalist_bs,Major,ENS 437A or ENS 437B (pick 1),choose,1,,ENS,437B,,,,Community Rehabilitation Laboratory,1,But not both. (one unit)
+kinesiology_exercise_science_generalist_bs,Upper Division Major Elective,Upper Division Major Elective,pool,,3,ENS,318,,,,"Sport, Games, and Culture",3,
+kinesiology_exercise_science_generalist_bs,Upper Division Major Elective,Upper Division Major Elective,pool,,3,ENS,330,,,,Exercise and Wellness Across the Lifespan,3,
+kinesiology_exercise_science_generalist_bs,Upper Division Major Elective,Upper Division Major Elective,pool,,3,ENS,331,,,,"Exercise and Nutrition for Health, Fitness, and Performance",3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,ENS,200,,,,Introduction to Exercise and Nutritional Sciences,3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,ENS,265,,,,Care and Prevention of Athletic and Recreational Injuries,2,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,ENS,265L,,,,Care and Prevention of Athletic and Recreational Injuries Laboratory,1,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,BIOL,100,,,,General Biology,3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,BIOL,100L,,,,General Biology Laboratory,1,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,BIOL,212,,,,Human Anatomy,4,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,CHEM,100,,,,Preparation for General Chemistry,4,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,COMM,103,,,,Oral Communication,3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,GERO,101,,,,Introduction to Human Aging,3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,FN,201,,,,Fundamentals of Nutrition,3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,PSY,101,,,,Introductory Psychology,3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,Required,required,,,SOC,101,,,,Introductory Sociology: The Study of Society,3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,One of the Following (pick 1),choose,1,,BIOL,215,,,,Biostatistics,3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,One of the Following (pick 1),choose,1,,ECON,201,,,,Statistical Methods,3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,One of the Following (pick 1),choose,1,,PSY,280,,,,Statistical Methods in Psychology,4,
+kinesiology_fitness_specialist_bs,Preparation for the Major,One of the Following (pick 1),choose,1,,SOC,201,,,,Elementary Social Statistics,3,
+kinesiology_fitness_specialist_bs,Preparation for the Major,One of the Following (pick 1),choose,1,,STAT,119,,,,Elementary Statistics for Business,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,303,,,,Applied Kinesiology,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,304,,,,Physiology of Exercise,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,304L,,,,Exercise Physiology Laboratory,1,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,305,,,,Measurement and Evaluation in Kinesiology,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,306,,,,Biomechanics of Human Movement,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,307,,,,Neuroscience of Movement,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,322,,,,Applied Assessments in Health and Fitness,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,332,,,,Pathophysiology and Exercise Programming of Disease Populations I,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,333,,,,Pathophysiology and Exercise Programming of Disease Populations II,2,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,340,,,,"Program Design for Health, Fitness, and Performance",3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,410,,,,Concepts in Metabolism and Weight Management,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,433,,,,"Exercise, Physical Activity, and Aging",3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,434,,,,Promoting Physical Activity and Healthy Eating,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,438,,,,Psychosocial Aspects of Disease and Injury Rehabilitation,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,439,,,,Instructional Leadership in Health and Clinical Settings,2,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,ENS,440,,,,Fitness Practitioner Internship,3,
+kinesiology_fitness_specialist_bs,Major,Required,required,,,BIOL,336,,,,Principles of Human Physiology,3,will also satisfy the General Education requirement in IV.A. Must be completed with a grade of a C (2. 0) or better
+kinesiology_fitness_specialist_bs,Major,ENS 437A or ENS 437B (pick 1),choose,1,,ENS,437A,,,,Adaptive Fitness Clinic,1,(one unit)
+kinesiology_fitness_specialist_bs,Major,ENS 437A or ENS 437B (pick 1),choose,1,,ENS,437B,,,,Community Rehabilitation Laboratory,1,But not both (one unit)
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,ME,190,,,,Computer-Aided Design,2,
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,ME,202,,,,Computer Programming and Applications,3,
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,ME,230,,,,Basics of Mechatronics,3,
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,ME,240,,,,Introduction to Engineering Materials,3,
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,ME,241,,,,Materials Laboratory,1,
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,AE,280,,,,Methods of Analysis,3,
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,"Grade of C or better, no Cr/NC"
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,"Grade of C or better, no Cr/NC"
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,"Grade of C or better, no Cr/NC"
+mechanical_engineering_bioengineering_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,
+mechanical_engineering_bioengineering_bs,Preparation for the Major,"ME 200 / AE 200 (same course, pick 1)",choose,1,,ME,200,,,,Statics,3,"Cross-listed. Grade of C or better, no Cr/NC"
+mechanical_engineering_bioengineering_bs,Preparation for the Major,"ME 200 / AE 200 (same course, pick 1)",choose,1,,AE,200,,,,Statics,3,"Cross-listed. Grade of C or better, no Cr/NC"
+mechanical_engineering_bioengineering_bs,Preparation for the Major,"ME 220 / AE 220 (same course, pick 1)",choose,1,,ME,220,,,,Dynamics,3,Cross-listed
+mechanical_engineering_bioengineering_bs,Preparation for the Major,"ME 220 / AE 220 (same course, pick 1)",choose,1,,AE,220,,,,Dynamics,3,Cross-listed
+mechanical_engineering_bioengineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,202,,,,General Chemistry for Engineers,4,"Grade of C or better, no Cr/NC"
+mechanical_engineering_bioengineering_bs,Preparation for the Major,CHEM 202 or CHEM 200 (pick 1),choose,1,,CHEM,200,,,,General Chemistry,5,"Grade of C or better, no Cr/NC"
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,ME,304,,,,Mechanics of Materials,3,
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,ME,314,,,,Engineering Design: Mechanical Components,3,
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,ME,330,,,,Mechatronics Laboratory,3,
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,ME,340,,,,Introduction to Manufacturing Engineering,3,
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,ME,350,,,,Thermodynamics,3,
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,ME,360,,,,Fluids Engineering,3,
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,ME,430,,,,Automatic Control Systems,3,
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,ME,452,,,,Principles of Heat Transfer,3,
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,ME,490W,,,,Engineering Design: Senior Project,3,Satisfies the Graduation Writing Assessment
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,ME,491,,,,Engineering Design: Senior Project,3,
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,AE,341,,,,Fluid Mechanics Laboratory,1,
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,BIOL,336,,,,Principles of Human Physiology,3,
+mechanical_engineering_bioengineering_bs,Major,Required,required,,,BIOL,436,,,,Human Physiology Laboratory,2,
+mechanical_engineering_bioengineering_bs,Professional Electives,,note,,,,,,,,,,"Nine units of additional coursework may be selected from M E 499 (3 units), M E 570 , M E 580 , M E 582 , M E 585 , E E 503 , and other 400- or 500-level courses in the bioengineering area with prior departmental approval, with at least six of the nine units at the 500-level"
+mechanical_engineering_bioengineering_bs,Professional Electives,Professional Electives,pool,,9,ME,499,,,,,3,
+mechanical_engineering_bioengineering_bs,Professional Electives,Professional Electives,pool,,9,ME,570,,,,,,
+mechanical_engineering_bioengineering_bs,Professional Electives,Professional Electives,pool,,9,ME,580,,,,,,
+mechanical_engineering_bioengineering_bs,Professional Electives,Professional Electives,pool,,9,ME,582,,,,,,
+mechanical_engineering_bioengineering_bs,Professional Electives,Professional Electives,pool,,9,ME,585,,,,,,
+mechanical_engineering_bioengineering_bs,Professional Electives,Professional Electives,pool,,9,EE,503,,,,,,
+psychology_industrial_organizational_ba,Preparation for the Major,Required,required,,,PSY,101,,,,Introductory Psychology,3,
+psychology_industrial_organizational_ba,Preparation for the Major,Required,required,,,PSY,201,,,,Academic and Career Opportunities in Psychology,1,
+psychology_industrial_organizational_ba,Preparation for the Major,Required,required,,,PSY,211,,,,Introduction to Cognitive Psychology,3,
+psychology_industrial_organizational_ba,Preparation for the Major,Required,required,,,PSY,230,,,,Developmental Psychology,3,
+psychology_industrial_organizational_ba,Preparation for the Major,Required,required,,,PSY,260,,,,Introduction to Physiological Psychology,3,
+psychology_industrial_organizational_ba,Preparation for the Major,Required,required,,,PSY,280,,,,Statistical Methods in Psychology,4,A college level statistics course will be accepted from another department (CIV E 160; ECON 201; LING 270; POL S 201; SOC 201; STAT 119 or STAT 250) combined with PSY 281 in lieu of PSY 280
+psychology_industrial_organizational_ba,Major,,note,,,,,,,,,,"Methods: All majors must complete PSY 301 or PSY 410 (or both) with a grade of B (3.0) or better. Methods: To enroll in these courses, students must have earned at least a B (3.0) in PSY 280 or an equivalent course"
+psychology_industrial_organizational_ba,Major,Required,required,,,PSY,319,,,,Industrial and Organizational Psychology,3,Grade of C or better
+psychology_industrial_organizational_ba,Major,Required,required,,,PSY,370,,,,Psychological Testing and Measurement,3,
+psychology_industrial_organizational_ba,Major,Required,required,,,PSY,420,,,,Advanced Topics in Industrial Psychology,3,
+psychology_industrial_organizational_ba,Major,Required,required,,,PSY,421,,,,Advanced Topics in Organizational Psychology,3,
+psychology_industrial_organizational_ba,Major,PSY 301 or PSY 410 (pick 1),choose,1,,PSY,301,,,,Introduction to Research Methods in Psychology,4,Grade of B or better
+psychology_industrial_organizational_ba,Major,PSY 301 or PSY 410 (pick 1),choose,1,,PSY,410,,,,Advanced Research Methods Laboratory,5,Grade of B or better
+psychology_industrial_organizational_ba,Breadth,,note,,,,,,,,,,"All majors must complete three courses or 9 units; one course selected from Groups I, III, and IV:. Group II: Satisfied by emphasis core courses"
+psychology_industrial_organizational_ba,Breadth,Group I (pick 1),choose,1,,PSY,340,,,,Social Psychology,3,
+psychology_industrial_organizational_ba,Breadth,Group I (pick 1),choose,1,,PSY,344,,,,Psychology and Culture,3,
+psychology_industrial_organizational_ba,Breadth,Group III (pick 1),choose,1,,PSY,331,,,,Psychology of Infant and Child Development,3,
+psychology_industrial_organizational_ba,Breadth,Group III (pick 1),choose,1,,PSY,332,,,,Psychology of Adolescent and Early Adult Development,3,
+psychology_industrial_organizational_ba,Breadth,Group III (pick 1),choose,1,,PSY,333,,,,Developmental Psychopathology,3,
+psychology_industrial_organizational_ba,Breadth,Group III (pick 1),choose,1,,PSY,350,,,,Psychopathology,3,
+psychology_industrial_organizational_ba,Breadth,Group III (pick 1),choose,1,,PSY,407,,,,Health Psychology,3,
+psychology_industrial_organizational_ba,Breadth,Group IV (pick 1),choose,1,,PSY,360,,,,Behavioral Neuroscience,3,
+psychology_industrial_organizational_ba,Breadth,Group IV (pick 1),choose,1,,PSY,361,,,,Neuropsychology,3,
+psychology_industrial_organizational_ba,Breadth,Group IV (pick 1),choose,1,,PSY,362,,,,Cognitive Neuroscience,3,
+psychology_industrial_organizational_ba,Breadth,Group IV (pick 1),choose,1,,PSY,380,,,,Intermediate Cognitive Psychology,3,
+psychology_industrial_organizational_ba,Breadth,Group IV (pick 1),choose,1,,PSY,388,,,,Sensation and Perception,3,
+psychology_industrial_organizational_ba,Upper Division Major Electives,Any PSY 300-599 course,open,,5-6,PSY,,300,599,,,,An additional 5-6 elective units selected from 300- to 500-level Psychology courses and WGSS 325 * to satisfy the 31 units required for the Psychology major
+psychology_neuroscience_ba,Preparation for the Major,Required,required,,,PSY,101,,,,Introductory Psychology,3,
+psychology_neuroscience_ba,Preparation for the Major,Required,required,,,PSY,201,,,,Academic and Career Opportunities in Psychology,1,
+psychology_neuroscience_ba,Preparation for the Major,Required,required,,,PSY,211,,,,Introduction to Cognitive Psychology,3,Grade of B or better
+psychology_neuroscience_ba,Preparation for the Major,Required,required,,,PSY,230,,,,Developmental Psychology,3,
+psychology_neuroscience_ba,Preparation for the Major,Required,required,,,PSY,260,,,,Introduction to Physiological Psychology,3,Grade of B or better
+psychology_neuroscience_ba,Preparation for the Major,Required,required,,,PSY,280,,,,Statistical Methods in Psychology,4,A college level statistics course will be accepted from another department (BIOL 215; CIV E 160; ECON 201; POL S 201; SOC 201; STAT 119 or STAT 250) combined with PSY 281 in lieu of PSY 280
+psychology_neuroscience_ba,Major,,note,,,,,,,,,,"Methods: All majors must complete PSY 301 or PSY 410 (or both). Methods: To enroll in these courses, students must have earned at least a B (3.0) in PSY 280 or an equivalent course"
+psychology_neuroscience_ba,Major,PSY 301 or PSY 410 (pick 1),choose,1,,PSY,301,,,,Introduction to Research Methods in Psychology,4,
+psychology_neuroscience_ba,Major,PSY 301 or PSY 410 (pick 1),choose,1,,PSY,410,,,,Advanced Research Methods Laboratory,5,
+psychology_neuroscience_ba,Neuroscience Core,Neuroscience Core,choose,1,,PSY,360,,,,Behavioral Neuroscience,3,
+psychology_neuroscience_ba,Neuroscience Core,Neuroscience Core,choose,1,,PSY,362,,,,Cognitive Neuroscience,3,
+psychology_neuroscience_ba,Neuroscience Core Electives,Neuroscience Core Electives,pool,,9,PSY,360,,,,Behavioral Neuroscience,3,(if not applied to core)
+psychology_neuroscience_ba,Neuroscience Core Electives,Neuroscience Core Electives,pool,,9,PSY,361,,,,Neuropsychology,3,
+psychology_neuroscience_ba,Neuroscience Core Electives,Neuroscience Core Electives,pool,,9,PSY,362,,,,Cognitive Neuroscience,3,(if not applied to core)
+psychology_neuroscience_ba,Neuroscience Core Electives,Neuroscience Core Electives,pool,,9,PSY,365,,,,Drugs and Behavior,3,
+psychology_neuroscience_ba,Neuroscience Core Electives,Neuroscience Core Electives,pool,,9,PSY,561,,,,Advanced Neuropsychology,3,
+psychology_neuroscience_ba,Neuroscience Core Electives,Neuroscience Core Electives,pool,,9,PSY,568,,,,Systems Neuroscience,3,
+psychology_neuroscience_ba,Neuroscience Core Electives,Neuroscience Core Electives,pool,,9,PSY,569,,,,Foundations of Neuroimaging,3,
+psychology_neuroscience_ba,Breadth,,note,,,,,,,,,,"All majors must complete three courses or 9 units; one course selected from Groups I, II, and III:. Group IV: Satisfied by major core courses"
+psychology_neuroscience_ba,Breadth,Group I (pick 1),choose,1,,PSY,340,,,,Social Psychology,3,
+psychology_neuroscience_ba,Breadth,Group I (pick 1),choose,1,,PSY,344,,,,Psychology and Culture,3,
+psychology_neuroscience_ba,Breadth,Group II (pick 1),choose,1,,PSY,319,,,,Industrial and Organizational Psychology,3,
+psychology_neuroscience_ba,Breadth,Group II (pick 1),choose,1,,PSY,351,,,,Psychology of Personality,3,
+psychology_neuroscience_ba,Breadth,Group II (pick 1),choose,1,,PSY,370,,,,Psychological Testing and Measurement,3,
+psychology_neuroscience_ba,Breadth,Group III (pick 1),choose,1,,PSY,331,,,,Psychology of Infant and Child Development,3,
+psychology_neuroscience_ba,Breadth,Group III (pick 1),choose,1,,PSY,332,,,,Psychology of Adolescent and Early Adult Development,3,
+psychology_neuroscience_ba,Breadth,Group III (pick 1),choose,1,,PSY,333,,,,Developmental Psychopathology,3,
+psychology_neuroscience_ba,Breadth,Group III (pick 1),choose,1,,PSY,350,,,,Psychopathology,3,
+psychology_neuroscience_ba,Breadth,Group III (pick 1),choose,1,,PSY,407,,,,Health Psychology,3,
+psychology_neuroscience_ba,Upper Division Major Electives,Any PSY 300-599 course,open,,5-6,PSY,,300,599,,,,An additional 5-6 elective units selected from 300- to 500-level Psychology courses to satisfy the 31 units required for the Psychology major

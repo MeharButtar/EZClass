@@ -17,7 +17,7 @@ from backend.models.db import get_connection, normalize_subject
 
 majors_bp = Blueprint("majors", __name__)
 
-MAJOR_ID_PATTERN = re.compile(r"^[a-z0-9_]{1,40}$")
+MAJOR_ID_PATTERN = re.compile(r"^[a-z0-9_]{1,64}$")   # same limit as frontend/js/store.js
 SUBJECT_PATTERN = re.compile(r"^[A-Z]{1,8}$")
 MAX_SUBJECTS = 12
 MAX_COURSES = 200

@@ -217,29 +217,27 @@ class HelperTests(unittest.TestCase):
             self.assertFalse(importer.is_abbreviation(short, full), short)
 
     def test_propose_id(self):
-        self.assertEqual(importer.propose_id("Civil Engineering", "B.S."), "ce_bs")
-        self.assertEqual(importer.propose_id("Civil Engineering", "B.S.", full=True), "civil_engineering_bs")
-        self.assertEqual(importer.propose_id("Business Administration, Emphasis in Accounting", "B.S."),
-                         "ba_accounting_bs")
-        self.assertEqual(importer.propose_id("History", "B.A."), "history_ba")
-        self.assertEqual(importer.propose_id("Brazilian Studies", "B.A."), "brazilian_studies_ba")   # not 'bs_ba'
-        self.assertEqual(importer.propose_id("Music, Music Education Specialization", "B.M."), "music_education_bm")
-        self.assertEqual(importer.propose_id("Television, Film and New Media, Emphasis in Production", "B.S."),
-                         "tfm_production_bs")
-        self.assertEqual(importer.propose_id("Biology, in Preparation for the Single Subject Teaching Credential "
-                                             "in Science/Biological Sciences", "B.S."), "biology_credential_bs")
-
-    def test_shared_initials_are_spelled_out_whatever_the_order(self):
-        names = ["Civil Engineering", "Computer Engineering", "Construction Engineering", "Aerospace Engineering"]
-        for order in (names, names[::-1]):
-            progs = []
-            for i, name in enumerate(order):
-                p = importer.Program("")
-                p.poid, p.name, p.degree = str(90000 + names.index(name)), name, "B.S."
-                progs.append(p)
-            importer.assign_ids(progs, collections.OrderedDict(), [])
-            self.assertEqual(sorted(p.major_id for p in progs),
-                             ["ae_bs", "civil_engineering_bs", "computer_engineering_bs", "construction_engineering_bs"])
+        pid = importer.propose_id
+        self.assertEqual(pid("Civil Engineering", "B.S."), "civil_engineering_bs")
+        self.assertEqual(pid("Aerospace Engineering", "B.S."), "aerospace_engineering_bs")
+        self.assertEqual(pid("Business Administration, Emphasis in Accounting", "B.S."), "ba_accounting_bs")
+        self.assertEqual(pid("History", "B.A."), "history_ba")
+        self.assertEqual(pid("Brazilian Studies", "B.A."), "brazilian_studies_ba")
+        self.assertEqual(pid("Music, Music Education Specialization", "B.M."), "music_education_bm")
+        self.assertEqual(pid("Biology, Emphasis in Marine Biology", "B.S."), "biology_marine_bs")
+        self.assertEqual(pid("Public Health, Emphasis in Environmental Health", "B.S."),
+                         "public_health_environmental_health_bs")        # only the whole base is dropped
+        self.assertEqual(pid("Foods and Nutrition", "B.S."), "foods_nutrition_bs")
+        self.assertEqual(pid("Television, Film and New Media, Emphasis in Production", "B.S."),
+                         "television_film_new_media_production_bs")
+        self.assertEqual(pid("Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society",
+                             "B.S."), "chemistry_biochemistry_american_chemical_society_bs")
+        self.assertEqual(pid("Biology, in Preparation for the Single Subject Teaching Credential "
+                             "in Science/Biological Sciences", "B.S."), "biology_credential_bs")
+        long = pid("International Security and Conflict Resolution, Specialization in Environment in the Global "
+                   "System and Very Long Words Here", "B.A.")
+        self.assertLessEqual(len(long), importer.MAX_ID_LEN)
+        self.assertTrue(long.startswith("international_security_conflict_resolution_environment") and long.endswith("_ba"))
 
     def test_existing_ids_are_reused_and_never_changed(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -253,16 +251,30 @@ class HelperTests(unittest.TestCase):
                 progs.append(p)
             log = []
             importer.assign_ids(progs, importer.read_ids(path), log)
-            # civil_bs is kept as saved; Computer Engineering shares 'ce' with Civil, so it is spelled out
+            # civil_bs is kept as saved, me_bs is a known live id, the new one is in full words
             self.assertEqual([p.major_id for p in progs], ["civil_bs", "computer_engineering_bs", "me_bs"])
-            self.assertTrue(any("spelled out" in line for line in log))
             # an id that is already taken is never handed out again
             other = importer.Program("")
             other.poid, other.name, other.degree = "99999", "Computer Engineering", "B.S."
             saved = {p.poid: {"poid": p.poid, "major_id": p.major_id, "name": p.name} for p in progs}
             importer.assign_ids([other], saved, log)
-            self.assertNotIn(other.major_id, {p.major_id for p in progs})
+            self.assertEqual(other.major_id, "computer_engineering_bs_2")
             self.assertTrue(any("collision" in line for line in log))
+
+    def test_every_id_fits_the_api_and_the_page(self):
+        """ba_management_human_resource_management_bs (42 characters) was refused by the old 40-character limit."""
+        api = importlib.util.spec_from_file_location("majors_routes", os.path.join(ROOT, "backend", "routes", "majors.py"))
+        with open(api.origin, encoding="utf-8") as f:
+            api_pattern = importer.re.search(r'MAJOR_ID_PATTERN = re\.compile\(r"([^"]+)"\)', f.read()).group(1)
+        with open(os.path.join(ROOT, "frontend", "js", "store.js"), encoding="utf-8") as f:
+            page_patterns = set(importer.re.findall(r"/(\^\[a-z0-9_\]\{1,\d+\}\$)/", f.read()))
+        self.assertEqual(len(page_patterns), 1)
+        ids = [r["major_id"] for r in read_csv(os.path.join(ROOT, "data", "majors", "majors.csv"))]
+        ids += [r["major_id"] for r in importer.read_ids().values()]
+        for mid in ids:
+            self.assertRegex(mid, api_pattern)
+            self.assertRegex(mid, page_patterns.copy().pop())
+            self.assertLessEqual(len(mid), importer.MAX_ID_LEN)
 
 
 class FetcherTests(unittest.TestCase):
@@ -352,6 +364,7 @@ class DiscoveryTests(unittest.TestCase):
         importer.assign_ids(progs, collections.OrderedDict(), [])
         ids = [p.major_id for p in progs]
         self.assertEqual(len(set(ids)), 188)
+        self.assertTrue(all(len(i) <= importer.MAX_ID_LEN for i in ids))
         self.assertTrue(all(importer.re.fullmatch(r"[a-z0-9_]+", i) for i in ids))
         for poid, known in importer.KNOWN_IDS.items():
             self.assertEqual(next(p.major_id for p in progs if p.poid == poid), known)
@@ -585,6 +598,131 @@ class RuleTextTests(unittest.TestCase):
         left_out = " ".join(text for _, text in prog.notes)
         self.assertIn("Please visit the department website", left_out)              # blurbs: report only
         self.assertIn("should refer to its requirements", left_out)
+
+    def groups_of(self, prog):
+        out = collections.OrderedDict()
+        for r in prog.rows:
+            out.setdefault((r["section"], r["group_label"], r["rule"], r["pick_n"], r["pick_units"]), []).append(r["_code"])
+        return out
+
+    def test_headings_that_are_the_rule(self):
+        prog = self.page(
+            ("h2", "Preparation for the Major", "", self.course("EX 100")),
+            ("h3", "One of the Following", "", self.course("EX 115") + self.course("EX 119")),
+            ("h2", "Major", "<p>A minimum of 18 upper division units to include</p>", self.course("EX 300")),
+            ("h3", "A Minimum of 9 Upper Division Units to Include", "", self.course("EX 310") + self.course("EX 320")),
+            ("h3", "At Least One Course Selected From", "", self.course("EX 330") + self.course("EX 340")),
+            ("h3", "Six Units Selected from", "", self.course("EX 510") + self.course("EX 520") + self.course("EX 530")))
+        self.assertEqual(list(self.groups_of(prog).items()), [
+            (("Preparation for the Major", "Required", "required", "", ""), ["EX 100"]),
+            (("Preparation for the Major", "One of the Following (pick 1)", "choose", "1", ""), ["EX 115", "EX 119"]),
+            (("Major", "Required", "required", "", ""), ["EX 300", "EX 310", "EX 320"]),
+            (("Major", "At Least One Course Selected From (pick 1)", "choose", "1", ""), ["EX 330", "EX 340"]),
+            (("Major Electives", "Major Electives", "pool", "", "6"), ["EX 510", "EX 520", "EX 530"]),
+        ])
+        self.assertEqual(prog.units_checks[-1][1:3], ("at least 18", "18"))
+
+    def test_emphasis_wrapper_is_read_one_level_up(self):
+        prog = self.page(
+            ("h2", "Emphasis in Bioengineering", "<p>This program requires 120 units.</p>", ""),
+            ("h3", "Preparation for the Major", "<p>(3 units)</p>", self.course("EX 100")),
+            ("h3", "Graduation Writing Assessment Requirement", "<p>Complete EX 490W with a grade of C (2.0).</p>", ""),
+            ("h3", "Major", "<p>A minimum of 6 upper division units to include:</p>", self.course("EX 300")
+             + self.course("EX 490W")),
+            ("h4", "Professional Electives", "<p>Three units of additional coursework may be selected from EX 499 "
+                                             "(3 units), EX 570, EX 580, and other 400-level courses.</p>", ""))
+        self.assertEqual(list(self.groups_of(prog)), [
+            ("Preparation for the Major", "Required", "required", "", ""), ("Major", "Required", "required", "", ""),
+            ("Professional Electives", "", "note", "", ""),          # the rule sentence, once
+            ("Professional Electives", "Professional Electives", "pool", "", "3")])
+        pool = [r for r in prog.rows if r["rule"] == "pool"]
+        self.assertEqual([(r["_code"], r["units"]) for r in pool], [("EX 499", "3"), ("EX 570", ""), ("EX 580", "")])
+        self.assertEqual(next(r for r in prog.rows if r["_code"] == "EX 490W")["note"], importer.GWAR_NOTE)
+        self.assertEqual([c[1:3] for c in prog.units_checks], [("3", "3"), ("at least 6", "9")])
+
+    def test_units_per_named_group_and_pick_one_per_group(self):
+        prog = self.page(
+            ("h2", "Major", "", self.course("EX 300")),
+            ("h3", "Three Units Selected From", "<p>Three units from Technical elective A and one unit from "
+                                                 "Technical elective B.</p>", ""),
+            ("h4", "Technical Elective A", "", self.course("EX 520") + self.course("EX 521")),
+            ("h4", "Technical Elective B", "", self.course("EX 499", 1)),
+            ("h3", "Breadth", "<p>All majors must complete three courses; one course selected from Groups I and II:</p>",
+             ""),
+            ("h4", "Group I", "", self.course("EX 340") + self.OR + self.course("EX 344")),
+            ("h4", "Group II", "", self.course("EX 351") + self.course("EX 352")),
+            ("h4", "Group III", "<p>Satisfied by major core courses.</p>", ""))
+        groups = self.groups_of(prog)
+        self.assertIn(("Technical Elective A", "Technical Elective A", "pool", "", "3"), groups)
+        self.assertIn(("Technical Elective B", "Technical Elective B", "pool", "", "1"), groups)
+        self.assertEqual(groups[("Breadth", "Group I (pick 1)", "choose", "1", "")], ["EX 340", "EX 344"])
+        self.assertEqual(groups[("Breadth", "Group II (pick 1)", "choose", "1", "")], ["EX 351", "EX 352"])
+        breadth = next(r for r in prog.rows if r["section"] == "Breadth" and r["rule"] == "note")["note"]
+        self.assertTrue(breadth.startswith("All majors must complete three courses"))   # the rule first
+        self.assertIn("Group III: Satisfied by major core courses", breadth)
+        self.assertFalse(any("encoded as one pool" in x for x in prog.review))
+
+    def test_a_list_under_a_pool_joins_it(self):
+        prog = self.page(
+            ("h2", "Major", "", self.course("EX 300")),
+            ("h3", "Electives", "<p>18 units selected from:</p>", self.course("EX 421") + self.course("EX 422")),
+            ("h4", "3 units may also be selected from:", "", self.course("EX 371") + self.course("EX 415")),
+            ("h3", "Capstone", "", self.course("EX 495")))
+        groups = self.groups_of(prog)
+        self.assertEqual(groups[("Electives", "Electives", "pool", "", "18")], ["EX 421", "EX 422"])
+        self.assertEqual(groups[("Electives", "3 units may also be selected from", "pool", "", "18")],
+                         ["EX 371", "EX 415"])
+        self.assertEqual({r["note"] for r in prog.rows if r["_code"] in ("EX 371", "EX 415")},
+                         {"3 units may also be selected from"})
+        self.assertIn(("Major", "Capstone", "required", "", ""), groups)            # the pool ends with its level
+
+    def test_whole_prep_list_is_a_pool_and_recommended_is_not_required(self):
+        prog = self.page(
+            ("h2", "Preparation for the Major", "<p>(9 units) General Education Oral Communication requirement "
+                                                "(3 units) and 6 units selected from:</p>",
+             self.course("EX 160") + self.course("EX 201") + self.course("EX 204")),
+            ("h3", "Recommended", "", self.course("EX 197") + self.course("EX 197L", 1)),
+            ("h2", "Language Requirement", "<p>Competency is required in one language other than English.</p>", ""))
+        self.assertEqual(list(self.groups_of(prog)), [
+            ("Preparation for the Major", "", "note", "", ""),
+            ("Preparation for the Major", "Choose from these courses", "pool", "", "6"),
+            ("Language Requirement", "", "note", "", "")])
+        notes = {r["section"]: r["note"] for r in prog.rows if r["rule"] == "note"}
+        self.assertIn("Recommended (not required): EX 197, EX 197L", notes["Preparation for the Major"])
+        self.assertEqual(notes["Language Requirement"], "Competency is required in one language other than English")
+
+    def test_open_rules_in_words_and_pairs_of_courses(self):
+        prog = self.page(
+            ("h2", "Preparation for the Major", "", self.course("EX 200") + self.SEP + self.course("BIOL 203")
+             + self.TEXT.format("and") + self.course("BIOL 203L", 1) + self.OR + self.course("BIOL 204")
+             + self.TEXT.format("and") + self.course("BIOL 204L", 1)),
+            ("h2", "Major", "<p>A minimum of 24 upper division units in chemistry to include</p>",
+             self.course("CHEM 410A") + self.TEXT.format("Seven units of electives in chemistry")),
+            ("h3", "Upper Division Major Electives", "<p>An additional 5-6 elective units selected from 300- to "
+                                                     "500-level Psychology courses to satisfy the 31 units required."
+                                                     "</p>", ""),
+            ("h3", "Professional Electives", "<p>9 units selected from upper division psychology courses.</p>", ""),
+            ("h4", "Area One", "", self.course("PSY 480")))
+        groups = self.groups_of(prog)
+        self.assertEqual(groups[("Preparation for the Major", "BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",
+                                 "choose", "2", "")], ["BIOL 203", "BIOL 203L", "BIOL 204", "BIOL 204L"])
+        opened = [(r["section"], r["subject"], r["num_min"], r["num_max"], r["pick_units"]) for r in prog.rows
+                  if r["rule"] == "open"]
+        self.assertEqual(opened, [("Major", "CHEM", "300", "599", "7"),
+                                  ("Upper Division Major Electives", "PSY", "300", "599", "5-6")])
+        self.assertIn(("Professional Electives", "Area One", "pool", "", "9"), groups)   # lists follow: not open
+
+    def test_grade_text_and_footnote_right_under_a_course(self):
+        prog = self.page(("h2", "Preparation for the Major", "",
+                          self.course("EX 200", 3, " (must be completed with a grade of C (2.0) or better) "
+                                                   "(cannot be taken for credit/no credit (Cr/NC))")
+                          + self.course("EX 280", 4) + self.TEXT.format("° A statistics course from another "
+                                                                         "department will be accepted.")
+                          + self.course("EX 319", 3, " Must be completed with a grade of C (2. 0) or higher better.")))
+        notes = {r["_code"]: r["note"] for r in prog.rows}
+        self.assertEqual(notes, {"EX 200": "Grade of C or better, no Cr/NC",
+                                 "EX 280": "A statistics course from another department will be accepted",
+                                 "EX 319": "Grade of C or better"})
 
     def test_pick_labels_use_the_app_codes(self):
         prog = self.page(("h2", "Preparation for the Major", "",

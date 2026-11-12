@@ -80,7 +80,7 @@ function blankState() {
 function validate(raw) {
   const state = blankState();
   if (!raw || typeof raw !== "object") return state;
-  if (typeof raw.majorId === "string" && /^[a-z0-9_]{1,40}$/.test(raw.majorId)) state.majorId = raw.majorId;
+  if (typeof raw.majorId === "string" && /^[a-z0-9_]{1,64}$/.test(raw.majorId)) state.majorId = raw.majorId;
   if (Array.isArray(raw.plans)) {
     const plans = raw.plans.slice(0, MAX_PLANS).filter((p) => p && typeof p === "object").map((p, i) => ({
       name: typeof p.name === "string" && p.name.trim() ? p.name.trim().slice(0, MAX_NAME) : PLAN_NAMES[i],
@@ -326,7 +326,7 @@ export function clearProfRating(name) {
 // ---------- major and completed courses ----------
 
 export function setMajor(majorId) {
-  if (!/^[a-z0-9_]{1,40}$/.test(majorId) || majorId === state.majorId) return;
+  if (!/^[a-z0-9_]{1,64}$/.test(majorId) || majorId === state.majorId) return;
   commit((s) => { s.majorId = majorId; }, state.majorId ? "Changed your major" : null, { type: "major_select", major: majorId });
 }
 
