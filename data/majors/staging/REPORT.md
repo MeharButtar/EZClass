@@ -4,7 +4,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 | Majors processed | Requirement rows | Majors with open review items |
 | --- | --- | --- |
-| 53 | 1992 | 53 |
+| 53 | 2023 | 53 |
 
 ## Batch check: 52 of 52 pages found
 
@@ -83,13 +83,13 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | --- | --- | --- | --- | --- |
 | `me_bs` | Mechanical Engineering | B.S. | 52 | 5 |
 | `aerospace_engineering_bs` | Aerospace Engineering | B.S. | 47 | 4 |
-| `biology_ba` | Biology | B.A. | 26 | 10 |
-| `biology_bs` | Biology | B.S. | 26 | 10 |
-| `biology_cellular_molecular_bs` | Biology, Emphasis in Cellular and Molecular Biology | B.S. | 54 | 11 |
-| `biology_ecology_bs` | Biology, Emphasis in Ecology | B.S. | 46 | 11 |
-| `biology_evolutionary_bs` | Biology, Emphasis in Evolutionary Biology | B.S. | 44 | 10 |
-| `biology_marine_bs` | Biology, Emphasis in Marine Biology | B.S. | 35 | 10 |
-| `biology_zoology_bs` | Biology, Emphasis in Zoology | B.S. | 40 | 9 |
+| `biology_ba` | Biology | B.A. | 28 | 10 |
+| `biology_bs` | Biology | B.S. | 30 | 9 |
+| `biology_cellular_molecular_bs` | Biology, Emphasis in Cellular and Molecular Biology | B.S. | 59 | 11 |
+| `biology_ecology_bs` | Biology, Emphasis in Ecology | B.S. | 51 | 11 |
+| `biology_evolutionary_bs` | Biology, Emphasis in Evolutionary Biology | B.S. | 49 | 10 |
+| `biology_marine_bs` | Biology, Emphasis in Marine Biology | B.S. | 40 | 10 |
+| `biology_zoology_bs` | Biology, Emphasis in Zoology | B.S. | 45 | 9 |
 | `ba_accounting_bs` | Business Administration, Emphasis in Accounting | B.S. | 27 | 2 |
 | `ba_finance_bs` | Business Administration, Emphasis in Finance | B.S. | 25 | 2 |
 | `ba_financial_services_bs` | Business Administration, Emphasis in Financial Services | B.S. | 42 | 3 |
@@ -121,10 +121,10 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | `journalism_public_relations_ba` | Journalism, Emphasis in Public Relations | B.A. | 31 | 6 |
 | `kinesiology_exercise_science_generalist_bs` | Kinesiology, Emphasis in Exercise Science Generalist | B.S. | 29 | 4 |
 | `kinesiology_fitness_specialist_bs` | Kinesiology, Emphasis in Fitness Specialist | B.S. | 37 | 2 |
-| `mathematics_ba` | Mathematics | B.A. | 29 | 6 |
+| `mathematics_ba` | Mathematics | B.A. | 29 | 7 |
 | `mathematics_applied_bs` | Mathematics, Emphasis in Applied Mathematics | B.S. | 27 | 6 |
 | `mathematics_computational_science_bs` | Mathematics, Emphasis in Computational Science | B.S. | 35 | 6 |
-| `mathematics_education_bs` | Mathematics, Emphasis in Mathematics Education | B.S. | 35 | 8 |
+| `mathematics_education_bs` | Mathematics, Emphasis in Mathematics Education | B.S. | 35 | 7 |
 | `mathematics_science_bs` | Mathematics, Emphasis in Science | B.S. | 27 | 9 |
 | `mechanical_engineering_bioengineering_bs` | Mechanical Engineering, Emphasis in Bioengineering | B.S. | 40 | 2 |
 | `nursing_bs` | Nursing | B.S. | 29 | 2 |
@@ -279,7 +279,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Biology, B.A. (`biology_ba`)
 
 - Source: `data/catalog_html/Program_ Biology, B.A. - San Diego State University.html`, poid 11918, major code 04011
-- Rows: 26
+- Rows: 28
 
 ### Groups
 
@@ -288,11 +288,13 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Preparation for the Major | Required | required | 10: BIOL 203, BIOL 203L, BIOL 204, BIOL 204L, BIOL 215, CHEM 200, CHEM 201, CHEM 232, CHEM 232L, MATH 124 |
 | Major | Required | required | 10: PHYS 180A, PHYS 180B, PHYS 182A, PHYS 182B, BIOL 351, BIOL 352, BIOL 354, BIOL 366, BIOL 366L, CHEM 365 |
 | Major | At Least One Course Selected From (pick 1) | choose 1 | 3: BIOL 350, BIOL 459, BIOL 462 |
+| Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open, 4 units | 1: Any BIOL 350-599 or CHEM 300-599 course |
+| Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open | 1: Any BIOL 350-599 or CHEM 300-599 course |
 
 ### Section notes (shown once under the heading)
 
 - **Preparation for the Major**: Students must have a cumulative GPA of 2.80 or better to be admitted to the major
-- **Major**: All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Upper Division Major Electives: Upper division major elective courses include all upper division biology courses numbered 350 and above (except BIOL 497 and BIOL 495 ), and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , CHEM 560 ). Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses
+- **Major**: All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses
 - **Language Requirement**: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill this requirement
 
 ### Review list
@@ -303,15 +305,15 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Major': rule text kept as the section note: "This approval must be filed with the Office of the Registrar."
 - [ ] Text under 'Major' left out (no rule in it; in the report only): "All upper division transfer courses in biology will calculate in the major GPA but will not fulfill any major requirements without specific department approval."
 - [ ] 'At Least One Course Selected From (pick 1)' in Major: read as pick 1 of 3; check it.
-- [ ] Text under 'Upper Division Major Electives' kept as the 'Major' section note: "Upper division major elective courses include all upper division biology courses numbered 350 and above (except BIOL 497 and BIOL 495 ), and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , CHEM 560 )."
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course' in Upper Division Major Electives: "Upper division major elective courses include all upper division biology courses numbered 350 and above (except BIOL 497 and BIOL 495 ), and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , CHEM 560 )." encoded as one open rule of 2 ranges; check it.
 - [ ] Text under 'Laboratory Course Requirement' kept as the 'Major' section note: "A minimum of two upper division major elective courses must be biology laboratory courses."
 - [ ] Text under 'Laboratory Course Requirement' left out (no rule in it; in the report only): "One three-unit semester of BIOL 597 or BIOL 497 may fulfill one laboratory requirement."
-- [ ] Units check for Major: page says 32, listed courses add up to 28-29.
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course': 4 units, worked out from the Major total minus its other courses.
 
 ### Units check (advisory)
 
 - Preparation for the Major: page says 29 units, listed courses give 29: **inside**
-- Major: page says 32 units, listed courses give 28-29: **MISMATCH**
+- Major: page says 32 units, listed courses give 32-33: **overlaps (elective units were worked out from this total)**
 
 ### Major notes (no rows made; for a human)
 
@@ -323,8 +325,6 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
   - Complete one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements.
 - **Major**
   - All upper division transfer courses in biology will calculate in the major GPA but will not fulfill any major requirements without specific department approval.
-- **Major: Upper Division Major Electives**
-  - Upper division major elective courses include all upper division biology courses numbered 350 and above (except BIOL 497 and BIOL 495 ), and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , CHEM 560 ).
 - **Major: Laboratory Course Requirement**
   - A minimum of two upper division major elective courses must be biology laboratory courses.
   - One three-unit semester of BIOL 597 or BIOL 497 may fulfill one laboratory requirement.
@@ -338,6 +338,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - Pick-n group courses: 1 of 3 have sections
   - with sections: BIOL 350 (8)
   - no sections: BIOL 459, BIOL 462
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 23 courses with sections: BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 15 courses with sections: CHEM 410A, CHEM 410B, CHEM 413, CHEM 417, CHEM 427, CHEM 432, CHEM 432L, CHEM 457, CHEM 498, CHEM 520B, CHEM 550, CHEM 562, CHEM 564, CHEM 567, CHEM 596
 
 ### Title differences (catalog vs class data)
 
@@ -347,7 +349,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Biology, B.S. (`biology_bs`)
 
 - Source: `data/catalog_html/Program_ Biology, B.S. - San Diego State University.html`, poid 11919, major code 04011
-- Rows: 26
+- Rows: 30
 
 ### Groups
 
@@ -356,12 +358,13 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Preparation for the Major | Required | required | 10: BIOL 203, BIOL 203L, BIOL 204, BIOL 204L, BIOL 215, CHEM 200, CHEM 201, CHEM 232, CHEM 232L, MATH 124 |
 | Major | Required | required | 10: PHYS 180A, PHYS 180B, PHYS 182A, PHYS 182B, BIOL 351, BIOL 352, BIOL 354, BIOL 366, BIOL 366L, CHEM 365 |
 | Major | At Least One Course Selected From (pick 1) | choose 1 | 3: BIOL 350, BIOL 459, BIOL 462 |
+| Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open, 16 units | 1: Any BIOL 350-599 or CHEM 300-599 course |
+| Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open | 4: Any BIOL 350-599 or CHEM 300-599 course, Any BIOL 350-599 or CHEM 300-599 course: BIOL 597, Any BIOL 350-599 or CHEM 300-599 course: BIOL 497, Any BIOL 350-599 or CHEM 300-599 course: BIOL 495 |
 
 ### Section notes (shown once under the heading)
 
 - **Preparation for the Major**: Students must have a cumulative GPA of 2.80 or better to be admitted to the major
-- **Major**: All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar
-- **Upper Division Major Electives**: Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses
+- **Major**: All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses
 
 ### Review list
 
@@ -370,16 +373,15 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Major': rule text kept as the section note: "This approval must be filed with the Office of the Registrar."
 - [ ] Text under 'Major' left out (no rule in it; in the report only): "All upper division transfer courses in biology will calculate in the major GPA but will not fulfill any major requirements without specific department approval."
 - [ ] 'At Least One Course Selected From (pick 1)' in Major: read as pick 1 of 3; check it.
-- [ ] 'Upper Division Major Electives' (under Major) is a rule in words, encoded as one pool; check it. Catalog: "Upper division major elective courses include all upper division biology courses numbered 350 and above; BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , CHEM 560 )."
-- [ ] Text under 'Laboratory Course Requirement' kept as the 'Upper Division Major Electives' section note: "A minimum of two upper division major elective courses must be biology laboratory courses."
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course' in Upper Division Major Electives: "Upper division major elective courses include all upper division biology courses numbered 350 and above; BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , CHEM 560 )." encoded as one open rule of 2 ranges plus 3 listed courses; check it.
+- [ ] Text under 'Laboratory Course Requirement' kept as the 'Major' section note: "A minimum of two upper division major elective courses must be biology laboratory courses."
 - [ ] Text under 'Laboratory Course Requirement' left out (no rule in it; in the report only): "One three-unit semester of BIOL 597 or BIOL 497 may fulfill one laboratory requirement."
-- [ ] 'Upper Division Major Electives' has a rule but no course lists followed it: Upper division major elective courses include all upper division biology courses numbered 350 and above; BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , CHEM 560 ).
-- [ ] Units check for Major: page says 44, listed courses add up to 28-29.
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course': 16 units, worked out from the Major total minus its other courses.
 
 ### Units check (advisory)
 
 - Preparation for the Major: page says 29 units, listed courses give 29: **inside**
-- Major: page says 44 units, listed courses give 28-29: **MISMATCH**
+- Major: page says 44 units, listed courses give 44-45: **overlaps (elective units were worked out from this total)**
 
 ### Major notes (no rows made; for a human)
 
@@ -404,6 +406,11 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - Pick-n group courses: 1 of 3 have sections
   - with sections: BIOL 350 (8)
   - no sections: BIOL 459, BIOL 462
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 23 courses with sections: BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 15 courses with sections: CHEM 410A, CHEM 410B, CHEM 413, CHEM 417, CHEM 427, CHEM 432, CHEM 432L, CHEM 457, CHEM 498, CHEM 520B, CHEM 550, CHEM 562, CHEM 564, CHEM 567, CHEM 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
 
 ### Title differences (catalog vs class data)
 
@@ -413,7 +420,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Biology, Emphasis in Cellular and Molecular Biology, B.S. (`biology_cellular_molecular_bs`)
 
 - Source: `data/catalog_html/Program_ Biology, Emphasis in Cellular and Molecular Biology, B.S. - San Diego State University.html`, poid 11920, major code 04011
-- Rows: 54
+- Rows: 59
 
 ### Groups
 
@@ -423,11 +430,13 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Major | Required | required | 11: PHYS 180A, PHYS 180B, PHYS 182A, PHYS 182B, BIOL 351, BIOL 352, BIOL 354, BIOL 366, BIOL 366L, BIOL 567, CHEM 365 |
 | Major | At Least One Course Selected From (pick 1) | choose 1 | 3: BIOL 350, BIOL 459, BIOL 462 |
 | Major | Upper Division Major Electives (pick 2) | choose 2 | 28: BIOL 350, BIOL 464, BIOL 480, BIOL 510, BIOL 528, BIOL 549, BIOL 554, BIOL 556, BIOL 557, BIOL 562, BIOL 564, BIOL 565, BIOL 567L, BIOL 568, BIOMI 568, BIOL 570, BIOL 575, BIOL 576, BIOL 584, BIOL 485, BIOL 585, BIOL 589, BIOL 590, CHEM 432, BIOL 496, CHEM 496, BIOL 596, CHEM 596 |
+| Other Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open, 10 units | 1: Any BIOL 350-599 or CHEM 300-599 course |
+| Other Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open | 4: Any BIOL 350-599 or CHEM 300-599 course, Any BIOL 350-599 or CHEM 300-599 course: BIOL 597, Any BIOL 350-599 or CHEM 300-599 course: BIOL 497, Any BIOL 350-599 or CHEM 300-599 course: BIOL 495 |
 
 ### Section notes (shown once under the heading)
 
 - **Preparation for the Major**: Students must have a cumulative GPA of 2.80 or better to be admitted to the major
-- **Major**: All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 496, BIOL 596, CHEM 496, CHEM 498, CHEM 499, CHEM 596)
+- **Major**: All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 496, BIOL 596, CHEM 496, CHEM 498, CHEM 499, CHEM 596)
 
 ### Review list
 
@@ -439,14 +448,14 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Upper Division Major Electives (pick 2)' in Major: read as pick 2, its or / also-listed-as pairs kept with a note; check it.
 - [ ] Text under 'Laboratory Course Requirement' kept as the 'Major' section note: "A minimum of two upper division major elective courses must be biology laboratory courses."
 - [ ] Text under 'Laboratory Course Requirement' left out (no rule in it; in the report only): "One three-unit semester of BIOL 597 or BIOL 497 may fulfill one laboratory requirement."
-- [ ] Text under 'Note' kept as the 'Major' section note: "Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 )."
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course' in Other Upper Division Major Electives: "Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 )." encoded as one open rule of 2 ranges plus 3 listed courses; check it.
 - [ ] 'Approval of the Emphasis': courses that count only with approval, not a requirement: a section note (BIOL 496, BIOL 596, CHEM 496, CHEM 498, CHEM 499, CHEM 596).
-- [ ] Units check for Major: page says 44, listed courses add up to 34-41.
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course': 10 units, worked out from the Major total minus its other courses.
 
 ### Units check (advisory)
 
 - Preparation for the Major: page says 29 units, listed courses give 29: **inside**
-- Major: page says 44 units, listed courses give 34-41: **MISMATCH**
+- Major: page says 44 units, listed courses give 44-51: **overlaps (elective units were worked out from this total)**
 
 ### Major notes (no rows made; for a human)
 
@@ -461,8 +470,6 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - **Major: Laboratory Course Requirement**
   - A minimum of two upper division major elective courses must be biology laboratory courses.
   - One three-unit semester of BIOL 597 or BIOL 497 may fulfill one laboratory requirement.
-- **Major: Note**
-  - Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ).
 - **Time Limitation**
   - All courses for the major must be completed within seven years of the granting of the undergraduate degree. Exceptions for individual courses must be approved by the department advisor and be filed with the Office of the Registrar.
 
@@ -473,6 +480,11 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - Pick-n group courses: 12 of 30 have sections
   - with sections: BIOL 350 (8), BIOL 480 (1), BIOL 554 (1), BIOL 564 (2), BIOL 567L (2), BIOL 570 (1), BIOL 576 (1), BIOL 584 (1), BIOL 485 (1), CHEM 432 (1), BIOL 596 (1), CHEM 596 (1)
   - no sections: BIOL 459, BIOL 462, BIOL 464, BIOL 510, BIOL 528, BIOL 549, BIOL 556, BIOL 557, BIOL 562, BIOL 565, BIOL 568, BIOMI 568, BIOL 575, BIOL 585, BIOL 589, BIOL 590, BIOL 496, CHEM 496
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 22 courses with sections: BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 15 courses with sections: CHEM 410A, CHEM 410B, CHEM 413, CHEM 417, CHEM 427, CHEM 432, CHEM 432L, CHEM 457, CHEM 498, CHEM 520B, CHEM 550, CHEM 562, CHEM 564, CHEM 567, CHEM 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 43 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 43 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 43 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
 
 ### Title differences (catalog vs class data)
 
@@ -482,7 +494,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Biology, Emphasis in Ecology, B.S. (`biology_ecology_bs`)
 
 - Source: `data/catalog_html/Program_ Biology, Emphasis in Ecology, B.S. - San Diego State University.html`, poid 11921, major code 04011
-- Rows: 46
+- Rows: 51
 
 ### Groups
 
@@ -492,11 +504,13 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Major | Required | required | 11: PHYS 180A, PHYS 180B, PHYS 182A, PHYS 182B, BIOL 351, BIOL 352, BIOL 354, BIOL 358, BIOL 366, BIOL 366L, CHEM 365 |
 | Major | At Least One Course Selected From (pick 1) | choose 1 | 3: BIOL 350, BIOL 459, BIOL 462 |
 | Major | Upper Division Major Electives (pick 2) | choose 2 | 20: BIOL 509, BIOL 512, BIOL 514, BIOL 516A, BIOL 516B, BIOL 517, BIOL 518, BIOL 526, BIOL 527, BIOL 528, BIOL 535, BIOL 540, BIOL 542, BIOL 544, ENV S 544, BIOL 560, BIOL 562, BIOL 578, BIOL 496, BIOL 596 |
+| Other Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open, 12 units | 1: Any BIOL 350-599 or CHEM 300-599 course |
+| Other Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open | 4: Any BIOL 350-599 or CHEM 300-599 course, Any BIOL 350-599 or CHEM 300-599 course: BIOL 597, Any BIOL 350-599 or CHEM 300-599 course: BIOL 497, Any BIOL 350-599 or CHEM 300-599 course: BIOL 495 |
 
 ### Section notes (shown once under the heading)
 
 - **Preparation for the Major**: Students must have a cumulative GPA of 2.80 or better to be admitted to the major
-- **Major**: This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Other upper division major electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 496, BIOL 596)
+- **Major**: This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 496, BIOL 596)
 
 ### Review list
 
@@ -508,14 +522,14 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Upper Division Major Electives (pick 2)' in Major: read as pick 2 of 20; check it.
 - [ ] Text under 'Laboratory Course Requirement' kept as the 'Major' section note: "A minimum of two upper division major elective courses must be biology laboratory courses."
 - [ ] Text under 'Laboratory Course Requirement' left out (no rule in it; in the report only): "One three-unit semester of BIOL 597 or BIOL 497 (but not both) may fulfill one laboratory requirement."
-- [ ] Text under 'Note' kept as the 'Major' section note: "Other upper division major electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 )."
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course' in Other Upper Division Major Electives: "Other upper division major electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 )." encoded as one open rule of 2 ranges plus 3 listed courses; check it.
 - [ ] 'Approval of the Emphasis': courses that count only with approval, not a requirement: a section note (BIOL 496, BIOL 596).
-- [ ] Units check for Major: page says 44, listed courses add up to 32-39.
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course': 12 units, worked out from the Major total minus its other courses.
 
 ### Units check (advisory)
 
 - Preparation for the Major: page says 29 units, listed courses give 29: **inside**
-- Major: page says 44 units, listed courses give 32-39: **MISMATCH**
+- Major: page says 44 units, listed courses give 44-51: **overlaps (elective units were worked out from this total)**
 
 ### Major notes (no rows made; for a human)
 
@@ -533,8 +547,6 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - **Major: Laboratory Course Requirement**
   - A minimum of two upper division major elective courses must be biology laboratory courses.
   - One three-unit semester of BIOL 597 or BIOL 497 (but not both) may fulfill one laboratory requirement.
-- **Major: Note**
-  - Other upper division major electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ).
 - **Time Limitation**
   - All courses for the major must be completed within seven years of the granting of the undergraduate degree. Exceptions for individual courses must be approved by the department advisor and be filed with the Office of the Registrar.
 
@@ -545,6 +557,11 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - Pick-n group courses: 8 of 23 have sections
   - with sections: BIOL 350 (8), BIOL 512 (2), BIOL 517 (2), BIOL 526 (2), BIOL 535 (2), BIOL 544 (1), ENV S 544 (1), BIOL 596 (1)
   - no sections: BIOL 459, BIOL 462, BIOL 509, BIOL 514, BIOL 516A, BIOL 516B, BIOL 518, BIOL 527, BIOL 528, BIOL 540, BIOL 542, BIOL 560, BIOL 562, BIOL 578, BIOL 496
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 22 courses with sections: BIOL 350, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 15 courses with sections: CHEM 410A, CHEM 410B, CHEM 413, CHEM 417, CHEM 427, CHEM 432, CHEM 432L, CHEM 457, CHEM 498, CHEM 520B, CHEM 550, CHEM 562, CHEM 564, CHEM 567, CHEM 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 43 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 43 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 43 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
 
 ### Title differences (catalog vs class data)
 
@@ -555,7 +572,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Biology, Emphasis in Evolutionary Biology, B.S. (`biology_evolutionary_bs`)
 
 - Source: `data/catalog_html/Program_ Biology, Emphasis in Evolutionary Biology, B.S. - San Diego State University.html`, poid 11922, major code 4011
-- Rows: 44
+- Rows: 49
 
 ### Groups
 
@@ -565,11 +582,13 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Major | Required | required | 11: PHYS 180A, PHYS 180B, PHYS 182A, PHYS 182B, BIOL 351, BIOL 352, BIOL 354, BIOL 366, BIOL 366L, BIOL 509, CHEM 365 |
 | Major | At Least One Course Selected From (pick 1) | choose 1 | 3: BIOL 350, BIOL 459, BIOL 462 |
 | Major | Upper Division Major Electives (pick 2) | choose 2 | 18: BIOL 459, BIOL 510, BIOL 512, BIOL 515, BIOL 518, BIOL 523, BIOL 524, BIOL 525, BIOL 526, BIOL 527, BIOL 528, BIOL 530, BIOL 531, BIOL 568, BIOMI 568, BIOL 576, BIOL 496, BIOL 596 |
+| Other Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open, 11 units | 1: Any BIOL 350-599 or CHEM 300-599 course |
+| Other Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open | 4: Any BIOL 350-599 or CHEM 300-599 course, Any BIOL 350-599 or CHEM 300-599 course: BIOL 597, Any BIOL 350-599 or CHEM 300-599 course: BIOL 497, Any BIOL 350-599 or CHEM 300-599 course: BIOL 495 |
 
 ### Section notes (shown once under the heading)
 
 - **Preparation for the Major**: Students must have a cumulative GPA of 2.80 or better to be admitted to the major
-- **Major**: This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division elective courses must be biology laboratory courses. Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)
+- **Major**: This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division elective courses must be biology laboratory courses. Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)
 
 ### Review list
 
@@ -580,14 +599,14 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Upper Division Major Electives (pick 2)' in Major: read as pick 2 of 18; check it.
 - [ ] Text under 'Laboratory Course Requirement' kept as the 'Major' section note: "A minimum of two upper division elective courses must be biology laboratory courses."
 - [ ] Text under 'Laboratory Course Requirement' left out (no rule in it; in the report only): "One three-unit semester of BIOL 597 or BIOL 497 may fulfill one laboratory requirement."
-- [ ] Text under 'Note' kept as the 'Major' section note: "Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 )."
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course' in Other Upper Division Major Electives: "Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 )." encoded as one open rule of 2 ranges plus 3 listed courses; check it.
 - [ ] 'Approval of the Emphasis': courses that count only with approval, not a requirement: a section note (BIOL 597, BIOL 496, BIOL 497, BIOL 596).
-- [ ] Units check for Major: page says 44, listed courses add up to 33-40.
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course': 11 units, worked out from the Major total minus its other courses.
 
 ### Units check (advisory)
 
 - Preparation for the Major: page says 29 units, listed courses give 29: **inside**
-- Major: page says 44 units, listed courses give 33-40: **MISMATCH**
+- Major: page says 44 units, listed courses give 44-51: **overlaps (elective units were worked out from this total)**
 
 ### Major notes (no rows made; for a human)
 
@@ -602,8 +621,6 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - **Major: Laboratory Course Requirement**
   - A minimum of two upper division elective courses must be biology laboratory courses.
   - One three-unit semester of BIOL 597 or BIOL 497 may fulfill one laboratory requirement.
-- **Major: Note**
-  - Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ).
 - **Time Limitation**
   - All courses for the major must be completed within seven years of the granting of the undergraduate degree. Exceptions for individual courses must be approved by the department advisor and be filed with the Office of the Registrar.
 
@@ -615,6 +632,11 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - Pick-n group courses: 8 of 20 have sections
   - with sections: BIOL 350 (8), BIOL 512 (2), BIOL 523 (3), BIOL 524 (2), BIOL 526 (2), BIOL 530 (2), BIOL 576 (1), BIOL 596 (1)
   - no sections: BIOL 459, BIOL 462, BIOL 510, BIOL 515, BIOL 518, BIOL 525, BIOL 527, BIOL 528, BIOL 531, BIOL 568, BIOMI 568, BIOL 496
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 23 courses with sections: BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 15 courses with sections: CHEM 410A, CHEM 410B, CHEM 413, CHEM 417, CHEM 427, CHEM 432, CHEM 432L, CHEM 457, CHEM 498, CHEM 520B, CHEM 550, CHEM 562, CHEM 564, CHEM 567, CHEM 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
 
 ### Title differences (catalog vs class data)
 
@@ -625,7 +647,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Biology, Emphasis in Marine Biology, B.S. (`biology_marine_bs`)
 
 - Source: `data/catalog_html/Program_ Biology, Emphasis in Marine Biology, B.S. - San Diego State University.html`, poid 11923, major code 04011
-- Rows: 35
+- Rows: 40
 
 ### Groups
 
@@ -635,11 +657,13 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Major | Required | required | 10: PHYS 180A, PHYS 180B, PHYS 182A, PHYS 182B, BIOL 351, BIOL 352, BIOL 354, BIOL 366, BIOL 366L, CHEM 365 |
 | Major | At Least One Course Selected From (pick 1) | choose 1 | 3: BIOL 350, BIOL 459, BIOL 462 |
 | Major | Upper Division Major Electives (pick 2) | choose 2 | 10: BIOL 512, BIOL 514, BIOL 515, BIOL 516A, BIOL 516B, BIOL 517, BIOL 518, BIOL 542, BIOL 496, BIOL 596 |
+| Other Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open, 14 units | 1: Any BIOL 350-599 or CHEM 300-599 course |
+| Other Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open | 4: Any BIOL 350-599 or CHEM 300-599 course, Any BIOL 350-599 or CHEM 300-599 course: BIOL 597, Any BIOL 350-599 or CHEM 300-599 course: BIOL 497, Any BIOL 350-599 or CHEM 300-599 course: BIOL 495 |
 
 ### Section notes (shown once under the heading)
 
 - **Preparation for the Major**: Students must have a cumulative GPA of 2.80 or better to be admitted to the major
-- **Major**: This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)
+- **Major**: This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)
 
 ### Review list
 
@@ -650,14 +674,14 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Upper Division Major Electives (pick 2)' in Major: read as pick 2 of 10; check it.
 - [ ] Text under 'Laboratory Course Requirement' kept as the 'Major' section note: "A minimum of two upper division major elective courses must be biology laboratory courses."
 - [ ] Text under 'Laboratory Course Requirement' left out (no rule in it; in the report only): "One three-unit semester of BIOL 597 or BIOL 497 may fulfill one laboratory requirement."
-- [ ] Text under 'Note' kept as the 'Major' section note: "The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 )."
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course' in Other Upper Division Major Electives: "The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 )." encoded as one open rule of 2 ranges plus 3 listed courses; check it.
 - [ ] 'Approval of the Emphasis': courses that count only with approval, not a requirement: a section note (BIOL 597, BIOL 496, BIOL 497, BIOL 596).
-- [ ] Units check for Major: page says 44, listed courses add up to 30-37.
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course': 14 units, worked out from the Major total minus its other courses.
 
 ### Units check (advisory)
 
 - Preparation for the Major: page says 29 units, listed courses give 29: **inside**
-- Major: page says 44 units, listed courses give 30-37: **MISMATCH**
+- Major: page says 44 units, listed courses give 44-51: **overlaps (elective units were worked out from this total)**
 
 ### Major notes (no rows made; for a human)
 
@@ -672,8 +696,6 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - **Major: Laboratory Course Requirement**
   - A minimum of two upper division major elective courses must be biology laboratory courses.
   - One three-unit semester of BIOL 597 or BIOL 497 may fulfill one laboratory requirement.
-- **Major: Note**
-  - The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ).
 - **Time Limitation**
   - All courses for the major must be completed within seven years of the granting of the undergraduate degree. Exceptions for individual courses must be approved by the department advisor and be filed with the Office of the Registrar.
 
@@ -684,6 +706,11 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - Pick-n group courses: 4 of 13 have sections
   - with sections: BIOL 350 (8), BIOL 512 (2), BIOL 517 (2), BIOL 596 (1)
   - no sections: BIOL 459, BIOL 462, BIOL 514, BIOL 515, BIOL 516A, BIOL 516B, BIOL 518, BIOL 542, BIOL 496
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 23 courses with sections: BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 15 courses with sections: CHEM 410A, CHEM 410B, CHEM 413, CHEM 417, CHEM 427, CHEM 432, CHEM 432L, CHEM 457, CHEM 498, CHEM 520B, CHEM 550, CHEM 562, CHEM 564, CHEM 567, CHEM 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
 
 ### Title differences (catalog vs class data)
 
@@ -693,7 +720,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Biology, Emphasis in Zoology, B.S. (`biology_zoology_bs`)
 
 - Source: `data/catalog_html/Program_ Biology, Emphasis in Zoology, B.S. - San Diego State University.html`, poid 11924
-- Rows: 40
+- Rows: 45
 
 ### Groups
 
@@ -702,11 +729,13 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Preparation for the Major | Required | required | 10: BIOL 203, BIOL 203L, BIOL 204, BIOL 204L, BIOL 215, CHEM 200, CHEM 201, CHEM 232, CHEM 232L, MATH 124 |
 | Major | Required | required | 11: PHYS 180A, PHYS 180B, PHYS 182A, PHYS 182B, BIOL 351, BIOL 352, BIOL 354, BIOL 366, BIOL 366L, BIOL 462, CHEM 365 |
 | Major | Upper Division Major Electives (pick 2) | choose 2 | 17: BIOL 509, BIOL 510, BIOL 512, BIOL 515, BIOL 516A, BIOL 518, BIOL 523, BIOL 524, BIOL 525, BIOL 526, BIOL 527, BIOL 540, BIOL 542, BIOL 560, BIOL 576, BIOL 496, BIOL 596 |
+| Other Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open, 14 units | 1: Any BIOL 350-599 or CHEM 300-599 course |
+| Other Upper Division Major Electives | Any BIOL 350-599 or CHEM 300-599 course | open | 4: Any BIOL 350-599 or CHEM 300-599 course, Any BIOL 350-599 or CHEM 300-599 course: BIOL 597, Any BIOL 350-599 or CHEM 300-599 course: BIOL 497, Any BIOL 350-599 or CHEM 300-599 course: BIOL 495 |
 
 ### Section notes (shown once under the heading)
 
 - **Preparation for the Major**: Students must have a cumulative GPA of 2.80 or better to be admitted to the major
-- **Major**: This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)
+- **Major**: This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)
 
 ### Review list
 
@@ -716,14 +745,14 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Upper Division Major Electives (pick 2)' in Major: read as pick 2 of 17; check it.
 - [ ] Text under 'Laboratory Course Requirement' kept as the 'Major' section note: "A minimum of two upper division major elective courses must be biology laboratory courses."
 - [ ] Text under 'Laboratory Course Requirement' left out (no rule in it; in the report only): "One three-unit semester of BIOL 597 or BIOL 497 may fulfill one laboratory requirement."
-- [ ] Text under 'Note' kept as the 'Major' section note: "The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 )."
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course' in Other Upper Division Major Electives: "The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 )." encoded as one open rule of 2 ranges plus 3 listed courses; check it.
 - [ ] 'Approval of the Emphasis': courses that count only with approval, not a requirement: a section note (BIOL 597, BIOL 496, BIOL 497, BIOL 596).
-- [ ] Units check for Major: page says 44, listed courses add up to 30-36.
+- [ ] 'Any BIOL 350-599 or CHEM 300-599 course': 14 units, worked out from the Major total minus its other courses.
 
 ### Units check (advisory)
 
 - Preparation for the Major: page says 29 units, listed courses give 29: **inside**
-- Major: page says 44 units, listed courses give 30-36: **MISMATCH**
+- Major: page says 44 units, listed courses give 44-50: **overlaps (elective units were worked out from this total)**
 
 ### Major notes (no rows made; for a human)
 
@@ -738,8 +767,6 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - **Major: Laboratory Course Requirement**
   - A minimum of two upper division major elective courses must be biology laboratory courses.
   - One three-unit semester of BIOL 597 or BIOL 497 may fulfill one laboratory requirement.
-- **Major: Note**
-  - The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ).
 - **Time Limitation**
   - All courses for the major must be completed within seven years of the granting of the undergraduate degree. Exceptions for individual courses must be approved by the department advisor and be filed with the Office of the Registrar.
 
@@ -751,6 +778,11 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - Pick-n group courses: 6 of 17 have sections
   - with sections: BIOL 512 (2), BIOL 523 (3), BIOL 524 (2), BIOL 526 (2), BIOL 576 (1), BIOL 596 (1)
   - no sections: BIOL 509, BIOL 510, BIOL 515, BIOL 516A, BIOL 518, BIOL 525, BIOL 527, BIOL 540, BIOL 542, BIOL 560, BIOL 496
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 23 courses with sections: BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 15 courses with sections: CHEM 410A, CHEM 410B, CHEM 413, CHEM 417, CHEM 427, CHEM 432, CHEM 432L, CHEM 457, CHEM 498, CHEM 520B, CHEM 550, CHEM 562, CHEM 564, CHEM 567, CHEM 596
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
+- Open rule 'Any BIOL 350-599 or CHEM 300-599 course' (without excluded and already-required courses): 44 courses with sections: BIOL 100, BIOL 100L, BIOL 101, BIOL 101L, BIOL 211, BIOL 211L, BIOL 212, BIOL 246, BIOL 250A, BIOL 251, BIOL 291C, BIOL 315, BIOL 335, BIOL 336, BIOL 340A, BIOL 340B, BIOL 350, BIOL 358, BIOL 436, BIOL 470, BIOL 480, BIOL 485, BIOL 500, BIOL 512, BIOL 517, BIOL 523, BIOL 524, BIOL 526, BIOL 530, BIOL 535, BIOL 544, BIOL 554, BIOL 564, BIOL 567, BIOL 567L, BIOL 570, BIOL 576, BIOL 584, BIOL 596, BIOL 600, BIOL 606, BIOL 668, BIOL 745, BIOL 795
 
 ### Title differences (catalog vs class data)
 
@@ -1364,7 +1396,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ### Units check (advisory)
 
 - Preparation for the Major: page says 39 units, listed courses give 39: **inside**
-- Major: page says at least 36 units, listed courses give 36-38: **inside**
+- Major: page says at least 36 units, listed courses give 36: **inside**
 
 ### Major notes (no rows made; for a human)
 
@@ -1475,7 +1507,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Preparation for the Major | PSY 280 or SOC 201 or STAT 119 or STAT 250 (pick 1) | choose 1 | 4: PSY 280, SOC 201, STAT 119, STAT 250 |
 | Major | Required | required | 13: CFD 335, CFD 354, CFD 370, CFD 375A, CFD 375B, CFD 375C, CFD 475, CFD 537, CFD 560, CFD 575, CFD 578, CFD 590, CFD 598 |
 | Major | Capstone: Reflective Learning Portfolio | required | 1: CFD 598 |
-| Major Electives | Major Electives | pool, 2 units | 4: CFD 378A, CFD 378B, CFD 378C, CFD 378D |
+| Additional Electives (2 units) | Additional Electives (2 units) | pool, 2 units | 4: CFD 378A, CFD 378B, CFD 378C, CFD 378D |
 | Electives | Any CFD 300-599 course or a listed course | open, 12 units | 1: Any CFD 300-599 course or a listed course |
 | Electives | Any CFD 300-599 course or a listed course | open | 2: Any CFD 300-599 course or a listed course: ED 451, Any CFD 300-599 course or a listed course: ED 450 |
 
@@ -1486,14 +1518,14 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ### Review list
 
 - [ ] 'Preparation for the Major': rule text kept as the section note: "The minimum grade in each class is a C (2.0) or better."
-- [ ] 'Major Electives' (under Major) asks for 2 units of its list: encoded as a pool in its own section 'Major Electives', check it.
+- [ ] 'Additional Electives (2 units)' (under Major) asks for 2 units of its list: encoded as a pool in its own section 'Additional Electives (2 units)', check it.
 - [ ] 'Any CFD 300-599 course or a listed course' in Electives: 2 listed courses outside the range also count (ED 451, ED 450).
 - [ ] 'Any CFD 300-599 course or a listed course' in Electives: "12 units of additional CFD courses ranging from CFD 300 to 599." encoded as an open rule (CFD 300-599, 12 units); check it.
 - [ ] 'Capstone: Reflective Learning Portfolio' in Major: rule text kept as the note, check the group: "This is a required capstone course. Students are required to prepare a portfolio to reflect, integrate, and synthesize their cumulative learning experience acquired in child and family development courses, study abroad programs, involvement in research projects with faculty, and/or internships. The reflective portfolio will be a capstone culminating experience to provide the opportunity to integrate knowledge and understanding of the child and family development curriculum with their academic and personal growth."
 
 ### Units check (advisory)
 
-- Preparation for the Major: page says 27-28 units, listed courses give 27-30: **overlaps**
+- Preparation for the Major: page says 27-28 units, listed courses give 27-28: **inside**
 - Major: page says at least 50 units, listed courses give 51: **inside**
 
 ### Major notes (no rows made; for a human)
@@ -2702,7 +2734,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ### Section notes (shown once under the heading)
 
 - **Preparation for the Major**: The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better
-- **Major**: 12 Units of Electives: Students planning to take MATH 499 as an elective course must obtain approval from the program adviser
+- **Major**: 12 units of electives, subject not specified in the catalog: ask an advisor which courses count. 12 Units of Electives: Students planning to take MATH 499 as an elective course must obtain approval from the program adviser
 - **Language Requirement**: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to the section of this catalog on “Graduation Requirements .”
 
 ### Review list
@@ -2711,6 +2743,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'CS 150 and CS 150L, or CS 200, or STAT 200' in Preparation for the Major: a choice between alternatives of several courses, encoded as pick 1 (3 units) with a note; the app cannot check that the courses of one alternative are taken together. Check it.
 - [ ] 'Language Requirement' has no courses; shown as a section with only its note: "Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement. Refer to the section of this catalog on “Graduation Requirements .”"
 - [ ] 'One Course Selected From (pick 1)' in Major: read as pick 1 of 8; check it.
+- [ ] '12 Units of Electives': units with no subject or list; a 'Major' section note, not counted in the totals. Check it.
 - [ ] Text under '12 Units of Electives' kept as the 'Major' section note: "Students planning to take MATH 499 as an elective course must obtain approval from the program adviser."
 - [ ] Units check for Major: page says at least 30, listed courses add up to 18.
 
@@ -2908,12 +2941,11 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Any MATH 300-599 course': MATH 312, MATH 313, MATH 413 left out of its list (exclude column).
 - [ ] 'Auxiliary Area': example courses, not a requirement: a section note (PHYS 195, PHYS 195L, CHEM 200, CHEM 201).
 - [ ] Units check for Preparation for the Major: page says 28-29, listed courses add up to 27.
-- [ ] Units check for Major: page says at least 40, listed courses add up to 38-41.
 
 ### Units check (advisory)
 
 - Preparation for the Major: page says 28-29 units, listed courses give 27: **MISMATCH**
-- Major: page says at least 40 units, listed courses give 38-41: **MISMATCH**
+- Major: page says at least 40 units, listed courses give 40: **inside**
 
 ### Major notes (no rows made; for a human)
 
@@ -2961,7 +2993,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ### Section notes (shown once under the heading)
 
 - **Preparation for the Major**: The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better
-- **Major**: 12 Units from a Science: 12 units from a science to which mathematics may be applied (these should be from a single science and must be approved by the B.S. adviser)
+- **Major**: 12 units of electives, subject not specified in the catalog: ask an advisor which courses count. 12 Units from a Science: 12 units from a science to which mathematics may be applied (these should be from a single science and must be approved by the B.S. adviser)
 
 ### Review list
 

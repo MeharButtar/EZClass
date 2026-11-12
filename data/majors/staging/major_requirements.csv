@@ -109,7 +109,7 @@ biology_ba,Preparation for the Major,Required,required,,,CHEM,201,,,,General Che
 biology_ba,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
 biology_ba,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
 biology_ba,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
-biology_ba,Major,,note,,,,,,,,,,"All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Upper Division Major Electives: Upper division major elective courses include all upper division biology courses numbered 350 and above (except BIOL 497 and BIOL 495 ), and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , CHEM 560 ). Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses"
+biology_ba,Major,,note,,,,,,,,,,All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses
 biology_ba,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
 biology_ba,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
 biology_ba,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
@@ -123,6 +123,8 @@ biology_ba,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochemistry,3,
 biology_ba,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
 biology_ba,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
 biology_ba,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
+biology_ba,Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,4,BIOL,,350,599,BIOL 497|BIOL 495,,,
+biology_ba,Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,CHEM,,300,599,CHEM 300|CHEM 308|CHEM 497|CHEM 499|CHEM 560,,,
 biology_ba,Language Requirement,,note,,,,,,,,,,Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill this requirement
 biology_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
 biology_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
@@ -135,7 +137,7 @@ biology_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,General Che
 biology_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
 biology_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
 biology_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
-biology_bs,Major,,note,,,,,,,,,,All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar
+biology_bs,Major,,note,,,,,,,,,,All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses
 biology_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
 biology_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
 biology_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
@@ -149,7 +151,11 @@ biology_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochemistry,3,
 biology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
 biology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
 biology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
-biology_bs,Upper Division Major Electives,,note,,,,,,,,,,Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses
+biology_bs,Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,16,BIOL,,350,599,,,,"BIOL 597, BIOL 497, BIOL 495: combined maximum of 9 units"
+biology_bs,Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,CHEM,,300,599,CHEM 300|CHEM 308|CHEM 497|CHEM 499|CHEM 560,,,
+biology_bs,Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,597,,,,,,
+biology_bs,Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,497,,,,,,
+biology_bs,Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,495,,,,,,
 biology_cellular_molecular_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
 biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
 biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
@@ -161,7 +167,7 @@ biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,CHEM
 biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
 biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
 biology_cellular_molecular_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
-biology_cellular_molecular_bs,Major,,note,,,,,,,,,,"All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 496, BIOL 596, CHEM 496, CHEM 498, CHEM 499, CHEM 596)"
+biology_cellular_molecular_bs,Major,,note,,,,,,,,,,"All courses not included below must have specific approval of the department. This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 496, BIOL 596, CHEM 496, CHEM 498, CHEM 499, CHEM 596)"
 biology_cellular_molecular_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
 biology_cellular_molecular_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
 biology_cellular_molecular_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
@@ -204,6 +210,11 @@ biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choo
 biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,CHEM,496,,,,Selected Topics in Chemistry,1-4,(maximum three units)
 biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,(maximum three units)
 biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,CHEM,596,,,,Advanced Special Topics in Chemistry,1-3,(maximum three units)
+biology_cellular_molecular_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,10,BIOL,,350,599,BIOL 452,,,"BIOL 597, BIOL 497, BIOL 495: combined maximum of 9 units"
+biology_cellular_molecular_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,CHEM,,300,599,CHEM 300|CHEM 308|CHEM 497|CHEM 499|CHEM 560,,,
+biology_cellular_molecular_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,597,,,,,,
+biology_cellular_molecular_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,497,,,,,,
+biology_cellular_molecular_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,495,,,,,,
 biology_ecology_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
 biology_ecology_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
 biology_ecology_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
@@ -215,7 +226,7 @@ biology_ecology_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,Gen
 biology_ecology_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
 biology_ecology_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
 biology_ecology_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
-biology_ecology_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Other upper division major electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 496, BIOL 596)"
+biology_ecology_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 496, BIOL 596)"
 biology_ecology_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
 biology_ecology_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
 biology_ecology_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
@@ -250,6 +261,11 @@ biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,
 biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,578,,,,Environmental Systems Modeling: Principles and Application,3,
 biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,(maximum three units)
 biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,(maximum three units)
+biology_ecology_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,12,BIOL,,350,599,BIOL 452,,,"BIOL 597, BIOL 497, BIOL 495: combined maximum of 9 units"
+biology_ecology_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,CHEM,,300,599,CHEM 300|CHEM 308|CHEM 497|CHEM 499|CHEM 560,,,
+biology_ecology_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,597,,,,,,
+biology_ecology_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,497,,,,,,
+biology_ecology_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,495,,,,,,
 biology_evolutionary_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
 biology_evolutionary_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
 biology_evolutionary_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
@@ -261,7 +277,7 @@ biology_evolutionary_bs,Preparation for the Major,Required,required,,,CHEM,201,,
 biology_evolutionary_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
 biology_evolutionary_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
 biology_evolutionary_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
-biology_evolutionary_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division elective courses must be biology laboratory courses. Other electives include all biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)"
+biology_evolutionary_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division elective courses must be biology laboratory courses. Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)"
 biology_evolutionary_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
 biology_evolutionary_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
 biology_evolutionary_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
@@ -294,6 +310,11 @@ biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,
 biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,576,,,,Developmental Biology,3,
 biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,(maximum three units)
 biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,(maximum three units)
+biology_evolutionary_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,11,BIOL,,350,599,BIOL 452,,,"BIOL 597, BIOL 497, BIOL 495: combined maximum of 9 units"
+biology_evolutionary_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,CHEM,,300,599,CHEM 300|CHEM 308|CHEM 497|CHEM 499|CHEM 560,,,
+biology_evolutionary_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,597,,,,Undergraduate Thesis,3,
+biology_evolutionary_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,497,,,,Undergraduate Research,1-3,
+biology_evolutionary_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,495,,,,,,
 biology_marine_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
 biology_marine_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
 biology_marine_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
@@ -305,7 +326,7 @@ biology_marine_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,Gene
 biology_marine_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
 biology_marine_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
 biology_marine_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
-biology_marine_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)"
+biology_marine_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)"
 biology_marine_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
 biology_marine_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
 biology_marine_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
@@ -329,6 +350,11 @@ biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,5
 biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,542,,,,Ecological Signaling in the Environment,3,
 biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,(maximum three units)
 biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,(maximum three units)
+biology_marine_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,14,BIOL,,350,599,BIOL 452,,,"BIOL 597, BIOL 497, BIOL 495: combined maximum of 9 units"
+biology_marine_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,CHEM,,300,599,CHEM 300|CHEM 308|CHEM 497|CHEM 499|CHEM 560,,,
+biology_marine_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,597,,,,Undergraduate Thesis,3,
+biology_marine_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,497,,,,Undergraduate Research,1-3,
+biology_marine_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,495,,,,,,
 biology_zoology_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
 biology_zoology_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
 biology_zoology_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
@@ -340,7 +366,7 @@ biology_zoology_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,Gen
 biology_zoology_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,No Cr/NC
 biology_zoology_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,No Cr/NC
 biology_zoology_bs,Preparation for the Major,Required,required,,,MATH,124,,,,Calculus for the Life Sciences,4,No Cr/NC
-biology_zoology_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. The remaining units must be selected from biology courses numbered 350 and above (except BIOL 452 ); BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300 , CHEM 308 , CHEM 497 , CHEM 499 , and CHEM 560 ). Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)"
+biology_zoology_bs,Major,,note,,,,,,,,,,"This approval must be filed with the Office of the Registrar. Laboratory Course Requirement: A minimum of two upper division major elective courses must be biology laboratory courses. Prior approval from the Biology advisor is required to allow the following courses to fulfill required elective coursework. (BIOL 597, BIOL 496, BIOL 497, BIOL 596)"
 biology_zoology_bs,Major,Required,required,,,PHYS,180A,,,,Fundamentals of Physics,3,
 biology_zoology_bs,Major,Required,required,,,PHYS,180B,,,,Fundamentals of Physics,3,
 biology_zoology_bs,Major,Required,required,,,PHYS,182A,,,,Physical Measurements Laboratory,1,
@@ -369,6 +395,11 @@ biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,
 biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,576,,,,Developmental Biology,3,
 biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,(maximum three units)
 biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,(maximum three units)
+biology_zoology_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,14,BIOL,,350,599,BIOL 452,,,"BIOL 597, BIOL 497, BIOL 495: combined maximum of 9 units"
+biology_zoology_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,CHEM,,300,599,CHEM 300|CHEM 308|CHEM 497|CHEM 499|CHEM 560,,,
+biology_zoology_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,597,,,,Undergraduate Thesis,3,
+biology_zoology_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,497,,,,Undergraduate Research,1-3,
+biology_zoology_bs,Other Upper Division Major Electives,Any BIOL 350-599 or CHEM 300-599 course,open,,,BIOL,495,,,,,,
 ba_accounting_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to an upper division major
 ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
@@ -733,7 +764,7 @@ chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,520A,,,,In
 chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,520B,,,,Inorganic Chemistry,3,
 chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,550,,,,Instrumental Methods of Chemical Analysis,2,
 chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,560,,,,General Biochemistry,3,
-chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,498,,,,Senior Project,1-3,(one unit)
+chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,498,,,,Senior Project,1,(one unit)
 chemistry_american_chemical_society_bs,Major,Any CHEM 300-599 course,open,,7,CHEM,,300,599,,,,Seven units of upper division electives in chemistry
 chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,,note,,,,,,,,,,"Recommended (not required): PHYS 197, PHYS 197L"
 chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,
@@ -777,7 +808,7 @@ chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electiv
 child_development_bs,Preparation for the Major,,note,,,,,,,,,,The minimum grade in each class is a C (2.0) or better
 child_development_bs,Preparation for the Major,Required,required,,,CFD,135,,,,Principles of Family Development,3,No Cr/NC
 child_development_bs,Preparation for the Major,Required,required,,,CFD,270,,,,Human Development Across the Lifespan,3,No Cr/NC
-child_development_bs,Preparation for the Major,Required,required,,,CFD,270L,,,,Principles of Observation: Child Development Laboratory,1-3,No Cr/NC. (one unit)
+child_development_bs,Preparation for the Major,Required,required,,,CFD,270L,,,,Principles of Observation: Child Development Laboratory,1,No Cr/NC. (one unit)
 child_development_bs,Preparation for the Major,Required,required,,,CFD,272,,,,"Child, Family, and Community Engagement",3,No Cr/NC
 child_development_bs,Preparation for the Major,Required,required,,,CFD,275,,,,Learning Environments and Developmentally Appropriate Practices,3,No Cr/NC
 child_development_bs,Preparation for the Major,Required,required,,,CFD,278,,,,"Foundations of Human Health, Nutrition, and Safety",2,No Cr/NC
@@ -802,10 +833,10 @@ child_development_bs,Major,Required,required,,,CFD,578,,,,Conflict Resolution Ac
 child_development_bs,Major,Required,required,,,CFD,590,,,,Disability: Conception through Emerging Adulthood,4,
 child_development_bs,Major,Required,required,,,CFD,598,,,,Reflective Learning Portfolio,1,
 child_development_bs,Major,Capstone: Reflective Learning Portfolio,required,,,CFD,598,,,,Reflective Learning Portfolio,1,"This is a required capstone course. Students are required to prepare a portfolio to reflect, integrate, and synthesize their cumulative learning experience acquired in child and family development courses, study abroad programs, involvement in research projects with faculty, and/or internships. The reflective portfolio will be a capstone culminating experience to provide the opportunity to integrate knowledge and understanding of the child and family development curriculum with their academic and personal growth"
-child_development_bs,Major Electives,Major Electives,pool,,2,CFD,378A,,,,Laboratory Experience: Infancy to Toddlerhood,1-3,(one unit)
-child_development_bs,Major Electives,Major Electives,pool,,2,CFD,378B,,,,Laboratory Experience: Early Childhood,1-3,(one unit)
-child_development_bs,Major Electives,Major Electives,pool,,2,CFD,378C,,,,Laboratory Experience: Middle Childhood to Adolescence,1-3,(one unit)
-child_development_bs,Major Electives,Major Electives,pool,,2,CFD,378D,,,,Laboratory Experience: Development Across the Lifespan,1-3,(one unit)
+child_development_bs,Additional Electives (2 units),Additional Electives (2 units),pool,,2,CFD,378A,,,,Laboratory Experience: Infancy to Toddlerhood,1,(one unit)
+child_development_bs,Additional Electives (2 units),Additional Electives (2 units),pool,,2,CFD,378B,,,,Laboratory Experience: Early Childhood,1,(one unit)
+child_development_bs,Additional Electives (2 units),Additional Electives (2 units),pool,,2,CFD,378C,,,,Laboratory Experience: Middle Childhood to Adolescence,1,(one unit)
+child_development_bs,Additional Electives (2 units),Additional Electives (2 units),pool,,2,CFD,378D,,,,Laboratory Experience: Development Across the Lifespan,1,(one unit)
 child_development_bs,Electives,Any CFD 300-599 course or a listed course,open,,12,CFD,,300,599,,,,12 units of additional CFD courses ranging from CFD 300 to 599
 child_development_bs,Electives,Any CFD 300-599 course or a listed course,open,,,ED,451,,,,Introduction to Multicultural Education,3,
 child_development_bs,Electives,Any CFD 300-599 course or a listed course,open,,,ED,450,,,,Study Abroad,1-3,
@@ -1547,7 +1578,7 @@ mathematics_ba,Preparation for the Major,"CS 150 and CS 150L, or CS 200, or STAT
 mathematics_ba,Preparation for the Major,"CS 150 and CS 150L, or CS 200, or STAT 200",choose,1,3,CS,150L,,,,Introductory Computer Programming Laboratory,1,Take CS 150 and CS 150L together. No Cr/NC
 mathematics_ba,Preparation for the Major,"CS 150 and CS 150L, or CS 200, or STAT 200",choose,1,3,CS,200,,,,Introduction to Data Science and Python,4,No Cr/NC
 mathematics_ba,Preparation for the Major,"CS 150 and CS 150L, or CS 200, or STAT 200",choose,1,3,STAT,200,,,,Introduction to Data Science with R,3,No Cr/NC
-mathematics_ba,Major,,note,,,,,,,,,,12 Units of Electives: Students planning to take MATH 499 as an elective course must obtain approval from the program adviser
+mathematics_ba,Major,,note,,,,,,,,,,"12 units of electives, subject not specified in the catalog: ask an advisor which courses count. 12 Units of Electives: Students planning to take MATH 499 as an elective course must obtain approval from the program adviser"
 mathematics_ba,Major,Required,required,,,MATH,320,,,,Abstract Algebra,3,
 mathematics_ba,Major,Required,required,,,MATH,330,,,,Advanced Calculus I,3,
 mathematics_ba,Major,Required,required,,,MATH,340,,,,Programming in Mathematics,3,
@@ -1645,7 +1676,7 @@ mathematics_education_bs,Major,Required,required,,,MATH,330,,,,Advanced Calculus
 mathematics_education_bs,Major,Required,required,,,MATH,340,,,,Programming in Mathematics,3,
 mathematics_education_bs,Major,Required,required,,,MATH,341,,,,Mathematics Software Workshop,1,
 mathematics_education_bs,Major,Required,required,,,MATH,414,,,,Mathematics Curriculum and Instruction,3,
-mathematics_education_bs,Major,Required,required,,,TE,362,,,,Fieldwork in Community Settings,1-4,(3 units)
+mathematics_education_bs,Major,Required,required,,,TE,362,,,,Fieldwork in Community Settings,3,(3 units)
 mathematics_education_bs,Major,MATH 336 or MATH 586 (pick 1),choose,1,,MATH,336,,,,Introduction to Mathematical Modeling,3,
 mathematics_education_bs,Major,MATH 336 or MATH 586 (pick 1),choose,1,,MATH,586,,,,Climate Mathematics,3,
 mathematics_education_bs,Major,MATH 508 or MATH 510 (pick 1),choose,1,,MATH,508,,,,Dynamical Systems and Modeling,3,
@@ -1673,7 +1704,7 @@ mathematics_science_bs,Preparation for the Major,"CS 150 and CS 150L, or CS 200,
 mathematics_science_bs,Preparation for the Major,"CS 150 and CS 150L, or CS 200, or STAT 200",choose,1,3,CS,150L,,,,Introductory Computer Programming Laboratory,1,Take CS 150 and CS 150L together. No Cr/NC
 mathematics_science_bs,Preparation for the Major,"CS 150 and CS 150L, or CS 200, or STAT 200",choose,1,3,CS,200,,,,Introduction to Data Science and Python,4,No Cr/NC
 mathematics_science_bs,Preparation for the Major,"CS 150 and CS 150L, or CS 200, or STAT 200",choose,1,3,STAT,200,,,,Introduction to Data Science with R,3,No Cr/NC
-mathematics_science_bs,Major,,note,,,,,,,,,,12 Units from a Science: 12 units from a science to which mathematics may be applied (these should be from a single science and must be approved by the B.S. adviser)
+mathematics_science_bs,Major,,note,,,,,,,,,,"12 units of electives, subject not specified in the catalog: ask an advisor which courses count. 12 Units from a Science: 12 units from a science to which mathematics may be applied (these should be from a single science and must be approved by the B.S. adviser)"
 mathematics_science_bs,Major,Required,required,,,MATH,330,,,,Advanced Calculus I,3,
 mathematics_science_bs,Major,Required,required,,,MATH,340,,,,Programming in Mathematics,3,
 mathematics_science_bs,Major,MATH 531 or MATH 537 or MATH 542 (pick 1),choose,1,,MATH,531,,,,Partial Differential Equations,3,

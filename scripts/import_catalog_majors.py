@@ -54,8 +54,14 @@ How a page becomes rows (decided with Mehar after the Mechanical Engineering rev
     list under "excluding:". Groups that each say their own units ("At least three units
     must be taken from ...") are pools of their own; what the parent's total leaves is an
     open rule from the parent's sentence (Journalism: any upper division JMS or LDT).
+    Biology's "all upper division biology courses numbered 350 and above (except ...); BIOL 597,
+    BIOL 497, BIOL 495 (combined maximum of nine units); and all upper division chemistry courses
+    (except ...)" is one open group of two ranges, each with its own exclude list, plus the listed
+    courses, the cap as its note; its units are the Major total less the fewest its other rows add.
   - Units with no subject and no list ("12 units from a science ... approved by the
-    adviser") stay a section note and are not counted; the review list says so.
+    adviser") stay a section note and are not counted; the note says the subject is not
+    specified in the catalog and to ask an advisor, and the review list says so.
+  - "TE 362 Units: 1-4 (3 units)": the course counts the units the page says it is taken for.
   - The GWAR note goes on the course the writing block names, listed or only in its text.
   - Group labels and "Or ..." notes use the app's codes (CIVE 160, not CIV E 160).
   - A course in more than one pool group of one section keeps one row (the
@@ -336,6 +342,10 @@ def parse_course(li):
     if um:
         units = re.sub(r"\s*[-–]\s*", "-", um.group(1)).strip()
         extra = um.group(2).strip()
+    taken = re.fullmatch(r"\((\d+|" + "|".join(NUMBER_WORDS) + r")\s+units?\)\.?", extra, re.I)
+    span = re.fullmatch(r"(\d+)-(\d+)", units)
+    if taken and span and int(span.group(1)) <= number(taken.group(1)) <= int(span.group(2)):
+        units = str(number(taken.group(1)))     # 'TE 362 Units: 1-4 (3 units)': the major takes it for 3
     return {"subject": subject, "catalog_num": num, "title": title, "units": units, "extra": extra}
 
 
@@ -505,6 +515,40 @@ def parse_open(text, upper=False):
     return {"units": units, "subjects": subjects, "min": low, "max": high, "guessed": guessed,
             "excluded": excluded.group(1).strip() if excluded else "", "exclude": codes,
             "exclude_list": bool(re.search(r"\bexcluding:?\s*$", text, re.I))}
+
+
+SUBJECT_NAMES = "|".join(sorted(map(re.escape, SUBJECT_WORDS), key=len, reverse=True))
+NUMBERED_RANGE = re.compile(r"\b(" + SUBJECT_NAMES + r")\s+courses\s+numbered\s+(\d{3})\s+and\s+above"
+                            r"(?:\s*\(except\s+([^)]*)\))?", re.I)
+UPPER_RANGE = re.compile(r"\ball\s+upper\s+division\s+(" + SUBJECT_NAMES + r")\s+courses(?!\s+numbered)"
+                         r"(?:\s*\(except\s+([^)]*)\))?", re.I)
+CAPPED_LIST = re.compile(r"((?:[A-Z]{2,5}\s+\d{3}[A-Z]?\s*,?\s*)+)\(combined maximum of (\w+) units?\)")
+
+
+def parse_ranges(text):
+    """'... include all upper division biology courses numbered 350 and above (except BIOL 452); BIOL 597, BIOL 497,
+    BIOL 495 (combined maximum of nine units); and all upper division chemistry courses (except CHEM 300, ...)':
+    one range per subject, each with its own exclude list, the courses the sentence lists, and the cap.
+    None unless it names at least two ranges."""
+    def codes(part):
+        return [f"{subject_key(s)} {n}" for s, n in COURSE_CODE.findall(part or "")]
+    ranges = [{"subjects": [SUBJECT_WORDS[m.group(1).lower()]], "min": int(m.group(2)), "max": 599,
+               "exclude": codes(m.group(3))} for m in NUMBERED_RANGE.finditer(text)]
+    ranges += [{"subjects": [SUBJECT_WORDS[m.group(1).lower()]], "min": 300, "max": 599,
+                "exclude": codes(m.group(2))} for m in UPPER_RANGE.finditer(text)]
+    if len(ranges) < 2:
+        return None
+    cap = CAPPED_LIST.search(text)
+    listed = [tuple(c.split(" ", 1)) for c in codes(cap.group(1))] if cap else []
+    cap_note = (f"{', '.join(' '.join(c) for c in listed)}: combined maximum of {number(cap.group(2))} units"
+                if cap else "")
+    return {"ranges": ranges, "listed": listed, "cap_note": cap_note}
+
+
+def unplaced_note(amount):
+    """The note for units the catalog gives no subject or list for ('12 Units of Electives')."""
+    units = str(number(amount.group(1))) + (f"-{amount.group(2)}" if amount.group(2) else "")
+    return (f"{units} units of electives, subject not specified in the catalog: ask an advisor which courses count")
 
 
 def course_note(course, gwar_codes, footnotes=None, crnc=False, grade=""):
@@ -973,6 +1017,32 @@ def map_blocks(prog, blocks):
         elif rule["excluded"]:
             prog.flag(f"'{label}': \"excluding {rule['excluded']}\" names no course codes; nothing excluded, check it.")
 
+    page_courses = {app_code(v): v for b_ in blocks for k, v in b_["items"] if k == "course"}
+    ranged_groups = []
+
+    def ranges_group(heading, sentence, found):
+        """Biology's electives: two ranges (BIOL 350-599, CHEM 300-599) each with its own exclude list, plus the
+        courses the sentence lists, the cap as the group's note. Its units are what the h2 total leaves."""
+        section = heading if not NOTE_HEADING.match(heading) else "Other Upper Division Major Electives"
+        label = "Any " + " or ".join(f"{r['subjects'][0]} {r['min']}-{r['max']}" for r in found["ranges"]) + " course"
+        base = {"major_id": "", "section": section, "group_label": label, "rule": "open", "pick_n": "",
+                "pick_units": "", "subject": "", "catalog_num": "", "num_min": "", "num_max": "", "exclude": "",
+                "title": "", "units": "", "note": "", "_h2": h2, "_code": label}
+        rows = []
+        for n, r in enumerate(found["ranges"]):
+            rows.append(dict(base, subject=r["subjects"][0], num_min=str(r["min"]), num_max=str(r["max"]),
+                             exclude="|".join(r["exclude"]), note=found["cap_note"] if n == 0 else ""))
+        for subj, num in found["listed"]:
+            c = page_courses.get(f"{subj} {num}", {})
+            used_codes.add(code(subj, num))
+            rows.append(dict(base, subject=subject_key(subj), catalog_num=num, title=c.get("title", ""),
+                             units=c.get("units", ""), _code=f"{label}: {subj} {num}"))
+        prog.rows += rows
+        ranged_groups.append((h2, rows))
+        prog.flag(f"'{label}' in {section}: \"{sentence}\" encoded as one open rule of "
+                  f"{len(found['ranges'])} ranges" + (f" plus {len(found['listed'])} listed courses" if found["listed"]
+                                                      else "") + "; check it.")
+
     def text_rules(sentences_, section_name, prefix=""):
         """Text with no list of its own: course rules onto those courses, rules as the section note, the rest
         (advice, blurbs) only in the report. Returns the blurbs."""
@@ -1080,11 +1150,25 @@ def map_blocks(prog, blocks):
                         break
                 if not rule and UNIT_WORDS.search(b["heading"]) and has_lists:
                     rule = b["heading"]               # 'Three Units from One of the Following Categories ...'
+                ranged = next(((p, parse_ranges(p)) for p in rule_paras if parse_ranges(p)), None)
+                if ranged and not has_lists:
+                    finish_parent()
+                    ranges_group(b["heading"], *ranged)
+                    rest = [p for p in rule_paras if p != ranged[0]]
+                    if rest:
+                        text_rules(rest, h2, "" if NOTE_HEADING.match(b["heading"]) else f"{b['heading']}: ")
+                    continue
                 if (NOTE_HEADING.match(b["heading"]) or MAXIMUM_RULE.match(rule) or MAXIMUM_RULE.match(b["heading"])
                         or not (stated or UNIT_WORDS_ADJ.search(rule) or has_lists)):
                     # "Note: ..." or text with no units: its rules are the section note, the rest is for a human
                     target = parent["heading"] if parent else (pool_ctx["section"] if pool_ctx else h2)
                     prefix = "" if NOTE_HEADING.match(b["heading"]) else f"{b['heading']}: "
+                    amount = UNIT_WORDS.match(b["heading"])
+                    if amount and not has_lists and not parse_open(b["heading"]):
+                        # '12 Units of Electives' with no subject and no list: say so, so students ask an advisor
+                        prog.section_note(target, unplaced_note(amount))
+                        prog.flag(f"'{b['heading']}': units with no subject or list; a '{target}' section note, "
+                                  f"not counted in the totals. Check it.")
                     blurbs = text_rules(rule_paras, target, prefix)
                     for p in rule_paras:
                         add_note(prog, f"{h2}: {b['heading']}", p)
@@ -1109,6 +1193,9 @@ def map_blocks(prog, blocks):
                 if not has_lists and not stated and len(set(COURSE_CODE.findall(rule))) < 2:
                     target = parent["heading"] if parent else h2
                     text = rule if rule == b["heading"] else f"{b['heading']}: {rule}"
+                    amount = UNIT_WORDS.search(rule)
+                    if amount:
+                        prog.section_note(target, unplaced_note(amount))
                     prog.section_note(target, text)
                     prog.flag(f"'{b['heading']}': units with no subject or list (\"{rule}\"); a '{target}' section "
                               f"note, not counted in the totals. Check it.")
@@ -1231,6 +1318,9 @@ def map_blocks(prog, blocks):
         pool_units = heading_pool if not in_pool else None
         if heading_pool and not in_pool:
             label = f"{h2} Electives" if heading_pool and label == heading else label   # the heading is the rule
+            if label == f"{h2} Electives" and re.match(r"and\s", heading, re.I):
+                # 'And Two Units from' after an electives rule: not the same as that 'Electives' section
+                label = f"Additional Electives ({heading_pool} units)"
         if not pool_units and not in_pool:
             for s in rule_paras:
                 pool_units = pool_units_from(s)
@@ -1510,6 +1600,20 @@ def map_blocks(prog, blocks):
         if not any(c["extra"] == marker for b in blocks for k, c in b["items"] if k == "course"):
             add_note(prog, "Footnotes", f"{marker} {text}")
             prog.flag(f"Footnote '{marker} {text}' has no course marked '{marker}'; kept as a major note.")
+
+    for name, rows in ranged_groups:
+        # 'the remaining units': the h2 total less the fewest units its other rows can add up to
+        ids_ = {id(r) for r in rows}
+        total = totals.get(name)
+        low = listed_units([r for r in h2_rows_for(name) if id(r) not in ids_])[0]
+        units = str(total[0] - low) if total and total[0] > low else ""
+        rows[0]["pick_units"] = units
+        if units:
+            prog.derived.add(name)
+            prog.flag(f"'{rows[0]['group_label']}': {units} units, worked out from the {name} total minus its "
+                      f"other courses.")
+        else:
+            prog.flag(f"'{rows[0]['group_label']}': could not work out its units; pick_units is blank.")
 
     order_rows(prog)
     check_units(prog, totals)

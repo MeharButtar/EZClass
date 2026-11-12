@@ -837,6 +837,81 @@ class RuleTextTests(unittest.TestCase):
         self.assertEqual(len([r for r in prog.rows if r["rule"] == "required"]), 6)   # the core stays required
         self.assertEqual(prog.units_checks[0][1:3], ("30", "48"))
 
+    BIOLOGY_BS = ("Upper division major elective courses include all upper division biology courses numbered 350 and "
+                  "above; BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division "
+                  "chemistry courses (except CHEM 300 , CHEM 308 ).")
+
+    def test_biology_electives_are_two_ranges_and_the_listed_courses(self):
+        """Biology B.S.: BIOL 350-599 and CHEM 300-599 (each its own exclude list), BIOL 597/497/495 listed, the
+        9-unit cap as the note; the units are what the Major total leaves."""
+        prog = self.page(
+            ("h2", "Major", "<p>(20 units)</p>", ""),
+            ("h3", "A Minimum of 12 Upper Division Units to Include", "", self.course("BIOL 351", 4)),
+            ("h3", "At Least One Course Selected From", "", self.course("BIOL 459") + self.course("BIOL 350", 4)),
+            ("h3", "Upper Division Major Electives", f"<p>{self.BIOLOGY_BS}</p>", ""))
+        self.assertEqual(self.open_groups(prog), {
+            ("Upper Division Major Electives", "Any BIOL 350-599 or CHEM 300-599 course"): [
+                ("BIOL", "", "350", "599", "", "", "13"), ("CHEM", "", "300", "599", "CHEM 300|CHEM 308", "", ""),
+                ("BIOL", "597", "", "", "", "", ""), ("BIOL", "497", "", "", "", "", ""),
+                ("BIOL", "495", "", "", "", "", "")]})
+        first = next(r for r in prog.rows if r["rule"] == "open")
+        self.assertEqual(first["note"], "BIOL 597, BIOL 497, BIOL 495: combined maximum of 9 units")
+        self.assertEqual(prog.units_checks[0][1:3], ("20", "20-21"))
+
+    def test_biology_emphasis_and_ba_electives(self):
+        """An emphasis says it under 'Note' ('Other electives include ... (except BIOL 452)'); the B.A. excludes
+        BIOL 497 and BIOL 495 and lists nothing."""
+        prog = self.page(
+            ("h2", "Major", "<p>(10 units)</p>", self.course("BIOL 351", 4)),
+            ("h3", "Note", "<p>Other electives include all biology courses numbered 350 and above (except BIOL 452 ); "
+                           "BIOL 597 , BIOL 497 , BIOL 495 (combined maximum of nine units); and all upper division "
+                           "chemistry courses (except CHEM 300 , and CHEM 560 ).</p>", ""))
+        [(key, rows)] = self.open_groups(prog).items()
+        self.assertEqual(key[0], "Other Upper Division Major Electives")
+        self.assertEqual(rows[:2], [("BIOL", "", "350", "599", "BIOL 452", "", "6"),
+                                    ("CHEM", "", "300", "599", "CHEM 300|CHEM 560", "", "")])
+        prog = self.page(
+            ("h2", "Major", "<p>(10 units)</p>", self.course("BIOL 351", 4)),
+            ("h3", "Upper Division Major Electives", "<p>Upper division major elective courses include all upper "
+                                                     "division biology courses numbered 350 and above (except BIOL 497 "
+                                                     "and BIOL 495 ), and all upper division chemistry courses (except "
+                                                     "CHEM 300 , CHEM 308 ).</p>", ""))
+        self.assertEqual(list(self.open_groups(prog).values()), [[
+            ("BIOL", "", "350", "599", "BIOL 497|BIOL 495", "", "6"),
+            ("CHEM", "", "300", "599", "CHEM 300|CHEM 308", "", "")]])
+        self.assertEqual(next(r for r in prog.rows if r["rule"] == "open")["note"], "")
+
+    def test_units_the_major_takes_a_variable_course_for(self):
+        """'TE 362 Units: 1-4 (3 units)': the major counts 3; a number outside the range is left alone."""
+        prog = self.page(("h2", "Major", "", self.course("TE 362", "1-4", " (3 units)")
+                          + self.course("CFD 378A", "1-3", " (one unit)") + self.course("EX 300", "1-4", " (6 units)")))
+        self.assertEqual({r["_code"]: r["units"] for r in prog.rows if r["rule"] == "required"},
+                         {"TE 362": "3", "CFD 378A": "1", "EX 300": "1-4"})
+
+    def test_and_two_units_from_is_its_own_named_pool(self):
+        """Child Development: 'And Two Units from' after the Electives section is 'Additional Electives (2 units)'."""
+        prog = self.page(
+            ("h2", "Major", "", self.course("CFD 270")),
+            ("h3", "And Two Units from", "", self.course("CFD 378A", 1) + self.course("CFD 378B", 1)))
+        pool = [r for r in prog.rows if r["rule"] == "pool"]
+        self.assertEqual({(r["section"], r["group_label"], r["pick_units"]) for r in pool},
+                         {("Additional Electives (2 units)", "Additional Electives (2 units)", "2")})
+
+    def test_elective_units_with_no_subject_tell_students_to_ask(self):
+        """Mathematics B.A. '12 Units of Electives' and Mathematics Science '12 units from a science': a note."""
+        advise = "12 units of electives, subject not specified in the catalog: ask an advisor which courses count"
+        prog = self.page(
+            ("h2", "Major", "<p>A minimum of 30 upper division units to include:</p>", self.course("MATH 320")),
+            ("h3", "12 Units of Electives", "<p>Students planning to take MATH 499 as an elective course must obtain "
+                                            "approval from the program adviser.</p>", ""))
+        self.assertEqual(prog.section_notes["Major"][0], advise)
+        prog = self.page(
+            ("h2", "Major", "<p>A minimum of 30 upper division units to include:</p>", self.course("MATH 320")),
+            ("h3", "12 Units from a Science", "<p>12 units from a science to which mathematics may be applied "
+                                              "(must be approved by the B.S. adviser).</p>", ""))
+        self.assertEqual(prog.section_notes["Major"][0], advise)
+        self.assertIn("12 units from a science", prog.section_notes["Major"][1])
+
     def test_more_pick_and_pool_wordings(self):
         prog = self.page(
             ("h2", "Preparation for the Major", "", self.course("ECON 101")),
@@ -855,7 +930,7 @@ class RuleTextTests(unittest.TestCase):
         self.assertIn(("Preparation for the Major", "Calculus (pick 1)", "choose", "1", ""), groups)
         self.assertEqual(groups[("Preparation for the Major", "CS 150 and CS 150L, or CS 200, or STAT 200", "choose",
                                  "1", "3")], ["CS 150", "CS 150L", "CS 200", "STAT 200"])
-        self.assertIn(("Major Electives", "Major Electives", "pool", "", "2"), groups)       # 'And Two Units from'
+        self.assertIn(("Additional Electives (2 units)", "Additional Electives (2 units)", "pool", "", "2"), groups)
         self.assertIn(("Electives", "Electives", "pool", "", "6"), groups)
         self.assertFalse(any(r["_code"] == "ECON 496" for r in prog.rows))                  # approval only: a note
         notes = " ".join(r["note"] for r in prog.rows if r["rule"] == "note")

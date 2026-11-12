@@ -73,7 +73,8 @@ class LoaderTests(unittest.TestCase):
                          len(csv_rows("major_requirements.csv")))
         self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM major_requirements WHERE subject LIKE '% %'"), 0)
         # catalog numbers stay text
-        self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM major_requirements WHERE catalog_num = '150L'"), 1)
+        self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM major_requirements WHERE catalog_num = '150L'"),
+                         len([r for r in csv_rows("major_requirements.csv") if r["catalog_num"] == "150L"]))
 
     def test_spaces_normalized_and_unmatched_course_still_loads(self):
         with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as folder, scratch_db() as path:
