@@ -4,7 +4,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 | Majors processed | Requirement rows | Majors with open review items |
 | --- | --- | --- |
-| 33 | 1269 | 33 |
+| 33 | 1270 | 33 |
 
 ## Batch check: 20 of 20 pages found
 
@@ -62,7 +62,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | `ba_management_human_resource_management_bs` | Business Administration, Management, Specialization in Human Resource Management | B.S. | 32 | 1 |
 | `chemistry_ba` | Chemistry | B.A. | 24 | 4 |
 | `chemistry_american_chemical_society_bs` | Chemistry, and Certificate of the American Chemical Society | B.S. | 26 | 6 |
-| `chemistry_biochemistry_american_chemical_society_bs` | Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society | B.S. | 38 | 6 |
+| `chemistry_biochemistry_american_chemical_society_bs` | Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society | B.S. | 39 | 6 |
 | `civil_engineering_bs` | Civil Engineering | B.S. | 55 | 2 |
 | `communication_ba` | Communication | B.A. | 49 | 10 |
 | `computer_engineering_bs` | Computer Engineering | B.S. | 46 | 2 |
@@ -1334,7 +1334,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ## Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society, B.S. (`chemistry_biochemistry_american_chemical_society_bs`)
 
 - Source: `data/catalog_html/Program_ Chemistry, Emphasis in Biochemistry, B.S. and Certificate of the American Chemical Society - San Diego State University.html`, poid 11938
-- Rows: 38
+- Rows: 39
 
 ### Groups
 
@@ -1350,6 +1350,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ### Section notes (shown once under the heading)
 
 - **Preparation for the Major**: Recommended (not required): PHYS 197, PHYS 197L
+- **Upper Division Major Electives**: Any 500-level chemistry course
 
 ### Review list
 

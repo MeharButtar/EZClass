@@ -176,34 +176,34 @@ biology_cellular_molecular_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals
 biology_cellular_molecular_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
 biology_cellular_molecular_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
 biology_cellular_molecular_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,350,,,,General Microbiology,4,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,464,,,,Functional Genomics Laboratory,2,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,480,,,,Clinical Hematology,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,510,,,,Molecular Evolution,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,528,,,,Microbial Ecology,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,549,,,,Microbial Genetics and Physiology,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,554,,,,Molecular Virology,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,556,,,,Scanning Electron Microscopy Laboratory,2,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,557,,,,Transmission Electron Microscopy Laboratory,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,562,,,,Ecological Metagenomics,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,564,,,,Principles of Cancer Biology,4,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,565,,,,Genome Editing,4,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,567L,,,,"Biochemistry, Cellular, and Molecular Biology Laboratory II",2,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,568,,,,Bioinformatics,3,A minimum of two courses selected from. also listed as
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOMI,568,,,,Bioinformatics,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,570,,,,Neurobiology,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,575,,,,Molecular Basis of Heart Disease,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,576,,,,Developmental Biology,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,584,,,,Medical Microbiology,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,485,,,,Principles of Immunology,3,A minimum of two courses selected from. Or BIOL 585
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,585,,,,Cellular and Molecular Immunology,3,A minimum of two courses selected from. Or BIOL 485
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,589,,,,Stem Cell and Regenerative Biology,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,590,,,,Physiology of Human Systems,4,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,CHEM,432,,,,Organic Chemistry,3,A minimum of two courses selected from
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,A minimum of two courses selected from. (maximum three units)
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,CHEM,496,,,,Selected Topics in Chemistry,1-4,A minimum of two courses selected from. (maximum three units)
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,A minimum of two courses selected from. (maximum three units)
-biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,CHEM,596,,,,Advanced Special Topics in Chemistry,1-3,A minimum of two courses selected from. (maximum three units)
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,350,,,,General Microbiology,4,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,464,,,,Functional Genomics Laboratory,2,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,480,,,,Clinical Hematology,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,510,,,,Molecular Evolution,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,528,,,,Microbial Ecology,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,549,,,,Microbial Genetics and Physiology,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,554,,,,Molecular Virology,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,556,,,,Scanning Electron Microscopy Laboratory,2,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,557,,,,Transmission Electron Microscopy Laboratory,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,562,,,,Ecological Metagenomics,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,564,,,,Principles of Cancer Biology,4,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,565,,,,Genome Editing,4,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,567L,,,,"Biochemistry, Cellular, and Molecular Biology Laboratory II",2,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,568,,,,Bioinformatics,3,also listed as
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOMI,568,,,,Bioinformatics,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,570,,,,Neurobiology,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,575,,,,Molecular Basis of Heart Disease,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,576,,,,Developmental Biology,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,584,,,,Medical Microbiology,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,485,,,,Principles of Immunology,3,Or BIOL 585
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,585,,,,Cellular and Molecular Immunology,3,Or BIOL 485
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,589,,,,Stem Cell and Regenerative Biology,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,590,,,,Physiology of Human Systems,4,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,CHEM,432,,,,Organic Chemistry,3,
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,(maximum three units)
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,CHEM,496,,,,Selected Topics in Chemistry,1-4,(maximum three units)
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,(maximum three units)
+biology_cellular_molecular_bs,Major,Upper Division Major Electives (pick 2),choose,2,,CHEM,596,,,,Advanced Special Topics in Chemistry,1-3,(maximum three units)
 biology_ecology_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
 biology_ecology_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
 biology_ecology_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
@@ -230,26 +230,26 @@ biology_ecology_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochem
 biology_ecology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
 biology_ecology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
 biology_ecology_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,509,,,,Advanced Evolution,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,514,,,,Biology of the Algae,4,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516A,,,,Marine Larval Ecology Research Part 1,4,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516B,,,,Marine Larval Ecology Research Part 2,4,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,517,,,,Marine Ecology,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,526,,,,Terrestrial Arthropod Biology,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,527,,,,Animal Behavior,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,528,,,,Microbial Ecology,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,535,,,,Plant Ecology,4,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,540,,,,Conservation Ecology,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,542,,,,Ecological Signaling in the Environment,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,544,,,,Terrestrial Ecosystems and Climate Change,3,A minimum of two courses selected from. also listed as
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,ENVS,544,,,,Terrestrial Ecosystems and Climate Change,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,560,,,,Animal Physiology,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,562,,,,Ecological Metagenomics,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,578,,,,Environmental Systems Modeling: Principles and Application,3,A minimum of two courses selected from
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,A minimum of two courses selected from. (maximum three units)
-biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,A minimum of two courses selected from. (maximum three units)
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,509,,,,Advanced Evolution,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,514,,,,Biology of the Algae,4,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516A,,,,Marine Larval Ecology Research Part 1,4,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516B,,,,Marine Larval Ecology Research Part 2,4,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,517,,,,Marine Ecology,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,526,,,,Terrestrial Arthropod Biology,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,527,,,,Animal Behavior,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,528,,,,Microbial Ecology,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,535,,,,Plant Ecology,4,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,540,,,,Conservation Ecology,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,542,,,,Ecological Signaling in the Environment,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,544,,,,Terrestrial Ecosystems and Climate Change,3,also listed as
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,ENVS,544,,,,Terrestrial Ecosystems and Climate Change,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,560,,,,Animal Physiology,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,562,,,,Ecological Metagenomics,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,578,,,,Environmental Systems Modeling: Principles and Application,3,
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,(maximum three units)
+biology_ecology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,(maximum three units)
 biology_evolutionary_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
 biology_evolutionary_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
 biology_evolutionary_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
@@ -276,24 +276,24 @@ biology_evolutionary_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals of Bi
 biology_evolutionary_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
 biology_evolutionary_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
 biology_evolutionary_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,459,,,,Plant Biology,3,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,510,,,,Molecular Evolution,3,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,515,,,,Marine Invertebrate Biology,4,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,523,,,,Herpetology,3,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,524,,,,Ornithology,4,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,525,,,,Mammalogy,3,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,526,,,,Terrestrial Arthropod Biology,3,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,527,,,,Animal Behavior,3,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,528,,,,Microbial Ecology,3,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,530,,,,Plant Systematics,4,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,531,,,,Taxonomy of California Plants,4,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,568,,,,Bioinformatics,3,A minimum of two courses selected from. also listed as
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOMI,568,,,,Bioinformatics,3,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,576,,,,Developmental Biology,3,A minimum of two courses selected from
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,A minimum of two courses selected from. (maximum three units)
-biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,A minimum of two courses selected from. (maximum three units)
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,459,,,,Plant Biology,3,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,510,,,,Molecular Evolution,3,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,515,,,,Marine Invertebrate Biology,4,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,523,,,,Herpetology,3,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,524,,,,Ornithology,4,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,525,,,,Mammalogy,3,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,526,,,,Terrestrial Arthropod Biology,3,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,527,,,,Animal Behavior,3,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,528,,,,Microbial Ecology,3,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,530,,,,Plant Systematics,4,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,531,,,,Taxonomy of California Plants,4,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,568,,,,Bioinformatics,3,also listed as
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOMI,568,,,,Bioinformatics,3,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,576,,,,Developmental Biology,3,
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,(maximum three units)
+biology_evolutionary_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,(maximum three units)
 biology_marine_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
 biology_marine_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
 biology_marine_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
@@ -319,16 +319,16 @@ biology_marine_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochemi
 biology_marine_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,350,,,,General Microbiology,4,
 biology_marine_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,459,,,,Plant Biology,3,
 biology_marine_bs,Major,At Least One Course Selected From (pick 1),choose,1,,BIOL,462,,,,Zoology,3,
-biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,A minimum of two courses selected from
-biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,514,,,,Biology of the Algae,4,A minimum of two courses selected from
-biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,515,,,,Marine Invertebrate Biology,4,A minimum of two courses selected from
-biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516A,,,,Marine Larval Ecology Research Part 1,4,A minimum of two courses selected from
-biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516B,,,,Marine Larval Ecology Research Part 2,4,A minimum of two courses selected from
-biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,517,,,,Marine Ecology,3,A minimum of two courses selected from
-biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,A minimum of two courses selected from
-biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,542,,,,Ecological Signaling in the Environment,3,A minimum of two courses selected from
-biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,A minimum of two courses selected from. (maximum three units)
-biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,A minimum of two courses selected from. (maximum three units)
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,514,,,,Biology of the Algae,4,
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,515,,,,Marine Invertebrate Biology,4,
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516A,,,,Marine Larval Ecology Research Part 1,4,
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516B,,,,Marine Larval Ecology Research Part 2,4,
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,517,,,,Marine Ecology,3,
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,542,,,,Ecological Signaling in the Environment,3,
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,(maximum three units)
+biology_marine_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,(maximum three units)
 biology_zoology_bs,Preparation for the Major,,note,,,,,,,,,,Students must have a cumulative GPA of 2.80 or better to be admitted to the major
 biology_zoology_bs,Preparation for the Major,Required,required,,,BIOL,203,,,,Principles of Cell and Molecular Biology,3,No Cr/NC
 biology_zoology_bs,Preparation for the Major,Required,required,,,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,No Cr/NC
@@ -352,23 +352,23 @@ biology_zoology_bs,Major,Required,required,,,BIOL,366,,,,Cell Biology,3,
 biology_zoology_bs,Major,Required,required,,,BIOL,366L,,,,Cell Biology Laboratory,1,
 biology_zoology_bs,Major,Required,required,,,BIOL,462,,,,Zoology,3,
 biology_zoology_bs,Major,Required,required,,,CHEM,365,,,,Fundamentals of Biochemistry,3,
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,509,,,,Advanced Evolution,3,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,510,,,,Molecular Evolution,3,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,515,,,,Marine Invertebrate Biology,4,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516A,,,,Marine Larval Ecology Research Part 1,4,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,523,,,,Herpetology,3,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,524,,,,Ornithology,4,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,525,,,,Mammalogy,3,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,526,,,,Terrestrial Arthropod Biology,3,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,527,,,,Animal Behavior,3,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,540,,,,Conservation Ecology,3,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,542,,,,Ecological Signaling in the Environment,3,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,560,,,,Animal Physiology,3,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,576,,,,Developmental Biology,3,A minimum of two courses selected from
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,A minimum of two courses selected from. (maximum three units)
-biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,A minimum of two courses selected from. (maximum three units)
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,509,,,,Advanced Evolution,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,510,,,,Molecular Evolution,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,512,,,,Evolution and Ecology of Marine Mammals,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,515,,,,Marine Invertebrate Biology,4,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,516A,,,,Marine Larval Ecology Research Part 1,4,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,518,,,,Biology of Fishes,4,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,523,,,,Herpetology,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,524,,,,Ornithology,4,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,525,,,,Mammalogy,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,526,,,,Terrestrial Arthropod Biology,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,527,,,,Animal Behavior,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,540,,,,Conservation Ecology,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,542,,,,Ecological Signaling in the Environment,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,560,,,,Animal Physiology,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,576,,,,Developmental Biology,3,
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,496,,,,Experimental Topics,1-4,(maximum three units)
+biology_zoology_bs,Major,Upper Division Major Electives (pick 2),choose,2,,BIOL,596,,,,Special Topics in Biology,1-4,(maximum three units)
 ba_accounting_bs,Preparation for the Major,,note,,,,,,,,,,Additional progress requirements must be met before a student is admitted to an upper division major
 ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,201,,,,Financial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
 ba_accounting_bs,Preparation for the Major,Required,required,,,ACCTG,202,,,,Managerial Accounting Fundamentals,3,"Grade of C or better, no Cr/NC"
@@ -764,15 +764,16 @@ chemistry_biochemistry_american_chemical_society_bs,Major,Senior Project,require
 chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,562,,,,Intermediary Metabolism,3,
 chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,563,,,,Nucleic Acid Function and Protein Synthesis,3,
 chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,564,,,,Receptor Biochemistry and Protein Modification,3,
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,496,,,,Selected Topics in Chemistry,1-4,Any 500-level chemistry course
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,497,,,,Undergraduate Research,1-3,Any 500-level chemistry course
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,498,,,,Senior Project,1-3,Any 500-level chemistry course
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,350,,,,General Microbiology,4,Any 500-level chemistry course
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,352,,,,Evolution,3,Any 500-level chemistry course
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,485,,,,Principles of Immunology,3,Any 500-level chemistry course
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,549,,,,Microbial Genetics and Physiology,3,Any 500-level chemistry course
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,570,,,,Neurobiology,3,Any 500-level chemistry course
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,590,,,,Physiology of Human Systems,4,Any 500-level chemistry course
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,,note,,,,,,,,,,Any 500-level chemistry course
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,496,,,,Selected Topics in Chemistry,1-4,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,497,,,,Undergraduate Research,1-3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,498,,,,Senior Project,1-3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,350,,,,General Microbiology,4,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,352,,,,Evolution,3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,485,,,,Principles of Immunology,3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,549,,,,Microbial Genetics and Physiology,3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,570,,,,Neurobiology,3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,590,,,,Physiology of Human Systems,4,
 civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,100,,,,Introduction to Civil Engineering,1,No Cr/NC
 civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,121,,,,Computer Graphics for the Built Environment,3,No Cr/NC
 civil_engineering_bs,Preparation for the Major,Required,required,,,CIVE,218,,,,Surveying for Civil Engineering and Construction,3,No Cr/NC

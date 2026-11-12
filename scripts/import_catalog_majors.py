@@ -1003,7 +1003,9 @@ def map_blocks(prog, blocks):
             if m:
                 pick_n = number(m.group(2))
                 rule_paras = [p for p in rule_paras if p is not s]
-                choose_note = [s.rstrip(":")] if m.group(1) else []
+                # 'Select at least one ...' over a whole h2 list is kept (the section note); under it, the
+                # group's "Pick n" says the same
+                choose_note = [s.rstrip(":")] if m.group(1) and b["level"] < 3 else []
                 break
 
         if b["level"] < 3 and rule_paras and not pool_units:
@@ -1086,9 +1088,9 @@ def map_blocks(prog, blocks):
             else:
                 label = "Choose from these courses"    # the whole h2 list is the pool ('6 units selected from:')
             pool_ctx = {"section": section, "level": b["level"], "units": pool_units}
-            for p in rule_paras:
+            for p in block_note:          # the rule text and any loose line in the list: once, for the section
                 prog.section_note(section, p)
-            for r in pool_rows([p for p in block_note if p not in rule_paras]):
+            for r in pool_rows([]):
                 r["pick_units"] = pool_units
             if b["level"] >= 3:
                 prog.flag(f"'{label}' (under {h2}) asks for {pool_units} units of its list: encoded as a pool in its "
