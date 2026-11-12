@@ -397,6 +397,11 @@ def read_rule_text(prog, heading, paras):
         if s and out["stated"] is None:
             out["stated"] = s
             continue
+        lead = re.match(r"^\(\s*(\d+)(?:\s*[-–]\s*(\d+))?\s+units?\s*\)\s+(\S.*)$", p, re.I | re.S)
+        if lead and out["stated"] is None:
+            low = int(lead.group(1))
+            out["stated"] = (low, int(lead.group(2) or low), "exact")
+            p = lead.group(3)
         for sent in sentences(p):
             t = TOTAL_SENTENCE.match(sent)
             if t and out["stated"] is None:
@@ -491,7 +496,7 @@ def course_note(course, gwar_codes, footnotes=None, crnc=False, grade=""):
 def join_note(parts):
     out = []
     for p in parts:
-        p = p.strip().rstrip(".")
+        p = p.strip().rstrip(".:").rstrip()       # 'selected from:' as a note reads without its colon
         if p and p not in out:
             out.append(p)
     return ". ".join(out)
@@ -840,6 +845,33 @@ def map_blocks(prog, blocks):
                 blurbs.append(p)
         return blurbs
 
+    # every course in the major's own lists (not the note blocks), to know which writing courses are outside them
+    list_codes, note_h2 = set(), False
+    for b in blocks:
+        if b["level"] in (0, 2):
+            note_h2 = bool(NOTE_BLOCKS.search(b["heading"]))
+        if not note_h2:
+            list_codes |= {code(v["subject"], v["catalog_num"]) for k, v in b["items"] if k == "course"}
+
+    def gwar_section(name, outside, b):
+        """'Complete RWS 305W or PSFA 305W (recommended) and earn a grade of C (2.0) or better': its own section,
+        pick 1 (or the one course), shown but not counted in the major's units."""
+        text = " ".join(b["paras"])
+        grade = re.search(r"grade of (C-?) \(\d\.\d\) or better", text, re.I)
+        rule = "choose" if len(outside) > 1 else "required"
+        label = " or ".join(app_code(c) for c in outside) + (" (pick 1)" if len(outside) > 1 else "")
+        for c in outside:
+            extra = clean(re.sub(r"[()]", "", c["extra"]))
+            note = join_note(([f"Grade of {grade.group(1).upper()} or better"] if grade else [])
+                             + ([extra[:1].upper() + extra[1:]] if extra else []))
+            used_codes.add(code(c["subject"], c["catalog_num"]))
+            prog.rows.append({"major_id": "", "section": name, "group_label": label, "rule": rule,
+                              "pick_n": "1" if rule == "choose" else "", "pick_units": "0",
+                              "subject": subject_key(c["subject"]), "catalog_num": c["catalog_num"], "num_min": "",
+                              "num_max": "", "exclude": "", "title": c["title"], "units": c["units"], "note": note,
+                              "_h2": name, "_code": code(c["subject"], c["catalog_num"])})
+        prog.flag(f"'{name}': {label} is outside the major's lists: its own section, not counted in the major's units.")
+
     for i, b in enumerate(blocks):
         courses = [v for k, v in b["items"] if k == "course"]
         if b.get("wrapper"):
@@ -858,6 +890,10 @@ def map_blocks(prog, blocks):
                     prog.flag(f"'{h2}' has no courses; shown as a section with only its note: \"{text}\"")
                 continue
             h2_is_note = bool(NOTE_BLOCKS.search(h2))
+            if GWAR_BLOCK.search(h2):
+                outside = [c for c in courses if code(c["subject"], c["catalog_num"]) not in list_codes]
+                if outside:
+                    gwar_section(h2, outside, b)
             if h2_is_note:
                 listed = ", ".join(code(c["subject"], c["catalog_num"]) for c in courses)
                 body = " ".join(b["paras"]) + (f" Courses listed: {listed}." if listed else "")
@@ -1074,18 +1110,44 @@ def map_blocks(prog, blocks):
             return made
 
         if b["level"] < 3 and COMPETENCY_BLOCK.search(b["heading"]) and courses:
-            parts = [("c", app_code(v)) if k == "course" else ("or", "or") if k == "or" else ("t", v.strip())
-                     for k, v in b["items"] if k in ("course", "or") or (k == "text" and v.strip())]
-            listed = ""
-            for n, (k, v) in enumerate(parts):
-                listed += (", " if k == "c" and parts[n - 1][0] == "c" else " ") if n else ""
-                listed += v
-            group_label = f"{b['heading']} (pick 1)"
-            for course in courses:
-                row(course, "choose", group_label, note_for(course, [f"Catalog list: {listed}"]), pick_n="1")
-            prog.review = [x for x in prog.review if not x.startswith(f"'Required' in {section}: text between courses")]
-            prog.flag(f"'{b['heading']}': read as pick 1 of {len(courses)} for now (to confirm with the department); "
-                      f"the catalog list is the note: \"{listed}\"")
+            # 'STAT 250, STAT 350A, STAT 350B or (highly recommended) SOC 201, SOC 406, SOC 407': all of one
+            # sequence. Satisfied outside the major's units, so pick_units 0 (not in the totals).
+            runs, flags, recommended = [[]], [], False
+            for kind, value in b["items"]:
+                if kind == "or":
+                    runs.append([])
+                elif kind == "text" and re.search(r"recommended", value, re.I):
+                    recommended = True
+                elif kind == "course":
+                    runs[-1].append(value)
+                    if len(runs[-1]) == 1:
+                        flags.append(recommended)
+                        recommended = False
+            runs = [r for r in runs if r]
+            prog.section_notes.pop(section, None)
+            text = " ".join(b["paras"])
+            text = re.sub(r"\.\s+or\s+(\w)", lambda m: ". Or " + m.group(1).lower(), text)   # the catalog's stray 'or'
+            prog.section_note(section, text)
+            if len(runs) >= 2 and all(len(r) >= 2 for r in runs):
+                group_label = ", or ".join(", ".join(app_code(c) for c in r[:-1]) + " and " + app_code(r[-1])
+                                           for r in runs)
+                prog.section_note(section, "Take all the courses of one sequence")
+                for run, rec in zip(runs, flags):
+                    for course in run:
+                        row(course, "choose", group_label,
+                            note_for(course, ["Highly recommended sequence"] if rec else []),
+                            pick_n=str(len(run)))["pick_units"] = "0"
+                prog.flag(f"'{b['heading']}': all courses of one of {len(runs)} sequences ({group_label}); not counted "
+                          f"in the major's units (pick_units 0). Check it.")
+            else:
+                group_label = f"{b['heading']} (pick 1)"
+                for course in courses:
+                    row(course, "choose", group_label, note_for(course, []), pick_n="1")["pick_units"] = "0"
+                prog.flag(f"'{b['heading']}': read as pick 1 of {len(courses)}, not counted in the major's units; "
+                          f"check it.")
+            prog.review = [x for x in prog.review if not x.startswith(f"'Required' in {section}: text between courses")
+                           and not x.startswith(f"'{section}': rule text kept") and
+                           not x.startswith(f"Text under '{section}' left out")]
             continue
         if in_pool:
             pending_pool.extend(pool_rows(block_note))
@@ -1236,6 +1298,8 @@ def listed_units(rows):
     groups = collections.OrderedDict()
     pools = {}
     for r in rows:
+        if r["rule"] == "required" and r.get("pick_units") == "0":
+            continue                            # shown, not counted (a writing course outside the major's lists)
         if r["rule"] == "required":
             a, b = units_range(r["units"])
             low, high = low + a, high + b
@@ -1288,14 +1352,19 @@ def check_units(prog, totals):
             ok = low_stated <= low <= high_stated or low_stated <= high <= high_stated or (low <= low_stated and high >= high_stated)
             inside = low_stated <= low and high <= high_stated
             verdict = "inside" if inside else "overlaps" if ok else "MISMATCH"
+            notes = " ".join(r["note"] for r in rows if r["rule"] == "note")
+            ge = re.search(r"general education[^.()]*\((\d+) units?\)", notes, re.I)
+            if verdict == "MISMATCH" and ge and low_stated <= low + int(ge.group(1)) <= high_stated:
+                verdict = f"short by {ge.group(1)}: a General Education requirement with no course is part of the total"
         else:
             stated = f"at least {low_stated}"
             verdict = "inside" if low >= low_stated else "MISMATCH"
         listed = f"{low}-{high}" if low != high else str(low)
         derived = " (elective units were worked out from this total)" if h2 in prog.derived else ""
         prog.units_checks.append((h2, stated, listed, verdict + derived))
-        if verdict == "MISMATCH":
-            prog.flag(f"Units check for {h2}: page says {stated}, listed courses add up to {listed}.")
+        if verdict == "MISMATCH" or verdict.startswith("short by"):
+            prog.flag(f"Units check for {h2}: page says {stated}, listed courses add up to {listed}"
+                      + ("." if verdict == "MISMATCH" else f" ({verdict})."))
 
 
 # ---------- major ids ----------

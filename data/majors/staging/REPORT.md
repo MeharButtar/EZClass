@@ -4,7 +4,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 | Majors processed | Requirement rows | Majors with open review items |
 | --- | --- | --- |
-| 52 | 2052 | 52 |
+| 52 | 2061 | 52 |
 
 ## Batch check: 39 of 40 pages found
 
@@ -53,19 +53,19 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Run notes
 
-- data/catalog_html/Program_ Business Administration, Emphasis in Management, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 12112
-- data/catalog_html/Program_ Chemistry, Emphasis in Biochemistry, B.S. and Certificate of the American Chemical Society - San Diego State University.html: no program id in the page; matched by its title to poid 11938
-- data/catalog_html/Program_ Construction Engineering, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 11972
-- data/catalog_html/Program_ Economics, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 11981
-- data/catalog_html/Program_ Economics, Emphasis in Public Policy, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 11983
-- data/catalog_html/Program_ Environmental Engineering, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 11997
-- data/catalog_html/Program_ Journalism, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12089
-- data/catalog_html/Program_ Journalism, Emphasis in Media Studies, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12091
-- data/catalog_html/Program_ Journalism, Emphasis in Public Relations, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12092
-- data/catalog_html/Program_ Kinesiology, Emphasis in Exercise Science Generalist, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 12004
-- data/catalog_html/Program_ Kinesiology, Emphasis in Fitness Specialist, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 12005
-- data/catalog_html/Program_ Mathematics, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12128
-- data/catalog_html/Program_ Sociology, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12197
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Business Administration, Emphasis in Management, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 12112
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Chemistry, Emphasis in Biochemistry, B.S. and Certificate of the American Chemical Society - San Diego State University.html: no program id in the page; matched by its title to poid 11938
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Construction Engineering, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 11972
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Economics, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 11981
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Economics, Emphasis in Public Policy, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 11983
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Environmental Engineering, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 11997
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Journalism, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12089
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Journalism, Emphasis in Media Studies, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12091
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Journalism, Emphasis in Public Relations, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12092
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Kinesiology, Emphasis in Exercise Science Generalist, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 12004
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Kinesiology, Emphasis in Fitness Specialist, B.S. - San Diego State University.html: no program id in the page; matched by its title to poid 12005
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Mathematics, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12128
+- C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Sociology, B.A. - San Diego State University.html: no program id in the page; matched by its title to poid 12197
 
 | major_id | Name | Degree | Rows | Review items |
 | --- | --- | --- | --- | --- |
@@ -92,7 +92,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | `chemistry_biochemistry_american_chemical_society_bs` | Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society | B.S. | 39 | 6 |
 | `child_development_bs` | Child Development | B.S. | 49 | 8 |
 | `civil_engineering_bs` | Civil Engineering | B.S. | 55 | 2 |
-| `communication_ba` | Communication | B.A. | 49 | 10 |
+| `communication_ba` | Communication | B.A. | 51 | 10 |
 | `computer_engineering_bs` | Computer Engineering | B.S. | 46 | 2 |
 | `construction_engineering_bs` | Construction Engineering | B.S. | 46 | 5 |
 | `economics_ba` | Economics | B.A. | 26 | 7 |
@@ -108,18 +108,18 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | `journalism_public_relations_ba` | Journalism, Emphasis in Public Relations | B.A. | 29 | 11 |
 | `kinesiology_exercise_science_generalist_bs` | Kinesiology, Emphasis in Exercise Science Generalist | B.S. | 29 | 4 |
 | `kinesiology_fitness_specialist_bs` | Kinesiology, Emphasis in Fitness Specialist | B.S. | 37 | 2 |
-| `mathematics_ba` | Mathematics | B.A. | 29 | 6 |
-| `mathematics_applied_bs` | Mathematics, Emphasis in Applied Mathematics | B.S. | 55 | 13 |
+| `mathematics_ba` | Mathematics | B.A. | 29 | 7 |
+| `mathematics_applied_bs` | Mathematics, Emphasis in Applied Mathematics | B.S. | 56 | 15 |
 | `mathematics_computational_science_bs` | Mathematics, Emphasis in Computational Science | B.S. | 52 | 9 |
-| `mathematics_education_bs` | Mathematics, Emphasis in Mathematics Education | B.S. | 39 | 9 |
-| `mathematics_science_bs` | Mathematics, Emphasis in Science | B.S. | 43 | 12 |
+| `mathematics_education_bs` | Mathematics, Emphasis in Mathematics Education | B.S. | 39 | 10 |
+| `mathematics_science_bs` | Mathematics, Emphasis in Science | B.S. | 44 | 14 |
 | `mechanical_engineering_bioengineering_bs` | Mechanical Engineering, Emphasis in Bioengineering | B.S. | 40 | 2 |
 | `nursing_bs` | Nursing | B.S. | 29 | 2 |
 | `political_science_ba` | Political Science | B.A. | 82 | 18 |
 | `psychology_industrial_organizational_ba` | Psychology, Emphasis in Industrial and Organizational Psychology | B.A. | 27 | 8 |
 | `psychology_neuroscience_ba` | Psychology, Emphasis in Neuroscience | B.A. | 30 | 9 |
-| `public_health_bs` | Public Health | B.S. | 40 | 8 |
-| `public_health_environmental_health_bs` | Public Health, Emphasis in Environmental Health | B.S. | 44 | 4 |
+| `public_health_bs` | Public Health | B.S. | 43 | 10 |
+| `public_health_environmental_health_bs` | Public Health, Emphasis in Environmental Health | B.S. | 46 | 5 |
 | `sociology_ba` | Sociology | B.A. | 16 | 4 |
 
 ## Mechanical Engineering, B.S. (`me_bs`)
@@ -196,7 +196,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Aerospace Engineering, B.S. (`aerospace_engineering_bs`)
 
-- Source: `data/catalog_html/Program_ Aerospace Engineering, B.S. - San Diego State University.html`, poid 11888, major code 09021
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Aerospace Engineering, B.S. - San Diego State University.html`, poid 11888, major code 09021
 - Rows: 47
 
 ### Groups
@@ -265,7 +265,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Biology, B.A. (`biology_ba`)
 
-- Source: `data/catalog_html/Program_ Biology, B.A. - San Diego State University.html`, poid 11918, major code 04011
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Biology, B.A. - San Diego State University.html`, poid 11918, major code 04011
 - Rows: 26
 
 ### Groups
@@ -333,7 +333,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Biology, B.S. (`biology_bs`)
 
-- Source: `data/catalog_html/Program_ Biology, B.S. - San Diego State University.html`, poid 11919, major code 04011
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Biology, B.S. - San Diego State University.html`, poid 11919, major code 04011
 - Rows: 26
 
 ### Groups
@@ -399,7 +399,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Biology, Emphasis in Cellular and Molecular Biology, B.S. (`biology_cellular_molecular_bs`)
 
-- Source: `data/catalog_html/Program_ Biology, Emphasis in Cellular and Molecular Biology, B.S. - San Diego State University.html`, poid 11920, major code 04011
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Biology, Emphasis in Cellular and Molecular Biology, B.S. - San Diego State University.html`, poid 11920, major code 04011
 - Rows: 54
 
 ### Groups
@@ -468,7 +468,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Biology, Emphasis in Ecology, B.S. (`biology_ecology_bs`)
 
-- Source: `data/catalog_html/Program_ Biology, Emphasis in Ecology, B.S. - San Diego State University.html`, poid 11921, major code 04011
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Biology, Emphasis in Ecology, B.S. - San Diego State University.html`, poid 11921, major code 04011
 - Rows: 46
 
 ### Groups
@@ -541,7 +541,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Biology, Emphasis in Evolutionary Biology, B.S. (`biology_evolutionary_bs`)
 
-- Source: `data/catalog_html/Program_ Biology, Emphasis in Evolutionary Biology, B.S. - San Diego State University.html`, poid 11922, major code 4011
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Biology, Emphasis in Evolutionary Biology, B.S. - San Diego State University.html`, poid 11922, major code 4011
 - Rows: 44
 
 ### Groups
@@ -611,7 +611,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Biology, Emphasis in Marine Biology, B.S. (`biology_marine_bs`)
 
-- Source: `data/catalog_html/Program_ Biology, Emphasis in Marine Biology, B.S. - San Diego State University.html`, poid 11923, major code 04011
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Biology, Emphasis in Marine Biology, B.S. - San Diego State University.html`, poid 11923, major code 04011
 - Rows: 35
 
 ### Groups
@@ -679,7 +679,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Biology, Emphasis in Zoology, B.S. (`biology_zoology_bs`)
 
-- Source: `data/catalog_html/Program_ Biology, Emphasis in Zoology, B.S. - San Diego State University.html`, poid 11924
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Biology, Emphasis in Zoology, B.S. - San Diego State University.html`, poid 11924
 - Rows: 40
 
 ### Groups
@@ -747,7 +747,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Business Administration, Emphasis in Accounting, B.S. (`ba_accounting_bs`)
 
-- Source: `data/catalog_html/Program_ Business Administration, Emphasis in Accounting, B.S. - San Diego State University.html`, poid 11880, major code 05021
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Business Administration, Emphasis in Accounting, B.S. - San Diego State University.html`, poid 11880, major code 05021
 - Rows: 27
 
 ### Groups
@@ -803,7 +803,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Business Administration, Emphasis in Finance, B.S. (`ba_finance_bs`)
 
-- Source: `data/catalog_html/Program_ Business Administration, Emphasis in Finance, B.S. - San Diego State University.html`, poid 12008, major code 05041
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Business Administration, Emphasis in Finance, B.S. - San Diego State University.html`, poid 12008, major code 05041
 - Rows: 25
 
 ### Groups
@@ -859,7 +859,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Business Administration, Emphasis in Financial Services, B.S. (`ba_financial_services_bs`)
 
-- Source: `data/catalog_html/Program_ Business Administration, Emphasis in Financial Services, B.S. - San Diego State University.html`, poid 12009, major code 05043
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Business Administration, Emphasis in Financial Services, B.S. - San Diego State University.html`, poid 12009, major code 05043
 - Rows: 42
 
 ### Groups
@@ -921,7 +921,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Business Administration, Emphasis in Information Systems, B.S. (`ba_information_systems_bs`)
 
-- Source: `data/catalog_html/Program_ Business Administration, Emphasis in Information Systems, B.S. - San Diego State University.html`, poid 12117, major code 07021
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Business Administration, Emphasis in Information Systems, B.S. - San Diego State University.html`, poid 12117, major code 07021
 - Rows: 36
 
 ### Groups
@@ -979,7 +979,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Business Administration, Emphasis in Management, B.S. (`ba_management_bs`)
 
-- Source: `data/catalog_html/Program_ Business Administration, Emphasis in Management, B.S. - San Diego State University.html`, poid 12112, major code 05061
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Business Administration, Emphasis in Management, B.S. - San Diego State University.html`, poid 12112, major code 05061
 - Rows: 44
 
 ### Groups
@@ -1035,7 +1035,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Business Administration, Emphasis in Marketing, B.S. (`ba_marketing_bs`)
 
-- Source: `data/catalog_html/Program_ Business Administration, Emphasis in Marketing, B.S. - San Diego State University.html`, poid 12120, major code 05091
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Business Administration, Emphasis in Marketing, B.S. - San Diego State University.html`, poid 12120, major code 05091
 - Rows: 51
 
 ### Groups
@@ -1104,7 +1104,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Business Administration, Emphasis in Real Estate, B.S. (`ba_real_estate_bs`)
 
-- Source: `data/catalog_html/Program_ Business Administration, Emphasis in Real Estate, B.S. - San Diego State University.html`, poid 12010, major code 05111
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Business Administration, Emphasis in Real Estate, B.S. - San Diego State University.html`, poid 12010, major code 05111
 - Rows: 25
 
 ### Groups
@@ -1159,7 +1159,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Business Administration, Management, Specialization in Entrepreneurship, B.S. (`ba_management_entrepreneurship_bs`)
 
-- Source: `data/catalog_html/Program_ Business Administration, Management, Specialization in Entrepreneurship, B.S. - San Diego State University.html`, poid 12113
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Business Administration, Management, Specialization in Entrepreneurship, B.S. - San Diego State University.html`, poid 12113
 - Rows: 34
 
 ### Groups
@@ -1215,7 +1215,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Business Administration, Management, Specialization in Human Resource Management, B.S. (`ba_management_human_resource_management_bs`)
 
-- Source: `data/catalog_html/Program_ Business Administration, Management, Specialization in Human Resource Management, B.S. - San Diego State University.html`, poid 12114
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Business Administration, Management, Specialization in Human Resource Management, B.S. - San Diego State University.html`, poid 12114
 - Rows: 32
 
 ### Groups
@@ -1271,7 +1271,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Chemistry, B.A. (`chemistry_ba`)
 
-- Source: `data/catalog_html/Program_ Chemistry, B.A. - San Diego State University.html`, poid 11940, major code 19051
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Chemistry, B.A. - San Diego State University.html`, poid 11940, major code 19051
 - Rows: 24
 
 ### Groups
@@ -1324,7 +1324,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Chemistry, and Certificate of the American Chemical Society, B.S. (`chemistry_american_chemical_society_bs`)
 
-- Source: `data/catalog_html/Program_ Chemistry, B.S. and Certificate of the American Chemical Society - San Diego State University.html`, poid 11937, major code 19051
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Chemistry, B.S. and Certificate of the American Chemical Society - San Diego State University.html`, poid 11937, major code 19051
 - Rows: 26
 
 ### Groups
@@ -1379,7 +1379,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society, B.S. (`chemistry_biochemistry_american_chemical_society_bs`)
 
-- Source: `data/catalog_html/Program_ Chemistry, Emphasis in Biochemistry, B.S. and Certificate of the American Chemical Society - San Diego State University.html`, poid 11938
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Chemistry, Emphasis in Biochemistry, B.S. and Certificate of the American Chemical Society - San Diego State University.html`, poid 11938
 - Rows: 39
 
 ### Groups
@@ -1439,7 +1439,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Child Development, B.S. (`child_development_bs`)
 
-- Source: `data/catalog_html/Program_ Child Development, B.S. - San Diego State University.html`, poid 11947, major code 08231
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Child Development, B.S. - San Diego State University.html`, poid 11947, major code 08231
 - Rows: 49
 
 ### Groups
@@ -1501,7 +1501,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Civil Engineering, B.S. (`civil_engineering_bs`)
 
-- Source: `data/catalog_html/Program_ Civil Engineering, B.S. - San Diego State University.html`, poid 11952, major code 09081
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Civil Engineering, B.S. - San Diego State University.html`, poid 11952, major code 09081
 - Rows: 55
 
 ### Groups
@@ -1573,15 +1573,16 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Communication, B.A. (`communication_ba`)
 
-- Source: `data/catalog_html/Program_ Communication, B.A. - San Diego State University.html`, poid 11960, major code 15061
-- Rows: 49
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Communication, B.A. - San Diego State University.html`, poid 11960, major code 15061
+- Rows: 51
 
 ### Groups
 
 | Section | Group | Rule | Courses |
 | --- | --- | --- | --- |
 | Preparation for the Major | Choose from these courses | pool, 6 units | 4: COMM 160, COMM 201, COMM 204, COMM 245 |
-| Mathematics Competency Requirement | Mathematics Competency Requirement (pick 1) | choose 1 | 6: STAT 250, STAT 350A, STAT 350B, SOC 201, SOC 406, SOC 407 |
+| Mathematics Competency Requirement | STAT 250, STAT 350A and STAT 350B, or SOC 201, SOC 406 and SOC 407 | choose 3, 0 units | 6: STAT 250, STAT 350A, STAT 350B, SOC 201, SOC 406, SOC 407 |
+| Graduation Writing Assessment Requirement | RWS 305W or PSFA 305W (pick 1) | choose 1, 0 units | 2: RWS 305W, PSFA 305W |
 | Major | Required | required | 2: COMM 300, COMM 350 |
 | Major | Communication Capstone | required | 1: COMM 495 |
 | Conceptualizing Communication | Conceptualizing Communication | pool, 9 units | 6: COMM 321, COMM 371, COMM 415, COMM 450, COMM 470, COMM 492 |
@@ -1591,24 +1592,25 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- **Preparation for the Major**: (9 units) General Education Oral Communication requirement (3 units) and 6 units selected from:
-- **Mathematics Competency Requirement**: Competency in mathematics is generally satisfied by completing three semesters of college mathematics
+- **Preparation for the Major**: General Education Oral Communication requirement (3 units) and 6 units selected from
+- **Mathematics Competency Requirement**: Competency in mathematics is generally satisfied by completing three semesters of college mathematics. Refer to the “General Education Requirements” section of this catalog for a list of approved Area 2. Mathematical Concepts and Quantitative Reasoning courses. Or students interested in a statistics sequence may choose from one of the following two statistics sequences approved for the Communication major. Take all the courses of one sequence
 
 ### Review list
 
-- [ ] 'Required': rule text kept as the section note, check it: "(9 units) General Education Oral Communication requirement (3 units) and 6 units selected from:"
+- [ ] 'Required': rule text kept as the section note, check it: "General Education Oral Communication requirement (3 units) and 6 units selected from:"
 - [ ] 'Preparation for the Major' asks for 6 units of its list: the whole list is a 6-unit pool, check it.
-- [ ] 'Mathematics Competency Requirement': rule text kept as the section note: "Competency in mathematics is generally satisfied by completing three semesters of college mathematics."
-- [ ] Text under 'Mathematics Competency Requirement' left out (no rule in it; in the report only): "Refer to the “General Education Requirements” section of this catalog for a list of approved Area 2. Mathematical Concepts and Quantitative Reasoning courses. or Students interested in a statistics sequence may choose from one of the following two statistics sequences approved for the Communication major."
-- [ ] 'Mathematics Competency Requirement': read as pick 1 of 6 for now (to confirm with the department); the catalog list is the note: "STAT 250, STAT 350A, STAT 350B or (highly recommended) SOC 201, SOC 406, SOC 407"
+- [ ] 'Mathematics Competency Requirement': all courses of one of 2 sequences (STAT 250, STAT 350A and STAT 350B, or SOC 201, SOC 406 and SOC 407); not counted in the major's units (pick_units 0). Check it.
+- [ ] 'Graduation Writing Assessment Requirement': RWS 305W or PSFA 305W (pick 1) is outside the major's lists: its own section, not counted in the major's units.
 - [ ] 'Conceptualizing Communication' (under Major) asks for 9 units of its list: encoded as a pool in its own section 'Conceptualizing Communication', check it.
 - [ ] 'Investigating Communication' (under Major) asks for 6 units of its list: encoded as a pool in its own section 'Investigating Communication', check it.
 - [ ] 'Communication Electives' (under Major) asks for 12 units of its list: encoded as a pool in its own section 'Communication Electives', check it.
-- [ ] 'Health Communication Electives' (a list under the 'Communication Electives' pool) joined that pool (12 units) with the note "Additional Communication Electives can be selected from the following list, with no more than 9 units selected from:"; check it.
-- [ ] 'Communication Capstone' in Major: rule text kept as the note, check the group: "(3 units) Must be taken after completion of at least 90 units to include 6 units in Conceptualizing Communication and 6 units in Investigating Communication."
+- [ ] 'Health Communication Electives' (a list under the 'Communication Electives' pool) joined that pool (12 units) with the note "Additional Communication Electives can be selected from the following list, with no more than 9 units selected from"; check it.
+- [ ] 'Communication Capstone' in Major: rule text kept as the note, check the group: "Must be taken after completion of at least 90 units to include 6 units in Conceptualizing Communication and 6 units in Investigating Communication."
+- [ ] Units check for Preparation for the Major: page says 9, listed courses add up to 6 (short by 3: a General Education requirement with no course is part of the total).
 
 ### Units check (advisory)
 
+- Preparation for the Major: page says 9 units, listed courses give 6: **short by 3: a General Education requirement with no course is part of the total**
 - Major: page says at least 36 units, listed courses give 36: **inside**
 
 ### Major notes (no rows made; for a human)
@@ -1627,15 +1629,13 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
   - Mathematical Concepts and Quantitative Reasoning courses. or Students interested in a statistics sequence may choose from one of the following two statistics sequences approved for the Communication major.
 - **Graduation Writing Assessment Requirement**
   - Complete RWS 305W or PSFA 305W (recommended) and earn a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements. Courses listed: RWS 305W, PSFA 305W.
-  - PSFA 305W is listed for the GWAR but not in the major lists.
-  - RWS 305W is listed for the GWAR but not in the major lists.
 
 ### Coverage (sections in data/cleaned)
 
 - Required courses: 3 of 3 have sections
   - with sections: COMM 300 (4), COMM 350 (4), COMM 495 (6)
-- Pick-n group courses: 4 of 6 have sections
-  - with sections: STAT 250 (8), STAT 350B (1), SOC 201 (7), SOC 407 (1)
+- Pick-n group courses: 6 of 8 have sections
+  - with sections: STAT 250 (8), STAT 350B (1), SOC 201 (7), SOC 407 (1), RWS 305W (84), PSFA 305W (10)
   - no sections: STAT 350A, SOC 406
 - Elective pool courses: 31 of 38 have sections
   - with sections: COMM 160 (3), COMM 201 (1), COMM 204 (1), COMM 245 (2), COMM 321 (4), COMM 371 (7), COMM 415 (1), COMM 450 (1), COMM 470 (1), COMM 492 (1), COMM 407 (2), COMM 420 (1), COMM 441 (1), COMM 462 (1), COMM 465 (2), COMM 301 (1), COMM 307 (4), COMM 406 (1), COMM 445 (3), COMM 452 (2), COMM 482 (1), COMM 485 (2), COMM 490 (1), COMM 496 (1), COMM 508 (1), COMM 540 (1), COMM 555 (1), COMM 422 (1), COMM 426 (1), COMM 427 (1), COMM 428 (1)
@@ -1643,13 +1643,14 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Title differences (catalog vs class data)
 
+- PSFA 305W: catalog "Writing for Careers in Professional Studies and Fine Arts", class data "Writing for Careers in PSFA"
 - COMM 496: catalog "Experimental Topics", class data "GlobalBordersComm"
 - COMM 427: catalog "Health Communication and Cultural Communities", class data "HealthComm/CulturalCommunities"
 - 16 more only shortened in the class data (not a real difference): COMM 201, SOC 407, COMM 495, COMM 407, COMM 420, COMM 441, COMM 462, COMM 465, COMM 301, COMM 307, COMM 406, COMM 540, COMM 555, COMM 422, COMM 426, COMM 428
 
 ## Computer Engineering, B.S. (`computer_engineering_bs`)
 
-- Source: `data/catalog_html/Program_ Computer Engineering, B.S. - San Diego State University.html`, poid 11968, major code 09094
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Computer Engineering, B.S. - San Diego State University.html`, poid 11968, major code 09094
 - Rows: 46
 
 ### Groups
@@ -1667,12 +1668,12 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ### Section notes (shown once under the heading)
 
 - **Major**: After enrollment in Computer Engineering at SDSU, the Computer Engineering major must take all upper division computer science and engineering courses at SDSU unless prior approval is obtained from the department
-- **Upper Division Major Electives**: (15 units) Five upper division major elective courses from the following list in 4 concentration areas
+- **Upper Division Major Electives**: Five upper division major elective courses from the following list in 4 concentration areas
 
 ### Review list
 
 - [ ] 'Major': rule text kept as the section note: "After enrollment in Computer Engineering at SDSU, the Computer Engineering major must take all upper division computer science and engineering courses at SDSU unless prior approval is obtained from the department."
-- [ ] 'Upper Division Major Electives' (under Major) is a rule in words, encoded as one pool; check it. Catalog: "(15 units) Five upper division major elective courses from the following list in 4 concentration areas."
+- [ ] 'Upper Division Major Electives' (under Major) is a rule in words, encoded as one pool; check it. Catalog: "Five upper division major elective courses from the following list in 4 concentration areas."
 
 ### Units check (advisory)
 
@@ -1716,7 +1717,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Construction Engineering, B.S. (`construction_engineering_bs`)
 
-- Source: `data/catalog_html/Program_ Construction Engineering, B.S. - San Diego State University.html`, poid 11972, major code 09254
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Construction Engineering, B.S. - San Diego State University.html`, poid 11972, major code 09254
 - Rows: 46
 
 ### Groups
@@ -1782,7 +1783,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Economics, B.A. (`economics_ba`)
 
-- Source: `data/catalog_html/Program_ Economics, B.A. - San Diego State University.html`, poid 11981, major code 22041
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Economics, B.A. - San Diego State University.html`, poid 11981, major code 22041
 - Rows: 26
 
 ### Groups
@@ -1799,7 +1800,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- **Major**: A minimum of 33 upper division Economics (ECON) units to include:
+- **Major**: A minimum of 33 upper division Economics (ECON) units to include
 - **Language Requirement**: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill this requirement
 
 ### Review list
@@ -1853,7 +1854,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Economics, Emphasis in International Economics, B.A. (`economics_international_ba`)
 
-- Source: `data/catalog_html/Program_ Economics, Emphasis in International Economics, B.A. - San Diego State University.html`, poid 11982
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Economics, Emphasis in International Economics, B.A. - San Diego State University.html`, poid 11982
 - Rows: 43
 
 ### Groups
@@ -1870,7 +1871,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- **Major**: A minimum of 33 upper division units (27 units in Economics and 6-7 units from the Fowler College of Business) to include:
+- **Major**: A minimum of 33 upper division units (27 units in Economics and 6-7 units from the Fowler College of Business) to include
 - **Language Requirement**: Successful completion of a course in a language other than English at the fourth semester level or higher. Students who have graduated from high school in another country where the language of instruction is not English have met the language requirement for this major
 
 ### Review list
@@ -1924,7 +1925,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Economics, Emphasis in Public Policy, B.A. (`economics_public_policy_ba`)
 
-- Source: `data/catalog_html/Program_ Economics, Emphasis in Public Policy, B.A. - San Diego State University.html`, poid 11983
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Economics, Emphasis in Public Policy, B.A. - San Diego State University.html`, poid 11983
 - Rows: 40
 
 ### Groups
@@ -1984,7 +1985,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Electrical Engineering, B.S. (`electrical_engineering_bs`)
 
-- Source: `data/catalog_html/Program_ Electrical Engineering, B.S. - San Diego State University.html`, poid 11987, major code 09091
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Electrical Engineering, B.S. - San Diego State University.html`, poid 11987, major code 09091
 - Rows: 55
 
 ### Groups
@@ -2053,7 +2054,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Environmental Engineering, B.S. (`environmental_engineering_bs`)
 
-- Source: `data/catalog_html/Program_ Environmental Engineering, B.S. - San Diego State University.html`, poid 11997, major code 09221
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Environmental Engineering, B.S. - San Diego State University.html`, poid 11997, major code 09221
 - Rows: 40
 
 ### Groups
@@ -2114,7 +2115,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Foods and Nutrition, B.S. (`foods_nutrition_bs`)
 
-- Source: `data/catalog_html/Program_ Foods and Nutrition, B.S. - San Diego State University.html`, poid 12152, major code 13061
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Foods and Nutrition, B.S. - San Diego State University.html`, poid 12152, major code 13061
 - Rows: 48
 
 ### Groups
@@ -2129,7 +2130,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- **Preparation for the Major**: A grade of C (2.0) or better must be earned in CHEM 100 or CHEM 103 and CHEM 130 
+- **Preparation for the Major**: A grade of C (2.0) or better must be earned in CHEM 100 or CHEM 103 and CHEM 130
 
 ### Review list
 
@@ -2167,7 +2168,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Health Communication, B.S. (`health_communication_bs`)
 
-- Source: `data/catalog_html/Program_ Health Communication, B.S. - San Diego State University.html`, poid 11961, major code 06013
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Health Communication, B.S. - San Diego State University.html`, poid 11961, major code 06013
 - Rows: 41
 
 ### Groups
@@ -2184,7 +2185,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- **Preparation for the Major**: General Education Oral Communication requirement (3 units) and 6 units selected from:
+- **Preparation for the Major**: General Education Oral Communication requirement (3 units) and 6 units selected from
 
 ### Review list
 
@@ -2195,11 +2196,11 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] '3 units may also be selected from:' (a list under the 'Health Communication Electives' pool) joined that pool (18 units) with the note "3 units may also be selected from"; check it.
 - [ ] 'Health-Related Preparation Courses' (under Major) asks for 6 units of its list: encoded as a pool in its own section 'Health-Related Preparation Courses', check it.
 - [ ] 'Health Communication Capstone' in Major: rule text kept as the note, check the group: "Must be taken after completion of at least 90 units to include 6 units in Investigating Communication and 6 units in Health Communication Electives."
-- [ ] Units check for Preparation for the Major: page says 9, listed courses add up to 6.
+- [ ] Units check for Preparation for the Major: page says 9, listed courses add up to 6 (short by 3: a General Education requirement with no course is part of the total).
 
 ### Units check (advisory)
 
-- Preparation for the Major: page says 9 units, listed courses give 6: **MISMATCH**
+- Preparation for the Major: page says 9 units, listed courses give 6: **short by 3: a General Education requirement with no course is part of the total**
 - Major: page says at least 42 units, listed courses give 42: **inside**
 
 ### Major notes (no rows made; for a human)
@@ -2234,7 +2235,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Journalism, B.A. (`journalism_ba`)
 
-- Source: `data/catalog_html/Program_ Journalism, B.A. - San Diego State University.html`, poid 12089, major code 06021
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Journalism, B.A. - San Diego State University.html`, poid 12089, major code 06021
 - Rows: 43
 
 ### Groups
@@ -2300,7 +2301,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Journalism, Emphasis in Advertising, B.A. (`journalism_advertising_ba`)
 
-- Source: `data/catalog_html/Program_ Journalism, Emphasis in Advertising, B.A. - San Diego State University.html`, poid 12090, major code 06041
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Journalism, Emphasis in Advertising, B.A. - San Diego State University.html`, poid 12090, major code 06041
 - Rows: 42
 
 ### Groups
@@ -2362,7 +2363,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Journalism, Emphasis in Media Studies, B.A. (`journalism_media_studies_ba`)
 
-- Source: `data/catalog_html/Program_ Journalism, Emphasis in Media Studies, B.A. - San Diego State University.html`, poid 12091, major code 06010
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Journalism, Emphasis in Media Studies, B.A. - San Diego State University.html`, poid 12091, major code 06010
 - Rows: 33
 
 ### Groups
@@ -2424,7 +2425,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Journalism, Emphasis in Public Relations, B.A. (`journalism_public_relations_ba`)
 
-- Source: `data/catalog_html/Program_ Journalism, Emphasis in Public Relations, B.A. - San Diego State University.html`, poid 12092, major code 05992
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Journalism, Emphasis in Public Relations, B.A. - San Diego State University.html`, poid 12092, major code 05992
 - Rows: 29
 
 ### Groups
@@ -2437,7 +2438,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- **Emphasis in Public Relations**: Impacted Program: Applicants not meeting the minimum requirements may petition for admission to the public relations emphasis. Impacted Program: To be admitted to the public relations emphasis, students must meet the following criteria:. Language Requirement: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement
+- **Emphasis in Public Relations**: Impacted Program: Applicants not meeting the minimum requirements may petition for admission to the public relations emphasis. Impacted Program: To be admitted to the public relations emphasis, students must meet the following criteria. Language Requirement: Competency (successfully completing the third college semester or fifth college quarter) is required in one language other than English to fulfill the graduation requirement
 - **And 18 Units of Upper Division Coursework**: Eighteen units of upper division coursework in either journalism and media studies or learning design and technology
 
 ### Review list
@@ -2494,7 +2495,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Kinesiology, Emphasis in Exercise Science Generalist, B.S. (`kinesiology_exercise_science_generalist_bs`)
 
-- Source: `data/catalog_html/Program_ Kinesiology, Emphasis in Exercise Science Generalist, B.S. - San Diego State University.html`, poid 12004, major code 08351
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Kinesiology, Emphasis in Exercise Science Generalist, B.S. - San Diego State University.html`, poid 12004, major code 08351
 - Rows: 29
 
 ### Groups
@@ -2510,7 +2511,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Section notes (shown once under the heading)
 
-- **Preparation for the Major**: Students must complete the following courses as part of the TMC or at SDSU:
+- **Preparation for the Major**: Students must complete the following courses as part of the TMC or at SDSU
 
 ### Review list
 
@@ -2555,7 +2556,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Kinesiology, Emphasis in Fitness Specialist, B.S. (`kinesiology_fitness_specialist_bs`)
 
-- Source: `data/catalog_html/Program_ Kinesiology, Emphasis in Fitness Specialist, B.S. - San Diego State University.html`, poid 12005, major code 08351
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Kinesiology, Emphasis in Fitness Specialist, B.S. - San Diego State University.html`, poid 12005, major code 08351
 - Rows: 37
 
 ### Groups
@@ -2607,7 +2608,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Mathematics, B.A. (`mathematics_ba`)
 
-- Source: `data/catalog_html/Program_ Mathematics, B.A. - San Diego State University.html`, poid 12128, major code 17011
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Mathematics, B.A. - San Diego State University.html`, poid 12128, major code 17011
 - Rows: 29
 
 ### Groups
@@ -2634,10 +2635,11 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Major': rule text kept as the section note: "A minimum of 30 upper division units selected with approval of the departmental adviser before starting upper division work to include"
 - [ ] 'One Course Selected From (pick 1)' in Major: read as pick 1 of 8; check it.
 - [ ] Text under '12 Units of Electives' kept as the 'Major' section note: "Students planning to take MATH 499 as an elective course must obtain approval from the program adviser."
+- [ ] Units check for Preparation for the Major: page says 27-28, listed courses add up to 31-32.
 
 ### Units check (advisory)
 
-- no units totals on the page
+- Preparation for the Major: page says 27-28 units, listed courses give 31-32: **MISMATCH**
 
 ### Major notes (no rows made; for a human)
 
@@ -2668,8 +2670,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Mathematics, Emphasis in Applied Mathematics, B.S. (`mathematics_applied_bs`)
 
-- Source: `data/catalog_html/Program_ Mathematics, Emphasis in Applied Mathematics, B.S. - San Diego State University.html`, poid 12125, major code 17031
-- Rows: 55
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Mathematics, Emphasis in Applied Mathematics, B.S. - San Diego State University.html`, poid 12125, major code 17031
+- Rows: 56
 
 ### Groups
 
@@ -2677,8 +2679,6 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | --- | --- | --- | --- |
 | Emphasis in Applied Mathematics | Impacted Program | required | 9: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L |
 | Emphasis in Applied Mathematics | Impacted Program: CS 200 or STAT 200 (pick 1) | choose 1 | 2: CS 200, STAT 200 |
-| Emphasis in Applied Mathematics | Preparation for the Major | required | 9: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L |
-| Emphasis in Applied Mathematics | Preparation for the Major: CS 200 or STAT 200 (pick 1) | choose 1 | 2: CS 200, STAT 200 |
 | Emphasis in Applied Mathematics | Major | required | 3: MATH 320, MATH 330, MATH 340 |
 | Emphasis in Applied Mathematics | Major: MATH 531 or MATH 537 or MATH 542 (pick 1) | choose 1 | 3: MATH 531, MATH 537, MATH 542 |
 | Emphasis in Applied Mathematics | Major: MATH 524 or MATH 543 (pick 1) | choose 1 | 2: MATH 524, MATH 543 |
@@ -2687,10 +2687,12 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Emphasis in Applied Mathematics | 15 Units of Electives in Mathematics | required | 7: MATH 303, MATH 312, MATH 313, MATH 342A, MATH 342B, MATH 413, MATH 414 |
 | Emphasis in Applied Mathematics | Auxiliary Area | required | 10: PHYS 195, PHYS 195L, PHYS 196, PHYS 196L, PHYS 197, CHEM 201, ECON 101, ECON 102, ECON 320, ECON 321 |
 | Emphasis in Applied Mathematics | Auxiliary Area: PHYS 197L or CHEM 200 (pick 1) | choose 1 | 2: PHYS 197L, CHEM 200 |
+| Preparation for the Major | Preparation for the Major | pool, 27-28 units | 11: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L, CS 200, STAT 200 |
 
 ### Section notes (shown once under the heading)
 
 - **Emphasis in Applied Mathematics**: Master Plan: A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department
+- **Preparation for the Major**: The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from
 
 ### Review list
 
@@ -2700,7 +2702,9 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Impacted Program' in Emphasis in Applied Mathematics: text between courses that was not read as a rule: "And one course selected from:"
 - [ ] 'Impacted Program' in Emphasis in Applied Mathematics: rule text kept as the note, check the group: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
 - [ ] 'Preparation for the Major' in Emphasis in Applied Mathematics: text between courses that was not read as a rule: "And one course selected from:"
-- [ ] 'Preparation for the Major' in Emphasis in Applied Mathematics: rule text kept as the note, check the group: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] 'Preparation for the Major': rule text kept as the section note, check it: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] CS 200 or STAT 200 (pick 1) in the 'Preparation for the Major' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
+- [ ] 'Preparation for the Major' (under Emphasis in Applied Mathematics) asks for 27-28 units of its list: encoded as a pool in its own section 'Preparation for the Major', check it.
 - [ ] Text under 'Graduation Writing Assessment Requirement' left out (no rule in it; in the report only): "Complete one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements."
 - [ ] '15 Units of Electives in Mathematics' in Emphasis in Applied Mathematics: rule text kept as the note, check the group: "Students planning to take MATH 302 or MATH 499 as an elective course must obtain approval from the program adviser. 15 units of electives in mathematics or an area to which mathematics may be applied (approved by the applied mathematics adviser) excluding:"
 - [ ] Text under 'Master Plan' kept as the 'Emphasis in Applied Mathematics' section note: "A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department."
@@ -2740,7 +2744,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Mathematics, Emphasis in Computational Science, B.S. (`mathematics_computational_science_bs`)
 
-- Source: `data/catalog_html/Program_ Mathematics, Emphasis in Computational Science, B.S. - San Diego State University.html`, poid 12126, major code 17031
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Mathematics, Emphasis in Computational Science, B.S. - San Diego State University.html`, poid 12126, major code 17031
 - Rows: 52
 
 ### Groups
@@ -2807,7 +2811,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Mathematics, Emphasis in Mathematics Education, B.S. (`mathematics_education_bs`)
 
-- Source: `data/catalog_html/Program_ Mathematics, Emphasis in Mathematics Education, B.S. - San Diego State University.html`, poid 12522, major code 17031
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Mathematics, Emphasis in Mathematics Education, B.S. - San Diego State University.html`, poid 12522, major code 17031
 - Rows: 39
 
 ### Groups
@@ -2842,10 +2846,12 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Auxiliary Area': rule text kept as the section note: "All programs must be approved by the adviser."
 - [ ] Text under 'Auxiliary Area' left out (no rule in it; in the report only): "Elective courses include:"
 - [ ] PHYS 195L or CHEM 200 (pick 1) in Auxiliary Area: the 'or' sits next to other courses with no break, so it may cover more than one course. Check the catalog page.
+- [ ] Units check for Preparation for the Major: page says 28-29, listed courses add up to 31-32.
 - [ ] Units check for Major: page says at least 40, listed courses add up to 38-41.
 
 ### Units check (advisory)
 
+- Preparation for the Major: page says 28-29 units, listed courses give 31-32: **MISMATCH**
 - Major: page says at least 40 units, listed courses give 38-41: **MISMATCH**
 
 ### Major notes (no rows made; for a human)
@@ -2878,8 +2884,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Mathematics, Emphasis in Science, B.S. (`mathematics_science_bs`)
 
-- Source: `data/catalog_html/Program_ Mathematics, Emphasis in Science, B.S. - San Diego State University.html`, poid 12127, major code 17031
-- Rows: 43
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Mathematics, Emphasis in Science, B.S. - San Diego State University.html`, poid 12127, major code 17031
+- Rows: 44
 
 ### Groups
 
@@ -2887,16 +2893,16 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | --- | --- | --- | --- |
 | Emphasis in Science | Impacted Program | required | 9: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L |
 | Emphasis in Science | Impacted Program: CS 200 or STAT 200 (pick 1) | choose 1 | 2: CS 200, STAT 200 |
-| Emphasis in Science | Preparation for the Major | required | 9: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L |
-| Emphasis in Science | Preparation for the Major: CS 200 or STAT 200 (pick 1) | choose 1 | 2: CS 200, STAT 200 |
 | Emphasis in Science | Major | required | 2: MATH 330, MATH 340 |
 | Emphasis in Science | Major: MATH 531 or MATH 537 or MATH 542 (pick 1) | choose 1 | 3: MATH 531, MATH 537, MATH 542 |
 | Emphasis in Science | Major: MATH 524 or MATH 543 (pick 1) | choose 1 | 2: MATH 524, MATH 543 |
+| Preparation for the Major | Preparation for the Major | pool, 27-28 units | 11: MATH 150, MATH 151, MATH 237, MATH 245, MATH 252, MATH 254, STAT 250, CS 150, CS 150L, CS 200, STAT 200 |
 | Emphasis in Science Electives | Emphasis in Science Electives | pool, 6 units | 6: MATH 320, MATH 525, MATH 530, MATH 532, MATH 531, MATH 537 |
 | 12 Units from a Science | Six Units of Electives in Computer Science, Mathematics, or Statistics | pool, 12 units | 7: MATH 303, MATH 312, MATH 313, MATH 342A, MATH 342B, MATH 413, MATH 414 |
 
 ### Section notes (shown once under the heading)
 
+- **Preparation for the Major**: The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better. And one course selected from
 - **12 Units from a Science**: 12 units from a science to which mathematics may be applied (these should be from a single science and must be approved by the B.S. adviser). Master Plan: A master plan of the courses taken to fulfill the major must be approved by the adviser and filed with the major department
 
 ### Review list
@@ -2907,7 +2913,9 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 - [ ] 'Impacted Program' in Emphasis in Science: text between courses that was not read as a rule: "And one course selected from:"
 - [ ] 'Impacted Program' in Emphasis in Science: rule text kept as the note, check the group: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
 - [ ] 'Preparation for the Major' in Emphasis in Science: text between courses that was not read as a rule: "And one course selected from:"
-- [ ] 'Preparation for the Major' in Emphasis in Science: rule text kept as the note, check the group: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] 'Preparation for the Major': rule text kept as the section note, check it: "The cumulative GPA in MATH 245 , MATH 252 , and MATH 254 must be a C+ (2.3) or better."
+- [ ] CS 200 or STAT 200 (pick 1) in the 'Preparation for the Major' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
+- [ ] 'Preparation for the Major' (under Emphasis in Science) asks for 27-28 units of its list: encoded as a pool in its own section 'Preparation for the Major', check it.
 - [ ] Text under 'Graduation Writing Assessment Requirement' left out (no rule in it; in the report only): "Complete one of the approved upper division writing courses (W) with a grade of C (2.0) or better. See “Graduation Requirements ” section for a complete listing of requirements."
 - [ ] MATH 530 or MATH 532 (pick 1) in the 'Emphasis in Science Electives' pool: kept as pool rows with a note (a pick-1 group inside a units pool would be counted on its own).
 - [ ] 'Emphasis in Science Electives' (under Emphasis in Science) asks for 6 units of its list: encoded as a pool in its own section 'Emphasis in Science Electives', check it.
@@ -2951,7 +2959,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Mechanical Engineering, Emphasis in Bioengineering, B.S. (`mechanical_engineering_bioengineering_bs`)
 
-- Source: `data/catalog_html/Program_ Mechanical Engineering, Emphasis in Bioengineering, B.S. - San Diego State University.html`, poid 12131, major code 09101
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Mechanical Engineering, Emphasis in Bioengineering, B.S. - San Diego State University.html`, poid 12131, major code 09101
 - Rows: 40
 
 ### Groups
@@ -3007,7 +3015,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Nursing, B.S. (`nursing_bs`)
 
-- Source: `data/catalog_html/Program_ Nursing, B.S. - San Diego State University.html`, poid 12151, major code 12031
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Nursing, B.S. - San Diego State University.html`, poid 12151, major code 12031
 - Rows: 29
 
 ### Groups
@@ -3069,7 +3077,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Political Science, B.A. (`political_science_ba`)
 
-- Source: `data/catalog_html/Program_ Political Science, B.A. - San Diego State University.html`, poid 12162, major code 22071
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Political Science, B.A. - San Diego State University.html`, poid 12162, major code 22071
 - Rows: 82
 
 ### Groups
@@ -3169,7 +3177,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Psychology, Emphasis in Industrial and Organizational Psychology, B.A. (`psychology_industrial_organizational_ba`)
 
-- Source: `data/catalog_html/Program_ Psychology, Emphasis in Industrial and Organizational Psychology, B.A. - San Diego State University.html`, poid 12168
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Psychology, Emphasis in Industrial and Organizational Psychology, B.A. - San Diego State University.html`, poid 12168
 - Rows: 27
 
 ### Groups
@@ -3187,7 +3195,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ### Section notes (shown once under the heading)
 
 - **Major**: Methods: All majors must complete PSY 301 or PSY 410 (or both) with a grade of B (3.0) or better. Methods: To enroll in these courses, students must have earned at least a B (3.0) in PSY 280 or an equivalent course
-- **Breadth**: All majors must complete three courses or 9 units; one course selected from Groups I, III, and IV:. Group II: Satisfied by emphasis core courses
+- **Breadth**: All majors must complete three courses or 9 units; one course selected from Groups I, III, and IV. Group II: Satisfied by emphasis core courses
 
 ### Review list
 
@@ -3255,7 +3263,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Psychology, Emphasis in Neuroscience, B.A. (`psychology_neuroscience_ba`)
 
-- Source: `data/catalog_html/Program_ Psychology, Emphasis in Neuroscience, B.A. - San Diego State University.html`, poid 12544, major code 20011
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Psychology, Emphasis in Neuroscience, B.A. - San Diego State University.html`, poid 12544, major code 20011
 - Rows: 30
 
 ### Groups
@@ -3274,7 +3282,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ### Section notes (shown once under the heading)
 
 - **Major**: Methods: All majors must complete PSY 301 or PSY 410 (or both). Methods: To enroll in these courses, students must have earned at least a B (3.0) in PSY 280 or an equivalent course
-- **Breadth**: All majors must complete three courses or 9 units; one course selected from Groups I, II, and III:. Group IV: Satisfied by major core courses
+- **Breadth**: All majors must complete three courses or 9 units; one course selected from Groups I, II, and III. Group IV: Satisfied by major core courses
 
 ### Review list
 
@@ -3333,8 +3341,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Public Health, B.S. (`public_health_bs`)
 
-- Source: `data/catalog_html/Program_ Public Health, B.S. - San Diego State University.html`, poid 12176, major code 12141
-- Rows: 40
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Public Health, B.S. - San Diego State University.html`, poid 12176, major code 12141
+- Rows: 43
 
 ### Groups
 
@@ -3343,32 +3351,35 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Preparation for the Major | Required | required | 9: P H 101, P H 292, BIOL 100, BIOL 100L, BIOL 211, BIOL 212, CHEM 100, PSY 101, SOC 101 |
 | Preparation for the Major | PSY 280 or SOC 201 (pick 1) | choose 1 | 2: PSY 280, SOC 201 |
 | Additional Lower Division Courses | Required (pick 1) | choose 1 | 2: P H 250, P H 233 |
+| Graduation Writing Assessment Requirement | RWS 305W or LING 305W (pick 1) | choose 1, 0 units | 2: RWS 305W, LING 305W |
 | Major | Required | required | 10: P H 300, P H 302, P H 304, P H 305, P H 306, P H 307, P H 401, P H 450, P H 490, P H 491 |
-| Major | Upper Division Major Electives | required | 13: P H 330, P H 331, P H 332, P H 353, P H 362, P H 395, P H 402, P H 451, P H 452, P H 485, P H 496, P H 538A, GEN S 340 |
-| Three Units from One of the Following Categories During the Junior or Senior Year: | Peer Health Education | pool | 1: P H 480 |
-| Three Units from One of the Following Categories During the Junior or Senior Year: | Applied Public Health Practice | pool | 1: P H 497 |
-| Three Units from One of the Following Categories During the Junior or Senior Year: | Research | pool | 2: P H 485, P H 499 |
+| Upper Division Major Electives | Upper Division Major Electives | pool, 12 units | 13: P H 330, P H 331, P H 332, P H 353, P H 362, P H 395, P H 402, P H 451, P H 452, P H 485, P H 496, P H 538A, GEN S 340 |
+| Three Units from One of the Following Categories During the Junior or Senior Year: | Peer Health Education | pool, 3 units | 1: P H 480 |
+| Three Units from One of the Following Categories During the Junior or Senior Year: | Applied Public Health Practice | pool, 3 units | 1: P H 497 |
+| Three Units from One of the Following Categories During the Junior or Senior Year: | Research | pool, 3 units | 2: P H 485, P H 499 |
 
 ### Section notes (shown once under the heading)
 
-- none
+- **Upper Division Major Electives**: (Area A Electives). Other electives as selected and offered by the School of Public Health with approval of academic advisor. May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)
 
 ### Review list
 
 - [ ] 'Required (pick 1)' in Additional Lower Division Courses: read as pick 1, its or / also-listed-as pairs kept with a note; check it.
+- [ ] 'Graduation Writing Assessment Requirement': RWS 305W or LING 305W (pick 1) is outside the major's lists: its own section, not counted in the major's units.
 - [ ] 'Upper Division Major Electives' in Major: text between courses that was not read as a rule: "May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement (cannot be used to satisfy both)."
-- [ ] 'Upper Division Major Electives' in Major: rule text kept as the note, check the group: "(12 units) (Area A Electives) Other electives as selected and offered by the School of Public Health with approval of academic advisor."
+- [ ] 'Upper Division Major Electives': rule text kept as the section note, check it: "(Area A Electives) Other electives as selected and offered by the School of Public Health with approval of academic advisor."
+- [ ] 'Upper Division Major Electives' (under Major) asks for 12 units of its list: encoded as a pool in its own section 'Upper Division Major Electives', check it.
 - [ ] 'Applied Public Health Practice' in Three Units from One of the Following Categories During the Junior or Senior Year:: text between courses that was not read as a rule: "Internship from a list of selected public health agencies"
 - [ ] Text under 'Preprofessional Science' left out (no rule in it; in the report only): "300-level or 400-level science courses selected with approval of School of Public Health undergraduate academic advisor."
 - [ ] 'Research' in Three Units from One of the Following Categories During the Junior or Senior Year:: text between courses that was not read as a rule: "(May satisfy the Area A Public Health Elective or the Area B Public Health/BSPH graduation requirement; cannot be used to satisfy both.)"
 - [ ] 'Research' in Three Units from One of the Following Categories During the Junior or Senior Year:: text between courses that was not read as a rule: "(Participation in a public health-related research project or series of research projects under the guidance of a faculty member.)"
-- [ ] 'Three Units from One of the Following Categories During the Junior or Senior Year:': could not work out how many units the pool needs; pick_units is blank.
+- [ ] 'Three Units from One of the Following Categories During the Junior or Senior Year:': pool set to 3 units, worked out from the Major total minus its other courses.
 
 ### Units check (advisory)
 
 - Preparation for the Major: page says 29-30 units, listed courses give 29-30: **inside**
 - Additional Lower Division Courses: page says 3 units, listed courses give 3: **inside**
-- Major: page says at least 45 units, listed courses give 67-70: **inside**
+- Major: page says at least 45 units, listed courses give 45: **inside (elective units were worked out from this total)**
 
 ### Major notes (no rows made; for a human)
 
@@ -3387,24 +3398,22 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
   - 300-level or 400-level science courses selected with approval of School of Public Health undergraduate academic advisor.
 - **Time Limitation**
   - All Public Health courses taken for the major must have been taken and completed within seven years of the granting of the undergraduate degree. Courses taken prior to the seven year rule must be repeated. This policy applies to courses taken at SDSU or transferred from another four-year college or university or appropriate courses from a community college. No exceptions will be made to this policy.
-- **Graduation Writing Assessment Requirement**
-  - LING 305W is listed for the GWAR but not in the major lists.
-  - RWS 305W is listed for the GWAR but not in the major lists.
 
 ### Coverage (sections in data/cleaned)
 
-- Required courses: 28 of 32 have sections
-  - with sections: P H 101 (1), P H 292 (1), BIOL 100 (4), BIOL 100L (26), BIOL 211 (1), BIOL 212 (18), CHEM 100 (11), PSY 101 (2), SOC 101 (11), P H 300 (1), P H 302 (1), P H 304 (1), P H 305 (1), P H 306 (2), P H 307 (1), P H 401 (1), P H 450 (1), P H 490 (1), P H 330 (1), P H 331 (1), P H 332 (1), P H 353 (1), P H 362 (1), P H 395 (1), P H 402 (1), P H 485 (1), P H 496 (1), GEN S 340 (1)
-  - no sections: P H 491, P H 451, P H 452, P H 538A
-- Pick-n group courses: 3 of 4 have sections
-  - with sections: PSY 280 (22), SOC 201 (7), P H 250 (1)
+- Required courses: 18 of 19 have sections
+  - with sections: P H 101 (1), P H 292 (1), BIOL 100 (4), BIOL 100L (26), BIOL 211 (1), BIOL 212 (18), CHEM 100 (11), PSY 101 (2), SOC 101 (11), P H 300 (1), P H 302 (1), P H 304 (1), P H 305 (1), P H 306 (2), P H 307 (1), P H 401 (1), P H 450 (1), P H 490 (1)
+  - no sections: P H 491
+- Pick-n group courses: 5 of 6 have sections
+  - with sections: PSY 280 (22), SOC 201 (7), P H 250 (1), RWS 305W (84), LING 305W (2)
   - no sections: P H 233
-- Elective pool courses: 1 of 3 have sections
-  - with sections: P H 480 (2)
-  - no sections: P H 497, P H 499
+- Elective pool courses: 11 of 16 have sections
+  - with sections: P H 330 (1), P H 331 (1), P H 332 (1), P H 353 (1), P H 362 (1), P H 395 (1), P H 402 (1), P H 485 (1), P H 496 (1), GEN S 340 (1), P H 480 (2)
+  - no sections: P H 451, P H 452, P H 538A, P H 497, P H 499
 
 ### Title differences (catalog vs class data)
 
+- LING 305W: catalog "Academic and Professional Writing for Multilingual Students", class data "Acadm&ProfWritingMultilingual"
 - P H 300: catalog "Professionalism and Public Health", class data "Prof in PH"
 - P H 305: catalog "Medical Care Organization and Delivery", class data "Medical Care Orgs"
 - P H 402: catalog "Public Health Communications", class data "PH Communications"
@@ -3413,8 +3422,8 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Public Health, Emphasis in Environmental Health, B.S. (`public_health_environmental_health_bs`)
 
-- Source: `data/catalog_html/Program_ Public Health, Emphasis in Environmental Health, B.S. - San Diego State University.html`, poid 12545, major code 12141
-- Rows: 44
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Public Health, Emphasis in Environmental Health, B.S. - San Diego State University.html`, poid 12545, major code 12141
+- Rows: 46
 
 ### Groups
 
@@ -3426,6 +3435,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 | Preparation for the Major | CHEM 130 or CHEM 232 (pick 1) | choose 1 | 2: CHEM 130, CHEM 232 |
 | Preparation for the Major | MATH 140 or MATH 141 or MATH 150 or MATH 151 (pick 1) | choose 1 | 4: MATH 140, MATH 141, MATH 150, MATH 151 |
 | Additional Lower Division Courses | Required (pick 1) | choose 1 | 2: P H 250, P H 233 |
+| Graduation Writing Assessment Requirement | RWS 305W or LING 305W (pick 1) | choose 1, 0 units | 2: RWS 305W, LING 305W |
 | Major | Required | required | 9: P H 300, P H 302, P H 304, P H 305, P H 306, P H 307, P H 401, P H 490, P H 491 |
 | Major | Environmental Health Courses | required | 3: P H 451, P H 452, P H 538A |
 | Upper Division Major Electives | Upper Division Major Electives | pool, 3 units | 10: P H 330, P H 331, P H 332, P H 353, P H 362, P H 395, P H 402, P H 496, P H 485, GEN S 340 |
@@ -3439,6 +3449,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 ### Review list
 
 - [ ] 'Required (pick 1)' in Additional Lower Division Courses: read as pick 1, its or / also-listed-as pairs kept with a note; check it.
+- [ ] 'Graduation Writing Assessment Requirement': RWS 305W or LING 305W (pick 1) is outside the major's lists: its own section, not counted in the major's units.
 - [ ] 'Upper Division Major Electives': rule text kept as the section note, check it: "(Additional electives may be selected with approval from the Public Health academic advisor.)"
 - [ ] 'Upper Division Major Electives' (under Major) asks for 3 units of its list: encoded as a pool in its own section 'Upper Division Major Electives', check it.
 - [ ] Text under 'Preprofessional Science' left out (no rule in it; in the report only): "A 300- or 400-level science course selected with approval from the School of Public Health undergraduate academic advisor."
@@ -3468,17 +3479,14 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
   - Upon completion of emphasis, students have the option to take the Registered Environmental Health Specialist (REHS) certification examination with the State of California. Prior to the examination, students should take an additional year of physics laboratory courses.
 - **Time Limitation**
   - All Public Health courses taken for the major must have been taken and completed within seven years of the granting of the undergraduate degree. Courses taken prior to the seven year rule must be repeated. This policy applies to courses taken at SDSU or transferred from another four-year college or university or appropriate courses from a community college. No exceptions will be made to this policy.
-- **Graduation Writing Assessment Requirement**
-  - LING 305W is listed for the GWAR but not in the major lists.
-  - RWS 305W is listed for the GWAR but not in the major lists.
 
 ### Coverage (sections in data/cleaned)
 
 - Required courses: 15 of 19 have sections
   - with sections: P H 101 (1), P H 292 (1), BIOL 100 (4), BIOL 100L (26), BIOL 211 (1), BIOL 211L (18), CHEM 100 (11), P H 300 (1), P H 302 (1), P H 304 (1), P H 305 (1), P H 306 (2), P H 307 (1), P H 401 (1), P H 490 (1)
   - no sections: P H 491, P H 451, P H 452, P H 538A
-- Pick-n group courses: 11 of 12 have sections
-  - with sections: PSY 101 (2), SOC 101 (11), PSY 280 (22), SOC 201 (7), CHEM 130 (1), CHEM 232 (1), MATH 140 (3), MATH 141 (16), MATH 150 (12), MATH 151 (20), P H 250 (1)
+- Pick-n group courses: 13 of 14 have sections
+  - with sections: PSY 101 (2), SOC 101 (11), PSY 280 (22), SOC 201 (7), CHEM 130 (1), CHEM 232 (1), MATH 140 (3), MATH 141 (16), MATH 150 (12), MATH 151 (20), P H 250 (1), RWS 305W (84), LING 305W (2)
   - no sections: P H 233
 - Elective pool courses: 10 of 12 have sections
   - with sections: P H 330 (1), P H 331 (1), P H 332 (1), P H 353 (1), P H 362 (1), P H 395 (1), P H 402 (1), P H 496 (1), P H 485 (1), GEN S 340 (1)
@@ -3486,6 +3494,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ### Title differences (catalog vs class data)
 
+- LING 305W: catalog "Academic and Professional Writing for Multilingual Students", class data "Acadm&ProfWritingMultilingual"
 - P H 300: catalog "Professionalism and Public Health", class data "Prof in PH"
 - P H 305: catalog "Medical Care Organization and Delivery", class data "Medical Care Orgs"
 - P H 402: catalog "Public Health Communications", class data "PH Communications"
@@ -3494,7 +3503,7 @@ Staging only: nothing here is live. Every major is `coming_soon`. Check each one
 
 ## Sociology, B.A. (`sociology_ba`)
 
-- Source: `data/catalog_html/Program_ Sociology, B.A. - San Diego State University.html`, poid 12197, major code 22081
+- Source: `C:/Users/mbutt/AppData/Local/Temp/claude/e5aba0f1a2ec617b/fde7a45e-c6da-4553-af04-b936942a7820/scratchpad/stage_pages/Program_ Sociology, B.A. - San Diego State University.html`, poid 12197, major code 22081
 - Rows: 16
 
 ### Groups

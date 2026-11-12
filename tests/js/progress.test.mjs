@@ -80,3 +80,9 @@ test("a pick group with pick_units needs those units (a lecture+lab pair)", () =
   assert.equal(chooseNeedUnits({ ...pair, pick_units: null }), 2);   // without it: the two smallest
 });
 
+test("pick_units 0: a group that is shown but not counted (math competency, writing course)", () => {
+  const sequences = { pick_n: 3, pick_units: "0",
+                      courses: ["STAT 250", "STAT 350A", "STAT 350B", "SOC 201", "SOC 406", "SOC 407"].map((c) => course(c)) };
+  assert.equal(chooseNeedUnits(sequences), 0);
+});
+

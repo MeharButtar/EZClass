@@ -714,18 +714,43 @@ class RuleTextTests(unittest.TestCase):
                                   ("Upper Division Major Electives", "PSY", "300", "599", "5-6")])
         self.assertIn(("Professional Electives", "Area One", "pool", "", "9"), groups)   # lists follow: not open
 
-    def test_competency_list_is_pick_one_with_the_catalog_list(self):
-        prog = self.page(("h2", "Mathematics Competency Requirement", "<p>Competency in mathematics is generally "
-                                                                       "satisfied by three semesters of college "
-                                                                       "mathematics.</p>",
-                          self.course("STAT 250") + self.course("STAT 350A") + self.OR + self.TEXT.format(
-                              "(highly recommended)") + self.course("SOC 201") + self.course("SOC 406")))
-        rows = [r for r in prog.rows if r["rule"] != "note"]
-        self.assertEqual({(r["group_label"], r["rule"], r["pick_n"]) for r in rows},
-                         {("Mathematics Competency Requirement (pick 1)", "choose", "1")})
-        self.assertEqual({r["note"] for r in rows},
-                         {"Catalog list: STAT 250, STAT 350A or (highly recommended) SOC 201, SOC 406"})
-        self.assertTrue(any("to confirm with the department" in x for x in prog.review))
+    def test_competency_sequences_writing_course_and_ge_units(self):
+        """Communication, B.A.: Prep '(9 units)' is 3 GE units with no course plus 6 from a list; the math
+        competency is all of one statistics sequence; the writing course is outside the major's lists."""
+        prog = self.page(
+            ("h2", "Preparation for the Major", "<p>(9 units) General Education Oral Communication requirement "
+                                                "(3 units) and 6 units selected from:</p>",
+             self.course("EX 160") + self.course("EX 201") + self.course("EX 204")),
+            ("h2", "Mathematics Competency Requirement",
+             "<p>Competency in mathematics is generally satisfied by completing three semesters of college "
+             "mathematics. or Students interested in a statistics sequence may choose from one of the following two "
+             "statistics sequences approved for the major.</p>",
+             self.course("STAT 250") + self.course("STAT 350A") + self.course("STAT 350B") + self.OR
+             + self.TEXT.format("(highly recommended)") + self.course("SOC 201", 3, " *") + self.course("SOC 406", 3, " *")
+             + self.course("SOC 407", 3, " *")),
+            ("h3", "Note", "<p>*Additional prerequisites required.</p>", ""),
+            ("h2", "Graduation Writing Assessment Requirement",
+             "<p>Complete RWS 305W or PSFA 305W (recommended) and earn a grade of C (2.0) or better.</p>",
+             self.course("RWS 305W") + self.OR + self.course("PSFA 305W", 3, " (Recommended)")),
+            ("h2", "Major", "<p>A minimum of 6 upper division units to include:</p>",
+             self.course("EX 300") + self.course("EX 350")))
+        groups = self.groups_of(prog)
+        seq = "STAT 250, STAT 350A and STAT 350B, or SOC 201, SOC 406 and SOC 407"
+        self.assertEqual(groups[("Mathematics Competency Requirement", seq, "choose", "3", "0")],
+                         ["STAT 250", "STAT 350A", "STAT 350B", "SOC 201", "SOC 406", "SOC 407"])
+        notes = {r["_code"]: r["note"] for r in prog.rows if r["rule"] != "note"}
+        self.assertEqual(notes["STAT 250"], "")
+        self.assertEqual(notes["SOC 406"], "Highly recommended sequence. Additional prerequisites required")
+        section_notes = {r["section"]: r["note"] for r in prog.rows if r["rule"] == "note"}
+        self.assertIn("three semesters of college mathematics", section_notes["Mathematics Competency Requirement"])
+        self.assertIn("Take all the courses of one sequence", section_notes["Mathematics Competency Requirement"])
+        self.assertEqual(groups[("Graduation Writing Assessment Requirement", "RWS 305W or PSFA 305W (pick 1)",
+                                 "choose", "1", "0")], ["RWS 305W", "PSFA 305W"])
+        self.assertEqual(notes["PSFA 305W"], "Grade of C or better. Recommended")
+        checks = {h: (s, l, v) for h, s, l, v in prog.units_checks}
+        self.assertEqual(checks["Preparation for the Major"][:2], ("9", "6"))
+        self.assertTrue(checks["Preparation for the Major"][2].startswith("short by 3: a General Education"))
+        self.assertEqual(checks["Major"][:2], ("at least 6", "6"))   # the competency and writing units are not in it
 
     def test_grade_text_and_footnote_right_under_a_course(self):
         prog = self.page(("h2", "Preparation for the Major", "",

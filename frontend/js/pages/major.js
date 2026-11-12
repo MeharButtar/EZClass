@@ -44,16 +44,18 @@ function groupProgress(group, key) {
   const done = courses.filter((c) => isDone(c.code));
   const doneUnits = done.reduce((n, c) => n + units(c.units), 0);
   if (group.rule === "required") {
-    const need = group.courses.reduce((n, c) => n + units(c.units), 0);
+    const need = String(group.pick_units ?? "").trim() === "0" ? 0 : group.courses.reduce((n, c) => n + units(c.units), 0);
     return { text: `${done.length} of ${courses.length} done`, finished: done.length === courses.length,
-             ratio: courses.length ? done.length / courses.length : 0, needUnits: need, doneUnits };
+             ratio: courses.length ? done.length / courses.length : 0, needUnits: need,
+             doneUnits: String(group.pick_units ?? "").trim() === "0" ? 0 : doneUnits };
   }
   if (group.rule === "choose") {
     const pick = group.pick_n || 1;
     const counted = done.slice(0, pick);
+    const needUnits = chooseNeedUnits(group);
     return { text: `${Math.min(done.length, pick)} of ${pick} picked`, finished: done.length >= pick,
-             ratio: Math.min(done.length / pick, 1), needUnits: chooseNeedUnits(group),
-             doneUnits: counted.reduce((n, c) => n + units(c.units), 0) };
+             ratio: Math.min(done.length / pick, 1), needUnits,
+             doneUnits: needUnits ? counted.reduce((n, c) => n + units(c.units), 0) : 0 };
   }
   if (group.rule === "open") {
     const needUnits = units(group.pick_units) || (group.pick_n || 1) * 3;
