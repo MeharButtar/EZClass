@@ -916,45 +916,6 @@ chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,550,,,,Ins
 chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,560,,,,General Biochemistry,3,
 chemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,498,,,,Senior Project,1-3,(one unit)
 chemistry_american_chemical_society_bs,Major,Any CHEM 300-599 course,open,,7,CHEM,,300,599,,,,Seven units of upper division electives in chemistry
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,,note,,,,,,,,,,"Recommended (not required): PHYS 197, PHYS 197L"
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,251,,,,Analytical Chemistry,5,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,203,,,,Principles of Cell and Molecular Biology,3,Take both courses of one pair
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,Take both courses of one pair
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,204,,,,Principles of Organismal Biology,3,Take both courses of one pair
-chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,Take both courses of one pair
-chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,410A,,,,Physical Chemistry,4,
-chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,410B,,,,Physical Chemistry,3,
-chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,432,,,,Organic Chemistry,3,
-chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,432L,,,,Organic Chemistry Laboratory,1,
-chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,457,,,,Instrumental Methods of Chemical Analysis Laboratory,2,
-chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,550,,,,Instrumental Methods of Chemical Analysis,2,
-chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,560,,,,General Biochemistry,3,
-chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,567,,,,Biochemistry Laboratory,3,
-chemistry_biochemistry_american_chemical_society_bs,Major,Senior Project,required,,,CHEM,498,,,,Senior Project,1-3,
-chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,562,,,,Intermediary Metabolism,3,
-chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,563,,,,Nucleic Acid Function and Protein Synthesis,3,
-chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,564,,,,Receptor Biochemistry and Protein Modification,3,
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,,note,,,,,,,,,,Any 500-level chemistry course
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,496,,,,Selected Topics in Chemistry,1-4,
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,497,,,,Undergraduate Research,1-3,
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,CHEM,498,,,,Senior Project,1-3,
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,350,,,,General Microbiology,4,
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,352,,,,Evolution,3,
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,485,,,,Principles of Immunology,3,
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,549,,,,Microbial Genetics and Physiology,3,
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,570,,,,Neurobiology,3,
-chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,pool,,8,BIOL,590,,,,Physiology of Human Systems,4,
 computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,101,,,,Introduction to Electrical and Computer Engineering,1,No Cr/NC
 computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,160,,,,Introduction to Computer Programming,3,"Grade of C or better, no Cr/NC"
 computer_engineering_bs,Preparation for the Major,Required,required,,,COMPE,260,,,,Data Structures and Object-Oriented Programming in C++,3,"Grade of C- or better, no Cr/NC"
@@ -1179,3 +1140,42 @@ communication_ba,Communication Electives,Health Communication Electives,pool,,12
 communication_ba,Communication Electives,Health Communication Electives,pool,,12,COMM,426,,,,Communication in Health Risk and Crises,3,"Additional Communication Electives can be selected from the following list, with no more than 9 units selected from"
 communication_ba,Communication Electives,Health Communication Electives,pool,,12,COMM,427,,,,Health Communication and Cultural Communities,3,"Additional Communication Electives can be selected from the following list, with no more than 9 units selected from"
 communication_ba,Communication Electives,Health Communication Electives,pool,,12,COMM,428,,,,Communicating Health and Well-Being at Work,3,"Additional Communication Electives can be selected from the following list, with no more than 9 units selected from"
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,,note,,,,,,,,,,"Recommended (not required): PHYS 197, PHYS 197L"
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,200,,,,General Chemistry,5,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,201,,,,General Chemistry,5,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,232,,,,Organic Chemistry,3,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,232L,,,,Organic Chemistry Laboratory,1,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,CHEM,251,,,,Analytical Chemistry,5,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,150,,,,Calculus I,4,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,151,,,,Calculus II,4,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,MATH,252,,,,Calculus III,4,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,195,,,,Principles of Physics,3,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,195L,,,,Principles of Physics Laboratory,1,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,196,,,,Principles of Physics,3,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,Required,required,,,PHYS,196L,,,,Principles of Physics Laboratory,1,
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,203,,,,Principles of Cell and Molecular Biology,3,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,203L,,,,Principles of Cell and Molecular Biology Laboratory,1,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,204,,,,Principles of Organismal Biology,3,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Preparation for the Major,"BIOL 203 and BIOL 203L, or BIOL 204 and BIOL 204L",choose,2,4,BIOL,204L,,,,Principles of Organismal Biology Laboratory,1,Take both courses of one pair
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,410A,,,,Physical Chemistry,4,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,410B,,,,Physical Chemistry,3,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,432,,,,Organic Chemistry,3,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,432L,,,,Organic Chemistry Laboratory,1,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,457,,,,Instrumental Methods of Chemical Analysis Laboratory,2,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,550,,,,Instrumental Methods of Chemical Analysis,2,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,560,,,,General Biochemistry,3,
+chemistry_biochemistry_american_chemical_society_bs,Major,Required,required,,,CHEM,567,,,,Biochemistry Laboratory,3,
+chemistry_biochemistry_american_chemical_society_bs,Major,Senior Project,required,,,CHEM,498,,,,Senior Project,1-3,
+chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,562,,,,Intermediary Metabolism,3,
+chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,563,,,,Nucleic Acid Function and Protein Synthesis,3,
+chemistry_biochemistry_american_chemical_society_bs,Advanced Biochemistry Core,Advanced Biochemistry Core,pool,,6,CHEM,564,,,,Receptor Biochemistry and Protein Modification,3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,open,,8,CHEM,,500,599,,,,Any 500-level chemistry course
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,open,,,CHEM,496,,,,Selected Topics in Chemistry,1-4,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,open,,,CHEM,497,,,,Undergraduate Research,1-3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,open,,,CHEM,498,,,,Senior Project,1-3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,open,,,BIOL,350,,,,General Microbiology,4,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,open,,,BIOL,352,,,,Evolution,3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,open,,,BIOL,485,,,,Principles of Immunology,3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,open,,,BIOL,549,,,,Microbial Genetics and Physiology,3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,open,,,BIOL,570,,,,Neurobiology,3,
+chemistry_biochemistry_american_chemical_society_bs,Upper Division Major Electives,Upper Division Major Electives,open,,,BIOL,590,,,,Physiology of Human Systems,4,

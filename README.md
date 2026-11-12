@@ -190,6 +190,15 @@ What each `rule` means:
   courses that have sections this term, and shows the group's note. It leaves
   out the row's `exclude` courses and courses the same major already requires
   (they can't count twice), and says how many it left out.
+  One open group can be several rows with the same `section` and `group_label`:
+  each row is either a range (`subject` plus `num_min`/`num_max`, its own
+  `exclude`) or one listed course that also counts (`subject` plus `catalog_num`).
+  The first row carries `pick_units` (or `pick_n`). Biology's "BIOL 350 and above
+  or upper division CHEM" is two range rows; Political Science's "any upper
+  division POL S, or up to 3 units from AFRAS 321 ..." is a range row plus
+  course rows. The page fetches every range, adds the listed courses, shows each
+  course once, sorted by code, and shows every row's note (a cap like "up to 3
+  units") once under the group.
 - `note`: no course, just the `note` text for the whole section (an electives
   rule like "6 units may be taken outside the college"), so it isn't repeated on
   every course row. `group_label` stays empty.

@@ -3,7 +3,7 @@
 
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { chooseNeedUnits, openChoices, sectionPool, units } from "../../frontend/js/progress.js";
+import { chooseNeedUnits, mergeOpen, openChoices, sectionPool, units } from "../../frontend/js/progress.js";
 
 const course = (code, u = "3") => ({ code, units: u });
 
@@ -84,5 +84,35 @@ test("pick_units 0: a group that is shown but not counted (math competency, writ
   const sequences = { pick_n: 3, pick_units: "0",
                       courses: ["STAT 250", "STAT 350A", "STAT 350B", "SOC 201", "SOC 406", "SOC 407"].map((c) => course(c)) };
   assert.equal(chooseNeedUnits(sequences), 0);
+});
+
+const offered = (code, u = "3") => ({ code, units: u, has_sections: true });
+
+test("Biology: two ranges (BIOL 350-599, CHEM 300-599), each with its own exclude list, sorted and once each", () => {
+  const biol = { courses: ["BIOL 452", "BIOL 350", "BIOL 510", "BIOL 366"].map((c) => offered(c)), exclude: ["BIOL 452"] };
+  const chem = { courses: ["CHEM 560", "CHEM 300", "CHEM 432", "CHEM 365"].map((c) => offered(c)), exclude: ["CHEM 300", "CHEM 560"] };
+  const { shown, hidden } = mergeOpen([biol, chem], [], new Set(["BIOL 366", "CHEM 365"]));
+  assert.deepEqual(shown.map((c) => c.code), ["BIOL 350", "BIOL 510", "CHEM 432"]);
+  assert.deepEqual(hidden, { excluded: 3, required: 2 });
+});
+
+test("Political Science: a range plus listed courses from other subjects; a course in both shows once", () => {
+  const pols = { courses: ["POL S 390W", "POL S 301A", "POL S 422"].map((c) => offered(c)), exclude: ["POL S 390W"] };
+  const listed = [offered("WGSS 375"), offered("AFRAS 321"), { code: "AMIND 485", units: "3", has_sections: false },
+                  offered("POL S 422")];
+  const { shown, hidden } = mergeOpen([pols], listed);
+  assert.deepEqual(shown.map((c) => c.code), ["AFRAS 321", "POL S 301A", "POL S 422", "WGSS 375"]);   // no sections: not shown
+  assert.deepEqual(hidden, { excluded: 1, required: 0 });
+});
+
+test("excluded courses and the major's required courses are left out of an open rule", () => {
+  const acctg = { courses: ["ACCTG 325", "ACCTG 326", "ACCTG 331", "ACCTG 409", "ACCTG 503"].map((c) => offered(c)),
+                  exclude: ["ACCTG 325", "ACCTG 326"] };
+  const { shown, hidden } = mergeOpen([acctg], [], new Set(["ACCTG 331"]));
+  assert.deepEqual(shown.map((c) => c.code), ["ACCTG 409", "ACCTG 503"]);
+  assert.deepEqual(hidden, { excluded: 2, required: 1 });
+  // the single-range helper the page used before gives the same answer
+  assert.deepEqual(openChoices(acctg.courses, acctg.exclude, new Set(["ACCTG 331"])).shown.map((c) => c.code),
+                   ["ACCTG 409", "ACCTG 503"]);
 });
 
