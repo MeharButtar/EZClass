@@ -1,0 +1,47 @@
+# Batch 2: the other engineering B.S. programs and 15 more subjects (2026-2027 catalog, San Diego campus).
+# Save each page from a browser into data/catalog_html/ (the script reads the page, not the file name).
+# name<TAB>degree<TAB>url. Only the URL is read; lines starting with # are skipped. 4 groups of 10.
+# Group 1: Engineering, Psychology, Kinesiology
+Aerospace Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11888
+Construction Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11972
+Environmental Engineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11997
+Mechanical Engineering, Emphasis in Bioengineering	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12131
+Psychology, Emphasis in Industrial and Organizational Psychology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12168
+Psychology, Emphasis in Neuroscience	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12544
+Kinesiology, Emphasis in Exercise Science Generalist	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12004
+Kinesiology, Emphasis in Fitness Specialist	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12005
+Communication	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11960
+Health Communication	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11961
+# Group 2: Biology, Chemistry
+Biology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11918
+Biology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11919
+Biology, Emphasis in Cellular and Molecular Biology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11920
+Biology, Emphasis in Ecology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11921
+Biology, Emphasis in Evolutionary Biology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11922
+Biology, Emphasis in Marine Biology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11923
+Biology, Emphasis in Zoology	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11924
+Chemistry	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11940
+Chemistry, and Certificate of the American Chemical Society	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11937
+Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11938
+# Group 3: Public Health, Nursing, Foods and Nutrition, Child Development, Sociology, Political Science, Economics
+Public Health	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12176
+Public Health, Emphasis in Environmental Health	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12545
+Nursing	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12151
+Foods and Nutrition	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12152
+Child Development	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11947
+Sociology	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12197
+Political Science	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12162
+Economics	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11981
+Economics, Emphasis in International Economics	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11982
+Economics, Emphasis in Public Policy	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11983
+# Group 4: Economics, Journalism, Mathematics
+Economics, Specialization in Quantitative Analysis	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=11984
+Journalism	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12089
+Journalism, Emphasis in Advertising	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12090
+Journalism, Emphasis in Media Studies	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12091
+Journalism, Emphasis in Public Relations	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12092
+Mathematics	B.A.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12128
+Mathematics, Emphasis in Applied Mathematics	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12125
+Mathematics, Emphasis in Computational Science	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12126
+Mathematics, Emphasis in Mathematics Education	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12522
+Mathematics, Emphasis in Science	B.S.	https://catalog.sdsu.edu/preview_program.php?catoid=12&poid=12127

@@ -16,7 +16,7 @@ import { mountDock } from "../dock.js";
 import { majorLabel, openMajorPrompt } from "../majorPrompt.js";
 import { watchPlan } from "../plan.js";
 import { courseCard } from "../sections.js";
-import { chooseNeedUnits, openChoices, sectionPool, units } from "../progress.js";
+import { chooseNeedUnits, mergeOpen, sectionPool, units } from "../progress.js";
 import { getState, isCompleted, setMajor, subscribe } from "../store.js";
 import { $, $$, clear, el, emptyBox, errorBox, loadingBox, plural } from "../ui.js";
 
@@ -44,16 +44,18 @@ function groupProgress(group, key) {
   const done = courses.filter((c) => isDone(c.code));
   const doneUnits = done.reduce((n, c) => n + units(c.units), 0);
   if (group.rule === "required") {
-    const need = group.courses.reduce((n, c) => n + units(c.units), 0);
+    const need = String(group.pick_units ?? "").trim() === "0" ? 0 : group.courses.reduce((n, c) => n + units(c.units), 0);
     return { text: `${done.length} of ${courses.length} done`, finished: done.length === courses.length,
-             ratio: courses.length ? done.length / courses.length : 0, needUnits: need, doneUnits };
+             ratio: courses.length ? done.length / courses.length : 0, needUnits: need,
+             doneUnits: String(group.pick_units ?? "").trim() === "0" ? 0 : doneUnits };
   }
   if (group.rule === "choose") {
     const pick = group.pick_n || 1;
     const counted = done.slice(0, pick);
+    const needUnits = chooseNeedUnits(group);
     return { text: `${Math.min(done.length, pick)} of ${pick} picked`, finished: done.length >= pick,
-             ratio: Math.min(done.length / pick, 1), needUnits: chooseNeedUnits(group),
-             doneUnits: counted.reduce((n, c) => n + units(c.units), 0) };
+             ratio: Math.min(done.length / pick, 1), needUnits,
+             doneUnits: needUnits ? counted.reduce((n, c) => n + units(c.units), 0) : 0 };
   }
   if (group.rule === "open") {
     const needUnits = units(group.pick_units) || (group.pick_n || 1) * 3;
@@ -102,8 +104,10 @@ function ruleText(group) {
   if (group.rule === "pool") return "Counts toward the units above";
   if (group.rule === "open") {
     const o = group.open || {};
-    const range = o.min || o.max ? ` ${o.min ?? ""}–${o.max ?? ""}` : "";
-    return `Any ${(o.subjects || []).join(", ")}${range}`;
+    const ranges = (o.ranges && o.ranges.length ? o.ranges : [o]).map((r) =>
+      `${(r.subjects || []).join(", ")}${r.min || r.max ? ` ${r.min ?? ""}–${r.max ?? ""}` : ""}`);
+    const listed = (o.courses || []).length;
+    return `Any ${ranges.join(" or ")}${listed ? ` or ${plural(listed, "listed course")}` : ""}`;
   }
   return group.rule;
 }
@@ -138,7 +142,8 @@ function renderGroup(group, key) {
     const hidden = model.openHidden.get(key);
     const left = [
       hidden?.required ? `${plural(hidden.required, "course")} already required above` : "",
-      hidden?.excluded ? `${plural(hidden.excluded, "course")} the catalog excludes (${group.open.exclude.join(", ")})` : "",
+      hidden?.excluded ? `${plural(hidden.excluded, "course")} the catalog excludes (${[...new Set(
+        (group.open.ranges && group.open.ranges.length ? group.open.ranges : [group.open]).flatMap((r) => r.exclude || []))].join(", ")})` : "",
     ].filter(Boolean);
     if (left.length) box.append(el("p", { class: "req-note" }, `Not listed: ${left.join("; ")}.`));
   }
@@ -225,8 +230,13 @@ async function load(majorId) {
     const openHidden = new Map();
     await Promise.all(openGroups.map(async ([key, rule]) => {
       try {
-        const found = (await findCourses({ subjects: rule.subjects, min: rule.min, max: rule.max })).courses;
-        const { shown, hidden } = openChoices(found, rule.exclude || [], requiredCodes);
+        // one request per range (BIOL 350-599, CHEM 300-599), then the courses the rule lists by name
+        const ranges = rule.ranges && rule.ranges.length ? rule.ranges : (rule.subjects?.length ? [rule] : []);
+        const results = await Promise.all(ranges.map(async (r) => ({
+          courses: (await findCourses({ subjects: r.subjects, min: r.min, max: r.max })).courses,
+          exclude: r.exclude || [],
+        })));
+        const { shown, hidden } = mergeOpen(results, rule.courses || [], requiredCodes);
         openCourses.set(key, shown);
         openHidden.set(key, hidden);
       } catch (e) {

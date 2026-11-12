@@ -73,7 +73,8 @@ class LoaderTests(unittest.TestCase):
                          len(csv_rows("major_requirements.csv")))
         self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM major_requirements WHERE subject LIKE '% %'"), 0)
         # catalog numbers stay text
-        self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM major_requirements WHERE catalog_num = '150L'"), 1)
+        self.assertEqual(count(CLASS_DB, "SELECT COUNT(*) FROM major_requirements WHERE catalog_num = '150L'"),
+                         len([r for r in csv_rows("major_requirements.csv") if r["catalog_num"] == "150L"]))
 
     def test_spaces_normalized_and_unmatched_course_still_loads(self):
         with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as folder, scratch_db() as path:
@@ -115,8 +116,45 @@ class LoaderTests(unittest.TestCase):
             self.assertEqual(tree["sections"][0]["note"], None)
             self.assertEqual(electives["note"], "Six units outside the college need approval")   # once, on the section
             self.assertEqual([g["label"] for g in electives["groups"]], ["Any ACCTG 300-599 course"])  # no note group
-            self.assertEqual(electives["groups"][0]["open"],
-                             {"subjects": ["ACCTG"], "min": 300, "max": 599, "exclude": ["ACCTG 325", "CIVE 160"]})
+            rule = {"subjects": ["ACCTG"], "min": 300, "max": 599, "exclude": ["ACCTG 325", "CIVE 160"]}
+            self.assertEqual(electives["groups"][0]["open"], dict(rule, ranges=[rule], courses=[]))
+
+    def test_open_rule_of_several_rows(self):
+        header = ("major_id,section,group_label,rule,pick_n,pick_units,subject,catalog_num,num_min,num_max,"
+                  "exclude,title,units,note\n")
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as folder, scratch_db():
+            write_csv(folder, "majors.csv", "major_id,name,degree,college,catalog_year,status\n"
+                                            "test_bio,Test Biology,B.S.,,2026-2027,live\n"
+                                            "test_pol,Test Political Science,B.A.,,2026-2027,live\n")
+            write_csv(folder, "major_requirements.csv", header
+                      # Biology: two ranges with different numbers, each with its own exclude list
+                      + "test_bio,Major,Other electives,open,,10,BIOL,,350,599,BIOL 452,,,"
+                        "All biology courses 350 and above\n"
+                      + "test_bio,Major,Other electives,open,,,CHEM,,300,599,CHEM 300|CHEM 560,,,"
+                        "and upper division chemistry\n"
+                      # Political Science: a range, then listed courses from other subjects, with a cap
+                      + "test_pol,Major Electives,Upper division POL S,open,,12,POL S,,300,599,POL S 390W,,,"
+                        "Any upper division political science course\n"
+                      + "test_pol,Major Electives,Upper division POL S,open,,,AFRAS,321,,,,,,"
+                        "Up to 3 units from AFRAS 321 or WGSS 375\n"
+                      + "test_pol,Major Electives,Upper division POL S,open,,,WGSS,375,,,,,,"
+                        "Up to 3 units from AFRAS 321 or WGSS 375\n")
+            db.load_majors(folder)
+            bio = self.client_get("/api/majors/test_bio/requirements").get_json()
+            group = bio["sections"][0]["groups"][0]
+            self.assertEqual(group["pick_units"], "10")
+            self.assertEqual(group["open"]["ranges"], [
+                {"subjects": ["BIOL"], "min": 350, "max": 599, "exclude": ["BIOL 452"]},
+                {"subjects": ["CHEM"], "min": 300, "max": 599, "exclude": ["CHEM 300", "CHEM 560"]}])
+            self.assertEqual((group["open"]["subjects"], group["open"]["min"]), (["BIOL"], 350))   # the first range
+            self.assertEqual(group["note"], "All biology courses 350 and above and upper division chemistry")
+            pol = self.client_get("/api/majors/test_pol/requirements").get_json()
+            self.assertEqual(len(pol["sections"][0]["groups"]), 1)           # one group, three rows
+            group = pol["sections"][0]["groups"][0]
+            self.assertEqual([c["code"] for c in group["open"]["courses"]], ["AFRAS 321", "WGSS 375"])
+            self.assertEqual(group["open"]["ranges"][0]["subjects"], ["POLS"])
+            self.assertEqual(group["note"], "Any upper division political science course "
+                                            "Up to 3 units from AFRAS 321 or WGSS 375")   # the cap, once, under the group
 
     def test_database_from_before_the_exclude_column_gets_majors_reloaded(self):
         with scratch_db() as path:
@@ -207,7 +245,11 @@ class MajorsApiTests(AppTestCase):
     def test_psychology_open_rule(self):
         group = self.group(self.tree("psych_ba"), "Any 300-500 level Psychology course")
         self.assertEqual(group["rule"], "open")
-        self.assertEqual(group["open"], {"subjects": ["PSY"], "min": 300, "max": 599, "exclude": []})
+        # a single-row open rule: the same fields as always, plus its one range and no listed courses
+        self.assertEqual({k: group["open"][k] for k in ("subjects", "min", "max", "exclude")},
+                         {"subjects": ["PSY"], "min": 300, "max": 599, "exclude": []})
+        self.assertEqual(group["open"]["ranges"], [{"subjects": ["PSY"], "min": 300, "max": 599, "exclude": []}])
+        self.assertEqual(group["open"]["courses"], [])
         self.assertEqual(group["courses"], [])
         self.assertIn("31 upper division", group["note"])
 
@@ -376,6 +418,53 @@ class CoverageReportTests(unittest.TestCase):
         text = "\n".join(lines)
         # only ACCTG 409 counts: 325/326 are excluded and 331 is already required
         self.assertIn("any ACCTG 300-599 needs 1 course(s) / 6 units, 1 offered (3 units)", text)
+
+    def test_open_rule_of_several_rows_counts_each_course_once(self):
+        import importlib.util
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        spec = importlib.util.spec_from_file_location("coverage_report", os.path.join(root, "scripts", "coverage_report.py"))
+        report = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(report)
+        base = {"pick_n": "", "pick_units": "", "subject": "", "catalog_num": "", "num_min": "", "num_max": "",
+                "exclude": "", "title": "", "units": "3", "note": "", "major_id": "t", "section": "Major",
+                "group_label": "Other electives", "rule": "open"}
+        rows = [dict(base, group_label="Required", rule="required", subject="BIOL", catalog_num="366"),
+                dict(base, pick_units="15", subject="BIOL", num_min="350", num_max="599", exclude="BIOL 452"),
+                dict(base, subject="CHEM", num_min="300", num_max="599", exclude="CHEM 300"),
+                dict(base, subject="BIOL", catalog_num="510")]      # also in the BIOL range: counted once
+        files = {("data", "majors", "majors.csv"): [{"major_id": "t", "name": "T", "status": "live"}],
+                 ("data", "majors", "major_requirements.csv"): rows}
+        offered = {(s, n): {"units": 3, "sections": 1, "scheduled": 1} for s, n in
+                   [("BIOL", "366"), ("BIOL", "452"), ("BIOL", "510"), ("BIOL", "350"), ("CHEM", "300"), ("CHEM", "432")]}
+        with mock.patch.object(report, "read", lambda *path: files[path]):
+            lines, _ = report.major_report(offered)
+        # BIOL 350, BIOL 510, CHEM 432: 9 units (BIOL 366 is required, BIOL 452 and CHEM 300 are excluded)
+        self.assertIn("needs 1 course(s) / 15 units, 3 offered (9 units)", "\n".join(lines))
+
+class LiveMajorsCheckTests(unittest.TestCase):
+    """scripts/check_live_majors.py loads every live major; here through the test app, so a major that does
+    not load (like the 42-character id under the old 40-character limit) fails the suite before a merge."""
+
+    def test_every_live_major_loads(self):
+        import importlib.util
+        from test_smoke import app_module
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        spec = importlib.util.spec_from_file_location("check_live_majors", os.path.join(root, "scripts", "check_live_majors.py"))
+        check = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(check)
+        client = app_module.app.test_client()
+
+        def get(path):
+            res = client.get(path)
+            return res.status_code, res.get_json(silent=True)
+        out = io.StringIO()
+        with mock.patch.object(check, "local_getter", lambda: get), contextlib.redirect_stdout(out):
+            code = check.main(["--local"])
+        live = [m for m in csv_rows("majors.csv") if m["status"] == "live"]
+        self.assertEqual(code, 0, out.getvalue()[-2000:])
+        self.assertIn(f"All {len(live)} live majors loaded.", out.getvalue())
+        self.assertIn("ba_management_human_resource_management_bs (", out.getvalue())
+
 
 
 if __name__ == "__main__":

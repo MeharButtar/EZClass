@@ -16,6 +16,8 @@ Rules (the "rule" column of major_requirements.csv):
   open     -> some course in the subject list and number range must have
               sections (pick_n / pick_units when given). Courses in the row's
               exclude list, and courses the same major already requires, don't count.
+              Several rows with one group label are one rule: each row a range
+              (BIOL 350-599, CHEM 300-599) or one listed course (catalog_num set).
   note     -> a section's note; no course, nothing to check
 
 A course whose sections have no days or times entered yet still counts as
@@ -124,28 +126,41 @@ def major_report(offered):
             elif rule == "pool":
                 pools[part] += items
             elif rule == "open":
+                # one open group: its range rows and the courses it lists by name, each course once
+                matches, subjects_all, rule_parts = [], [], []
                 for r in items:
                     subjects = [norm(s) for s in (r["subject"] or "").split("|") if s.strip()]
+                    if (r.get("catalog_num") or "").strip():
+                        key = (subjects[0], r["catalog_num"].strip().upper()) if subjects else None
+                        if key and key in offered and key not in required and key not in matches:
+                            matches.append(key)
+                        rule_parts.append(f"{subjects[0] if subjects else '?'} {r['catalog_num'].strip().upper()}")
+                        continue
                     low, high = int(r["num_min"] or 0), int(r["num_max"] or 9999)
                     excluded = {exclude_key(c) for c in (r.get("exclude") or "").split("|") if c.strip()}
-                    matches = [k for k in offered if k[0] in subjects and number(k[1]) is not None
-                               and low <= number(k[1]) <= high and k not in excluded and k not in required]
-                    need_n = int(r["pick_n"]) if (r.get("pick_n") or "").strip() else 1
-                    need_units = units_low(r.get("pick_units"))
-                    have_units = sum(offered[k]["units"] for k in matches)
-                    rule_text = f"{'|'.join(subjects)} {low}-{high}"
-                    if len(matches) < need_n or have_units < need_units:
-                        out.append(f"  SHORT     {label}: any {rule_text} needs {need_n} course(s)"
-                                   + (f" / {need_units} units" if need_units else "")
-                                   + f", {len(matches)} offered ({have_units} units)  ({part})"
-                                   + next((known(s) for s in subjects if known(s)), ""))
-                    waiting = no_times(matches, offered)
-                    if waiting:
-                        out.append(f"  no times yet in '{label}' ({len(waiting)} of {len(matches)} offered {rule_text}): "
-                                   + ", ".join(waiting))
-                    for s in subjects:
-                        if not any(k[0] == s for k in offered):
-                            out.append(f"  NOTHING   subject {s} has no sections at all ({label}){known(s)}")
+                    for k in offered:
+                        if (k[0] in subjects and number(k[1]) is not None and low <= number(k[1]) <= high
+                                and k not in excluded and k not in required and k not in matches):
+                            matches.append(k)
+                    subjects_all += subjects
+                    rule_parts.append(f"{'|'.join(subjects)} {low}-{high}")
+                first = items[0]
+                need_n = int(first["pick_n"]) if (first.get("pick_n") or "").strip() else 1
+                need_units = units_low(first.get("pick_units"))
+                have_units = sum(offered[k]["units"] for k in matches)
+                rule_text = " or ".join(rule_parts)
+                if len(matches) < need_n or have_units < need_units:
+                    out.append(f"  SHORT     {label}: any {rule_text} needs {need_n} course(s)"
+                               + (f" / {need_units} units" if need_units else "")
+                               + f", {len(matches)} offered ({have_units} units)  ({part})"
+                               + next((known(s) for s in subjects_all if known(s)), ""))
+                waiting = no_times(matches, offered)
+                if waiting:
+                    out.append(f"  no times yet in '{label}' ({len(waiting)} of {len(matches)} offered {rule_text}): "
+                               + ", ".join(waiting))
+                for s in dict.fromkeys(subjects_all):
+                    if not any(k[0] == s for k in offered):
+                        out.append(f"  NOTHING   subject {s} has no sections at all ({label}){known(s)}")
         for part, items in pools.items():
             need = units_low(items[0]["pick_units"])
             codes = [(f"{norm(r['subject'])} {r['catalog_num'].strip().upper()}", units_low(r["units"])) for r in items]

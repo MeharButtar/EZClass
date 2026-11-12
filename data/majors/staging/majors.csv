@@ -1,5 +1,13 @@
 major_id,name,degree,college,catalog_year,status
 me_bs,Mechanical Engineering,B.S.,,2026-2027,coming_soon
+aerospace_engineering_bs,Aerospace Engineering,B.S.,,2026-2027,coming_soon
+biology_ba,Biology,B.A.,,2026-2027,coming_soon
+biology_bs,Biology,B.S.,,2026-2027,coming_soon
+biology_cellular_molecular_bs,"Biology, Emphasis in Cellular and Molecular Biology",B.S.,,2026-2027,coming_soon
+biology_ecology_bs,"Biology, Emphasis in Ecology",B.S.,,2026-2027,coming_soon
+biology_evolutionary_bs,"Biology, Emphasis in Evolutionary Biology",B.S.,,2026-2027,coming_soon
+biology_marine_bs,"Biology, Emphasis in Marine Biology",B.S.,,2026-2027,coming_soon
+biology_zoology_bs,"Biology, Emphasis in Zoology",B.S.,,2026-2027,coming_soon
 ba_accounting_bs,"Business Administration, Emphasis in Accounting",B.S.,,2026-2027,coming_soon
 ba_finance_bs,"Business Administration, Emphasis in Finance",B.S.,,2026-2027,coming_soon
 ba_financial_services_bs,"Business Administration, Emphasis in Financial Services",B.S.,,2026-2027,coming_soon
@@ -9,6 +17,38 @@ ba_marketing_bs,"Business Administration, Emphasis in Marketing",B.S.,,2026-2027
 ba_real_estate_bs,"Business Administration, Emphasis in Real Estate",B.S.,,2026-2027,coming_soon
 ba_management_entrepreneurship_bs,"Business Administration, Management, Specialization in Entrepreneurship",B.S.,,2026-2027,coming_soon
 ba_management_human_resource_management_bs,"Business Administration, Management, Specialization in Human Resource Management",B.S.,,2026-2027,coming_soon
+chemistry_ba,Chemistry,B.A.,,2026-2027,coming_soon
+chemistry_american_chemical_society_bs,"Chemistry, and Certificate of the American Chemical Society",B.S.,,2026-2027,coming_soon
+chemistry_biochemistry_american_chemical_society_bs,"Chemistry, Emphasis in Biochemistry, and Certificate of the American Chemical Society",B.S.,,2026-2027,coming_soon
+child_development_bs,Child Development,B.S.,,2026-2027,coming_soon
 civil_engineering_bs,Civil Engineering,B.S.,,2026-2027,coming_soon
+communication_ba,Communication,B.A.,,2026-2027,coming_soon
 computer_engineering_bs,Computer Engineering,B.S.,,2026-2027,coming_soon
+construction_engineering_bs,Construction Engineering,B.S.,,2026-2027,coming_soon
+economics_ba,Economics,B.A.,,2026-2027,coming_soon
+economics_international_ba,"Economics, Emphasis in International Economics",B.A.,,2026-2027,coming_soon
+economics_public_policy_ba,"Economics, Emphasis in Public Policy",B.A.,,2026-2027,coming_soon
+economics_quantitative_analysis_ba,"Economics, Specialization in Quantitative Analysis",B.A.,,2026-2027,coming_soon
 electrical_engineering_bs,Electrical Engineering,B.S.,,2026-2027,coming_soon
+environmental_engineering_bs,Environmental Engineering,B.S.,,2026-2027,coming_soon
+foods_nutrition_bs,Foods and Nutrition,B.S.,,2026-2027,coming_soon
+health_communication_bs,Health Communication,B.S.,,2026-2027,coming_soon
+journalism_ba,Journalism,B.A.,,2026-2027,coming_soon
+journalism_advertising_ba,"Journalism, Emphasis in Advertising",B.A.,,2026-2027,coming_soon
+journalism_media_studies_ba,"Journalism, Emphasis in Media Studies",B.A.,,2026-2027,coming_soon
+journalism_public_relations_ba,"Journalism, Emphasis in Public Relations",B.A.,,2026-2027,coming_soon
+kinesiology_exercise_science_generalist_bs,"Kinesiology, Emphasis in Exercise Science Generalist",B.S.,,2026-2027,coming_soon
+kinesiology_fitness_specialist_bs,"Kinesiology, Emphasis in Fitness Specialist",B.S.,,2026-2027,coming_soon
+mathematics_ba,Mathematics,B.A.,,2026-2027,coming_soon
+mathematics_applied_bs,"Mathematics, Emphasis in Applied Mathematics",B.S.,,2026-2027,coming_soon
+mathematics_computational_science_bs,"Mathematics, Emphasis in Computational Science",B.S.,,2026-2027,coming_soon
+mathematics_education_bs,"Mathematics, Emphasis in Mathematics Education",B.S.,,2026-2027,coming_soon
+mathematics_science_bs,"Mathematics, Emphasis in Science",B.S.,,2026-2027,coming_soon
+mechanical_engineering_bioengineering_bs,"Mechanical Engineering, Emphasis in Bioengineering",B.S.,,2026-2027,coming_soon
+nursing_bs,Nursing,B.S.,,2026-2027,coming_soon
+political_science_ba,Political Science,B.A.,,2026-2027,coming_soon
+psychology_industrial_organizational_ba,"Psychology, Emphasis in Industrial and Organizational Psychology",B.A.,,2026-2027,coming_soon
+psychology_neuroscience_ba,"Psychology, Emphasis in Neuroscience",B.A.,,2026-2027,coming_soon
+public_health_bs,Public Health,B.S.,,2026-2027,coming_soon
+public_health_environmental_health_bs,"Public Health, Emphasis in Environmental Health",B.S.,,2026-2027,coming_soon
+sociology_ba,Sociology,B.A.,,2026-2027,coming_soon

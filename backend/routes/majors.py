@@ -80,9 +80,13 @@ def major_requirements(major_id):
     The requirement tree for one major:
       {"major": {...}, "sections": [{"name", "pool_units", "note", "groups": [
           {"label", "rule", "pick_n", "pick_units", "note", "open", "courses": [...]}]}]}
-    "open" is {"subjects": [...], "min": 300, "max": 599, "exclude": ["ACCTG 325"]} for
-    rules without a course list; the frontend fetches those courses from /api/courses
-    and leaves out the excluded ones and the ones the major already requires.
+    "open" is {"subjects": [...], "min": 300, "max": 599, "exclude": ["ACCTG 325"],
+    "ranges": [{"subjects", "min", "max", "exclude"}, ...], "courses": [...]} for rules
+    without a full course list. Rows of one open group are its ranges (BIOL 350-599 and
+    CHEM 300-599) and listed courses that also count; the first range is repeated at the
+    top level, as single-row rules always had it. The frontend fetches each range from
+    /api/courses, adds the listed courses, drops duplicates, the excluded courses and the
+    ones the major already requires, and sorts by code.
     A "note" row is the section's note. A note shared by every course in a group
     is moved up to the group.
     """
@@ -127,11 +131,20 @@ def major_requirements(major_id):
         if r["rule"] == "pool" and r["pick_units"]:
             section["pool_units"] = r["pick_units"]
         if r["rule"] == "open":
-            group["open"] = {
-                "subjects": [s for s in (r["subject"] or "").split("|") if s],
-                "min": r["num_min"], "max": r["num_max"],
-                "exclude": [c for c in (r["exclude"] or "").split("|") if c],
-            }
+            # an open group is one or more rows: each a range (subjects + numbers + exclude) or one listed course
+            if group["open"] is None:
+                group["open"] = {"subjects": [], "min": None, "max": None, "exclude": [], "ranges": [], "courses": []}
+            if r["catalog_num"]:
+                extra = course_to_dict(r["subject"], r["catalog_num"], courses, ge, r["title"], r["units"])
+                if extra["code"] not in {c["code"] for c in group["open"]["courses"]}:
+                    group["open"]["courses"].append(extra)
+            else:
+                rng = {"subjects": [s for s in (r["subject"] or "").split("|") if s],
+                       "min": r["num_min"], "max": r["num_max"],
+                       "exclude": [c for c in (r["exclude"] or "").split("|") if c]}
+                if not group["open"]["ranges"]:
+                    group["open"].update(rng)          # the first range, as single-row rules always had it
+                group["open"]["ranges"].append(rng)
             group["_notes"].append(r["note"])
             continue
         course = course_to_dict(r["subject"], r["catalog_num"], courses, ge, r["title"], r["units"])
@@ -141,6 +154,10 @@ def major_requirements(major_id):
 
     for group in groups.values():
         notes = group.pop("_notes")
+        if group["rule"] == "open":
+            # every row's note, once each (the rule sentence, a cap like "up to 3 units from ...")
+            group["note"] = " ".join(dict.fromkeys(n for n in notes if n)) or None
+            continue
         if notes and len(set(notes)) == 1:
             group["note"] = notes[0]
             for course in group["courses"]:

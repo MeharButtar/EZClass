@@ -172,7 +172,7 @@ row for an `open` rule). Rows show up in file order.
 | `group_label` | Group name under the heading, e.g. `Required`, `Statistics (pick 1)` |
 | `rule` | How the group is satisfied, see below |
 | `pick_n` | `choose`: how many courses to pick. `open`: how many courses (optional) |
-| `pick_units` | `pool` and `open`: units needed, can be a range like `14-15` |
+| `pick_units` | `pool` and `open`: units needed, can be a range like `14-15`. `choose`: optional, the units the pick needs when it is not simply its smallest courses (a lecture and lab pair: `4`). `0` on a `choose` or `required` group: shown, but not counted in the major's units (a math competency or writing course outside the major) |
 | `subject`, `catalog_num` | The course, e.g. `CS` and `150L`. Spaces in subjects are removed (`POL S` becomes `POLS`). For `open` rules `subject` can list several codes separated by `\|`, like `ACCTG\|BA\|FIN` |
 | `num_min`, `num_max` | `open` rules: the catalog number range, e.g. 300 to 599 |
 | `exclude` | `open` rules, optional: courses that don't count, separated by `\|`, like `ACCTG 325\|ACCTG 326` |
@@ -190,6 +190,15 @@ What each `rule` means:
   courses that have sections this term, and shows the group's note. It leaves
   out the row's `exclude` courses and courses the same major already requires
   (they can't count twice), and says how many it left out.
+  One open group can be several rows with the same `section` and `group_label`:
+  each row is either a range (`subject` plus `num_min`/`num_max`, its own
+  `exclude`) or one listed course that also counts (`subject` plus `catalog_num`).
+  The first row carries `pick_units` (or `pick_n`). Biology's "BIOL 350 and above
+  or upper division CHEM" is two range rows; Political Science's "any upper
+  division POL S, or up to 3 units from AFRAS 321 ..." is a range row plus
+  course rows. The page fetches every range, adds the listed courses, shows each
+  course once, sorted by code, and shows every row's note (a cap like "up to 3
+  units") once under the group.
 - `note`: no course, just the `note` text for the whole section (an electives
   rule like "6 units may be taken outside the college"), so it isn't repeated on
   every course row. `group_label` stays empty.
